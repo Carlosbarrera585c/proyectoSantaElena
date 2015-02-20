@@ -1,0 +1,22 @@
+all:
+  favicon: hola.ico
+  title: titulo de la p‡gina general
+  meta:
+    - charset="UTF-8"
+  javascript:
+    - jquery-1.11.1.min.js
+    - bootstrap.js
+  stylesheet:
+    - bootstrap.css
+    - main.css
+
+shfSecurity:
+  index:
+    title: Identificaci—n de usuario
+    stylesheet:
+      - signin.css
+
+default:
+  index:
+    javascript:
+      - index.js

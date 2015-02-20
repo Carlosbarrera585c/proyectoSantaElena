@@ -1,6 +1,6 @@
-/nbproject/private/
+.DS_Store
 Thumbs.db
+/nbproject/private/
 /nbproject/*
-/nbproject/
 /web/upload/*
 /web/download/*

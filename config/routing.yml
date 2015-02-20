@@ -1,0 +1,103 @@
+homepage:
+  url:    /
+  param:  { module: default, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+##-------------------------- shfSecurity --------------------------##
+shfSecurity_index:
+  url:    /signin
+  param:  { module: shfSecurity, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+shfSecurity_login:
+  url:    /login
+  param:  { module: shfSecurity, action: login, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+shfSecurity_logout:
+  url:    /logout
+  param:  { module: shfSecurity, action: logout, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+##-------------------------- shfSecurity --------------------------##
+
+##-------------------------- EJEMPLO --------------------------##
+default_index:
+  url:    /usuarios/index
+  param:  { module: default, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_insert:
+  url:    /usuarios/insertar
+  param:  { module: default, action: insert, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+default_view:
+  url:    /usuarios/ver
+  param:  { module: default, action: view, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_create:
+  url:    /usuarios/crear
+  param:  { module: default, action: create, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_edit:
+  url:    /usuario/editar
+  param:  { module: default, action: edit, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_update:
+  url:    /usuario/actualizar
+  param:  { module: default, action: update, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_delete:
+  url:    /usuario/eliminar
+  param:  { module: default, action: delete, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_deleteSelect:
+  url:    /usuario/eliminarSeleccion
+  param:  { module: default, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+default_reporte:
+  url:    /usuario/reporte
+  param:  { module: default, action: report, format: pdf }
+##-------------------------- EJEMPLO --------------------------##
