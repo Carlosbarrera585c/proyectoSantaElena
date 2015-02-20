@@ -28,8 +28,8 @@ if (config::getDbUnixSocket() !== null) {
   );
 }
 
-config::setPathAbsolute('/xampp/htdocs/tallerMVC/');
-config::setUrlBase('http://localhost/tallerMVC/web/');
+config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
+config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 
 config::setScope('dev'); // prod
 config::setDefaultCulture('es');
@@ -47,7 +47,7 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
-config::setCookiePath('/tallerMVC/web/' . config::getIndexFile());
+config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
 config::setCookieDomain('http://localhost/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
