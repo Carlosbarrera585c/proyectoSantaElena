@@ -8,13 +8,14 @@
 <?php $delUsu = usuarioTableClass::DELETED_AT ?>
 
 <div class="container container-fluid">
+    <h1>Información del Usuario</h1>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('default', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
       <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
       <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
      <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'index') ?>" class="btn btn-info btn-xs">Atras</a>
     </div>
-    <table class="table table-bordered table-responsive">
+    <table class="table table-bordered table-responsive table-condensed">
       <thead>
         <tr>
           <th>ID</th>
@@ -22,7 +23,6 @@
           <th>Activado</th>
           <th>Creado</th>
           <th>Actualizado</th>
-          <th>Eliminado</th>
         </tr>
       </thead>
       <tbody>
@@ -32,7 +32,6 @@
           <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$esUsu : '') ?></td>
           <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$creaUsu : '') ?></td> 
           <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$updUsu : '') ?></td> 
-          <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$delUsu : '') ?></td>
           </tr>
       </tbody>
     </table>
