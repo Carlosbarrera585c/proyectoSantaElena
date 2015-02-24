@@ -28,8 +28,11 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
       );
       $orderBy = array(
           usuarioTableClass::USER
-      );
-      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
+    );
+    $where = array (
+    usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+    );
+      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
       $this->defineView('view', 'default', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
