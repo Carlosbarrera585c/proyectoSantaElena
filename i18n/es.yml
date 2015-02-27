@@ -6,7 +6,8 @@ dictionary:
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
-  errors:
+    desc:                 Descripción
+    errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.
     00003:                Los datos de usuario y contrseña son inválidos.

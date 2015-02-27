@@ -20,3 +20,8 @@ default:
   index:
     javascript:
       - index.js
+      
+tipoEmpaque:
+  index:
+    javascript:
+      - index.js

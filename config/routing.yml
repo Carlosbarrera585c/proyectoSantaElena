@@ -101,3 +101,63 @@ default_reporte:
   url:    /usuario/reporte
   param:  { module: default, action: report, format: pdf }
 ##-------------------------- EJEMPLO --------------------------##
+
+##-------------------------- TIPO EMPAQUE --------------------------##
+
+tipoEmpaque_index:
+  url:    /tipoEmpaque/index
+  param:  { module: tipoEmpaque, action: index, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+tipoEmpaque_insert:
+  url:    /tipoEmpaque/insertar
+  param:  { module: tipoEmpaque, action: insert, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+    
+tipoEmpaque_view:
+  url:    /tipoEmpaque/ver
+  param:  { module: tipoEmpaque, action: view, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+tipoEmpaque_create:
+  url:    /tipoEmpaque/crear
+  param:  { module: tipoEmpaque, action: create, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+tipoEmpaque_edit:
+  url:    /tipoEmpaque/editar
+  param:  { module: tipoEmpaque, action: edit, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+tipoEmpaque_update:
+  url:    /tipoEmpaque/actualizar
+  param:  { module: tipoEmpaque, action: update, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+tipoEmpaque_delete:
+  url:    /tipoEmpaque/eliminar
+  param:  { module: tipoEmpaque, action: delete, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+tipoEmpaque_deleteSelect:
+  url:    /tipoEmpaque/eliminarSeleccion
+  param:  { module: tipoEmpaque, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+
+##-------------------------- TIPO EMPAQUE --------------------------##
