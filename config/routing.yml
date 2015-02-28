@@ -85,7 +85,7 @@ default_update:
 
 default_delete:
   url:    /usuario/eliminar
-  param:  { module: default, action: delete, format: html }
+  param:  { module: default, action: delete, format: json }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php

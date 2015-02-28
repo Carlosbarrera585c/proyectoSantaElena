@@ -15,27 +15,33 @@ use mvc\i18n\i18nClass as i18n;
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST') and request::getInstance()->isAjaxRequest()) {
 
-        $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
-        
-        $ids = array(
-            usuarioTableClass::ID => $id
-        );
-        usuarioTableClass::delete($ids, true);
-        routing::getInstance()->redirect('default', 'index');
-      } else {
-        routing::getInstance()->redirect('default', 'index');
-      }
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+                $id = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::ID, true));
+
+                $ids = array(
+                    usuarioTableClass::ID => $id
+                );
+                usuarioTableClass::delete($ids, true);
+                //routing::getInstance()->redirect('default', 'index');
+                $this->arrayAjax = array(
+                    'code' => 200,
+                    'msg' => 'La Elimininación del Registro fue Exitosa'
+                );
+                $this->defineView('delete', 'default', session::getInstance()->getFormatOutput());
+                session::getInstance()->setSuccess(i18n::__('successfulDelete'));                
+            } else {
+                routing::getInstance()->redirect('default', 'index');
+            }
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

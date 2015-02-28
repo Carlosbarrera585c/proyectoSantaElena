@@ -1,4 +1,5 @@
 <?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <?php $id = usuarioTableClass::ID ?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $passUsu = usuarioTableClass::PASSWORD ?>
@@ -11,9 +12,9 @@
     <h1>Información del Usuario</h1>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('default', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
-      <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'insert') ?>" class="btn btn-success btn-xs">Nuevo</a>
-      <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
-     <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'index') ?>" class="btn btn-info btn-xs">Atras</a>
+      <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>
+      <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete')?></a>
+     <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a>
     </div>
     <table class="table table-bordered table-responsive table-condensed">
       <thead>

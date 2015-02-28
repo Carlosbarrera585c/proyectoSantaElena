@@ -31,6 +31,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             usuarioTableClass::PASSWORD => md5($password)
         );
         usuarioTableClass::insert($data);
+        session::getInstance()->setSuccess(i18n::__('successfulRegister'));
         routing::getInstance()->redirect('default', 'index');
       } else {
         routing::getInstance()->redirect('default', 'index');
@@ -41,6 +42,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       echo '<pre>';
       print_r($exc->getTrace());
       echo '</pre>';
+      session::getInstance()->setError(i18n::__('failureToRegister'));
     }
   }
 
