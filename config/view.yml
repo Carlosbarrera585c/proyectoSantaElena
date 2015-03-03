@@ -23,5 +23,11 @@ default:
       
 tipoEmpaque:
   index:
+    title: Tipo Empaque
     javascript:
       - index.js
+  edit:
+    title: Editar Tipo Empaque
+    
+  view:
+    title: Ver Tipo Empaque

@@ -28,7 +28,9 @@ class createActionClass extends controllerClass implements controllerActionInter
                     
                 );
                 tipoEmpaqueTableClass::insert($data);
+                session::getInstance()->setSuccess(i18n::__('successfulRegister'));
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
+                  
             } else {
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
             }
@@ -36,6 +38,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             echo $exc->getMessage();
             echo '<br>';
             echo $exc->getTraceAsString();
+            session::getInstance()->setError(i18n::__('failureToRegister'));
         }
     }
 

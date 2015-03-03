@@ -25,7 +25,12 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 tipoEmpaqueTableClass::ID => $id
                 );
                 tipoEmpaqueTableClass::delete($ids, false);
-                routing::getInstance()->redirect('tipoEmpaque', 'index');
+                $this->arrayAjax = array(
+                    'code' => 200,
+                    'msg' => 'La Eliminación Fue Exitosa'
+                );
+                $this->defineView('delete', 'tipoEmpaque', session::getInstance()->getFormatOutput());
+                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
             }

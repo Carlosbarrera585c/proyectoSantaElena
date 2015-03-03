@@ -26,7 +26,8 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                 );
                 tipoEmpaqueTableClass::delete($ids, false);
               }              
-                routing::getInstance()->redirect('tipoEmpaque', 'index');
+               session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+               routing::getInstance()->redirect('tipoEmpaque', 'index');
             } else {
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
             }

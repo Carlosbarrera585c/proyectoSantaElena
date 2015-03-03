@@ -34,6 +34,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
                 tipoEmpaqueTableClass::update($ids, $data);
             }
+            session::getInstance()->setSuccess(i18n::__('successfulUpdate'));
             routing::getInstance()->redirect('tipoEmpaque', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();

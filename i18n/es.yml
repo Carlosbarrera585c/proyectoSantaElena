@@ -17,6 +17,7 @@ dictionary:
     delete:               Eliminar
     deleteSelect:         Eliminar Seleccionados
     successfulRegister:   El Registro Fue Exitoso.
+    successfulUpdate:     La Actualización Fue Exitosa.
     failureToRegister:    Algo Fallo Al Registrar.
     successfulDelete:     La Eliminación Fue Exitosa.
     failureToDelete:      Algo Fallo Al Eliminar. 

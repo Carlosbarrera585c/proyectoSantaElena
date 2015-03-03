@@ -148,7 +148,7 @@ tipoEmpaque_update:
 
 tipoEmpaque_delete:
   url:    /tipoEmpaque/eliminar
-  param:  { module: tipoEmpaque, action: delete, format: html }
+  param:  { module: tipoEmpaque, action: delete, format: json }
   load:
     - model/base/tipoEmpaqueBaseTableClass.php
     - model/tipoEmpaqueTableClass.php
