@@ -1,13 +1,16 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $idUsuario = usuarioTableClass::ID ?>
 <?php $password = usuarioTableClass::PASSWORD ?>
 <pre>
 <div class="container container-fluid">    
 <form class="form-signin" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('default', ((isset($objUsuario)) ? 'update' : 'create')) ?>">
-            <?php if (isset($objUsuario) == true): ?>
+           
+ <?php if (isset($objUsuario) == true): ?>
       <input name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>" value="<?php echo $objUsuario[0]->$idUsuario ?>" type="hidden">
                     <?php endif ?>
+      <?php view::includeHandlerMessage() ?>
    <table class="table table-bordered  table-striped table-condensed table-responsive">
        <thead> 
        <tr>
