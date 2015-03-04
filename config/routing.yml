@@ -221,3 +221,63 @@ ciudad_deleteSelect:
     - model/ciudadTableClass.php
 
 ##-------------------------- CIUDAD--------------------------------##
+
+##-------------------------- TIPO PAGO-----------------------------##
+
+tipoPago_index:
+  url:    /tipoPago/index
+  param:  { module: tipoPago, action: index, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+tipoPago_insert:
+  url:    /tipoPago/insertar
+  param:  { module: tipoPago, action: insert, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+    
+tipoPago_view:
+  url:    /tipoPago/ver
+  param:  { module: tipoPago, action: view, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+tipoPago_create:
+  url:    /tipoPago/crear
+  param:  { module: tipoPago, action: create, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+tipoPago_edit:
+  url:    /tipoPago/editar
+  param:  { module: tipoPago, action: edit, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+tipoPago_update:
+  url:    /tipoPago/actualizar
+  param:  { module: tipoPago, action: update, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+tipoPago_delete:
+  url:    /tipoPago/eliminar
+  param:  { module: tipoPago, action: delete, format: json }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+tipoPago_deleteSelect:
+  url:    /tipoPago/eliminarSeleccion
+  param:  { module: tipoPago, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+
+##-------------------------- TIPO PAGO----------------------------##

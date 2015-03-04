@@ -43,3 +43,14 @@ ciudad:
     
   view:
     title: Ver Ciudad
+    
+tipoPago:
+  index:
+    title: Tipo Pago
+    javascript:
+      - index.js
+  edit:
+    title: Editar Tipo Pago
+    
+  view:
+    title: Ver Tipo Pago

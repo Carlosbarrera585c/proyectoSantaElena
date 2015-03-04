@@ -19,14 +19,14 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
 
       $fields = array(
-          ciudadTableClass::ID,
-          ciudadTableClass::NOM_CIUDAD
+          tipoPagoTableClass::ID,
+          tipoPagoTableClass::DESC_TIPO_PAGO
       );
       $orderBy = array(
-          ciudadTableClass::NOM_CIUDAD
+          tipoPagoTableClass::DESC_TIPO_PAGO
       );
-      $this->objCiudad = ciudadTableClass::getAll($fields, false, $orderBy, 'ASC');
-      $this->defineView('index', 'ciudad', session::getInstance()->getFormatOutput());
+      $this->objTipoPago = tipoPagoTableClass::getAll($fields, false, $orderBy, 'ASC');
+      $this->defineView('index', 'tipoPago', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

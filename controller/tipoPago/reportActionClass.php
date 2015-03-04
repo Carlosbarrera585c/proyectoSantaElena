@@ -11,21 +11,15 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+* @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
-class indexActionClass extends controllerClass implements controllerActionInterface {
+class reportActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-
-      $fields = array(
-          ciudadTableClass::ID,
-          ciudadTableClass::NOM_CIUDAD
-      );
-      $orderBy = array(
-          ciudadTableClass::NOM_CIUDAD
-      );
-      $this->objCiudad = ciudadTableClass::getAll($fields, false, $orderBy, 'ASC');
+      
+      $this->mensaje = 'Hola a todos';
+      
       $this->defineView('index', 'ciudad', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

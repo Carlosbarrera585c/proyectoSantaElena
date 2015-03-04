@@ -11,7 +11,8 @@
        <thead> 
        <tr>
             <th><?php echo i18n::__('city') ?>:<input value="<?php echo ((isset($objCiudad) == true) ? $objCiudad[0]->$ciudad : '') ?>" type="text" name="<?php echo ciudadTableClass::getNameField(ciudadTableClass::NOM_CIUDAD, true) ?>"></th>
-            <th><input type="submit" value="<?php echo i18n::__(((isset($objCiudad)) ? 'update' : 'register')) ?>"></th>
+            <th><input type="submit" value="<?php echo i18n::__(((isset($objCiudad)) ? 'update' : 'register')) ?>">  <a href="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a>
+            </th>
         </tr>
         </thead>
         </table>

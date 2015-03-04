@@ -10,6 +10,9 @@ dictionary:
     actions:              Acciones
     typePacking:          Tipo Empaque
     city:                 Ciudad
+    paymentType:          Tipo de Pago
+    newPaymentType:       Nuevo Tipo de Pago
+    editPaymentType:      Editar Tipo de Pago
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.
     questionDelete:       ¿Desea Eliminar El Registro
