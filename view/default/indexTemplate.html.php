@@ -19,8 +19,8 @@ use mvc\view\viewClass as view ?>
             <thead>
                 <tr>
                     <th><input type="checkbox" id="chkAll"></th>
-                    <th>Usuario</th>
-                    <th>Acciones</th>
+                    <th><?php echo i18n::__('user')?></th>
+                    <th><?php echo i18n::__('actions')?></th>
                 </tr>
             </thead>
             <tbody>

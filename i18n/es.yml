@@ -7,6 +7,8 @@ dictionary:
     register:             Registrar
     update:               Actualizar
     desc:                 Descripción
+    actions:              Acciones
+    typePacking:          Tipo Empaque
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.
     cancel:               Cancelar
