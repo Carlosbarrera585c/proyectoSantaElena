@@ -9,8 +9,10 @@ dictionary:
     desc:                 Descripción
     actions:              Acciones
     typePacking:          Tipo Empaque
+    city:                 Ciudad
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.
+    questionDelete:       ¿Desea Eliminar El Registro
     cancel:               Cancelar
     new:                  Nuevo
     view:                 Ver

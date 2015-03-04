@@ -161,3 +161,63 @@ tipoEmpaque_deleteSelect:
     - model/tipoEmpaqueTableClass.php
 
 ##-------------------------- TIPO EMPAQUE --------------------------##
+
+##-------------------------- CIUDAD---------------------------------##
+
+ciudad_index:
+  url:    /ciudad/index
+  param:  { module: ciudad, action: index, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_insert:
+  url:    /ciudad/insertar
+  param:  { module: ciudad, action: insert, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+    
+ciudad_view:
+  url:    /ciudad/ver
+  param:  { module: ciudad, action: view, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_create:
+  url:    /ciudad/crear
+  param:  { module: ciudad, action: create, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_edit:
+  url:    /ciudad/editar
+  param:  { module: ciudad, action: edit, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_update:
+  url:    /ciudad/actualizar
+  param:  { module: ciudad, action: update, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_delete:
+  url:    /ciudad/eliminar
+  param:  { module: ciudad, action: delete, format: json }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+ciudad_deleteSelect:
+  url:    /ciudad/eliminarSeleccion
+  param:  { module: ciudad, action: deleteSelect, format: html }
+  load:
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+
+##-------------------------- CIUDAD--------------------------------##

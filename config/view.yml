@@ -31,3 +31,15 @@ tipoEmpaque:
     
   view:
     title: Ver Tipo Empaque
+    
+       
+ciudad:
+  index:
+    title: Ciudad
+    javascript:
+      - index.js
+  edit:
+    title: Editar Ciudad
+    
+  view:
+    title: Ver Ciudad
