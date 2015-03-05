@@ -14,7 +14,7 @@
        <thead> 
        <tr>
            <th><?php echo i18n::__('desc') ?>:<input value="<?php echo ((isset($objTipoEmpaque) == true) ? $objTipoEmpaque[0]->$desc_tipo_empaque : '') ?>" type="text" class="frm-control" name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>"></th>
-           <th><input class="btn btn-success btn-xs" type="submit" value="<?php echo i18n::__(((isset($objTipoEmpaque)) ? 'update' : 'register')) ?>"> <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>" class="btn btn-info btn-xs">Atrás</a></th>
+           <th><input class="btn btn-success btn-xs" type="submit" value="<?php echo i18n::__(((isset($objTipoEmpaque)) ? 'update' : 'register')) ?>"> <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>" class="btn btn-info btn-xs"><?php i18n::__('back')?></a></th>
         </tr>
         </thead>
         </table>

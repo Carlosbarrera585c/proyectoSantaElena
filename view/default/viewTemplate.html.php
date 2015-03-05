@@ -19,11 +19,11 @@
     <table class="table table-bordered table-responsive table-condensed">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Usuario</th>
-          <th>Activado</th>
-          <th>Creado</th>
-          <th>Actualizado</th>
+          <th><?php i18n::__('id')?></th>
+          <th><?php i18n::__('user')?></th>
+          <th><?php i18n::__('actived')?></th>
+          <th><?php i18n::__('created')?></th>
+          <th><?php i18n::__('back')?></th>
         </tr>
       </thead>
       <tbody>

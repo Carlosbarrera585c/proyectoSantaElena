@@ -30,8 +30,8 @@ if (config::getDbUnixSocket() !== null) {
 
 //Para Windows
 config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
-//Para Linux
-config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
+//Para Linux 
+//config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 
 config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 

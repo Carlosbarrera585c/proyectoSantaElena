@@ -2,7 +2,10 @@
 culture:                  Español
 dictionary:
   default:
+    id:                   Id
     user:                 Usuario
+    created:              Creado
+    actived:              Activado
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
