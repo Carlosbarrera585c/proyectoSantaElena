@@ -31,7 +31,17 @@ tipoEmpaque:
     
   view:
     title: Ver Tipo Empaque
+
+tipoId:
+  index:
+    title: Tipo Id
+    javascript:
+      - index.js
+  edit:
+    title: Editar Tipo Identificacion
     
+  view:
+    title: Ver Tipo Identificacion    
        
 ciudad:
   index:

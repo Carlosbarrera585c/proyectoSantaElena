@@ -161,7 +161,65 @@ tipoEmpaque_deleteSelect:
     - model/tipoEmpaqueTableClass.php
 
 ##-------------------------- TIPO EMPAQUE --------------------------##
+##-------------------------- TIPO ID --------------------------##
 
+tipoId_index:
+  url:    /tipoId/index
+  param:  { module: tipoId, action: index, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+tipoId_insert:
+  url:    /tipoId/insertar
+  param:  { module: tipoId, action: insert, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+    
+tipoId_view:
+  url:    /tipoId/ver
+  param:  { module: tipoId, action: view, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+tipoId_create:
+  url:    /tipoId/crear
+  param:  { module: tipoId, action: create, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+tipoId_edit:
+  url:    /tipoId/editar
+  param:  { module: tipoId, action: edit, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+tipoId_update:
+  url:    /tipoId/actualizar
+  param:  { module: tipoId, action: update, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+tipoId_delete:
+  url:    /tipoId/eliminar
+  param:  { module: tipoId, action: delete, format: json }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+tipoId_deleteSelect:
+  url:    /tipoId/eliminarSeleccion
+  param:  { module: tipoId, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+
+##-------------------------- TIPO EMPAQUE --------------------------##
 ##-------------------------- CIUDAD---------------------------------##
 
 ciudad_index:

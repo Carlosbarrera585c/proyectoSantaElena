@@ -9,6 +9,7 @@ dictionary:
     pass:                 Contraseña
     register:             Registrar
     update:               Actualizar
+    updated:              Actualizado
     desc:                 Descripción
     actions:              Acciones
     typePacking:          Tipo Empaque

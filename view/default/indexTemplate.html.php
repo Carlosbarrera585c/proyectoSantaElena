@@ -42,7 +42,7 @@ use mvc\view\viewClass as view ?>
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                ¿Desea Eliminar El Registro <?php echo $usuario->$usu ?>?
+                                <?php echo i18n::__('questionDelete')?> <?php echo $usuario->$usu ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -67,7 +67,7 @@ use mvc\view\viewClass as view ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
             </div>
             <div class="modal-body">
-                ¿Desea Eliminar Los Elementos Seleccionados?
+                <?php echo i18n::__('confirmDeleteMass')?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

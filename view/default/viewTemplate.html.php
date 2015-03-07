@@ -19,11 +19,11 @@
     <table class="table table-bordered table-responsive table-condensed">
       <thead>
         <tr>
-          <th><?php i18n::__('id')?></th>
-          <th><?php i18n::__('user')?></th>
-          <th><?php i18n::__('actived')?></th>
-          <th><?php i18n::__('created')?></th>
-          <th><?php i18n::__('back')?></th>
+          <th><?php echo i18n::__('id')?></th>
+          <th><?php echo i18n::__('user')?></th>
+          <th><?php echo i18n::__('actived')?></th>
+          <th><?php echo i18n::__('created')?></th>
+          <th><?php echo i18n::__('updated')?></th>
         </tr>
       </thead>
       <tbody>
