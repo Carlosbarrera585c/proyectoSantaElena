@@ -219,7 +219,66 @@ tipoId_deleteSelect:
     - model/base/tipoIdBaseTableClass.php
     - model/tipoIdTableClass.php
 
-##-------------------------- TIPO EMPAQUE --------------------------##
+##-------------------------- TIPO ID --------------------------##
+##-------------------------- EMPLEADO --------------------------##
+
+empleado_index:
+  url:    /empleado/index
+  param:  { module: empleado, action: index, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+empleado_insert:
+  url:    /empleado/insertar
+  param:  { module: empleado, action: insert, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+empleado_view:
+  url:    /empleado/ver
+  param:  { module: empleado, action: view, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+empleado_create:
+  url:    /empleado/crear
+  param:  { module: empleado, action: create, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+empleado_edit:
+  url:    /empleado/editar
+  param:  { module: empleado, action: edit, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+empleado_update:
+  url:    /empleado/actualizar
+  param:  { module: empleado, action: update, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+empleado_delete:
+  url:    /empleado/eliminar
+  param:  { module: empleado, action: delete, format: json }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+empleado_deleteSelect:
+  url:    /empleado/eliminarSeleccion
+  param:  { module: empleado, action: deleteSelect, format: html }
+  load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+##-------------------------- TIPO ID --------------------------##
 ##-------------------------- CIUDAD---------------------------------##
 
 ciudad_index:

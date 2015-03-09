@@ -13,7 +13,7 @@
       <table class="table table-bordered  table-striped table-condensed table-responsive">
        <thead> 
        <tr>
-           <th><?php echo i18n::__('desc') ?>:<input value="<?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$desc_tipo_id : '') ?>" type="text" class="frm-control" name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>"></th>
+           <th><?php echo i18n::__('identification') ?>:<input value="<?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$desc_tipo_id : '') ?>" type="text" class="frm-control" name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>"></th>
            <th><input class="btn btn-success btn-xs" type="submit" value="<?php echo i18n::__(((isset($objTipoId)) ? 'update' : 'register')) ?>"> <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a></th>
         </tr>
         </thead>

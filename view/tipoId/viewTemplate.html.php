@@ -6,7 +6,7 @@ use mvc\routing\routingClass as routing ?>
 <?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
 
 <div class="container container-fluid">
-    <h1>Información del Tipo de Empaque</h1>
+    <h1>Información de la Identificacion</h1>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
@@ -17,7 +17,7 @@ use mvc\routing\routingClass as routing ?>
             <thead>
                 <tr>
                     <th><?php echo i18n::__('id')?></th>
-                    <th><?php echo i18n::__('desc')?></th>
+                    <th><?php echo i18n::__('identification')?></th>
                 </tr>
             </thead>
             <tbody>

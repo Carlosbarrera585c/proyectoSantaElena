@@ -41,7 +41,18 @@ tipoId:
     title: Editar Tipo Identificacion
     
   view:
-    title: Ver Tipo Identificacion    
+    title: Ver Tipo Identificacion  
+    
+empleado:
+  index:
+    title: Empleado
+    javascript:
+      - index.js
+  edit:
+    title: Editar Empleado
+    
+  view:
+    title: Ver Empleado
        
 ciudad:
   index:

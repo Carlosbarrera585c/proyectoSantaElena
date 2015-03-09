@@ -4,6 +4,7 @@ dictionary:
   default:
     id:                   Id
     user:                 Usuario
+    employee:             Empleado
     created:              Creado
     actived:              Activado
     pass:                 Contraseña
@@ -15,8 +16,16 @@ dictionary:
     typePacking:          Tipo Empaque
     city:                 Ciudad
     paymentType:          Tipo de Pago
+    identification:       Identificacion
+    identificationType:   Tipo Identificacion
     newPaymentType:       Nuevo Tipo de Pago
     editPaymentType:      Editar Tipo de Pago
+    employeeName:         Nombre Empleado
+    employeeLastName:     Apellido Empleado
+    phone:                Telefono
+    direction:            Direccion
+    credential:           Credencial
+    mail:                 Correo
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.
     questionDelete:       ¿Desea Eliminar El Registro

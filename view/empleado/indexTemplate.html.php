@@ -5,13 +5,13 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-    <?php $id = tipoIdTableClass::ID ?>
-<?php $desc = tipoIdTableClass::DESC_TIPO_ID ?>
+<?php $id = empleadoTableClass::ID ?>
+<?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <div class="container container-fluid">
-    <h1><?php i18n::__('typePacking') ?></h1>
-    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'deleteSelect') ?>" method="POST">
+    <h1><?php i18n::__('employee') ?></h1>
+    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -19,18 +19,18 @@ use mvc\view\viewClass as view ?>
             <thead>
                 <tr>
                     <th><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('identificationType')?></th>
+                    <th><?php echo i18n::__('employeeName')?></th>
                     <th><?php echo i18n::__('actions')?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objTipoId as $tipo): ?>
+                <?php foreach ($objEmpleado as $tipo): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $tipo->$id ?>"></td>
-                        <td><?php echo $tipo->$desc ?></td>
+                        <td><?php echo $tipo->$nom_empleado ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'view', array(tipoIdTableClass::ID => $tipo->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'edit', array(tipoIdTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'view', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'edit', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
                             <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                         </td>
                     </tr>
@@ -42,11 +42,11 @@ use mvc\view\viewClass as view ?>
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $tipo->$desc ?>?
+                                <?php echo i18n::__('questionDelete')?> <?php echo $tipo->$nom_empleado ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $tipo->$id ?>, '<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('tipoId', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $tipo->$id ?>, '<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('empleado', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
                             </div>
                         </div>
                     </div>
@@ -55,8 +55,8 @@ use mvc\view\viewClass as view ?>
             </tbody>
         </table>
     </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'delete') ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::ID, true) ?>">
+    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'delete') ?>" method="POST">
+        <input type="hidden" id="idDelete" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>">
     </form>
 </div>
 <div class="modal fade" id="myModalDeleteMass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
