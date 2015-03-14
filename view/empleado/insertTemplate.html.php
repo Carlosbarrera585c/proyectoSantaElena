@@ -2,4 +2,4 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <h1>Nuevo Empleado</h1>
-<?php view::includePartial('empleado/formTipo') ?>
+<?php view::includePartial('empleado/formEmpleado', array('objTipoId' => $objTipoId, 'objCredencial' => $objCredencial)) ?>

@@ -19,20 +19,20 @@ class createActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-echo 2;
-                $desc_tipo_id = request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true));
+
+                $nombre = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true));
                 
                                
                 $data = array(
-                    tipoIdTableClass::DESC_TIPO_ID => $desc_tipo_id,
+                    credencialTableClass::NOMBRE => $nombre
                     
                 );
-                tipoIdTableClass::insert($data);
+                credencialTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-                routing::getInstance()->redirect('tipoId', 'index');
+                routing::getInstance()->redirect('credencial', 'index');
                   
             } else {
-                routing::getInstance()->redirect('tipoId', 'index');
+                routing::getInstance()->redirect('credencial', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

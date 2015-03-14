@@ -18,18 +18,12 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     public function execute() {
         try {
             $fields = array(
-                empleadoTableClass::ID,
-                empleadoTableClass::NOM_EMPLEADO,
-                empleadoTableClass::APELL_EMPLEADO,
-                empleadoTableClass::TELEFONO,
-                empleadoTableClass::DIRECCION,
-                empleadoTableClass::TIPO_ID_ID,
-                empleadoTableClass::NUMERO_IDENTIFICACION,
-                empleadoTableClass::CREDENCIAL_ID,
-                empleadoTableClass::CORREO
+                credencialTableClass::ID,
+                credencialTableClass::NOMBRE,
+                credencialTableClass::CREATED_AT
             );
-            $this->objEmpleado = empleadoTableClass::getAll($fields, false);
-            $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
+            $this->objCredencial = credencialTableClass::getAll($fields, true);
+            $this->defineView('index', 'credencial', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

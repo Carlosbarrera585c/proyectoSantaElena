@@ -26,6 +26,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $telefono = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true));
                 $direccion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)); 
                 $tipo_id_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, true));
+                $numero_identificacion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true));
                 $credencial_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
                 $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
                 
@@ -39,6 +40,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     empleadoTableClass::TELEFONO => $telefono,
                     empleadoTableClass::DIRECCION => $direccion,
                     empleadoTableClass::TIPO_ID_ID => $tipo_id_id,
+                    empleadoTableClass::NUMERO_IDENTIFICACION => $numero_identificacion,
                     empleadoTableClass::CREDENCIAL_ID => $credencial_id,
                     empleadoTableClass::CORREO => $correo
                     

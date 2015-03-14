@@ -32,6 +32,17 @@ tipoEmpaque:
   view:
     title: Ver Tipo Empaque
 
+credencial:
+  index:
+    title: Credencial
+    javascript:
+      - index.js
+  edit:
+    title: Editar Credencial
+    
+  view:
+    title: Ver Credenciales
+
 tipoId:
   index:
     title: Tipo Id

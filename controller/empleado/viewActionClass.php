@@ -26,6 +26,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 empleadoTableClass::TELEFONO,
                 empleadoTableClass::DIRECCION,
                 empleadoTableClass::TIPO_ID_ID,
+                empleadoTableClass::NUMERO_IDENTIFICACION,
                 empleadoTableClass::CREDENCIAL_ID,
                 empleadoTableClass::CORREO
             );

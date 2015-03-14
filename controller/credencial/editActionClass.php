@@ -1,14 +1,11 @@
 
-<?php
-
-use mvc\interfaces\controllerActionInterface;
-use mvc\controller\controllerClass;
-use mvc\config\configClass as config;
-use mvc\request\requestClass as request;
-use mvc\routing\routingClass as routing;
-use mvc\session\sessionClass as session;
-use mvc\i18n\i18nClass as i18n;
-
+<?php use mvc\interfaces\controllerActionInterface;
+ use mvc\controller\controllerClass;
+ use mvc\config\configClass as config;
+ use mvc\request\requestClass as request; 
+ use mvc\routing\routingClass as routing;
+ use mvc\session\sessionClass as session; 
+ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
@@ -18,37 +15,19 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(empleadoTableClass::ID)) {
+            if (request::getInstance()->hasRequest(credencialTableClass::ID)) {
                 $fields = array(
-                    empleadoTableClass::ID,
-                    empleadoTableClass::NOM_EMPLEADO,
-                    empleadoTableClass::APELL_EMPLEADO,
-                    empleadoTableClass::TELEFONO,
-                    empleadoTableClass::DIRECCION,
-                    empleadoTableClass::TIPO_ID_ID,
-                    empleadoTableClass::NUMERO_IDENTIFICACION,
-                    empleadoTableClass::CREDENCIAL_ID,
-                    empleadoTableClass::CORREO
+                    credencialTableClass::ID,
+                    credencialTableClass::NOMBRE,
+                    
                 );
                 $where = array(
-                    empleadoTableClass::ID => request::getInstance()->getRequest(empleadoTableClass::ID)
+                    credencialTableClass::ID => request::getInstance()->getRequest(credencialTableClass::ID)
                 );
-                
-                $fieldsTipoId = array(
-                tipoIdTableClass::ID,
-                tipoIdTableClass::DESC_TIPO_ID
-                );
-                $fieldsCredencial = array(
-                credencialTableClass::ID,
-                credencialTableClass::NOMBRE
-                );
-                
-                $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
-                $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
-                $this->objEmpleado = empleadoTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'empleado', session::getInstance()->getFormatOutput());
+                $this->objCredencial = credencialTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                $this->defineView('edit', 'credencial', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('empleado', 'index');
+                routing::getInstance()->redirect('credencial', 'index');
             }
 
 //            if (request::getInstance()->isMethod('POST')) {

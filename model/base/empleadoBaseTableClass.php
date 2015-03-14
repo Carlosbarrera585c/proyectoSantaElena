@@ -15,6 +15,7 @@ class empleadoBaseTableClass extends tableBaseClass {
     private $telefono;
     private $direccion;
     private $tipo_id_id;
+    private $numero_identificacion;
     private $credencial_id;
     private $correo;
 
@@ -24,6 +25,7 @@ class empleadoBaseTableClass extends tableBaseClass {
     const TELEFONO = 'telefono';
     const DIRECCION = 'direccion';
     const TIPO_ID_ID = 'tipo_id_id';
+    const NUMERO_IDENTIFICACION = 'numero_identificacion';
     const CREDENCIAL_ID = 'credencial_id';
     const CORREO = 'correo';
     function getId() {
@@ -48,6 +50,10 @@ class empleadoBaseTableClass extends tableBaseClass {
 
     function getTipo_id_id() {
         return $this->tipo_id_id;
+    }
+
+    function getNumero_identificacion() {
+        return $this->numero_identificacion;
     }
 
     function getCredencial_id() {
@@ -82,6 +88,10 @@ class empleadoBaseTableClass extends tableBaseClass {
         $this->tipo_id_id = $tipo_id_id;
     }
 
+    function setNumero_identificacion($numero_identificacion) {
+        $this->numero_identificacion = $numero_identificacion;
+    }
+
     function setCredencial_id($credencial_id) {
         $this->credencial_id = $credencial_id;
     }
@@ -90,7 +100,7 @@ class empleadoBaseTableClass extends tableBaseClass {
         $this->correo = $correo;
     }
 
-         /**
+             /**
      * Obtiene el nombre de la tabla
      * @return string
      */

@@ -102,6 +102,68 @@ default_reporte:
   param:  { module: default, action: report, format: pdf }
 ##-------------------------- EJEMPLO --------------------------##
 
+##-------------------------- CREDENCIAL --------------------------##
+credencial_index:
+  url:    /credencial/index
+  param:  { module: credencial, action: index, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_insert:
+  url:    /credencial/insertar
+  param:  { module: credencial, action: insert, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
+credencial_view:
+  url:    /credencial/ver
+  param:  { module: credencial, action: view, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_create:
+  url:    /credencial/crear
+  param:  { module: credencial, action: create, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_edit:
+  url:    /credencial/editar
+  param:  { module: credencial, action: edit, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_update:
+  url:    /credencial/actualizar
+  param:  { module: credencial, action: update, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_delete:
+  url:    /credencial/eliminar
+  param:  { module: credencial, action: delete, format: json }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_deleteSelect:
+  url:    /credencial/eliminarSeleccion
+  param:  { module: credencial, action: deleteSelect, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_reporte:
+  url:    /credencial/reporte
+  param:  { module: credencial, action: report, format: pdf }
+##-------------------------- CREDENCIAL --------------------------##
+
 ##-------------------------- TIPO EMPAQUE --------------------------##
 
 tipoEmpaque_index:
@@ -235,6 +297,10 @@ empleado_insert:
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
     
 empleado_view:
   url:    /empleado/ver
@@ -256,7 +322,11 @@ empleado_edit:
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    
 empleado_update:
   url:    /empleado/actualizar
   param:  { module: empleado, action: update, format: html }

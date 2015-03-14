@@ -9,6 +9,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $telefono = empleadoTableClass::TELEFONO ?>
 <?php $direccion = empleadoTableClass::DIRECCION ?>
 <?php $tipo_id_id = empleadoTableClass::TIPO_ID_ID ?>
+<?php $num_identificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
 <?php $credencial_id = empleadoTableClass::CREDENCIAL_ID ?>
 <?php $correo = empleadoTableClass::CORREO ?>
 <div class="container container-fluid">
@@ -27,7 +28,8 @@ use mvc\i18n\i18nClass as i18n ?>
                     <th><?php echo i18n::__('employeeLastName') ?></th>   
                     <th><?php echo i18n::__('phone') ?></th>  
                     <th><?php echo i18n::__('direction') ?></th>   
-                    <th><?php echo i18n::__('identification') ?></th>   
+                    <th><?php echo i18n::__('identification') ?></th>
+                    <th><?php echo i18n::__('numberIdentification') ?></th>                    
                     <th><?php echo i18n::__('credential') ?></th>   
                     <th><?php echo i18n::__('mail') ?></th>   
                 </tr>
@@ -40,6 +42,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$tipo_id_id : '') ?></td>
+                    <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$num_identificacion : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$credencial_id : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?></td></tr>
             </tbody>

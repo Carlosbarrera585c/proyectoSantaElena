@@ -1,3 +1,4 @@
+
 <?php
 
 use mvc\interfaces\controllerActionInterface;
@@ -13,32 +14,32 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-
-class createActionClass extends controllerClass implements controllerActionInterface {
+class updateActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-echo 2;
-                $desc_tipo_id = request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true));
+
+                $id = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::ID, true));
+                $nombre = request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true));
                 
-                               
+                $ids = array(
+                    credencialTableClass::ID => $id
+                );
+
                 $data = array(
-                    tipoIdTableClass::DESC_TIPO_ID => $desc_tipo_id,
+                    credencialTableClass::NOMBRE => $nombre,
                     
                 );
-                tipoIdTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-                routing::getInstance()->redirect('tipoId', 'index');
-                  
-            } else {
-                routing::getInstance()->redirect('tipoId', 'index');
+
+                credencialTableClass::update($ids, $data);
             }
+            session::getInstance()->setSuccess(i18n::__('successfulUpdate'));
+            routing::getInstance()->redirect('credencial', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
             echo $exc->getTraceAsString();
-            session::getInstance()->setError(i18n::__('failureToRegister'));
         }
     }
 
