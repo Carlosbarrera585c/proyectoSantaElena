@@ -86,3 +86,59 @@ tipoPago:
     
   view:
     title: Ver Tipo Pago
+    
+pagoTrabajadores:
+  index:
+    title: Pago de Trabajadores
+    javascript:
+      - index.js
+  edit:
+    title: Editar Pago de Trabajadores
+    
+  view:
+    title: Ver Pago de Trabajadores
+
+
+entradaBodega:
+  index:
+    title: Entrada de Bodega
+    javascript:
+      - index.js
+  edit:
+    title: Editar Entrada de Bodega
+    
+  view:
+    title: Ver Entrada de Bodega
+    
+tipoInsumo:
+  index:
+    title: Tipo Insumo
+    javascript:
+      - index.js
+  edit:
+    title: Editar Tipo Insumo
+    
+  view:
+    title: Ver Tipo Insumo
+    
+proveedor:
+  index:
+    title: Proveedor
+    javascript:
+      - index.js
+  edit:
+    title: Editar Proveedor
+    
+  view:
+    title: Ver Proveedor
+    
+tipoDoc:
+  index:
+    title: Tipo Documento
+    javascript:
+      - index.js
+  edit:
+    title: Editar Tipo Documento
+    
+  view:
+    title: Ver Tipo Documento

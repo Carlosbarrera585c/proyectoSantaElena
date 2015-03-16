@@ -468,3 +468,303 @@ tipoPago_deleteSelect:
     - model/tipoPagoTableClass.php
 
 ##-------------------------- TIPO PAGO----------------------------##
+
+##-------------------------- TIPO INSUMO--------------------------##
+
+tipoInsumo_index:
+  url:    /tipoInsumo/index
+  param:  { module: tipoInsumo, action: index, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+tipoInsumo_insert:
+  url:    /tipoInsumo/insertar
+  param:  { module: tipoInsumo, action: insert, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+    
+tipoInsumo_view:
+  url:    /tipoInsumo/ver
+  param:  { module: tipoInsumo, action: view, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+tipoInsumo_create:
+  url:    /tipoInsumo/crear
+  param:  { module: tipoInsumo, action: create, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+tipoInsumo_edit:
+  url:    /tipoInsumo/editar
+  param:  { module: tipoInsumo, action: edit, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+tipoInsumo_update:
+  url:    /tipoInsumo/actualizar
+  param:  { module: tipoInsumo, action: update, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+tipoInsumo_delete:
+  url:    /tipoInsumo/eliminar
+  param:  { module: tipoInsumo, action: delete, format: json }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+tipoInsumo_deleteSelect:
+  url:    /tipoInsumo/eliminarSeleccion
+  param:  { module: tipoInsumo, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
+
+##-------------------------- TIPO INSUMO ----------------------------##
+
+##-------------------------- PAGO TRABAJADORES-----------------------------##
+
+pagoTrabajadores_index:
+  url:    /pagoTrabajadores/index
+  param:  { module: pagoTrabajadores, action: index, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+pagoTrabajadores_insert:
+  url:    /pagoTrabajadores/insertar
+  param:  { module: pagoTrabajadores, action: insert, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+    
+pagoTrabajadores_view:
+  url:    /pagoTrabajadores/ver
+  param:  { module: pagoTrabajadores, action: view, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+pagoTrabajadores_create:
+  url:    /pagoTrabajadores/crear
+  param:  { module: pagoTrabajadores, action: create, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+pagoTrabajadores_edit:
+  url:    /pagoTrabajadores/editar
+  param:  { module: pagoTrabajadores, action: edit, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+pagoTrabajadores_update:
+  url:    /pagoTrabajadores/actualizar
+  param:  { module: pagoTrabajadores, action: update, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+pagoTrabajadores_delete:
+  url:    /pagoTrabajadores/eliminar
+  param:  { module: pagoTrabajadores, action: delete, format: json }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+pagoTrabajadores_deleteSelect:
+  url:    /pagoTrabajadores/eliminarSeleccion
+  param:  { module: pagoTrabajadores, action: deleteSelect, format: html }
+  load:
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
+
+##-------------------------- PAGO TRABAJADORES----------------------------##
+
+##-------------------------- ENTRADA BODEGA-----------------------------##
+
+entradaBodega_index:
+  url:    /entradaBodega/index
+  param:  { module: entradaBodega, action: index, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_insert:
+  url:    /entradaBodega/insertar
+  param:  { module: entradaBodega, action: insert, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    
+entradaBodega_view:
+  url:    /entradaBodega/ver
+  param:  { module: entradaBodega, action: view, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_create:
+  url:    /entradaBodega/crear
+  param:  { module: entradaBodega, action: create, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_edit:
+  url:    /entradaBodega/editar
+  param:  { module: entradaBodega, action: edit, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_update:
+  url:    /entradaBodega/actualizar
+  param:  { module: entradaBodega, action: update, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_delete:
+  url:    /entradaBodega/eliminar
+  param:  { module: entradaBodega, action: delete, format: json }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_deleteSelect:
+  url:    /entradaBodega/eliminarSeleccion
+  param:  { module: entradaBodega, action: deleteSelect, format: html }
+  load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+##-------------------------- ENTRADA BODEGA----------------------------##
+
+##-------------------------- PROVEEDOR-----------------------------##
+
+proveedor_index:
+  url:    /proveedor/index
+  param:  { module: proveedor, action: index, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proveedor_insert:
+  url:    /proveedor/insertar
+  param:  { module: proveedor, action: insert, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+proveedor_view:
+  url:    /proveedor/ver
+  param:  { module: proveedor, action: view, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proveedor_create:
+  url:    /proveedor/crear
+  param:  { module: proveedor, action: create, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proveedor_edit:
+  url:    /proveedor/editar
+  param:  { module: proveedor, action: edit, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proveedor_update:
+  url:    /proveedor/actualizar
+  param:  { module: proveedor, action: update, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proveedor_delete:
+  url:    /proveedor/eliminar
+  param:  { module: proveedor, action: delete, format: json }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+proveedor_deleteSelect:
+  url:    /proveedor/eliminarSeleccion
+  param:  { module: proveedor, action: deleteSelect, format: html }
+  load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+##-------------------------- PROVEEDOR----------------------------##
+
+##-------------------------- TIPO DOC-----------------------------##
+
+tipoDoc_index:
+  url:    /tipoDoc/index
+  param:  { module: tipoDoc, action: index, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+tipoDoc_insert:
+  url:    /tipoDoc/insertar
+  param:  { module: tipoDoc, action: insert, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    
+tipoDoc_view:
+  url:    /tipoDoc/ver
+  param:  { module: tipoDoc, action: view, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+proveedor_create:
+  url:    /tipoDoc/crear
+  param:  { module: tipoDoc, action: create, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+tipoDoc_edit:
+  url:    /tipoDoc/editar
+  param:  { module: tipoDoc, action: edit, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+tipoDoc_update:
+  url:    /tipoDoc/actualizar
+  param:  { module: tipoDoc, action: update, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+tipoDoc_delete:
+  url:    /tipoDoc/eliminar
+  param:  { module: tipoDoc, action: delete, format: json }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+tipoDoc_deleteSelect:
+  url:    /tipoDoc/eliminarSeleccion
+  param:  { module: tipoDoc, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+
+##--------------------------TIPO DOC----------------------------##

@@ -2,32 +2,15 @@
 culture:                  Español
 dictionary:
   default:
-    id:                   Id
-    user:                 Usuario
-    employee:             Empleado
+    ##----------------------SISTEMA-------------------------##
+    register:             Registrar
     created:              Creado
     actived:              Activado
-    pass:                 Contraseña
-    register:             Registrar
     update:               Actualizar
-    updated:              Actualizado
     desc:                 Descripción
     actions:              Acciones
-    typePacking:          Tipo Empaque
-    city:                 Ciudad
-    paymentType:          Tipo de Pago
-    identification:       Identificacion
-    identificationType:   Tipo Identificacion
-    newPaymentType:       Nuevo Tipo de Pago
-    editPaymentType:      Editar Tipo de Pago
-    employeeName:         Nombre Empleado
-    employeeLastName:     Apellido Empleado
-    phone:                Telefono
-    direction:            Direccion
-    numberIdentification: Numero de Identificacion
-    credential:           Credencial
-    nameCredential:       Nombre Credencial
-    mail:                 Correo
+    update:               Actualizar
+    updated:              Actualizado
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.
     questionDelete:       ¿Desea Eliminar El Registro
@@ -43,6 +26,93 @@ dictionary:
     failureToRegister:    Algo Fallo Al Registrar.
     successfulDelete:     La Eliminación Fue Exitosa.
     failureToDelete:      Algo Fallo Al Eliminar. 
+    ##----------------------SISTEMA-------------------------##
+    
+    ##----------------------USUARIO-------------------------##
+    id:                   Id
+    user:                 Usuario
+    pass:                 Contraseña
+    ##----------------------USUARIO-------------------------##
+    
+    ##----------------------TIPO EMPAQUE-------------------------##
+    typePacking:          Tipo Empaque
+    ##----------------------TIPO EMPAQUE-------------------------##
+    ##----------------------TIPO INSUMO-------------------------##
+    inputType:            Tipo Insumo
+    newInputType:         Nuevo Tipo Insumo
+    infoInput:            Información de los tipos de Insumos
+    ##----------------------TIPO INSUMO-------------------------##
+    
+    ##----------------------TIPO PAGO---------------------------##
+    paymentType:          Tipo de Pago
+    newPaymentType:       Nuevo Tipo de Pago
+    editPaymentType:      Editar Tipo de Pago
+    ##----------------------TIPO PAGO---------------------------##
+    
+    ##----------------------ENTRADA BODEGA-------------------------##
+    cellarEntrance:       Entrada Bodega
+    date:                 Fecha
+    newCellarEntrance:    Nueva Entrada Bodega
+    infoCellarEntrance:   Informacion Entrada Bodega
+    ##----------------------ENTRADA BODEGA-------------------------##
+    
+    ##-------------------------- CIUDAD----------------------------##
+    city:                 Ciudad
+    idCity:               Id Ciudad
+    name:                 Nombre
+    newCity:              Nueva Ciudad
+    infoCity:             Información de las Ciudades
+    ##-------------------------- CIUDAD----------------------------##
+    
+    ##-------------------------- PROVEEDOR----------------------------##
+    provider:             Proveedor
+    newProvider:          Nuevo Proveedor
+    businessName:         Razon Social
+    direction:            Direccion 
+    phone:                Telefono
+    idProvider:           Id Proveedor
+    editProvider:         Editar Proveedor
+    ##-------------------------- PROVEEDOR----------------------------##
+    
+    ##-------------------------- PAGO TRABAJADORES--------------------##
+    payWorkers:           Pago de Trabajadores
+    newPayWorkers:        Nuevo Pago de Trabajadores
+    editPlayWorkers:      Editar Pago de Trabajadores
+    periodBeginning:      Periodo Inicio
+    orderPeriod:          Periodo Fin
+    idBusiness:           Id empresa
+    ##-------------------------- PAGO TRABAJADORES--------------------##
+    
+    ##-------------------------- TIPO DOCUMENTO--------------------##
+    
+    docType:              Tipo Documento
+    newDocType:           Nuevo Tipo Documento
+    editDocType:          Editar Tipo Documento
+    infoDocType:          Informacion de los Tipos de Documentos
+  
+    ##-------------------------- TIPO DOCUMENTO--------------------##
+    
+    ##-------------------------- CREDENCIAL-----------------------##
+    numberIdentification: Numero de Identificacion
+    credential:           Credencial
+    nameCredential:       Nombre Credencial
+    mail:                 Correo
+    
+    ##-------------------------- CREDENCIAL-----------------------##
+    
+    ##-------------------------- EMPLEADO-----------------------##
+    employee:             Empleado
+    employeeName:         Nombre Empleado
+    employeeLastName:     Apellido Empleado
+    ##-------------------------- EMPLEADO-----------------------##
+    
+    ##---------------------- TIPO IDENTIFICACION----------------##
+    identification:       Identificacion
+    identificationType:   Tipo Identificacion
+    ##---------------------- TIPO IDENTIFICACION----------------##
+    
+    
+    ##-------------------------- ERRORES --------------------##
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.
@@ -51,4 +121,6 @@ dictionary:
     10001:                Existe un error en la definición de los includes
     10002:                No hay definido un ambito (dev o prod) para la aplicación
     10003:                El arhivo %file% no existe
-    10004:                El directorio %path% no pudo ser creado
+    10004:                Elz directorio %path% no pudo ser creado
+    ##-------------------------- ERRORES--------------------##
+
