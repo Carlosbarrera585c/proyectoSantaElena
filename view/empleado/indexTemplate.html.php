@@ -7,20 +7,23 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php i18n::__('employee') ?></h1>
+    <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"> Empleado</i></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover">
             <thead>
                 <tr>
-                    <th><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('employeeName')?></th>
-                    <th><?php echo i18n::__('actions')?></th>
+                    <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                    <th><?php echo i18n::__('employeeName') ?></th>
+                    <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +37,7 @@ use mvc\view\viewClass as view ?>
                             <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="myModalDelete<?php echo $tipo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade" id="myModalDelete<?php echo $tipo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -42,7 +45,7 @@ use mvc\view\viewClass as view ?>
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $tipo->$nom_empleado ?>?
+                                <?php echo i18n::__('questionDelete') ?> <?php echo $tipo->$nom_empleado ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -51,7 +54,7 @@ use mvc\view\viewClass as view ?>
                         </div>
                     </div>
                 </div>
-                <?php endforeach ?>
+            <?php endforeach ?>
             </tbody>
         </table>
     </form>
@@ -67,7 +70,7 @@ use mvc\view\viewClass as view ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
             </div>
             <div class="modal-body">
-                <?php echo i18n::__('confirmDeleteMass')?>
+                <?php echo i18n::__('confirmDeleteMass') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

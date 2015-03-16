@@ -7,8 +7,11 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
     <?php $id = tipoEmpaqueTableClass::ID ?>
 <?php $desc = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
+<?php view::includePartial('empleado/menu')?>
 <div class="container container-fluid">
-    <h1><?php i18n::__('typePacking') ?></h1>
+        <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"> Tipo de Empaque</i></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
