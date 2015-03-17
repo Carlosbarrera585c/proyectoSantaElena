@@ -5,40 +5,39 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<?php $usu = usuarioTableClass::USER ?>
-<?php $id = usuarioTableClass::ID ?>
+<?php $id = empresaTableClass::ID ?>
+<?php $nom_empresa = empresaTableClass::NOM_EMPRESA ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-   <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('user') ?></h1>
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('business') ?></i></h1>
     </div>
-    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('default', 'deleteSelect') ?>" method="POST">
+    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empresa', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('empresa', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover">
             <thead>
                 <tr>
-                    <th><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('user')?></th>
-                    <th><?php echo i18n::__('actions')?></th>
+                    <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                    <th><?php echo i18n::__('name') ?></th>
+                    <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objUsuarios as $usuario): ?>
+                <?php foreach ($objEmpresa as $empresa): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
-                        <td><?php echo $usuario->$usu ?></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $empresa->$id ?>"></td>
+                        <td><?php echo $empresa->$nom_empresa ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'view', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->$id ?>" onclick="confirmarEliminar(<?php echo $usuario->$id ?>)" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('empresa', 'view', array(empresaTableClass::ID => $empresa->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('empresa', 'edit', array(empresaTableClass::ID => $empresa->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $empresa->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                         </td>
                     </tr>
-                <div class="modal fade" id="myModalDelete<?php echo $usuario->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade" id="myModalDelete<?php echo $empresa->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -46,11 +45,11 @@ use mvc\view\viewClass as view ?>
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $usuario->$usu ?>?
+                                <?php echo i18n::__('questionDelete') ?> <?php echo $empresa->$nom_empresa ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $usuario->$id ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('default', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $empresa->$id ?>, '<?php echo empresaTableClass::getNameField(empresaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('empresa', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
                             </div>
                         </div>
                     </div>
@@ -59,8 +58,8 @@ use mvc\view\viewClass as view ?>
             </tbody>
         </table>
     </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('default', 'delete') ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
+    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('empresa', 'delete') ?>" method="POST">
+        <input type="hidden" id="idDelete" name="<?php echo empresaTableClass::getNameField(empresaTableClass::ID, true) ?>">
     </form>
 </div>
 <div class="modal fade" id="myModalDeleteMass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -71,7 +70,7 @@ use mvc\view\viewClass as view ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
             </div>
             <div class="modal-body">
-                <?php echo i18n::__('confirmDeleteMass')?>
+                <?php echo i18n::__('confirmDeleteMass') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

@@ -1,11 +1,13 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-
 <?php $id = proveedorTableClass::ID ?>
 <?php $razonS = proveedorTableClass::RAZON_SOCIAL ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('provider')?></h1>
+    <div class="page-header titulo">
+       <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('provider') ?></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

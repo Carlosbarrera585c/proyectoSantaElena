@@ -4,8 +4,11 @@
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
 <?php $provee = entradaBodegaTableClass::PROVEEDOR_ID ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('cellarEntrance')?></h1>
+    <div class="page-header titulo">
+       <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('cellarEntrance') ?></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

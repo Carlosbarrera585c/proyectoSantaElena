@@ -142,3 +142,25 @@ tipoDoc:
     
   view:
     title: Ver Tipo Documento
+    
+detalleEntrada:
+  index:
+    title: Detalle Entrada
+    javascript:
+      - index.js
+  edit:
+    title: Editar Detalle Entrada
+    
+  view:
+    title: Ver Detalle Entrada
+    
+empresa:
+  index:
+    title: Empresa
+    javascript:
+      - index.js
+  edit:
+    title: Editar Empresa
+    
+  view:
+    title: Ver Empresa

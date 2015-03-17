@@ -8,7 +8,7 @@ use mvc\config\configClass;
  * 
  * @author Carlos Alberto Barrera Montoya <carlosbarrera585@hotmail.com>
  */
-class empleadoTableClass extends empleadoBaseTableClass {
+class empresaTableClass extends empresaBaseTableClass {
     
 }
 

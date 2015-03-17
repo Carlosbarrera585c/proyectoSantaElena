@@ -6,8 +6,11 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = ciudadTableClass::ID ?>
 <?php $ciu = ciudadTableClass::NOM_CIUDAD ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('city')?></h1>
+    <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('city') ?></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

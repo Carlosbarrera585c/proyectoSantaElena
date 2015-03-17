@@ -3,8 +3,11 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $id = tipoInsumoTableClass::ID ?>
 <?php $desc = tipoInsumoTableClass::DESC_TIPO_INSUMO ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('inputType') ?></h1>
+    <div class="page-header titulo">
+       <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('inputType') ?></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

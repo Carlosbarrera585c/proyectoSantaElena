@@ -111,6 +111,14 @@ dictionary:
     identificationType:   Tipo Identificacion
     ##---------------------- TIPO IDENTIFICACION----------------##
     
+     ##---------------------- EMPRESA---------------------------##
+    business:             Empresa
+    newBusiness:          Nueva Empresa
+    editBusiness:         Editar Empresa
+    infoBusiness:         Informacion Sobre las Empresas
+    nit:                  NIT
+    ##---------------------- EMPRESA----------------------------##
+    
     
     ##-------------------------- ERRORES --------------------##
   errors:

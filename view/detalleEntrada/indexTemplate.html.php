@@ -1,11 +1,14 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-<?php $id = entradaBodegaTableClass::ID ?>
-<?php $fecha = entradaBodegaTableClass::FECHA ?>
-<?php $provee = entradaBodegaTableClass::PROVEEDOR_ID ?>
+<?php $id = detalleEntradaBodegaTableClass::ID ?>
+<?php $cant = detalleEntradaBodegaTableClass::CANTIDAD ?>
+<?php $insumo = detalleEntradaBodegaTableClass::INSUMO_ID ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('cellarEntrance')?></h1>
+     <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"> detalle </i> <?php echo i18n::__('cellarEntrance') ?></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
@@ -23,12 +26,12 @@
             <tbody>
                 <?php foreach ($objEntradaBodega as $entradaB): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $ciudad->$id ?>"></td>
-                        <td><?php echo $entradaB->$fecha ?></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $entradaB->$id ?>"></td>
+                        <td><?php echo $entradaB->$cant ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'view', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'edit', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $ciudad->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'view', array(detalleEntradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'edit', array(detalleEntradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $entradaB->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                         </td>
                     </tr>
                     <div class="modal fade" id="myModalDelete<?php echo $entradaB->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

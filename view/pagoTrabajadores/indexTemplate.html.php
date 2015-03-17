@@ -1,16 +1,17 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-<?php $id = tipoEmpaqueTableClass::ID ?>
-<?php $desc = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
-<?php view::includePartial('empleado/menu')?>
+<?php $id = pagoTrabajadoresTableClass::ID ?>
+<?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
+<?php $periodo_inicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
+<?php $periodo_fin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
+<?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
+
 <div class="container container-fluid">
-        <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> Tipo de Empaque</i></h1>
-    </div>
-    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'deleteSelect') ?>" method="POST">
+    <h1><?php echo i18n::__('payWorkers') ?></h1>
+    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -18,22 +19,22 @@
             <thead>
                 <tr>
                     <th><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('typePacking')?></th>
+                    <th><?php echo i18n::__('date')?></th>
                     <th><?php echo i18n::__('actions')?></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objTipoEmpaque as $tipo): ?>
+                <?php foreach ($objPagoTrabajadores as $pagoTrabajadores): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $tipo->$id ?>"></td>
-                        <td><?php echo $tipo->$desc ?></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $pagoTrabajadores->$id ?>"></td>
+                        <td><?php echo $pagoTrabajadores->$fecha ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'view', array(tipoEmpaqueTableClass::ID => $tipo->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'edit', array(tipoEmpaqueTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'view', array(pagoTrabajadoresTableClass::ID => $pagoTrabajadores->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'edit', array(pagoTrabajadoresTableClass::ID => $pagoTrabajadores->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $pagoTrabajadores->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="myModalDelete<?php echo $tipo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="myModalDelete<?php echo $pagoTrabajadores->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -41,11 +42,11 @@
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $tipo->$desc ?>?
+                                <?php echo i18n::__('questionDelete')?> <?php echo $pagoTrabajadores->$fecha ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $tipo->$id ?>, '<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $pagoTrabajadores->$id ?>, '<?php echo pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
                             </div>
                         </div>
                     </div>
@@ -54,8 +55,8 @@
             </tbody>
         </table>
     </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'delete') ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true) ?>">
+    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'delete') ?>" method="POST">
+        <input type="hidden" id="idDelete" name="<?php echo pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::ID, true) ?>">
     </form>
 </div>
 <div class="modal fade" id="myModalDeleteMass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -66,7 +67,7 @@
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
             </div>
             <div class="modal-body">
-                <?php echo i18n::__('confirmDeleteMass')?>
+                <?php echo i18n::__('confirmDeleteMass') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

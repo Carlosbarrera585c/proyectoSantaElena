@@ -768,3 +768,127 @@ tipoDoc_deleteSelect:
     - model/tipoDocTableClass.php
 
 ##--------------------------TIPO DOC----------------------------##
+
+##--------------------------DETALLE ENTRADA-----------------------------##
+
+detalleEntrada_index:
+  url:    /detalleEntrada/index
+  param:  { module: detalleEntrada, action: index, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+detalleEntrada_insert:
+  url:    /detalleEntrada/insertar
+  param:  { module: detalleEntrada, action: insert, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+    
+detalleEntrada_view:
+  url:    /detalleEntrada/ver
+  param:  { module: detalleEntrada, action: view, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+detalleEntrada_create:
+  url:    /detalleEntrada/crear
+  param:  { module: detalleEntrada, action: create, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+detalleEntrada_edit:
+  url:    /detalleEntrada/editar
+  param:  { module: detalleEntrada, action: edit, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+detalleEntrada_update:
+  url:    /detalleEntrada/actualizar
+  param:  { module: detalleEntrada, action: update, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+detalleEntrada_delete:
+  url:    /detalleEntrada/eliminar
+  param:  { module: detalleEntrada, action: delete, format: json }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+detalleEntrada_deleteSelect:
+  url:    /detalleEntrada/eliminarSeleccion
+  param:  { module: detalleEntrada, action: deleteSelect, format: html }
+  load:
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+
+##--------------------------TIPO DOC----------------------------##
+
+##--------------------------DETALLE ENTRADA-----------------------------##
+
+empresa_index:
+  url:    /empresa/index
+  param:  { module: empresa, action: index, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+
+empresa_insert:
+  url:    /empresa/insertar
+  param:  { module: empresa, action: insert, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+empresa_view:
+  url:    /empresa/ver
+  param:  { module: empresa, action: view, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+
+empresa_create:
+  url:    /empresa/crear
+  param:  { module: empresa, action: create, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+
+empresa_edit:
+  url:    /empresa/editar
+  param:  { module: empresa, action: edit, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+empresa_update:
+  url:    /empresa/actualizar
+  param:  { module: empresa, action: update, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+
+empresa_delete:
+  url:    /empresa/eliminar
+  param:  { module: empresa, action: delete, format: json }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+
+empresa_deleteSelect:
+  url:    /empresa/eliminarSeleccion
+  param:  { module: empresa, action: deleteSelect, format: html }
+  load:
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
+
+##--------------------------TIPO DOC----------------------------##

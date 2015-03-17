@@ -4,9 +4,9 @@ use mvc\model\modelClass;
 use mvc\config\configClass;
 
 /**
- * Description of usuarioTableClass
+ * Description of tipoInsumoTableClass
  * 
- * @author Carlos Alberto Barrera Montoya <carlosbarrera585@hotmail.com>
+ * @author Cristian Ramirez <critianRamirezXD@outlook.es>
  */
 class tipoInsumoTableClass extends tipoInsumoBaseTableClass {
     
