@@ -125,7 +125,12 @@ dictionary:
     price:                Precio
     IdentificatiOfInpuType: Tipo Id Insumo
     ##---------------------- INSUMo----------------------------##
-    
+    ##---------------------- EMPAQUE----------------------------##
+    packing:              Empaque
+    informationPacking:   Información de Empaque
+    editPacking:          Editar Empaque
+    newPacking:           Nuevo Empaque
+    ##---------------------- EMPAQUE----------------------------##
     
     ##-------------------------- ERRORES --------------------##
   errors:

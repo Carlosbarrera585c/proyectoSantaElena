@@ -175,3 +175,14 @@ insumo:
     
   view:
     title: Ver insumo
+
+empaque:
+  index:
+    title: Empaque
+    javascript:
+      - index.js
+  edit:
+    title: Editar Empaque
+    
+  view:
+    title: Ver Empaque

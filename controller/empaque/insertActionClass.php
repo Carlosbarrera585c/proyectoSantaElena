@@ -17,19 +17,19 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
-            
-            $fieldsTipoId = array(
-            tipoIdTableClass::ID,
-            tipoIdTableClass::DESC_TIPO_ID
+
+            $fieldsEmpleado = array(
+                empleadoTableClass::ID,
+                empleadoTableClass::NOM_EMPLEADO
             );
-            $fieldsCredencial = array(
-            credencialTableClass::ID,
-            credencialTableClass::NOMBRE
+            $fieldsTipoEmpaque = array(
+                tipoEmpaqueTableClass::ID,
+                tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE
             );
-            
-            $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
-            $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
-        $this->defineView('insert', 'empleado', session::getInstance()->getFormatOutput());
+
+            $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
+            $this->objTipoEmpaque = tipoEmpaqueTableClass::getAll($fieldsTipoEmpaque);
+            $this->defineView('insert', 'empaque', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

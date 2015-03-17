@@ -978,6 +978,10 @@ empaque_view:
   load:
     - model/base/empaqueBaseTableClass.php
     - model/empaqueTableClass.php
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
 
 empaque_create:
   url:    /empaque/crear

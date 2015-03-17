@@ -7,7 +7,7 @@ use mvc\model\table\tableBaseClass;
  * 
  * @author Carlos Alberto Barrera Montoya <carlosbarrera585@hotmail.com>
  */
-class empleadoBaseTableClass extends tableBaseClass {
+class empaqueBaseTableClass extends tableBaseClass {
 
     private $id;
     private $fecha;
