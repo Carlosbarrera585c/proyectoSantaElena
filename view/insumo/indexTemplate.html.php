@@ -9,8 +9,11 @@ use mvc\view\viewClass as view ?>
     <?php $desc_insumo = insumoTableClass::DESC_INSUMO ?>
     <?php $precio = insumoTableClass::PRECIO ?>
     <?php $tipo_insumo_id = insumoTableClass::TIPO_INSUMO_ID ?>
-
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
+    <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('input') ?></i></h1>
+    </div>
     <h1><?php i18n::__('input') ?></h1>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
