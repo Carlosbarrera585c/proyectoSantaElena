@@ -53,7 +53,7 @@ dictionary:
     cellarEntrance:       Entrada Bodega
     date:                 Fecha
     newCellarEntrance:    Nueva Entrada Bodega
-    infoCellarEntrance:   Informacion Entrada Bodega
+    infoCellarEntrance:   Información Entrada Bodega
     ##----------------------ENTRADA BODEGA-------------------------##
     
     ##-------------------------- CIUDAD----------------------------##
@@ -67,8 +67,8 @@ dictionary:
     ##-------------------------- PROVEEDOR----------------------------##
     provider:             Proveedor
     newProvider:          Nuevo Proveedor
-    businessName:         Razon Social
-    direction:            Direccion 
+    businessName:         Razón Social
+    direction:            Dirección 
     phone:                Telefono
     idProvider:           Id Proveedor
     editProvider:         Editar Proveedor
@@ -80,7 +80,7 @@ dictionary:
     editPlayWorkers:      Editar Pago de Trabajadores
     periodBeginning:      Periodo Inicio
     orderPeriod:          Periodo Fin
-    idBusiness:           Id empresa
+    idBusiness:           Id Empresa
     ##-------------------------- PAGO TRABAJADORES--------------------##
     
     ##-------------------------- TIPO DOCUMENTO--------------------##
@@ -88,12 +88,12 @@ dictionary:
     docType:              Tipo Documento
     newDocType:           Nuevo Tipo Documento
     editDocType:          Editar Tipo Documento
-    infoDocType:          Informacion de los Tipos de Documentos
+    infoDocType:          Información de los Tipos de Documentos
   
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     ##-------------------------- CREDENCIAL-----------------------##
-    numberIdentification: Numero de Identificacion
+    numberIdentification: Número de Identificación
     credential:           Credencial
     nameCredential:       Nombre Credencial
     mail:                 Correo
@@ -107,23 +107,23 @@ dictionary:
     ##-------------------------- EMPLEADO-----------------------##
     
     ##---------------------- TIPO IDENTIFICACION----------------##
-    identification:       Identificacion
-    identificationType:   Tipo Identificacion
+    identification:       Identificación
+    identificationType:   Tipo Identificación
     ##---------------------- TIPO IDENTIFICACION----------------##
     
      ##---------------------- EMPRESA---------------------------##
     business:             Empresa
     newBusiness:          Nueva Empresa
     editBusiness:         Editar Empresa
-    infoBusiness:         Informacion Sobre las Empresas
+    infoBusiness:         Información Sobre las Empresas
     nit:                  NIT
     ##---------------------- EMPRESA----------------------------##
     
     ##---------------------- INSUMO----------------------------##
-    input:                insumo
-    descriptionInput:     descripción de insumo
-    price:                precio
-    IdentificatiOfInpuType: tipo id insumo
+    input:                Insumo
+    descriptionInput:     Descripción de Insumo
+    price:                Precio
+    IdentificatiOfInpuType: Tipo Id Insumo
     ##---------------------- INSUMo----------------------------##
     
     

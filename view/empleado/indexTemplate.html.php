@@ -10,7 +10,7 @@ use mvc\view\viewClass as view ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> Empleado</i></h1>
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('employee') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">

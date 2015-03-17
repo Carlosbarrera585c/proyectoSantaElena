@@ -1,6 +1,7 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,19 +20,25 @@ use mvc\routing\routingClass as routing ?>
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">Usuarios</a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('ciudad', 'index') ?>">Ciudad</a></li>
-                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('credencial', 'index') ?>">Credenciales</a></li>
+                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
+                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoId', 'index') ?>"><?php echo i18n::__('identification') ?></a></li>
+                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('credencial', 'index') ?>"><?php echo i18n::__('credential') ?></a></li>
+                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empresa', 'index') ?>"><?php echo i18n::__('business') ?></a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>">Proveedores</a></li>
+                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('insumo', 'index') ?>">Insumo</a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('entradaBodega', 'index') ?>">Entrada Bodega</a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoDoc', 'index') ?>">Tipo Documentos</a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoInsumo', 'index') ?>">Tipo Insumos</a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPago', 'index') ?>">Tipo Pago</a></li>
-                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>">Tipo Empaque</a></li>
+                <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>"><?php echo i18n::__('typePacking')?></a></li>
                 <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoId', 'index') ?>">Tipo Identificacion</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MODULOS <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Usuario</a></li>
+                         <li class="divider"></li>
                         <li><a href="#">Another action</a></li>
+                         <li class="divider"></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>
                         <li><a href="#">Separated link</a></li>

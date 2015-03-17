@@ -348,7 +348,7 @@ empleado_deleteSelect:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
 
-##-------------------------- TIPO ID --------------------------##
+##-------------------------- EMPLEADO --------------------------##
 ##-------------------------- CIUDAD---------------------------------##
 
 ciudad_index:
@@ -893,7 +893,7 @@ empresa_deleteSelect:
 
 ##--------------------------TIPO DOC----------------------------##
 
-##-------------------------- insumo-----------------------------##
+##-------------------------- INSUMO-----------------------------##
 
 insumo_index:
   url:    /insumo/index
@@ -951,4 +951,71 @@ insumo_deleteSelect:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
 
-##-------------------------- insumo----------------------------##
+##-------------------------- INSUMO----------------------------##
+##-------------------------- EMPAQUE --------------------------##
+
+empaque_index:
+  url:    /empaque/index
+  param:  { module: empaque, action: index, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+
+empaque_insert:
+  url:    /empaque/insertar
+  param:  { module: empaque, action: insert, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+    
+empaque_view:
+  url:    /empaque/ver
+  param:  { module: empaque, action: view, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+
+empaque_create:
+  url:    /empaque/crear
+  param:  { module: empaque, action: create, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+
+empaque_edit:
+  url:    /empaque/editar
+  param:  { module: empaque, action: edit, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+    
+empaque_update:
+  url:    /empaque/actualizar
+  param:  { module: empaque, action: update, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+
+empaque_delete:
+  url:    /empaque/eliminar
+  param:  { module: empaque, action: delete, format: json }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+
+empaque_deleteSelect:
+  url:    /empaque/eliminarSeleccion
+  param:  { module: empaque, action: deleteSelect, format: html }
+  load:
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+
+##-------------------------- EMPAQUE --------------------------##
