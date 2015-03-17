@@ -892,3 +892,63 @@ empresa_deleteSelect:
     - model/empresaTableClass.php
 
 ##--------------------------TIPO DOC----------------------------##
+
+##-------------------------- insumo-----------------------------##
+
+insumo_index:
+  url:    /insumo/index
+  param:  { module: insumo, action: index, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+insumo_insert:
+  url:    /insumo/insertar
+  param:  { module: insumo, action: insert, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+insumo_view:
+  url:    /insumo/ver
+  param:  { module: insumo, action: view, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+insumo_create:
+  url:    /insumo/crear
+  param:  { module: insumo, action: create, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+insumo_edit:
+  url:    /insumo/editar
+  param:  { module: insumo, action: edit, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+insumo_update:
+  url:    /insumo/actualizar
+  param:  { module: insumo, action: update, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+insumo_delete:
+  url:    /insumo/eliminar
+  param:  { module: insumo, action: delete, format: json }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+insumo_deleteSelect:
+  url:    /insumo/eliminarSeleccion
+  param:  { module: insumo, action: deleteSelect, format: html }
+  load:
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+##-------------------------- insumo----------------------------##

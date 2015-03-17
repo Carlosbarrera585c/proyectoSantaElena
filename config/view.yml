@@ -164,3 +164,14 @@ empresa:
     
   view:
     title: Ver Empresa
+    
+insumo:
+  index:
+    title: insumo
+    javascript:
+      - index.js
+  edit:
+    title: Editar insumo
+    
+  view:
+    title: Ver insumo

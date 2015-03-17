@@ -119,6 +119,13 @@ dictionary:
     nit:                  NIT
     ##---------------------- EMPRESA----------------------------##
     
+    ##---------------------- INSUMO----------------------------##
+    input:                insumo
+    descriptionInput:     descripción de insumo
+    price:                precio
+    IdentificatiOfInpuType: tipo id insumo
+    ##---------------------- INSUMo----------------------------##
+    
     
     ##-------------------------- ERRORES --------------------##
   errors:
