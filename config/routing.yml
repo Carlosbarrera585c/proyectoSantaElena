@@ -827,9 +827,9 @@ detalleEntrada_deleteSelect:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
 
-##--------------------------TIPO DOC----------------------------##
+##--------------------------DETALLE ENTRADA----------------------------##
 
-##--------------------------DETALLE ENTRADA-----------------------------##
+##--------------------------EMPRESA-----------------------------##
 
 empresa_index:
   url:    /empresa/index
@@ -891,7 +891,7 @@ empresa_deleteSelect:
     - model/base/empresaBaseTableClass.php
     - model/empresaTableClass.php
 
-##--------------------------TIPO DOC----------------------------##
+##--------------------------EMPRESA----------------------------##
 
 ##-------------------------- INSUMO-----------------------------##
 
@@ -1023,3 +1023,73 @@ empaque_deleteSelect:
     - model/empaqueTableClass.php
 
 ##-------------------------- EMPAQUE --------------------------##
+##--------------------------DETALLE EMPAQUE-----------------------------##
+
+detalleEmpaque_index:
+  url:    /detalleEmpaque/index
+  param:  { module: detalleEmpaque, action: index, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+
+detalleEmpaque_insert:
+  url:    /detalleEmpaque/insertar
+  param:  { module: detalleEmpaque, action: insert, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+    
+detalleEmpaque_view:
+  url:    /detalleEmpaque/ver
+  param:  { module: detalleEmpaque, action: view, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+
+detalleEmpaque_create:
+  url:    /detalleEmpaque/crear
+  param:  { module: detalleEmpaque, action: create, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+
+detalleEmpaque_edit:
+  url:    /detalleEmpaque/editar
+  param:  { module: detalleEmpaque, action: edit, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+    
+
+detalleEmpaque_update:
+  url:    /detalleEmpaque/actualizar
+  param:  { module: detalleEmpaque, action: update, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+
+detalleEmpaque_delete:
+  url:    /detalleEmpaque/eliminar
+  param:  { module: detalleEmpaque, action: delete, format: json }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+
+detalleEmpaque_deleteSelect:
+  url:    /detalleEmpaque/eliminarSeleccion
+  param:  { module: detalleEmpaque, action: deleteSelect, format: html }
+  load:
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+
+##--------------------------DETALLE EMPAQUE----------------------------##

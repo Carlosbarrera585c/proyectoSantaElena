@@ -1,4 +1,4 @@
 Soho Framework v1.0.0
 =============
 
-Implementación MVC para los aprendices del SENA
+Implementación Proyecto Formativo En Empresa Panelera Santa Helena.

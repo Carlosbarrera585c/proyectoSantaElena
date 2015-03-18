@@ -20,6 +20,7 @@ dictionary:
     edit:                 Editar
     back:                 Atrás
     delete:               Eliminar
+    detail:               Detalle
     deleteSelect:         Eliminar Seleccionados
     successfulRegister:   El Registro Fue Exitoso.
     successfulUpdate:     La Actualización Fue Exitosa.
@@ -124,13 +125,18 @@ dictionary:
     descriptionInput:     Descripción de Insumo
     price:                Precio
     IdentificatiOfInpuType: Tipo Id Insumo
-    ##---------------------- INSUMo----------------------------##
+    ##---------------------- INSUMO----------------------------##
     ##---------------------- EMPAQUE----------------------------##
     packing:              Empaque
     informationPacking:   Información de Empaque
     editPacking:          Editar Empaque
     newPacking:           Nuevo Empaque
     ##---------------------- EMPAQUE----------------------------##
+    ##---------------------- DETALLE EMPAQUE----------------------------##
+    
+    
+     
+    ##---------------------- DETALLE EMPAQUE----------------------------##
     
     ##-------------------------- ERRORES --------------------##
   errors:
