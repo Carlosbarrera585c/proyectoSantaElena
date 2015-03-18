@@ -132,8 +132,20 @@ dictionary:
     editPacking:          Editar Empaque
     newPacking:           Nuevo Empaque
     ##---------------------- EMPAQUE----------------------------##
-    ##---------------------- DETALLE EMPAQUE----------------------------##
+    ##---------------------- DETALLE ENTRADA----------------------------##
     detailEntrance:       Detalle Entrada
+    newDetailEntrance:    Nuevo Detalle Entrada
+    editDetailEntrance:   Editar Detalle Entrada
+    infoDetailEntrance:   Informacion Detalle Entrada
+    amount:               Cantidad
+    value:                Valor
+    manuFacturingDate:    Fecha Fabricacion
+    expirationDate:       Fecha Vencimiento
+    idDoc:                ID Documento
+    idEntrance:           ID Entrada Bodega
+    idInput:              ID Insumo
+    
+    
     ##---------------------- DETALLE ENTRADA----------------------------## 
     
     ##---------------------- INGRESO CAÑA----------------------------##
