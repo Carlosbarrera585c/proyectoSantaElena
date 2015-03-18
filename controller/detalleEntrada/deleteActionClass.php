@@ -19,20 +19,20 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true));
+                $id = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::ID, true));
 
                 $ids = array(
-                tipoEmpaqueTableClass::ID => $id
+                empresaTableClass::ID => $id
                 );
-                tipoEmpaqueTableClass::delete($ids, false);
+                empresaTableClass::delete($ids, false);
                 $this->arrayAjax = array(
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-                $this->defineView('delete', 'tipoEmpaque', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'empresa', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
-                routing::getInstance()->redirect('tipoEmpaque', 'index');
+                routing::getInstance()->redirect('empresa', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

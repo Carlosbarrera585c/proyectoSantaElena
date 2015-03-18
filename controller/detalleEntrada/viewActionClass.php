@@ -11,24 +11,29 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * @author Carlos Alberto Barrera Montoya <cabarera22@misena.edu.co>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-            
-            $id = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
+
+            $id = request::getInstance()->getRequest(detalleEntradaTableClass::ID, true);
             $fields = array(
-                entradaBodegaTableClass::ID,
-                entradaBodegaTableClass::FECHA,
-                entradaBodegaTableClass::PROVEEDOR_ID
+                detalleEntradaTableClass::ID,
+                detalleEntradaTableClass::CANTIDAD,
+                detalleEntradaTableClass::VALOR,
+                detalleEntradaTableClass::FECHA_FABRICACION,
+                detalleEntradaTableClass::FECHA_VENCIMIENTO,
+                detalleEntradaTableClass::ID_DOC,
+                detalleEntradaTableClass::ENTRADA_BODEGA_ID,
+                detalleEntradaTableClass::INSUMO_ID
             );
-            $where = array (
-            entradaBodegaTableClass::ID  => $id
+            $where = array(
+                detalleEntradaTableClass::ID => $id
             );
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, null, null, null, null, $where);
-            $this->defineView('view', 'entradaBodega', session::getInstance()->getFormatOutput());
+            $this->objEntradaBodega = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
+            $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

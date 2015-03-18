@@ -133,7 +133,17 @@ dictionary:
     newPacking:           Nuevo Empaque
     ##---------------------- EMPAQUE----------------------------##
     ##---------------------- DETALLE EMPAQUE----------------------------##
+    detailEntrance:       Detalle Entrada
+    ##---------------------- DETALLE ENTRADA----------------------------## 
     
+    ##---------------------- INGRESO CAÑA----------------------------##
+    caneIncome:           Ingreso Caña
+       
+    ##---------------------- INGRESO CAÑA----------------------------## 
+    ##---------------------- SOLICITUD INSUMO-------------------------##
+    inputRequest:           Solicitud Insumo
+       
+    ##----------------------SOLICITUD INSUMO---------------------------## 
     
      
     ##---------------------- DETALLE EMPAQUE----------------------------##

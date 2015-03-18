@@ -11,19 +11,24 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * @author Carlos Alberto Barrera Montoya <cabarera22@misena.edu.co>
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             $fields = array(
-                detalleEntradaBodegaTableClass::ID,
-                detalleEntradaBodegaTableClass::CANTIDAD,
-                detalleEntradaBodegaTableClass::INSUMO_ID
+                detalleEntradaTableClass::ID,
+                detalleEntradaTableClass::CANTIDAD,
+                detalleEntradaTableClass::VALOR,
+                detalleEntradaTableClass::FECHA_FABRICACION,
+                detalleEntradaTableClass::FECHA_VENCIMIENTO,
+                detalleEntradaTableClass::ID_DOC,
+                detalleEntradaTableClass::ENTRADA_BODEGA_ID,
+                detalleEntradaTableClass::INSUMO_ID
             );
-            $this->objDetalleEntrada = detalleEntradaBodegaTableClass::getAll($fields, false);
-            $this->defineView('index', 'detalle_entrada', session::getInstance()->getFormatOutput());
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false);
+            $this->defineView('index', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

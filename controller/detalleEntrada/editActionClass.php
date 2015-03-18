@@ -1,11 +1,14 @@
 
-<?php use mvc\interfaces\controllerActionInterface;
- use mvc\controller\controllerClass;
- use mvc\config\configClass as config;
- use mvc\request\requestClass as request; 
- use mvc\routing\routingClass as routing;
- use mvc\session\sessionClass as session; 
- use mvc\i18n\i18nClass as i18n;
+<?php
+
+use mvc\interfaces\controllerActionInterface;
+use mvc\controller\controllerClass;
+use mvc\config\configClass as config;
+use mvc\request\requestClass as request;
+use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
+use mvc\i18n\i18nClass as i18n;
+
 /**
  * Description of ejemploClass
  *
@@ -15,20 +18,32 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(entradaBodegaTableClass::ID)) {
+            if (request::getInstance()->hasRequest(empresaTableClass::ID)) {
                 $fields = array(
-                    entradaBodegaTableClass::ID,
-                    entradaBodegaTableClass::FECHA,
-                    entradaBodegaTableClass::PROVEEDOR_ID
-                    
+                  empresaTableClass::ID,
+                  empresaTableClass::NIT,
+                  empresaTableClass::NOM_EMPRESA,
+                  empresaTableClass::RAZON_SOCIAL,
+                  empresaTableClass::DIRECCION,
+                  empresaTableClass::TELEFONO,
+                  empresaTableClass::USUARIO_ID
                 );
                 $where = array(
-                    entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
+                    empresaTableClass::ID => request::getInstance()->getRequest(empresaTableClass::ID)
                 );
-                $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'entradaBodega', session::getInstance()->getFormatOutput());
+                
+                $fieldsUser = array(
+                usuarioTableClass::ID,
+                usuarioTableClass::USER
+                );
+
+                
+                $this->objUsuarios = usuarioTableClass::getAll($fieldsUser);
+
+                $this->objEmpresa = empresaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                $this->defineView('edit', 'empresa', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('entradaBodega', 'index');
+                routing::getInstance()->redirect('empresa', 'index');
             }
 
 //            if (request::getInstance()->isMethod('POST')) {

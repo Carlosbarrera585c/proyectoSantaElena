@@ -6,7 +6,7 @@
 <?php $periodo_inicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
 <?php $periodo_fin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
 <?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
-
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <h1><?php echo i18n::__('payWorkers') ?></h1>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">

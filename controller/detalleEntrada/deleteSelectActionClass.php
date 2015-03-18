@@ -22,14 +22,14 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
               $idsToDelete = request::getInstance()->getPost('chk');              
               foreach ($idsToDelete as $id){
                   $ids = array(
-                  tipoEmpaqueTableClass::ID => $id
+                  empresaTableClass::ID => $id
                 );
-                tipoEmpaqueTableClass::delete($ids, false);
+                empresaTableClass::delete($ids, false);
               }              
                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('tipoEmpaque', 'index');
+               routing::getInstance()->redirect('empresa', 'index');
             } else {
-                routing::getInstance()->redirect('tipoEmpaque', 'index');
+                routing::getInstance()->redirect('empresa', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

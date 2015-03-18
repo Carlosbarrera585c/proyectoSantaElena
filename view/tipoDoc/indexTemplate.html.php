@@ -6,7 +6,7 @@
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
-       <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('paymentType') ?></h1>
+       <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('docType') ?></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">

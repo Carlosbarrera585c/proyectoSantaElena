@@ -24,6 +24,7 @@ class detalleEntradaBaseTableClass extends tableBaseClass {
     const FECHA_FABRICACION = 'fecha_fabricacion';
     const FECHA_VENCIMIENTO = 'fecha_vencimiento';
     const ID_DOC = 'id_doc';
+    const ENTRADA_BODEGA_ID = 'entrada_bodega_id';
     const FECHA = 'entrada_bodega_id';
     const INSUMO_ID = 'insumo_id';
 
