@@ -32,7 +32,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             $where = array(
                 detalleEntradaTableClass::ID => $id
             );
-            $this->objEntradaBodega = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

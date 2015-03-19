@@ -812,6 +812,12 @@ detalleEntrada_edit:
   load:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 detalleEntrada_update:
   url:    /detalleEntrada/actualizar

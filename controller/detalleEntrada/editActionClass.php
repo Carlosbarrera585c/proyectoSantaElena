@@ -18,32 +18,43 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(empresaTableClass::ID)) {
+            if (request::getInstance()->hasRequest(detalleEntradaTableClass::ID)) {
                 $fields = array(
-                  empresaTableClass::ID,
-                  empresaTableClass::NIT,
-                  empresaTableClass::NOM_EMPRESA,
-                  empresaTableClass::RAZON_SOCIAL,
-                  empresaTableClass::DIRECCION,
-                  empresaTableClass::TELEFONO,
-                  empresaTableClass::USUARIO_ID
+                   detalleEntradaTableClass::CANTIDAD,
+                    detalleEntradaTableClass::VALOR,
+                    detalleEntradaTableClass::FECHA_FABRICACION,
+                    detalleEntradaTableClass::FECHA_VENCIMIENTO,
+                    detalleEntradaTableClass::ID_DOC,
+                    detalleEntradaTableClass::ENTRADA_BODEGA_ID,
+                    detalleEntradaTableClass::INSUMO_ID,
                 );
                 $where = array(
-                    empresaTableClass::ID => request::getInstance()->getRequest(empresaTableClass::ID)
+                    detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
                 );
                 
-                $fieldsUser = array(
-                usuarioTableClass::ID,
-                usuarioTableClass::USER
-                );
+            $fieldsDoc = array(
+                tipoDocTableClass::ID,
+                tipoDocTableClass::DESC_TIPO_DOC
+            );
+            
+            $fieldsEntrada = array(
+                entradaBodegaTableClass::ID,
+                entradaBodegaTableClass::FECHA
+            );
+            
+            $fieldsInsumo = array(
+                insumoTableClass::ID,
+                insumoTableClass::DESC_INSUMO
+            );
 
-                
-                $this->objUsuarios = usuarioTableClass::getAll($fieldsUser);
+            $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
+            $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
 
-                $this->objEmpresa = empresaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'empresa', session::getInstance()->getFormatOutput());
+                $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                $this->defineView('edit', 'detalleEntrada', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('empresa', 'index');
+                routing::getInstance()->redirect('detalleEntrada', 'index');
             }
 
 //            if (request::getInstance()->isMethod('POST')) {
