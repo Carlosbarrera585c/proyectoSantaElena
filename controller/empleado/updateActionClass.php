@@ -10,9 +10,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Empleado
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -24,12 +24,12 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $nom_empleado = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true));
                 $apell_empleado = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true));
                 $telefono = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true));
-                $direccion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)); 
+                $direccion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true));
                 $tipo_id_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, true));
                 $numero_identificacion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true));
                 $credencial_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
                 $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
-                
+
                 $ids = array(
                     empleadoTableClass::ID => $id
                 );
@@ -43,7 +43,6 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     empleadoTableClass::NUMERO_IDENTIFICACION => $numero_identificacion,
                     empleadoTableClass::CREDENCIAL_ID => $credencial_id,
                     empleadoTableClass::CORREO => $correo
-                    
                 );
 
                 empleadoTableClass::update($ids, $data);

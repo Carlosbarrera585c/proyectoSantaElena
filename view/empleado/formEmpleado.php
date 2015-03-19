@@ -16,7 +16,7 @@ use mvc\view\viewClass as view ?>
 <?php $credencial_id = credencialTableClass::ID ?>
 <?php $nom_credencial = credencialTableClass::NOMBRE ?>
 <?php $correo = empleadoTableClass::CORREO ?>
-<form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('empleado', ((isset($objEmpleado)) ? 'update' : 'create')) ?>">
+<form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('empleado', ((isset($objEmpleado)) ? 'update' : 'create')) ?>">
     <?php if (isset($objEmpleado) == true): ?>
         <input name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>" value="<?php echo $objEmpleado[0]->$idEmpleado ?>" type="hidden">
     <?php endif ?>

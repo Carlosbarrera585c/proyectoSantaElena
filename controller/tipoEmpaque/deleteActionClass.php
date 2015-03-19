@@ -9,9 +9,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Empaque
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
@@ -22,7 +22,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 $id = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true));
 
                 $ids = array(
-                tipoEmpaqueTableClass::ID => $id
+                    tipoEmpaqueTableClass::ID => $id
                 );
                 tipoEmpaqueTableClass::delete($ids, false);
                 $this->arrayAjax = array(
@@ -40,4 +40,5 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             echo $exc->getTraceAsString();
         }
     }
+
 }

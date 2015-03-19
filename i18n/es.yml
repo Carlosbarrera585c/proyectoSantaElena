@@ -37,6 +37,9 @@ dictionary:
     
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Tipo Empaque
+    editTypePacking:      Editar el Tipo de Empaque
+    newTypePacking:       Nuevo Tipo de Empaque
+    infoTypePacking:      Información del Tipo de Empaque
     ##----------------------TIPO EMPAQUE-------------------------##
     ##----------------------TIPO INSUMO-------------------------##
     inputType:            Tipo Insumo
@@ -103,13 +106,18 @@ dictionary:
     
     ##-------------------------- EMPLEADO-----------------------##
     employee:             Empleado
+    infoEmployee:         Información del Empleado
     employeeName:         Nombre Empleado
     employeeLastName:     Apellido Empleado
+    newEmployee:          Nuevo Empleado
+    editEmployee:         Editar Empleado
     ##-------------------------- EMPLEADO-----------------------##
     
     ##---------------------- TIPO IDENTIFICACION----------------##
     identification:       Identificación
     identificationType:   Tipo Identificación
+    EditIdentification:   Edtitar Tipo de Identificación
+    newIdentification:    Nueva Identificación
     ##---------------------- TIPO IDENTIFICACION----------------##
     
      ##---------------------- EMPRESA---------------------------##
@@ -153,13 +161,14 @@ dictionary:
        
     ##---------------------- INGRESO CAÑA----------------------------## 
     ##---------------------- SOLICITUD INSUMO-------------------------##
-    inputRequest:           Solicitud Insumo
+    inputRequest:         Solicitud Insumo
        
     ##----------------------SOLICITUD INSUMO---------------------------## 
     
      
     ##---------------------- DETALLE EMPAQUE----------------------------##
-    
+    detailPacking:          Detalle Empaque
+    ##---------------------- DETALLE EMPAQUE----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
     00001:                El módulo y la acción solicitada, no existe.

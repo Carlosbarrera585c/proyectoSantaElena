@@ -9,11 +9,10 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Empaque
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
-
 class createActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
@@ -21,16 +20,14 @@ class createActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST')) {
 
                 $desc_tipo_empaque = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true));
-                
-                               
+
+
                 $data = array(
                     tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE => $desc_tipo_empaque,
-                    
                 );
                 tipoEmpaqueTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
-                  
             } else {
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
             }

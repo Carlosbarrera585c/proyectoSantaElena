@@ -4,9 +4,9 @@ use mvc\model\modelClass;
 use mvc\config\configClass;
 
 /**
- * Description of tipoIdTableClass
+ * Description of Tipo Identificación
  * 
- * @author Carlos Alberto Barrera Montoya <carlosbarrera585@hotmail.com>
+ * @author Carlos Barrera <carlosbarrera585@hotmail.com>
  */
 class tipoIdTableClass extends tipoIdBaseTableClass{
     

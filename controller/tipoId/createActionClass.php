@@ -9,28 +9,25 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Identificación
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
-
 class createActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-echo 2;
+                echo 2;
                 $desc_tipo_id = request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true));
-                
-                               
+
+
                 $data = array(
                     tipoIdTableClass::DESC_TIPO_ID => $desc_tipo_id,
-                    
                 );
                 tipoIdTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
                 routing::getInstance()->redirect('tipoId', 'index');
-                  
             } else {
                 routing::getInstance()->redirect('tipoId', 'index');
             }

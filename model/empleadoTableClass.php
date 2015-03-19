@@ -4,9 +4,9 @@ use mvc\model\modelClass;
 use mvc\config\configClass;
 
 /**
- * Description of empleadoTableClass
- * 
- * @author Carlos Alberto Barrera Montoya <carlosbarrera585@hotmail.com>
+ * Description of Empelado
+ *
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class empleadoTableClass extends empleadoBaseTableClass {
     

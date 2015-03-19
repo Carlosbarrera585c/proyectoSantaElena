@@ -9,9 +9,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Empaque
  *
- * @author Carlos Alberto Barrera Montoya <cabarera22@misena.edu.co>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 

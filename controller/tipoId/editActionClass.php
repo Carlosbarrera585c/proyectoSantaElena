@@ -1,15 +1,17 @@
+<?php
 
-<?php use mvc\interfaces\controllerActionInterface;
- use mvc\controller\controllerClass;
- use mvc\config\configClass as config;
- use mvc\request\requestClass as request; 
- use mvc\routing\routingClass as routing;
- use mvc\session\sessionClass as session; 
- use mvc\i18n\i18nClass as i18n;
+use mvc\interfaces\controllerActionInterface;
+use mvc\controller\controllerClass;
+use mvc\config\configClass as config;
+use mvc\request\requestClass as request;
+use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
+use mvc\i18n\i18nClass as i18n;
+
 /**
- * Description of ejemploClass
+ * Description of Tipo Identificación
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,7 +21,6 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $fields = array(
                     tipoIdTableClass::ID,
                     tipoIdTableClass::DESC_TIPO_ID,
-                    
                 );
                 $where = array(
                     tipoIdTableClass::ID => request::getInstance()->getRequest(tipoIdTableClass::ID)
