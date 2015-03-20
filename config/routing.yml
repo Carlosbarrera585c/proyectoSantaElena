@@ -541,6 +541,8 @@ pagoTrabajadores_index:
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
 
 pagoTrabajadores_insert:
   url:    /pagoTrabajadores/insertar
@@ -548,6 +550,8 @@ pagoTrabajadores_insert:
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
     
 pagoTrabajadores_view:
   url:    /pagoTrabajadores/ver
@@ -555,6 +559,8 @@ pagoTrabajadores_view:
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
 
 pagoTrabajadores_create:
   url:    /pagoTrabajadores/crear
@@ -569,6 +575,8 @@ pagoTrabajadores_edit:
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
+    - model/base/empresaBaseTableClass.php
+    - model/empresaTableClass.php
 
 pagoTrabajadores_update:
   url:    /pagoTrabajadores/actualizar
@@ -669,6 +677,8 @@ proveedor_index:
   load:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
 
 proveedor_insert:
   url:    /proveedor/insertar
@@ -676,6 +686,8 @@ proveedor_insert:
   load:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
     
 proveedor_view:
   url:    /proveedor/ver
@@ -683,6 +695,8 @@ proveedor_view:
   load:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
 
 proveedor_create:
   url:    /proveedor/crear
@@ -697,6 +711,8 @@ proveedor_edit:
   load:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
 
 proveedor_update:
   url:    /proveedor/actualizar

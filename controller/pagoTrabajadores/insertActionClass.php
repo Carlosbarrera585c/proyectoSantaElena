@@ -17,7 +17,14 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
-      $this->mensaje = 'HOLA MUNDO';
+        
+          $fields = array(
+            empresaTableClass::ID,
+            empresaTableClass::NOM_EMPRESA
+            );
+            
+       $this->objEmpresa = empresaTableClass::getAll($fields, false);
+        
       $this->defineView('insert', 'pagoTrabajadores', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

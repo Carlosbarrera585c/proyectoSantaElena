@@ -2,7 +2,8 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $desc_tipo_insumo = tipoInsumoTableClass::DESC_TIPO_INSUMO ?>
-<pre>
-<h1><?php echo i18n::__('newInputType') ?> <?php echo $objTipoInsumo[0]->$desc_tipo_insumo ?></h1>
+ <div class="page-header  text-center titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editInputType') ?></i></h1>
+         <?php echo $objTipoInsumo[0]->$desc_tipo_insumo ?>
+    </div>
 <?php view::includePartial('tipoInsumo/formTipo', array('objTipoInsumo' => $objTipoInsumo, 'desc_tipo_insumo' => $desc_tipo_insumo)) ?>
-</pre>

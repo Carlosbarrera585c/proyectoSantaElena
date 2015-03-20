@@ -4,7 +4,9 @@
 <?php $desc = tipoPagoTableClass::DESC_TIPO_PAGO ?>
 
 <div class="container container-fluid">
-    <h1>Información de los Tipos de Pago</h1>
+    <div class="page-header  text-center titulo">
+       <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoPlaymentType') ?></i></h1>
+    </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoPago', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
       <a href="<?php echo routing::getInstance()->getUrlWeb('tipoPago', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>

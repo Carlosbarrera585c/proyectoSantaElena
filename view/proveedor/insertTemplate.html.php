@@ -9,5 +9,5 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('newProvider') ?></i></h1>
     </div>
-<?php view::includePartial('proveedor/formProveedor') ?>
+<?php view::includePartial('proveedor/formProveedor', array('objCiudad' => $objCiudad,)) ?>
 </div>

@@ -12,7 +12,9 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $usuario_id = empresaTableClass::USUARIO_ID ?>
 
 <div class="container container-fluid">
-    <h1>Información del Empleado</h1>
+        <div class="page-header  text-center titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoEmployee') ?></i></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empresa', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('empresa', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

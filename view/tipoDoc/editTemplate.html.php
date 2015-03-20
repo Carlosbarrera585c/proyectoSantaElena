@@ -2,7 +2,8 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $desc = tipoDocTableClass::DESC_TIPO_DOC ?>
-<pre>
-<h1><?php echo i18n::__('editDocType')?> <?php echo $objTipoPago[0]->$desc ?></h1>
+ <div class="page-header  text-center titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editDocType') ?></i></h1>
+        <?php echo $objTipoPago[0]->$desc ?>
+    </div>
 <?php view::includePartial('tipoDoc/formTipoDoc', array('objTipoDoc' => $objTipoPago, 'tipoDoc' => $desc)) ?>
-</pre>

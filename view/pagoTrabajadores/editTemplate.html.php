@@ -2,7 +2,8 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
-<pre>
-<h1><?php echo i18n::__('editPlayWorkers') ?> <?php echo $objPagoTrabajadores[0]->$fecha ?></h1>
+ <div class="page-header  text-center titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editPlayWorkers') ?></i></h1>
+         <?php echo $objPagoTrabajadores[0]->$fecha ?>
+    </div>
 <?php view::includePartial('pagoTrabajadores/formPagoTrabajadores', array('objPagoTrabajadores' => $objPagoTrabajadores, 'pagoTrabajadores' => $fecha)) ?>
-</pre>

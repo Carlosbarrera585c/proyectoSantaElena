@@ -8,7 +8,9 @@
 <?php $idC = proveedorTableClass::CIUDAD_ID ?>
 
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('infoCity') ?></h1>
+       <div class="page-header  text-center titulo">
+       <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoProvider') ?></i></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

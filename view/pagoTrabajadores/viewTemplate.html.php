@@ -7,7 +7,9 @@
 <?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
 
 <div class="container container-fluid">
-    <h1>Información de las Ciudades</h1>
+    <div class="page-header  text-center titulo">
+       <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoPlayWokers') ?></i></h1>
+    </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
       <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>

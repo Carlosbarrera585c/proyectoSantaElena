@@ -48,6 +48,7 @@ dictionary:
     ##----------------------TIPO INSUMO-------------------------##
     inputType:            Tipo Insumo
     newInputType:         Nuevo Tipo Insumo
+    editInputType:        Editar Tipo Insumo
     infoInput:            Información de los tipos de Insumos
     ##----------------------TIPO INSUMO-------------------------##
     
@@ -55,13 +56,16 @@ dictionary:
     paymentType:          Tipo de Pago
     newPaymentType:       Nuevo Tipo de Pago
     editPaymentType:      Editar Tipo de Pago
+    infoPlaymentType:     Información de los Tipos de Pago
     ##----------------------TIPO PAGO---------------------------##
     
     ##----------------------ENTRADA BODEGA-------------------------##
     cellarEntrance:       Entrada Bodega
     date:                 Fecha
     newCellarEntrance:    Nueva Entrada Bodega
+    editCellarEntrance:   Editar Entrada Bodega
     infoCellarEntrance:   Información Entrada Bodega
+    
     ##----------------------ENTRADA BODEGA-------------------------##
     
     ##-------------------------- CIUDAD----------------------------##
@@ -69,6 +73,7 @@ dictionary:
     idCity:               Id Ciudad
     name:                 Nombre
     newCity:              Nueva Ciudad
+    editCity:             Editar Ciudad
     infoCity:             Información de las Ciudades
     ##-------------------------- CIUDAD----------------------------##
     
@@ -80,6 +85,7 @@ dictionary:
     phone:                Telefono
     idProvider:           Id Proveedor
     editProvider:         Editar Proveedor
+    infoProvider:         Informacion de Proveedores
     ##-------------------------- PROVEEDOR----------------------------##
     
     ##-------------------------- PAGO TRABAJADORES--------------------##
@@ -89,6 +95,7 @@ dictionary:
     periodBeginning:      Periodo Inicio
     orderPeriod:          Periodo Fin
     idBusiness:           Id Empresa
+    infoPlayWokers:       Informacion de Pago Trabajadores
     ##-------------------------- PAGO TRABAJADORES--------------------##
     
     ##-------------------------- TIPO DOCUMENTO--------------------##
@@ -106,6 +113,7 @@ dictionary:
     credential:           Credencial
     nameCredential:       Nombre Credencial
     mail:                 Correo
+    infoCredential:       Informacion de Credenciales
     
     ##-------------------------- CREDENCIAL-----------------------##
     
@@ -123,12 +131,14 @@ dictionary:
     identificationType:   Tipo Identificación
     EditIdentification:   Edtitar Tipo de Identificación
     newIdentification:    Nueva Identificación
+    infoIdentificationType: Informacion de Tipos de Identificacion
     ##---------------------- TIPO IDENTIFICACION----------------##
     
      ##---------------------- EMPRESA---------------------------##
     business:             Empresa
     newBusiness:          Nueva Empresa
     editBusiness:         Editar Empresa
+    infoBusiness:         Informacion de Empresas
     infoBusiness:         Información Sobre las Empresas
     nit:                  NIT
     ##---------------------- EMPRESA----------------------------##
@@ -136,6 +146,9 @@ dictionary:
     ##---------------------- INSUMO----------------------------##
     input:                Insumo
     descriptionInput:     Descripción de Insumo
+    newInput:             Nuevo Insumo
+    editInput:            Edit Insumo
+    infoInput:            Informacion de Insumos
     price:                Precio
     IdentificatiOfInpuType: Id Tipo Insumo
     ##---------------------- INSUMO----------------------------##
@@ -147,10 +160,10 @@ dictionary:
     newPacking:           Nuevo Empaque
     ##---------------------- EMPAQUE----------------------------##
     ##---------------------- DETALLE ENTRADA----------------------------##
-    detailEntrance:       Detalle Entrada
-    newDetailEntrance:    Nuevo Detalle Entrada
-    editDetailEntrance:   Editar Detalle Entrada
-    infoDetailEntrance:   Informacion Detalle Entrada
+    detailEntrance:       Detalle Entrada Bodega
+    newDetailEntrance:    Nuevo Detalle Entrada Bodega
+    editDetailEntrance:   Editar Detalle Entrada Bodega
+    infoDetailEntrance:   Informacion Detalle Entrada Bodega
     amount:               Cantidad
     value:                Valor
     manuFacturingDate:    Fecha Fabricacion

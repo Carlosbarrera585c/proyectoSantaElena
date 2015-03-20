@@ -29,6 +29,14 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             proveedorTableClass::ID => request::getInstance()->getRequest(proveedorTableClass::ID)
         );
         $this->objProveedor = proveedorTableClass::getAll($fields, false, null, null, null, null, $where);
+        
+        $fields = array(
+                ciudadTableClass::ID,
+                ciudadTableClass::NOM_CIUDAD
+            );
+            
+       $this->objCiudad = ciudadTableClass::getAll($fields, false);
+        
         $this->defineView('edit', 'proveedor', session::getInstance()->getFormatOutput());
       } else {
         routing::getInstance()->redirect('proveedor', 'index');
