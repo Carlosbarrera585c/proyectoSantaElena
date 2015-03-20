@@ -9,9 +9,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Empaque
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,15 +19,15 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-              $idsToDelete = request::getInstance()->getPost('chk');              
-              foreach ($idsToDelete as $id){
-                  $ids = array(
-                  tipoEmpaqueTableClass::ID => $id
-                );
-                tipoEmpaqueTableClass::delete($ids, false);
-              }              
-               session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('tipoEmpaque', 'index');
+                $idsToDelete = request::getInstance()->getPost('chk');
+                foreach ($idsToDelete as $id) {
+                    $ids = array(
+                        tipoEmpaqueTableClass::ID => $id
+                    );
+                    tipoEmpaqueTableClass::delete($ids, false);
+                }
+                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+                routing::getInstance()->redirect('tipoEmpaque', 'index');
             } else {
                 routing::getInstance()->redirect('tipoEmpaque', 'index');
             }
@@ -37,4 +37,5 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
             echo $exc->getTraceAsString();
         }
     }
+
 }

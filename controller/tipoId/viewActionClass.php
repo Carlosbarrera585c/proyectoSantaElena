@@ -9,22 +9,22 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Identificación
  *
- * @author Carlos Alberto Barrera Montoya <cabarera22@misena.edu.co>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-            
+
             $id = request::getInstance()->getRequest(tipoIdTableClass::ID, true);
             $fields = array(
                 tipoIdTableClass::ID,
                 tipoIdTableClass::DESC_TIPO_ID
             );
-            $where = array (
-            tipoIdTableClass::ID  => $id
+            $where = array(
+                tipoIdTableClass::ID => $id
             );
             $this->objTipoId = tipoIdTableClass::getAll($fields, false, null, null, null, null, $where);
             $this->defineView('view', 'tipoId', session::getInstance()->getFormatOutput());

@@ -9,9 +9,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Identificación
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
@@ -22,7 +22,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 $id = request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::ID, true));
 
                 $ids = array(
-                tipoIdTableClass::ID => $id
+                    tipoIdTableClass::ID => $id
                 );
                 tipoIdTableClass::delete($ids, false);
                 $this->arrayAjax = array(
@@ -40,4 +40,5 @@ class deleteActionClass extends controllerClass implements controllerActionInter
             echo $exc->getTraceAsString();
         }
     }
+
 }

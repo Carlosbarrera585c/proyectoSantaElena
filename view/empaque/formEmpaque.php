@@ -21,7 +21,7 @@ use mvc\view\viewClass as view ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$fecha : '') ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" placeholder="Introduce La Fecha de Empacado">
+                <input type="date" class="form-control" value="<?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$fecha : '') ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" placeholder="Introduce La Fecha de Empacado">
             </div>
         </div>
         <div class="form-group">

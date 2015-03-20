@@ -10,9 +10,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Empaque
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -22,14 +22,13 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
                 $id = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true));
                 $desc_tipo_empaque = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true));
-                
+
                 $ids = array(
                     tipoEmpaqueTableClass::ID => $id
                 );
 
                 $data = array(
                     tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE => $desc_tipo_empaque,
-                    
                 );
 
                 tipoEmpaqueTableClass::update($ids, $data);

@@ -20,36 +20,31 @@ class createActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
           
-                $nit = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::NIT, true));
-                $nom_empresa = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::NOM_EMPRESA, true));
-                $razon_social = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::RAZON_SOCIAL, true));
-                $direccion = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::DIRECCION, true));
-                $telefono = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::TELEFONO, true));
-                $usuario_id = request::getInstance()->getPost(empresaTableClass::getNameField(empresaTableClass::USUARIO_ID, true));
-
-                if (strlen($nom_empresa) > empresaTableClass::NOM_LENGTH) {
-                      throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => empresaTableClass::NOM_LENGTH)), 00001);
-                   }
+                $cantidad = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true));
+                $valor = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true));
+                $fechaFB = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true));
+                $fechaVC = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_VENCIMIENTO, true));
+                $idDoc = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID_DOC, true));
+                $enBodegaId = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, true));
+                $idInsumo = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::INSUMO_ID, true));
                 
-               if (strlen($razon_social) > empresaTableClass::RAZON_LENGTH) {
-                      throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => empresaTableClass::RAZON_LENGTH)), 00001);
-                   }
                    
                 $data = array(
-                    empresaTableClass::NIT => $nit,
-                    empresaTableClass::NOM_EMPRESA => $nom_empresa,
-                    empresaTableClass::RAZON_SOCIAL => $razon_social,
-                    empresaTableClass::DIRECCION => $direccion,
-                    empresaTableClass::TELEFONO => $telefono,
-                    empresaTableClass::USUARIO_ID => $usuario_id,
+                    detalleEntradaTableClass::CANTIDAD => $cantidad,
+                    detalleEntradaTableClass::VALOR => $valor,
+                    detalleEntradaTableClass::FECHA_FABRICACION => $fechaFB,
+                    detalleEntradaTableClass::FECHA_VENCIMIENTO => $fechaVC,
+                    detalleEntradaTableClass::ID_DOC => $idDoc,
+                    detalleEntradaTableClass::ENTRADA_BODEGA_ID => $enBodegaId,
+                    detalleEntradaTableClass::INSUMO_ID => $idInsumo,
                     
                 );
-                empresaTableClass::insert($data);
+                detalleEntradaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-                routing::getInstance()->redirect('empresa', 'index');
+                routing::getInstance()->redirect('detalleEntrada', 'index');
                   
             } else {
-                routing::getInstance()->redirect('empresa', 'index');
+                routing::getInstance()->redirect('detalleEntrada', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

@@ -10,9 +10,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Tipo Identificación
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -22,14 +22,13 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
                 $id = request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::ID, true));
                 $desc_tipo_id = request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true));
-                
+
                 $ids = array(
                     tipoIdTableClass::ID => $id
                 );
 
                 $data = array(
                     tipoIdTableClass::DESC_TIPO_ID => $desc_tipo_id,
-                    
                 );
 
                 tipoIdTableClass::update($ids, $data);

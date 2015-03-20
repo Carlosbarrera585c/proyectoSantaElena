@@ -3,9 +3,9 @@
 use mvc\model\table\tableBaseClass;
 
 /**
- * Description of usuarioBaseTableClass
- * 
- * @author Carlos Alberto Barrera Montoya <carlosbarrera585@hotmail.com>
+ * Description of Empaque
+ *
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class empaqueBaseTableClass extends tableBaseClass {
 
@@ -13,12 +13,12 @@ class empaqueBaseTableClass extends tableBaseClass {
     private $fecha;
     private $empleado_id;
     private $tipo_empaque_id;
-    
+
     const ID = 'id';
     const FECHA = 'fecha';
     const EMPLEADO_ID = 'empleado_id';
     const TIPO_EMPAQUE_ID = 'tipo_empaque_id';
-    
+
     function getId() {
         return $this->id;
     }
@@ -51,7 +51,6 @@ class empaqueBaseTableClass extends tableBaseClass {
         $this->tipo_empaque_id = $tipo_empaque_id;
     }
 
-        
     /**
      * Obtiene el nombre de la tabla
      * @return string
@@ -70,11 +69,9 @@ class empaqueBaseTableClass extends tableBaseClass {
      * borrado físico de un registro en una tabla de la base de datos
      * @return PDOException|boolean
      */
-    
     public static function getNameField($field, $html = false, $table = null) {
-       return parent::getNameField($field, self::getNameTable(), $html);
+        return parent::getNameField($field, self::getNameTable(), $html);
     }
-
 
     public static function delete($ids, $deletedLogical = true, $table = null) {
         return parent::delete($ids, $deletedLogical, self::getNameTable());

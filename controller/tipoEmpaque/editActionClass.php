@@ -1,15 +1,18 @@
 
-<?php use mvc\interfaces\controllerActionInterface;
- use mvc\controller\controllerClass;
- use mvc\config\configClass as config;
- use mvc\request\requestClass as request; 
- use mvc\routing\routingClass as routing;
- use mvc\session\sessionClass as session; 
- use mvc\i18n\i18nClass as i18n;
+<?php
+
+use mvc\interfaces\controllerActionInterface;
+use mvc\controller\controllerClass;
+use mvc\config\configClass as config;
+use mvc\request\requestClass as request;
+use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
+use mvc\i18n\i18nClass as i18n;
+
 /**
- * Description of ejemploClass
+ * Description of Tipo Empaque
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,7 +22,6 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $fields = array(
                     tipoEmpaqueTableClass::ID,
                     tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE,
-                    
                 );
                 $where = array(
                     tipoEmpaqueTableClass::ID => request::getInstance()->getRequest(tipoEmpaqueTableClass::ID)

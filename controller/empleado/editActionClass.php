@@ -10,9 +10,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Empleado
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
@@ -33,16 +33,16 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $where = array(
                     empleadoTableClass::ID => request::getInstance()->getRequest(empleadoTableClass::ID)
                 );
-                
+
                 $fieldsTipoId = array(
-                tipoIdTableClass::ID,
-                tipoIdTableClass::DESC_TIPO_ID
+                    tipoIdTableClass::ID,
+                    tipoIdTableClass::DESC_TIPO_ID
                 );
                 $fieldsCredencial = array(
-                credencialTableClass::ID,
-                credencialTableClass::NOMBRE
+                    credencialTableClass::ID,
+                    credencialTableClass::NOMBRE
                 );
-                
+
                 $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
                 $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
                 $this->objEmpleado = empleadoTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);

@@ -1,7 +1,8 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,7 +20,7 @@ use mvc\routing\routingClass as routing ?>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('user')?><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('user') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>"><?php echo i18n::__('user') ?></a></li>   
                         <li class="divider"></li>
@@ -31,11 +32,11 @@ use mvc\routing\routingClass as routing ?>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>"><?php echo i18n::__('payWorkers') ?></a></li>
                         <li class="divider"></li>
-                        <li><a href="#">DETALLE PAGO TRABAJADORES</a></li></a></li>
+                        <li><a href="#">DETALLE PAGO TRABAJADORES</a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empresa', 'index') ?>"><?php echo i18n::__('business') ?></a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>  <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPago', 'index') ?>"><?php echo i18n::__('paymentType') ?></a></li>
                     </ul>
@@ -47,36 +48,36 @@ use mvc\routing\routingClass as routing ?>
                         <li class="divider"></li>
                         <li><a href="#">DETALLE INGRESO CAÑA</a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>  <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
-                         <li class="divider"></li>
+                        <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('inputRequest') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>  <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
-                         <li class="divider"></li>
+                        <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>
                     </ul>
-                    <li class="dropdown">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('employee') ?> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>  <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('packing')?><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('packing') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"> <?php echo i18n::__('detailPacking')?></a></li>
+                        <li><a href="#"> <?php echo i18n::__('detailPacking') ?></a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>"><?php echo i18n::__('typePacking')?></a></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>"><?php echo i18n::__('typePacking') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>
                     </ul>
@@ -101,7 +102,6 @@ use mvc\routing\routingClass as routing ?>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
