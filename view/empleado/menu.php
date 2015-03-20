@@ -69,6 +69,8 @@ use mvc\i18n\i18nClass as i18n ?>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoId', 'index') ?>"><?php echo i18n::__('identificationType') ?></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
