@@ -9,6 +9,60 @@ use mvc\view\viewClass as view ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
+    <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filters') ?></h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>">
+                        <div class="form-group">
+                            <label for="filterNombre" class="col-sm-2 control-label"><?php echo i18n::__('employeeName') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterNombre" name="filter[Nombre]" placeholder="<?php echo i18n::__('employeeName') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterApellido" class="col-sm-2 control-label"><?php echo i18n::__('employeeLastName') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterApellido" name="filter[Apellido]" placeholder="<?php echo i18n::__('employeeLastName') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterNumIdentificacion" class="col-sm-2 control-label"><?php echo i18n::__('numberIdentification') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterNumIdentificacion" name="filter[NumIdentificacion]" placeholder="<?php echo i18n::__('numberIdentification') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterTelefono" class="col-sm-2 control-label"><?php echo i18n::__('phone') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterTelefono" name="filter[Telefono]" placeholder="<?php echo i18n::__('phone') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterDireccion" class="col-sm-2 control-label"><?php echo i18n::__('direction') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterDireccion" name="filter[Direccion]" placeholder="<?php echo i18n::__('direction') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterCorreo" class="col-sm-2 control-label"><?php echo i18n::__('mail') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterCorreo" name="filter[Correo]" placeholder="<?php echo i18n::__('mail') ?>">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                    <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+                </div>
+            </div>
+        </div>
+    </div>    
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('employee') ?></i></h1>
     </div>
@@ -16,6 +70,8 @@ use mvc\view\viewClass as view ?>
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+            <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
+            <a href="#" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover">

@@ -284,6 +284,10 @@ tipoId_deleteSelect:
 ##-------------------------- TIPO ID --------------------------##
 ##-------------------------- EMPLEADO --------------------------##
 
+empleado_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: empleado, action: deleteFilters, format: html }
+
 empleado_index:
   url:    /empleado/index
   param:  { module: empleado, action: index, format: html }

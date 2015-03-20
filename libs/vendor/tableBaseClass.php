@@ -218,7 +218,8 @@ namespace mvc\model\table {
         if ($limit !== null and $offset !== null) {
           $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
         }
-//echo $sql;
+  //   echo $sql;
+//        exit();
         return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
       } catch (\PDOException $exc) {
         throw $exc;

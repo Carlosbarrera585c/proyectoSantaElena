@@ -9,6 +9,9 @@ dictionary:
     update:               Actualizar
     desc:                 Descripción
     actions:              Acciones
+    filters:              Filtros
+    filtrate:             Filtrar
+    deleteFilters:        Eliminar Filtros 
     update:               Actualizar
     updated:              Actualizado
     confirmDelete:        Confirmar Eliminar
