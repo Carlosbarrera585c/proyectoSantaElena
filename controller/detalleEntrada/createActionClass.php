@@ -25,7 +25,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $fechaFB = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true));
                 $fechaVC = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_VENCIMIENTO, true));
                 $idDoc = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID_DOC, true));
-                $idEntrada = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, true));
+                $enBodegaId = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, true));
                 $idInsumo = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::INSUMO_ID, true));
                 
                    
@@ -35,7 +35,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     detalleEntradaTableClass::FECHA_FABRICACION => $fechaFB,
                     detalleEntradaTableClass::FECHA_VENCIMIENTO => $fechaVC,
                     detalleEntradaTableClass::ID_DOC => $idDoc,
-                    detalleEntradaTableClass::ENTRADA_BODEGA_ID => $idEntrada,
+                    detalleEntradaTableClass::ENTRADA_BODEGA_ID => $enBodegaId,
                     detalleEntradaTableClass::INSUMO_ID => $idInsumo,
                     
                 );

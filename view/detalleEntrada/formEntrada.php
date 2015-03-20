@@ -10,11 +10,11 @@ use mvc\view\viewClass as view ?>
 <?php $valor = detalleEntradaTableClass::VALOR ?>
 <?php $fechaFB = detalleEntradaTableClass::FECHA_FABRICACION ?>
 <?php $fechaVC = detalleEntradaTableClass::FECHA_VENCIMIENTO ?>
-<?php $idDoc = detalleEntradaTableClass::ID_DOC ?>
+<?php $idDoc = tipoDocTableClass::ID ?>
 <?php $desDoc = tipoDocTableClass::DESC_TIPO_DOC ?>
-<?php $enBodegaId = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
+<?php $enBodegaId = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
-<?php $insuId = detalleEntradaTableClass::INSUMO_ID ?>
+<?php $insuId = insumoTableClass::ID ?>
 <?php $descInsu = insumoTableClass::DESC_INSUMO ?>
 
 <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', ((isset($objDetalleEntrada)) ? 'update' : 'create')) ?>">

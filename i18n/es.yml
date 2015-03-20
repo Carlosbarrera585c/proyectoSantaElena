@@ -132,7 +132,7 @@ dictionary:
     input:                Insumo
     descriptionInput:     Descripción de Insumo
     price:                Precio
-    IdentificatiOfInpuType: Tipo Id Insumo
+    IdentificatiOfInpuType: Id Tipo Insumo
     ##---------------------- INSUMO----------------------------##
     ##---------------------- EMPAQUE----------------------------##
     packing:              Empaque

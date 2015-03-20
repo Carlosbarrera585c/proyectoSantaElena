@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('name') ?></th>
+                    <th><?php echo i18n::__('manuFacturingDate') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
