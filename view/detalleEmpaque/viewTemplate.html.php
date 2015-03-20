@@ -1,12 +1,12 @@
-<?php
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 
-use mvc\routing\routingClass as routing ?>
-<?php
-use mvc\i18n\i18nClass as i18n ?>
 <?php $id = empaqueTableClass::ID ?>
 <?php $fecha = empaqueTableClass::FECHA ?>
 <?php $empleado_id = empaqueTableClass::EMPLEADO_ID ?>
 <?php $tipo_empaque_id = empaqueTableClass::EMPLEADO_ID ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('informationPacking') ?></i></h1>

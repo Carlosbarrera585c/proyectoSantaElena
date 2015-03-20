@@ -597,6 +597,8 @@ entradaBodega_index:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 entradaBodega_insert:
   url:    /entradaBodega/insertar
@@ -604,6 +606,8 @@ entradaBodega_insert:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
     
 entradaBodega_view:
   url:    /entradaBodega/ver
@@ -611,6 +615,8 @@ entradaBodega_view:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 entradaBodega_create:
   url:    /entradaBodega/crear
@@ -625,6 +631,8 @@ entradaBodega_edit:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 entradaBodega_update:
   url:    /entradaBodega/actualizar
@@ -732,7 +740,7 @@ tipoDoc_view:
     - model/base/tipoDocBaseTableClass.php
     - model/tipoDocTableClass.php
 
-proveedor_create:
+tipoDoc_create:
   url:    /tipoDoc/crear
   param:  { module: tipoDoc, action: create, format: html }
   load:
@@ -777,6 +785,14 @@ detalleEntrada_index:
   load:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 detalleEntrada_insert:
   url:    /detalleEntrada/insertar
@@ -798,6 +814,12 @@ detalleEntrada_view:
   load:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 detalleEntrada_create:
   url:    /detalleEntrada/crear

@@ -15,7 +15,6 @@ use mvc\i18n\i18nClass as i18n ?>
             </button>
             <a class="navbar-brand" href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>">Santa Helena</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -86,6 +85,8 @@ use mvc\i18n\i18nClass as i18n ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('input') ?> <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoInsumo', 'index') ?>"><?php echo i18n::__('inputType') ?></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -98,6 +99,8 @@ use mvc\i18n\i18nClass as i18n ?>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>   
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoDoc', 'index') ?>"><?php echo i18n::__('docType') ?></a></li>
                     </ul>
                 </li>
             </ul>

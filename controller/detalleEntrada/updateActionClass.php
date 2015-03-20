@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -35,6 +35,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 );
 
                 $data = array(
+                    detalleEntradaTableClass::ID => $id,
                     detalleEntradaTableClass::CANTIDAD => $cantidad,
                     detalleEntradaTableClass::VALOR => $valor,
                     detalleEntradaTableClass::FECHA_FABRICACION => $fechaFB,

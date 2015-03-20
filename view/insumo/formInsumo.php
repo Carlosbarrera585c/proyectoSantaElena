@@ -5,24 +5,40 @@
 <?php $desc_insumo = insumoTableClass::DESC_INSUMO ?>
 <?php $precio = insumoTableClass:: PRECIO ?>
 <?php $tipo_insumo_id = insumoTableClass:: TIPO_INSUMO_ID ?>
-<pre>
-<div class="container container-fluid">    
-    <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('insumo', ((isset($objInsu)) ? 'update' : 'create')) ?>">
+
+<form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('insumo', ((isset($objInsu)) ? 'update' : 'create')) ?>">
             <?php if (isset($objInsu) == true): ?>
     <input name="<?php echo insumoTableClass::getNameField(insumoTableClass::ID, true) ?>" value="<?php echo $objInsu[0]->$id ?>" type="hidden">
                     <?php endif ?>
+<div class="container container-fluid">    
+
     <?php view::includeHandlerMessage() ?>
-      <table class="table table-bordered  table-striped table-condensed table-responsive">
-       <thead> 
-       <tr>
-           <th><?php echo i18n::__('descriptionInput') ?>:<input value="<?php echo ((isset($objInsu) == true) ? $objInsu[0]->$desc_insumo : '') ?>" type="text" class="frm-control" name="<?php echo insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true) ?>"></th>
-          <th><?php echo i18n::__('price') ?>:<input value="<?php echo ((isset($objInsu) == true) ? $objInsu[0]->$precio : '') ?>" type="text" class="frm-control" name="<?php echo insumoTableClass::getNameField(insumoTableClass::PRECIO, true) ?>"></th>
-           <th><?php echo i18n::__('IdentificatiOfInpuType') ?>:<input value="<?php echo ((isset($objInsu) == true) ? $objInsu[0]->$tipo_insumo_id : '') ?>" type="text" class="frm-control" name="<?php echo insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO_ID, true) ?>"></th>
-            
-           <th><input class="btn btn-success btn-xs" type="submit" value="<?php echo i18n::__(((isset($objInsu)) ? 'update' : 'register')) ?>"> <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a></th>
-        </tr>
-        </thead>
-        </table>
-  </form>
+    
+    <div class="form-group">
+            <label class="col-lg-2 control-label"><?php echo i18n::__('descriptionInput') ?>:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" value="<?php echo ((isset($objInsu) == true) ? $objInsu[0]->$desc_insumo : '') ?>" type="text" class="frm-control" name="<?php echo insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true) ?>" placeholder="Introduce la Descripcion del insumo">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" ><?php echo i18n::__('price') ?>:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" value="<?php echo ((isset($objInsu) == true) ? $objInsu[0]->$precio : '') ?>" type="text" class="frm-control" name="<?php echo insumoTableClass::getNameField(insumoTableClass::PRECIO, true) ?>" placeholder="Introduce el id tipo insumo">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" ><?php echo i18n::__('IdentificatiOfInpuType') ?>:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" value="<?php echo ((isset($objInsu) == true) ? $objInsu[0]->$tipo_insumo_id : '') ?>" type="text" class="frm-control" name="<?php echo insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO_ID, true) ?>" placeholder="Introduce el id tipo ">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-lg-12 col-xs-offset-6">
+                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objDetalleEntrada)) ? 'update' : 'register')) ?>">
+                <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
+            </div>
+        </div>
+ 
 </div>
-</pre>
+</form>
