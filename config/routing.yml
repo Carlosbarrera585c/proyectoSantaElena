@@ -1136,6 +1136,10 @@ controlCalidad_index:
   load:
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
  
 controlCalidad_view:
   url:    /controlCalidad/ver
@@ -1143,6 +1147,10 @@ controlCalidad_view:
   load:
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 controlCalidad_insert:
   url:    /controlCalidad/insertar

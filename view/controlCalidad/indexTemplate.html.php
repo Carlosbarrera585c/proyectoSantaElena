@@ -41,8 +41,8 @@ use mvc\view\viewClass as view ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $control->$id ?>"></td>
                         <td><?php echo $control->$fecha ?></td>
-                        <td><?php echo $control->$empleado_id ?></td>
-                        <td><?php echo $control->$proveedor_id ?></td>
+                        <td><?php echo controlCalidadTableClass::getNameEmpleado($control->$empleado_id)?></td>
+                        <td><?php echo controlCalidadTableClass::getNameProveedor($control->$proveedor_id)?></td>
                         <td>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'view', array(controlCalidadTableClass::ID => $control->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'edit', array(controlCalidadTableClass::ID => $control->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>

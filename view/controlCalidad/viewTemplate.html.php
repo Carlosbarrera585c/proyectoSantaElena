@@ -12,7 +12,9 @@
 <?php $proveedor_id = controlCalidadTableClass::PROVEEDOR_ID ?>
 
 <div class="container container-fluid">
-     <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>
+     <div class="page-header text-center titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>
+    </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
       <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>
@@ -44,9 +46,8 @@
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$sacarosa : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$pureza : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$empleado_id : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$proveedor_id : '') ?></td>
-          
+          <td><?php echo ((isset($objControlCalidad) == true) ? controlCalidadTableClass::getNameEmpleado($objControlCalidad[0]->$empleado_id) : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? controlCalidadTableClass::getNameProveedor($objControlCalidad[0]->$proveedor_id) : '') ?></td>
           </tr>
       </tbody>
     </table>

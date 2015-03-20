@@ -176,11 +176,12 @@ dictionary:
     reducingSugars:      azucares reductores
     saccharose:           sacarosa
     purity:               pureza
-    idEmployed:          id empleado
-    idProvider:          id proveedor
+    idEmployed:           empleado
+    idProvider:           proveedor
     qualityControl:      Control Calidad
-    EditQualityControl:  Editar Control Calidad
+    editQualityControl:  Editar Control Calidad
     qualityControlInformation: Informacion De Control Calidad
+    newQualityControl:   Nuevo Control Calidad
     ##-----------------control calidad---------------------------##
      
     ##---------------------- DETALLE EMPAQUE----------------------------##
