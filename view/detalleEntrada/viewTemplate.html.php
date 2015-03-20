@@ -7,12 +7,12 @@
 <?php $valor = detalleEntradaTableClass::VALOR ?>
 <?php $fechaFB = detalleEntradaTableClass::FECHA_FABRICACION ?>
 <?php $fechaVC = detalleEntradaTableClass::FECHA_VENCIMIENTO ?>
-<?php $idDoc = tipoDocTableClass::ID ?>
-<?php $desDoc = tipoDocTableClass::DESC_TIPO_DOC ?>
-<?php $enBodegaId = entradaBodegaTableClass::ID ?>
-<?php $fecha = entradaBodegaTableClass::FECHA ?>
-<?php $insuId = insumoTableClass::ID ?>
-<?php $descInsu = insumoTableClass::DESC_INSUMO ?>
+<?php $idDoc =  detalleEntradaTableClass::ID_DOC ?>
+<?php $desDoc =  detalleEntradaTableClass::ID_DOC ?>
+<?php $enBodegaId = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
+<?php $fecha = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
+<?php $insuId = detalleEntradaTableClass::INSUMO_ID ?>
+<?php $descInsu = detalleEntradaTableClass::INSUMO_ID ?>
         
  <?php view::includePartial('empleado/menu') ?>
 
@@ -27,10 +27,16 @@
                 <th><?php echo i18n::__('date') ?></th>
             </tr>
             <tr>
-                <?php foreach ($objEntradaBodega as $entradaB): ?>
-                <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$id : '') ?></td>
-                <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fecha : '') ?></td>
-                <?php endforeach ?>
+              <?php foreach ($objDetalleEntrada  as $key): ?>
+          <tr>
+          <th>id entrada</th>      
+          <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
+          </tr>
+          <tr>
+          <th>fecha entrada</th>      
+          <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
+          </tr>
+<?php endforeach; ?> 
             </tr>
         </table>
      </div>
@@ -61,23 +67,51 @@
             </thead>
             <tbody>
                 <tr>
-                    <?php foreach ($objEntradaBodega as $entradaB): ?>
-                    <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$enBodegaId : '') ?></td>
-                    <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fecha : '') ?></td>
-                    <?php endforeach ?>
-                    <td><?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$id : '') ?></td>
-                    <td><?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$cant : '') ?></td>
-                    <td><?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$valor : '') ?></td>
-                    <td><?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaFB : '') ?></td>                    
-                    <td><?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaVC : '') ?></td>
-                    <?php foreach ($objTipoDoc as $tipoDoc): ?>
-                    <td><?php echo ((isset($objTipoDoc) == true) ? $objTipoDoc[0]->$idDoc : '') ?></td>
-                    <td><?php echo ((isset($objTipoDoc) == true) ? $objTipoDoc[0]->$desDoc : '') ?></td>
-                    <?php endforeach ?>
-                    <?php foreach ($objInsu as $insu): ?>
-                    <td><?php echo ((isset($objInsu) == true) ? $objInsu[0]->$insuId : '') ?></td>
-                    <td><?php echo ((isset($objInsu) == true) ? $objInsu[0]->$descInsu : '') ?></td> 
-                    <?php endforeach ?>
+                           
+              <?php foreach ($objDetalleEntrada as $key): ?> 
+                
+              <th><?php echo $key->$id ?></th>
+           
+               
+          <th><?php echo $key->$cant ?></th>
+       
+              
+          <th><?php echo $key->$valor ?></th>
+         
+             
+          <th><?php echo $key->$fechaFB ?></th>
+         
+            <th><?php echo $key->$fechaVC ?></th>
+       
+          
+
+        <?php endforeach; ?>       
+                    
+                   <?php foreach ($objDetalleEntrada as $key): ?>          
+                          
+            <th><?php echo tipoDocTableClass::getNameTipoDoc($key->$idDoc) ?></th>
+     
+                           
+            <th><?php echo tipoDocTableClass::getNameTipoDes($key->$desDoc ) ?></th>
+     
+        <?php endforeach; ?>
+
+
+<?php foreach ($objDetalleEntrada  as $key): ?>
+             
+          <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
+            
+          <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
+         
+<?php endforeach; ?> 
+                    
+<?php foreach ($objDetalleEntrada as $key): ?>
+            
+          <th><?php echo insumoTableClass::getNameInsumo($key->$insuId) ?></th>
+              
+          <th><?php echo insumoTableClass::getNameDInsumo($key->$descInsu) ?></th>
+          
+<?php endforeach; ?>                    
             </tbody>
         </table>
     </form>
