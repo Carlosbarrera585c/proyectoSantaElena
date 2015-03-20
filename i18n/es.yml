@@ -137,6 +137,7 @@ dictionary:
     ##---------------------- EMPAQUE----------------------------##
     packing:              Empaque
     informationPacking:   Información de Empaque
+    IdPacking:            Identificación del Empaque
     editPacking:          Editar Empaque
     newPacking:           Nuevo Empaque
     ##---------------------- EMPAQUE----------------------------##

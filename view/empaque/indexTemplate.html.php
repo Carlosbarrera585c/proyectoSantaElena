@@ -6,6 +6,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
 <?php $id = empaqueTableClass::ID ?>
+<?php $fecha = empaqueTableClass::FECHA ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
@@ -21,7 +22,8 @@ use mvc\view\viewClass as view ?>
             <thead>
                 <tr>
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('packing') ?></th>
+                    <th><?php echo i18n::__('IdPacking') ?></th>
+                    <th><?php echo i18n::__('date') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
@@ -30,6 +32,7 @@ use mvc\view\viewClass as view ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $empaque->$id ?>"></td>
                         <td><?php echo $empaque->$id ?></td>
+                        <td><?php echo $empaque->$fecha ?></td>
                         <td>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'view', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'edit', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
