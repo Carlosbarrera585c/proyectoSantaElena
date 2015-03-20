@@ -4,7 +4,8 @@ use mvc\routing\routingClass as routing ?>
 
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
-<?php $provee = entradaBodegaTableClass::PROVEEDOR_ID ?>
+<?php $provee = proveedorTableClass::ID ?>
+<?php $proveeRS = proveedorTableClass::RAZON_SOCIAL ?>
 
 <div class="container container-fluid">
     <h1><?php echo i18n::__('infoCellarEntrance') ?></h1>
@@ -20,14 +21,14 @@ use mvc\routing\routingClass as routing ?>
                 <tr>
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('date') ?></th>
-                    <th><?php echo i18n::__('idProvider') ?></th>
+                    <th><?php echo i18n::__('provider') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$id : '') ?></td>
                     <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fecha : '') ?></td>
-                    <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$provee : '') ?></td>
+                    <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$proveeRS : '') ?></td>
                 </tr>
             </tbody>
         </table>

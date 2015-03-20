@@ -3,7 +3,7 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
-<?php $provee = entradaBodegaTableClass::PROVEEDOR_ID ?>
+<?php $provee = proveedorTableClass::ID ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
@@ -19,6 +19,7 @@
             <thead>
                 <tr>
                     <th><input type="checkbox" id="chkAll"></th>
+                    <th><?php echo i18n::__('id')?></th>
                     <th><?php echo i18n::__('date')?></th>
                     <th><?php echo i18n::__('actions')?></th>
                 </tr>
@@ -26,12 +27,14 @@
             <tbody>
                 <?php foreach ($objEntradaBodega as $entradaB): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $ciudad->$id ?>"></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $entradaB->$id ?>"></td>
+                        <td><?php echo $entradaB->$id ?></td>
                         <td><?php echo $entradaB->$fecha ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'view', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'edit', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $ciudad->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'view', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'edit', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $entradaB->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('detail') ?></a>
                         </td>
                     </tr>
                     <div class="modal fade" id="myModalDelete<?php echo $entradaB->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

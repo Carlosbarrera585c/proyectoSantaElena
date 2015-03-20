@@ -114,6 +114,15 @@ use mvc\view\viewClass as view ?>
             </tbody>
         </table>
     </form>
+    <div class="text-right">
+        pagina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?> ')">
+            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+           
+                <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+            <?php endfor ?>
+                
+        </select> de <?php echo $cntPages; ?>
+    </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>">
     </form>

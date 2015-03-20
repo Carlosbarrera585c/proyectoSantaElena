@@ -1,3 +1,4 @@
+
 # Diccionario de ejemplo
 culture:                  Español
 dictionary:
@@ -93,6 +94,7 @@ dictionary:
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     docType:              Tipo Documento
+    descDoc:              Documento
     newDocType:           Nuevo Tipo Documento
     editDocType:          Editar Tipo Documento
     infoDocType:          Información de los Tipos de Documentos
@@ -168,7 +170,22 @@ dictionary:
     inputRequest:         Solicitud Insumo
        
     ##----------------------SOLICITUD INSUMO---------------------------## 
-    
+    ##-----------------control calidad-------------------------##
+    date:                 fecha
+    turn:                 turno
+    brix:                 brix
+    ph:                   ph
+    ar:                   ar
+    reducingSugars:      azucares reductores
+    saccharose:           sacarosa
+    purity:               pureza
+    idEmployed:           empleado
+    idProvider:           proveedor
+    qualityControl:      Control Calidad
+    editQualityControl:  Editar Control Calidad
+    qualityControlInformation: Informacion De Control Calidad
+    newQualityControl:   Nuevo Control Calidad
+    ##-----------------control calidad---------------------------##
      
     ##---------------------- DETALLE EMPAQUE----------------------------##
     detailPacking:          Detalle Empaque

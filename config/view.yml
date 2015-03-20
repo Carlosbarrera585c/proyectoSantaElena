@@ -186,3 +186,14 @@ empaque:
     
   view:
     title: Ver Empaque
+    
+controlCalidad:
+  index:
+    title: control Calidad
+    javascript:
+      - index.js
+  edit:
+    title: Editar control calidad
+    
+  view:
+    title: Ver control calidad

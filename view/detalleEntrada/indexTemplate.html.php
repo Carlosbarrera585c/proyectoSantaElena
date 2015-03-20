@@ -2,7 +2,17 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $id = detalleEntradaTableClass::ID ?>
+<?php $cant = detalleEntradaTableClass::CANTIDAD ?>
+<?php $valor = detalleEntradaTableClass::VALOR ?>
 <?php $fechaFB = detalleEntradaTableClass::FECHA_FABRICACION ?>
+<?php $fechaVC = detalleEntradaTableClass::FECHA_VENCIMIENTO ?>
+<?php $idDoc = tipoDocTableClass::ID ?>
+<?php $desDoc = tipoDocTableClass::DESC_TIPO_DOC ?>
+<?php $enBodegaId = entradaBodegaTableClass::ID ?>
+<?php $fecha = entradaBodegaTableClass::FECHA ?>
+<?php $insuId = insumoTableClass::ID ?>
+<?php $descInsu = insumoTableClass::DESC_INSUMO ?>
+
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
@@ -18,7 +28,11 @@
             <thead>
                 <tr>
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                    <th><?php echo i18n::__('id') ?></th>
+                    <th><?php echo i18n::__('amount') ?></th>
+                    <th><?php echo i18n::__('value') ?></th>
                     <th><?php echo i18n::__('manuFacturingDate') ?></th>
+                    <th><?php echo i18n::__('expirationDate') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
@@ -26,11 +40,16 @@
                 <?php foreach ($objDetalleEntrada as $detalleEntrada): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $detalleEntrada->$id ?>"></td>
+                      
+                        <td><?php echo $detalleEntrada->$id ?></td>
+                        <td><?php echo $detalleEntrada->$cant ?></td>
+                        <td><?php echo $detalleEntrada->$valor ?></td>
                         <td><?php echo $detalleEntrada->$fechaFB ?></td>
+                        <td><?php echo $detalleEntrada->$fechaVC ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'edit', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $detalleEntrada->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'edit', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $detalleEntrada->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
                         </td>
                     </tr>
                 <div class="modal fade" id="myModalDelete<?php echo $detalleEntrada->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

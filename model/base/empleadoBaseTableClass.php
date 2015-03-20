@@ -123,7 +123,7 @@ class empleadoBaseTableClass extends tableBaseClass {
         return parent::getNameField($field, self::getNameTable(), $html);
     }
 
-    public static function delete($ids, $deletedLogical = true, $table = null) {
+    public static function delete($ids, $deletedLogical = false, $table = null) {
         return parent::delete($ids, $deletedLogical, self::getNameTable());
     }
 

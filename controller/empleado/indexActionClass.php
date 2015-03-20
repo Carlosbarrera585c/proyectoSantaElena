@@ -17,10 +17,11 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
+
       $where = null;
       if (request::getInstance()->hasPost('filter')) {
         $filter = request::getInstance()->getPost('filter');
-        //aqui validar datos
+//aqui validar datos
         if (isset($filter['Nombre']) and $filter['Nombre'] !== null and $filter['Nombre'] !== "") {
           $where[empleadoTableClass::NOM_EMPLEADO] = $filter['Nombre'];
         }
@@ -38,24 +39,32 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         }
         if (isset($filter['Correo']) and $filter['Correo'] !== null and $filter['Correo'] !== "") {
           $where[empleadoTableClass::CORREO] = $filter['Correo'];
-        
         }
-      session::getInstance()->setAttribute('empleadoIndexFilters', $where);
-      } else if(session::getInstance()->hasAttribute('empleadoIndexFilters')) {
+        $fields = array(
+            empleadoTableClass::ID,
+            empleadoTableClass::NOM_EMPLEADO,
+            empleadoTableClass::APELL_EMPLEADO,
+            empleadoTableClass::TELEFONO,
+            empleadoTableClass::DIRECCION,
+            empleadoTableClass::TIPO_ID_ID,
+            empleadoTableClass::NUMERO_IDENTIFICACION,
+            empleadoTableClass::CREDENCIAL_ID,
+            empleadoTableClass::CORREO
+        );
+
+        session::getInstance()->setAttribute('empleadoIndexFilters', $where);
+      } else if (session::getInstance()->hasAttribute('empleadoIndexFilters')) {
         $where = session::getInstance()->getAttribute('empleadoIndexFilters');
       }
-      $fields = array(
-          empleadoTableClass::ID,
-          empleadoTableClass::NOM_EMPLEADO,
-          empleadoTableClass::APELL_EMPLEADO,
-          empleadoTableClass::TELEFONO,
-          empleadoTableClass::DIRECCION,
-          empleadoTableClass::TIPO_ID_ID,
-          empleadoTableClass::NUMERO_IDENTIFICACION,
-          empleadoTableClass::CREDENCIAL_ID,
-          empleadoTableClass::CORREO
-      );
-      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, null, null, $where);
+      $page = 0;
+      if (request::getInstance()->hasGet('page')) {
+        $this->page = request::getInstance()->getGet('page');
+        $page = request::getInstance()->getGet('page') - 1;
+        $page = $page * config::getRowGrid();
+      }
+      $this->cntPages = empleadoTableClass:: getTotalPages(config::getRowGrid());
+      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, $page, config::getRowGrid(),  $where);
+      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, null, null, );
       $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

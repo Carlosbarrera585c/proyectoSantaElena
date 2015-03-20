@@ -27,6 +27,12 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             $where = array (
             entradaBodegaTableClass::ID  => $id
             );
+                $fieldsPro = array(
+                proveedorTableClass::ID,
+                proveedorTableClass::RAZON_SOCIAL
+            );
+
+            $this->objProveedor = proveedorTableClass::getAll($fieldsPro,false);
             $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, null, null, null, null, $where);
             $this->defineView('view', 'entradaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

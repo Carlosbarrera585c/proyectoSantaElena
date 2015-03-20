@@ -3,66 +3,122 @@
 use mvc\model\table\tableBaseClass;
 
 /**
- * Description of credencialBaseTableClass
+ * Description of controlCalidadBaseTableClass
  *
- * @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * @author Bayron Esteban Henao <bairon_henao_1995@hotmail.com>
  */
-class proveedorBaseTableClass extends tableBaseClass {
-
+class controlCalidadBaseTableClass extends tableBaseClass {
   private $id;
-  private $razon_social;
-  private $direccion;
-  private $telefono;
-  private $ciudad_id;
-  
+  private $fecha;
+  private $turno;
+  private $brix;
+  private $ph;
+  private $ar;
+  private $sacarosa;
+  private $pureza;
+  private $empleado_id;
+  private $proveedor_id;
+
   const ID = 'id';
-  const RAZON_SOCIAL = 'razon_social';
-  const RAZON_SOCIAL_LENGTH = 30;
-  const DIRECCION = 'direccion';
-  const TELEFONO = 'telefono';
-  const CIUDAD_ID = 'ciudad_id';
+  const FECHA= 'fecha';
+  const FECHA_LENGTH = 35;
+  const TURNO= 'turno';
+  const TURNO_LENGHT= 20;
+  const BRIX= 'brix';
+  const BRIX_LENGHT= 20;
+  const PH = 'ph';
+  const PH_LENGHT= 20;
+  const AR = 'ar';
+  const AR_LENGHT= 20;
+  const SACAROSA = 'sacarosa';
+  const SACAROSA_LENGHT= 20;
+  const PUREZA= 'pureza';
+  const PUREZA_LENGHT= 20;
+  const EMPLEADO_ID = 'empleado_id';
+  const PROVEEDOR_ID= 'proveedor_id';
   
-  function getId() {
+  public function getId() {
       return $this->id;
   }
 
-  function getRazon_social() {
-      return $this->razon_social;
+  public function getFecha() {
+      return $this->fecha;
   }
 
-  function getDireccion() {
-      return $this->direccion;
+  public function getTurno() {
+      return $this->turno;
   }
 
-  function getTelefono() {
-      return $this->telefono;
+  public function getBrix() {
+      return $this->brix;
   }
 
-  function getCiudad_id() {
-      return $this->ciudad_id;
+  public function getPh() {
+      return $this->ph;
   }
 
-  function setId($id) {
+  public function getAr() {
+      return $this->ar;
+  }
+
+  public function getSacarosa() {
+      return $this->sacarosa;
+  }
+
+  public function getPureza() {
+      return $this->pureza;
+  }
+
+  public function getEmpleado_id() {
+      return $this->empleado_id;
+  }
+
+  public function getProveedor_id() {
+      return $this->proveedor_id;
+  }
+
+  public function setId($id) {
       $this->id = $id;
   }
 
-  function setRazon_social($razon_social) {
-      $this->razon_social = $razon_social;
+  public function setFecha($fecha) {
+      $this->fecha = $fecha;
   }
 
-  function setDireccion($direccion) {
-      $this->direccion = $direccion;
+  public function setTurno($turno) {
+      $this->turno = $turno;
   }
 
-  function setTelefono($telefono) {
-      $this->telefono = $telefono;
+  public function setBrix($brix) {
+      $this->brix = $brix;
   }
 
-  function setCiudad_id($ciudad_id) {
-      $this->ciudad_id = $ciudad_id;
+  public function setPh($ph) {
+      $this->ph = $ph;
   }
 
-  
+  public function setAr($ar) {
+      $this->ar = $ar;
+  }
+
+  public function setSacarosa($sacarosa) {
+      $this->sacarosa = $sacarosa;
+  }
+
+  public function setPureza($pureza) {
+      $this->pureza = $pureza;
+  }
+
+  public function setEmpleado_id($empleado_id) {
+      $this->empleado_id = $empleado_id;
+  }
+
+  public function setProveedor_id($proveedor_id) {
+      $this->proveedor_id = $proveedor_id;
+  }
+
+    
+
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato
    * DB (.) o en formato HTML (_)
@@ -81,7 +137,7 @@ class proveedorBaseTableClass extends tableBaseClass {
    * @return string
    */
   public static function getNameTable() {
-    return 'proveedor';
+    return 'control_calidad';
   }
 
   /**
@@ -94,7 +150,7 @@ class proveedorBaseTableClass extends tableBaseClass {
    * borrado físico de un registro en una tabla de la base de datos
    * @return PDOException|boolean
    */
-  public static function delete($ids, $deletedLogical = false, $table = null) {
+  public static function delete($ids, $deletedLogical = true, $table = null) {
     return parent::delete($ids, $deletedLogical, self::getNameTable());
   }
 
@@ -127,7 +183,7 @@ class proveedorBaseTableClass extends tableBaseClass {
    * variables publica los nombres de las columnas de la consulta o una
    * instancia de \PDOException en caso de fracaso.
    */
-  public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
+  public static function getAll($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
     return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
   }
 

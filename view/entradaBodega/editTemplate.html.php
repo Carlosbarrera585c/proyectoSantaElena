@@ -3,6 +3,6 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $fechaEB = entradaBodegaTableClass::FECHA ?>
 <pre>
-<h1>Editar Tipo Empaque <?php echo $objEntradaBodega[0]->$fechaEB ?></h1>
+<h1>Editar Entrada Bodega <?php echo $objEntradaBodega[0]->$fechaEB ?></h1>
 <?php view::includePartial('entradaBodega/formEntradaB', array('objEntradaBodega' => $objEntradaBodega, 'fecha' => $fechaEB)) ?>
 </pre>

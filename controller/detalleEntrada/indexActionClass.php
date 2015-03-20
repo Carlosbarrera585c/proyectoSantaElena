@@ -27,6 +27,26 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID,
                 detalleEntradaTableClass::INSUMO_ID
             );
+            
+            $fieldsDoc = array(
+                tipoDocTableClass::ID,
+                tipoDocTableClass::DESC_TIPO_DOC
+            );
+            
+            $fieldsEntrada = array(
+                entradaBodegaTableClass::ID,
+                entradaBodegaTableClass::FECHA
+            );
+            
+            $fieldsInsumo = array(
+                insumoTableClass::ID,
+                insumoTableClass::DESC_INSUMO
+            );
+
+            $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
+            $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
+            
             $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false);
             $this->defineView('index', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

@@ -601,6 +601,8 @@ entradaBodega_index:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 entradaBodega_insert:
   url:    /entradaBodega/insertar
@@ -608,6 +610,8 @@ entradaBodega_insert:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
     
 entradaBodega_view:
   url:    /entradaBodega/ver
@@ -615,6 +619,8 @@ entradaBodega_view:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 entradaBodega_create:
   url:    /entradaBodega/crear
@@ -629,6 +635,8 @@ entradaBodega_edit:
   load:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 entradaBodega_update:
   url:    /entradaBodega/actualizar
@@ -736,7 +744,7 @@ tipoDoc_view:
     - model/base/tipoDocBaseTableClass.php
     - model/tipoDocTableClass.php
 
-proveedor_create:
+tipoDoc_create:
   url:    /tipoDoc/crear
   param:  { module: tipoDoc, action: create, format: html }
   load:
@@ -781,6 +789,14 @@ detalleEntrada_index:
   load:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 detalleEntrada_insert:
   url:    /detalleEntrada/insertar
@@ -802,6 +818,12 @@ detalleEntrada_view:
   load:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 detalleEntrada_create:
   url:    /detalleEntrada/crear
@@ -1110,3 +1132,86 @@ detalleEmpaque_deleteSelect:
     - model/detalleEmpaqueTableClass.php
 
 ##--------------------------DETALLE EMPAQUE----------------------------##
+##--------------------------CONTROL CALIDAD------------------------##
+
+controlCalidad_index:
+  url:    /controlCalidad/index
+  param:  { module: controlCalidad, action: index, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+controlCalidad_view:
+  url:    /controlCalidad/ver
+  param:  { module: controlCalidad, action: view, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+controlCalidad_insert:
+  url:    /controlCalidad/insertar
+  param:  { module: controlCalidad, action: insert, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+controlCalidad_create:
+  url:    /controlCalidad/crear
+  param:  { module: controlCalidad, action: create, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+controlCalidad_edit:
+  url:    /controlCalidad/editar
+  param:  { module: controlCalidad, action: edit, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+controlCalidad_update:
+  url:    /controlCalidad/actualizar
+  param:  { module: controlCalidad, action: update, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+controlCalidad_delete:
+  url:    /controlCalidad/eliminar
+  param:  { module: controlCalidad, action: delete, format: json }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+
+controlCalidad_deleteSelect:
+  url:    /controlCalidad/eliminarSeleccion
+  param:  { module: controlCalidad, action: deleteSelect, format: html }
+  load:
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+##-------------------------------------------------------------------------##
