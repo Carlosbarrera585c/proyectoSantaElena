@@ -33,9 +33,6 @@
                     <th><?php echo i18n::__('value') ?></th>
                     <th><?php echo i18n::__('manuFacturingDate') ?></th>
                     <th><?php echo i18n::__('expirationDate') ?></th>
-                    <th><?php echo i18n::__('idDoc') ?></th>
-                    <th><?php echo i18n::__('idEntrance') ?></th>
-                    <th><?php echo i18n::__('idInput') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
@@ -49,15 +46,6 @@
                         <td><?php echo $detalleEntrada->$valor ?></td>
                         <td><?php echo $detalleEntrada->$fechaFB ?></td>
                         <td><?php echo $detalleEntrada->$fechaVC ?></td>
-                        <?php foreach ($objTipoDoc as $tipoDoc): ?>
-                        <td><?php echo $tipoDoc->$idDoc ?></td>
-                        <?php endforeach ?>
-                        <?php foreach ($objEntradaBodega as $entradaB): ?>
-                        <td><?php echo $entradaB->$enBodegaId ?></td>                     
-                        <?php endforeach ?>
-                        <?php foreach ($objInsu as $insu): ?>
-                        <td><?php echo $insu->$insuId ?></td>
-                        <?php endforeach ?>
                         <td>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'edit', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>

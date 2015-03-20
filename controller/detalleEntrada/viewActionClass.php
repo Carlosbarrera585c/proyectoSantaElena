@@ -29,30 +29,10 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID,
                 detalleEntradaTableClass::INSUMO_ID
             );
-            $where = array(
-                detalleEntradaTableClass::ID => $id
-            );
-            
-                        $fieldsDoc = array(
-                tipoDocTableClass::ID,
-                tipoDocTableClass::DESC_TIPO_DOC
-            );
-            
-            $fieldsEntrada = array(
-                entradaBodegaTableClass::ID,
-                entradaBodegaTableClass::FECHA
-            );
-            
-            $fieldsInsumo = array(
-                insumoTableClass::ID,
-                insumoTableClass::DESC_INSUMO
-            );
-
-            $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
-            $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
-            
-            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
+           $where = array(
+           detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
+        );
+              $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
