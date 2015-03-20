@@ -1,3 +1,4 @@
+
 # Diccionario de ejemplo
 culture:                  Español
 dictionary:
@@ -90,6 +91,7 @@ dictionary:
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     docType:              Tipo Documento
+    descDoc:              Documento
     newDocType:           Nuevo Tipo Documento
     editDocType:          Editar Tipo Documento
     infoDocType:          Información de los Tipos de Documentos

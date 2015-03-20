@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
@@ -20,7 +20,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         try {
             if (request::getInstance()->hasRequest(detalleEntradaTableClass::ID)) {
                 $fields = array(
-                   detalleEntradaTableClass::CANTIDAD,
+                    detalleEntradaTableClass::ID,
+                    detalleEntradaTableClass::CANTIDAD,
                     detalleEntradaTableClass::VALOR,
                     detalleEntradaTableClass::FECHA_FABRICACION,
                     detalleEntradaTableClass::FECHA_VENCIMIENTO,
