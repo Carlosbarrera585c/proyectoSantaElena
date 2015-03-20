@@ -1,20 +1,24 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 
 <?php $id = detalleEntradaTableClass::ID ?>
 <?php $cant = detalleEntradaTableClass::CANTIDAD ?>
 <?php $valor = detalleEntradaTableClass::VALOR ?>
 <?php $fechaFB = detalleEntradaTableClass::FECHA_FABRICACION ?>
 <?php $fechaVC = detalleEntradaTableClass::FECHA_VENCIMIENTO ?>
-<?php $idDoc =  detalleEntradaTableClass::ID_DOC ?>
-<?php $desDoc =  detalleEntradaTableClass::ID_DOC ?>
+<?php $idDoc = detalleEntradaTableClass::ID_DOC ?>
+<?php $desDoc = detalleEntradaTableClass::ID_DOC ?>
 <?php $enBodegaId = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
 <?php $fecha = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
 <?php $insuId = detalleEntradaTableClass::INSUMO_ID ?>
 <?php $descInsu = detalleEntradaTableClass::INSUMO_ID ?>
-        
- <?php view::includePartial('empleado/menu') ?>
+
+<?php view::includePartial('empleado/menu') ?>
 
 <div class="container container-fluid">
     <div class="page-header titulo">
@@ -22,27 +26,22 @@
     </div>
     <div>
         <table class="table table-bordered table-responsive table-condensed">
-            <tr>
-                <th><?php echo i18n::__('id') ?></th>
-                <th><?php echo i18n::__('date') ?></th>
-            </tr>
-            <tr>
-              <?php foreach ($objDetalleEntrada  as $key): ?>
-          <tr>
-          <th>id entrada</th>      
-          <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
-          </tr>
-          <tr>
-          <th>fecha entrada</th>      
-          <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
-          </tr>
+<?php foreach ($objDetalleEntrada as $key): ?>
+                <tr>
+                    <th><?php echo i18n::__('id') ?></th>      
+                    <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
+                </tr>
+                <tr>
+                    <th><?php echo i18n::__('date') ?></th>      
+                    <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
+                </tr>
 <?php endforeach; ?> 
             </tr>
         </table>
-     </div>
-<div class="page-header titulo">
+    </div>
+    <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoDetailEntrance') ?></i></h1>
-</div>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
@@ -66,52 +65,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                           
-              <?php foreach ($objDetalleEntrada as $key): ?> 
-                
-              <th><?php echo $key->$id ?></th>
-           
-               
-          <th><?php echo $key->$cant ?></th>
-       
-              
-          <th><?php echo $key->$valor ?></th>
-         
-             
-          <th><?php echo $key->$fechaFB ?></th>
-         
-            <th><?php echo $key->$fechaVC ?></th>
-       
-          
-
-        <?php endforeach; ?>       
-                    
-                   <?php foreach ($objDetalleEntrada as $key): ?>          
-                          
-            <th><?php echo tipoDocTableClass::getNameTipoDoc($key->$idDoc) ?></th>
-     
-                           
-            <th><?php echo tipoDocTableClass::getNameTipoDes($key->$desDoc ) ?></th>
-     
-        <?php endforeach; ?>
-
-
-<?php foreach ($objDetalleEntrada  as $key): ?>
-             
-          <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
-            
-          <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
-         
-<?php endforeach; ?> 
-                    
-<?php foreach ($objDetalleEntrada as $key): ?>
-            
-          <th><?php echo insumoTableClass::getNameInsumo($key->$insuId) ?></th>
-              
-          <th><?php echo insumoTableClass::getNameDInsumo($key->$descInsu) ?></th>
-          
-<?php endforeach; ?>                    
+                <tr>              
+                        
+                        <?php foreach ($objDetalleEntrada as $key): ?>
+                        <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
+                        <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
+                        <?php endforeach; ?> 
+                        <?php foreach ($objDetalleEntrada as $key): ?>  
+                        <th><?php echo $key->$id ?></th>
+                        <th><?php echo $key->$cant ?></th>  
+                        <th><?php echo $key->$valor ?></th>
+                        <th><?php echo $key->$fechaFB ?></th>
+                        <th><?php echo $key->$fechaVC ?></th>
+                        <?php endforeach; ?>       
+                        <?php foreach ($objDetalleEntrada as $key): ?>          
+                        <th><?php echo tipoDocTableClass::getNameTipoDoc($key->$idDoc) ?></th>
+                        <th><?php echo tipoDocTableClass::getNameTipoDes($key->$desDoc) ?></th>
+                        <?php endforeach; ?>
+                        <?php foreach ($objDetalleEntrada as $key): ?>
+                        <th><?php echo insumoTableClass::getNameInsumo($key->$insuId) ?></th>
+                        <th><?php echo insumoTableClass::getNameDInsumo($key->$descInsu) ?></th>
+                        <?php endforeach; ?>                    
             </tbody>
         </table>
     </form>
