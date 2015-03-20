@@ -1,0 +1,57 @@
+<?php use mvc\routing\routingClass as routing ?>
+<?php use mvc\i18n\i18nClass as i18n ?>
+<?php $id = controlCalidadTableClass::ID ?>
+<?php $fecha = controlCalidadTableClass::FECHA ?>
+<?php $turno = controlCalidadTableClass::TURNO ?>
+<?php $brix = controlCalidadTableClass::BRIX ?>
+<?php $ph = controlCalidadTableClass::PH ?>
+<?php $ar = controlCalidadTableClass::AR ?>
+<?php $sacarosa = controlCalidadTableClass::SACAROSA ?>
+<?php $pureza = controlCalidadTableClass::PUREZA ?>
+<?php $empleado_id = controlCalidadTableClass::EMPLEADO_ID ?>
+<?php $proveedor_id = controlCalidadTableClass::PROVEEDOR_ID ?>
+
+<div class="container container-fluid">
+     <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
+    <div style="margin-bottom: 10px; margin-top: 30px">
+      <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>
+      <a href="#" class="btn btn-danger btn-xs" onclick="eliminar()"><?php echo i18n::__('delete')?></a>
+     <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a>
+    </div>
+    <table class="table table-bordered table-responsive table-condensed">
+      <thead>
+        <tr>
+          <th><?php echo i18n::__('id')?></th>
+          <th><?php echo i18n::__('date')?></th>
+          <th><?php echo i18n::__('turn')?></th>
+          <th><?php echo i18n::__('brix')?></th>
+          <th><?php echo i18n::__('ph')?></th>
+          <th><?php echo i18n::__('ar')?></th>
+          <th><?php echo i18n::__('saccharose')?></th>
+          <th><?php echo i18n::__('purity')?></th>
+          <th><?php echo i18n::__('idEmployed')?></th>
+          <th><?php echo i18n::__('idProvider')?></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$id : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$turno : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$brix : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ph : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$sacarosa : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$pureza : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$empleado_id : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$proveedor_id : '') ?></td>
+          
+          </tr>
+      </tbody>
+    </table>
+  </form>
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
+      <input type="hidden" id="idDelete" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>">
+  </form>
+</div>

@@ -124,7 +124,7 @@ class empleadoBaseTableClass extends tableBaseClass {
     }
 
 
-    public static function delete($ids, $deletedLogical = true, $table = null) {
+    public static function delete($ids, $deletedLogical = false, $table = null) {
         return parent::delete($ids, $deletedLogical, self::getNameTable());
     }
 

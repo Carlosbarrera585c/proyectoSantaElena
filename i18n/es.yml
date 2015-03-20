@@ -144,7 +144,21 @@ dictionary:
     inputRequest:           Solicitud Insumo
        
     ##----------------------SOLICITUD INSUMO---------------------------## 
-    
+    ##-----------------control calidad-------------------------##
+    date:                 fecha
+    turn:                 turno
+    brix:                 brix
+    ph:                   ph
+    ar:                   ar
+    reducingSugars:      azucares reductores
+    saccharose:           sacarosa
+    purity:               pureza
+    idEmployed:          id empleado
+    idProvider:          id proveedor
+    qualityControl:      Control Calidad
+    EditQualityControl:  Editar Control Calidad
+    qualityControlInformation: Informacion De Control Calidad
+    ##-----------------control calidad---------------------------##
      
     ##---------------------- DETALLE EMPAQUE----------------------------##
     
