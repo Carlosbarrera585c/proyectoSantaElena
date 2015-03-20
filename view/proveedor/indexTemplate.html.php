@@ -25,7 +25,7 @@
             <tbody>
                 <?php foreach ($objProveedor as $proveed): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $ciudad->$id ?>"></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $proveed->$id ?>"></td>
                         <td><?php echo $proveed->$razonS ?></td>
                         <td>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'view', array(proveedorTableClass::ID => $proveed->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>

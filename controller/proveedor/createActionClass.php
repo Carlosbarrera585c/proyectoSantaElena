@@ -23,9 +23,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         $direccion = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true));
         $telefono = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true));
         $ciudad_id = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::CIUDAD_ID, true));
-
-  
-
+        
         if (strlen($razon_social) > proveedorTableClass::RAZON_SOCIAL_LENGTH) {
           throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => proveedorTableClass::RAZON_SOCIAL_LENGTH)), 00001);
         }

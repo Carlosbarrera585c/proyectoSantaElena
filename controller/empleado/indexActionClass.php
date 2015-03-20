@@ -28,7 +28,14 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 empleadoTableClass::CREDENCIAL_ID,
                 empleadoTableClass::CORREO
             );
-            $this->objEmpleado = empleadoTableClass::getAll($fields, false);
+            $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            $this->cntPages = empleadoTableClass:: getTotalPages(config::getRowGrid());
+            $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null,config::getRowGrid(), $page);
             $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
