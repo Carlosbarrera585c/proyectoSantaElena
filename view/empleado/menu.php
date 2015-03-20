@@ -55,6 +55,16 @@ use mvc\i18n\i18nClass as i18n ?>
                     </ul>
                 </li>
                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('qualityControl') ?><span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('inputRequest') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
