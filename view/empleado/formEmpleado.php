@@ -51,7 +51,7 @@ use mvc\view\viewClass as view ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, TRUE) ?>">
                     <?php foreach ($objTipoId as $tipoId): ?>
-                        <option <?php echo ($objEmpleado[0]->$tipo_id == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
+                        <option <?php echo ($objTipoId[0]->$tipo_id == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
                             <?php echo $tipoId->$desc_tipo_id ?>
                         </option>   
                     <?php endforeach ?>

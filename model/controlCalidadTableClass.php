@@ -6,9 +6,26 @@ use mvc\config\configClass as config;
 /**
  * Description of controlCalidadTableClass
  *
- * @author Bayro Esteban Henao <bairon_henao_1995@hotmail.com>
+ * @author Bayron Esteban Henao <bairon_henao_1995@hotmail.com>
  */
 class controlCalidadTableClass extends controlCalidadBaseTableClass {
+    /**
+     * Funcion para contar la cantidad de lineas 
+     * en la implementacion de paginacion.
+     */
+    public static function getTotalPages($lines){
+        try{
+            $sql = 'SELECT count('.controlCalidadTableClass::ID.')As cantidad '.'FROM '. 
+                    controlCalidadTableClass::getNameTable();
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute();
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return  ceil($answer[0]->cantidad/$lines);
+        }  catch (PDOException $exc){
+            throw $exc;
+        }
+        
+    }
 
 //  public static function getNameDepto($id) {
 //    try {
