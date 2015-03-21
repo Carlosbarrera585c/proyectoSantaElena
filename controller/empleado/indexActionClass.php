@@ -63,7 +63,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = $page * config::getRowGrid();
       }
       $this->cntPages = empleadoTableClass:: getTotalPages(config::getRowGrid());
-      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, null, $page, config::getRowGrid(), $where);
+      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
       $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

@@ -115,7 +115,7 @@ use mvc\view\viewClass as view ?>
         </table>
     </form>
     <div class="text-right">
-        pagina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?> ')">
+        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?> ')">
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
            
                 <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
