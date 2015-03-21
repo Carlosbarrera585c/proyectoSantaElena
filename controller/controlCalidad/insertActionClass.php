@@ -17,6 +17,19 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
+              $fields = array(
+                  empleadoTableClass::ID,
+                  empleadoTableClass::NOM_EMPLEADO
+            );
+               $this->objEmpleado = empleadoTableClass::getAll($fields,false);
+              $fields = array(
+                  proveedorTableClass::ID,
+                  proveedorTableClass::RAZON_SOCIAL
+            );
+         
+
+              $this->objProveedor = proveedorTableClass::getAll($fields,false);
+            
         $this->defineView('insert', 'controlCalidad', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
