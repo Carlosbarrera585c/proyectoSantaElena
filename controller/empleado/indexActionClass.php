@@ -17,6 +17,18 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
+      $fields = array(
+      
+      empleadoTableClass::ID,
+      empleadoTableClass::NOM_EMPLEADO,
+      empleadoTableClass::APELL_EMPLEADO,
+      empleadoTableClass::TELEFONO,
+      empleadoTableClass::DIRECCION,
+      empleadoTableClass::TIPO_ID_ID,
+      empleadoTableClass::NUMERO_IDENTIFICACION,
+      empleadoTableClass::CREDENCIAL_ID,
+      empleadoTableClass::CORREO
+      );
 
       $where = null;
       if (request::getInstance()->hasPost('filter')) {
@@ -40,18 +52,6 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         if (isset($filter['Correo']) and $filter['Correo'] !== null and $filter['Correo'] !== "") {
           $where[empleadoTableClass::CORREO] = $filter['Correo'];
         }
-        $fields = array(
-            empleadoTableClass::ID,
-            empleadoTableClass::NOM_EMPLEADO,
-            empleadoTableClass::APELL_EMPLEADO,
-            empleadoTableClass::TELEFONO,
-            empleadoTableClass::DIRECCION,
-            empleadoTableClass::TIPO_ID_ID,
-            empleadoTableClass::NUMERO_IDENTIFICACION,
-            empleadoTableClass::CREDENCIAL_ID,
-            empleadoTableClass::CORREO
-        );
-
         session::getInstance()->setAttribute('empleadoIndexFilters', $where);
       } else if (session::getInstance()->hasAttribute('empleadoIndexFilters')) {
         $where = session::getInstance()->getAttribute('empleadoIndexFilters');
@@ -63,8 +63,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = $page * config::getRowGrid();
       }
       $this->cntPages = empleadoTableClass:: getTotalPages(config::getRowGrid());
-      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, $page, config::getRowGrid(),  $where);
-      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, null, null, );
+      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, null, $page, config::getRowGrid(), $where);
       $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
