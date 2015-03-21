@@ -88,6 +88,8 @@ use mvc\i18n\i18nClass as i18n ?>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('packing') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('empaque', 'index') ?>"><?php echo i18n::__('packing') ?></a></li>
+                        <li class="divider"></li>
                         <li><a href="#"> <?php echo i18n::__('detailPacking') ?></a></li>
                         <li class="divider"></li>
                         <li><a href="<?php echo \mvc\routing\routingClass::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>"><?php echo i18n::__('typePacking') ?></a></li>

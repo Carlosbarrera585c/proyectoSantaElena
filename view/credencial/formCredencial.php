@@ -4,7 +4,7 @@
 <?php $idCredencial = credencialTableClass::ID ?>
 <?php $nombreCredencial = credencialTableClass::NOMBRE ?>
 <?php $create = credencialTableClass::CREATED_AT ?>
-<pre>
+
 <div class="container container-fluid">    
     <form method="POST" action="<?php echo routing::getInstance()->getUrlWeb('credencial', ((isset($objCredencial)) ? 'update' : 'create')) ?>">
             <?php if (isset($objCredencial) == true): ?>
@@ -21,4 +21,3 @@
         </table>
   </form>
 </div>
-</pre>

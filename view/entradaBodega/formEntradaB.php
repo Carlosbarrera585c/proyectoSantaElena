@@ -4,7 +4,7 @@
 <?php $idE = entradaBodegaTableClass::ID ?>
 <?php $fechaE = entradaBodegaTableClass::FECHA ?>
 <?php $proveeId = entradaBodegaTableClass::PROVEEDOR_ID ?>
-<pre>
+
 <div class="container container-fluid">    
     <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', ((isset($objEntradaBodega)) ? 'update' : 'create')) ?>">
             <?php if (isset($objEntradaBodega) == true): ?>
@@ -22,4 +22,3 @@
         </table>
   </form>
 </div>
-</pre>

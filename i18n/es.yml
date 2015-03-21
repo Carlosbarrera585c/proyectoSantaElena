@@ -177,6 +177,13 @@ dictionary:
     
     ##---------------------- INGRESO CAÑA----------------------------##
     caneIncome:           Ingreso Caña
+    newCaneIncome:        Nuevo Ingreso Caña
+    editCaneIncome:       Editar Ingreso Caña
+    infoCaneIncome:       Informacion de Ingreso Caña
+    DetailIncome:         Detalle Ingreso Caña
+    newDetailIncome:      Nuevo Detalle Ingreso Caña
+    editDetailIncome:     Editar Detalle Ingreso Caña
+    infoDetailIncome:     Informacion de Detalle Ingreso Caña
        
     ##---------------------- INGRESO CAÑA----------------------------## 
     ##---------------------- SOLICITUD INSUMO-------------------------##
@@ -203,6 +210,9 @@ dictionary:
     ##---------------------- DETALLE EMPAQUE----------------------------##
     detailPacking:          Detalle Empaque
     ##---------------------- DETALLE EMPAQUE----------------------------##
+        ##----------------------INGRESO CAÑA----------------------------##
+    detailPacking:          Detalle Empaque
+    ##---------------------- INGRESO CAÑA----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
     00001:                El módulo y la acción solicitada, no existe.

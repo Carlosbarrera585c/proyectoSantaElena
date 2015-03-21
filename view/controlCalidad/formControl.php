@@ -13,8 +13,11 @@ use mvc\view\viewClass as view ?>
 <?php $ar = controlCalidadTableClass::AR ?>
 <?php $sacarosa = controlCalidadTableClass::SACAROSA ?>
 <?php $pureza = controlCalidadTableClass::PUREZA ?>
-<?php $empleado_id = controlCalidadTableClass::EMPLEADO_ID ?>
-<?php $proveedor_id = controlCalidadTableClass::PROVEEDOR_ID ?>
+<?php $empleado_id = empleadoTableClass::ID ?>
+<?php $empleado_nom = empleadoTableClass::NOM_EMPLEADO ?>
+<?php $proveedor_id = proveedorTableClass::ID ?>
+<?php $proveedor_nom = proveedorTableClass::RAZON_SOCIAL ?>
+
 <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', ((isset($objControlCalidad)) ? 'update' : 'create')) ?>">
     <?php if (isset($objControlCalidad) == true): ?>
         <input name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" value="<?php echo $objControlCalidad[0]->$id ?>" type="hidden">
@@ -66,14 +69,26 @@ use mvc\view\viewClass as view ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idEmployed') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$empleado_id : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true) ?>" placeholder="Introduce El Empleado">
+                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, TRUE) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, TRUE) ?>">
+                    <?php foreach ($objEmpleado as $empleado): ?>
+                        <option value="<?php echo $empleado->$empleado_id ?>">
+                            <?php echo $empleado->$empleado_nom ?>
+                        </option>   
+                    <?php endforeach ?>
+                </select>
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idProvider') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$proveedor_id : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true) ?>" placeholder="Introduce El Proveedor">
-            </div>
+                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, TRUE) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
+                    <?php foreach ($objProveedor as $proveedor): ?>
+                        <option value="<?php echo $proveedor->$proveedor_id ?>">
+                            <?php echo $proveedor->$proveedor_nom ?>
+                        </option>   
+                    <?php endforeach ?>
+                </select>
+            </div> 
         </div>
         <div class="form-group">
             <div class="col-lg-12 col-xs-offset-6">
