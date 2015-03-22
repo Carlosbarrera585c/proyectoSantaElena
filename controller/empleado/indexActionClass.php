@@ -18,16 +18,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
       $fields = array(
-      
-      empleadoTableClass::ID,
-      empleadoTableClass::NOM_EMPLEADO,
-      empleadoTableClass::APELL_EMPLEADO,
-      empleadoTableClass::TELEFONO,
-      empleadoTableClass::DIRECCION,
-      empleadoTableClass::TIPO_ID_ID,
-      empleadoTableClass::NUMERO_IDENTIFICACION,
-      empleadoTableClass::CREDENCIAL_ID,
-      empleadoTableClass::CORREO
+          empleadoTableClass::ID,
+          empleadoTableClass::NOM_EMPLEADO,
+          empleadoTableClass::APELL_EMPLEADO,
+          empleadoTableClass::TELEFONO,
+          empleadoTableClass::DIRECCION,
+          empleadoTableClass::TIPO_ID_ID,
+          empleadoTableClass::NUMERO_IDENTIFICACION,
+          empleadoTableClass::CREDENCIAL_ID,
+          empleadoTableClass::CORREO
       );
 
       $where = null;
@@ -50,7 +49,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           $where[empleadoTableClass::DIRECCION] = $filter['Direccion'];
         }
         if (isset($filter['Correo']) and $filter['Correo'] !== null and $filter['Correo'] !== "") {
-          $where[empleadoTableClass::CORREO] = $filter['Correo'];
+          $where[empleadoTableClass::CORREO] = $filter ['Correo'];
         }
         session::getInstance()->setAttribute('empleadoIndexFilters', $where);
       } else if (session::getInstance()->hasAttribute('empleadoIndexFilters')) {

@@ -1,5 +1,5 @@
-function paginador (objeto, url){
-    window.location.href =  url + '?page=' + $(objeto).val(); 
+function paginador(objeto, url) {
+    window.location.href = url + '?page=' + $(objeto).val();
 }
 
 function eliminar(id, variable, url) {
@@ -27,4 +27,4 @@ $(document).ready(function () {
             }
         });
     });
- });
+});
