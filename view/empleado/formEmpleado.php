@@ -18,7 +18,7 @@ use mvc\view\viewClass as view ?>
 <?php $correo = empleadoTableClass::CORREO ?>
 <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('empleado', ((isset($objEmpleado)) ? 'update' : 'create')) ?>">
     <?php if (isset($objEmpleado) == true): ?>
-        <input name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>" value="<?php echo $objEmpleado[0]->$idEmpleado ?>" type="hidden">
+      <input name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>" value="<?php echo $objEmpleado[0]->$idEmpleado ?>" type="hidden">
     <?php endif ?>
     <div class="container container-fluid">
         <?php view::includeHandlerMessage() ?>
@@ -51,9 +51,9 @@ use mvc\view\viewClass as view ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, TRUE) ?>">
                     <?php foreach ($objTipoId as $tipoId): ?>
-                        <option <?php echo ($objTipoId[0]->$tipo_id == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
-                            <?php echo $tipoId->$desc_tipo_id ?>
-                        </option>   
+                      <option <?php echo ($objTipoId[0]->$tipo_id == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
+                          <?php echo $tipoId->$desc_tipo_id ?>
+                      </option>   
                     <?php endforeach ?>
                 </select>
             </div> 
@@ -69,9 +69,9 @@ use mvc\view\viewClass as view ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, TRUE) ?>">
                     <?php foreach ($objCredencial as $credencial): ?>
-                        <option <?php ($objCredencial[0]->$credencial_id == $credencial->$credencial_id) ? 'selected' : ''?> value="<?php echo $credencial->$credencial_id ?>">
-                            <?php echo $credencial->$nom_credencial ?>
-                        </option>   
+                      <option <?php ($objCredencial[0]->$credencial_id == $credencial->$credencial_id) ? 'selected' : '' ?> value="<?php echo $credencial->$credencial_id ?>">
+                          <?php echo $credencial->$nom_credencial ?>
+                      </option>   
                     <?php endforeach ?>
                 </select>
             </div>

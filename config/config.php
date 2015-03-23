@@ -36,7 +36,7 @@ config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
 
 config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 
-config::setScope('dev'); // prod
+config::setScope('prod'); // prod
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');
 } else {

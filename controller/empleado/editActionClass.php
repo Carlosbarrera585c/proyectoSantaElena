@@ -16,40 +16,40 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->hasRequest(empleadoTableClass::ID)) {
-                $fields = array(
-                    empleadoTableClass::ID,
-                    empleadoTableClass::NOM_EMPLEADO,
-                    empleadoTableClass::APELL_EMPLEADO,
-                    empleadoTableClass::TELEFONO,
-                    empleadoTableClass::DIRECCION,
-                    empleadoTableClass::TIPO_ID_ID,
-                    empleadoTableClass::NUMERO_IDENTIFICACION,
-                    empleadoTableClass::CREDENCIAL_ID,
-                    empleadoTableClass::CORREO
-                );
-                $where = array(
-                    empleadoTableClass::ID => request::getInstance()->getRequest(empleadoTableClass::ID)
-                );
+  public function execute() {
+    try {
+      if (request::getInstance()->hasRequest(empleadoTableClass::ID)) {
+        $fields = array(
+            empleadoTableClass::ID,
+            empleadoTableClass::NOM_EMPLEADO,
+            empleadoTableClass::APELL_EMPLEADO,
+            empleadoTableClass::TELEFONO,
+            empleadoTableClass::DIRECCION,
+            empleadoTableClass::TIPO_ID_ID,
+            empleadoTableClass::NUMERO_IDENTIFICACION,
+            empleadoTableClass::CREDENCIAL_ID,
+            empleadoTableClass::CORREO
+        );
+        $where = array(
+            empleadoTableClass::ID => request::getInstance()->getRequest(empleadoTableClass::ID)
+        );
 
-                $fieldsTipoId = array(
-                    tipoIdTableClass::ID,
-                    tipoIdTableClass::DESC_TIPO_ID
-                );
-                $fieldsCredencial = array(
-                    credencialTableClass::ID,
-                    credencialTableClass::NOMBRE
-                );
+        $fieldsTipoId = array(
+            tipoIdTableClass::ID,
+            tipoIdTableClass::DESC_TIPO_ID
+        );
+        $fieldsCredencial = array(
+            credencialTableClass::ID,
+            credencialTableClass::NOMBRE
+        );
 
-                $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
-                $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
-                $this->objEmpleado = empleadoTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'empleado', session::getInstance()->getFormatOutput());
-            } else {
-                routing::getInstance()->redirect('empleado', 'index');
-            }
+        $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
+        $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
+        $this->objEmpleado = empleadoTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+        $this->defineView('edit', 'empleado', session::getInstance()->getFormatOutput());
+      } else {
+        routing::getInstance()->redirect('empleado', 'index');
+      }
 
 //            if (request::getInstance()->isMethod('POST')) {
 //
@@ -80,11 +80,11 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //            } else {
 //                routing::getInstance()->redirect('datoUsuario', 'index');
 //            }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
-        }
+    } catch (PDOException $exc) {
+      echo $exc->getMessage();
+      echo '<br>';
+      echo $exc->getTraceAsString();
     }
+  }
 
 }

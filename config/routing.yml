@@ -348,6 +348,10 @@ empleado_delete:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
 
+empleado_deleteFilters:
+  url:    /borrar_filtros
+  param:  { module: empleado, action: deleteFilters, format: html }
+
 empleado_deleteSelect:
   url:    /empleado/eliminarSeleccion
   param:  { module: empleado, action: deleteSelect, format: html }

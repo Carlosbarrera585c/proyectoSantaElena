@@ -17,17 +17,6 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
-      $fields = array(
-          empleadoTableClass::ID,
-          empleadoTableClass::NOM_EMPLEADO,
-          empleadoTableClass::APELL_EMPLEADO,
-          empleadoTableClass::TELEFONO,
-          empleadoTableClass::DIRECCION,
-          empleadoTableClass::TIPO_ID_ID,
-          empleadoTableClass::NUMERO_IDENTIFICACION,
-          empleadoTableClass::CREDENCIAL_ID,
-          empleadoTableClass::CORREO
-      );
 
       $where = null;
       if (request::getInstance()->hasPost('filter')) {
@@ -55,13 +44,25 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       } else if (session::getInstance()->hasAttribute('empleadoIndexFilters')) {
         $where = session::getInstance()->getAttribute('empleadoIndexFilters');
       }
+      
+      $fields = array(
+          empleadoTableClass::ID,
+          empleadoTableClass::NOM_EMPLEADO,
+          empleadoTableClass::APELL_EMPLEADO,
+          empleadoTableClass::TELEFONO,
+          empleadoTableClass::DIRECCION,
+          empleadoTableClass::TIPO_ID_ID,
+          empleadoTableClass::NUMERO_IDENTIFICACION,
+          empleadoTableClass::CREDENCIAL_ID,
+          empleadoTableClass::CORREO
+      );
       $page = 0;
       if (request::getInstance()->hasGet('page')) {
         $this->page = request::getInstance()->getGet('page');
         $page = request::getInstance()->getGet('page') - 1;
         $page = $page * config::getRowGrid();
       }
-      $this->cntPages = empleadoTableClass:: getTotalPages(config::getRowGrid());
+      $this->cntPages = empleadoTableClass:: getTotalPages(config::getRowGrid(), $where);
       $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
       $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {

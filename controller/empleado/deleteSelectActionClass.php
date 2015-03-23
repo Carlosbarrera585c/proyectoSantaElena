@@ -15,27 +15,27 @@ use mvc\i18n\i18nClass as i18n;
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->isMethod('POST')) {
+  public function execute() {
+    try {
+      if (request::getInstance()->isMethod('POST')) {
 
-                $idsToDelete = request::getInstance()->getPost('chk');
-                foreach ($idsToDelete as $id) {
-                    $ids = array(
-                        empleadoTableClass::ID => $id
-                    );
-                    empleadoTableClass::delete($ids, false);
-                }
-                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-                routing::getInstance()->redirect('empleado', 'index');
-            } else {
-                routing::getInstance()->redirect('empleado', 'index');
-            }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+        $idsToDelete = request::getInstance()->getPost('chk');
+        foreach ($idsToDelete as $id) {
+          $ids = array(
+              empleadoTableClass::ID => $id
+          );
+          empleadoTableClass::delete($ids, false);
         }
+        session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+        routing::getInstance()->redirect('empleado', 'index');
+      } else {
+        routing::getInstance()->redirect('empleado', 'index');
+      }
+    } catch (PDOException $exc) {
+      echo $exc->getMessage();
+      echo '<br>';
+      echo $exc->getTraceAsString();
     }
+  }
 
 }

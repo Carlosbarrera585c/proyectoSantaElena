@@ -8,5 +8,5 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editEmployee') ?> <?php echo $objEmpleado[0]->$nom_empleado ?></i></h1>
     </div>
-<?php view::includePartial('empleado/formEmpleado', array('objEmpleado' => $objEmpleado, 'nom_empleado' => $nom_empleado, 'objTipoId' => $objTipoId, 'objCredencial' => $objCredencial)) ?>
+    <?php view::includePartial('empleado/formEmpleado', array('objEmpleado' => $objEmpleado, 'nom_empleado' => $nom_empleado, 'objTipoId' => $objTipoId, 'objCredencial' => $objCredencial)) ?>
 </div>

@@ -71,7 +71,7 @@ use mvc\view\viewClass as view ?>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
-            <a href="#" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover">
