@@ -212,6 +212,10 @@ dictionary:
     ##---------------------- DETALLE EMPAQUE----------------------------##
         ##----------------------INGRESO CAÑA----------------------------##
     detailPacking:          Detalle Empaque
+    newDetailPacking:       Nuevo Detalle Empaque
+    editDetailPacking:      Editar Detalle Empaque
+    infoDetailPacking:      Informacion de Detalle Empaque
+    idPacking:              Id Empaque
     ##---------------------- INGRESO CAÑA----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

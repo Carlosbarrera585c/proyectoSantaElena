@@ -970,6 +970,8 @@ insumo_insert:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
     
 insumo_view:
   url:    /insumo/ver
@@ -991,6 +993,8 @@ insumo_edit:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
 
 insumo_update:
   url:    /insumo/actualizar
@@ -1113,6 +1117,12 @@ detalleEmpaque_view:
   load:
     - model/base/detalleEmpaqueBaseTableClass.php
     - model/detalleEmpaqueTableClass.php
+    - model/base/detalleEmpaqueBaseTableClass.php
+    - model/detalleEmpaqueTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
 
 detalleEmpaque_create:
   url:    /detalleEmpaque/crear

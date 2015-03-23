@@ -23,6 +23,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 entradaBodegaTableClass::PROVEEDOR_ID
             );
             $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false);
+            
             $this->defineView('index', 'entradaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

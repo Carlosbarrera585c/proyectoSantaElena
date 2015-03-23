@@ -5,53 +5,53 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<?php $id_empaque = empaqueTableClass::ID ?>
-<?php $fecha = empaqueTableClass::FECHA ?>
-<?php $empleado_id = empaqueTableClass::ID ?>
-<?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
-<?php $tipo_empaque_id = empaqueTableClass::ID ?>
-<?php $desc_tipo_empaque = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
+<?php $id = detalleEmpaqueTableClass::ID ?>
+<?php $cant = detalleEmpaqueTableClass::CANTIDAD ?>
+<?php $insuId = insumoTableClass::ID ?>
+<?php $descInsu = insumoTableClass::DESC_INSUMO ?>
+<?php $empaqueId = empaqueTableClass::ID ?>
+<?php $empaqueFecha = empaqueTableClass::FECHA ?>
 
-<form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('empaque', ((isset($objEmpaque)) ? 'update' : 'create')) ?>">
-    <?php if (isset($objEmpaque) == true): ?>
-        <input name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, true) ?>" value="<?php echo $objEmpaque[0]->$id_empaque ?>" type="hidden">
+<form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('detalleEmpaque', ((isset($objDetalleEmpaque)) ? 'update' : 'create')) ?>">
+    <?php if (isset($objDetalleEmpaque) == true): ?>
+        <input name="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::ID, true) ?>" value="<?php echo $objDetalleEmpaque[0]->$id ?>" type="hidden">
     <?php endif ?>
     <div class="container container-fluid">
         <?php view::includeHandlerMessage() ?>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('amount') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$fecha : '') ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" placeholder="Introduce La Fecha de Empacado">
+                <input type="text" class="form-control" value="<?php echo ((isset($objDetalleEmpaque) == true) ? $objDetalleEmpaque[0]->$cant : '') ?>" name="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::CANTIDAD, true) ?>" placeholder="Introduce la Cantidad">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('employee') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('idInput') ?>:</label>
             <div class="col-lg-10">
-                <select class="form-control" id="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, TRUE) ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::EMPLEADO_ID, TRUE) ?>">
-                    <?php foreach ($objEmpleado as $empleado): ?>
-                        <option value="<?php echo $empleado->$empleado_id ?>">
-                            <?php echo $empleado->$nom_empleado ?>
+                <select class="form-control" id="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::ID, TRUE) ?>" name="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::INSUMO_ID, TRUE) ?>">
+                    <?php foreach ($objInsu as $insu): ?>
+                        <option value="<?php echo $insu->$insuId ?>">
+                            <?php echo $insu->$descInsu ?>
                         </option>   
                     <?php endforeach ?>
                 </select>
             </div> 
         </div>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('typePacking') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('idPacking') ?>:</label>
             <div class="col-lg-10">
-                <select class="form-control" id="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, TRUE) ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::TIPO_EMPAQUE_ID, TRUE) ?>">
-                    <?php foreach ($objTipoEmpaque as $tipo_empaque): ?>
-                        <option value="<?php echo $tipo_empaque->$tipo_empaque_id ?>">
-                            <?php echo $tipo_empaque->$desc_tipo_empaque ?>
+                <select class="form-control" id="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::ID, TRUE) ?>" name="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::EMPAQUE_ID, TRUE) ?>">
+                    <?php foreach ($objEmpaque as $empaque): ?>
+                        <option value="<?php echo $empaque->$empaqueId ?>">
+                            <?php echo $empaque->$empaqueFecha ?>
                         </option>   
                     <?php endforeach ?>
                 </select>
-            </div>
+            </div> 
         </div>
         <div class="form-group">
             <div class="col-lg-12 col-xs-offset-6">
-                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objEmpaque)) ? 'update' : 'register')) ?>">
-                <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
+                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objDetalleEmpaque)) ? 'update' : 'register')) ?>">
+                <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEmpaque', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
             </div>
         </div>
     </div>

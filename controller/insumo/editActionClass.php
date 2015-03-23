@@ -27,6 +27,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                     insumoTableClass::ID => request::getInstance()->getRequest(insumoTableClass::ID)
                 );
                 $this->objInsu = insumoTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                
+               $fields = array(
+                tipoInsumoTableClass::ID,
+                tipoInsumoTableClass::DESC_TIPO_INSUMO
+            );
+            
+               $this->objTipoInsumo = tipoInsumoTableClass::getAll($fields, false);           
                 $this->defineView('edit', 'insumo', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('insumo', 'index');

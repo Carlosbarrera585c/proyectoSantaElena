@@ -11,24 +11,26 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-
-            $fieldsInsumo = array(
+            
+            $fields = array(
                 insumoTableClass::ID,
                 insumoTableClass::DESC_INSUMO
             );
-            $fieldsEmpaque = array(
+
+            $this->objInsu = insumoTableClass::getAll($fields);
+            
+            $fields = array(
                 empaqueTableClass::ID,
                 empaqueTableClass::FECHA
             );
 
-            $this->objInsumo = insumoTableClass::getAll($fieldsInsumo);
-            $this->objEmpaque = detalleEmpaqueTableClass::getAll($fieldsEmpaque);
+            $this->objEmpaque = empaqueTableClass::getAll($fields);
             $this->defineView('insert', 'detalleEmpaque', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

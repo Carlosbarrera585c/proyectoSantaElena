@@ -155,6 +155,17 @@ detalleEntrada:
   view:
     title: Ver Detalle Entrada
     
+detalleEmpaque:
+  index:
+    title: Detalle Empaque
+    javascript:
+      - index.js
+  edit:
+    title: Editar Detalle Empaque
+    
+  view:
+    title: Ver Detalle Empaque
+    
 empresa:
   index:
     title: Empresa

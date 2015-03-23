@@ -27,7 +27,7 @@
             <tbody>
                 <?php foreach ($objEntradaBodega as $entradaB): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $entradaB->$id ?>"></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $entradaB->$fecha ?>"></td>
                         <td><?php echo $entradaB->$id ?></td>
                         <td><?php echo $entradaB->$fecha ?></td>
                         <td>
@@ -45,7 +45,7 @@
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $entradaB->$ciu ?>?
+                                <?php echo i18n::__('questionDelete')?> <?php echo $entradaB->$fecha ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -58,7 +58,7 @@
             </tbody>
         </table>
     </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'delete') ?>" method="POST">
+    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>">
     </form>
 </div>

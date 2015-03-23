@@ -4,4 +4,4 @@
  <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('newInput') ?></i></h1>
     </div>
-<?php view::includePartial('insumo/formInsumo') ?>
+<?php view::includePartial('insumo/formInsumo', array('objTipoInsumo' => $objTipoInsumo)) ?>

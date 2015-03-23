@@ -13,27 +13,24 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Carlos Alberto Barrera Montoya <cabarera22@misena.edu.co>
  */
-class viewActionClass extends controllerClass implements controllerActionInterface {
+class indexActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-
-            $id = request::getInstance()->getRequest(detalleEmpaqueTableClass::ID, true);
             $fields = array(
                 detalleEmpaqueTableClass::ID,
                 detalleEmpaqueTableClass::CANTIDAD,
                 detalleEmpaqueTableClass::INSUMO_ID,
-                detalleEmpaqueTableClass::EMPAQUE_ID
+                detalleEmpaqueTableClass::EMPAQUE_ID,
             );
-            $where = array(
-                detalleEmpaqueTableClass::ID => $id
-            );
-            $this->objDetalleEmpaque = detalleEmpaqueTableClass::getAll($fields, false, null, null, null, null, $where);
-            $this->defineView('view', 'detalleEmpaque', session::getInstance()->getFormatOutput());
+                        
+            $this->objDetalleEmpaque = detalleEmpaqueTableClass::getAll($fields, false);
+            $this->defineView('index', 'detalleEmpaque', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
             echo $exc->getTraceAsString();
         }
     }
+
 }
