@@ -5,6 +5,8 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php
+use mvc\config\configClass as config ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('empleado/menu') ?>
@@ -62,7 +64,13 @@ use mvc\view\viewClass as view ?>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor')?>" method="POST">
+        <select name="languaje" onchange="$('#frmTraductor').submit()">
+            <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es"> Español</option> 
+            <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?> value="en"> Ingles</option> 
+        </select>
+    </form>
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('employee') ?></i></h1>
     </div>

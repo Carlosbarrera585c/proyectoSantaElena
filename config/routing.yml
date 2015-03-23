@@ -4,7 +4,10 @@ homepage:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-
+traduccion:
+  url:    /traduccion
+  param:  { module: empleado, action: traductor, format: html }
+  
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:
   url:    /signin
