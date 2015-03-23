@@ -1,0 +1,221 @@
+# Diccionario de ejemplo
+culture:                  English
+dictionary:
+  default:
+    ##----------------------SISTEMA-------------------------##
+    register:             Register
+    created:              Created
+    actived:              Actived
+    update:               Update
+    updated:              Updated
+    desc:                 Description
+    actions:              Actions
+    filters:              Filters
+    filtrate:             Filtrate
+    deleteFilters:        Delete Filters
+    confirmDelete:        Confirm Delete
+    confirmDeleteMass:    Confirm the removal of Selected Items.
+    questionDelete:       ¿Want to Delete The Register
+    cancel:               Cancel
+    new:                  New
+    view:                 View
+    edit:                 Edit
+    back:                 Back
+    delete:               Delete
+    detail:               Detail
+    deleteSelect:         Remove Selected
+    successfulRegister:   The Register Was Successful.
+    successfulUpdate:     Update Was Successful.
+    failureToRegister:    Something Fault Al Register.
+    successfulDelete:     Removal was Successful.
+    failureToDelete:      Failure Something To The Delete. 
+    ##----------------------SISTEMA-------------------------##
+    
+    ##----------------------USUARIO-------------------------##
+    id:                   Id
+    user:                 User
+    pass:                 Password
+    ##----------------------USUARIO-------------------------##
+    
+    ##----------------------TIPO EMPAQUE-------------------------##
+    typePacking:          Type Packing
+    editTypePacking:      Edit Type of Packaging
+    newTypePacking:       New Type of Packaging
+    infoTypePacking:      Information Type of Packaging
+    ##----------------------TIPO EMPAQUE-------------------------##
+    ##----------------------TIPO INSUMO-------------------------##
+    inputType:            Input Type
+    newInputType:         New Type Input
+    editInputType:        Edit Input Type
+    infoInput:            Information on the Types of Inputs
+    ##----------------------TIPO INSUMO-------------------------##
+    
+    ##----------------------TIPO PAGO---------------------------##
+    paymentType:          Payment Type
+    newPaymentType:       New Type of Payment
+    editPaymentType:      Edit Payment Type
+    infoPlaymentType:     Information Payment Types
+    ##----------------------TIPO PAGO---------------------------##
+    
+    ##----------------------ENTRADA BODEGA-------------------------##
+    cellarEntrance:       Cellar Entrance
+    date:                 Date
+    newCellarEntrance:    New Cellar Bodega
+    editCellarEntrance:   Edit Cellar Bodeg
+    infoCellarEntrance:   Information Cell Bodega
+    
+    ##----------------------ENTRADA BODEGA-------------------------##
+    
+    ##-------------------------- CIUDAD----------------------------##
+    city:                 City
+    idCity:               Id City
+    name:                 Name
+    newCity:              New City
+    editCity:             Edit City
+    infoCity:             Information of Cities
+    ##-------------------------- CIUDAD----------------------------##
+    
+    ##-------------------------- PROVEEDOR----------------------------##
+    provider:             Provider
+    newProvider:          New Provider
+    businessName:         Business Name
+    direction:            Direction 
+    phone:                Phone
+    idProvider:           Id Provider
+    editProvider:         Edit Provider
+    infoProvider:         Information providers
+    ##-------------------------- PROVEEDOR----------------------------##
+    
+    ##-------------------------- PAGO TRABAJADORES--------------------##
+    payWorkers:           Payment of Workers
+    newPayWorkers:        New Pay Workers
+    editPlayWorkers:      Edit Payment of Workers
+    periodBeginning:      Period Start
+    orderPeriod:          Period End
+    idBusiness:           Id Bussiness
+    infoPlayWokers:       Payment Information Workers
+    ##-------------------------- PAGO TRABAJADORES--------------------##
+    
+    ##-------------------------- TIPO DOCUMENTO--------------------##
+    
+    docType:              Document Type
+    descDoc:              Document
+    newDocType:           New Document Type
+    editDocType:          Edit Document Type
+    infoDocType:          Types Information Documents
+  
+    ##-------------------------- TIPO DOCUMENTO--------------------##
+    
+    ##-------------------------- CREDENCIAL-----------------------##
+    numberIdentification: Identification Number
+    credential:           Credential
+    nameCredential:       Name Credential
+    mail:                 Mail
+    infoCredential:       Information Credentials
+    
+    ##-------------------------- CREDENCIAL-----------------------##
+    
+    ##-------------------------- EMPLEADO-----------------------##
+    employee:             Employee
+    infoEmployee:         Employee Information
+    employeeName:         Employee name
+    employeeLastName:     Employee Last Name
+    newEmployee:          New Employee
+    editEmployee:         Edit Employee
+    ##-------------------------- EMPLEADO-----------------------##
+    
+    ##---------------------- TIPO IDENTIFICACION----------------##
+    identification:       Identification
+    identificationType:   Type Identification
+    EditIdentification:   Edit Type Identification
+    newIdentification:    New Identification
+    infoIdentificationType: Types of Identification Information
+    ##---------------------- TIPO IDENTIFICACION----------------##
+    
+     ##---------------------- EMPRESA---------------------------##
+    business:             Business
+    newBusiness:          New Business
+    editBusiness:         Edit Business
+    infoBusiness:         Business Information
+    nit:                  NIT
+    ##---------------------- EMPRESA----------------------------##
+    
+    ##---------------------- INSUMO----------------------------##
+    input:                Input
+    descriptionInput:     Description Input
+    newInput:             New Input
+    editInput:            Edit Input
+    infoInput:            Information Input
+    price:                Price
+    IdentificatiOfInpuType: Id Input Type
+    ##---------------------- INSUMO----------------------------##
+    ##---------------------- EMPAQUE----------------------------##
+    packing:              Packing
+    informationPacking:   Packaging Information
+    IdPacking:            Identification Packaging
+    editPacking:          Edit Package
+    newPacking:           Edit Package
+    ##---------------------- EMPAQUE----------------------------##
+    ##---------------------- DETALLE ENTRADA----------------------------##
+    detailEntrance:       Detail Entry Bodega
+    newDetailEntrance:    New Detail Entry Bodega
+    editDetailEntrance:   Edit Detail Entry Bodega
+    infoDetailEntrance:   Detail Information Entry Bodega
+    amount:               Amount
+    value:                Value
+    manuFacturingDate:    Manufacture Date
+    expirationDate:       Expiration Date
+    idDoc:                Id Document
+    idEntrance:           Id Entry Bodega
+    idInput:              Id Input
+    
+    
+    ##---------------------- DETALLE ENTRADA----------------------------## 
+    
+    ##---------------------- INGRESO CAÑA----------------------------##
+    caneIncome:           Cane Income
+    newCaneIncome:        New Cane Income
+    editCaneIncome:       Edit Cane Income
+    infoCaneIncome:       Cane Income Information
+    DetailIncome:         Income Cane Detail
+    newDetailIncome:      New Income Detail Cane
+    editDetailIncome:     Edit Income Detail Cane
+    infoDetailIncome:     Income Cane Detail Information
+       
+    ##---------------------- INGRESO CAÑA----------------------------## 
+    ##---------------------- SOLICITUD INSUMO-------------------------##
+    inputRequest:         Request Input
+       
+    ##----------------------SOLICITUD INSUMO---------------------------## 
+    ##-----------------control calidad-------------------------##
+    date:                 Date
+    turn:                 Turn
+    brix:                 Brix
+    ph:                   Ph
+    ar:                   Ar
+    reducingSugars:       Reducing Sugars
+    saccharose:           Saccharose
+    purity:               Purity
+    idEmployed:           Employed
+    idProvider:           Provider
+    qualityControl:       Quality Control
+    editQualityControl:   Edit Quality Control
+    qualityControlInformation: Quality Control Information
+    newQualityControl:    New Quality Control
+    ##-----------------control calidad---------------------------##
+     
+    ##---------------------- DETALLE EMPAQUE----------------------------##
+    detailPacking:          Detail Packing
+    ##---------------------- DETALLE EMPAQUE----------------------------##
+    ##-------------------------- ERRORES --------------------##
+  errors:
+    00001:                The module and the action requested does not exist.
+    00002:                The requested address is not registered.
+    00003:                Data username and password are invalid.
+    00001:                What you are looking for does not exist.
+    10001:                There is an error in the definition of the includes.
+    10002:                No defined a scope (dev or prod) for implementation.
+    10003:                The file% file% does not exist.
+    10004:                The% path% directory could not be created.
+    ##-------------------------- ERRORES--------------------##
+

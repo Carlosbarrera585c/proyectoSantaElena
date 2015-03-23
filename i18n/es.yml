@@ -1,4 +1,3 @@
-
 # Diccionario de ejemplo
 culture:                  Español
 dictionary:
@@ -191,16 +190,16 @@ dictionary:
        
     ##----------------------SOLICITUD INSUMO---------------------------## 
     ##-----------------control calidad-------------------------##
-    date:                 fecha
-    turn:                 turno
-    brix:                 brix
-    ph:                   ph
-    ar:                   ar
-    reducingSugars:      azucares reductores
-    saccharose:           sacarosa
-    purity:               pureza
-    idEmployed:           empleado
-    idProvider:           proveedor
+    date:                 Fecha
+    turn:                 Turno
+    brix:                 Brix
+    ph:                   Ph
+    ar:                   Ar
+    reducingSugars:       Azucares Reductores
+    saccharose:           Sacarosa
+    purity:               Pureza
+    idEmployed:           Empleado
+    idProvider:           Proveedor
     qualityControl:      Control Calidad
     editQualityControl:  Editar Control Calidad
     qualityControlInformation: Informacion De Control Calidad
@@ -217,11 +216,11 @@ dictionary:
   errors:
     00001:                El módulo y la acción solicitada, no existe.
     00002:                La dirección que solicita no está registrada.
-    00003:                Los datos de usuario y contrseña son inválidos.
-    00001:                Lo que buscas no existe
+    00003:                Los datos de usuario y contraseña son inválidos.
+    00001:                Lo que buscas no existe.
     10001:                Existe un error en la definición de los includes
-    10002:                No hay definido un ambito (dev o prod) para la aplicación
-    10003:                El arhivo %file% no existe
-    10004:                Elz directorio %path% no pudo ser creado
+    10002:                No hay definido un ambito (dev o prod) para la aplicación.
+    10003:                El archivo %file% no existe
+    10004:                El directorio %path% no pudo ser creado
     ##-------------------------- ERRORES--------------------##
 
