@@ -1,6 +1,7 @@
 <?php
 
 use mvc\config\configClass as config;
+use mvc\session\sessionClass as session;
 
 config::setRowGrid(3);
 
@@ -36,7 +37,12 @@ config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
 config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 
 config::setScope('dev'); // prod
-config::setDefaultCulture('es');
+if (session::getInstance()->hasDefaultCulture() === false) {
+  config::setDefaultCulture('es');
+} else {
+  config::setDefaultCulture(session::getInstance()->getDefaultCulture());
+}
+
 config::setIndexFile('index.php');
 
 config::setFormatTimestamp('Y-m-d H:i:s');
@@ -60,3 +66,6 @@ config::setDefaultAction('index');
 
 config::setDefaultModuleSecurity('shfSecurity');
 config::setDefaultActionSecurity('index');
+
+config::setDefaultModulePermission('shfSecurity');
+config::setDefaultActionPermission('noPermission');

@@ -25,6 +25,14 @@ namespace hook\log {
       }
     }
 
+    /**
+     * 
+     * @param type $accion
+     * @param type $tabla
+     * @param type $observacion
+     * @param type $registro
+     * @param type $user_id
+     */
     public static function register($accion, $tabla, $observacion = null, $registro = null, $user_id = null) {
       $data = array(
           \bitacoraTableClass::ACCION => $accion,

@@ -886,8 +886,7 @@ th {
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-          
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 *:before,
 *:after {
@@ -2422,7 +2421,7 @@ input[type="search"] {
   }
 }
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .radio,
 .checkbox {

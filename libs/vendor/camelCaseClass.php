@@ -9,10 +9,14 @@ namespace mvc\camelCase {
    */
   class camelCaseClass {
 
+    /**
+     * Variable estatica para guardar la instancia de la clase camelCaseClass
+     * @var camelCaseClass 
+     */
     private static $instance;
 
     /**
-     *
+     * Instanciación de la clase camelCaseClass
      * @return camelCaseClass
      */
     public static function getInstance() {

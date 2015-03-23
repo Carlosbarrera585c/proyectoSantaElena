@@ -27,7 +27,7 @@ namespace mvc\i18n {
       if ($culture === null) {
         $culture = self::getCulture();
       }
-      $__ymlCulture = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'i18n/' . $culture . '.yml', 'i18nYaml');
+      $__ymlCulture = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'i18n/' . $culture . '.yml', 'i18nYaml'. $culture);
       $rsp = '';
       if (count($vars) > 0) {
         $keys = array_keys($vars);

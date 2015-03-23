@@ -38,6 +38,14 @@ shfSecurity_logout:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+
+shfSecurity_noPermission:
+  url:    /sin_permisos
+  param:  { module: shfSecurity, action: noPermission, format: html }
+
+shfSecurity_exception:
+  url:    /exception
+  param:  { module: shfSecurity, action: exception, format: html }
 ##-------------------------- shfSecurity --------------------------##
 
 ##-------------------------- EJEMPLO --------------------------##
@@ -51,13 +59,6 @@ default_index:
 default_insert:
   url:    /usuarios/insertar
   param:  { module: default, action: insert, format: html }
-  load:
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
-    
-default_view:
-  url:    /usuarios/ver
-  param:  { module: default, action: view, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -100,6 +101,8 @@ default_deleteSelect:
 default_reporte:
   url:    /usuario/reporte
   param:  { module: default, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
 ##-------------------------- EJEMPLO --------------------------##
 
 ##-------------------------- CREDENCIAL --------------------------##

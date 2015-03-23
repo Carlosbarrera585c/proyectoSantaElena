@@ -199,6 +199,7 @@ class usuarioBaseTableClass extends tableBaseClass {
    * @param integer $limit [optional] Cantidad de resultados a mostrar
    * @param integer $offset [optional] Página solicitadad sobre la cantidad
    * de datos a mostrar
+   * @param array $where
    * @return mixed una instancia de una clase estandar, la cual tendrá como
    * variables publica los nombres de las columnas de la consulta o una
    * instancia de \PDOException en caso de fracaso.

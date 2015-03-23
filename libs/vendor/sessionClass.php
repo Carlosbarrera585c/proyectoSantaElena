@@ -275,6 +275,18 @@ namespace mvc\session {
       return $this->hasAttribute('mvcUserName');
     }
 
+    public function hasDefaultCulture() {
+      return $this->hasAttribute('mvcDefaultCulture');
+    }
+    
+    public function setDefaultCulture($default_culture) {
+      $this->setAttribute('mvcDefaultCulture', $default_culture);
+    }
+    
+    public function getDefaultCulture() {
+      return $this->getAttribute('mvcDefaultCulture');
+    }
+
   }
 
 }

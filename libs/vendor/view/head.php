@@ -8,8 +8,3 @@
     <?php echo \mvc\view\viewClass::genJavascript() ?>
   </head>
   <body>
-    <?php if(\mvc\config\configClass::getScope() === 'dev'): ?>
-    <div id="shfDevelopmentBar">
-      SHF 1.0.0
-    </div>
-    <?php endif; ?>

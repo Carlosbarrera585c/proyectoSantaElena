@@ -1,15 +1,19 @@
 shfSecurity:
   index:
     security: false
-  logoin:
+  login:
     security: false
   logout:
     security: true
+  noPermission:
+    security: false
+  exception:
+    security: false
 
 default:
   index:
     security: true
     credentials:
-      - [admin, cajero]
+      - [admin, usuario]
   insert:
     security: true

@@ -3,6 +3,7 @@
 namespace mvc\model {
 
   use mvc\config\configClass;
+  use mvc\session\sessionClass as session;
 
   /**
    * Description of modelClass
@@ -36,6 +37,11 @@ namespace mvc\model {
     static public function getInstance() {
       if (!self::$instance) {
         self::connect();
+      }
+      if (session::getInstance()->hasAttribute('mvcDbQuery')) {
+        session::getInstance()->setAttribute('mvcDbQuery', session::getInstance()->getAttribute('mvcDbQuery') + 1);
+      } else {
+        session::getInstance()->setAttribute('mvcDbQuery', 1);
       }
       return self::$instance;
     }
