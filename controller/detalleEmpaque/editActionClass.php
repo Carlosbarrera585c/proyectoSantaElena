@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
@@ -28,19 +28,20 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $where = array(
                     detalleEmpaqueTableClass::ID => request::getInstance()->getRequest(detalleEmpaqueTableClass::ID)
                 );
+                                $this->objDetalleEmpaque = detalleEmpaqueTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                
+            $fields = array(
+                insumoTableClass::ID,
+                insumoTableClass::DESC_INSUMO
+            );
+             $this->objInsu = insumoTableClass::getAll($fields);
+             
+            $fields = array(
+                empaqueTableClass::ID,
+                empaqueTableClass::FECHA
+            );           
+            $this->objEmpaque = empaqueTableClass::getAll($fields);
 
-                $fieldsInsumo = array(
-                    insumoTableClass::ID,
-                    insumoTableClass::DESC_INSUMO
-                );
-                $fieldsEmpaque = array(
-                    empaqueTableClass::ID,
-                    empaqueTableClass::FECHA
-                );
-
-                $this->objInsumo = insumoTableClass::getAll($fieldsInsumo);
-                $this->objEmpaque = empaqueTableClass::getAll($fieldsEmpaque);
-                $this->objDetalleEmpaque = detalleEmpaqueTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
                 $this->defineView('edit', 'detalleEmpaque', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('detalleEmpaque', 'index');

@@ -2,40 +2,71 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 
-<?php $id = empaqueTableClass::ID ?>
-<?php $fecha = empaqueTableClass::FECHA ?>
-<?php $empleado_id = empaqueTableClass::EMPLEADO_ID ?>
-<?php $tipo_empaque_id = empaqueTableClass::EMPLEADO_ID ?>
+<?php $id = detalleEmpaqueTableClass::ID ?>
+<?php $cant = detalleEmpaqueTableClass::CANTIDAD ?>
+<?php $insuId = detalleEmpaqueTableClass::INSUMO_ID ?>
+<?php $descInsu = detalleEmpaqueTableClass::INSUMO_ID ?>
+<?php $empaqueId = detalleEmpaqueTableClass::EMPAQUE_ID ?>
+<?php $empaqueFecha = detalleEmpaqueTableClass::EMPAQUE_ID ?>
+
 <?php view::includePartial('empleado/menu') ?>
+
 <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('informationPacking') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoDetailPacking') ?></i></h1>
     </div>
-    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empaque', 'deleteSelect') ?>" method="POST">
-        <div style="margin-bottom: 10px; margin-top: 30px">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
-        </div>
+    <div>
         <table class="table table-bordered table-responsive table-condensed">
+<?php foreach ($objDetalleEmpaque as $key): ?>
+                <tr>
+                    <th><?php echo i18n::__('id') ?></th>      
+                    <th><?php echo empaqueTableClass::getNameId($key->$empaqueId) ?></th>
+                </tr>
+                <tr>
+                    <th><?php echo i18n::__('date') ?></th>      
+                    <th><?php echo empaqueTableClass::getEmpaque($key->$empaqueFecha) ?></th>
+                </tr>
+<?php endforeach; ?> 
+        </table>
+    </div>
+    <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoDetailEntrance') ?></i></h1>
+    </div>
+    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('detalleEmpaque', 'deleteSelect') ?>" method="POST">
+        <div style="margin-bottom: 10px; margin-top: 30px">
+            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEmpaque', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
+        </div>
+        <table class="tablaUsuario table table-bordered table-responsive table-hover">
             <thead>
                 <tr>
-                    <th><?php echo i18n::__('id') ?></th>
+                    <th><?php echo i18n::__('idPacking') ?></th>
                     <th><?php echo i18n::__('date') ?></th>
-                    <th><?php echo i18n::__('employee') ?></th>   
-                    <th><?php echo i18n::__('typePacking') ?></th>
+                    <th><?php echo i18n::__('id') ?></th>
+                    <th><?php echo i18n::__('amount') ?></th>        
+                    <th><?php echo i18n::__('idInput') ?></th>
+                    <th><?php echo i18n::__('descriptionInput') ?></th>
+                    
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$id : '') ?></td>
-                    <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$fecha : '') ?></td>
-                    <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$empleado_id : '') ?></td>
-                    <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$tipo_empaque_id : '') ?></td>
+                <tr>              
+                        
+                        <?php foreach ($objDetalleEmpaque as $key): ?>
+                        <th><?php echo empaqueTableClass::getNameId($key->$empaqueId) ?></th>
+                        <th><?php echo empaqueTableClass::getEmpaque($key->$empaqueFecha) ?></th>
+                        <?php endforeach; ?> 
+                        <?php foreach ($objDetalleEmpaque as $key): ?>  
+                        <th><?php echo $key->$id ?></th>
+                        <th><?php echo $key->$cant ?></th>  
+                        <?php endforeach; ?>  
+                        <?php foreach ($objDetalleEmpaque as $key): ?>
+                        <th><?php echo insumoTableClass::getNameInsumo($key->$insuId) ?></th>
+                        <th><?php echo insumoTableClass::getNameDInsumo($key->$descInsu) ?></th>
+                        <?php endforeach; ?>                    
             </tbody>
         </table>
     </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('empaque', 'delete') ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, true) ?>">
+    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('detalleEmpaque', 'delete') ?>" method="POST">
+        <input type="hidden" id="idDelete" name="<?php echo detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::ID, true) ?>">
     </form>
 </div>

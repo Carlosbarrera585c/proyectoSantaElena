@@ -39,6 +39,8 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             echo '<br>';
             echo $exc->getTraceAsString();
         }
+        
     }
+
 
 }

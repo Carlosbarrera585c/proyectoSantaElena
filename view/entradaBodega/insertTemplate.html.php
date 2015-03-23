@@ -4,4 +4,4 @@
  <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('newCellarEntrance') ?></i></h1>
     </div>
-<?php view::includePartial('entradaBodega/formEntradaB') ?>
+<?php view::includePartial('entradaBodega/formEntradaB', array('objProveedor' => $objProveedor)) ?>

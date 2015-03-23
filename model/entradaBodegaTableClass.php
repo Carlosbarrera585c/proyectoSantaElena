@@ -29,7 +29,7 @@ class entradaBodegaTableClass extends entradaBodegaBaseTableClass {
   }  
  public static function getNameBodega($id){
     try {
-      $sql = 'SELECT ' . entradaBodegaTableClass::FECHA .  ' As nombre  '
+      $sql = 'SELECT ' . entradaBodegaTableClass::FECHA .  ' As fecha  '
              . '  FROM ' . entradaBodegaTableClass::getNameTable() . '  '
              . '  WHERE ' . entradaBodegaTableClass::ID . ' = :id';
       $params = array(
@@ -38,7 +38,7 @@ class entradaBodegaTableClass extends entradaBodegaBaseTableClass {
       $answer = model::getInstance()->prepare($sql);
       $answer->execute($params);
       $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-      return $answer[0]->nombre;
+      return $answer[0]->fecha;
       
     } catch (Exception $exc) {
       throw $exc;

@@ -6,4 +6,4 @@
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editInput') ?></i></h1>
         <?php echo $objInsu[0]->$desc_insumo ?>
     </div>
-<?php view::includePartial('insumo/formInsumo', array('objInsu' => $objInsu, 'desc_insumo' => $desc_insumo)) ?>
+<?php view::includePartial('insumo/formInsumo', array('objInsu' => $objInsu, 'desc_insumo' => $desc_insumo, 'objTipoInsumo' => $objTipoInsumo)) ?>

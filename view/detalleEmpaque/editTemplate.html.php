@@ -1,11 +1,9 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-<?php $fecha = empaqueTableClass::FECHA ?>
-<?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
-<div class="container container-fluid">
-<div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editPacking') ?> <?php echo $objEmpaque[0]->$fecha ?></i></h1>
+<?php $id = detalleEmpaqueTableClass::ID ?>
+ <div class="page-header  text-center titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editDetailEntrance') ?></i></h1>
+                <?php echo $objDetalleEmpaque[0]->$id ?>
     </div>
-<?php view::includePartial('empaque/formEmpaque', array('objEmpaque' => $objEmpaque, 'fecha'=> $fecha, 'objEmpleado' => $objEmpleado, 'nom_empleado' => $nom_empleado, 'objTipoEmpaque' => $objTipoEmpaque)) ?>
-</div>
+<?php view::includePartial('detalleEmpaque/formEmpaque', array('objDetalleEmpaque' => $objDetalleEmpaque, 'detalleEntrada' => $id, 'objInsu' => $objInsu, 'objEmpaque' => $objEmpaque)) ?>

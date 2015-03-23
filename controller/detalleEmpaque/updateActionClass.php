@@ -12,27 +12,29 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-
+                
                 $id = request::getInstance()->getPost(detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::ID, true));
                 $cantidad = request::getInstance()->getPost(detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::CANTIDAD, true));
-                $insumo_id = request::getInstance()->getPost(detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::INSUMO_ID, true));
-                $empaque_id = request::getInstance()->getPost(detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::EMPAQUE_ID, true));
-
+                $idInsumo = request::getInstance()->getPost(detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::INSUMO_ID, true));
+                $idEmpaque = request::getInstance()->getPost(detalleEmpaqueTableClass::getNameField(detalleEmpaqueTableClass::EMPAQUE_ID, true));
+   
+         
                 $ids = array(
                     detalleEmpaqueTableClass::ID => $id
                 );
 
                 $data = array(
+                    detalleEmpaqueTableClass::ID => $id,
                     detalleEmpaqueTableClass::CANTIDAD => $cantidad,
-                    detalleEmpaqueTableClass::EMPLEADO_ID => $insumo_id,
-                    detalleEmpaqueTableClass::EMPAQUE_ID => $empaque_id
+                    detalleEmpaqueTableClass::INSUMO_ID => $idInsumo,
+                    detalleEmpaqueTableClass::EMPAQUE_ID => $idEmpaque     
                 );
 
                 detalleEmpaqueTableClass::update($ids, $data);
@@ -45,4 +47,5 @@ class updateActionClass extends controllerClass implements controllerActionInter
             echo $exc->getTraceAsString();
         }
     }
+
 }
