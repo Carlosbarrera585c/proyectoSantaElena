@@ -18,8 +18,11 @@ class traductorActionClass extends controllerClass implements controllerActionIn
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST') === true) {
-      $languaje = request::getInstance()->getPost('languaje');
-      config::setDefaultCulture($languaje);
+          $languaje = request::getInstance()->getPost('languaje');
+           $PATH_INFO =  request::getInstance()->getServer('PATH_INFO');
+           session::getInstance()->setDefaultCulture($languaje);
+          $dir = config::getUrlBase() . config::getIndexFile() . $PATH_INFO;
+          header('Location: ' . $dir);
       } else {
         routing::getInstance()->redirect('empleado', 'index');
       }

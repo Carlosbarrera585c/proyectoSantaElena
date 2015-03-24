@@ -3,6 +3,7 @@ culture:                  English
 dictionary:
   default:
     ##----------------------SISTEMA-------------------------##
+    SantaHelena:          Santa Helena
     register:             Register
     created:              Created
     actived:              Actived
