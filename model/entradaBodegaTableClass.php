@@ -9,6 +9,24 @@ use mvc\config\configClass as config;
  * @author Cristian Ramirez <critianRamirezXD@outlook.es>
  */
 class entradaBodegaTableClass extends entradaBodegaBaseTableClass {
+    
+    /**
+     * Funcion para contar la cantidad de lineas 
+     * en la implementacion de paginacion.
+     */
+    public static function getTotalPages($lines){
+        try{
+            $sql = 'SELECT count('.  entradaBodegaTableClass::ID.')As cantidad '.'FROM '. 
+            entradaBodegaTableClass::getNameTable();
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute();
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return  ceil($answer[0]->cantidad/$lines);
+        }  catch (PDOException $exc){
+            throw $exc;
+        }
+        
+    }
      public static function getNameEntrada($id){
     try {
       $sql = 'SELECT ' . entradaBodegaTableClass::ID.  ' As nombre  '

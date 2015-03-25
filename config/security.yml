@@ -17,3 +17,11 @@ default:
       - [admin, Carlos]
   insert:
     security: true
+  
+control_calidad:
+  index:
+    security: true
+    credentials:
+      - [admin, Carlos]
+  insert:
+    security: true

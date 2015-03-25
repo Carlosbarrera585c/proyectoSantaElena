@@ -43,9 +43,9 @@ use mvc\i18n\i18nClass as i18n ?>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apell_empleado : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : '') ?></td>
-                    <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$tipo_id_id : '') ?></td>
+                    <td><?php echo ((isset($objEmpleado) == true) ? empleadoTableClass::getNameTipoId($objEmpleado[0]->$tipo_id_id) : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$num_identificacion : '') ?></td>
-                    <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$credencial_id : '') ?></td>
+                    <td><?php echo ((isset($objEmpleado) == true) ? empleadoTableClass::getNameCredencial($objEmpleado[0]->$credencial_id) : '') ?></td>
                     <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?></td></tr>
             </tbody>
         </table>

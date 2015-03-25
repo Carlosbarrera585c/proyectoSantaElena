@@ -318,6 +318,10 @@ empleado_view:
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
+    - model/base/tipoIdBaseTableClass.php
+    - model/tipoIdTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
 
 empleado_create:
   url:    /empleado/crear
@@ -359,6 +363,14 @@ empleado_deleteSelect:
   url:    /empleado/eliminarSeleccion
   param:  { module: empleado, action: deleteSelect, format: html }
   load:
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+empleado_reporte:
+  url:    /controlCalidad/empleado
+  param:  { module: empleado, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
 
@@ -674,6 +686,14 @@ entradaBodega_deleteSelect:
   url:    /entradaBodega/eliminarSeleccion
   param:  { module: entradaBodega, action: deleteSelect, format: html }
   load:
+    - model/base/entradaBodegaBaseTableClass.php
+    - model/entradaBodegaTableClass.php
+
+entradaBodega_reporte:
+  url:    /entradaBodega/reporte
+  param:  { module: entradaBodega, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
 
@@ -1250,4 +1270,11 @@ controlCalidad_deleteSelect:
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
     
+controlCalidad_reporte:
+  url:    /controlCalidad/reporte
+  param:  { module: controlCalidad, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
 ##-------------------------------------------------------------------------##

@@ -24,11 +24,12 @@ use mvc\view\viewClass as view ?>
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+             <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover">
             <thead>
-                <tr>
+                <tr class="columna">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('date') ?></th>
                     <th><?php echo i18n::__('idEmployed') ?></th>

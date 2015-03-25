@@ -12,11 +12,12 @@ dictionary:
     desc:                 Description
     actions:              Actions
     filters:              Filters
+    printReport:          Print Report
     filtrate:             Filtrate
     deleteFilters:        Delete Filters
     confirmDelete:        Confirm Delete
     confirmDeleteMass:    Confirm the removal of Selected Items.
-    questionDelete:       ¿Want to Delete The Register
+    questionDelete:       ¿Want to Delete The Register?
     cancel:               Cancel
     new:                  New
     view:                 View

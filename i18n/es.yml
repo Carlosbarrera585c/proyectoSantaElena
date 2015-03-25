@@ -21,6 +21,7 @@ dictionary:
     cancel:               Cancelar
     new:                  Nuevo
     view:                 Ver
+    printReport:          Imprimir Reporte
     edit:                 Editar
     back:                 Atrás
     delete:               Eliminar

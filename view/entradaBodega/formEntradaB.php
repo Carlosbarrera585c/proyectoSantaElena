@@ -16,7 +16,7 @@
            <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fechaE : '') ?>" type="text" class="frm-control" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" >
+                <input type="date" class="form-control" value="<?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fechaE : '') ?>" type="text" class="frm-control" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" >
             </div>
         </div>
             <div class="form-group">
