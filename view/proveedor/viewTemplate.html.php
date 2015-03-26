@@ -34,7 +34,7 @@
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$razonS : '') ?></td>
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$direcc : '') ?></td>
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$telef : '') ?></td>
-                    <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$idC : '') ?></td>
+                    <td><?php echo ((isset($objProveedor) == true) ? proveedorTableClass::getNameCiudad($objProveedor[0]->$idC) : '') ?></td>
                 </tr>
             </tbody>
         </table>

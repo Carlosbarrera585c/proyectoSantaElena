@@ -19,7 +19,9 @@ class proveedorBaseTableClass extends tableBaseClass {
   const RAZON_SOCIAL = 'razon_social';
   const RAZON_SOCIAL_LENGTH = 30;
   const DIRECCION = 'direccion';
+  const DIRECCION_LENGHT = 20;
   const TELEFONO = 'telefono';
+  const TELEFONO_LENGHT = 13;
   const CIUDAD_ID = 'ciudad_id';
   
   function getId() {

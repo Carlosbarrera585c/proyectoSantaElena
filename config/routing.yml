@@ -764,6 +764,18 @@ proveedor_deleteSelect:
   load:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+ 
+proveedor_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: proveedor, action: deleteFilters, format: html }
+  
+proveedor_reporte:
+  url:    /proveedor/reporte
+  param:  { module: proveedor, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 
 ##-------------------------- PROVEEDOR----------------------------##
 

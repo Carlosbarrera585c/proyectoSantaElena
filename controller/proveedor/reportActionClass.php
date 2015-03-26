@@ -17,10 +17,15 @@ class reportActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
-      
-      $this->mensaje = 'Hola a todos';
-      
-      $this->defineView('index', 'ciudad', session::getInstance()->getFormatOutput());
+      $fields = array(
+      proveedorTableClass::ID,
+      proveedorTableClass::RAZON_SOCIAL,
+      proveedorTableClass::DIRECCION,
+      proveedorTableClass::TELEFONO,
+      proveedorTableClass::CIUDAD_ID
+      );
+      $this->objProveedor = proveedorTableClass::getAll($fields, FALSE);
+      $this->defineView('index', 'proveedor', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';
@@ -31,3 +36,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
   }
 
 }
+
+
+
