@@ -23,12 +23,19 @@ class empleadoBaseTableClass extends tableBaseClass {
     const NOM_EMPLEADO = 'nom_empleado';
     const NOM_EMPLEADO_LENGTH =  50 ;
     const APELL_EMPLEADO = 'apell_empleado';
+    const APELL_EMPLEADO_LENGTH =  50 ;
     const TELEFONO = 'telefono';
+    const TELEFONO_LENGTH =  20 ;
     const DIRECCION = 'direccion';
+    const DIRECCION_LENGTH =  30 ;
     const TIPO_ID_ID = 'tipo_id_id';
+    const TIPO_ID_ID_LENGTH =  11 ;
     const NUMERO_IDENTIFICACION = 'numero_identificacion';
+    const NUMERO_IDENTIFICACION_LENGTH =  15 ;
     const CREDENCIAL_ID = 'credencial_id';
+    const CREDENCIAL_ID_LENGTH = 11 ;
     const CORREO = 'correo';
+    const CORREO_LENGTH =  70 ;
 
     function getId() {
         return $this->id;

@@ -37,7 +37,7 @@ use mvc\view\viewClass as view ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('phone') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" placeholder="Introduce Tu Telefono">
+              <input type="number" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" placeholder="Introduce Tu Telefono">
             </div>
         </div>
         <div class="form-group">
