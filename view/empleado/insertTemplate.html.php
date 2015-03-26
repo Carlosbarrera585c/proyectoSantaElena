@@ -7,6 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
+  <?php view::includePartial('empleado/menu') ?>
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('newEmployee') ?></i></h1>
     </div>
