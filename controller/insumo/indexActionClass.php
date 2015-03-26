@@ -17,13 +17,35 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
+
+            $where = NULL;
+            if (request::getInstance()->hasPost('filter')) {
+                $filter = request::getInstance()->getPost('filter');
+                if (isset($filter['Descripcion']) and $filter['Descripcion'] !== null and $filter['Descripcion'] !== "") {
+                    $where[insumoTableClass::DESC_INSUMO] = $filter['Descripcion'];
+                } if (isset($filter['Precio']) and $filter['Precio'] !== null and $filter['Precio'] !== "") {
+                    $where[insumoTableClass::PRECIO] = $filter['Precio'];
+                }
+                session::getInstance()->setAttribute('insumoIndexFilters', $where);
+            } else if (session::getInstance()->hasAttribute('insumoIndexFilters')) {
+                $where = session::getInstance()->getAttribute('insumoIndexFilters');
+            }
+
             $fields = array(
                 insumoTableClass::ID,
                 insumoTableClass::DESC_INSUMO,
                 insumoTableClass::PRECIO,
                 insumoTableClass::TIPO_INSUMO_ID
             );
-            $this->objInsu = insumoTableClass::getAll($fields, false);
+
+            $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            $this->cntPages = insumoTableClass::getTotalPages(config::getRowGrid(), $where);
+            $this->objInsu = insumoTableClass::getAll($fields, FALSE, null, null, config::getRowGrid(), $page, $where);
             $this->defineView('index', 'insumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
