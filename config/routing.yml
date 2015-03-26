@@ -558,6 +558,20 @@ tipoInsumo_deleteSelect:
   load:
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+ 
+tipoInsumo_deleteFilters:
+  url:    /tipoInsumo/borrar_filtros
+  param:  { module: tipoInsumo, action: deleteFilters, format: html }
+  load:
+
+
+tipoInsumo_reporte:
+  url:    /controlCalidad/tipoInsumo
+  param:  { module: tipoInsumo, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/tipoInsumoBaseTableClass.php
+    - model/tipoInsumoTableClass.php
 
 ##-------------------------- TIPO INSUMO ----------------------------##
 
@@ -1057,6 +1071,20 @@ insumo_deleteSelect:
   load:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+
+insumo_deleteFilters:
+  url:    /insumo/borrar_filtros
+  param:  { module: insumo, action: deleteFilters, format: html }
+  load:
+
+insumo_reporte:
+  url:    /controlCalidad/insumo
+  param:  { module: insumo, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
 
 ##-------------------------- INSUMO----------------------------##
 ##-------------------------- EMPAQUE --------------------------##
