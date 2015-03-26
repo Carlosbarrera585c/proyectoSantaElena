@@ -12,7 +12,6 @@
     <input name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>" value="<?php echo $objEntradaBodega[0]->$idE ?>" type="hidden">
                     <?php endif ?>
     <?php view::includeHandlerMessage() ?>
-
            <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
@@ -29,7 +28,6 @@
                         </option>   
                     <?php endforeach ?>
                 </select>
-            </div>
             <div class="form-group">
             <div class="col-lg-12 col-xs-offset-6">
                 <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objDetalleEntrada)) ? 'update' : 'register')) ?>">

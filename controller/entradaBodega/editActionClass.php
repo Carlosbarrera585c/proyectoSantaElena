@@ -16,7 +16,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
     public function execute() {
         try {
             if (request::getInstance()->hasRequest(entradaBodegaTableClass::ID)) {
-                $fields = array(
+                $fieldsE = array(
                     entradaBodegaTableClass::ID,
                     entradaBodegaTableClass::FECHA,
                     entradaBodegaTableClass::PROVEEDOR_ID
@@ -25,16 +25,15 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $where = array(
                     entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
                 );
-                $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+
                 
-                $fields = array(
-                proveedorTableClass::ID,
-                proveedorTableClass::RAZON_SOCIAL
+                $fieldsP = array(
+                   proveedorTableClass::ID,
+                   proveedorTableClass::RAZON_SOCIAL
                 );
                 
-                $this->objProveedor = proveedorTableClass::getAll($fields,false
-                        );
-                
+                $this->objProveedor = proveedorTableClass::getAll($fieldsP,false);
+                $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsE, NULL, NULL, NULL, NULL, NULL, $where);
                 $this->defineView('edit', 'entradaBodega', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('entradaBodega', 'index');

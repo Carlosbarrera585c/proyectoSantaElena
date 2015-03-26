@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label"><?php echo i18n::__('provider') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterFechaVC1" name="filter[proveedor]">
+                                <input type="text" class="form-control" id="filterProveedor" name="filter[proveedor]">
                             </div>
                         </div>
                     </form>
