@@ -3,6 +3,8 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
+<?php view::includePartial('empleado/menu') ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php $apell_empleado = empleadoTableClass::APELL_EMPLEADO ?>

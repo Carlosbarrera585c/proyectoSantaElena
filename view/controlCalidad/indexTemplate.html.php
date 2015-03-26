@@ -15,7 +15,7 @@ use mvc\view\viewClass as view ?>
 <?php $pureza = controlCalidadTableClass::PUREZA ?>
 <?php $empleado_id = controlCalidadTableClass::EMPLEADO_ID ?>
 <?php $proveedor_id = controlCalidadTableClass::PROVEEDOR_ID ?>
-<?php view::includePartial('controlCalidad/menu') ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

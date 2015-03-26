@@ -14,14 +14,16 @@ default:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin]
   insert:
     security: true
-  
-control_calidad:
+    
+controlCalidad:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin]
   insert:
+    security: true
+  create:
     security: true
