@@ -36,7 +36,10 @@ config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
 
 config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 
-config::setScope('prod'); // prod
+//Host Virtual
+//config::setUrlBase('http://www.santahelena.com/web/');
+
+config::setScope('dev'); // prod
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');
 } else {
@@ -58,7 +61,11 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
 config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
+//Virtual Host
+//config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 config::setCookieDomain('http://localhost/');
+//Virtual Host
+//config::setCookieDomain('http://www.santahelena.com/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
 config::setDefaultModule('default');

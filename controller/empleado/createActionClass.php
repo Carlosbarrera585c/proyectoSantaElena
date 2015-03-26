@@ -28,6 +28,13 @@ class createActionClass extends controllerClass implements controllerActionInter
         $credencial_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
         $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
 
+        if (strlen($nom_empleado)> empleadoTableClass::NOM_EMPLEADO_LENGTH){
+          throw new PDOException('El Nombre No Puede Ser Mayor A: ' . empleadoTableClass::NOM_EMPLEADO_LENGTH . ' Caracteres');
+        }
+
+
+
+
         $data = array(
             empleadoTableClass::NOM_EMPLEADO => $nom_empleado,
             empleadoTableClass::APELL_EMPLEADO => $apell_empleado,
@@ -40,15 +47,13 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         empleadoTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-        routing::getInstance()->redirect('empleado', 'index');
+        routing::getInstance()->redirect('empleado', 'insert');
       } else {
         routing::getInstance()->redirect('empleado', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
-      session::getInstance()->setError(i18n::__('failureToRegister'));
+      session::getInstance()->setError($exc->getMessage());
+      routing::getInstance()->getUrlWeb('empleado', 'insert');
     }
   }
 

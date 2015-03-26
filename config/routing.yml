@@ -235,6 +235,11 @@ tipoEmpaque_deleteSelect:
 ##-------------------------- TIPO EMPAQUE --------------------------##
 ##-------------------------- TIPO ID --------------------------##
 
+tipoId_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: tipoId, action: deleteFilters, format: html }
+
+
 tipoId_index:
   url:    /tipoId/index
   param:  { module: tipoId, action: index, format: html }
@@ -297,7 +302,8 @@ tipoId_deleteSelect:
 empleado_deleteFilters:
   url:    /borrarFiltros
   param:  { module: empleado, action: deleteFilters, format: html }
-
+  
+  
 empleado_index:
   url:    /empleado/index
   param:  { module: empleado, action: index, format: html }
@@ -358,10 +364,6 @@ empleado_delete:
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-
-empleado_deleteFilters:
-  url:    /borrar_filtros
-  param:  { module: empleado, action: deleteFilters, format: html }
 
 empleado_deleteSelect:
   url:    /empleado/eliminarSeleccion

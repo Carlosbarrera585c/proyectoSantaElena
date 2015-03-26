@@ -10,5 +10,6 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('newEmployee') ?></i></h1>
     </div>
+  <?php view::includeHandlerMessage() ?>
     <?php view::includePartial('empleado/formEmpleado', array('objTipoId' => $objTipoId, 'objCredencial' => $objCredencial)) ?>
 </div>

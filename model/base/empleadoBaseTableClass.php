@@ -21,6 +21,7 @@ class empleadoBaseTableClass extends tableBaseClass {
 
     const ID = 'id';
     const NOM_EMPLEADO = 'nom_empleado';
+    const NOM_EMPLEADO_LENGTH =  50 ;
     const APELL_EMPLEADO = 'apell_empleado';
     const TELEFONO = 'telefono';
     const DIRECCION = 'direccion';
