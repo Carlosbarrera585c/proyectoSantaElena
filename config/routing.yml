@@ -953,6 +953,14 @@ detalleEntrada_deleteSelect:
 detalleEntrada_deleteFilters:
   url:    /borrarFiltros
   param:  { module: detalleEntrada, action: deleteFilters, format: html }
+  
+detalleEntrada_reporte:
+  url:    /detalleEntrada/reporte
+  param:  { module: detalleEntrada, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/detalleEntradaBaseTableClass.php
+    - model/detalleEntradaTableClass.php
 ##--------------------------DETALLE ENTRADA----------------------------##
 
 ##--------------------------EMPRESA-----------------------------##

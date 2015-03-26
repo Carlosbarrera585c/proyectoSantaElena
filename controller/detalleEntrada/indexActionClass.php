@@ -71,7 +71,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = request::getInstance()->getGet('page') - 1;
         $page = $page * config::getRowGrid();
       }
-      $this->cntPages = entradaBodegaTableClass:: getTotalPages(config::getRowGrid(), $where);
+      $this->cntPages = detalleEntradaTableClass:: getTotalPages(config::getRowGrid(), $where);
             
 
             $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
