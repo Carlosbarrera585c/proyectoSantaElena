@@ -147,6 +147,7 @@ dictionary:
     ##---------------------- INSUMO----------------------------##
     input:                Insumo
     descriptionInput:     Descripción de Insumo
+    description:          Descripción
     newInput:             Nuevo Insumo
     editInput:            Edit Insumo
     infoInput:            Informacion de Insumos

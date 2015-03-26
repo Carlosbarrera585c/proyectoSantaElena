@@ -46,6 +46,22 @@ class insumoTableClass extends insumoBaseTableClass  {
     }
     
   }
+   public static function getTotalPages($lines, $where){
+        try{
+            $sql = 'SELECT count('. insumoTableClass::ID.')As cantidad '.
+                    'FROM '.insumoTableClass::getNameTable();
+            
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute();
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return  ceil($answer[0]->cantidad/$lines);
+        }  catch (PDOException $exc){
+            throw $exc;
+        }
+        
+    }
+  
+  
 }
 
 
