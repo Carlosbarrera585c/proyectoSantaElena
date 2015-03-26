@@ -168,6 +168,10 @@ credencial_deleteSelect:
 credencial_reporte:
   url:    /credencial/reporte
   param:  { module: credencial, action: report, format: pdf }
+  
+credencial_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: credencial, action: deleteFilters, format: html }
 ##-------------------------- CREDENCIAL --------------------------##
 
 ##-------------------------- TIPO EMPAQUE --------------------------##
