@@ -170,7 +170,7 @@ credencial_reporte:
   param:  { module: credencial, action: report, format: pdf }
   
 credencial_deleteFilters:
-  url:    /borrarFiltros
+  url:    /credencial/borrarFiltros
   param:  { module: credencial, action: deleteFilters, format: html }
 ##-------------------------- CREDENCIAL --------------------------##
 
@@ -295,7 +295,7 @@ tipoId_deleteSelect:
 ##-------------------------- EMPLEADO --------------------------##
 
 empleado_deleteFilters:
-  url:    /borrarFiltros
+  url:    /empleado/borrarFiltros
   param:  { module: empleado, action: deleteFilters, format: html }
 
 empleado_index:
@@ -770,7 +770,7 @@ proveedor_deleteSelect:
     - model/proveedorTableClass.php
  
 proveedor_deleteFilters:
-  url:    /borrarFiltros
+  url:    /proveedor/borrarFiltros
   param:  { module: proveedor, action: deleteFilters, format: html }
   
 proveedor_reporte:
@@ -1295,6 +1295,6 @@ controlCalidad_reporte:
     - model/controlCalidadTableClass.php
  
 controlCalidad_deleteFilters:
-  url:    /borrarFiltros
+  url:    /controlCalidad/borrarFiltros
   param:  { module: controlCalidad, action: deleteFilters, format: html }
 ##-------------------------------------------------------------------------##
