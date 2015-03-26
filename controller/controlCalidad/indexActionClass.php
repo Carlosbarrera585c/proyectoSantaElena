@@ -17,6 +17,44 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
+            $where = null;
+      if (request::getInstance()->hasPost('filter')) {
+        $filter = request::getInstance()->getPost('filter');
+//aqui validar datos
+        if ((isset($filter['fecha1']) and $filter['fecha1'] !== null and $filter['fecha1'] !== "") and (isset($filter['fecha2']) and $filter['fecha2'] !== null and $filter['fecha2'] !== "")) {
+          $where[controlCalidadTableClass::FECHA] = array(
+          date(config::getFormatTimestamp(), strtotime($filter['fecha1'])),
+          date(config::getFormatTimestamp(), strtotime($filter['fecha2']))
+          );
+        }
+        if (isset($filter['Turno']) and $filter['Turno'] !== null and $filter['Turno'] !== "") {
+          $where[controlCalidadTableClass::TURNO] = $filter['Turno'];
+        }
+        if (isset($filter['Brix']) and $filter['Brix'] !== null and $filter['Brix'] !== "") {
+          $where[controlCalidadTableClass::BRIX] = $filter['Brix'];
+        }
+        if (isset($filter['Ph']) and $filter['Ph'] !== null and $filter['Ph'] !== "") {
+          $where[controlCalidadTableClass::PH] = $filter['Ph'];
+        }
+        if (isset($filter['Ar']) and $filter['Ar'] !== null and $filter['Ar'] !== "") {
+          $where[controlCalidadTableClass::AR] = $filter['Ar'];
+        }
+        if (isset($filter['Sacarosa']) and $filter['Sacarosa'] !== null and $filter['Sacarosa'] !== "") {
+          $where[controlCalidadTableClass::SACAROSA] = $filter ['Sacarosa'];
+        }
+        if (isset($filter['Pureza']) and $filter['Pureza'] !== null and $filter['Pureza'] !== "") {
+          $where[controlCalidadTableClass::PUREZA] = $filter ['Sacarosa'];
+        }
+        if (isset($filter['Empleado']) and $filter['Empleado'] !== null and $filter['Empleado'] !== "") {
+          $where[controlCalidadTableClass::EMPLEADO_ID] = $filter ['Empleado'];
+        }
+        if (isset($filter['Proveedor']) and $filter['Proveedor'] !== null and $filter['Proveedor'] !== "") {
+          $where[controlCalidadTableClass::PROVEEDOR_ID] = $filter ['Provedor'];
+        }
+        session::getInstance()->setAttribute('controlCalidadIndexFilters', $where);
+      } else if (session::getInstance()->hasAttribute('controlCalidadIndexFilters')) {
+        $where = session::getInstance()->getAttribute('controlCalidadIndexFilters');
+      }
             $fields = array(
                 controlCalidadTableClass::ID,
                 controlCalidadTableClass::FECHA,
@@ -35,8 +73,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
             }
-            $this->cntPages = controlCalidadTableClass:: getTotalPages(config::getRowGrid());
-            $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page);
+            $this->cntPages = controlCalidadTableClass:: getTotalPages(config::getRowGrid(), $where);
+            $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
             $this->defineView('index', 'controlCalidad', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

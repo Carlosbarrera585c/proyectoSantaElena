@@ -1277,4 +1277,8 @@ controlCalidad_reporte:
     - libs/fpdf/fpdf.php
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
+ 
+controlCalidad_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: controlCalidad, action: deleteFilters, format: html }
 ##-------------------------------------------------------------------------##
