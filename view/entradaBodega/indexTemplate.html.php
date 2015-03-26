@@ -16,9 +16,17 @@
                 <div class="modal-body">
                     <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>">
                         <div class="form-group">
-                            <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="filterNombre" name="filter[Nombre]" placeholder="<?php echo i18n::__('date') ?>">
+                                <input type="date" class="form-control" id="filterFecha1" name="filter[fecha1]">
+                                <br>
+                                <input type="date" class="form-control" id="filterFecha2" name="filter[fecha2]">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('provider') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterFechaVC1" name="filter[proveedor]">
                             </div>
                         </div>
                     </form>
@@ -38,6 +46,7 @@
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -60,7 +69,7 @@
                             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'view', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'edit', array(entradaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
                             <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $entradaB->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
-                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('detail') ?></a>
+                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('detail') ?></a>
                         </td>
                     </tr>
                     <div class="modal fade" id="myModalDelete<?php echo $entradaB->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -75,7 +84,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $entradaB->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('proveedor', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $entradaB->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
                             </div>
                         </div>
                     </div>
@@ -85,7 +94,7 @@
         </table>
     </form>
     <div class="text-right">
-        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?> ')">
+        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>')">
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                 <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
 <?php endfor ?>

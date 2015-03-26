@@ -22,14 +22,20 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           if (request::getInstance()->hasPost('filter')) {
         $filter = request::getInstance()->getPost('filter');
 //aqui validar datos
-        if (isset($filter['Fecha']) and $filter['Fecha'] !== null and $filter['Fecha'] !== "") {
-          $where[entradaBodegaTableClass::FECHA] = $filter['Fecha'];
+        if ((isset($filter['fecha1']) and $filter['fecha1'] !== null and $filter['fecha1'] !== "") and (isset($filter['fecha2']) and $filter['fecha2'] !== null and $filter['fecha2'] !== "")) {
+          $where[entradaBodegaTableClass::FECHA] = array(
+          date(config::getFormatTimestamp(), strtotime($filter['fecha1'] . '00:00:00')),
+          date(config::getFormatTimestamp(), strtotime($filter['fecha2'] . '23:59:59'))
+          );
         }
-        session::getInstance()->setAttribute('empleadoIndexFilters', $where);
+        
+        if (isset($filter['Proveedor']) and $filter['Provedor'] !== null and $filter['Proveedor'] !== "") {
+          $where[entradaBodegaTableClass::PROVEEDOR_ID] = $filter['Proveedor'];
+        }
+        
       } else if (session::getInstance()->hasAttribute('entradaBodegaIndexFilters')) {
         $where = session::getInstance()->getAttribute('entradaBodegaIndexFilters');
       }
-        
             $fields = array(
                 entradaBodegaTableClass::ID,
                 entradaBodegaTableClass::FECHA,

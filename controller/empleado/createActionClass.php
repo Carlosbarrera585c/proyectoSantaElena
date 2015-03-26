@@ -28,6 +28,36 @@ class createActionClass extends controllerClass implements controllerActionInter
         $credencial_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
         $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
 
+        if (strlen($nom_empleado) > empleadoTableClass::NOM_EMPLEADO_LENGTH) {
+          throw new PDOException('El Nombre No Puede Ser Mayor A: ' . empleadoTableClass::NOM_EMPLEADO_LENGTH . ' Caracteres');
+        }
+        if (strlen($apell_empleado) > empleadoTableClass::APELL_EMPLEADO_LENGTH) {
+          throw new PDOException('El Apellido No Puede Ser Mayor A: ' . empleadoTableClass::APELL_EMPLEADO_LENGTH . ' Caracteres');
+        }
+        if (strlen($telefono) > empleadoTableClass::TELEFONO_LENGTH) {
+          throw new PDOException('El Telefono No Puede Ser Mayor A: ' . empleadoTableClass::TELEFONO_LENGTH . ' Caracteres');
+        }
+        if (strlen($direccion) > empleadoTableClass::DIRECCION_LENGTH) {
+          throw new PDOException('La Direccion No Puede Ser Mayor A: ' . empleadoTableClass::DIRECCION_LENGTH . ' Caracteres');
+        }
+        if (strlen($tipo_id) > empleadoTableClass::TIPO_ID_ID_LENGTH) {
+          throw new PDOException('El Tipo de Identificacion No Puede Ser Mayor A: ' . empleadoTableClass::TIPO_ID_ID_LENGTH . ' Caracteres');
+        }
+        if (strlen($numero_identificacion) > empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH) {
+          throw new PDOException('El Numero De Identificación No Puede Ser Mayor A: ' . empleadoTableClass::NUMERO_IDENTIFICACIONEMPLEADO_LENGTH . ' Caracteres');
+        }
+        if (strlen($credencial_id) > empleadoTableClass::CREDENCIAL_ID_LENGTH) {
+          throw new PDOException('La Credencial No Puede Ser Mayor A: ' . empleadoTableClass::CREDENCIAL_ID_LENGTH . ' Caracteres');
+        }
+        if (strlen($correo) > empleadoTableClass::CORREO_LENGTH) {
+          throw new PDOException('El Correo No Puede Ser Mayor A: ' . empleadoTableClass::CORREO_LENGTH . ' Caracteres');
+        }
+        if (!preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
+          throw new PDOException('Correo Invalido');
+        }
+        if (preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
+          throw new PDOException('Correo Valido');
+        }
         $data = array(
             empleadoTableClass::NOM_EMPLEADO => $nom_empleado,
             empleadoTableClass::APELL_EMPLEADO => $apell_empleado,
@@ -40,15 +70,13 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         empleadoTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-        routing::getInstance()->redirect('empleado', 'index');
+        routing::getInstance()->redirect('empleado', 'insert');
       } else {
         routing::getInstance()->redirect('empleado', 'index');
       }
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
-      session::getInstance()->setError(i18n::__('failureToRegister'));
+      session::getInstance()->setError($exc->getMessage());
+      routing::getInstance()->getUrlWeb('empleado', 'insert');
     }
   }
 

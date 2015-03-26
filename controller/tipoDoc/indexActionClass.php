@@ -18,6 +18,19 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
+        $where = null;
+          if (request::getInstance()->hasPost('filter')) {
+        $filter = request::getInstance()->getPost('filter');
+//aqui validar datos
+        
+        if (isset($filter['descripcion']) and $filter['descripcion'] !== null and $filter['descripcion'] !== "") {
+          $where[tipoDocTableClass::DESC_TIPO_DOC] = $filter['descripcion'];
+        }
+        
+      } else if (session::getInstance()->hasAttribute('tipoDocIndexFilters')) {
+        $where = session::getInstance()->getAttribute('tipoDocIndexFilters');
+      }
+        
       $fields = array(
           tipoDocTableClass::ID,
           tipoDocTableClass::DESC_TIPO_DOC
@@ -25,7 +38,17 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           tipoDocTableClass::DESC_TIPO_DOC
       );
-      $this->objTipoDoc = tipoDocTableClass::getAll($fields, false, $orderBy, 'ASC');
+      
+         $page = 0;
+      if (request::getInstance()->hasGet('page')) {
+        $this->page = request::getInstance()->getGet('page');
+        $page = request::getInstance()->getGet('page') - 1;
+        $page = $page * config::getRowGrid();
+      }
+      
+        $this->cntPages = tipoDocTableClass:: getTotalPages(config::getRowGrid(), $where);
+      
+      $this->objTipoDoc = tipoDocTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
       $this->defineView('index', 'tipoDoc', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

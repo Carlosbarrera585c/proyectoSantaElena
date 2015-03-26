@@ -17,6 +17,28 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
+            
+             $where = null;
+          if (request::getInstance()->hasPost('filter')) {
+        $filter = request::getInstance()->getPost('filter');
+//aqui validar datos
+        if ((isset($filter['fechaFB1']) and $filter['fechaFB1'] !== null and $filter['fechaFB1'] !== "") and (isset($filter['fechaFB2']) and $filter['fechaFB2'] !== null and $filter['fechaFB2'] !== "")) {
+          $where[detalleEntradaTableClass::FECHA_FABRICACION] = array(
+          date(config::getFormatTimestamp(), strtotime($filter['fechaFB1'] . '00:00:00')),
+          date(config::getFormatTimestamp(), strtotime($filter['fechaFB2'] . '23:59:59'))
+          );
+        }
+        
+        if ((isset($filter['fechaVC1']) and $filter['fechaVC1'] !== null and $filter['fechaVC1'] !== "") and (isset($filter['fechaVC2']) and $filter['fechaVC2'] !== null and $filter['fechaVC2'] !== "")) {
+          $where[detalleEntradaTableClass::FECHA_VENCIMIENTO] = array(
+          date(config::getFormatTimestamp(), strtotime($filter['fechaVC1'] . '00:00:00')),
+          date(config::getFormatTimestamp(), strtotime($filter['fechaVC2'] . '23:59:59'))
+          );
+        }
+         } else if (session::getInstance()->hasAttribute('detalleEntradaIndexFilters')) {
+        $where = session::getInstance()->getAttribute('detalleEntradaIndexFilters');
+      }
+            
             $fields = array(
                 detalleEntradaTableClass::ID,
                 detalleEntradaTableClass::CANTIDAD,
@@ -42,12 +64,21 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 insumoTableClass::ID,
                 insumoTableClass::DESC_INSUMO
             );
+            
+             $page = 0;
+      if (request::getInstance()->hasGet('page')) {
+        $this->page = request::getInstance()->getGet('page');
+        $page = request::getInstance()->getGet('page') - 1;
+        $page = $page * config::getRowGrid();
+      }
+      $this->cntPages = detalleEntradaTableClass:: getTotalPages(config::getRowGrid(), $where);
+            
 
             $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
             $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
             $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
             
-            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false);
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
             $this->defineView('index', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

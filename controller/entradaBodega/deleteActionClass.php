@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,20 +19,20 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true));
+                $id = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(entradaBodegaTableClass::ID, true));
 
                 $ids = array(
-                tipoEmpaqueTableClass::ID => $id
+                entradaBodegaTableClass::ID => $id
                 );
-                tipoEmpaqueTableClass::delete($ids, false);
+                entradaBodegaTableClass::delete($ids, false);
                 $this->arrayAjax = array(
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-                $this->defineView('delete', 'tipoEmpaque', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'entradaBodega', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
-                routing::getInstance()->redirect('tipoEmpaque', 'index');
+                routing::getInstance()->redirect('entradaBodega', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

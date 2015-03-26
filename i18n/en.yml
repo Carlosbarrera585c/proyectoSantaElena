@@ -4,6 +4,9 @@ dictionary:
   default:
     ##----------------------SISTEMA-------------------------##
     SantaHelena:          Santa Helena
+    sesion:               Sesion
+    logout:               Logout
+    login:                Login
     register:             Register
     created:              Created
     actived:              Actived

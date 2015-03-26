@@ -17,11 +17,32 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
+            $where = NULL;
+            if (request::getInstance()->hasPost('filter')) {
+                $filter = request::getInstance()->getPost('filter');
+                 if (isset($filter['Descripcion']) and $filter['Descripcion'] !== null and $filter['Descripcion'] !== "") {
+                    $where[tipoInsumoTableClass::DESC_TIPO_INSUMO] = $filter['Descripcion'];
+                }
+        
+                session::getInstance()->setAttribute('tipoInsumoIndexFilters', $where);
+            } else if (session::getInstance()->hasAttribute('tipoInsumoIndexFilters')) {
+                $where = session::getInstance()->getAttribute('tipoInsumoIndexFilters');
+            }
+            
+            
             $fields = array(
                 tipoInsumoTableClass::ID,
                 tipoInsumoTableClass::DESC_TIPO_INSUMO
             );
-            $this->objTipoInsumo = tipoInsumoTableClass::getAll($fields, false);
+            
+            $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            $this->cntPages = tipoInsumoTableClass::getTotalPages(config::getRowGrid(), $where);
+            $this->objTipoInsumo = tipoInsumoTableClass::getAll($fields, FALSE, null, null, config::getRowGrid(), $page, $where);
             $this->defineView('index', 'tipoInsumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

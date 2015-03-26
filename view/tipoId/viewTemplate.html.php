@@ -3,9 +3,10 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = tipoIdTableClass::ID ?>
 <?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
-
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="container container-fluid">  
         <div class="page-header titulo">

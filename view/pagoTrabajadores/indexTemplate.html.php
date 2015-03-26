@@ -8,7 +8,10 @@
 <?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-    <h1><?php echo i18n::__('payWorkers') ?></h1>
+    <div class="container container-fluid">
+   <div class="container container-fluid">
+    <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('payWorkers') ?></h1>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>

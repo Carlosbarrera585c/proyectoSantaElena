@@ -14,6 +14,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $num_identificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
 <?php $credencial_id = empleadoTableClass::CREDENCIAL_ID ?>
 <?php $correo = empleadoTableClass::CORREO ?>
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoEmployee') ?></i></h1>
@@ -21,7 +22,6 @@ use mvc\i18n\i18nClass as i18n ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
         <table class="table table-bordered table-responsive table-condensed">

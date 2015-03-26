@@ -3,6 +3,8 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\config\configClass as config?>
+<?php use mvc\request\requestClass as request ?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -122,11 +124,11 @@ use mvc\i18n\i18nClass as i18n ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i><?php echo i18n::__('sesion')?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><i class="glyphicon glyphicon-log-in"> Login</i></a></li>
+                      <li><a href="#"><i class="glyphicon glyphicon-log-in"> <?php echo i18n::__('login') ?></i></a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out"> Logout</i></a></li>
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out"> <?php echo i18n::__('logout')?></i></a></li>
                     </ul>
                 </li>
             </ul>
