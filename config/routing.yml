@@ -717,6 +717,9 @@ entradaBodega_reporte:
     - model/base/entradaBodegaBaseTableClass.php
     - model/entradaBodegaTableClass.php
 
+entradaBodega_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: entradaBodega, action: deleteFilters, format: html }
 ##-------------------------- ENTRADA BODEGA----------------------------##
 
 ##-------------------------- PROVEEDOR-----------------------------##
@@ -857,6 +860,9 @@ tipoDoc_deleteSelect:
     - model/base/tipoDocBaseTableClass.php
     - model/tipoDocTableClass.php
 
+tipoDoc_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: tipoDoc, action: deleteFilters, format: html }
 ##--------------------------TIPO DOC----------------------------##
 
 ##--------------------------DETALLE ENTRADA-----------------------------##
@@ -944,6 +950,9 @@ detalleEntrada_deleteSelect:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
 
+detalleEntrada_deleteFilters:
+  url:    /borrarFiltros
+  param:  { module: detalleEntrada, action: deleteFilters, format: html }
 ##--------------------------DETALLE ENTRADA----------------------------##
 
 ##--------------------------EMPRESA-----------------------------##

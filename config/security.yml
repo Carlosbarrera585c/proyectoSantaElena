@@ -27,3 +27,27 @@ controlCalidad:
     security: true
   create:
     security: true
+
+
+entradaBodega:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+    
+    
+    
+detalleEntrada:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+     

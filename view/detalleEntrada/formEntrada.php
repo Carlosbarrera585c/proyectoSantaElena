@@ -38,13 +38,13 @@ use mvc\view\viewClass as view ?>
         <div class="form-group">
             <label class="col-lg-2 control-label" ><?php echo i18n::__('manuFacturingDate') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaFB : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true) ?>" placeholder="Introduce la Fecha de Fabricacion">
+                <input type="datetime-local" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaFB : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true) ?>" >
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('expirationDate') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaVC : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_VENCIMIENTO, true) ?>" placeholder="Introduce la Fecha de Vencimiento">
+                <input type="datetime-local" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaVC : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_VENCIMIENTO, true) ?>" >
             </div>
         </div>
         <div class="form-group">

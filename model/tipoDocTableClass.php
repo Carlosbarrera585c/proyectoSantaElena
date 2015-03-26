@@ -9,6 +9,22 @@ use mvc\config\configClass as config;
  * @author Cristian Ramirez <critianRamirezXD@outlook.es>
  */
 class tipoDocTableClass extends tipoDocBaseTableClass {
+    
+    
+        public static function getTotalPages($lines){
+        try{
+            $sql = 'SELECT count('. tipoDocTableClass::ID.')As cantidad '.'FROM '. 
+            tipoDocTableClass::getNameTable();
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute();
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return  ceil($answer[0]->cantidad/$lines);
+        }  catch (PDOException $exc){
+            throw $exc;
+        }
+        
+    }
+    
   public static function getNameTipoDoc($id){
     try {
       $sql = 'SELECT ' . tipoDocTableClass::ID.  ' As nombre  '

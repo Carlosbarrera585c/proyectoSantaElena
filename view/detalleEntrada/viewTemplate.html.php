@@ -25,7 +25,7 @@ use mvc\view\viewClass as view ?>
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('cellarEntrance') ?></i></h1>
     </div>
     <div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-hover table-responsive table-condensed">
 <?php foreach ($objDetalleEntrada as $key): ?>
                 <tr>
                     <th><?php echo i18n::__('id') ?></th>      
@@ -36,7 +36,6 @@ use mvc\view\viewClass as view ?>
                     <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
                 </tr>
 <?php endforeach; ?> 
-            </tr>
         </table>
     </div>
     <div class="page-header titulo">
@@ -48,7 +47,7 @@ use mvc\view\viewClass as view ?>
             <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-hover table-responsive table-condensed table-bordered">
             <thead>
                 <tr>
                     <th><?php echo i18n::__('idEntrance') ?></th>
@@ -62,7 +61,7 @@ use mvc\view\viewClass as view ?>
                     <th><?php echo i18n::__('descDoc') ?></th>
                     <th><?php echo i18n::__('idInput') ?></th> 
                     <th><?php echo i18n::__('descriptionInput') ?></th> 
-                </tr>
+               </tr>
             </thead>
             <tbody>
                 <tr>              

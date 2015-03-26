@@ -15,6 +15,42 @@
 
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
+    
+    <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filters') ?></h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('manuFacturingDate') ?></label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="filterFechaFB1" name="filter[fechaFB1]">
+                                <br>
+                                <input type="date" class="form-control" id="filterFechaFB2" name="filter[fechaFB2]">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('expirationDate') ?></label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="filterFechaVC1" name="filter[fechaVC1]">
+                                <br>
+                                <input type="date" class="form-control" id="filterFechaVC2" name="filter[fechaVC2]">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                    <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('detailEntrance') ?></i></h1>
     </div>
@@ -22,6 +58,9 @@
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+            <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover">
@@ -73,6 +112,13 @@
             </tbody>
         </table>
     </form>
+        <div class="text-right">
+        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>')">
+            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+<?php endfor ?>
+        </select> de <?php echo $cntPages ?>
+    </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, true) ?>">
     </form>
