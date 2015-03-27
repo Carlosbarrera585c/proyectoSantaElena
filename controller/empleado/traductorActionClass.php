@@ -17,15 +17,27 @@ class traductorActionClass extends controllerClass implements controllerActionIn
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST') === true) {
-          $languaje = request::getInstance()->getPost('languaje');
-           $PATH_INFO =  request::getInstance()->getServer('PATH_INFO');
-           session::getInstance()->setDefaultCulture($languaje);
-          $dir = config::getUrlBase() . config::getIndexFile() . $PATH_INFO;
-          header('Location: ' . $dir);
-      } else {
-        routing::getInstance()->redirect('empleado', 'index');
-      }
+      //if (request::getInstance()->isMethod('POST')) {
+        
+//        echo '<pre>';
+//        print_r($_SERVER);
+//        echo '</pre>';
+//        exit();
+        $language = request::getInstance()->getGet('language');
+        $PATH_INFO = request::getInstance()->getGet('PATH_INFO');
+        
+        if (request::getInstance()->hasGet('QUERY_STRING')) {
+          $QUERY_STRING = html_entity_decode(request::getInstance()->getGet('QUERY_STRING'));
+        }
+        
+        session::getInstance()->setDefaultCulture($language);
+//        config::setDefaultCulture($language);
+        $dir = config::getUrlBase() . config::getIndexFile() . $PATH_INFO;
+        $dir .= (isset($QUERY_STRING)) ? '?' . $QUERY_STRING : '';
+        header('Location: ' . $dir);
+      //} else {
+        //routing::getInstance()->redirect('default', 'index');
+      //}
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';
