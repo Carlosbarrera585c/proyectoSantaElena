@@ -1285,6 +1285,7 @@ controlCalidad_insert:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    
  
 controlCalidad_create:
   url:    /controlCalidad/crear
@@ -1296,6 +1297,9 @@ controlCalidad_create:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
     
 controlCalidad_edit:
   url:    /controlCalidad/editar
