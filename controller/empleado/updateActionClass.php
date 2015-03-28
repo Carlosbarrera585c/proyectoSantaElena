@@ -49,9 +49,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setSuccess(i18n::__('successfulUpdate'));
       routing::getInstance()->redirect('empleado', 'index');
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

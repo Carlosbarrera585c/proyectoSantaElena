@@ -36,9 +36,8 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
       $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, null, null, $where);
       $this->defineView('view', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

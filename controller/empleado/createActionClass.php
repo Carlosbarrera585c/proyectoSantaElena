@@ -75,8 +75,8 @@ class createActionClass extends controllerClass implements controllerActionInter
         routing::getInstance()->redirect('empleado', 'index');
       }
     } catch (PDOException $exc) {
-      session::getInstance()->setError($exc->getMessage());
-      routing::getInstance()->getUrlWeb('empleado', 'insert');
+      session::getInstance()->setFlash('exc',$exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 
