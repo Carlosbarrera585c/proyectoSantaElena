@@ -1095,7 +1095,7 @@ insumo_deleteFilters:
   load:
 
 insumo_reporte:
-  url:    /controlCalidad/insumo
+  url:    /insumo/report
   param:  { module: insumo, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
