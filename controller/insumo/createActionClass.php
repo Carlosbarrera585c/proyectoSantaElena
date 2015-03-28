@@ -45,7 +45,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             }
       } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc',$exc);
-      routing::getInstance()->forward('shfSecurity', 'execption');
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

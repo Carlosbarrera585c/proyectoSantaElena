@@ -14,8 +14,9 @@
 <?php $descInsu = insumoTableClass::DESC_INSUMO ?>
 
 <?php view::includePartial('empleado/menu') ?>
-<div class="container container-fluid">
-    
+<div class="container container-fluid">  
+       
+
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -46,6 +47,8 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
                     <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+                    <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+                    <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
                 </div>
             </div>
         </div>
@@ -61,6 +64,7 @@
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover">
@@ -72,6 +76,7 @@
                     <th><?php echo i18n::__('value') ?></th>
                     <th><?php echo i18n::__('manuFacturingDate') ?></th>
                     <th><?php echo i18n::__('expirationDate') ?></th>
+                    <th><?php echo i18n::__('idEntrance') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
@@ -85,6 +90,7 @@
                         <td><?php echo $detalleEntrada->$valor ?></td>
                         <td><?php echo $detalleEntrada->$fechaFB ?></td>
                         <td><?php echo $detalleEntrada->$fechaVC ?></td>
+                        <td><?php echo $detalleEntrada->$enBodegaId ?></td>
                         <td>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'edit', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
