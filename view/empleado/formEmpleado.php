@@ -7,7 +7,7 @@
 <?php $telefono = empleadoTableClass::TELEFONO ?>
 <?php $direccion = empleadoTableClass::DIRECCION ?>
 <?php $tipo_id = tipoIdTableClass::ID ?>
-<?php $tipo_id_e = empleadoTableClass::TIPO_ID_ID?>
+<?php $tipo_id_e = empleadoTableClass::TIPO_ID_ID ?>
 <?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
 <?php $num_identificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
 <?php $credencial_id_e = empleadoTableClass::CREDENCIAL_ID ?>
@@ -67,9 +67,9 @@
       <div class="col-lg-10">
         <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, TRUE) ?>">
           <?php foreach ($objCredencial as $credencial): ?>
-            <option <?php ($objEmpleado[0]->$credencial_id_e == $credencial->$credencial_id) ? 'selected' : '' ?> value="<?php echo $credencial->$credencial_id ?>">
+          <option <?php echo ($objEmpleado[0]->$credencial_id_e == $credencial->$credencial_id) ? 'selected' : '' ?> value="<?php echo $credencial->$credencial_id ?>">
               <?php echo $credencial->$nom_credencial ?>
-            </option>   
+            </option>     
           <?php endforeach ?>
         </select>
       </div>

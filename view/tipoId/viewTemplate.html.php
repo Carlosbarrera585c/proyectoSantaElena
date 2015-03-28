@@ -15,12 +15,11 @@ use mvc\i18n\i18nClass as i18n ?>
         <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'deleteSelect') ?>" method="POST">
             <div style="margin-bottom: 10px; margin-top: 30px">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
             </div>
             <table class="table table-bordered table-responsive table-condensed">
                 <thead>
-                    <tr>
+                    <tr class="active">
                         <th><?php echo i18n::__('id') ?></th>
                         <th><?php echo i18n::__('desc') ?></th>
                     </tr>
