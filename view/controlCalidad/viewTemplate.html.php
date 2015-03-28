@@ -13,7 +13,7 @@
 
 <div class="container container-fluid">
      <div class="page-header text-center titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>
     </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
@@ -23,7 +23,7 @@
     </div>
     <table class="table table-bordered table-responsive table-condensed">
       <thead>
-        <tr>
+        <tr class="columna success">
           <th><?php echo i18n::__('id')?></th>
           <th><?php echo i18n::__('date')?></th>
           <th><?php echo i18n::__('turn')?></th>

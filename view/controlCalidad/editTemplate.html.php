@@ -4,6 +4,6 @@
 <?php $id = controlCalidadTableClass::ID?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="page-header text-center titulo">
-<h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editQualityControl') ?></i><?php echo $objControlCalidad[0]->$id ?></h1>
+<h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('editQualityControl') ?></i><?php echo $objControlCalidad[0]->$id ?></h1>
 </div>
 <?php view::includePartial('controlCalidad/formControl', array('objControlCalidad' => $objControlCalidad, 'controlCalidad' => $id, 'objEmpleado' => $objEmpleado, 'objProveedor' => $objProveedor)) ?>
