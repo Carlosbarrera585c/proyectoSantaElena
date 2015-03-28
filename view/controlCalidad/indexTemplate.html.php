@@ -91,7 +91,7 @@ use mvc\view\viewClass as view ?>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('close') ?></button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
           <button type="button" onclick="$('#reportFilterForm').submit()" class="btn btn-primary"><?php echo i18n::__('generate') ?></button>
         </div>
       </div>
@@ -118,13 +118,13 @@ use mvc\view\viewClass as view ?>
             <div class="form-group">
               <label for="filterTurno" class="col-sm-2 control-label"><?php echo i18n::__('turn') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Turno]" placeholder="<?php echo i18n::__('turn') ?>">
+                <input type="text" class="form-control" id="filterTurno" name="filter[Turno]" placeholder="<?php echo i18n::__('turn') ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="filterBrix" class="col-sm-2 control-label"><?php echo i18n::__('brix') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Brix]" placeholder="<?php echo i18n::__('brix') ?>">
+                <input type="text" class="form-control" id="filterBrix" name="filter[Brix]" placeholder="<?php echo i18n::__('brix') ?>">
               </div>
             </div>
             <div class="form-group">
@@ -136,31 +136,31 @@ use mvc\view\viewClass as view ?>
             <div class="form-group">
               <label for="filterAr" class="col-sm-2 control-label"><?php echo i18n::__('ar') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Ar]" placeholder="<?php echo i18n::__('ar') ?>">
+                <input type="text" class="form-control" id="filterAr" name="filter[Ar]" placeholder="<?php echo i18n::__('ar') ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="filterSacarosa" class="col-sm-2 control-label"><?php echo i18n::__('saccharose') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Sacarosa]" placeholder="<?php echo i18n::__('saccharose') ?>">
+                <input type="text" class="form-control" id="filterSacrosa" name="filter[Sacarosa]" placeholder="<?php echo i18n::__('saccharose') ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="filterPureza" class="col-sm-2 control-label"><?php echo i18n::__('purity') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Pureza]" placeholder="<?php echo i18n::__('purity') ?>">
+                <input type="text" class="form-control" id="filterPureza" name="filter[Pureza]" placeholder="<?php echo i18n::__('purity') ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="filterEmpleado" class="col-sm-2 control-label"><?php echo i18n::__('idEmployed') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Empleado]" placeholder="<?php echo i18n::__('idEmployed') ?>">
+                <input type="text" class="form-control" id="filterEmpleado" name="filter[Empleado]" placeholder="<?php echo i18n::__('idEmployed') ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="filterProveedor" class="col-sm-2 control-label"><?php echo i18n::__('idProvider') ?></label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Proveedor]" placeholder="<?php echo i18n::__('idProvider') ?>">
+                <input type="text" class="form-control" id="filterProveedor" name="filter[Proveedor]" placeholder="<?php echo i18n::__('idProvider') ?>">
               </div>
             </div>
           </form>

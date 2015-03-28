@@ -12,13 +12,24 @@ class reportActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
+         $where = NULL;
+        if (request::getInstance()->hasPost('report')) {
+                $report = request::getInstance()->getPost('report');
+                if (isset($report['Descripcion']) and $report['Descripcion'] !== null and $report['Descripcion'] !== "") {
+                    $where[tipoinsumoTableClass::DESC_TIPO_INSUMO] = $report['Descripcion'];
+                }
+        }
+        
+       $orderBy = array(
+       tipoInsumoTableClass::ID
+       );
       $fields = array(
           tipoInsumoTableClass::ID,
           tipoInsumoTableClass::DESC_TIPO_INSUMO
          
     
       );
-      $this->objTipoInsumo = tipoInsumoTableClass::getAll($fields, FALSE);
+      $this->objTipoInsumo = tipoinsumoTableClass::getAll($fields, FALSE, $orderBy,'ASC',NULL, NULL,$where);
       $this->defineView('index', 'tipoInsumo', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

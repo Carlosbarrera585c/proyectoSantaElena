@@ -49,6 +49,26 @@ detalleEntrada:
     security: true
   create:
     security: true
+    
+insumo:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+    
+tipoInsumo:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
      
 empleado:
   index:
