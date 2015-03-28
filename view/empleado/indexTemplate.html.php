@@ -67,8 +67,8 @@ use mvc\request\requestClass as request ?>
       </div>
     </div>
   </div>
-  <!-- VENTANA MODAL PARA REPORTES CON FILTROS  COMENTEN ESA MIERDA XD NO SE ENTIENDE ATT:DANNY-->
-  <div class="modal fade" id="myModalFILTROSREPORTE" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- VENTANA MODAL PARA REPORTES CON FILTROS-->
+  <div class="modal fade" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -113,7 +113,6 @@ use mvc\request\requestClass as request ?>
                 <input type="text" class="form-control" id="filterCorreo" name="report[Correo]" placeholder="<?php echo i18n::__('mail') ?>">
               </div>
             </div>
-
           </form>
         </div>
         <div class="modal-footer">
@@ -124,7 +123,7 @@ use mvc\request\requestClass as request ?>
     </div>
   </div>
   <!-- FIN DE LOS FILTROS PARA REPORTE -->
-   <div class="page-header titulo">
+  <div class="page-header titulo">
     <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('employee') ?></i></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
@@ -133,7 +132,7 @@ use mvc\request\requestClass as request ?>
       <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
       <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
-      <a  class="btn btn-warning btn-xs col-lg-offset-11" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
+      <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalReport" ><?php echo i18n::__('printReport') ?></a>
     </div>
     <?php view::includeHandlerMessage() ?>
     <table class="tablaUsuario table table-bordered table-responsive table-hover">

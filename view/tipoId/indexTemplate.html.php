@@ -47,9 +47,9 @@ use mvc\view\viewClass as view ?>
     <table class="table table-bordered table-responsive table-hover">
       <thead>
         <tr class="active">
-          <th><input type="checkbox" id="chkAll"></th>
+          <th class="tamano"><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('identificationType') ?></th>
-          <th><?php echo i18n::__('actions') ?></th>
+          <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
         </tr>
       </thead>
       <tbody>
@@ -85,7 +85,7 @@ use mvc\view\viewClass as view ?>
     </table>
   </form>
   <div class="text-right">
-    Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?> ')">
+    Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?>')">
       <?php for ($x = 1; $x <= $cntPages; $x++): ?>
         <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
       <?php endfor ?>

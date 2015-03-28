@@ -115,6 +115,8 @@ dictionary:
     ##-------------------------- CREDENCIAL-----------------------##
     numberIdentification: Número de Identificación
     credential:           Credencial
+    editCredential:       Editar Credencial
+    newCredential:        Nueva Credencial
     nameCredential:       Nombre Credencial
     mail:                 Correo
     infoCredential:       Informacion de Credenciales

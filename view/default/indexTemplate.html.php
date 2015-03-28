@@ -9,7 +9,6 @@ use mvc\routing\routingClass as routing ?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $id = usuarioTableClass::ID ?>
 <?php view::includePartial('empleado/menu') ?>
-<div class="container container-fluid">
    <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('user') ?></h1>
