@@ -150,5 +150,5 @@ use mvc\session\sessionClass as session ?>
   
 </div>
 
-<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>">Español</a>
-<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>">Ingles</a>
+<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('Spain.png') ?>"></a>
+<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('United States of America.png') ?>"></a>

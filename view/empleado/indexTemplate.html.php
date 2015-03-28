@@ -124,7 +124,7 @@ use mvc\request\requestClass as request ?>
   </div>
   <!-- FIN DE LOS FILTROS PARA REPORTE -->
   <div class="page-header titulo">
-    <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('employee') ?></i></h1>
+    <h1> <?php echo i18n::__('employee') ?></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
