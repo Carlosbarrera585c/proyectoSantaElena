@@ -24,19 +24,19 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         if (isset($filter['Credencial']) and $filter['Credencial'] !== null and $filter['Credencial'] !== "") {
           $where[credencialTableClass::NOMBRE] = $filter['Credencial'];
         }
-        if ((isset($filter['creado1']) and $filter['creado1'] !== null and $filter['creado1'] !== "") and (isset($filter['creado2']) and $filter['creado2'] !== null and $filter['creado2'] !== "")) {
+        if ((isset($filter['creado1']) and $filter['creado1'] !== null and $filter['creado1'] !== "") and ( isset($filter['creado2']) and $filter['creado2'] !== null and $filter['creado2'] !== "")) {
           $where[credencialTableClass::CREATED_AT] = array(
-          date(config::getFormatTimestamp(), strtotime($filter['creado1'].'00:00:00')),
-          date(config::getFormatTimestamp(), strtotime($filter['creado2'].'23:59:59'))
+              date(config::getFormatTimestamp(), strtotime($filter['creado1'] . '00:00:00')),
+              date(config::getFormatTimestamp(), strtotime($filter['creado2'] . '23:59:59'))
           );
         }
-         if ((isset($filter['editado1']) and $filter['editado1'] !== null and $filter['editado1'] !== "") and (isset($filter['editado2']) and $filter['editado2'] !== null and $filter['editado2'] !== "")) {
+        if ((isset($filter['editado1']) and $filter['editado1'] !== null and $filter['editado1'] !== "") and ( isset($filter['editado2']) and $filter['editado2'] !== null and $filter['editado2'] !== "")) {
           $where[credencialTableClass::UPDATED_AT] = array(
-          date(config::getFormatTimestamp(), strtotime($filter['editado1'].'00:00:00')),
-          date(config::getFormatTimestamp(), strtotime($filter['editado2'].'23:59:59'))
+              date(config::getFormatTimestamp(), strtotime($filter['editado1'] . '00:00:00')),
+              date(config::getFormatTimestamp(), strtotime($filter['editado2'] . '23:59:59'))
           );
         }
-        
+
         session::getInstance()->setAttribute('credencialIndexFilters', $where);
       } else if (session::getInstance()->hasAttribute('credencialIndexFilters')) {
         $where = session::getInstance()->getAttribute('credencialIndexFilters');

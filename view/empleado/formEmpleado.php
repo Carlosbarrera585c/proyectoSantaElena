@@ -1,6 +1,10 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $idEmpleado = empleadoTableClass::ID ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php $apell_empleado = empleadoTableClass::APELL_EMPLEADO ?>
@@ -10,38 +14,38 @@
 <?php $tipo_id_e = empleadoTableClass::TIPO_ID_ID ?>
 <?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
 <?php $num_identificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
-<?php $credencial_id_e = empleadoTableClass::CREDENCIAL_ID ?>
-<?php $credencial_id = credencialTableClass::ID ?>
-<?php $nom_credencial = credencialTableClass::NOMBRE ?>
-<?php $correo = empleadoTableClass::CORREO ?>
+  <?php $credencial_id_e = empleadoTableClass::CREDENCIAL_ID ?>
+  <?php $credencial_id = credencialTableClass::ID ?>
+  <?php $nom_credencial = credencialTableClass::NOMBRE ?>
+  <?php $correo = empleadoTableClass::CORREO ?>
 <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('empleado', ((isset($objEmpleado)) ? 'update' : 'create')) ?>">
-  <?php if (isset($objEmpleado) == true): ?>
+    <?php if (isset($objEmpleado) == true): ?>
     <input name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, true) ?>" value="<?php echo $objEmpleado[0]->$idEmpleado ?>" type="hidden">
-  <?php endif ?>
+<?php endif ?>
   <div class="container container-fluid">
-    <?php view::includeHandlerMessage() ?>
+<?php view::includeHandlerMessage() ?>
     <div class="form-group">
-      <label class="col-lg-2 control-label"><?php echo i18n::__('employeeName') ?>:</label>
+      <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('employeeName') ?>:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$nom_empleado : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" placeholder="Introduce Tu Nombre">
+        <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$nom_empleado : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" placeholder="Introduce Tu Nombre">
       </div>
     </div>
     <div class="form-group">
-      <label class="col-lg-2 control-label" ><?php echo i18n::__('employeeLastName') ?>:</label>
+      <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('employeeLastName') ?>:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apell_empleado : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" placeholder="Introduce Tu Apellido">
+        <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apell_empleado : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" placeholder="Introduce Tu Apellido">
       </div>
     </div>
     <div class="form-group">
-      <label class="col-lg-2 control-label"><?php echo i18n::__('phone') ?>:</label>
+      <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('phone') ?>:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" placeholder="Introduce Tu Telefono">
+        <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" placeholder="Introduce Tu Telefono">
       </div>
     </div>
     <div class="form-group">
-      <label class="col-lg-2 control-label"><?php echo i18n::__('direction') ?>:</label>
+      <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('direction') ?>:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" placeholder="Introduce Tu Direccion">
+        <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" placeholder="Introduce Tu Direccion">
       </div>
     </div>
     <div class="form-group">
@@ -49,17 +53,17 @@
       <div class="col-lg-10">
         <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, TRUE) ?>">
           <?php foreach ($objTipoId as $tipoId): ?>
-          <option <?php echo ($objEmpleado[0]->$tipo_id_e == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
-              <?php echo $tipoId->$desc_tipo_id ?>
+            <option <?php echo (isset($objEmpleado[0]->$tipo_id_e) == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
+  <?php echo $tipoId->$desc_tipo_id ?>
             </option>   
-          <?php endforeach ?>
+<?php endforeach ?>
         </select>
       </div>  
     </div> 
     <div class="form-group">
-      <label class="col-lg-2 control-label"><?php echo i18n::__('numberIdentification') ?>:</label>
+      <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('numberIdentification') ?>:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$num_identificacion : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" placeholder="Introduce Tu Numero de Identifiacion">
+        <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$num_identificacion : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" placeholder="Introduce Tu Numero de Identifiacion">
       </div>
     </div>
     <div class="form-group">
@@ -67,17 +71,17 @@
       <div class="col-lg-10">
         <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, TRUE) ?>">
           <?php foreach ($objCredencial as $credencial): ?>
-          <option <?php echo ($objEmpleado[0]->$credencial_id_e == $credencial->$credencial_id) ? 'selected' : '' ?> value="<?php echo $credencial->$credencial_id ?>">
-              <?php echo $credencial->$nom_credencial ?>
+            <option <?php echo (isset($objEmpleado[0]->$credencial_id_e) == $credencial->$credencial_id) ? 'selected' : '' ?> value="<?php echo $credencial->$credencial_id ?>">
+  <?php echo $credencial->$nom_credencial ?>
             </option>     
-          <?php endforeach ?>
+<?php endforeach ?>
         </select>
       </div>
     </div>
     <div class="form-group">
-      <label class="col-lg-2 control-label"><?php echo i18n::__('mail') ?>:</label>
+      <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('mail') ?>:</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) ?>" placeholder="Introduce tu E-Mail">
+        <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) ?>" placeholder="Introduce tu E-Mail">
       </div>
     </div>
     <div class="form-group">

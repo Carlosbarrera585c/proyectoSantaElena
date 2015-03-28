@@ -165,9 +165,13 @@ credencial_deleteSelect:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
 
-credencial_reporte:
+credencial_report:
   url:    /credencial/reporte
   param:  { module: credencial, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
   
 credencial_deleteFilters:
   url:    /credencial/borrarFiltros
@@ -373,7 +377,7 @@ empleado_deleteSelect:
     - model/empleadoTableClass.php
     
 empleado_reporte:
-  url:    /controlCalidad/empleado
+  url:    /empleado/reporte
   param:  { module: empleado, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
@@ -1095,7 +1099,7 @@ insumo_deleteFilters:
   load:
 
 insumo_reporte:
-  url:    /controlCalidad/insumo
+  url:    /insumo/report
   param:  { module: insumo, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php

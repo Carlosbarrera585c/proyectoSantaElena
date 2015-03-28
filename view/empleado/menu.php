@@ -147,6 +147,8 @@ use mvc\session\sessionClass as session ?>
   </select>-->
     <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
   </form>
-  <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>">español</a>
-  <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>">ingles</a>
+  
 </div>
+
+<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>">Español</a>
+<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>">Ingles</a>

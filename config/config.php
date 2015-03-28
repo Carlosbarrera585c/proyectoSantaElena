@@ -1,6 +1,8 @@
 <?php
+
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
+
 config::setRowGrid(3);
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // pgsql
@@ -61,4 +63,3 @@ config::setDefaultAction('index');
 config::setDefaultModuleSecurity('shfSecurity');
 config::setDefaultActionSecurity('index');
 config::setDefaultModulePermission('shfSecurity');
-config::setDefaultActionPermission('noPermission');

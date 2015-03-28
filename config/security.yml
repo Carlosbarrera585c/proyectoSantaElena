@@ -14,7 +14,7 @@ default:
   index:
     security: true
     credentials:
-      - [admin]
+      - [admin, Carlos]
   insert:
     security: true
     
@@ -39,8 +39,7 @@ entradaBodega:
   create:
     security: true
     
-    
-    
+        
 detalleEntrada:
   index:
     security: true
@@ -50,4 +49,59 @@ detalleEntrada:
     security: true
   create:
     security: true
+    
+insumo:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+    
+tipoInsumo:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
      
+empleado:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+    security: true
+    
+credencial:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+    security: true
+    
+tipoId:
+  index:
+    security: true
+    credentials:
+      - [admin]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+    security: true
