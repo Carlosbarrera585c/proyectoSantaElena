@@ -1,5 +1,4 @@
 <?php
-
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
@@ -17,8 +16,7 @@ use mvc\view\viewClass as view ?>
 <?php $proveedor_id = controlCalidadTableClass::PROVEEDOR_ID ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-
-  <!-- VENTANA MODAL PARA REPORTES CON FILTROS -->
+  <!-- Uso de ventana modal para reportes con filtro-->
   <div class="modal fade" id="myModalFILTROSREPORTE" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -31,13 +29,13 @@ use mvc\view\viewClass as view ?>
             <div class="form-group">
               <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
               <div class="col-sm-10">
-                <input type="date" name="report[fechaCreacion1]" class="form-control" id="filterCreacion1" placeholder="<?php echo i18n::__('date')?>">
+                <input type="date" name="report[fechaCreacion1]" class="form-control" id="filterCreacion1" placeholder="<?php echo i18n::__('date') ?>">
               </div>
             </div>
             <div class="form-group">
               <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
               <div class="col-sm-10">
-                <input type="date" name="report[fechaCreacion2]" class="form-control" id="filterCreacion2" placeholder="<?php echo i18n::__('date')?>">
+                <input type="date" name="report[fechaCreacion2]" class="form-control" id="filterCreacion2" placeholder="<?php echo i18n::__('date') ?>">
               </div>
             </div>
             <div class="form-group">
@@ -97,7 +95,7 @@ use mvc\view\viewClass as view ?>
       </div>
     </div>
   </div>
-
+<!--Ventana modal para uso de filtros-->
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -185,7 +183,7 @@ use mvc\view\viewClass as view ?>
       <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
       <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
     </div>
-<?php view::includeHandlerMessage() ?>
+    <?php view::includeHandlerMessage() ?>
     <table class="tablaUsuario table table-bordered table-responsive table-hover">
       <thead>
         <tr class="columna success">
@@ -197,8 +195,8 @@ use mvc\view\viewClass as view ?>
         </tr>
       </thead>
       <tbody>
-<?php foreach ($objControlCalidad as $control): ?>
-          <tr>
+        <?php foreach ($objControlCalidad as $control): ?>
+          <tr class="columna">
             <td><input type="checkbox" name="chk[]" value="<?php echo $control->$id ?>"></td>
             <td><?php echo $control->$fecha ?></td>
             <td><?php echo controlCalidadTableClass::getNameEmpleado($control->$empleado_id) ?></td>
@@ -217,7 +215,7 @@ use mvc\view\viewClass as view ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
               </div>
               <div class="modal-body">
-  <?php echo i18n::__('questionDelete') ?> <?php echo $control->$id ?>?
+                <?php echo i18n::__('questionDelete') ?> <?php echo $control->$id ?>?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -226,16 +224,15 @@ use mvc\view\viewClass as view ?>
             </div>
           </div>
         </div>
-<?php endforeach ?>
+      <?php endforeach ?>
       </tbody>
     </table>
   </form>
   <div class="text-right">
     pagina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>')">
       <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-
         <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-<?php endfor ?>
+      <?php endfor ?>
     </select> de <?php echo $cntPages; ?>     
   </div>
   <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
@@ -250,7 +247,7 @@ use mvc\view\viewClass as view ?>
         <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
       </div>
       <div class="modal-body">
-<?php echo i18n::__('confirmDeleteMass') ?>
+        <?php echo i18n::__('confirmDeleteMass') ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

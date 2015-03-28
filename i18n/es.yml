@@ -93,7 +93,7 @@ dictionary:
     ##-------------------------- PROVEEDOR----------------------------##
     
     ##-------------------------- PAGO TRABAJADORES--------------------##
-    payWorkers:           Pago de Trabajadores
+    payWorkers:           Pago Trabajadores
     newPayWorkers:        Nuevo Pago de Trabajadores
     editPlayWorkers:      Editar Pago de Trabajadores
     periodBeginning:      Periodo Inicio

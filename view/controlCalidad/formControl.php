@@ -13,8 +13,10 @@ use mvc\view\viewClass as view ?>
 <?php $ar = controlCalidadTableClass::AR ?>
 <?php $sacarosa = controlCalidadTableClass::SACAROSA ?>
 <?php $pureza = controlCalidadTableClass::PUREZA ?>
+<?php $empleado_id_c = controlCalidadTableClass::EMPLEADO_ID ?>
 <?php $empleado_id = empleadoTableClass::ID ?>
 <?php $empleado_nom = empleadoTableClass::NOM_EMPLEADO ?>
+<?php $proveedor_id_c = controlCalidadTableClass::PROVEEDOR_ID ?>
 <?php $proveedor_id = proveedorTableClass::ID ?>
 <?php $proveedor_nom = proveedorTableClass::RAZON_SOCIAL ?>
 
@@ -27,7 +29,7 @@ use mvc\view\viewClass as view ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input type="date" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true) ?>" placeholder="Introduce La Fecha">
+                <input type="text" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true) ?>" placeholder="Introduce La Fecha">
             </div>
         </div>
         <div class="form-group">
@@ -71,7 +73,7 @@ use mvc\view\viewClass as view ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, TRUE) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, TRUE) ?>">
                     <?php foreach ($objEmpleado as $empleado): ?>
-                        <option value="<?php echo $empleado->$empleado_id ?>">
+                  <option <?php echo (isset($objControlCalidad[0]->$empleado_id_c) == $empleado->$empleado_id) ? 'selected' : ''  ?> value="<?php echo $empleado->$empleado_id ?>">
                             <?php echo $empleado->$empleado_nom ?>
                         </option>   
                     <?php endforeach ?>
@@ -83,7 +85,7 @@ use mvc\view\viewClass as view ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, TRUE) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
-                        <option value="<?php echo $proveedor->$proveedor_id ?>">
+                  <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) == $proveedor->$proveedor_id )? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
                             <?php echo $proveedor->$proveedor_nom ?>
                         </option>   
                     <?php endforeach ?>
