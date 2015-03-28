@@ -70,11 +70,12 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         empleadoTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-        routing::getInstance()->redirect('empleado', 'insert');
+        routing::getInstance()->redirect('empleado', 'index');
       } else {
         routing::getInstance()->redirect('empleado', 'index');
       }
     } catch (PDOException $exc) {
+      routing::getInstance()->redirect('empleado', 'insert');
       session::getInstance()->setFlash('exc',$exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
