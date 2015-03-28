@@ -13,13 +13,12 @@ use mvc\i18n\i18nClass as i18n;
  *
  *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
-
 class createActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-          
+
                 $cantidad = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true));
                 $valor = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true));
                 $fechaFB = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true));
@@ -27,8 +26,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $idDoc = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID_DOC, true));
                 $enBodegaId = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, true));
                 $idInsumo = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::INSUMO_ID, true));
-                
-                   
+
+
                 $data = array(
                     detalleEntradaTableClass::CANTIDAD => $cantidad,
                     detalleEntradaTableClass::VALOR => $valor,
@@ -37,12 +36,10 @@ class createActionClass extends controllerClass implements controllerActionInter
                     detalleEntradaTableClass::ID_DOC => $idDoc,
                     detalleEntradaTableClass::ENTRADA_BODEGA_ID => $enBodegaId,
                     detalleEntradaTableClass::INSUMO_ID => $idInsumo,
-                    
                 );
                 detalleEntradaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
                 routing::getInstance()->redirect('detalleEntrada', 'index');
-                  
             } else {
                 routing::getInstance()->redirect('detalleEntrada', 'index');
             }

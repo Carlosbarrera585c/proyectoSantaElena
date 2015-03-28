@@ -11,9 +11,11 @@ class tipoInsumoBaseTableClass extends tableBaseClass {
 
     private $id;
     private $desc_tipo_insumo;
+    
 
     const ID = 'id';
     const DESC_TIPO_INSUMO = 'desc_tipo_insumo';
+    const TIPO_INSUMO_ID_LENGTH = 30;
     
     function getId() {
         return $this->id;

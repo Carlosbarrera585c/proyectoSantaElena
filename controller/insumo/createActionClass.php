@@ -13,7 +13,6 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author yefri alexander <yefri-1994@hotmail.com>
  */
-
 class createActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
@@ -23,26 +22,32 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $desc_insumo = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true));
                 $precio = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::PRECIO, true));
                 $tipo_insumo_id = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO_ID, true));
-                               
+
+                if (strlen($desc_insumo) > insumoTableClass::DESC_INSUMO_LENGTH) {
+                    throw new PDOException('El Nombre No Puede Ser Mayor A: ' . insumoTableClass::DESC_INSUMO_LENGTH . ' Caracteres');
+                }
+                if (strlen($precio) > insumoTableClass::PRECIO_LENGTH) {
+                    throw new PDOException('El Nombre No Puede Ser Mayor A: ' . insumoTableClass::PRECIO_LENGTH . ' Caracteres');
+                }
+                if (strlen($tipo_insumo_id) > insumoTableClass::TIPO_INSUMO_ID_LENGTH) {
+                    throw new PDOException('El Nombre No Puede Ser Mayor A: ' . insumoTableClass::TIPO_INSUMO_ID_LENGTH . ' Caracteres');
+                }
                 $data = array(
                     insumoTableClass::DESC_INSUMO => $desc_insumo,
                     insumoTableClass::PRECIO => $precio,
                     insumoTableClass::TIPO_INSUMO_ID => $tipo_insumo_id
-                    
                 );
                 insumoTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
                 routing::getInstance()->redirect('insumo', 'index');
-                  
             } else {
                 routing::getInstance()->redirect('insumo', 'index');
             }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
-            session::getInstance()->setError(i18n::__('failureToRegister'));
-        }
+      } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc',$exc);
+      routing::getInstance()->forward('shfSecurity', 'execption');
     }
+  }
 
 }
+
