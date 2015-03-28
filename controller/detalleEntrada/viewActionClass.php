@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
-  *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
 
@@ -29,18 +29,16 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID,
                 detalleEntradaTableClass::INSUMO_ID
             );
-           $where = array(
-           detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
-        );
-              $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
+            $where = array(
+                detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
+            );
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
             echo $exc->getTraceAsString();
         }
-        
     }
-
 
 }

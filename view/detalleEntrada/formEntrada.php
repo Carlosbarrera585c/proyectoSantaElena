@@ -24,15 +24,15 @@ use mvc\view\viewClass as view ?>
     <div class="container container-fluid">
         <?php view::includeHandlerMessage() ?>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('amount') ?>:</label>
+            <label for="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('amount') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$cant : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" placeholder="Introduce la Cantidad">
+                <input type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$cant : '') ?>" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" placeholder="Introduce la Cantidad">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-2 control-label" ><?php echo i18n::__('value') ?>:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$valor : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true) ?>" placeholder="Introduce el Valor">
+                <input type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$valor : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true) ?>" placeholder="Introduce el Valor">
             </div>
         </div>
         <div class="form-group">
@@ -65,7 +65,7 @@ use mvc\view\viewClass as view ?>
                 <select class="form-control" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, TRUE) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, TRUE) ?>">
                     <?php foreach ($objEntradaBodega as $entradaB): ?>
                         <option value="<?php echo $entradaB->$enBodegaId ?>">
-                            <?php echo $entradaB->$fecha ?>
+                            <?php echo $entradaB->$enBodegaId ?>
                         </option>   
                     <?php endforeach ?>
                 </select>

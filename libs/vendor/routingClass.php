@@ -57,7 +57,7 @@ namespace mvc\routing {
           }
         }
         if ($flag === true) {
-          throw new Exception('El módulo "' . $module . '" y acción "' . $action . '"no está definido');
+          throw new \PDOException('El módulo "' . $module . '" y acción "' . $action . '"no está definido');
         }
       }
       return $answer;

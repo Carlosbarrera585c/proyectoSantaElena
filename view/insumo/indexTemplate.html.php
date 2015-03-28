@@ -84,17 +84,17 @@ use mvc\view\viewClass as view ?>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalFiltrar"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
-            <a  class="btn btn-warning btn-xs col-lg-offset-11" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
+            <a  class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
 
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="table table-bordered table-responsive table-hover">
             <thead>
-                <tr>
-                    <th><input type="checkbox" id="chkAll"></th>
+                <tr class="active">
+                    <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('descriptionInput') ?></th>
                     <th><?php echo i18n::__('price') ?></th>
-                    <th><?php echo i18n::__('actions') ?></th>
+                    <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>

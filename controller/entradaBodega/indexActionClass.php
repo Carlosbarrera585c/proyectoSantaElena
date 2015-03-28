@@ -28,11 +28,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           date(config::getFormatTimestamp(), strtotime($filter['fecha2'] . '23:59:59'))
           );
         }
-        
-        if (isset($filter['Proveedor']) and $filter['Provedor'] !== null and $filter['Proveedor'] !== "") {
-          $where[entradaBodegaTableClass::PROVEEDOR_ID] = $filter['Proveedor'];
-        }
-        
+
+
       } else if (session::getInstance()->hasAttribute('entradaBodegaIndexFilters')) {
         $where = session::getInstance()->getAttribute('entradaBodegaIndexFilters');
       }

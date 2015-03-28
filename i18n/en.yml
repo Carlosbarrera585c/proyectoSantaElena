@@ -28,6 +28,9 @@ dictionary:
     back:                 Back
     delete:               Delete
     detail:               Detail
+    enlist:               Enlist
+    start:                Start
+    end:                  End
     deleteSelect:         Remove Selected
     successfulRegister:   The Register Was Successful.
     successfulUpdate:     Update Was Successful.
