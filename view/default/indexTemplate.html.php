@@ -1,10 +1,11 @@
-<?php
 
-use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $id = usuarioTableClass::ID ?>
 <?php view::includePartial('empleado/menu') ?>

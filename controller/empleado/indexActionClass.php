@@ -44,7 +44,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       } else if (session::getInstance()->hasAttribute('empleadoIndexFilters')) {
         $where = session::getInstance()->getAttribute('empleadoIndexFilters');
       }
-
+      $orderBy = array(
+          empleadoTableClass::ID
+      );
       $fields = array(
           empleadoTableClass::ID,
           empleadoTableClass::NOM_EMPLEADO,
@@ -63,7 +65,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = $page * config::getRowGrid();
       }
       $this->cntPages = empleadoTableClass::getTotalPages(config::getRowGrid(), $where);
-      $this->objEmpleado = empleadoTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
+      $this->objEmpleado = empleadoTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();

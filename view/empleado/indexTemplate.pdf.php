@@ -19,7 +19,7 @@ $pdf->Image(routing::getInstance()->getUrlImg('fotos-gatos.jpg'),90,8,70);
 $pdf ->Ln(50);
 
 $pdf->Cell(255,10,'REPORTE EMPLEADO',1,1,'C');
-  $pdf->Cell(10,10,  utf8_decode("ID"),1);
+  $pdf->Cell(10,10,  utf8_decode("Id"),1);
   $pdf->Cell(30,10,  utf8_decode("Nombre Empleado"),1);
   $pdf->Cell(20,10,  utf8_decode("apellido Empleado"),1);
   $pdf->Cell(20,10,  utf8_decode("telefono"),1);
@@ -39,6 +39,7 @@ foreach ($objEmpleado as $empleado){
   $pdf->Cell(35,10,  utf8_decode($empleado->$credencialId),1);
   $pdf->Cell(30,10,  utf8_decode($empleado->$correo),1);
   $pdf->Cell(35,10,  utf8_decode($empleado->$numeroIdent),1);
+  $pdf ->Ln();
 }$pdf ->Ln();
 
 $pdf->Output();

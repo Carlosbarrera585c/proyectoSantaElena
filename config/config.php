@@ -37,7 +37,7 @@ config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 //config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 
 //Host Virtual
-config::setUrlBase('http://www.santahelena.com/web/');
+config::setUrlBase('http://www.santahelena.com/');
 
 config::setScope('prod'); // prod
 if (session::getInstance()->hasDefaultCulture() === false) {
@@ -62,7 +62,7 @@ config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
 config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
 //Virtual Host
-config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
+config::setCookiePath('www.santahelena.com/' . config::getIndexFile());
 //config::setCookieDomain('http://localhost/');
 //Virtual Host
 config::setCookieDomain('http://www.santahelena.com/');

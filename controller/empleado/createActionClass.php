@@ -52,12 +52,12 @@ class createActionClass extends controllerClass implements controllerActionInter
         if (strlen($correo) > empleadoTableClass::CORREO_LENGTH) {
           throw new PDOException('El Correo No Puede Ser Mayor A: ' . empleadoTableClass::CORREO_LENGTH . ' Caracteres');
         }
-        if (!preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
-          throw new PDOException('Correo Invalido');
-        }
-        if (preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
-          throw new PDOException('Correo Valido');
-        }
+//        if (!preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
+//          throw new PDOException('Correo Invalido');
+//        }
+//        if (preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
+//          throw new PDOException('Correo Valido');
+//        }
         $data = array(
             empleadoTableClass::NOM_EMPLEADO => $nom_empleado,
             empleadoTableClass::APELL_EMPLEADO => $apell_empleado,

@@ -3,7 +3,6 @@
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<?php view::includePartial('empleado/menu') ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">

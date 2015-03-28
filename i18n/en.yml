@@ -127,6 +127,8 @@ dictionary:
     employeeLastName:     Employee Last Name
     newEmployee:          New Employee
     editEmployee:         Edit Employee
+    generate:             Generate
+    generate report:      Generate Report
     ##-------------------------- EMPLEADO-----------------------##
     
     ##---------------------- TIPO IDENTIFICACION----------------##
