@@ -62,7 +62,7 @@ use mvc\view\viewClass as view ?>
         <?php view::includeHandlerMessage() ?>
         <table class="table table-bordered table-responsive table-hover">
             <thead>
-                <tr>
+                <tr class="active">
                     <th><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('nameCredential')?></th>
                     <th><?php echo i18n::__('actions')?></th>

@@ -124,14 +124,7 @@ use mvc\request\requestClass as request ?>
     </div>
   </div>
   <!-- FIN DE LOS FILTROS PARA REPORTE -->
-  <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor') ?>" method="POST">
-    <select name="languaje" onchange="$('#frmTraductor').submit()">
-      <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es"> Español</option> 
-      <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?> value="en"> Ingles</option> 
-    </select>
-    <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-  </form>
-  <div class="page-header titulo">
+   <div class="page-header titulo">
     <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('employee') ?></i></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
