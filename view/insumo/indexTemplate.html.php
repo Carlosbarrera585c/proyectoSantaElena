@@ -74,7 +74,7 @@ use mvc\view\viewClass as view ?>
             </div>
         </div>
     </div>
-   <div class="page-header titulo">
+    <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('input') ?></i></h1>
     </div>
     <h1><?php i18n::__('input') ?></h1>
@@ -85,7 +85,7 @@ use mvc\view\viewClass as view ?>
             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalFiltrar"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a  class="btn btn-warning btn-xs col-lg-offset-11" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
-    
+
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="table table-bordered table-responsive table-hover">
