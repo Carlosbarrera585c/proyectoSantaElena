@@ -10,7 +10,7 @@ all:
   stylesheet:
     - bootstrap.css
     - main.css
-
+    - font-awesome.min.css
 shfSecurity:
   index:
     title: Identificaci—n de usuario
