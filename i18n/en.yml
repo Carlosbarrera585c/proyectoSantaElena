@@ -120,7 +120,6 @@ dictionary:
     editCredential:       Edit Credential
     newCredential:        New Credential
     nameCredential:       Name Credential
-    mail:                 Mail
     infoCredential:       Information Credentials
     
     ##-------------------------- CREDENCIAL-----------------------##
@@ -132,6 +131,14 @@ dictionary:
     employeeLastName:     Employee Last Name
     newEmployee:          New Employee
     editEmployee:         Edit Employee
+    mail:                 Correo
+    Enter your Name:      Enter Your Name
+    Enter your Last Name: Enter your Last Name
+    Enter your Phone:     Enter your Phone
+    Enter your Direction: Enter your Direction
+    Enter Your Identification Number: Enter Your Identification Number
+    Enter your Mail:      Enter your Mail
+    Verify Mail:          Verify Your Mail
     generate:             Generate
     generate report:      Generate Report
     ##-------------------------- EMPLEADO-----------------------##
@@ -220,6 +227,14 @@ dictionary:
     ##---------------------- DETALLE EMPAQUE----------------------------##
     detailPacking:          Detail Packing
     ##---------------------- DETALLE EMPAQUE----------------------------##
+    ##---------------------- ERRORES----------------------------##
+    errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
+    errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
+    errorLengthPhone:       Error Your Telephone (% telefono%) Exceeds Maximum Number of Characters (%caracteres%).
+    errorLengthDirection:   Error Your Direction (%direccion%) Maximum Exceeds Number of Characters (%caracteres%).
+    errorLengthNumIdentification: Error Your identification number (%numIdentificacion%) Maximum Exceeds Number of Characters (%caracteres%).
+    errorMail:              The Mail No Coincide.
+    ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
     00001:                The module and the action requested does not exist.

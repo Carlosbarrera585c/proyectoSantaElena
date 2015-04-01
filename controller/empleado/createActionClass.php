@@ -17,47 +17,20 @@ class createActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') === TRUE) {
 
-        $nom_empleado = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true));
-        $apell_empleado = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true));
-        $telefono = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true));
-        $direccion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true));
+        $nom_empleado = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)));
+        $apell_empleado = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)));
+        $telefono = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)));
+        $direccion = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)));
         $tipo_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, true));
-        $numero_identificacion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true));
+        $numero_identificacion = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)));
         $credencial_id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
-        $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
+        $correo = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_1'));
+        $correo2 = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_2'));
 
-        if (strlen($nom_empleado) > empleadoTableClass::NOM_EMPLEADO_LENGTH) {
-          throw new PDOException('El Nombre No Puede Ser Mayor A: ' . empleadoTableClass::NOM_EMPLEADO_LENGTH . ' Caracteres');
-        }
-        if (strlen($apell_empleado) > empleadoTableClass::APELL_EMPLEADO_LENGTH) {
-          throw new PDOException('El Apellido No Puede Ser Mayor A: ' . empleadoTableClass::APELL_EMPLEADO_LENGTH . ' Caracteres');
-        }
-        if (strlen($telefono) > empleadoTableClass::TELEFONO_LENGTH) {
-          throw new PDOException('El Telefono No Puede Ser Mayor A: ' . empleadoTableClass::TELEFONO_LENGTH . ' Caracteres');
-        }
-        if (strlen($direccion) > empleadoTableClass::DIRECCION_LENGTH) {
-          throw new PDOException('La Direccion No Puede Ser Mayor A: ' . empleadoTableClass::DIRECCION_LENGTH . ' Caracteres');
-        }
-        if (strlen($tipo_id) > empleadoTableClass::TIPO_ID_ID_LENGTH) {
-          throw new PDOException('El Tipo de Identificacion No Puede Ser Mayor A: ' . empleadoTableClass::TIPO_ID_ID_LENGTH . ' Caracteres');
-        }
-        if (strlen($numero_identificacion) > empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH) {
-          throw new PDOException('El Numero De Identificación No Puede Ser Mayor A: ' . empleadoTableClass::NUMERO_IDENTIFICACIONEMPLEADO_LENGTH . ' Caracteres');
-        }
-        if (strlen($credencial_id) > empleadoTableClass::CREDENCIAL_ID_LENGTH) {
-          throw new PDOException('La Credencial No Puede Ser Mayor A: ' . empleadoTableClass::CREDENCIAL_ID_LENGTH . ' Caracteres');
-        }
-        if (strlen($correo) > empleadoTableClass::CORREO_LENGTH) {
-          throw new PDOException('El Correo No Puede Ser Mayor A: ' . empleadoTableClass::CORREO_LENGTH . ' Caracteres');
-        }
-//        if (!preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
-//          throw new PDOException('Correo Invalido');
-//        }
-//        if (preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
-//          throw new PDOException('Correo Valido');
-//        }
+        $this->Validate($nom_empleado, $apell_empleado, $telefono, $direccion, $tipo_id, $numero_identificacion, $credencial_id, $correo, $correo2);
+
         $data = array(
             empleadoTableClass::NOM_EMPLEADO => $nom_empleado,
             empleadoTableClass::APELL_EMPLEADO => $apell_empleado,
@@ -76,9 +49,54 @@ class createActionClass extends controllerClass implements controllerActionInter
       }
     } catch (PDOException $exc) {
       routing::getInstance()->redirect('empleado', 'insert');
-      session::getInstance()->setFlash('exc',$exc);
+      session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 
+  private function Validate($nom_empleado, $apell_empleado, $telefono, $direccion, $tipo_id, $numero_identificacion, $credencial_id, $correo, $correo2) {
+    $bandera = FALSE;
+    if (strlen($nom_empleado) > empleadoTableClass::NOM_EMPLEADO_LENGTH) {
+      session::getInstance()->setError(i18n::__('errorLengthEmployee', NULL, 'default', array('%nombre%' => $nom_empleado, '%caracteres%' => empleadoTableClass::NOM_EMPLEADO_LENGTH)));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
+    }
+    if (strlen($apell_empleado) > empleadoTableClass::APELL_EMPLEADO_LENGTH) {
+      session::getInstance()->setError(i18n::__('errorLengthLastEmployee', NULL, 'default', array('%apellido%' => $apell_empleado, '%caracteres%' => empleadoTableClass::APELL_EMPLEADO_LENGTH)));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);
+    }
+    if ($telefono > empleadoTableClass::TELEFONO) {
+      session::getInstance()->setError(i18n::__('errorLengthPhone', NULL, 'default', array('%telefono%' => $telefono, '%caracteres%' => empleadoTableClass::TELEFONO_LENGTH)));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
+    }
+    if (strlen($direccion) > empleadoTableClass::DIRECCION_LENGTH) {
+      session::getInstance()->setError(i18n::__('errorLengthDirection', NULL, 'default', array('%direccion%' => $direccion, '%caracteres%' => empleadoTableClass::DIRECCION_LENGTH)));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true), true);
+    }
+    if (strlen($numero_identificacion) > empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH) {
+      session::getInstance()->setError(i18n::__('errorLengthNumIdentification', NULL, 'default', array('%numIdentification%' => $numero_identificacion, '%caracteres%' => empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH)));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
+    }
+    if ($correo !== $correo2) {
+      session::getInstance()->setError(i18n::__('errorMail', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
+    }
+    if ($bandera === true) {
+      request::getInstance()->setMethod('GET');
+      routing::getInstance()->forward('empleado', 'insert');
+    }
+  }
+
 }
+
+//        if (!preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
+//          throw new PDOException('Correo Invalido');
+//        }
+//        if (preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
+//          throw new PDOException('Correo Valido');
+//        }
