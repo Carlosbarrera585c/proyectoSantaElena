@@ -222,6 +222,13 @@ dictionary:
     editQualityControl:   Edit Quality Control
     qualityControlInformation: Quality Control Information
     newQualityControl:    New Quality Control
+    enterTheDate:        Enter the Date
+    enterTheTurn:        Enter the Turn
+    enterTheBrix:        Enter the Brix
+    enterThePh:          Enter the Ph
+    enterTheAr:          Enter the Ar
+    enterTheSaccharose:  Enter the Saccharose
+    enterThePurity:      Enter the Purity
     ##-----------------control calidad---------------------------##
      
     ##---------------------- DETALLE EMPAQUE----------------------------##

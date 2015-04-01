@@ -171,7 +171,7 @@ use mvc\view\viewClass as view ?>
     </div>
   </div>
   <div class="page-header titulo">
-    <h1><i class="glyphicon glyphicon-th-list"><?php echo i18n::__('qualityControl') ?></i></h1>
+    <h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('qualityControl') ?></i></h1>
   </div>
 
 

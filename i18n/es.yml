@@ -221,6 +221,13 @@ dictionary:
     editQualityControl:  Editar Control Calidad
     qualityControlInformation: Informacion De Control Calidad
     newQualityControl:   Nuevo Control Calidad
+    enterTheDate:        Introduce la Fecha
+    enterTheTurn:        Introduce el Turno
+    enterTheBrix:        Introduce el Brix
+    enterThePh:        Introduce el Ph
+    enterTheAr:        Introduce el Ar
+    enterTheSaccharose: Introduce la Sacarosa
+    enterThePurity:     Introduce la Pureza
     ##-----------------control calidad---------------------------##
      
     ##---------------------- DETALLE EMPAQUE----------------------------##
