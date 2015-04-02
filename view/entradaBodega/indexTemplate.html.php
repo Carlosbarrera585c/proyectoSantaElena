@@ -8,7 +8,6 @@ use mvc\view\viewClass as view ?>
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
 <?php $provee = proveedorTableClass::ID ?>
-<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">   
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -85,7 +84,7 @@ use mvc\view\viewClass as view ?>
                     <th><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('date') ?></th>
-                    <th><?php echo i18n::__('actions') ?></th>
+                    <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>

@@ -29,6 +29,7 @@ dictionary:
     back:                 Atrás
     delete:               Eliminar
     detail:               Detalle
+    enlist:               Enlistar
     deleteSelect:         Eliminar Seleccionados
     successfulRegister:   El Registro Fue Exitoso.
     successfulUpdate:     La Actualización Fue Exitosa.

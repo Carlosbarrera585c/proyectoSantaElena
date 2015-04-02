@@ -3,7 +3,7 @@
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
 
-config::setRowGrid(3);
+config::setRowGrid(5);
 
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // pgsql
@@ -30,14 +30,11 @@ if (config::getDbUnixSocket() !== null) {
 }
 
 //Para Windows
-//config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
+config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
 //Para Linux 
-config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
+//config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 
-//config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
-
-//Host Virtual
-config::setUrlBase('http://www.santahelena.com/web/');
+config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 
 config::setScope('prod'); // prod
 if (session::getInstance()->hasDefaultCulture() === false) {
@@ -61,12 +58,7 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
 config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
-//Virtual Host
-config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
-//config::setCookieDomain('http://localhost/');
-//Virtual Host
-config::setCookieDomain('http://www.santahelena.com/');
-//config::setCookieDomain('http://localhost/');
+config::setCookieDomain('http://localhost/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
 config::setDefaultModule('default');
