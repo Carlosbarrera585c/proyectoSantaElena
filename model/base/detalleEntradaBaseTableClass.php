@@ -20,7 +20,9 @@ class detalleEntradaBaseTableClass extends tableBaseClass {
 
     const ID = 'id';
     const CANTIDAD = 'cantidad';
+    const CANTIDAD_LENGHT = 20;
     const VALOR = 'valor';
+    const VALOR_LENGHT = 20;
     const FECHA_FABRICACION = 'fecha_fabricacion';
     const FECHA_VENCIMIENTO = 'fecha_vencimiento';
     const ID_DOC = 'id_doc';

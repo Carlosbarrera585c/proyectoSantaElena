@@ -224,8 +224,8 @@ dictionary:
     enterTheDate:        Introduce la Fecha
     enterTheTurn:        Introduce el Turno
     enterTheBrix:        Introduce el Brix
-    enterThePh:        Introduce el Ph
-    enterTheAr:        Introduce el Ar
+    enterThePh:         Introduce el Ph
+    enterTheAr:         Introduce el Ar
     enterTheSaccharose: Introduce la Sacarosa
     enterThePurity:     Introduce la Pureza
     ##-----------------control calidad---------------------------##
@@ -247,6 +247,14 @@ dictionary:
     errorLengthDirection:   Error Su Direction (%direccion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthNumIdentification: Error Su Numero de Identificaciòn (%numIdentificacion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorMail:              Los Correos No Coinciden.
+    errorLenghtTurn:        Error su Turno (%turno%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtBrix:        Error su Brix (%brix%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtPh:          Error su Ph (%ph%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtAr:          Error su Ar (%ar%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtSaccharose:  Error su Sacarosa (%sacarosa%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtPurity:      Error su Pureza (%pureza%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtAmount:      Error su Cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

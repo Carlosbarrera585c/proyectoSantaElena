@@ -27,6 +27,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $enBodegaId = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, true));
                 $idInsumo = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::INSUMO_ID, true));
 
+                $this->Validate($cantidad, $valor);
 
                 $data = array(
                     detalleEntradaTableClass::CANTIDAD => $cantidad,
@@ -50,5 +51,23 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setError(i18n::__('failureToRegister'));
         }
     }
+    
+    private function Validate($cantidad, $valor) {
+    $bandera = FALSE;
+    if (strlen($cantidad) > detalleEntradaTableClass::CANTIDAD_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => detalleEntradaTableClass::CANTIDAD_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
+    }
+    if (strlen($valor) > detalleEntradaTableClass::VALOR_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtValue', NULL, 'default', array('%valor%' => $valor, '%caracteres%' => detalleEntradaTableClass::VALOR_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
+    }
+    if ($bandera === true) {
+      request::getInstance()->setMethod('GET');
+      routing::getInstance()->forward('detalleEntrada', 'insert');
+    }
+  }
 
 }

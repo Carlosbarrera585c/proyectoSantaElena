@@ -5,8 +5,13 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php
+use mvc\session\sessionClass as session ?>
+<?php
+use mvc\request\requestClass as request ?>
+
 <?php $id = detalleEntradaTableClass::ID ?>
-<?php $cant = detalleEntradaTableClass::CANTIDAD ?>
+<?php $cantidad = detalleEntradaTableClass::CANTIDAD ?>
 <?php $valor = detalleEntradaTableClass::VALOR ?>
 <?php $fechaFB = detalleEntradaTableClass::FECHA_FABRICACION ?>
 <?php $fechaVC = detalleEntradaTableClass::FECHA_VENCIMIENTO ?>
@@ -23,16 +28,22 @@ use mvc\view\viewClass as view ?>
     <?php endif ?>
     <div class="container container-fluid">
         <?php view::includeHandlerMessage() ?>
-        <div class="form-group">
-            <label for="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('amount') ?>:</label>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
+            <label for="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('amount') ?>:</label>
             <div class="col-lg-10">
-                <input type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$cant : '') ?>" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" placeholder="Introduce la Cantidad">
+              <input id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$cantidad : '') ?><?php echo (session::getInstance()->hasFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true)) === true) ? request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true)) : '' ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('amount') ?>">
+                <?php if (session::getInstance()->hasFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true)) === true): ?>
+                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <?php endif ?>
             </div>
         </div>
-        <div class="form-group">
-            <label class="col-lg-2 control-label" ><?php echo i18n::__('value') ?>:</label>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true)) === true) ? 'has-error has-feedback' : '' ?>">
+            <label for="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('value') ?>:</label>
             <div class="col-lg-10">
-                <input type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$valor : '') ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true) ?>" placeholder="Introduce el Valor">
+              <input id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$valor : '') ?><?php echo (session::getInstance()->hasFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true)) === true) ? request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true)) : '' ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true) ?>" placeholder="<?php echo i18n::__('value') ?>">
+                <?php if (session::getInstance()->hasFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true)) === true): ?>
+                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <?php endif ?>
             </div>
         </div>
         <div class="form-group">
