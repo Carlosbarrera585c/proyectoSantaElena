@@ -248,6 +248,7 @@ dictionary:
     errorLengthDirection:   Error Su Direction (%direccion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthNumIdentification: Error Su Numero de Identificaciòn (%numIdentificacion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorMail:              Los Correos No Coinciden.
+    errorMailCharacters:    El Correo debe ser (example@example.com).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
