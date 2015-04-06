@@ -259,7 +259,7 @@ dictionary:
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
-    errorLenghtDesc:        Error su Turno (%$desc_tipo_doc%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorText:              Solo se Aceptan Letras, No Numeros (%texto%).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
