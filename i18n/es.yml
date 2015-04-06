@@ -260,6 +260,7 @@ dictionary:
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
     errorText:              Solo se Aceptan Letras, No Numeros (%texto%).
+    errorLenghtDesc:        Error su valor (%desc_tipo_doc%) Excede La cantidad Maxima De caracteres (%caracteres%).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
