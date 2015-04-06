@@ -1,14 +1,17 @@
 <?php
-use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
 
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
 <?php $provee = proveedorTableClass::ID ?>
 <?php $proveeRS = proveedorTableClass::RAZON_SOCIAL ?>
-
+<?php view::includePartial('empleado/menu') ?>
 <div class="container container-fluid">
-            <div class="page-header  text-center titulo">
+    <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoCellarEntrance') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'deleteSelect') ?>" method="POST">

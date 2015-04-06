@@ -247,6 +247,7 @@ dictionary:
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
+    errorLenghtDesc:        Error Your Description (%desc_tipo_doc%) Maximum Exceeds Number of Characters (%caracteres%).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
