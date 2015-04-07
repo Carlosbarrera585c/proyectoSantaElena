@@ -247,6 +247,7 @@ dictionary:
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
+    errorText:              Just be accepted Lyrics, No Number (%texto%).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
