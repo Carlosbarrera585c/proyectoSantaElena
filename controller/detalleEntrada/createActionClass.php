@@ -64,6 +64,27 @@ class createActionClass extends controllerClass implements controllerActionInter
       $bandera = true;
       session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
     }
+    if($cantidad === '') {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
+    }
+    if($valor === '') {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
+    }
+    if (!is_numeric($cantidad)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
+    }
+    if (!is_numeric($valor)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
+    }
+    
     if ($bandera === true) {
       request::getInstance()->setMethod('GET');
       routing::getInstance()->forward('detalleEntrada', 'insert');

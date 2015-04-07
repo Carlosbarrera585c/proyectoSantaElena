@@ -71,6 +71,11 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
         }
+        if (!is_numeric($telefono)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
+        }
         if (strlen($direccion) > empleadoTableClass::DIRECCION_LENGTH) {
             session::getInstance()->setError(i18n::__('errorLengthDirection', NULL, 'default', array('%direccion%' => $direccion, '%caracteres%' => empleadoTableClass::DIRECCION_LENGTH)));
             $bandera = true;
@@ -78,6 +83,11 @@ class createActionClass extends controllerClass implements controllerActionInter
         }
         if (strlen($numero_identificacion) > empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH) {
             session::getInstance()->setError(i18n::__('errorLengthNumIdentification', NULL, 'default', array('%numIdentification%' => $numero_identificacion, '%caracteres%' => empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH)));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
+        }
+        if (!is_numeric($numero_identificacion)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
         }
@@ -91,6 +101,51 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
         }
+        if ($nom_empleado === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
+        }if ($apell_empleado === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);
+        }
+        if ($telefono === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
+        }
+
+        if ($direccion === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true), true);
+        }
+        if ($numero_identificacion === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
+        }
+        if ($correo === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
+        }
+        if ($correo2 === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
+        }
+        if (!ereg("^[A-Za-z_]*$", $nom_empleado)) {
+            session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $nom_empleado)));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
+        }
+        if (!ereg("^[A-Za-z_]*$", $apell_empleado)) {
+            session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $apell_empleado)));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);
+        }
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('empleado', 'insert');
@@ -98,10 +153,3 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
 
 }
-
-//        if (!preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
-//          throw new PDOException('Correo Invalido');
-//        }
-//        if (preg_match('{^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$}', $correo)) {
-//          throw new PDOException('Correo Valido');
-//        }
