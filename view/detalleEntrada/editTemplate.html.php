@@ -2,6 +2,7 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $id = detalleEntradaTableClass::ID ?>
+<?php view::includePartial('menu/menu') ?>
  <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editDetailEntrance') ?></i></h1>
         <?php echo $objDetalleEntrada[0]->$id ?>

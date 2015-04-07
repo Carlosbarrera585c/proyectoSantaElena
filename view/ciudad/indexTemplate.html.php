@@ -6,7 +6,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = ciudadTableClass::ID ?>
 <?php $ciu = ciudadTableClass::NOM_CIUDAD ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('city') ?></h1>

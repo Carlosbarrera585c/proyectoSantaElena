@@ -1,11 +1,12 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = pagoTrabajadoresTableClass::ID ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
 <?php $periodo_inicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
 <?php $periodo_fin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
 <?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
-
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header  text-center titulo">
        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoPlayWokers') ?></i></h1>

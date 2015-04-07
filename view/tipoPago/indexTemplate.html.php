@@ -3,7 +3,7 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $id = tipoPagoTableClass::ID ?>
 <?php $desc = tipoPagoTableClass::DESC_TIPO_PAGO?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
        <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('paymentType') ?></h1>

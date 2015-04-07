@@ -5,7 +5,7 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <?php $id = credencialTableClass::ID ?>
 <?php $nom = credencialTableClass::NOMBRE ?>
 <?php $created = credencialTableClass::CREATED_AT ?>

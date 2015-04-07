@@ -11,7 +11,7 @@ use mvc\config\configClass as config ?>
 use mvc\request\requestClass as request ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

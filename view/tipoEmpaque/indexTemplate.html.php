@@ -7,7 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = tipoEmpaqueTableClass::ID ?>
 <?php $desc = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('typePacking') ?></i></h1>

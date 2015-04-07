@@ -11,9 +11,9 @@ use mvc\session\sessionClass as session ?>
 use mvc\request\requestClass as request ?>
 <?php $idTipoDoc = tipoDocTableClass::ID ?>
 <?php $descTipoDoc = tipoDocTableClass::DESC_TIPO_DOC ?>
-
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">    
-    <form class="form-signin" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', ((isset($objTipoDoc)) ? 'update' : 'create')) ?>">
+    <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', ((isset($objTipoDoc)) ? 'update' : 'create')) ?>">
         <?php if (isset($objTipoDoc) == true): ?>
             <input name="<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::ID, true) ?>" value="<?php echo $objTipoDoc[0]->$idTipoDoc ?>" type="hidden">
         <?php endif ?>
@@ -27,13 +27,11 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
             </div>
         </div>
-
-</div>
-<div class="form-group">
-    <div class="col-lg-12 col-xs-offset-6">
-        <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objTipoDoc)) ? 'update' : 'register')) ?>">
-        <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
-    </div>
-</div>
-</form>
+        <div class="form-group">
+            <div class="col-lg-12 col-xs-offset-6">
+                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objTipoDoc)) ? 'update' : 'register')) ?>">
+                <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
+            </div>
+        </div>
+    </form>
 </div>

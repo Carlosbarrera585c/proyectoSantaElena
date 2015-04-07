@@ -7,7 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = tipoIdTableClass::ID ?>
 <?php $desc = tipoIdTableClass::DESC_TIPO_ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

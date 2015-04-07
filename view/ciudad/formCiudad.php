@@ -1,7 +1,8 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $idCiudad = ciudadTableClass::ID ?>
-
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">    
 <form class="form-signin" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('ciudad', ((isset($objCiudad)) ? 'update' : 'create')) ?>">
             <?php if (isset($objCiudad) == true): ?>

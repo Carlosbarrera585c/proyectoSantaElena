@@ -5,6 +5,7 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php view::includePartial('menu/menu') ?>
 <?php $desc_tipo_empaque = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
 
 <div class="container container-fluid">

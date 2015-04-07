@@ -1,5 +1,6 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
+<?php use mvc\view\viewClass as view ?>
 <?php $id = controlCalidadTableClass::ID ?>
 <?php $fecha = controlCalidadTableClass::FECHA ?>
 <?php $turno = controlCalidadTableClass::TURNO ?>
@@ -10,7 +11,7 @@
 <?php $pureza = controlCalidadTableClass::PUREZA ?>
 <?php $empleado_id = controlCalidadTableClass::EMPLEADO_ID ?>
 <?php $proveedor_id = controlCalidadTableClass::PROVEEDOR_ID ?>
-
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
      <div class="page-header text-center titulo">
         <h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>

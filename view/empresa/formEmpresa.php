@@ -13,7 +13,7 @@ use mvc\view\viewClass as view ?>
 <?php $telefono = empresaTableClass::TELEFONO ?>
 <?php $usuario_id = usuarioTableClass::ID ?>
 <?php $usu = usuarioTableClass::USER ?>
-
+<?php view::includePartial('menu/menu') ?>
 <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('empresa', ((isset($objEmpresa)) ? 'update' : 'create')) ?>">
     <?php if (isset($objEmpresa) == true): ?>
         <input name="<?php echo empresaTableClass::getNameField(empresaTableClass::ID, true) ?>" value="<?php echo $objEmpresa[0]->$idEmpresa ?>" type="hidden">

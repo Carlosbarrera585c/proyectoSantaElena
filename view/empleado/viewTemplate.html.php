@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $num_identificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
 <?php $credencial_id = empleadoTableClass::CREDENCIAL_ID ?>
 <?php $correo = empleadoTableClass::CORREO ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="fa fa-info-circle"> <?php echo i18n::__('infoEmployee') ?> <small><?php echo $objEmpleado[0]->$nom_empleado ?></small></i></h1>

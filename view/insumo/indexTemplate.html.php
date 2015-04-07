@@ -9,7 +9,7 @@ use mvc\view\viewClass as view ?>
 <?php $desc_insumo = insumoTableClass::DESC_INSUMO ?>
 <?php $precio = insumoTableClass::PRECIO ?>
 <?php $tipo_insumo_id = insumoTableClass::TIPO_INSUMO_ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="modal fade" id="myModalFiltrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

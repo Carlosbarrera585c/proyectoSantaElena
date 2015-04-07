@@ -23,7 +23,7 @@ use mvc\request\requestClass as request ?>
 <?php $proveedor_id_c = controlCalidadTableClass::PROVEEDOR_ID ?>
 <?php $proveedor_id = proveedorTableClass::ID ?>
 <?php $proveedor_nom = proveedorTableClass::RAZON_SOCIAL ?>
-
+<?php view::includePartial('menu/menu') ?>
 <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', ((isset($objControlCalidad)) ? 'update' : 'create')) ?>">
     <?php if (isset($objControlCalidad) == true): ?>
         <input name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" value="<?php echo $objControlCalidad[0]->$id ?>" type="hidden">

@@ -13,7 +13,7 @@
 <?php $insuId = insumoTableClass::ID ?>
 <?php $descInsu = insumoTableClass::DESC_INSUMO ?>
 
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">  
        
 

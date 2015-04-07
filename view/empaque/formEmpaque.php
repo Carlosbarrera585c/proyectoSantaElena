@@ -11,7 +11,7 @@ use mvc\view\viewClass as view ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php $tipo_empaque_id = empaqueTableClass::ID ?>
 <?php $desc_tipo_empaque = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
-
+<?php view::includePartial('menu/menu') ?>
 <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('empaque', ((isset($objEmpaque)) ? 'update' : 'create')) ?>">
     <?php if (isset($objEmpaque) == true): ?>
         <input name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, true) ?>" value="<?php echo $objEmpaque[0]->$id_empaque ?>" type="hidden">

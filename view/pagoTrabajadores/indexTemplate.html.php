@@ -6,7 +6,7 @@
 <?php $periodo_inicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
 <?php $periodo_fin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
 <?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="container container-fluid">
    <div class="container container-fluid">

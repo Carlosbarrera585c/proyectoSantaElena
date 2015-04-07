@@ -8,6 +8,7 @@ use mvc\view\viewClass as view ?>
 <?php $idCredencial = credencialTableClass::ID ?>
     <?php $nombreCredencial = credencialTableClass::NOMBRE ?>
     <?php $create = credencialTableClass::CREATED_AT ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">    
   <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('credencial', ((isset($objCredencial)) ? 'update' : 'create')) ?>">
       <?php if (isset($objCredencial) == true): ?>

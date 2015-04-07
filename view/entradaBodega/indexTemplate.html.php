@@ -8,7 +8,7 @@ use mvc\view\viewClass as view ?>
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
 <?php $provee = proveedorTableClass::ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">   
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

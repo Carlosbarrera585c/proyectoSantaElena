@@ -3,7 +3,7 @@
 <?php use mvc\view\viewClass as view?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $id = usuarioTableClass::ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('user') ?></i></h1>

@@ -13,7 +13,7 @@ use mvc\request\requestClass as request ?>
 <?php $fechaE = entradaBodegaTableClass::FECHA ?>
 <?php $proveeId = proveedorTableClass::ID ?>
 <?php $proveeNom = proveedorTableClass::RAZON_SOCIAL ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">    
     <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', ((isset($objEntradaBodega)) ? 'update' : 'create')) ?>">
         <?php if (isset($objEntradaBodega) == true): ?>

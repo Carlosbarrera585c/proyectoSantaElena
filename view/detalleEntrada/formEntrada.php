@@ -21,7 +21,7 @@ use mvc\request\requestClass as request ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
 <?php $insuId = insumoTableClass::ID ?>
 <?php $descInsu = insumoTableClass::DESC_INSUMO ?>
-
+<?php view::includePartial('menu/menu') ?>
 <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', ((isset($objDetalleEntrada)) ? 'update' : 'create')) ?>">
     <?php if (isset($objDetalleEntrada) == true): ?>
         <input name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, true) ?>" value="<?php echo $objDetalleEntrada[0]->$id ?>" type="hidden">

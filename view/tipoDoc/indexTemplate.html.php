@@ -3,7 +3,7 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $id = tipoDocTableClass::ID ?>
 <?php $desc = tipoDocTableClass::DESC_TIPO_DOC?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
         
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

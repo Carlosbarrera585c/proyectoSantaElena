@@ -7,7 +7,7 @@ use mvc\routing\routingClass as routing ?>
 <?php $desc_insumo = insumoTableClass::DESC_INSUMO ?>
 <?php $precio = insumoTableClass::PRECIO ?>
 <?php $tipo_insumo_id = insumoTableClass::TIPO_INSUMO_ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
                <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoInput') ?></i></h1>

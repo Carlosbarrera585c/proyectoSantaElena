@@ -7,7 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = tipoIdTableClass::ID ?>
 <?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">  
   <div class="page-header titulo">
     <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('identificationType') ?></i></h1>

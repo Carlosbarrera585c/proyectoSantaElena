@@ -3,7 +3,7 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $id = tipoInsumoTableClass::ID ?>
 <?php $desc = tipoInsumoTableClass::DESC_TIPO_INSUMO ?>
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
    <div class="modal fade" id="myModalFiltrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

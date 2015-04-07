@@ -18,7 +18,7 @@ use mvc\view\viewClass as view ?>
 <?php $insuId = detalleEntradaTableClass::INSUMO_ID ?>
 <?php $descInsu = detalleEntradaTableClass::INSUMO_ID ?>
 
-<?php view::includePartial('empleado/menu') ?>
+<?php view::includePartial('menu/menu') ?>
 
 <div class="container container-fluid">
     <div class="page-header titulo">
