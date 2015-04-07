@@ -22,7 +22,6 @@ class createActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST')) {
-        $id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true));
         $fecha = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true));
         $turno = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true));
         $brix = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true));
@@ -32,8 +31,8 @@ class createActionClass extends controllerClass implements controllerActionInter
         $pureza = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true));
         $empleado_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true));
         $proveedor_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true));
-        
-        $this->Validate($id,$turno, $brix, $ph, $ar, $sacarosa, $pureza);
+
+        $this->Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza);
 
         $data = array(
             controlCalidadTableClass::FECHA => $fecha,
@@ -60,7 +59,8 @@ class createActionClass extends controllerClass implements controllerActionInter
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
-    private function Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza) {
+
+  private function Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza) {
     $bandera = FALSE;
     if (strlen($turno) > controlCalidadTableClass::TURNO_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtTurn', NULL, 'default', array('%turno%' => $turno, '%caracteres%' => controlCalidadTableClass::TURNO_LENGHT)));
@@ -73,7 +73,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
     }
     if ($ph > controlCalidadTableClass::PH_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $brix, '%caracteres%' => controlCalidadTableClass::PH_LENGHT)));
+      session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => controlCalidadTableClass::PH_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
     }
@@ -91,6 +91,16 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setError(i18n::__('errorLenghtPurity', NULL, 'default', array('%pureza%' => $pureza, '%caracteres%' => controlCalidadTableClass::PUREZA_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+    if (!is_numeric($brix)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+    }
+    if($ph === '') {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
     }
     if ($bandera === true) {
       request::getInstance()->setMethod('GET');

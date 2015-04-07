@@ -217,17 +217,17 @@ dictionary:
     purity:               Pureza
     idEmployed:           Empleado
     idProvider:           Proveedor
-    qualityControl:      Control Calidad
-    editQualityControl:  Editar Control Calidad
+    qualityControl:       Control Calidad
+    editQualityControl:   Editar Control Calidad
     qualityControlInformation: Informacion De Control Calidad
-    newQualityControl:   Nuevo Control Calidad
-    enterTheDate:        Introduce la Fecha
-    enterTheTurn:        Introduce el Turno
-    enterTheBrix:        Introduce el Brix
-    enterThePh:         Introduce el Ph
-    enterTheAr:         Introduce el Ar
-    enterTheSaccharose: Introduce la Sacarosa
-    enterThePurity:     Introduce la Pureza
+    newQualityControl:    Nuevo Control Calidad
+    enterTheDate:         Introduce la Fecha
+    enterTheTurn:         Introduce el Turno
+    enterTheBrix:         Introduce el Brix
+    enterThePh:           Introduce el Ph
+    enterTheAr:           Introduce el Ar
+    enterTheSaccharose:   Introduce la Sacarosa
+    enterThePurity:       Introduce la Pureza
     ##-----------------control calidad---------------------------##
      
     ##---------------------- DETALLE EMPAQUE----------------------------##
@@ -255,6 +255,8 @@ dictionary:
     errorLenghtPurity:      Error su Pureza (%pureza%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtAmount:      Error su Cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorNumeric:           Error El Campo debe Ser Solo Numerico.
+    errorNull:              Error Los Campos deben Ser Diligenciados.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
