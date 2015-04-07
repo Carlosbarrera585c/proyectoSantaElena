@@ -77,3 +77,4 @@ config::setDefaultActionSecurity('index');
 
 config::setDefaultModulePermission('shfSecurity');
 config::setDefaultActionPermission('noPermission');
+

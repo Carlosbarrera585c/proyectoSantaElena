@@ -93,9 +93,9 @@ use mvc\request\requestClass as request ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idEmployed') ?>:</label>
             <div class="col-lg-10">
-                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, FALSE) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, TRUE) ?>">
+                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, TRUE) ?>">
                     <?php foreach ($objEmpleado as $empleado): ?>
-                  <option <?php echo (isset($objControlCalidad[0]->$empleado_id_c) == $empleado->$empleado_id) ? 'selected' : ''  ?> value="<?php echo $empleado->$empleado_id ?>">
+                  <option <?php echo (isset($objControlCalidad[0]->$empleado_id_c) === true and $objControlCalidad[0]->$empleado_id_c == $empleado->$empleado_id) ? 'selected' : ''  ?> value="<?php echo $empleado->$empleado_id ?>">
                             <?php echo $empleado->$empleado_nom ?>
                         </option>   
                     <?php endforeach ?>
@@ -105,9 +105,9 @@ use mvc\request\requestClass as request ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idProvider') ?>:</label>
             <div class="col-lg-10">
-                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, FALSE) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
+                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
-                  <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) == $proveedor->$proveedor_id )? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
+                  <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) === true and $objControlCalidad[0]->$proveedor_id_c == $proveedor->$proveedor_id )? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
                             <?php echo $proveedor->$proveedor_nom ?>
                         </option>   
                     <?php endforeach ?>

@@ -29,6 +29,7 @@ dictionary:
     back:                 Atrás
     delete:               Eliminar
     detail:               Detalle
+    enlist:               Enlistar
     deleteSelect:         Eliminar Seleccionados
     successfulRegister:   El Registro Fue Exitoso.
     successfulUpdate:     La Actualización Fue Exitosa.
@@ -257,6 +258,7 @@ dictionary:
     errorLenghtValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
+    errorMailCharacters:    El Correo debe ser (example@example.com).
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
