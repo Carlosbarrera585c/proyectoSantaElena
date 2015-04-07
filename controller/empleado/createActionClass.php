@@ -91,6 +91,12 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
         }
+        if ($telefono < 0) {
+            session::getInstance()->setError(i18n::__('errorMailCharacters', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
+        }
+        
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('empleado', 'insert');
