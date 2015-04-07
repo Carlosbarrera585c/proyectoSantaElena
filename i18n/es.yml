@@ -259,6 +259,7 @@ dictionary:
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
+    errorTexto:             Error el campo solo debe contener texto.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

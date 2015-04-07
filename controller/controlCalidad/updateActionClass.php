@@ -30,6 +30,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $pureza = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true));
         $empleado_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true));
         $proveedor_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true));
+        $this->Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza);
         $post = array(
             controlCalidadTableClass::FECHA => $fecha,
             controlCalidadTableClass::TURNO => $turno,
@@ -41,43 +42,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             controlCalidadTableClass::EMPLEADO_ID => $empleado_id,
             controlCalidadTableClass::PROVEEDOR_ID => $proveedor_id
         );
-        session::getInstance()->setAttribute('form_'.controlCalidadTableClass::getNameTable(), $post);
-        if (strlen($fecha) > controlCalidadTableClass::FECHA_LENGTH) {
-          throw new PDOException('La fecha No Puede Ser Mayor A: ' . controlCalidadTableClass::FECHA_LENGTH . ' Caracteres');
-        }
-        if (strlen($turno) > controlCalidadTableClass::TURNO_LENGHT) {
-          throw new PDOException('El turno No Puede Ser Mayor A: ' . controlCalidadTableClass::TURNO_LENGHT . ' Caracteres');
-        }
-        if (strlen($brix) > controlCalidadTableClass::BRIX_LENGHT) {
-          throw new PDOException('El Brix No Puede Ser Mayor A: ' . controlCalidadTableClass::BRIX_LENGHT . ' Caracteres');
-        }
-        if (!is_numeric($brix)) {
-          throw new PDOException('El Campo Brix solo puede ser numerico');
-        }
-        if (strlen($ph) > controlCalidadTableClass::PH_LENGHT) {
-          throw new PDOException('El PH No Puede Ser Mayor A: ' . controlCalidadTableClass::PH_LENGHT . ' Caracteres');
-        }
-        if (!is_numeric($ph)) {
-          throw new PDOException('El Campo ph solo puede ser numerico');
-        }
-        if (strlen($ar) > controlCalidadTableClass::AR_LENGHT) {
-          throw new PDOException('El Ar No Puede Ser Mayor A: ' . controlCalidadTableClass::AR_LENGHT . ' Caracteres');
-        }
-        if (!is_numeric($ar)) {
-          throw new PDOException('El Campo ar solo puede ser numerico');
-        }
-        if (strlen($sacarosa) > controlCalidadTableClass::SACAROSA_LENGHT) {
-          throw new PDOException('La Sacarosa No Puede Ser Mayor A: ' . controlCalidadTableClass::SACAROSA_LENGHT . ' Caracteres');
-        }
-        if (!is_numeric($sacarosa)) {
-          throw new PDOException('El Campo sacarosa solo puede ser numerico');
-        }
-        if (strlen($pureza) > controlCalidadTableClass::PUREZA_LENGHT) {
-          throw new PDOException('La Pureza No Puede Ser Mayor A: ' . controlCalidadTableClass::PUREZA_LENGHT . ' Caracteres');
-        }
-        if (!is_numeric($pureza)) {
-          throw new PDOException('El Campo pureza solo puede ser numerico');
-        }
+        
         $ids = array(
             controlCalidadTableClass::ID => $id
         );
@@ -104,6 +69,103 @@ class updateActionClass extends controllerClass implements controllerActionInter
       echo $exc->getMessage();
       echo '<br>';
       echo $exc->getTraceAsString();
+    }
+  }
+//funcion para validacion de campos en formulario 
+  private function Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza) {
+    $bandera = FALSE;
+//validaciones para que no se superen el maximo de caracteres.
+    if (strlen($turno) > controlCalidadTableClass::TURNO_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtTurn', NULL, 'default', array('%turno%' => $turno, '%caracteres%' => controlCalidadTableClass::TURNO_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
+    }
+    if ($brix > controlCalidadTableClass::BRIX_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => controlCalidadTableClass::BRIX_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+    }
+    if ($ph > controlCalidadTableClass::PH_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => controlCalidadTableClass::PH_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
+    }
+    if ($ar > controlCalidadTableClass::AR_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtAr', NULL, 'default', array('%ar%' => $ar, '%caracteres%' => controlCalidadTableClass::AR_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
+    }
+    if ($sacarosa > controlCalidadTableClass::SACAROSA_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtSaccharose', NULL, 'default', array('%sacarosa%' => $sacarosa, '%caracteres%' => controlCalidadTableClass::SACAROSA_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
+    }
+    if ($pureza > controlCalidadTableClass::PUREZA_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtPurity', NULL, 'default', array('%pureza%' => $pureza, '%caracteres%' => controlCalidadTableClass::PUREZA_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+    //validar que el campo sea solo texto
+    if (!ereg("^[A-Za-z]*$", $turno)){
+      session::getInstance()->setError(i18n::__('errorTexto', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+ //validar que el campo sea numerico.
+    if (!is_numeric($brix)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+    }
+    if (!is_numeric($ph)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
+    }
+    if (!is_numeric($ar)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
+    }
+    if (!is_numeric($sacarosa)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
+    }
+    if (!is_numeric($pureza)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+ //validar que no se envie el campo vacio o nulo
+    if($brix === '' or $brix === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+    }
+    if($ph === '' or $ph === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
+    }
+    if($ar === '' or $ar === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
+    }
+    if($sacarosa === '' or $sacarosa === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
+    }
+    if($pureza === '' or $pureza === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+    if ($bandera === true) {
+      request::getInstance()->setMethod('GET');
+      routing::getInstance()->forward('controlCalidad', 'edit');
     }
   }
 
