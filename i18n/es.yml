@@ -260,6 +260,7 @@ dictionary:
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
     errorTexto:             Error el campo solo debe contener texto.
+    errorDeleteForeign:     El registro no puede ser eliminado porque esta siendo utilizado por otra tabla.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
