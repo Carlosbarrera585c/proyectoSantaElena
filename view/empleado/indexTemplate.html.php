@@ -135,9 +135,9 @@ use mvc\request\requestClass as request ?>
       <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalReport" ><?php echo i18n::__('printReport') ?></a>
     </div>
     <?php view::includeHandlerMessage() ?>
-    <table class="tablaUsuario table table-bordered table-responsive table-hover">
+    <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
       <thead>
-        <tr class="active">
+        <tr class="active columna success">
           <th class="tamano"><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('employeeName') ?></th>
           <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>

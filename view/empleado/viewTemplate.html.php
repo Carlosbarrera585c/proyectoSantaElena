@@ -23,9 +23,9 @@ use mvc\i18n\i18nClass as i18n ?>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr class="active">
+                <tr class="active columna success">
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('employeeName') ?></th>
                     <th><?php echo i18n::__('employeeLastName') ?></th>   

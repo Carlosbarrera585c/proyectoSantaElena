@@ -17,9 +17,9 @@ use mvc\view\viewClass as view ?>
       <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
       <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
     </div>
-    <table class="table table-bordered table-responsive table-condensed">
+    <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
-        <tr class="active">
+        <tr class="active columna success">
           <th><?php echo i18n::__('id') ?></th>
           <th><?php echo i18n::__('desc') ?></th>
         </tr>
