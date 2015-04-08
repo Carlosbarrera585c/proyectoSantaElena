@@ -105,7 +105,8 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
-        }if ($apell_empleado === '') {
+        }
+        if ($apell_empleado === '') {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);
@@ -115,7 +116,6 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
         }
-
         if ($direccion === '') {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
             $bandera = true;

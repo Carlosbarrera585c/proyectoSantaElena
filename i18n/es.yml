@@ -248,6 +248,7 @@ dictionary:
     errorLengthDirection:   Error Su Direction (%direccion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthNumIdentification: Error Su Numero de Identificaciòn (%numIdentificacion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorMail:              Los Correos No Coinciden.
+    errorLengthCredential:  Error Su Descripción (%descripcion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLenghtTurn:        Error su Turno (%turno%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtBrix:        Error su Brix (%brix%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtPh:          Error su Ph (%ph%) Excede La cantidad Maxima De caracteres (%caracteres%).
@@ -259,7 +260,7 @@ dictionary:
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
-    errorTexto:             Error el campo solo debe contener texto.
+    errorText:             Error el campo solo debe contener texto.
     errorDeleteForeign:     El registro no puede ser eliminado porque esta siendo utilizado por otra tabla.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##

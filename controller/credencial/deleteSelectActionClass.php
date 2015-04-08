@@ -19,15 +19,15 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-              $idsToDelete = request::getInstance()->getPost('chk');              
-              foreach ($idsToDelete as $id){
-                  $ids = array(
-                  credencialTableClass::ID => $id
-                );
-                credencialTableClass::delete($ids, false);
-              }              
-               session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('credencial', 'index');
+                $idsToDelete = request::getInstance()->getPost('chk');
+                foreach ($idsToDelete as $id) {
+                    $ids = array(
+                        credencialTableClass::ID => $id
+                    );
+                    credencialTableClass::delete($ids, false);
+                }
+                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+                routing::getInstance()->redirect('credencial', 'index');
             } else {
                 routing::getInstance()->redirect('credencial', 'index');
             }
@@ -36,5 +36,14 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
             echo '<br>';
             echo $exc->getTraceAsString();
         }
+        switch ($exc->getCode()) {
+            case 23503:
+                session::getInstance()->setError(i18n::__('errorDeleteForeign'));
+                routing::getInstance()->redirect('credencial', 'index');
+                break;
+            case 00000:
+                break;
+        }
     }
+
 }

@@ -36,6 +36,14 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
             echo '<br>';
             echo $exc->getTraceAsString();
         }
+        switch ($exc->getCode()){
+          case 23503:
+              session::getInstance()->setError(i18n::__('errorDeleteForeign'));
+              routing::getInstance()->redirect('tipoId', 'index');
+              break;
+          case 00000:
+              break;
+      }
     }
 
 }

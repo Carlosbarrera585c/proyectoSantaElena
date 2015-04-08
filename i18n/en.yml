@@ -242,6 +242,7 @@ dictionary:
     errorLengthDirection:   Error Your Direction (%direccion%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthNumIdentification: Error Your identification number (%numIdentificacion%) Maximum Exceeds Number of Characters (%caracteres%).
     errorMail:              The Mail No Coincide.
+    errorLengthCredential:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
     errorLengthAmount:      Error Your amount (%cantidad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthValue:       Error Your value (%valor%) Maximum Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
