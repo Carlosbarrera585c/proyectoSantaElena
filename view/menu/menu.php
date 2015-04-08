@@ -9,7 +9,7 @@ use mvc\config\configClass as config ?>
 use mvc\request\requestClass as request ?>
 <?php
 use mvc\session\sessionClass as session ?>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default nav_bar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
