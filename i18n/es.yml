@@ -145,7 +145,7 @@ dictionary:
     ##---------------------- TIPO IDENTIFICACION----------------##
     identification:       Identificación
     identificationType:   Tipo Identificación
-    EditIdentification:   Edtitar Tipo de Identificación
+    EditIdentification:   Editar Tipo de Identificación
     newIdentification:    Nueva Identificación
     infoIdentificationType: Informacion de Tipos de Identificacion
     ##---------------------- TIPO IDENTIFICACION----------------##

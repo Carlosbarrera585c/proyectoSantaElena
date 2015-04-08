@@ -92,7 +92,7 @@ use mvc\view\viewClass as view ?>
   </div>
   <!-- FINALIZA REPORTE -->
   <div class="page-header titulo">
-    <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('credential') ?></i></h1>
+    <h1><i class="fa fa-credit-card"> <?php echo i18n::__('credential') ?></i></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('credencial', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">

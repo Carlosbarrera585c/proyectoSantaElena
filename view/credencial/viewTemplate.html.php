@@ -12,7 +12,7 @@ use mvc\view\viewClass as view ?>
 <?php $updated = credencialTableClass::UPDATED_AT ?>
 <div class="container container-fluid">  
   <div class="page-header titulo">
-    <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoCredential') ?></i></h1>
+    <h1><i class="fa fa-info-circle"> <?php echo i18n::__('infoCredential') ?></i></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('credencial', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">

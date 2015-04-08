@@ -5,7 +5,7 @@
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
   <div class="page-header titulo">
-    <h1><i class="glyphicon glyphicon-user"><?php echo i18n::__('editCredential') ?>: <?php echo $objCredencial[0]->$nomCredencial ?></i></h1>
+      <h1><i class="fa fa-pencil-square">&nbsp;<?php echo i18n::__('editCredential') ?>: <small><?php echo $objCredencial[0]->$nomCredencial ?></small></i></h1>
   </div>
 <?php view::includePartial('credencial/formCredencial', array('objCredencial' => $objCredencial, 'credencial' => $nomCredencial)) ?>
 </div>
