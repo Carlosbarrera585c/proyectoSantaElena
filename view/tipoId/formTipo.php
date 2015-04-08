@@ -14,10 +14,13 @@ use mvc\view\viewClass as view ?>
         <?php endif ?>
         <div class="container container-fluid">
             <?php view::includeHandlerMessage() ?>
-            <div class="form-group">
-                <label class="col-lg-2 control-label" ><?php echo i18n::__('identificationType') ?>:</label>
+            <div class="form-group <?php echo (session::getInstance()->hasFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
+                <label for="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('identificationType') ?>:</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" value="<?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$desc_tipo_id : '') ?>" name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" placeholder="Introduce la Identificacion">
+                    <input id="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$desc_tipo_id : '') ?><?php echo (session::getInstance()->hasFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) === true) ? request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) : '' ?>" name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" placeholder="Introduce la Identificacion">
+                 <?php if (session::getInstance()->hasFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) === true): ?>
+                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <?php endif ?>
                 </div>
             </div>
             <div class="form-group">

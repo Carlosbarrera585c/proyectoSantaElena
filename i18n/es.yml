@@ -257,11 +257,12 @@ dictionary:
     errorLenghtPurity:      Error su Pureza (%pureza%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtAmount:      Error su Cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthTipoId:      Error Su Descripción (%descripcion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
-    errorText:             Error el campo solo debe contener texto.
-    errorDeleteForeign:     El registro no puede ser eliminado porque esta siendo utilizado por otra tabla.
+    errorText:              Error el Campo solo debe Contener Texto.
+    errorDeleteForeign:     El Registro no Puede ser Eliminado Porque Esta Siendo Utilizado Por Otra Tabla.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
