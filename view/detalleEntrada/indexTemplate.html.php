@@ -67,9 +67,9 @@
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="tablaUsuario table table-bordered table-responsive table-hover">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr>
+                <tr class="active columna success">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('amount') ?></th>

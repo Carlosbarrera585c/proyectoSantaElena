@@ -42,9 +42,9 @@
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr>
+                <tr class="active columna success">
                     <th><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('desc')?></th>
                     <th><?php echo i18n::__('actions')?></th>

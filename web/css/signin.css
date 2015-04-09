@@ -52,3 +52,8 @@ body {
   margin-top: 15px;
   margin-bottom: 0px;
 }
+.btn-primary {
+  color: #fff;
+  background-color: #67b168;
+  border-color: #000;
+}

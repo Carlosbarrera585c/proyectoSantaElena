@@ -14,7 +14,7 @@
         <input type="checkbox" value="true" name="chkRememberMe"> Recordar me
       </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    <button class="btn btn-lg btn-log btn-primary btn-block" type="submit">Entrar</button>
     <?php if (session::getInstance()->hasError() or session::getInstance()->hasInformation() or session::getInstance()->hasSuccess() or session::getInstance()->hasWarning()): ?>
     <?php view::includeHandlerMessage() ?>
     <?php endif ?>

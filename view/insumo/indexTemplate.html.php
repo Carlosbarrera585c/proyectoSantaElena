@@ -88,9 +88,9 @@ use mvc\view\viewClass as view ?>
 
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr class="active">
+                <tr class="active columna success"">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('descriptionInput') ?></th>
                     <th><?php echo i18n::__('price') ?></th>

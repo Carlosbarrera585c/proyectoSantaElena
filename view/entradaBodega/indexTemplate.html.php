@@ -79,9 +79,9 @@ use mvc\view\viewClass as view ?>
              <a  class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
         </div>
 <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr>
+                <tr class="active columna success">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('date') ?></th>
