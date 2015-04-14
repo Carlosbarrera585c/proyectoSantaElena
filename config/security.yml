@@ -74,13 +74,19 @@ empleado:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+        - [admin, Carlos]
   insert:
     security: true
+    credentials:
+      - [admin]
   create:
     security: true
+    credentials:
+      - [admin]
   delete:
     security: true
+    credentials:
+      - [admin]
     
 credencial:
   index:

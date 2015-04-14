@@ -4,7 +4,6 @@ dictionary:
   default:
     ##----------------------SISTEMA-------------------------##
     SantaHelena:          SANTA HELENA
-    sesion:               Sesion
     logout:               Logout
     login:                Login
     register:             Registrar
