@@ -3,7 +3,7 @@ culture:                  English
 dictionary:
   default:
     ##----------------------SISTEMA-------------------------##
-    SantaHelena:          Santa Helena
+    SantaHelena:          SANTA HELENA
     sesion:               Sesion
     logout:               Logout
     login:                Login
