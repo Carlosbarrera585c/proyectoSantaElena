@@ -34,7 +34,9 @@ dictionary:
     successfulUpdate:     La Actualización Fue Exitosa.
     failureToRegister:    Algo Fallo Al Registrar.
     successfulDelete:     La Eliminación Fue Exitosa.
-    failureToDelete:      Algo Fallo Al Eliminar. 
+    failureToDelete:      Algo Fallo Al Eliminar.
+    dateStart:            Fecha Inicial.
+    dateEnd:              Fecha Final.
     ##----------------------SISTEMA-------------------------##
     
     ##----------------------USUARIO-------------------------##
@@ -174,6 +176,7 @@ dictionary:
     IdPacking:            Identificación del Empaque
     editPacking:          Editar Empaque
     newPacking:           Nuevo Empaque
+    infoPacking:          Informacion de empaque
     ##---------------------- EMPAQUE----------------------------##
     ##---------------------- DETALLE ENTRADA----------------------------##
     detailEntrance:       Detalle Entrada Bodega

@@ -13,11 +13,16 @@ class empaqueBaseTableClass extends tableBaseClass {
     private $fecha;
     private $empleado_id;
     private $tipo_empaque_id;
+    private $cantidad;
+    private $insumo_id;
 
     const ID = 'id';
     const FECHA = 'fecha';
     const EMPLEADO_ID = 'empleado_id';
     const TIPO_EMPAQUE_ID = 'tipo_empaque_id';
+    const CANTIDAD = 'cantidad';
+    const CANTIDAD_LEGTH = 20;
+    const INSUMO_ID = 'insumo_id';
 
     function getId() {
         return $this->id;
@@ -33,6 +38,14 @@ class empaqueBaseTableClass extends tableBaseClass {
 
     function getTipo_empaque_id() {
         return $this->tipo_empaque_id;
+    }
+
+    function getCantidad() {
+        return $this->cantidad;
+    }
+
+    function getInsumo_id() {
+        return $this->insumo_id;
     }
 
     function setId($id) {
@@ -51,6 +64,15 @@ class empaqueBaseTableClass extends tableBaseClass {
         $this->tipo_empaque_id = $tipo_empaque_id;
     }
 
+    function setCantidad($cantidad) {
+        $this->cantidad = $cantidad;
+    }
+
+    function setInsumo_id($insumo_id) {
+        $this->insumo_id = $insumo_id;
+    }
+
+    
     /**
      * Obtiene el nombre de la tabla
      * @return string

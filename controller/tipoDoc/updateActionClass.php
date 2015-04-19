@@ -19,8 +19,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(tipoDocTableClass::getNameField(tipoDocTableClass::ID, true));
-        $desc_tipo_doc = request::getInstance()->getPost(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true));
+        $id = trim(request::getInstance()->getPost(tipoDocTableClass::getNameField(tipoDocTableClass::ID, true)));
+        $desc_tipo_doc = trim(request::getInstance()->getPost(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true)));
 
         $ids = array(
             tipoDocTableClass::ID => $id

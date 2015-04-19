@@ -27,6 +27,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $ids = array(
                     entradaBodegaTableClass::ID => $id
                 );
+                
+                $this->Validate($fecha, $proveedor_id);
 
                 $data = array(
                     entradaBodegaTableClass::FECHA => $fecha,
@@ -44,5 +46,26 @@ class updateActionClass extends controllerClass implements controllerActionInter
             echo $exc->getTraceAsString();
         }
     }
+    
+       private function Validate($fecha, $proveedor_id) {
+        $bandera = FALSE;
+
+        if ($fecha === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true), true);
+        }
+
+        if ($proveedor_id === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::PROVEEDOR_ID, true), true);
+        }
+        if ($bandera === true) {
+            request::getInstance()->setMethod('GET');
+            routing::getInstance()->forward('entradaBodega', 'insert');
+        }
+    }
+
 
 }

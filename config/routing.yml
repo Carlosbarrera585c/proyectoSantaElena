@@ -1127,6 +1127,8 @@ empaque_insert:
     - model/empleadoTableClass.php
     - model/base/tipoEmpaqueBaseTableClass.php
     - model/tipoEmpaqueTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
     
 empaque_view:
   url:    /empaque/ver
@@ -1134,10 +1136,12 @@ empaque_view:
   load:
     - model/base/empaqueBaseTableClass.php
     - model/empaqueTableClass.php
-    - model/base/tipoEmpaqueBaseTableClass.php
-    - model/tipoEmpaqueTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
+    - model/base/tipoEmpaqueBaseTableClass.php
+    - model/tipoEmpaqueTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 
 empaque_create:
   url:    /empaque/crear
@@ -1156,6 +1160,8 @@ empaque_edit:
     - model/empleadoTableClass.php
     - model/base/tipoEmpaqueBaseTableClass.php
     - model/tipoEmpaqueTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
     
 empaque_update:
   url:    /empaque/actualizar
@@ -1178,6 +1184,17 @@ empaque_deleteSelect:
     - model/base/empaqueBaseTableClass.php
     - model/empaqueTableClass.php
 
+empaque_reporte:
+  url:    /empaque/reporte
+  param:  { module: empaque, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/empaqueBaseTableClass.php
+    - model/empaqueTableClass.php
+ 
+empaque_deleteFilters:
+  url:    /empaque/borrarFiltros
+  param:  { module: empaque, action: deleteFilters, format: html }
 ##-------------------------- EMPAQUE --------------------------##
 ##--------------------------DETALLE EMPAQUE-----------------------------##
 

@@ -20,10 +20,13 @@ use mvc\view\viewClass as view ?>
                 <div class="modal-body">
                     <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('dateStart') ?></label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control" id="filterFecha1" name="filter[fecha1]">
                                 <br>
+                            </div>
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('dateEnd') ?></label>
+                            <div class="col-sm-10">    
                                 <input type="date" class="form-control" id="filterFecha2" name="filter[fecha2]">
                             </div>
                         </div>

@@ -38,6 +38,8 @@ dictionary:
     failureToRegister:    Something Fault Al Register.
     successfulDelete:     Removal was Successful.
     failureToDelete:      Failure Something To The Delete. 
+    dateStart:            Date Start.
+    dateEnd:              Date Ending.
     ##----------------------SISTEMA-------------------------##
     
     ##----------------------USUARIO-------------------------##
@@ -176,6 +178,7 @@ dictionary:
     IdPacking:            Identification Packaging
     editPacking:          Edit Package
     newPacking:           Edit Package
+    infoPacking:          Information of Packing
     ##---------------------- EMPAQUE----------------------------##
     ##---------------------- DETALLE ENTRADA----------------------------##
     detailEntrance:       Detail Entry Bodega

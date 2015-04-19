@@ -30,24 +30,6 @@ class editActionClass extends controllerClass implements controllerActionInterfa
       } else {
         routing::getInstance()->redirect('tipoDoc', 'index');
       }
-//      if (request::getInstance()->isMethod('POST')) {
-//
-//        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
-//        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-//
-//        if (strlen($usuario) > usuarioTableClass::USUARIO_LENGTH) {
-//          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USUARIO_LENGTH)), 00001);
-//        }
-//
-//        $data = array(
-//            usuarioTableClass::USUARIO => $usuario,
-//            usuarioTableClass::PASSWORD => md5($password)
-//        );
-//        usuarioTableClass::insert($data);
-//        routing::getInstance()->redirect('default', 'index');
-//      } else {
-//        routing::getInstance()->redirect('default', 'index');
-//      }
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

@@ -9,32 +9,34 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of Empaque
+ * Description of Empleado
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ * @author Cristian Ramirez <cristianxdramirez@gmail.com>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
+  public function execute() {
+    try {
 
-            $id = request::getInstance()->getRequest(empaqueTableClass::ID, true);
-            $fields = array(
-                empaqueTableClass::ID,
-                empaqueTableClass::FECHA,
-                empaqueTableClass::EMPLEADO_ID,
-                empaqueTableClass::TIPO_EMPAQUE_ID
-            );
-            $where = array(
-                empaqueTableClass::ID => $id
-            );
-            $this->objEmpaque = empaqueTableClass::getAll($fields, false, null, null, null, null, $where);
-            $this->defineView('view', 'empaque', session::getInstance()->getFormatOutput());
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
-        }
+      $id = request::getInstance()->getRequest(empaqueTableClass::ID, true);
+      $fields = array(
+          empaqueTableClass::ID,
+          empaqueTableClass::FECHA,
+          empaqueTableClass::EMPLEADO_ID,
+          empaqueTableClass::CANTIDAD,
+          empaqueTableClass::TIPO_EMPAQUE_ID,
+          empaqueTableClass::INSUMO_ID
+              
+      );
+      $where = array(
+          empleadoTableClass::ID => $id
+      );
+      $this->objEmpaque = empaqueTableClass::getAll($fields, false, null, null, null, null, $where);
+      $this->defineView('view', 'empaque', session::getInstance()->getFormatOutput());
+    } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
+  }
 
 }

@@ -19,7 +19,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(entradaBodegaTableClass::ID, true));
+                $id = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true));
 
                 $ids = array(
                 entradaBodegaTableClass::ID => $id
