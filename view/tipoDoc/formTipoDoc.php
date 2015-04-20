@@ -11,7 +11,6 @@ use mvc\session\sessionClass as session ?>
 use mvc\request\requestClass as request ?>
 <?php $idTipoDoc = tipoDocTableClass::ID ?>
 <?php $descTipoDoc = tipoDocTableClass::DESC_TIPO_DOC ?>
-<?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">    
     <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', ((isset($objTipoDoc)) ? 'update' : 'create')) ?>">
         <?php if (isset($objTipoDoc) == true): ?>

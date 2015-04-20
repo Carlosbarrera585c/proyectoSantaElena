@@ -33,6 +33,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $ids = array(
                     detalleEntradaTableClass::ID => $id
                 );
+                
+                $this->Validate($cantidad, $valor);
 
                 $data = array(
                     detalleEntradaTableClass::ID => $id,
@@ -56,5 +58,44 @@ class updateActionClass extends controllerClass implements controllerActionInter
             echo $exc->getTraceAsString();
         }
     }
+    
+     private function Validate($cantidad, $valor) {
+    $bandera = FALSE;
+    if (strlen($cantidad) > detalleEntradaTableClass::CANTIDAD_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => detalleEntradaTableClass::CANTIDAD_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
+    }
+    if (strlen($valor) > detalleEntradaTableClass::VALOR_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtValue', NULL, 'default', array('%valor%' => $valor, '%caracteres%' => detalleEntradaTableClass::VALOR_LENGHT)));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
+    }
+    if($cantidad === '') {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
+    }
+    if($valor === '') {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
+    }
+    if (!is_numeric($cantidad)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
+    }
+    if (!is_numeric($valor)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
+    }
+    
+    if ($bandera === true) {
+      request::getInstance()->setMethod('GET');
+      routing::getInstance()->forward('detalleEntrada', 'insert');
+    }
+  }
 
 }

@@ -17,7 +17,7 @@ use mvc\request\requestClass as request ?>
 <div class="container container-fluid">    
     <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', ((isset($objEntradaBodega)) ? 'update' : 'create')) ?>">
         <?php if (isset($objEntradaBodega) == true): ?>
-            <input name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>" value="<?php echo $objEntradaBodega[0]->$idE ?>" type="hidden">
+        <input name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>" value="<?php echo $objEntradaBodega[0]->$idE ?>" type="hidden">
         <?php endif ?>
         <?php view::includeHandlerMessage() ?>
 
@@ -47,7 +47,7 @@ use mvc\request\requestClass as request ?>
         </div>
         <div class="form-group">
             <div class="col-lg-12 col-xs-offset-6">
-                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objDetalleEntrada)) ? 'update' : 'register')) ?>">
+                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objEntradaBodega)) ? 'update' : 'register')) ?>">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
             </div>
         </div>

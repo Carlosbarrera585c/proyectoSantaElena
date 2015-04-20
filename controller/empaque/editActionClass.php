@@ -10,76 +10,52 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of Empaque
+ * Description of Empleado
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ * @author Cristian Ramirez <cristianxdramirez@gmail.com>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->hasRequest(empaqueTableClass::ID)) {
-                $fields = array(
-                    empaqueTableClass::ID,
-                    empaqueTableClass::FECHA,
-                    empaqueTableClass::EMPLEADO_ID,
-                    empaqueTableClass::TIPO_EMPAQUE_ID
-                );
-                $where = array(
-                    empaqueTableClass::ID => request::getInstance()->getRequest(empaqueTableClass::ID)
-                );
+  public function execute() {
+    try {
+      if (request::getInstance()->hasRequest(empaqueTableClass::ID)) {
+        $fields = array(
+            empaqueTableClass::ID,
+            empaqueTableClass::FECHA,
+            empaqueTableClass::CANTIDAD,
+            empaqueTableClass::EMPLEADO_ID,
+            empaqueTableClass::TIPO_EMPAQUE_ID,
+            empaqueTableClass::INSUMO_ID
+        );
+        $where = array(
+            empaqueTableClass::ID => request::getInstance()->getRequest(empaqueTableClass::ID)
+        );
 
-                $fieldsEmpleado = array(
-                    empleadoTableClass::ID,
-                    empleadoTableClass::NOM_EMPLEADO
-                );
-                $fieldsTipoEmpaque = array(
-                    tipoEmpaqueTableClass::ID,
-                    tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE
-                );
+            $fieldsEmpleado = array(
+          empleadoTableClass::ID,
+          empleadoTableClass::NOM_EMPLEADO
+      );
+      $fieldsTipoEmpaque = array(
+          tipoEmpaqueTableClass::ID,
+          tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE
+      );
+       $fieldsInsumo = array(
+           insumoTableClass::ID,
+           insumoTableClass::DESC_INSUMO
+      );
 
-                $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
-                $this->objTipoEmpaque = tipoEmpaqueTableClass::getAll($fieldsTipoEmpaque);
-                $this->objEmpaque = empaqueTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'empaque', session::getInstance()->getFormatOutput());
-            } else {
-                routing::getInstance()->redirect('empaque', 'index');
-            }
-
-//            if (request::getInstance()->isMethod('POST')) {
-//
-//                $cedula = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CEDULA, true));
-//                $nombre = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true));
-//                $apellido = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true));
-//                $usuario_id = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::USUARIO_ID, true));
-//
-//                if (strlen($cedula) > datoUsuarioTableClass::CEDULA_LENGTH) {
-//                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => datoUsuarioTableClass::CEDULA_LENGTH)), 00001);
-//                }
-//                if (strlen($nombre) > datoUsuarioTableClass::NOMBRE_LENGTH) {
-//                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => datoUsuarioTableClass::NOMBRE_LENGTH)), 00001);
-//                }
-//                if (strlen($apellido) > datoUsuarioTableClass::APELLIDO_LENGTH) {
-//                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => datoUsuarioTableClass::APELLIDO_LENGTH)), 00001);
-//                }
-//
-//
-//                $data = array(
-//                    datoUsuarioTableClass::CEDULA => $cedula,
-//                    datoUsuarioTableClass::NOMBRE => $nombre,
-//                    datoUsuarioTableClass::APELLIDO => $apellido,
-//                    datoUsuarioTableClass::USUARIO_ID => $usuario_id
-//                );
-//                datoUsuarioTableClass::insert($data);
-//                routing::getInstance()->redirect('datoUsuario', 'index');
-//            } else {
-//                routing::getInstance()->redirect('datoUsuario', 'index');
-//            }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
-        }
+      $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
+      $this->objTipoEmpaque = tipoEmpaqueTableClass::getAll($fieldsTipoEmpaque);
+      $this->objInsumo = insumoTableClass::getAll($fieldsInsumo);
+        $this->objEmpaque = empaqueTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+        $this->defineView('edit', 'empaque', session::getInstance()->getFormatOutput());
+      } else {
+        routing::getInstance()->redirect('empaque', 'index');
+      }
+    } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
+  }
 
 }
