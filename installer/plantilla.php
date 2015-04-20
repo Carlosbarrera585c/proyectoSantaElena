@@ -1,13 +1,14 @@
 <?php
+$config = "<?php
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
-config::setRowGrid(5);
-config::setDbHost('localhost');
-config::setDbDriver('pgsql'); // mysql
-config::setDbName('nuevo');
-config::setDbPort(5432); // 3306
-config::setDbUser('postgres');
-config::setDbPassword('sena');
+config::setRowGrid($RowGrid);
+config::setDbHost('$host');
+config::setDbDriver('$driver'); // mysql
+config::setDbName('$dbName');
+config::setDbPort($port); // 3306
+config::setDbUser('$dbUser');
+config::setDbPassword('$dbPass');
 // Esto solo es necesario en caso de necesitar un socket para la DB
 config::setDbUnixSocket(null); ///tmp/mysql.sock
 if (config::getDbUnixSocket() !== null) {
@@ -24,16 +25,16 @@ if (config::getDbUnixSocket() !== null) {
           . ';dbname=' . config::getDbName()
   );
 }
-config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
-config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
-config::setScope('prod'); // prod
+config::setPathAbsolute('$PathAbsolute');
+config::setUrlBase('$UrlBase');
+config::setScope('$Scope'); // prod
 if (session::getInstance()->hasDefaultCulture() === false) {
-  config::setDefaultCulture('es');
+  config::setDefaultCulture('$idioma');
 } else {
   config::setDefaultCulture(session::getInstance()->getDefaultCulture());
 }
 config::setIndexFile('index.php');
-config::setFormatTimestamp('Y-m-d H:i:s');
+config::setFormatTimestamp('$FormatTimestamp');
 config::setHeaderJson('Content-Type: application/json; charset=utf-8');
 config::setHeaderXml('Content-Type: application/xml; charset=utf-8');
 config::setHeaderHtml('Content-Type: text/html; charset=utf-8');
@@ -51,4 +52,4 @@ config::setDefaultAction('index');
 config::setDefaultModuleSecurity('shfSecurity');
 config::setDefaultActionSecurity('index');
 config::setDefaultModulePermission('shfSecurity');
-config::setDefaultActionPermission('noPermission');
+config::setDefaultActionPermission('noPermission');";

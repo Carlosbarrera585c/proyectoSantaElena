@@ -18,7 +18,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(controlCalidadTableClass::ID)) {
+            if (request::getInstance()->hasRequest(controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true))) {
                 $fields = array(
                   controlCalidadTableClass::ID,
                   controlCalidadTableClass::FECHA,

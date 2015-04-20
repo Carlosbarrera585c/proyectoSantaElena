@@ -9,6 +9,7 @@ use mvc\view\viewClass as view ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
+<?php use mvc\session\sessionClass as session?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('menu/menu') ?>
@@ -150,8 +151,10 @@ use mvc\request\requestClass as request ?>
             <td><?php echo $tipo->$nom_empleado ?></td>
             <td>
               <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'view', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+              <?php if (session::getInstance()->hasCredential('admin')):?>
               <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'edit', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
               <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+            <?php endif ?>
             </td>
           </tr>
         <div class="modal fade" id="myModalDelete<?php echo $tipo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

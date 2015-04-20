@@ -107,7 +107,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
     }
     //validar que el campo sea solo texto
     if (!ereg("^[A-Za-z]*$", $turno)){
-      session::getInstance()->setError(i18n::__('errorTexto', NULL, 'default'));
+      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
     }
@@ -164,6 +164,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
     }
     if ($bandera === true) {
+        //echo 'HOLA';
+        //exit();
       request::getInstance()->setMethod('GET');
       routing::getInstance()->forward('controlCalidad', 'edit');
     }
