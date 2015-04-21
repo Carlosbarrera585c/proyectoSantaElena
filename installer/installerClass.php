@@ -134,7 +134,7 @@ class installerClass {
                         fputs($file, $config);
                         fclose($file);
                         $driver2 = 'pgsql';
-                        $dbName2 = 'nuevo';
+                        $dbName2 = 'julian';
                         $host2 = 'localhost';
                         $port2 = 5432;
                         $dsn2 = $driver2 . ':dbname=' . $dbName2 . ';host=' . $host2 . ';port=' . $port2;
