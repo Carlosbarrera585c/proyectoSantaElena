@@ -12,8 +12,8 @@
               <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-th-list"> Instalador Agro Panela Santa Helena</i><br><small> Requisitos del Sistema</small></h1>
     </div>
-      <table class="table tables success table-responsive table-bordered table-striped table-hover"> 
-          <tr class="info celda">
+      <table class="table tables table-responsive table-bordered table-striped table-hover"> 
+          <tr class="info">
             <th>Extensiones Del Sistema</th>
             <th>Extension En El Sistema</th>
             <th>Si</th>
@@ -72,7 +72,8 @@
             <?php endif;?>
         </tr>
     </table>
-              <a  href="index.php?step=2" class="btn btn-success">Siguiente</a>
+             
+              <a  href="index.php?step=2" class="btn btn-success btn-xs">Siguiente</a>
           </div>
       </div>
   </body>
