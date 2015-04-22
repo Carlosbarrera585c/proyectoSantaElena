@@ -21,7 +21,7 @@
         </div>
         
         <div class="form-group">
-            <input class="form-control"  required="" type="text" name="UrlBase" placeholder="Dirección de la web. Ej: http://localhost/proyectoSantaHelena/web/"><br>
+            <input class="form-control"  required="" type="text" name="UrlBase" placeholder="Dirección de la web. Ej: http://localhost/proyectoSantaHelena/"><br>
         </div>
         
         <div class="form-group">
@@ -40,6 +40,14 @@
       </select><br>
         </div>
         
+           <div class="form-group">
+            <input class="form-control"  required="" type="text" name="cookiePath" placeholder="Ruta de la cookie. Ej:/www.santahelena.com/web/"><br>
+        </div>
+          
+           <div class="form-group">
+            <input class="form-control"  required="" type="text" name="cookieDomain" placeholder="Dominio De la cookie. http://www.santahelena.com/"><br>
+        </div>
+          
         <div class="form-group">
             <input class="form-control" type="text" name="FormatTimestamp" value="Y-m-d H:i:s" placeholder="Formato de fecha y hora"><br>
         </div>

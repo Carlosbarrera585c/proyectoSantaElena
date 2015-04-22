@@ -3,11 +3,11 @@
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
 
-config::setRowGrid(5);
+config::setRowGrid(4);
 
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
-config::setDbName('julian');
+config::setDbName('petete');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
 config::setDbPassword('sena');
@@ -30,16 +30,16 @@ if (config::getDbUnixSocket() !== null) {
 }
 
 //Para Windows
-config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
+config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 //Para Linux 
 //config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 
-config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
+config::setUrlBase('http://www.petete.com/');
 
 //Host Virtual
 //config::setUrlBase('http://www.santahelena.com/web/');
 
-config::setScope('prod'); // prod
+config::setScope('dev'); // prod
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');
 } else {
@@ -60,13 +60,13 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
-config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
+config::setCookiePath('/www.petete.com/web/' . config::getIndexFile());
 //Virtual Host
 //config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 config::setCookieDomain('http://localhost/');
 //Virtual Host
 //config::setCookieDomain('http://www.santahelena.com/');
-config::setCookieDomain('http://localhost/');
+config::setCookieDomain('http://www.petete.com/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
 config::setDefaultModule('default');

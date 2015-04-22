@@ -15,7 +15,13 @@ and open the template in the editor.
        <div class="container container-fluid">
       <div class="page-header  text-center titulo">
         <h1><i class="glyphicon glyphicon-saved"> Su Sistema De Informacion Se Ha Instalado Con Exito</i><br><small> Si desea Ir al Inicio De Sesio Pulse el Boton Continuar</small></h1>
-         <a class="btn btn-info btn-xs" href="http://localhost/proyectoSantaHelena/web/">Ir a Pagina Principal</a>
+<!--         <a class="btn btn-info btn-xs" href="">Ir a Pagina Principal</a>-->
+
+<form role="search" class="navbar-form navbar-center">
+    <div class="form-group">
+         <input type="text" placeholder="Search" class="form-control">
+    </div>
+</form>
     </div>
        </div>
     </body>

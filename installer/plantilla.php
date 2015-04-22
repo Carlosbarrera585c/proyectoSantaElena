@@ -61,13 +61,13 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
-config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
+config::setCookiePath('$cookiePath' . config::getIndexFile());
 //Virtual Host
 //config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 config::setCookieDomain('http://localhost/');
 //Virtual Host
 //config::setCookieDomain('http://www.santahelena.com/');
-config::setCookieDomain('http://localhost/');
+config::setCookieDomain('$cookieDomain');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
 config::setDefaultModule('default');

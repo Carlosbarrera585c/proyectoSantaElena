@@ -126,6 +126,8 @@ class installerClass {
                         $UrlBase = $_POST['UrlBase'];
                         $Scope = $_POST['Scope'];
                         $idioma = $_POST['idioma'];
+                        $cookiePath = $_POST['cookiePath'];
+                        $cookieDomain = $_POST['cookieDomain'];
                         $FormatTimestamp = $_POST['FormatTimestamp'];
                         $archivo = $_FILES['file']['tmp_name'];
 
@@ -133,14 +135,8 @@ class installerClass {
                         $file = fopen('../config/config.php', 'w');
                         fputs($file, $config);
                         fclose($file);
-                        $driver2 = 'pgsql';
-                        $dbName2 = 'julian';
-                        $host2 = 'localhost';
-                        $port2 = 5432;
-                        $dsn2 = $driver2 . ':dbname=' . $dbName2 . ';host=' . $host2 . ';port=' . $port2;
-                        $dbUser2 = 'postgres';
-                        $dbPass2 = 'sena';
-                        $gbd2 = new PDO($dsn2, $dbUser2, $dbPass2);
+                        $dsn2 = $driver . ':dbname=' . $dbName . ';host=' . $host . ';port=' . $port;
+                        $gbd2 = new PDO($dsn2, $dbUser, $dbPass);
                         $sql = file_get_contents($archivo);
                         $gbd2->beginTransaction();
                         $gbd2->exec($sql);
