@@ -127,7 +127,6 @@ class installerClass {
                         $Scope = $_POST['Scope'];
                         $idioma = $_POST['idioma'];
                         $cookiePath = $_POST['cookiePath'];
-                        $cookieDomain = $_POST['cookieDomain'];
                         $FormatTimestamp = $_POST['FormatTimestamp'];
                         $archivo = $_FILES['file']['tmp_name'];
 

@@ -67,7 +67,7 @@ config::setCookiePath('$cookiePath' . config::getIndexFile());
 config::setCookieDomain('http://localhost/');
 //Virtual Host
 //config::setCookieDomain('http://www.santahelena.com/');
-config::setCookieDomain('$cookieDomain');
+config::setCookieDomain('$UrlBase');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
 config::setDefaultModule('default');
