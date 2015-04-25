@@ -86,12 +86,12 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
         }
-        if (!preg_match('/^[a-zA-Z]*$/', $nom_empleado)) {
+        if (!preg_match('/^[a-zA-Z ]*$/', $nom_empleado)) {
             session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $nom_empleado)));
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
         }
-        if (!preg_match('/^[a-zA-Z]*$/', $apell_empleado)) {
+        if (!preg_match('/^[a-zA-Z ]*$/', $apell_empleado)) {
             session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $apell_empleado)));
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);

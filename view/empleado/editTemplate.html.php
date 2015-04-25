@@ -9,5 +9,6 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="fa fa-pencil-square"> <?php echo i18n::__('editEmployee') ?> <small><?php echo $objEmpleado[0]->$nom_empleado ?></small></i></h1>
     </div>
+    <?php view::includeHandlerMessage() ?>
     <?php view::includePartial('empleado/formEmpleado', array('objEmpleado' => $objEmpleado, 'nom_empleado' => $nom_empleado, 'objTipoId' => $objTipoId, 'objCredencial' => $objCredencial)) ?>
 </div>
