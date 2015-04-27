@@ -256,4 +256,3 @@ use mvc\view\viewClass as view ?>
     </div>
   </div>
 </div>
-</div>
