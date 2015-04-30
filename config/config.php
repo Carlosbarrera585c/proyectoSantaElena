@@ -3,7 +3,7 @@
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
 
-config::setRowGrid(5);
+config::setRowGrid(4);
 
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
@@ -60,7 +60,7 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
-config::setCookiePath('/www.santahelena.com/' . config::getIndexFile());
+config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 //Virtual Host
 //config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 config::setCookieDomain('http://localhost/');
