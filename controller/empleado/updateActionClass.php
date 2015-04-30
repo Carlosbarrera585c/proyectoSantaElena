@@ -57,7 +57,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
     }
 
 private function Validate($nom_empleado, $apell_empleado, $telefono, $direccion, $tipo_id_id, $numero_identificacion, $credencial_id, $correo, $correo2) {
-        $bandera = FALSE;
+        $bandera = false;
         if (strlen($nom_empleado) > empleadoTableClass::NOM_EMPLEADO_LENGTH) {
             session::getInstance()->setError(i18n::__('errorLengthEmployee', NULL, 'default', array('%nombre%' => $nom_empleado, '%caracteres%' => empleadoTableClass::NOM_EMPLEADO_LENGTH)));
             $bandera = true;
@@ -160,7 +160,7 @@ private function Validate($nom_empleado, $apell_empleado, $telefono, $direccion,
         }
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('empleado', 'update');
+            routing::getInstance()->forward('empleado', 'edit');
         }
     }
 
