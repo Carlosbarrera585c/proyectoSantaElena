@@ -17,6 +17,16 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
+          
+          $id = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
+            $fields = array(
+                entradaBodegaTableClass::ID,
+                entradaBodegaTableClass::FECHA
+            );
+            $where = array(
+                entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
+            );
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, null, null, null, null, $where);
 
             $id = request::getInstance()->getRequest(detalleEntradaTableClass::ID, true);
             $fields = array(
