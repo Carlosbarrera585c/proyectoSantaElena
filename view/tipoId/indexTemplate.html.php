@@ -6,7 +6,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
 <?php $id = tipoIdTableClass::ID ?>
-<?php $desc = tipoIdTableClass::DESC_TIPO_ID ?>
+<?php $descTipoId = tipoIdTableClass::DESC_TIPO_ID ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -56,7 +56,7 @@ use mvc\view\viewClass as view ?>
         <?php foreach ($objTipoId as $tipo): ?>
           <tr>
             <td><input type="checkbox" name="chk[]" value="<?php echo $tipo->$id ?>"></td>
-            <td><?php echo $tipo->$desc ?></td>
+            <td><?php echo $tipo->$descTipoId ?></td>
             <td>
               <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'view', array(tipoIdTableClass::ID => $tipo->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
               <a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'edit', array(tipoIdTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
@@ -71,7 +71,7 @@ use mvc\view\viewClass as view ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
               </div>
               <div class="modal-body">
-                <?php echo i18n::__('questionDelete') ?> <?php echo $tipo->$desc ?>?
+                <?php echo i18n::__('questionDelete') ?> <?php echo $tipo->$descTipoId ?>?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
