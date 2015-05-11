@@ -36,7 +36,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     detalleEntradaTableClass::FECHA_VENCIMIENTO => $fechaVC,
                     detalleEntradaTableClass::ID_DOC => $idDoc,
                     detalleEntradaTableClass::ENTRADA_BODEGA_ID => $enBodegaId,
-                    detalleEntradaTableClass::INSUMO_ID => $idInsumo,
+                    detalleEntradaTableClass::INSUMO_ID => $idInsumo
                 );
                 detalleEntradaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));

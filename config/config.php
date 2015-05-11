@@ -7,7 +7,7 @@ config::setRowGrid(4);
 
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
-config::setDbName('santa_helena1');
+config::setDbName('santa_helena');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
 config::setDbPassword('sena');
