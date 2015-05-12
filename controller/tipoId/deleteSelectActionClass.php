@@ -15,35 +15,35 @@ use mvc\i18n\i18nClass as i18n;
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->isMethod('POST')) {
+  public function execute() {
+    try {
+      if (request::getInstance()->isMethod('POST')) {
 
-                $idsToDelete = request::getInstance()->getPost('chk');
-                foreach ($idsToDelete as $id) {
-                    $ids = array(
-                        tipoIdTableClass::ID => $id
-                    );
-                    tipoIdTableClass::delete($ids, false);
-                }
-                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-                routing::getInstance()->redirect('tipoId', 'index');
-            } else {
-                routing::getInstance()->redirect('tipoId', 'index');
-            }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+        $idsToDelete = request::getInstance()->getPost('chk');
+        foreach ($idsToDelete as $id) {
+          $ids = array(
+              tipoIdTableClass::ID => $id
+          );
+          tipoIdTableClass::delete($ids, false);
         }
-        switch ($exc->getCode()){
-          case 23503:
-              session::getInstance()->setError(i18n::__('errorDeleteForeign'));
-              routing::getInstance()->redirect('tipoId', 'index');
-              break;
-          case 00000:
-              break;
+        session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+        routing::getInstance()->redirect('tipoId', 'index');
+      } else {
+        routing::getInstance()->redirect('tipoId', 'index');
       }
+    } catch (PDOException $exc) {
+      echo $exc->getMessage();
+      echo '<br>';
+      echo $exc->getTraceAsString();
     }
+    switch ($exc->getCode()) {
+      case 23503:
+        session::getInstance()->setError(i18n::__('errorDeleteForeign'));
+        routing::getInstance()->redirect('tipoId', 'index');
+        break;
+      case 00000:
+        break;
+    }
+  }
 
 }

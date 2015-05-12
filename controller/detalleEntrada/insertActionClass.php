@@ -17,16 +17,21 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
-
+             if (request::getInstance()->hasRequest(entradaBodegaTableClass::ID)) {
             $fieldsDoc = array(
                 tipoDocTableClass::ID,
                 tipoDocTableClass::DESC_TIPO_DOC
             );
             
+            
             $fieldsEntrada = array(
                 entradaBodegaTableClass::ID,
                 entradaBodegaTableClass::FECHA
             );
+            
+            $where = array(
+                    entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
+                );
             
             $fieldsInsumo = array(
                 insumoTableClass::ID,
@@ -34,10 +39,15 @@ class insertActionClass extends controllerClass implements controllerActionInter
             );
 
             $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, NULL, NULL, NULL, NULL, NULL, $where);
             $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
             $this->defineView('insert', 'detalleEntrada', session::getInstance()->getFormatOutput());
-        } catch (PDOException $exc) {
+      
+            } else {
+                routing::getInstance()->redirect('entradaBodega', 'index');
+            }
+            
+            } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
             echo $exc->getTraceAsString();

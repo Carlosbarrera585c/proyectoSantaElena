@@ -6,7 +6,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
 <?php $id = tipoIdTableClass::ID ?>
-<?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
+<?php $descTipoId = tipoIdTableClass::DESC_TIPO_ID ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">  
   <div class="page-header titulo">
@@ -27,7 +27,7 @@ use mvc\view\viewClass as view ?>
       <tbody>
         <tr>
           <td><?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$id : '') ?></td>
-          <td><?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$desc_tipo_id : '') ?></td>
+          <td><?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$descTipoId : '') ?></td>
         </tr>
       </tbody>
     </table>

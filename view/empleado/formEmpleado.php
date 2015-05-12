@@ -10,16 +10,16 @@ use mvc\session\sessionClass as session ?>
 <?php
 use mvc\request\requestClass as request ?>
 <?php $idEmpleado = empleadoTableClass::ID ?>
-<?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
-<?php $apell_empleado = empleadoTableClass::APELL_EMPLEADO ?>
+<?php $nomEmpleado = empleadoTableClass::NOM_EMPLEADO ?>
+<?php $apellEmpleado = empleadoTableClass::APELL_EMPLEADO ?>
 <?php $telefono = empleadoTableClass::TELEFONO ?>
 <?php $direccion = empleadoTableClass::DIRECCION ?>
 <?php $tipo_id = tipoIdTableClass::ID ?>
-<?php $tipo_id_e = empleadoTableClass::TIPO_ID_ID ?>
-<?php $desc_tipo_id = tipoIdTableClass::DESC_TIPO_ID ?>
-<?php $num_identificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
+<?php $tipoIdEmpleado = empleadoTableClass::TIPO_ID_ID ?>
+<?php $descTipoId = tipoIdTableClass::DESC_TIPO_ID ?>
+<?php $numeroIdentificacion = empleadoTableClass::NUMERO_IDENTIFICACION ?>
 <?php $credencial_id_e = empleadoTableClass::CREDENCIAL_ID ?>
-<?php $credencial_id = credencialTableClass::ID ?>
+<?php $credencialId = credencialTableClass::ID ?>
 <?php $nom_credencial = credencialTableClass::NOMBRE ?>
 <?php $correo = empleadoTableClass::CORREO ?>
 <?php view::includePartial('menu/menu') ?>
@@ -32,7 +32,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('employeeName') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$nom_empleado : '') ?><?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) === true) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) : '' ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" placeholder="<?php echo i18n::__('Enter your Name') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$nomEmpleado : '') ?><?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) === true) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) : '' ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true) ?>" placeholder="<?php echo i18n::__('Enter your Name') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -41,7 +41,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('employeeLastName') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apell_empleado : '') ?><?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === true) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) : '' ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" placeholder="<?php echo i18n::__('Enter your Last Name') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apellEmpleado : '') ?><?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === true) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) : '' ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true) ?>" placeholder="<?php echo i18n::__('Enter your Last Name') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -70,8 +70,8 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, TRUE) ?>">
                     <?php foreach ($objTipoId as $tipoId): ?>
-                        <option <?php echo (isset($objEmpleado[0]->$tipo_id_e) === true and $objEmpleado[0]->$tipo_id_e == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
-                            <?php echo $tipoId->$desc_tipo_id ?>
+                        <option <?php echo (isset($objEmpleado[0]->$tipoIdEmpleado) === true and $objEmpleado[0]->$tipoIdEmpleado == $tipoId->$tipo_id) ? 'selected' : '' ?> value="<?php echo $tipoId->$tipo_id ?>">
+                            <?php echo $tipoId->$descTipoId ?>
                         </option>   
                     <?php endforeach ?>
                 </select>
@@ -80,7 +80,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('numberIdentification') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$num_identificacion : '') ?><?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === true) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) : '' ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" placeholder="<?php echo i18n::__('Enter Your Identification Number') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$numeroIdentificacion : '') ?><?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === true) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) : '' ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true) ?>" placeholder="<?php echo i18n::__('Enter Your Identification Number') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -91,7 +91,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, TRUE) ?>">
                     <?php foreach ($objCredencial as $credencial): ?>
-                        <option <?php echo (isset($objEmpleado[0]->$credencial_id_e) === true and $objEmpleado[0]->$credencial_id_e == $credencial->$credencial_id) ? 'selected' : '' ?> value="<?php echo $credencial->$credencial_id ?>">
+                        <option <?php echo (isset($objEmpleado[0]->$credencial_id_e) === true and $objEmpleado[0]->$credencial_id_e == $credencial->$credencialId) ? 'selected' : '' ?> value="<?php echo $credencial->$credencialId ?>">
                             <?php echo $credencial->$nom_credencial ?>
                         </option>     
                     <?php endforeach ?>
