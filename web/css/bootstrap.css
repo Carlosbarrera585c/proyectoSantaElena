@@ -3997,6 +3997,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 20px;
+    
 }
 @media (max-width: 767px) {
     .navbar-nav .open .dropdown-menu {
@@ -6333,10 +6334,10 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 .nav_bar{
-    background-color: #d6e9c6;
+    background-color: #CCCCFF;
 }
 .tables{
-    background-color: #ffffff; 
+    background-color: #CCCCFF; 
 }
 
 ul, ol {
@@ -6353,7 +6354,7 @@ ul, ol {
 }
 
 .nav li a:hover {
-    background-color:#d6e9c6;
+    background-color:#CCCCFF;
 }
 
 .nav li ul {
@@ -6373,4 +6374,10 @@ ul, ol {
 .nav li ul li ul {
     right:-140px;
     top:0px;
+}
+.tr_table{
+  background: #CCCCFF;
+}
+.td_table{
+  background: #D0F0C0;
 }

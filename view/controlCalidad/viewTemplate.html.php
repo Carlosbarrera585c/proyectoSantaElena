@@ -19,10 +19,9 @@
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
       <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>
-      <a href="#" class="btn btn-danger btn-xs" onclick="eliminar()"><?php echo i18n::__('delete')?></a>
      <a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a>
     </div>
-    <table class="table table-bordered table-responsive table-condensed">
+    <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
         <tr class="columna success">
           <th><?php echo i18n::__('id')?></th>

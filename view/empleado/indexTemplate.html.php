@@ -9,8 +9,10 @@ use mvc\view\viewClass as view ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = empleadoTableClass::ID ?>
-<?php $nom_empleado = empleadoTableClass::NOM_EMPLEADO ?>
+<?php $nomEmpleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -124,7 +126,7 @@ use mvc\request\requestClass as request ?>
   </div>
   <!-- FIN DE LOS FILTROS PARA REPORTE -->
   <div class="page-header titulo">
-      <h1><i class="fa fa-male"></i> <?php echo i18n::__('employee') ?></h1>
+    <h1><i class="fa fa-male"></i> <?php echo i18n::__('employee') ?></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
@@ -134,7 +136,7 @@ use mvc\request\requestClass as request ?>
       <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
       <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalReport" ><?php echo i18n::__('printReport') ?></a>
     </div>
-    <?php view::includeHandlerMessage() ?>
+<?php view::includeHandlerMessage() ?>
     <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
       <thead>
         <tr class="active columna success">
@@ -144,14 +146,16 @@ use mvc\request\requestClass as request ?>
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($objEmpleado as $tipo): ?>
+<?php foreach ($objEmpleado as $tipo): ?>
           <tr>
             <td><input type="checkbox" name="chk[]" value="<?php echo $tipo->$id ?>"></td>
-            <td><?php echo $tipo->$nom_empleado ?></td>
+            <td><?php echo $tipo->$nomEmpleado ?></td>
             <td>
               <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'view', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'edit', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-              <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+  <?php if (session::getInstance()->hasCredential('admin')): ?>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'edit', array(empleadoTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+  <?php endif ?>
             </td>
           </tr>
         <div class="modal fade" id="myModalDelete<?php echo $tipo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -162,7 +166,7 @@ use mvc\request\requestClass as request ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
               </div>
               <div class="modal-body">
-                <?php echo i18n::__('questionDelete') ?> <?php echo $tipo->$nom_empleado ?>?
+  <?php echo i18n::__('questionDelete') ?> <?php echo $tipo->$nomEmpleado ?>?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -171,7 +175,7 @@ use mvc\request\requestClass as request ?>
             </div>
           </div>
         </div>
-      <?php endforeach ?>
+<?php endforeach ?>
       </tbody>
     </table>
   </form>
@@ -179,7 +183,7 @@ use mvc\request\requestClass as request ?>
     Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
       <?php for ($x = 1; $x <= $cntPages; $x++): ?>
         <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-      <?php endfor ?>
+<?php endfor ?>
     </select> de <?php echo $cntPages ?>
   </div>
   <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'delete') ?>" method="POST">
@@ -194,7 +198,7 @@ use mvc\request\requestClass as request ?>
         <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
       </div>
       <div class="modal-body">
-        <?php echo i18n::__('confirmDeleteMass') ?>
+<?php echo i18n::__('confirmDeleteMass') ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

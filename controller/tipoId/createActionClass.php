@@ -19,12 +19,12 @@ class createActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $desc_tipo_id = trim(request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)));
+                $descTipoId = trim(request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)));
 
-                $this->Validate($desc_tipo_id);
+                $this->Validate($descTipoId);
 
                 $data = array(
-                    tipoIdTableClass::DESC_TIPO_ID => $desc_tipo_id,
+                    tipoIdTableClass::DESC_TIPO_ID => $descTipoId,
                 );
                 tipoIdTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
@@ -39,19 +39,19 @@ class createActionClass extends controllerClass implements controllerActionInter
         }
     }
 
-    private function Validate($desc_tipo_id) {
+    private function Validate($descTipoId) {
         $bandera = FALSE;
-        if (strlen($desc_tipo_id) > tipoIdTableClass::DESC_TIPO_ID_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLengthTipoId', NULL, 'default', array('%descripcion%' => $desc_tipo_id, '%caracteres%' => tipoIdTableClass::DESC_TIPO_ID_LENGTH)));
+        if (strlen($descTipoId) > tipoIdTableClass::DESC_TIPO_ID_LENGTH) {
+            session::getInstance()->setError(i18n::__('errorLengthTipoId', NULL, 'default', array('%descripcion%' => $descTipoId, '%caracteres%' => tipoIdTableClass::DESC_TIPO_ID_LENGTH)));
             $bandera = true;
             session::getInstance()->setFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true), true);
         }
-        if ($desc_tipo_id === '') {
+        if ($descTipoId === '') {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
             $bandera = true;
             session::getInstance()->setFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true), true);
         }
-        if (!ereg("^[A-Z a-z_]*$", $desc_tipo_id)) {
+        if (!ereg("^[A-Z a-z_]*$", $descTipoId)) {
             session::getInstance()->setError(i18n::__('errorText', NULL, 'default'));
             $bandera = true;
             session::getInstance()->setFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true), true);

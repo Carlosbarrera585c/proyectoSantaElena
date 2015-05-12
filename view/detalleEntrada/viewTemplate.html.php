@@ -13,8 +13,8 @@ use mvc\view\viewClass as view ?>
 <?php $fechaVC = detalleEntradaTableClass::FECHA_VENCIMIENTO ?>
 <?php $idDoc = detalleEntradaTableClass::ID_DOC ?>
 <?php $desDoc = detalleEntradaTableClass::ID_DOC ?>
-<?php $enBodegaId = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
-<?php $fecha = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
+<?php $enBodegaId = entradaBodegaTableClass::ID ?>
+<?php $fecha = entradaBodegaTableClass::ID ?>
 <?php $insuId = detalleEntradaTableClass::INSUMO_ID ?>
 <?php $descInsu = detalleEntradaTableClass::INSUMO_ID ?>
 
@@ -25,14 +25,14 @@ use mvc\view\viewClass as view ?>
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('cellarEntrance') ?></i></h1>
     </div>
     <div>
-        <table class="table table-bordered table-hover table-responsive table-condensed">
-<?php foreach ($objDetalleEntrada as $key): ?>
+        <table class="table table-bordered table-responsive table-condensed tables">
+<?php foreach ($objEntradaBodega as $key): ?>
                 <tr>
-                    <th><?php echo i18n::__('id') ?></th>      
+                  <th class="success tamanoAccion"><?php echo i18n::__('id') ?></th>      
                     <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>
                 </tr>
                 <tr>
-                    <th><?php echo i18n::__('date') ?></th>      
+                    <th class="success tamanoAccion"><?php echo i18n::__('date') ?></th>      
                     <th><?php echo entradaBodegaTableClass::getNameBodega($key->$fecha) ?></th>
                 </tr>
 <?php endforeach; ?> 
@@ -43,13 +43,14 @@ use mvc\view\viewClass as view ?>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'insert', array(entradaBodegaTableClass::ID => $key->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('enlist') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-hover table-responsive table-condensed table-bordered">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr>
+              <tr class="success">
                     <th><?php echo i18n::__('idEntrance') ?></th>
                     <th><?php echo i18n::__('date') ?></th>        
                     <th><?php echo i18n::__('id') ?></th>
@@ -57,9 +58,9 @@ use mvc\view\viewClass as view ?>
                     <th><?php echo i18n::__('value') ?></th>
                     <th><?php echo i18n::__('manuFacturingDate') ?></th>
                     <th><?php echo i18n::__('expirationDate') ?></th>
-                    <th><?php echo i18n::__('idDoc') ?></th>
+                    
                     <th><?php echo i18n::__('descDoc') ?></th>
-                    <th><?php echo i18n::__('idInput') ?></th> 
+                    
                     <th><?php echo i18n::__('descriptionInput') ?></th> 
                </tr>
             </thead>
@@ -78,11 +79,11 @@ use mvc\view\viewClass as view ?>
                         <th><?php echo $key->$fechaVC ?></th>
                         <?php endforeach; ?>       
                         <?php foreach ($objDetalleEntrada as $key): ?>          
-                        <th><?php echo tipoDocTableClass::getNameTipoDoc($key->$idDoc) ?></th>
+                        
                         <th><?php echo tipoDocTableClass::getNameTipoDes($key->$desDoc) ?></th>
                         <?php endforeach; ?>
                         <?php foreach ($objDetalleEntrada as $key): ?>
-                        <th><?php echo insumoTableClass::getNameInsumo($key->$insuId) ?></th>
+                        
                         <th><?php echo insumoTableClass::getNameDInsumo($key->$descInsu) ?></th>
                         <?php endforeach; ?>                    
             </tbody>

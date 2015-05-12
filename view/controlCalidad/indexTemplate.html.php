@@ -186,7 +186,7 @@ use mvc\view\viewClass as view ?>
     <?php view::includeHandlerMessage() ?>
     <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
       <thead>
-        <tr class="columna success">
+        <tr class="tr_table">
           <th class="tamano"><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('date') ?></th>
           <th><?php echo i18n::__('idEmployed') ?></th>
@@ -196,7 +196,7 @@ use mvc\view\viewClass as view ?>
       </thead>
       <tbody>
         <?php foreach ($objControlCalidad as $control): ?>
-          <tr class="columna">
+        <tr>
             <td><input type="checkbox" name="chk[]" value="<?php echo $control->$id ?>"></td>
             <td><?php echo $control->$fecha ?></td>
             <td><?php echo controlCalidadTableClass::getNameEmpleado($control->$empleado_id) ?></td>
@@ -255,5 +255,4 @@ use mvc\view\viewClass as view ?>
       </div>
     </div>
   </div>
-</div>
 </div>

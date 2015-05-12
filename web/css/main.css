@@ -16,6 +16,9 @@ body{
     background-color: #F0F2F3;
     background-image: url('../img/pattern3.png');
 }
+.tables{
+    background-color: #ffffff; 
+}
 .mvcPointer {
   cursor: pointer;
 }
@@ -26,7 +29,7 @@ body{
     margin: 0px 0 20px;
 }
 
-.table > thead > tr > th, .table > tbody > tr > td{
+.table > tr > th, tr > td{
     text-align: center;
 }
 .tamano{

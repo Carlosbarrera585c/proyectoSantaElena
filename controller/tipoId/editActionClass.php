@@ -15,21 +15,21 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->hasRequest(tipoIdTableClass::ID)) {
-                $fields = array(
-                    tipoIdTableClass::ID,
-                    tipoIdTableClass::DESC_TIPO_ID,
-                );
-                $where = array(
-                    tipoIdTableClass::ID => request::getInstance()->getRequest(tipoIdTableClass::ID)
-                );
-                $this->objTipoId = tipoIdTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'tipoId', session::getInstance()->getFormatOutput());
-            } else {
-                routing::getInstance()->redirect('tipoId', 'index');
-            }
+  public function execute() {
+    try {
+      if (request::getInstance()->hasRequest(tipoIdTableClass::ID)) {
+        $fields = array(
+            tipoIdTableClass::ID,
+            tipoIdTableClass::DESC_TIPO_ID,
+        );
+        $where = array(
+            tipoIdTableClass::ID => request::getInstance()->getRequest(tipoIdTableClass::ID)
+        );
+        $this->objTipoId = tipoIdTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+        $this->defineView('edit', 'tipoId', session::getInstance()->getFormatOutput());
+      } else {
+        routing::getInstance()->redirect('tipoId', 'index');
+      }
 
 //            if (request::getInstance()->isMethod('POST')) {
 //
@@ -60,11 +60,11 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //            } else {
 //                routing::getInstance()->redirect('datoUsuario', 'index');
 //            }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
-        }
+    } catch (PDOException $exc) {
+      echo $exc->getMessage();
+      echo '<br>';
+      echo $exc->getTraceAsString();
     }
+  }
 
 }

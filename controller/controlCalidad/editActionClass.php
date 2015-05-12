@@ -18,7 +18,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(controlCalidadTableClass::ID)) {
+            if (request::getInstance()->hasGet(controlCalidadTableClass::ID)) {
                 $fields = array(
                   controlCalidadTableClass::ID,
                   controlCalidadTableClass::FECHA,
@@ -32,7 +32,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                   controlCalidadTableClass::PROVEEDOR_ID 
                 );
                 $where = array(
-                    controlCalidadTableClass::ID => request::getInstance()->getRequest(controlCalidadTableClass::ID)
+                    controlCalidadTableClass::ID => request::getInstance()->getGet(controlCalidadTableClass::ID)
                 );
                 $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false, null, null, null, null, $where);
                 
