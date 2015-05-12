@@ -33,7 +33,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input type="datetime" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
+              <input type="datetime" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
       <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true)) === true) ? 'has-error has-feedback' : '' ?>">

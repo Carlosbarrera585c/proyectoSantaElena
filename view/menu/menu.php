@@ -45,17 +45,15 @@ use mvc\session\sessionClass as session ?>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('caneIncome') ?><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('reedIncome') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">INGRESO CAÑA *</a></li>
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'index') ?>"><?php echo i18n::__('reedIncome') ?></a></li></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('qualityControl') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">JUGO CAÑA *</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

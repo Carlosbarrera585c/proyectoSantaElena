@@ -207,6 +207,7 @@ dictionary:
     infoDetailIncome:     Income Cane Detail Information
        
     ##---------------------- INGRESO CAÑA----------------------------## 
+    reedIncome:           Reed Income
     ##---------------------- SOLICITUD INSUMO-------------------------##
     inputRequest:         Request Input
        
