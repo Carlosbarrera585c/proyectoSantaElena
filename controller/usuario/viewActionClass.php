@@ -13,21 +13,27 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class indexActionClass extends controllerClass implements controllerActionInterface {
+class viewActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-
+      $id = request::getInstance()->getRequest(usuarioTableClass::ID, TRUE);
       $fields = array(
           usuarioTableClass::ID,
           usuarioTableClass::USER,
-          usuarioTableClass::CREATED_AT
+          usuarioTableClass::ACTIVED,
+          usuarioTableClass::CREATED_AT,
+          usuarioTableClass::UPDATED_AT,
+          usuarioTableClass::DELETED_AT
       );
       $orderBy = array(
-          usuarioTableClass::USER
+          usuarioTableClass::ID
       );
-      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
-      $this->defineView('index', 'default', session::getInstance()->getFormatOutput());
+      $where = array(
+          usuarioTableClass::ID => $id
+      );
+      $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', null, null, $where);
+      $this->defineView('view', 'usuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

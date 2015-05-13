@@ -53,4 +53,21 @@ class usuarioTableClass extends usuarioBaseTableClass {
     }
   }
 
+  /**
+   * Funcion para contar la cantidad de lineas 
+   * en la implementacion de paginacion.
+   */
+  public static function getTotalPages($lines) {
+    try {
+      $sql = 'SELECT count(' . usuarioTableClass::ID . ')As cantidad ' . 'FROM ' .
+              usuarioTableClass::getNameTable();
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute();
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return ceil($answer[0]->cantidad / $lines);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
+
 }

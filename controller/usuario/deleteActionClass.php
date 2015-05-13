@@ -25,15 +25,15 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     usuarioTableClass::ID => $id
                 );
                 usuarioTableClass::delete($ids, true);
-                //routing::getInstance()->redirect('default', 'index');
+                //routing::getInstance()->redirect('', 'index');
                 $this->arrayAjax = array(
                     'code' => 200,
                     'msg' => 'La Elimininación del Registro fue Exitosa'
                 );
-                $this->defineView('delete', 'default', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'usuario', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));                
             } else {
-                routing::getInstance()->redirect('default', 'index');
+                routing::getInstance()->redirect('usuario', 'index');
             }
         } catch (PDOException $exc) {
         session::getInstance()->setFlash('exc', $exc);

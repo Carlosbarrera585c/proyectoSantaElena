@@ -9,9 +9,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of Empleado
+ * Description of ejemploClass
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
@@ -20,16 +20,17 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
       if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
 
         $idsToDelete = request::getInstance()->getPost('chk');
+
         foreach ($idsToDelete as $id) {
           $ids = array(
-              empleadoTableClass::ID => $id
+              usuarioTableClass::ID => $id
           );
-          empleadoTableClass::delete($ids, false);
+          usuarioTableClass::delete($ids, true);
         }
         session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-        routing::getInstance()->redirect('empleado', 'index');
+        routing::getInstance()->redirect('usuario', 'index');
       } else {
-        routing::getInstance()->redirect('empleado', 'index');
+        routing::getInstance()->redirect('usuario', 'index');
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
@@ -37,7 +38,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
       switch ($exc->getCode()) {
         case 23503:
           session::getInstance()->setError(i18n::__('errorDeleteForeign'));
-          routing::getInstance()->redirect('empleado', 'index');
+          routing::getInstance()->redirect('usuario', 'index');
           break;
         case 00000:
           break;

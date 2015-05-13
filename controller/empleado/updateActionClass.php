@@ -30,6 +30,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $credencialId = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
         $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
         $correo2 = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
+        
         $this->Validate($nomEmpleado, $apellEmpleado, $telefono, $direccion, $tipoId, $numeroIdentificacion, $credencialId, $correo, $correo2);
 
         $ids = array(

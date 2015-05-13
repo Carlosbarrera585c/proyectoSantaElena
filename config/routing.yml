@@ -1,6 +1,6 @@
 homepage:
   url:    /
-  param:  { module: default, action: index, format: html }
+  param:  { module: usuario, action: index, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
@@ -52,60 +52,65 @@ shfSecurity_exception:
 ##-------------------------- shfSecurity --------------------------##
 
 ##-------------------------- EJEMPLO --------------------------##
-default_index:
-  url:    /usuarios/index
-  param:  { module: default, action: index, format: html }
+usuario_index:
+  url:    /usuario/index
+  param:  { module: usuario, action: index, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_insert:
-  url:    /usuarios/insertar
-  param:  { module: default, action: insert, format: html }
+usuario_insert:
+  url:    /usuario/insertar
+  param:  { module: usuario, action: insert, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+usuario_view:
+  url:    /usuario/ver
+  param:  { module: usuario, action: view, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_create:
-  url:    /usuarios/crear
-  param:  { module: default, action: create, format: html }
+usuario_create:
+  url:    /usuario/crear
+  param:  { module: usuario, action: create, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_edit:
+usuario_edit:
   url:    /usuario/editar
-  param:  { module: default, action: edit, format: html }
+  param:  { module: usuario, action: edit, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_update:
+usuario_update:
   url:    /usuario/actualizar
-  param:  { module: default, action: update, format: html }
+  param:  { module: usuario, action: update, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_delete:
+usuario_delete:
   url:    /usuario/eliminar
-  param:  { module: default, action: delete, format: json }
+  param:  { module: usuario, action: delete, format: json }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_deleteSelect:
+usuario_deleteSelect:
   url:    /usuario/eliminarSeleccion
-  param:  { module: default, action: deleteSelect, format: html }
+  param:  { module: usuario, action: deleteSelect, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
-default_reporte:
-  url:    /usuario/reporte
-  param:  { module: default, action: report, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
+usuario_deleteFilters:
+  url:    /usuario/borrarFiltros
+  param:  { module: usuario, action: deleteFilters, format: html }
 ##-------------------------- EJEMPLO --------------------------##
 
 ##-------------------------- CREDENCIAL --------------------------##

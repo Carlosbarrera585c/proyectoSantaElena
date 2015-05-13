@@ -17,7 +17,7 @@ shfSecurity:
     stylesheet:
       - signin.css
 
-default:
+usuario:
   index:
     javascript:
       - index.js

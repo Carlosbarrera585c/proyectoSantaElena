@@ -18,7 +18,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
   public function execute() {
     try {
 
-      $id = request::getInstance()->getRequest(empleadoTableClass::ID, true);
+      $id = request::getInstance()->getRequest(empleadoTableClass::ID, TRUE);
       $fields = array(
           empleadoTableClass::ID,
           empleadoTableClass::NOM_EMPLEADO,

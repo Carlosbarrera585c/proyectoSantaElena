@@ -68,9 +68,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $this->objEmpleado = empleadoTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       $this->defineView('index', 'empleado', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

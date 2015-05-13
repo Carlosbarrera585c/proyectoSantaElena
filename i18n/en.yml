@@ -45,7 +45,12 @@ dictionary:
     ##----------------------USUARIO-------------------------##
     id:                   Id
     user:                 User
+    editUser:             Edit User
+    newUser:              New User
     pass:                 Password
+    infoUser:             Information Of The User
+    Enter your User:      Enter Your User
+    Enter your Password:  Enter Your Password
     ##----------------------USUARIO-------------------------##
     
     ##----------------------TIPO EMPAQUE-------------------------##
@@ -245,6 +250,7 @@ dictionary:
     errorLengthDirection:   Error Your Direction (%direccion%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthNumIdentification: Error Your identification number (%numIdentificacion%) Maximum Exceeds Number of Characters (%caracteres%).
     errorMail:              The Mail No Coincide.
+    errorLenghtUser:        Error Your username (%usuario%) Exceeds the Maximum Number of Characters ( %caracteres%).
     errorLengthCredential:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
     errorLengthAmount:      Error Your amount (%cantidad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthValue:       Error Your value (%valor%) Maximum Exceeds Number of Characters (%caracteres%).

@@ -27,10 +27,17 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
         );
         $this->objUsuario = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'default', session::getInstance()->getFormatOutput());
+        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('usuario', 'index');
       }
+    } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
+    }
+  }
+
+}
 //      if (request::getInstance()->isMethod('POST')) {
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
@@ -45,14 +52,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //            usuarioTableClass::PASSWORD => md5($password)
 //        );
 //        usuarioTableClass::insert($data);
-//        routing::getInstance()->redirect('default', 'index');
+//        routing::getInstance()->redirect('usuario', 'index');
 //      } else {
-//        routing::getInstance()->redirect('default', 'index');
+//        routing::getInstance()->redirect('usuario', 'index');
 //      }
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
-    }
-  }
-
-}

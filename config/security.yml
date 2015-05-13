@@ -10,7 +10,7 @@ shfSecurity:
   exception:
     security: false
 
-default:
+usuario:
   index:
     security: true
     credentials:
