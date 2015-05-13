@@ -248,6 +248,7 @@ dictionary:
     infoDetailPacking:      Informacion de Detalle Empaque
     idPacking:              Id Empaque
     ##---------------------- INGRESO CAÑA----------------------------##
+    reedIncome:             Ingreso Caña
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).

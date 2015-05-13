@@ -1375,3 +1375,17 @@ controlCalidad_deleteFilters:
   url:    /controlCalidad/borrarFiltros
   param:  { module: controlCalidad, action: deleteFilters, format: html }
 ##-------------------------------------------------------------------------##
+##-------------------------------------------------------------------------##
+ingresoCaña_index:
+  url:    /ingresoCaña/index
+  param:  { module: ingresoCaña, action: index, format: html }
+  load:
+    - model/base/ingresoCañaBaseTableClass.php
+    - model/ingresoCañaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
