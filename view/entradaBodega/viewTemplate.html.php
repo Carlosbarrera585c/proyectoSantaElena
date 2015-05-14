@@ -20,10 +20,10 @@ use mvc\view\viewClass as view ?>
             <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr>
-                    <th><?php echo i18n::__('id') ?></th>
+              <tr class="columna tr_table">
+                <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('date') ?></th>
                     <th><?php echo i18n::__('provider') ?></th>
                 </tr>

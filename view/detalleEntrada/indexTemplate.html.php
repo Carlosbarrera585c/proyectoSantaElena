@@ -9,6 +9,7 @@
 <?php $idDoc = tipoDocTableClass::ID ?>
 <?php $desDoc = tipoDocTableClass::DESC_TIPO_DOC ?>
 <?php $enBodegaId = entradaBodegaTableClass::ID ?>
+<?php $entradaId = detalleEntradaTableClass::ENTRADA_BODEGA_ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
 <?php $insuId = insumoTableClass::ID ?>
 <?php $descInsu = insumoTableClass::DESC_INSUMO ?>
@@ -89,7 +90,7 @@
                         <td><?php echo $detalleEntrada->$valor ?></td>
                         <td><?php echo $detalleEntrada->$fechaFB ?></td>
                         <td><?php echo $detalleEntrada->$fechaVC ?></td>
-                        <td><?php echo $detalleEntrada->$enBodegaId ?></td>
+                        <td><?php echo $detalleEntrada->$entradaId ?></td>
                         <td>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'edit', array(detalleEntradaTableClass::ID => $detalleEntrada->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>

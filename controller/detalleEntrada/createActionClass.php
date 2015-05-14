@@ -19,10 +19,10 @@ class createActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $cantidad = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true));
-                $valor = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true));
-                $fechaFB = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true));
-                $fechaVC = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_VENCIMIENTO, true));
+                $cantidad =trim (request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true)));
+                $valor = trim (request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true)));
+                $fechaFB = trim (request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_FABRICACION, true)));
+                $fechaVC = trim (request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::FECHA_VENCIMIENTO, true)));
                 $idDoc = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID_DOC, true));
                 $enBodegaId = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, true));
                 $idInsumo = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::INSUMO_ID, true));

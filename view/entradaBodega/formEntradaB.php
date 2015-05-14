@@ -11,10 +11,11 @@ use mvc\session\sessionClass as session ?>
 use mvc\request\requestClass as request ?>
 <?php $idE = entradaBodegaTableClass::ID ?>
 <?php $fechaE = entradaBodegaTableClass::FECHA ?>
+<?php $proveedorId = entradaBodegaTableClass::PROVEEDOR_ID ?>
 <?php $proveeId = proveedorTableClass::ID ?>
 <?php $proveeNom = proveedorTableClass::RAZON_SOCIAL ?>
 <?php view::includePartial('menu/menu') ?>
-<div class="container container-fluid">    
+<div class="container container-fluid divTamaño">    
     <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', ((isset($objEntradaBodega)) ? 'update' : 'create')) ?>">
         <?php if (isset($objEntradaBodega) == true): ?>
         <input name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>" value="<?php echo $objEntradaBodega[0]->$idE ?>" type="hidden">
@@ -37,7 +38,7 @@ use mvc\request\requestClass as request ?>
            <div class="col-lg-10">
                 <select class="form-control" id="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, TRUE) ?>" id="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::PROVEEDOR_ID, TRUE) ?>" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::PROVEEDOR_ID, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
-                        <option value="<?php echo $proveedor->$proveeId ?>">
+                        <option <?php echo (isset($objEntradaBodega[0]->$proveedorId) === true and $objEntradaBodega[0]->$proveedorId == $proveedor->$proveeId) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveeId ?>">
                             <?php echo $proveedor->$proveeNom ?>
                         </option>   
                     <?php endforeach ?>
