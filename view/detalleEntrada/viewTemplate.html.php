@@ -28,9 +28,9 @@ use mvc\view\viewClass as view ?>
     <div class="divTamaño">
         <table class="table table-bordered table-responsive table-condensed tables">
 <?php foreach ($objEntradaBodega as $key): ?>
-                <tr>
-                  <th class="success tamanoAccion"><?php echo i18n::__('id') ?></th> 
-                   <th class="success tamanoAccion"><?php echo i18n::__('date') ?></th>   
+                <tr class="columna tr_table">
+                  <th><?php echo i18n::__('id') ?></th> 
+                   <th><?php echo i18n::__('date') ?></th>   
                 </tr>
                 <tr>
                     <th><?php echo entradaBodegaTableClass::getNameEntrada($key->$enBodegaId) ?></th>  
@@ -51,7 +51,7 @@ use mvc\view\viewClass as view ?>
         </div>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-              <tr class="success">
+              <tr class="columna tr_table">
                     <th><?php echo i18n::__('idEntrance') ?></th>
                     <th><?php echo i18n::__('date') ?></th>        
                     <th><?php echo i18n::__('id') ?></th>

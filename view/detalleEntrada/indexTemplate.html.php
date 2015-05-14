@@ -69,7 +69,7 @@
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr class="active columna success">
+                <tr class="columna tr_table">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('amount') ?></th>

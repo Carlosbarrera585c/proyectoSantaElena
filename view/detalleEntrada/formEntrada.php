@@ -68,26 +68,26 @@ use mvc\request\requestClass as request ?>
                     <?php foreach ($objTipoDoc as $tipoDoc): ?>
                         <option <?php echo (isset($objTipoDoc[0]->$TipoDocId) === true and $objDetalleEntrada[0]->$TipoDocId == $objTipoDoc->$idDoc) ? 'selected' : '' ?> value="<?php echo $tipoDoc->$idDoc ?>">
                             <?php echo $tipoDoc->$desDoc ?>
-                        </option>   
+                        </option>
                     <?php endforeach ?>
                 </select>
-            </div> 
+            </div>
         </div>
-      
+
+      <?php $idBodega = request::getInstance()->getGet('id') ?>
       <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idEntrance') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, TRUE) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, TRUE) ?>">
-                    <?php foreach ($objEntradaBodega as $entradaBodega): ?>                  
-                        <option <?php echo (isset($objEntradaBodega[0]->$entradaId) === true and $objDetalleEntrada[0]->$entradaId == $objEntradaBodega->$enBodegaId) ? 'selected' : '' ?> value="<?php echo $entradaBodega->$enBodegaId ?>">
-                            <?php echo $entradaBodega->$enBodegaId ?>                          
-                        </option>                        
+                    <?php foreach ($objEntradaBodega as $entradaBodega): ?>
+                        <option <?php echo ($idBodega == $entradaBodega->$enBodegaId) ? 'selected' : '' ?> value="<?php echo $entradaBodega->$enBodegaId ?>">
+                            <?php echo $entradaBodega->$enBodegaId ?>
+                        </option>
                     <?php endforeach ?>
-                    
                 </select>
             </div>
         </div>
-      
+
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idInput') ?>:</label>
             <div class="col-lg-10">
@@ -95,10 +95,10 @@ use mvc\request\requestClass as request ?>
                     <?php foreach ($objInsu as $insu): ?>
                         <option <?php echo (isset($objEntradaBodega[0]->$insumoId) === true and $objDetalleEntrada[0]->$insumoId == $objInsu->$insuId) ? 'selected' : '' ?> value="<?php echo $insu->$insuId ?>">
                             <?php echo $insu->$descInsu ?>
-                        </option>   
+                        </option>
                     <?php endforeach ?>
                 </select>
-            </div> 
+            </div>
         </div>
         <div class="form-group">
             <div class="col-lg-12 col-xs-offset-6">
