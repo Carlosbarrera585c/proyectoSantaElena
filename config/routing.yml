@@ -1387,5 +1387,3 @@ ingresoCaña_index:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-    
