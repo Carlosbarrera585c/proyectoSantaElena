@@ -213,6 +213,14 @@ dictionary:
        
     ##---------------------- INGRESO CAÑA----------------------------## 
     reedIncome:           Reed Income
+    quantity:             Quantity
+    caneOrigin:           cane origin
+    caneWeight:           cane Weight
+    wagonNumber:          wagon number
+    enterTheQuantity:     enter The Quantity 
+    enterTheCaneOrigin:   enter The Cane Origin
+    enterTheCaneWeight:   enter The Cane Weight
+    enterTheWagonNumber:  enter The Wagon Number
     ##---------------------- SOLICITUD INSUMO-------------------------##
     inputRequest:         Request Input
        

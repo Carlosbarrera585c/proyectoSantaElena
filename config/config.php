@@ -7,7 +7,7 @@ config::setRowGrid(4);
 
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
-config::setDbName('santa_helena');
+config::setDbName('santa_helena1');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
 config::setDbPassword('sena');
@@ -69,7 +69,7 @@ config::setCookieDomain('http://localhost/');
 config::setCookieDomain('http://www.santahelena.com/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
-config::setDefaultModule('default');
+config::setDefaultModule('usuario');
 config::setDefaultAction('index');
 
 config::setDefaultModuleSecurity('shfSecurity');

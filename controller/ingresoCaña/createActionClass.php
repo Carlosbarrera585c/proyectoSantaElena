@@ -22,39 +22,36 @@ class createActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST')) {
-        $fecha = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true));
-        $turno = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true));
-        $brix = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true));
-        $ph = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true));
-        $ar = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true));
-        $sacarosa = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true));
-        $pureza = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true));
-        $empleado_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true));
-        $proveedor_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true));
+        $fecha = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::FECHA, true));
+        $empleado_id = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::EMPLEADO_ID, true));
+        $proveedor_id = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PROVEEDOR_ID, true));
+        $cantidad = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::CANTIDAD, true));
+        $procedencia_caña = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PROCEDENCIA_CAÑA, true));
+        $peso_caña = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PESO_CAÑA, true));
+        $num_vagon = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::NUM_VAGON, true));
+        
 
-        $this->Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza);
+        //$this->Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza);
 
         $data = array(
-            controlCalidadTableClass::FECHA => $fecha,
-            controlCalidadTableClass::TURNO => $turno,
-            controlCalidadTableClass::BRIX => $brix,
-            controlCalidadTableClass::PH => $ph,
-            controlCalidadTableClass::AR => $ar,
-            controlCalidadTableClass::SACAROSA => $sacarosa,
-            controlCalidadTableClass::PUREZA => $pureza,
-            controlCalidadTableClass::EMPLEADO_ID => $empleado_id,
-            controlCalidadTableClass::PROVEEDOR_ID => $proveedor_id
+            ingresoCañaTableClass::FECHA => $fecha,
+            ingresoCañaTableClass::EMPLEADO_ID => $empleado_id,
+            ingresoCañaTableClass::PROVEEDOR_ID => $proveedor_id,
+            ingresoCañaTableClass::CANTIDAD => $cantidad,
+            ingresoCañaTableClass::PROCEDENCIA_CAÑA => $procedencia_caña,
+            ingresoCañaTableClass::PESO_CAÑA => $peso_caña,
+            ingresoCañaTableClass::NUM_VAGON => $num_vagon
         );
 
 
-        controlCalidadTableClass::insert($data);
+        ingresoCañaTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-        routing::getInstance()->redirect('controlCalidad', 'index');
+        routing::getInstance()->redirect('ingresoCaña', 'index');
       } else {
-        routing::getInstance()->redirect('controlCalidad', 'index');
+        routing::getInstance()->redirect('ingresoCaña', 'index');
       }
     } catch (PDOException $exc) {
-      routing::getInstance()->redirect('controlCalidad', 'insert');
+      routing::getInstance()->redirect('ingresoCaña', 'insert');
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
@@ -63,102 +60,102 @@ class createActionClass extends controllerClass implements controllerActionInter
   private function Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza) {
     $bandera = FALSE;
 //validaciones para que no se superen el maximo de caracteres.
-    if (strlen($turno) > controlCalidadTableClass::TURNO_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtTurn', NULL, 'default', array('%turno%' => $turno, '%caracteres%' => controlCalidadTableClass::TURNO_LENGHT)));
+    if (strlen($turno) > ingresoCañaTableClass::TURNO_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtTurn', NULL, 'default', array('%turno%' => $turno, '%caracteres%' => ingresoCañaTableClass::TURNO_LENGHT)));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::TURNO, true), true);
     }
-    if ($brix > controlCalidadTableClass::BRIX_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => controlCalidadTableClass::BRIX_LENGHT)));
+    if ($brix > ingresoCañaTableClass::BRIX_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => ingresoCañaTableClass::BRIX_LENGHT)));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::BRIX, true), true);
     }
-    if ($ph > controlCalidadTableClass::PH_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => controlCalidadTableClass::PH_LENGHT)));
+    if ($ph > ingresoCañaTableClass::PH_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => ingresoCañaTableClass::PH_LENGHT)));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PH, true), true);
     }
-    if ($ar > controlCalidadTableClass::AR_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtAr', NULL, 'default', array('%ar%' => $ar, '%caracteres%' => controlCalidadTableClass::AR_LENGHT)));
+    if ($ar > ingresoCañaTableClass::AR_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtAr', NULL, 'default', array('%ar%' => $ar, '%caracteres%' => ingresoCañaTableClass::AR_LENGHT)));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::AR, true), true);
     }
-    if ($sacarosa > controlCalidadTableClass::SACAROSA_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtSaccharose', NULL, 'default', array('%sacarosa%' => $sacarosa, '%caracteres%' => controlCalidadTableClass::SACAROSA_LENGHT)));
+    if ($sacarosa > ingresoCañaTableClass::SACAROSA_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtSaccharose', NULL, 'default', array('%sacarosa%' => $sacarosa, '%caracteres%' => ingresoCañaTableClass::SACAROSA_LENGHT)));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::SACAROSA, true), true);
     }
-    if ($pureza > controlCalidadTableClass::PUREZA_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtPurity', NULL, 'default', array('%pureza%' => $pureza, '%caracteres%' => controlCalidadTableClass::PUREZA_LENGHT)));
+    if ($pureza > ingresoCañaTableClass::PUREZA_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtPurity', NULL, 'default', array('%pureza%' => $pureza, '%caracteres%' => ingresoCañaTableClass::PUREZA_LENGHT)));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PUREZA, true), true);
     }
 //validar que el campo sea solo texto
     if (!ereg("^[A-Za-z]*$", $turno)){
       session::getInstance()->setError(i18n::__('errorTexto', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PUREZA, true), true);
     }
  //validar que el campo sea numerico.
     if (!is_numeric($brix)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::BRIX, true), true);
     }
     if (!is_numeric($ph)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PH, true), true);
     }
     if (!is_numeric($ar)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::AR, true), true);
     }
     if (!is_numeric($sacarosa)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::SACAROSA, true), true);
     }
     if (!is_numeric($pureza)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PUREZA, true), true);
     }
  //validar que no se envie el campo vacio o nulo
     if($turno === '' or $turno === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::TURNO, true), true);
     }
     if($brix === '' or $brix === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::BRIX, true), true);
     }
     if($ph === '' or $ph === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PH, true), true);
     }
     if($ar === '' or $ar === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::AR, true), true);
     }
     if($sacarosa === '' or $sacarosa === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::SACAROSA, true), true);
     }
     if($pureza === '' or $pureza === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+      session::getInstance()->setFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::PUREZA, true), true);
     }
     if ($bandera === true) {
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('controlCalidad', 'insert');
+      routing::getInstance()->forward('ingresoCaña', 'insert');
     }
   }
 

@@ -35,9 +35,13 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 routing::getInstance()->redirect('ingresoCaña', 'index');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+          
+          $this->arrayAjax = array(
+                    'code' => 500,
+                    'msg' => 'La Eliminación Fue Exitosa'
+                );
+          $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
+                
         }
     }
 }

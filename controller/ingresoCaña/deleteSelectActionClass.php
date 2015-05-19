@@ -18,14 +18,13 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-
-              $idsToDelete = request::getInstance()->getPost('chk');              
+              $idsToDelete = request::getInstance()->getPost('chk');
               foreach ($idsToDelete as $id){
                   $ids = array(
                       ingresoCañaTableClass::ID => $id
                 );
                 ingresoCañaTableClass::delete($ids,false );
-              }              
+              }
                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
                routing::getInstance()->redirect('ingresoCaña', 'index');
             } else {

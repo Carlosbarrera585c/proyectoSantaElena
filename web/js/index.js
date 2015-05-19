@@ -9,7 +9,14 @@ function eliminar(id, variable, url) {
         dataType: 'json',
         type: 'POST', //GET POST DELETE PUT
         success: function (data) {
+          if (data.code == 200) { 
             location.reload();
+          } else if (data.code == 500) {
+            $('#' + data.modal).modal('toggle');
+            
+            alert(data.msg);
+            
+          }
         }
     });
 }

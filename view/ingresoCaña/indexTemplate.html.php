@@ -16,6 +16,13 @@ use mvc\view\viewClass as view ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-road"> <?php echo i18n::__('reedIncome') ?></i></h1>
+        </div>
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'deleteSelect') ?>" method="POST">
+    <div style="margin-bottom: 10px; margin-top: 30px">
+      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+      <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+     
+    </div>
     </div>
     <table class="table table-bordered table-responsive tables">
       <thead>
@@ -36,4 +43,25 @@ use mvc\view\viewClass as view ?>
         <?php endforeach ?>
       </tbody>
     </table>
+ </form>
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo ingresoCañaTableClass::getNameField(ingresoCañaTableClass::ID, true) ?>">
+  </form>
+</div>
+<div class="modal fade" id="myModalDeleteMass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
+      </div>
+      <div class="modal-body">
+        <?php echo i18n::__('confirmDeleteMass') ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+        <button type="button" class="btn btn-primary" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirmDelete') ?></button>
+      </div>
+    </div>
+  </div>
 </div>

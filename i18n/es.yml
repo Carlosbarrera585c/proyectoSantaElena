@@ -249,6 +249,14 @@ dictionary:
     idPacking:              Id Empaque
     ##---------------------- INGRESO CAÑA----------------------------##
     reedIncome:             Ingreso Caña
+    quantity:               Cantidad
+    caneOrigin:             Procedencia Caña
+    caneWeight:             peso Caña
+    wagonNumber:            numero vagon
+    enterTheQuantity:       Ingresa la Cantidad
+    enterTheCaneOrigin:     Ingresa la Procedencia
+    enterTheCaneWeight:     Ingresa el Peso Caña
+    enterTheWagonNumber:    Ingresa el NUmero De Vagon
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
