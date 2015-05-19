@@ -1434,3 +1434,4 @@ ingresoCaña_deleteSelect:
   load:
     - model/base/ingresoCañaBaseTableClass.php
     - model/ingresoCañaTableClass.php
+    - model/base/insumoBaseTableClass.php
