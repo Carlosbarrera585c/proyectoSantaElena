@@ -33,13 +33,14 @@ class insertActionClass extends controllerClass implements controllerActionInter
                     entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
                 );
             
+         
             $fieldsInsumo = array(
                 insumoTableClass::ID,
                 insumoTableClass::DESC_INSUMO
             );
 
             $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, NULL, NULL, NULL, NULL, NULL, $where);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, $where);
             $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
             $this->defineView('insert', 'detalleEntrada', session::getInstance()->getFormatOutput());
       
