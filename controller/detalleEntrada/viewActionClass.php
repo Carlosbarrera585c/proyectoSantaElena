@@ -18,18 +18,18 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
     public function execute() {
         try {
           
-          $id = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
-            $fields = array(
+          $idEntrada = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
+            $fieldsEntrada = array(
                 entradaBodegaTableClass::ID,
                 entradaBodegaTableClass::FECHA
             );
-            $where = array(
-                entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
+            $whereEntrada = array(
+                entradaBodegaTableClass::ID => $idEntrada
             );
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, null, null, null, null, $where);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, false, null, null, null, null, $whereEntrada);
 
-            $id = request::getInstance()->getRequest(detalleEntradaTableClass::ID, true);
-            $fields = array(
+            $idDetalle = request::getInstance()->getRequest(detalleEntradaTableClass::ID, true);
+            $fieldsDetalle = array(
                 detalleEntradaTableClass::ID,
                 detalleEntradaTableClass::CANTIDAD,
                 detalleEntradaTableClass::VALOR,
@@ -39,10 +39,10 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID,
                 detalleEntradaTableClass::INSUMO_ID
             );
-            $where = array(
-                detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
+            $whereDetalle = array(
+                detalleEntradaTableClass::ENTRADA_BODEGA_ID => $idDetalle
             );
-            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, false, null, null, null, null, $where);
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, null, null, null, null, $whereDetalle);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
