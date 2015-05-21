@@ -43,7 +43,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         empleadoTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-        routing::getInstance()->redirect('empleado', 'index');
+        routing::getInstance()->forward('empleado', 'index');
       } else {
         routing::getInstance()->redirect('empleado', 'index');
       }
