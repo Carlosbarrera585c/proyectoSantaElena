@@ -13,7 +13,10 @@ all:
     - font-awesome.min.css
 shfSecurity:
   index:
-    title: Identificaci—n de usuario
+    title: Identificación de Usuario
+    stylesheet:
+      - signin.css
+  noPermission:
     stylesheet:
       - signin.css
 
