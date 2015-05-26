@@ -60,7 +60,7 @@ class usuarioTableClass extends usuarioBaseTableClass {
   public static function getTotalPages($lines) {
     try {
       $sql = 'SELECT count(' . usuarioTableClass::ID . ')As cantidad ' . 'FROM ' .
-              usuarioTableClass::getNameTable();
+              usuarioTableClass::getNameTable() . ' WHERE ' . usuarioTableClass::getNameField(usuarioTableClass::DELETED_AT) . ' IS NULL' ;
       $answer = model::getInstance()->prepare($sql);
       $answer->execute();
       $answer = $answer->fetchAll(PDO::FETCH_OBJ);
