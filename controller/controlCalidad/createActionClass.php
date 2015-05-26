@@ -68,27 +68,27 @@ class createActionClass extends controllerClass implements controllerActionInter
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
     }
-    if ($brix > controlCalidadTableClass::BRIX_LENGHT) {
+    if (strlen($brix) > controlCalidadTableClass::BRIX_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => controlCalidadTableClass::BRIX_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true), true);
     }
-    if ($ph > controlCalidadTableClass::PH_LENGHT) {
+    if (strlen($ph) > controlCalidadTableClass::PH_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => controlCalidadTableClass::PH_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true), true);
     }
-    if ($ar > controlCalidadTableClass::AR_LENGHT) {
+    if (strlen($ar) > controlCalidadTableClass::AR_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtAr', NULL, 'default', array('%ar%' => $ar, '%caracteres%' => controlCalidadTableClass::AR_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true), true);
     }
-    if ($sacarosa > controlCalidadTableClass::SACAROSA_LENGHT) {
+    if (strlen($sacarosa) > controlCalidadTableClass::SACAROSA_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtSaccharose', NULL, 'default', array('%sacarosa%' => $sacarosa, '%caracteres%' => controlCalidadTableClass::SACAROSA_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true), true);
     }
-    if ($pureza > controlCalidadTableClass::PUREZA_LENGHT) {
+    if (strlen($pureza) > controlCalidadTableClass::PUREZA_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtPurity', NULL, 'default', array('%pureza%' => $pureza, '%caracteres%' => controlCalidadTableClass::PUREZA_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
