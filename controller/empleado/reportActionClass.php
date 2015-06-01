@@ -34,7 +34,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
         if (isset($report['Correo']) and $report['Correo'] !== NULL and $report['Correo'] !== '') {
           $where[empleadoTableClass::CORREO] = $report['Correo'];
         }
-//        
       }
       $orderBy = array(
           empleadoTableClass::ID

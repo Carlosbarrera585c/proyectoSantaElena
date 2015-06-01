@@ -101,16 +101,16 @@ class createActionClass extends controllerClass implements controllerActionInter
       $bandera = true;
       session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
     }
-//    if ($correo !== $correo2) {
-//      session::getInstance()->setError(i18n::__('errorMail', NULL, 'default'));
-//      $bandera = true;
-//      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
-//    }
-//    if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-//      session::getInstance()->setError(i18n::__('errorMailCharacters', NULL, 'default'));
-//      $bandera = true;
-//      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
-//    }
+    if ($correo !== $correo2) {
+      session::getInstance()->setError(i18n::__('errorMail', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
+    }
+    if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+      session::getInstance()->setError(i18n::__('errorMailCharacters', NULL, 'default'));
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
+    }
     if ($nomEmpleado === '') {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
       $bandera = true;

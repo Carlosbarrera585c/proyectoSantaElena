@@ -4,7 +4,6 @@ use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
 use mvc\request\requestClass as request;
-use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
@@ -17,27 +16,17 @@ class traductorActionClass extends controllerClass implements controllerActionIn
 
   public function execute() {
     try {
-      //if (request::getInstance()->isMethod('POST')) {
-        
-//        echo '<pre>';
-//        print_r($_SERVER);
-//        echo '</pre>';
-//        exit();
-        $language = request::getInstance()->getGet('language');
-        $PATH_INFO = request::getInstance()->getGet('PATH_INFO');
-        
-        if (request::getInstance()->hasGet('QUERY_STRING')) {
-          $QUERY_STRING = html_entity_decode(request::getInstance()->getGet('QUERY_STRING'));
-        }
-        
-        session::getInstance()->setDefaultCulture($language);
-//        config::setDefaultCulture($language);
-        $dir = config::getUrlBase() . config::getIndexFile() . $PATH_INFO;
-        $dir .= (isset($QUERY_STRING)) ? '?' . $QUERY_STRING : '';
-        header('Location: ' . $dir);
-      //} else {
-        //routing::getInstance()->redirect('default', 'index');
-      //}
+      $language = request::getInstance()->getGet('language');
+      $PATH_INFO = request::getInstance()->getGet('PATH_INFO');
+
+      if (request::getInstance()->hasGet('QUERY_STRING')) {
+        $QUERY_STRING = html_entity_decode(request::getInstance()->getGet('QUERY_STRING'));
+      }
+
+      session::getInstance()->setDefaultCulture($language);
+      $dir = config::getUrlBase() . config::getIndexFile() . $PATH_INFO;
+      $dir .= (isset($QUERY_STRING)) ? '?' . $QUERY_STRING : '';
+      header('Location: ' . $dir);
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';
