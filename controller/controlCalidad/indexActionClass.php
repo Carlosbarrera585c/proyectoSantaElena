@@ -75,6 +75,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             }
             $this->cntPages = controlCalidadTableClass:: getTotalPages(config::getRowGrid(), $where);
             $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
+            session::getInstance()->deleteAttribute('controlCalidadIndexFilters');
             $this->defineView('index', 'controlCalidad', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
