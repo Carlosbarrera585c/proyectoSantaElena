@@ -14,7 +14,7 @@ use mvc\session\sessionClass as session ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nomEmpleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('menu/menu') ?>
-<!--Inicio Ventana Modal Error al Eliminar Foraneas-->
+<!-- ventana Modal Error al Eliminar Foraneas-->
 <div class="container container-fluid">
   <div class="modal fade" id="myModalErrorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -23,12 +23,9 @@ use mvc\session\sessionClass as session ?>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete') ?></h4>
         </div>
-        <div class="modal-body">
-          <?php echo json_encode($arrayAjax) ?>
-        </div>
+        <div class="modal-body"></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-          <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('delete') ?></button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
         </div>
       </div>
     </div>

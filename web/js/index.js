@@ -14,6 +14,7 @@ function eliminar(id, variable, url) {
       } else if (data.code == 500) {
         $('#' + data.modal).modal('toggle');
         $('#myModalErrorDelete').modal('toggle');
+        $('#myModalErrorDelete .modal-body').html(data.msg);
       }
     }
   });

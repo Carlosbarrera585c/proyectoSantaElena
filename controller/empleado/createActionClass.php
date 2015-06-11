@@ -106,7 +106,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       $bandera = true;
       session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
     }
-    if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
       session::getInstance()->setError(i18n::__('errorMailCharacters', NULL, 'default'));
       $bandera = true;
       session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);

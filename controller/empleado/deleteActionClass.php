@@ -37,13 +37,10 @@ class deleteActionClass extends controllerClass implements controllerActionInter
     } catch (PDOException $exc) {
       $this->arrayAjax = array(
           'code' => 500,
-          'msg' => 'La Elim Exitosa',
+          'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
           'modal' => 'myModalDelete' . $id
       );
       $this->defineView('delete', 'empleado', session::getInstance()->getFormatOutput());
-
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 
