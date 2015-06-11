@@ -17,6 +17,34 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
+            
+             $where = null;
+            if (request::getInstance()->hasPost('filter')) {
+                $filter = request::getInstance()->getPost('filter');
+//aqui validar datos
+                if ((isset($filter['fechaFB1']) and $filter['fechaFB1'] !== null and $filter['fechaFB1'] !== "") and ( isset($filter['fechaFB2']) and $filter['fechaFB2'] !== null and $filter['fechaFB2'] !== "")) {
+                    $where[detalleEntradaTableClass::FECHA_FABRICACION] = array(
+                        date(config::getFormatTimestamp(), strtotime($filter['fechaFB1'] . '00:00:00')),
+                        date(config::getFormatTimestamp(), strtotime($filter['fechaFB2'] . '23:59:59'))
+                    );
+                }
+
+                if ((isset($filter['fechaVC1']) and $filter['fechaVC1'] !== null and $filter['fechaVC1'] !== "") and ( isset($filter['fechaVC2']) and $filter['fechaVC2'] !== null and $filter['fechaVC2'] !== "")) {
+                    $where[detalleEntradaTableClass::FECHA_VENCIMIENTO] = array(
+                        date(config::getFormatTimestamp(), strtotime($filter['fechaVC1'] . '00:00:00')),
+                        date(config::getFormatTimestamp(), strtotime($filter['fechaVC2'] . '23:59:59'))
+                    );
+                }
+                if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== "") {
+                    $where[detalleEntradaTableClass::CANTIDAD] = $filter['cantidad'];
+                }
+
+                if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== "") {
+                    $where[detalleEntradaTableClass::VALOR] = $filter['valor'];
+                }
+            } else if (session::getInstance()->hasAttribute('detalleEntradaIndexFilters')) {
+                $where = session::getInstance()->getAttribute('detalleEntradaIndexFilters');
+            }
           
           $idEntrada = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
             $fieldsEntrada = array(
@@ -42,7 +70,18 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             $whereDetalle = array(
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID => $idDetalle
             );
-            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, null, null, null, null, $whereDetalle);
+            
+            $page = 0;
+
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            $this->cntPages = detalleEntradaTableClass:: getTotalPages(config::getRowGrid(), $where);
+
+            
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, null, null, config::getRowGrid(), $page, $whereDetalle);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
