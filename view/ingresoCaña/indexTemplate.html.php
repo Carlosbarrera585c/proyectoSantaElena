@@ -38,7 +38,10 @@ use mvc\view\viewClass as view ?>
           <tr>
             <td><input type="checkbox" name="chk[]" value="<?php echo $ingreso->$id ?>"></td>
             <td><?php echo ingresoCañaTableClass::getNameEmpleado($ingreso->$empleado_id) ?></td>
-            <td><?php echo ingresoCañaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>          
+            <td><?php echo ingresoCañaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>  
+            <td>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'edit', array(ingresoCañaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+            </td>
           </tr>
         <?php endforeach ?>
       </tbody>

@@ -1415,6 +1415,31 @@ ingresoCaña_create:
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
     
+ingresoCaña_edit:
+  url:    /ingresoCaña/editar
+  param:  { module: ingresoCaña, action: edit, format: html }
+  load:
+    - model/base/ingresoCañaBaseTableClass.php
+    - model/ingresoCañaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+ 
+ingresoCaña_update:
+  url:    /ingresoCaña/actualizar
+  param:  { module: ingresoCaña, action: update, format: html }
+  load:
+    - model/base/ingresoCañaBaseTableClass.php
+    - model/ingresoCañaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+    
 ingresoCaña_delete:
   url:    /ingresoCaña/eliminar
   param:  { module: ingresoCaña, action: delete, format: json }
@@ -1425,9 +1450,7 @@ ingresoCaña_delete:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-
+   
 ingresoCaña_deleteSelect:
   url:    /ingresoCaña/eliminarSeleccion
   param:  { module: ingresoCaña, action: deleteSelect, format: html }

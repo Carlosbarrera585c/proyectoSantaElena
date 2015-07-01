@@ -9,9 +9,12 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
- *
- * @author Bayron Henao <bairon_henao_1995.com>
+ * Description of create deleteActionClass
+ * @author  Bayron Henao <bairon_henao_1995@hotmail.com> 
+ * @method post  los datos de la tabla llegan por metodo post.
+ * @param getNameField se especifica los nombres de los capos contenidos en la tabla.
+ * $data los datos del recorrido de la tabla controlCalidad se guardan
+ * en la variable $data  
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
