@@ -27,9 +27,9 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                 detalleEntradaTableClass::delete($ids, false);
               }              
                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('detalleEntrada', 'index');
+               routing::getInstance()->redirect('entradaBodega', 'index');
             } else {
-                routing::getInstance()->redirect('detalleEntrada', 'index');
+                routing::getInstance()->redirect('entradaBodega', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

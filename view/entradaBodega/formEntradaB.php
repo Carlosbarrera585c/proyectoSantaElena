@@ -15,8 +15,7 @@ use mvc\request\requestClass as request ?>
 <?php $proveeId = proveedorTableClass::ID ?>
 <?php $proveeNom = proveedorTableClass::RAZON_SOCIAL ?>
 <?php view::includePartial('menu/menu') ?>
-<div class="container container-fluid divTamaño">   
-  cristian Ramirez
+<div class="container container-fluid divTamaño">    
     <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', ((isset($objEntradaBodega)) ? 'update' : 'create')) ?>">
         <?php if (isset($objEntradaBodega) == true): ?>
         <input name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>" value="<?php echo $objEntradaBodega[0]->$idE ?>" type="hidden">

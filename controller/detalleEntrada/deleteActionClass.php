@@ -32,7 +32,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 $this->defineView('delete', 'detalleEntrada', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
-                routing::getInstance()->redirect('detalleEntrada', 'index');
+                routing::getInstance()->redirect('entradaBodega', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();
