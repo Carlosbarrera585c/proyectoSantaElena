@@ -26,17 +26,18 @@ namespace hook\security {
           // si hay seguridad, entonces preguntamos si el usuario está autenticado
           if (!session::getInstance()->isUserAuthenticated()) {
             self::saveUrlParams();
-            routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
+            //routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
+            routing::getInstance()->forward(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
           }
 
           // verifico permisos de acceso
           if (!self::verifyCredentials($securityYml, session::getInstance()->getModule(), session::getInstance()->getAction())) {
             routing::getInstance()->forward(config::getDefaultModulePermission(), config::getDefaultActionPermission());
           }
-        } else {
+        } /* else {
           session::getInstance()->deleteAttribute('shfSecurityModuleGO');
           session::getInstance()->deleteAttribute('shfSecurityActionGO');
-        }
+        }*/
       } catch (\PDOException $exc) {
         throw $exc;
       }

@@ -168,9 +168,8 @@ namespace mvc\session {
      *
      * @param Exception|PDOException $error
      */
-     public function setError($error, $key = null) {
-     $_SESSION['mvcError'][] = $error;		
-     if ($key !== null) {
+    public function setError($error, $key = null) {
+      if ($key !== null) {
         $_SESSION['mvcError'][$key] = $error;
       } else {
         $_SESSION['mvcError'][] = $error;
@@ -230,15 +229,13 @@ namespace mvc\session {
     }
 
     public function hasError($key = null) {
-      return (isset($_SESSION['mvcError']) and count($_SESSION['mvcError']) > 0) ? true : false;		
       if ($key !== null) {
         $rsp = (isset($_SESSION['mvcError'][$key])) ? true : false;
       } else {
         $rsp = (isset($_SESSION['mvcError']) and count($_SESSION['mvcError']) > 0) ? true : false;
       }
       return $rsp;
-
-}
+    }
 
     public function hasInformation() {
       return (isset($_SESSION['mvcInformation']) and count($_SESSION['mvcInformation']) > 0) ? true : false;
@@ -295,11 +292,11 @@ namespace mvc\session {
     public function hasDefaultCulture() {
       return $this->hasAttribute('mvcDefaultCulture');
     }
-    
+
     public function setDefaultCulture($default_culture) {
       $this->setAttribute('mvcDefaultCulture', $default_culture);
     }
-    
+
     public function getDefaultCulture() {
       return $this->getAttribute('mvcDefaultCulture');
     }

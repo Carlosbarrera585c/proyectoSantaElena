@@ -5,7 +5,7 @@ namespace mvc\model\table {
   use mvc\interfaces\tableInterface;
   use mvc\model\modelClass as model;
   use mvc\config\configClass as config;
-  use mvc\camelCase\camelCaseClass as camelCase;
+  use mvc\session\sessionClass as session;
 
   /**
    * Clase general para las tablas el cual define el CRUD
@@ -87,7 +87,7 @@ namespace mvc\model\table {
      * @return string
      */
     public static function getNameTable() {
-
+      
     }
 
     /**
@@ -180,6 +180,16 @@ namespace mvc\model\table {
           $flag = false;
         }
 
+        /**
+         * array(
+         *    campo => valor,
+         *    campo => array(
+         *      fecha1,
+         *      fecha2
+         *    ),
+         *    0 => valorSQL
+         * )
+         */
         if (is_array($where) === true) {
           foreach ($where as $field => $value) {
             if (is_array($value)) {
@@ -191,10 +201,18 @@ namespace mvc\model\table {
               }
             } else {
               if ($flag === false) {
-                $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                if (is_numeric($field)) {
+                  $sql = $sql . ' WHERE ' . $value . ' ';
+                } else {
+                  $sql = $sql . ' WHERE ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                }
                 $flag = true;
               } else {
-                $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                if (is_numeric($field)) {
+                  $sql = $sql . ' AND ' . $value . ' ';
+                } else {
+                  $sql = $sql . ' AND ' . $field . ' = ' . ((is_numeric($value)) ? $value : "'$value'") . ' ';
+                }
               }
             }
           }

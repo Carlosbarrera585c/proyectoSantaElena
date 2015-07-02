@@ -17,11 +17,24 @@ namespace mvc\view {
       include_once configClass::getPathAbsolute() . 'libs/vendor/view/handlerMessage.php';
     }
 
+    static public function getMessageError($key) {
+      include configClass::getPathAbsolute() . 'libs/vendor/view/messageError.php';
+    }
+
     static public function includePartial($partial, $variables = null) {
-      if ($variables !== null and is_array($variables)) {
+      if ($variables !== null and is_array($variables) and count($variables) > 0) {
         extract($variables);
       }
       include_once configClass::getPathAbsolute() . 'view/' . $partial . '.php';
+    }
+
+    static public function includeComponent($module, $component, $variables = array()) {
+      include_once configClass::getPathAbsolute() . 'controller/' . $module . '/' . $component . 'ComponentClass.php';
+      $componentClass = $component . 'ComponentClass';
+      $objComponent = new $componentClass($variables);
+      $objComponent->component();
+      $objComponent->setArgs((array) $objComponent);
+      $objComponent->renderComponent();
     }
 
     static public function genMetas() {
@@ -29,14 +42,30 @@ namespace mvc\view {
       $action = sessionClass::getInstance()->getAction();
       $metas = '';
       $includes = cacheManagerClass::getInstance()->loadYaml(configClass::getPathAbsolute() . 'config/view.yml', 'viewYaml');
-      foreach ($includes['all']['meta'] as $include) {
-        $metas .= '<meta ' . $include . '>';
+      if (isset($includes['all']['meta'])) {
+        foreach ($includes['all']['meta'] as $include) {
+          $metas .= '<meta ' . $include . '>';
+        }
       }
+
+      if (isset($includes['all']['link'])) {
+        foreach ($includes['all']['link'] as $include) {
+          $metas .= '<link ' . $include . '>';
+        }
+      }
+
       if (isset($includes[$module][$action]['meta'])) {
         foreach ($includes[$module][$action]['meta'] as $include) {
           $metas .= '<meta ' . $include . '>';
         }
       }
+
+      if (isset($includes[$module][$action]['link'])) {
+        foreach ($includes[$module][$action]['link'] as $include) {
+          $metas .= '<link ' . $include . '>';
+        }
+      }
+
       return $metas;
     }
 
@@ -99,6 +128,15 @@ namespace mvc\view {
         $title = '<title>' . $includes['all']['title'] . '</title>';
       }
       return $title;
+    }
+
+    static public function renderComponent($component, $arg = array()) {
+      if (isset($component)) {
+        if (count($arg) > 0) {
+          extract($arg);
+        }
+        include configClass::getPathAbsolute() . "view/$component.php";
+      }
     }
 
     static public function renderHTML($module, $template, $typeRender, $arg = array()) {

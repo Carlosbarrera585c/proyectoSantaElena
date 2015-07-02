@@ -9,32 +9,40 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Empleado
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->isMethod('POST')) {
+  public function execute() {
+    try {
+      if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
 
-              $idsToDelete = request::getInstance()->getPost('chk');              
-              foreach ($idsToDelete as $id){
-                  $ids = array(
-                      entradaBodegaTableClass::ID => $id
-                );
-                entradaBodegaTableClass::delete($ids, false);
-              }              
-               session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('entradaBodega', 'index');
-            } else {
-                routing::getInstance()->redirect('entradaBodega', 'index');
-            }
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+        $idsToDelete = request::getInstance()->getPost('chk');
+        foreach ($idsToDelete as $id) {
+          $ids = array(
+              entradaBodegaTableClass::ID => $id
+          );
+          entradaBodegaTableClass::delete($ids, false);
         }
+        session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+        routing::getInstance()->redirect('entradaBodega', 'index');
+      } else {
+        routing::getInstance()->redirect('entradaBodega', 'index');
+      }
+    } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
+      switch ($exc->getCode()) {
+        case 23503:
+          session::getInstance()->setError(i18n::__('errorDeleteForeign'));
+          routing::getInstance()->redirect('entradaBodega', 'index');
+          break;
+        case 00000:
+          break;
+      }
     }
+  }
+
 }
