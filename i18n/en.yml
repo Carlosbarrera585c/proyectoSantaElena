@@ -208,7 +208,7 @@ dictionary:
     infoCaneIncome:       Cane Income Information
     DetailIncome:         Income Cane Detail
     newDetailIncome:      New Income Detail Cane
-    editDetailIncome:     Edit Income Detail Cane
+    editIncome:     Edit Income Detail Cane
     infoDetailIncome:     Income Cane Detail Information
        
     ##---------------------- INGRESO CAÑA----------------------------## 
