@@ -25,14 +25,14 @@ if (config::getDbUnixSocket() !== null) {
   );
 }
 //Para Windows
-//config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
+config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
 //Para Linux 
-config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
+//config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 //Windows
-//config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
+config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 //Host Virtual
-config::setUrlBase('http://www.santahelena.com/');
-config::setScope('prod'); // prod
+//config::setUrlBase('http://www.santahelena.com/');
+config::setScope('prod'); // dev
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');
 } else {
@@ -50,13 +50,13 @@ config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officed
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
 //Virtual Host
-config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
+//config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 //Windows
-//config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
+config::setCookiePath('/proyectoSantaHelena/web/' . config::getIndexFile());
 ////Virtual Host
-config::setCookieDomain('http://www.santahelena.com/');
+//config::setCookieDomain('http://www.santahelena.com/');
 //Windows
-//config::setCookieDomain('http://localhost/');
+config::setCookieDomain('http://localhost/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 config::setDefaultModule('usuario');
 config::setDefaultAction('index');
