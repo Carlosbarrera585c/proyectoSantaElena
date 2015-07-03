@@ -11,6 +11,8 @@ namespace mvc\request {
    */
   class requestClass implements requestInterface {
 
+    private $delete;
+    private $put;
     private $post;
     private $get;
     private $request;
@@ -28,6 +30,12 @@ namespace mvc\request {
       $this->files = $files;
       $this->server = $server;
       $this->env = $env;
+      $this->put = array();
+      $this->delete = array();
+      if ($this->isMethod('PUT') or $this->isMethod('DELETE')) {
+        parse_str(file_get_contents('php://input'), $vars);
+        $this->setPut($vars);
+      }
     }
 
     /**
@@ -40,7 +48,7 @@ namespace mvc\request {
       }
       return self::$instance;
     }
-    
+
     public function isMethod($method) {
       return ($this->getServer('REQUEST_METHOD') === $method) ? true : false;
     }
@@ -53,6 +61,14 @@ namespace mvc\request {
       if (is_array($param)) {
         $this->get = array_merge($this->get, $param);
       }
+    }
+
+    public function getDelete($param) {
+      return $this->delete[$param];
+    }
+
+    public function getPut($param) {
+      return $this->put[$param];
     }
 
     public function getPost($param) {
@@ -80,6 +96,14 @@ namespace mvc\request {
 
     public function hasServer($param) {
       return isset($this->server[$param]);
+    }
+
+    public function hasPut($param) {
+      return isset($this->put[$param]);
+    }
+
+    public function hasDelete($param) {
+      return isset($this->delete[$param]);
     }
 
     public function getServer($param) {
@@ -136,6 +160,30 @@ namespace mvc\request {
 
     public function setMethod($method) {
       $this->server['REQUEST_METHOD'] = $method;
+    }
+
+    public function hasFile($param) {
+      return ($this->getFile($param)['error'] === 4) ? false : true;
+    }
+
+    /**
+     * $param['id'] = 12
+     * @param array $param
+     */
+    public function setPut($param) {
+      if (is_array($param)) {
+        $this->put = array_merge($this->put, $param);
+      }
+    }
+
+    /**
+     * $param['id'] = 12
+     * @param array $param
+     */
+    public function setDelete($param) {
+      if (is_array($param)) {
+        $this->delete = array_merge($this->delete, $param);
+      }
     }
 
   }

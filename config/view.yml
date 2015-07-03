@@ -3,6 +3,7 @@ all:
   title: titulo de la p‡gina general
   meta:
     - charset="UTF-8"
+    - http-equiv="X-UA-Compatible" content="IE=edge"
   javascript:
     - jquery-1.11.1.min.js
     - bootstrap.js
