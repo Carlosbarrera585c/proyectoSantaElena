@@ -24,6 +24,7 @@ use mvc\view\viewClass as view ?>
      
     </div>
     </div>
+<?php view::includeHandlerMessage() ?>
     <table class="table table-bordered table-responsive tables">
       <thead>
         <tr class="tr_table">
@@ -41,6 +42,7 @@ use mvc\view\viewClass as view ?>
             <td><?php echo ingresoCañaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>  
             <td>
               <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'edit', array(ingresoCañaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+              <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $ingreso->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
             </td>
           </tr>
         <?php endforeach ?>

@@ -33,7 +33,6 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
       switch ($exc->getCode()) {
         case 23503:
           session::getInstance()->setError(i18n::__('errorDeleteForeign'));
