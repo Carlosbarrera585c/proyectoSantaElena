@@ -1457,3 +1457,95 @@ ingresoCaña_deleteSelect:
   load:
     - model/base/ingresoCañaBaseTableClass.php
     - model/ingresoCañaTableClass.php
+
+
+##-------------------------- SALIDA BODEGA-----------------------------##
+
+salidaBodega_index:
+  url:    /salidaBodega/index
+  param:  { module: salidaBodega, action: index, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+salidaBodega_insert:
+  url:    /salidaBodega/insertar
+  param:  { module: salidaBodega, action: insert, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+salidaBodega_view:
+  url:    /salidaBodega/ver
+  param:  { module: salidaBodega, action: view, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+salidaBodega_create:
+  url:    /salidaBodega/crear
+  param:  { module: salidaBodega, action: create, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+
+salidaBodega_edit:
+  url:    /salidaBodega/editar
+  param:  { module: salidaBodega, action: edit, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+
+salidaBodega_update:
+  url:    /salidaBodega/actualizar
+  param:  { module: salidaBodega, action: update, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+
+salidaBodega_delete:
+  url:    /salidaBodega/eliminar
+  param:  { module: salidaBodega, action: delete, format: json }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+
+salidaBodega_deleteSelect:
+  url:    /salidaBodega/eliminarSeleccion
+  param:  { module: salidaBodega, action: deleteSelect, format: html }
+  load:
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+
+salidaBodega_reporte:
+  url:    /salidaBodega/reporte
+  param:  { module: salidaBodega, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+
+salidaBodega_deleteFilters:
+  url:    /salidaBodega/borrarFiltros
+  param:  { module: salidaBodega, action: deleteFilters, format: html }
+  
+salidaBodega_history.back():
+  url:    /salidaBodega/history.back()
+  param:  { module: salidaBodega, action: regresar, format: html }
+##-------------------------- SALIDA BODEGA----------------------------##
