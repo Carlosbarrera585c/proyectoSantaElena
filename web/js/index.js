@@ -15,7 +15,12 @@ function eliminar(id, variable, url) {
         $('#' + data.modal).modal('toggle');
         $('#myModalErrorDelete').modal('toggle');
         $('#myModalErrorDelete .modal-body').html(data.msg);
+        function closeModal() {
+          $('#myModalErrorDelete').modal('hide');
+        }
+        setTimeout(closeModal, 5000);
       }
+      //fin de la funcion
     }
   });
 }

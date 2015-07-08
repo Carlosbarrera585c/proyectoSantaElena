@@ -79,6 +79,11 @@ dictionary:
     
     ##----------------------ENTRADA BODEGA-------------------------##
     
+    ##----------------------SALIDA BODEGA-------------------------##
+    holdOut:              Salida Bodega
+    newHoldOut:           Nueva Salida Bodega
+    ##----------------------SALIDA BODEGA-------------------------##
+    
     ##-------------------------- CIUDAD----------------------------##
     city:                 Ciudad
     idCity:               Id Ciudad
@@ -238,15 +243,15 @@ dictionary:
     enterThePurity:       Introduce la Pureza
     ##-----------------control calidad---------------------------##
      
+   
     ##---------------------- DETALLE EMPAQUE----------------------------##
-    detailPacking:          Detalle Empaque
-    ##---------------------- DETALLE EMPAQUE----------------------------##
-        ##----------------------INGRESO CAÑA----------------------------##
+       
     detailPacking:          Detalle Empaque
     newDetailPacking:       Nuevo Detalle Empaque
     editDetailPacking:      Editar Detalle Empaque
     infoDetailPacking:      Informacion de Detalle Empaque
     idPacking:              Id Empaque
+    ##---------------------- DETALLE EMPAQUE----------------------------##
     ##---------------------- INGRESO CAÑA----------------------------##
     reedIncome:             Ingreso Caña
     quantity:               Cantidad
@@ -257,6 +262,8 @@ dictionary:
     enterTheCaneOrigin:     Ingresa la Procedencia
     enterTheCaneWeight:     Ingresa el Peso Caña
     enterTheWagonNumber:    Ingresa el NUmero De Vagon
+     ##----------------------INGRESO CAÑA----------------------------##
+     
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).

@@ -82,6 +82,11 @@ dictionary:
     
     ##----------------------ENTRADA BODEGA-------------------------##
     
+    ##----------------------SALIDA BODEGA-------------------------##
+    holdOut:              Hold out
+    newHoldOut:           New hold Out
+    ##----------------------SALIDA BODEGA-------------------------##
+    
     ##-------------------------- CIUDAD----------------------------##
     city:                 City
     idCity:               Id City

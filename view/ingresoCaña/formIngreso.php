@@ -27,11 +27,11 @@ use mvc\request\requestClass as request ?>
         <input name="<?php echo ingresoCañaTableClass::getNameField(ingresoCañaTableClass::ID, true) ?>" value="<?php echo $objIngresoCaña[0]->$id ?>" type="hidden">
     <?php endif ?>
     <div class="container container-fluid">
-        <?php view::includeHandlerMessage() ?>
+        <?php  view::includeHandlerMessage() ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-              <input type="datetime" class="form-control" value="<?php echo ((isset($objIngresoCaña) == true) ? $objIngresoCaña[0]->$fecha : '') ?>" name="<?php echo ingresoCañaTableClass::getNameField(ingresoCañaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
+                <input type="text" class="form-control" value="<?php echo ((isset($objIngresoCaña) == true) ? $objIngresoCaña[0]->$fecha : '') ?>" name="<?php echo ingresoCañaTableClass::getNameField(ingresoCañaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
       <div class="form-group <?php echo (session::getInstance()->hasFlash(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">

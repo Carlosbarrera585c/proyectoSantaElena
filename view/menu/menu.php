@@ -91,6 +91,8 @@ use mvc\session\sessionClass as session ?>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>"><?php echo i18n::__('cellarEntrance') ?></a></li>                        
                         <li class="divider"></li>
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'index') ?>"><?php echo i18n::__('holdOut') ?></a></li>
+                        <li class="divider"></li>
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>   
                         <li class="divider"></li>
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>"><?php echo i18n::__('docType') ?></a></li>
