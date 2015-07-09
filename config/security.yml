@@ -14,7 +14,7 @@ usuario:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
     
@@ -22,7 +22,7 @@ controlCalidad:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -33,7 +33,7 @@ entradaBodega:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -43,7 +43,7 @@ salidaBodega:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -53,7 +53,7 @@ detalleEntrada:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -63,7 +63,7 @@ insumo:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -73,7 +73,7 @@ tipoInsumo:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -83,7 +83,7 @@ empleado:
   index:
     security: true
     credentials:
-        - [admin, Carlos]
+        - [admin, Consultor]
   insert:
     security: true
     credentials:
@@ -101,7 +101,7 @@ credencial:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -113,7 +113,7 @@ tipoId:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
@@ -125,7 +125,7 @@ empaque:
   index:
     security: true
     credentials:
-      - [admin, Carlos]
+      - [admin, Consultor]
   insert:
     security: true
   create:
