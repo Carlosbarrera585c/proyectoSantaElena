@@ -215,6 +215,10 @@ dictionary:
     newDetailIncome:      New Income Detail Cane
     editIncome:     Edit Income Detail Cane
     infoDetailIncome:     Income Cane Detail Information
+    quantity:             Quantity
+    caneOrigin:           cane origin
+    caneWeight:           cane weight
+    wagonNumber:          wagon number
        
     ##---------------------- INGRESO CAÑA----------------------------## 
     reedIncome:           Reed Income

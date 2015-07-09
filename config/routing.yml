@@ -1388,6 +1388,19 @@ ingresoCaña_index:
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
+  
+ingresoCaña_ver:
+  url:    /ingresoCaña/ver
+  param:  { module: ingresoCaña, action: view, format: html }
+  load:
+    - model/base/ingresoCañaBaseTableClass.php
+    - model/ingresoCañaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
  
 ingresoCaña_insert:
   url:    /ingresoCaña/insertar
@@ -1446,10 +1459,6 @@ ingresoCaña_delete:
   load:
     - model/base/ingresoCañaBaseTableClass.php
     - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
    
 ingresoCaña_deleteSelect:
   url:    /ingresoCaña/eliminarSeleccion
@@ -1457,6 +1466,18 @@ ingresoCaña_deleteSelect:
   load:
     - model/base/ingresoCañaBaseTableClass.php
     - model/ingresoCañaTableClass.php
+    
+ingresoCaña_reporte:
+  url:    /ingresoCaña/reporte
+  param:  { module: ingresoCaña, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/ingresoCañaBaseTableClass.php
+    - model/ingresoCañaTableClass.php
+ 
+ingresoCaña_deleteFilters:
+  url:    /ingresoCaña/borrarFiltros
+  param:  { module: ingresoCaña, action: deleteFilters, format: html }
 
 
 ##-------------------------- SALIDA BODEGA-----------------------------##
