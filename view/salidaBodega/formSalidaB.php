@@ -19,7 +19,7 @@ use mvc\request\requestClass as request ?>
 <?php $empleadoNom = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid divTamaño">    
-    <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', ((isset($objSalidaBodega)) ? 'update' : 'create')) ?>">
+    <form class="form-horizontal" method="post" action="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', ((isset($objSalidaBodega)) ? 'update' : 'create')) ?>">
         <?php if (isset($objSalidaBodega) == true): ?>
         <input name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>" value="<?php echo $objSalidaBodega[0]->$idE ?>" type="hidden">
         <?php endif ?>

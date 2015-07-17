@@ -107,9 +107,9 @@ use mvc\session\sessionClass as session ?>
             <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalReport" ><?php echo i18n::__('printReport') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover tables">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr class="active columna success">
+                <tr class="columna tr_table">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('nameCredential') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
@@ -121,7 +121,7 @@ use mvc\session\sessionClass as session ?>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $credencial->$id ?>"></td>
                         <td><?php echo $credencial->$nom ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'view', array(credencialTableClass::ID => $credencial->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'view', array(credencialTableClass::ID => $credencial->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
                             <?php if (session::getInstance()->hasCredential('admin')): ?>
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('credencial', 'edit', array(credencialTableClass::ID => $credencial->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
                                 <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $credencial->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
