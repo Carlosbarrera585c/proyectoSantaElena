@@ -82,6 +82,8 @@ dictionary:
     ##----------------------SALIDA BODEGA-------------------------##
     holdOut:              Salida Bodega
     newHoldOut:           Nueva Salida Bodega
+    editHoldOut:          Editar Salida Bodega
+    viewHoldOut:          Informacion Salida Bodega
     ##----------------------SALIDA BODEGA-------------------------##
     
     ##-------------------------- CIUDAD----------------------------##

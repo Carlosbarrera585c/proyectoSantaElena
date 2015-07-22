@@ -83,8 +83,10 @@ dictionary:
     ##----------------------ENTRADA BODEGA-------------------------##
     
     ##----------------------SALIDA BODEGA-------------------------##
-    holdOut:              Hold out
-    newHoldOut:           New hold Out
+    holdOut:              Hold Out
+    newHoldOut:           New Hold Out
+    editHoldOut:          Edit Hold Out
+    viewHoldOut:          Information Hold Out
     ##----------------------SALIDA BODEGA-------------------------##
     
     ##-------------------------- CIUDAD----------------------------##

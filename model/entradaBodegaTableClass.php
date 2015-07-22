@@ -63,6 +63,25 @@ class entradaBodegaTableClass extends entradaBodegaBaseTableClass {
     }
     
   }
+  
+  public static function getNameProveedor($id) {
+    try {
+      $sql = 'SELECT ' . proveedorTableClass::RAZON_SOCIAL . ' As nombre  '
+              . ' FROM ' . proveedorTableClass::getNameTable() . '  '
+              . ' WHERE ' . proveedorTableClass::ID . ' = :id';
+      $params = array(
+              ':id' => $id
+              );
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute($params);
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return $answer[0]->nombre;
+      
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+   }
+  
 }
 
 ?>

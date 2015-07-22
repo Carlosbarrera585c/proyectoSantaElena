@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of Empleado
  *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+* @author Cristian Ramirez <ccristianramirezc@gmail.com>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 

@@ -10,7 +10,23 @@ use mvc\view\viewClass as view ?>
 <?php $provee = proveedorTableClass::ID ?>
 <?php $empleado = empleadoTableClass::ID ?>
 <?php view::includePartial('menu/menu') ?>
-<div class="container container-fluid">   
+<!-- ventana Modal Error al Eliminar Foraneas-->
+<div class="container container-fluid">
+  <div class="modal fade" id="myModalErrorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete') ?></h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin Ventana Modal Error al Eliminar Foraneas-->  
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -41,7 +57,7 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 
-
+<!-- ventana Modal Reportes-->
     <div class="modal fade" id="myModalFILTROSREPORTE" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -69,7 +85,7 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
 
-
+<!-- ventana Modal fin Reportes-->
 
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-inbox"></i> <?php echo i18n::__('holdOut') ?></h1>
@@ -93,19 +109,20 @@ use mvc\view\viewClass as view ?>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objSalidaBodega as $entradaB): ?>
+                <?php foreach ($objSalidaBodega as $salidaB): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $entradaB->$fecha ?>"></td>
-                        <td><?php echo $entradaB->$id ?></td>
-                        <td><?php echo $entradaB->$fecha ?></td>
+                        <td><input type="checkbox" name="chk[]" value="<?php echo $salidaB->$fecha ?>"></td>
+                        <td><?php echo $salidaB->$id ?></td>
+                        <td><?php echo $salidaB->$fecha ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'view', array(salidaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'edit', array(salidaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $entradaB->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(salidaBodegaTableClass::ID => $entradaB->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('detail') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'view', array(salidaBodegaTableClass::ID => $salidaB->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'edit', array(salidaBodegaTableClass::ID => $salidaB->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $salidaB->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'view', array(salidaBodegaTableClass::ID => $salidaB->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('detail') ?></a>
                         </td>
                     </tr>
-                <div class="modal fade" id="myModalDelete<?php echo $entradaB->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ 
+                <div class="modal fade" id="myModalDelete<?php echo $salidaB->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -113,11 +130,11 @@ use mvc\view\viewClass as view ?>
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete') ?> <?php echo $entradaB->$fecha ?>?
+                                <?php echo i18n::__('questionDelete') ?> <?php echo $salidaB->$fecha ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $entradaB->$id ?>, '<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $salidaB->$id ?>, '<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
                             </div>
                         </div>
                     </div>
@@ -149,7 +166,7 @@ use mvc\view\viewClass as view ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $entradaB->$id ?>, '<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $salidaB->$id ?>, '<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
             </div>
         </div>
     </div>

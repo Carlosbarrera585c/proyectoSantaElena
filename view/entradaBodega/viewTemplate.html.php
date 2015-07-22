@@ -7,6 +7,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php $id = entradaBodegaTableClass::ID ?>
 <?php $fecha = entradaBodegaTableClass::FECHA ?>
+<?php $proveedorId = entradaBodegaTableClass::PROVEEDOR_ID ?>
 <?php $provee = proveedorTableClass::ID ?>
 <?php $proveeRS = proveedorTableClass::RAZON_SOCIAL ?>
 <?php view::includePartial('menu/menu') ?>
@@ -32,7 +33,7 @@ use mvc\view\viewClass as view ?>
         <tr>
           <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$id : '') ?></td>
           <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fecha : '') ?></td>
-          <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$proveeRS : '') ?></td>
+          <td><?php echo ((isset($objEntradaBodega) == true) ? entradaBodegaTableClass::getNameProveedor($objEntradaBodega[0]->$proveedorId) : '') ?></td>
         </tr>
       </tbody>
     </table>
