@@ -11,21 +11,22 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ *  @author Cristian Ramirez <ccristianramirezc@gmail.com>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
             
-            $id = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
+            $id = request::getInstance()->getRequest(salidaBodegaTableClass::ID, true);
             $fields = array(
-                entradaBodegaTableClass::ID,
-                entradaBodegaTableClass::FECHA,
-                entradaBodegaTableClass::PROVEEDOR_ID
+                salidaBodegaTableClass::ID,
+                salidaBodegaTableClass::FECHA,
+                salidaBodegaTableClass::PROVEEDOR_ID,
+                salidaBodegaTableClass::EMPLEADO_ID
             );
             $where = array (
-            entradaBodegaTableClass::ID  => $id
+            salidaBodegaTableClass::ID  => $id
             );
                 $fieldsPro = array(
                 proveedorTableClass::ID,
@@ -33,8 +34,16 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             );
 
             $this->objProveedor = proveedorTableClass::getAll($fieldsPro,false);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, null, null, null, null, $where);
-            $this->defineView('view', 'entradaBodega', session::getInstance()->getFormatOutput());
+            
+            $fieldsEm = array(
+                empleadoTableClass::ID,
+                empleadoTableClass::NOM_EMPLEADO
+            );
+
+            $this->objEmpleado = empleadoTableClass::getAll($fieldsEm,false);
+            
+            $this->objSalidaBodega = salidaBodegaTableClass::getAll($fields, false, null, null, null, null, $where);
+            $this->defineView('view', 'salidaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';

@@ -19,24 +19,31 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-              $idsToDelete = request::getInstance()->getPost('chk');              
-              foreach ($idsToDelete as $id){
-                  $ids = array(
-                      entradaBodegaTableClass::ID => $id
-                );
-                entradaBodegaTableClass::delete($ids, false);
-              }         
-                       
-               session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('entradaBodega', 'index');
+                $idsToDelete = request::getInstance()->getPost('chk');
+                foreach ($idsToDelete as $id) {
+                    $ids = array(
+                        salidaBodegaTableClass::ID => $id
+                    );
+                    salidaBodegaTableClass::delete($ids, false);
+                }
+
+                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
+                routing::getInstance()->redirect('salidaBodega', 'index');
             } else {
-                routing::getInstance()->redirect('entradaBodega', 'index');
-            }            
+                routing::getInstance()->redirect('salidaBodega', 'index');
+            }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+            switch ($exc->getCode()) {
+                case 23503:
+                    session::getInstance()->setError(i18n::__('errorDeleteForeign'));
+                    routing::getInstance()->redirect('salidaBodega', 'index');
+                    break;
+                case 00000:
+                    break;
+            }
         }
     }
-}
 
+}

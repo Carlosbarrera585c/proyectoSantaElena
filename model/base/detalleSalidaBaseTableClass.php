@@ -3,21 +3,31 @@
 use mvc\model\table\tableBaseClass;
 
 /**
- * Description of Detalle Empaque
- *
- * @author Carlos Barrera <cabarrera22@misena.edu.co>
+ * Description of usuarioBaseTableClass
+ * 
+ * @author Cristian Ramirez <ccritianramirezc@gmail.com>
  */
-class detalleEmpaqueBaseTableClass extends tableBaseClass {
+class detalleSalidaBaseTableClass extends tableBaseClass {
 
     private $id;
     private $cantidad;
+    private $valor;
+    private $fecha_fabricacion;
+    private $fecha_vencimiento;
+    private $id_doc;
+    private $salida_bodega_id;
     private $insumo_id;
-    private $empaque_id;
 
     const ID = 'id';
     const CANTIDAD = 'cantidad';
+    const CANTIDAD_LENGHT = 20;
+    const VALOR = 'valor';
+    const VALOR_LENGHT = 20;
+    const FECHA_FABRICACION = 'fecha_fabricacion';
+    const FECHA_VENCIMIENTO = 'fecha_vencimiento';
+    const ID_DOC = 'id_doc';
+    const SALIDA_BODEGA_ID = 'salida_bodega_id';
     const INSUMO_ID = 'insumo_id';
-    const EMPAQUE_ID = 'empaque_id';
 
     function getId() {
         return $this->id;
@@ -27,12 +37,28 @@ class detalleEmpaqueBaseTableClass extends tableBaseClass {
         return $this->cantidad;
     }
 
-    function getInsumo_id() {
-        return $this->insumo_id;
+    function getValor() {
+        return $this->valor;
     }
 
-    function getEmpaque_id() {
-        return $this->empaque_id;
+    function getFecha_fabricacion() {
+        return $this->fecha_fabricacion;
+    }
+
+    function getFecha_vencimiento() {
+        return $this->fecha_vencimiento;
+    }
+
+    function getId_doc() {
+        return $this->id_doc;
+    }
+
+    function getSalida_bodega_id() {
+        return $this->salida_bodega_id;
+    }
+
+    function getInsumo_id() {
+        return $this->insumo_id;
     }
 
     function setId($id) {
@@ -43,20 +69,38 @@ class detalleEmpaqueBaseTableClass extends tableBaseClass {
         $this->cantidad = $cantidad;
     }
 
+    function setValor($valor) {
+        $this->valor = $valor;
+    }
+
+    function setFecha_fabricacion($fecha_fabricacion) {
+        $this->fecha_fabricacion = $fecha_fabricacion;
+    }
+
+    function setFecha_vencimiento($fecha_vencimiento) {
+        $this->fecha_vencimiento = $fecha_vencimiento;
+    }
+
+    function setId_doc($id_doc) {
+        $this->id_doc = $id_doc;
+    }
+
+    function setSalida_bodega_id($salida_bodega_id) {
+        $this->salida_bodega_id = $salida_bodega_id;
+    }
+
     function setInsumo_id($insumo_id) {
         $this->insumo_id = $insumo_id;
     }
 
-    function setEmpaque_id($empaque_id) {
-        $this->empaque_id = $empaque_id;
-    }
+                        
 
     /**
      * Obtiene el nombre de la tabla
      * @return string
      */
     static public function getNameTable() {
-        return 'detalle_empaque';
+        return 'detalle_salida';
     }
 
     /**
@@ -69,9 +113,11 @@ class detalleEmpaqueBaseTableClass extends tableBaseClass {
      * borrado físico de un registro en una tabla de la base de datos
      * @return PDOException|boolean
      */
+    
     public static function getNameField($field, $html = false, $table = null) {
-        return parent::getNameField($field, self::getNameTable(), $html);
+       return parent::getNameField($field, self::getNameTable(), $html);
     }
+
 
     public static function delete($ids, $deletedLogical = true, $table = null) {
         return parent::delete($ids, $deletedLogical, self::getNameTable());

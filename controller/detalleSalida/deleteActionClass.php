@@ -10,8 +10,8 @@ use mvc\i18n\i18nClass as i18n;
 
 /**
  * Description of ejemploClass
- * 
- * @author Cristian Ramirez <ccristianramirezc@gmail.com>
+ *
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,29 +19,25 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true));
+                $id = request::getInstance()->getPost(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, true));
 
                 $ids = array(
-                    salidaBodegaTableClass::ID => $id
+                    detalleEntradaTableClass::ID => $id
                 );
-                salidaBodegaTableClass::delete($ids, false);
+                detalleEntradaTableClass::delete($ids, false);
                 $this->arrayAjax = array(
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-                $this->defineView('delete', 'salidaBodega', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'detalleEntrada', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
-                routing::getInstance()->redirect('salidaBodega', 'index');
+                routing::getInstance()->redirect('entradaBodega', 'index');
             }
         } catch (PDOException $exc) {
-            $this->arrayAjax = array(
-                'code' => 500,
-                'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
-                'modal' => 'myModalDelete' . $id
-            );
-            $this->defineView('delete', 'salidaBodega', session::getInstance()->getFormatOutput());
+            echo $exc->getMessage();
+            echo '<br>';
+            echo $exc->getTraceAsString();
         }
     }
-
 }

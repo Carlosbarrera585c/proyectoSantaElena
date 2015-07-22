@@ -17,20 +17,20 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
-             if (request::getInstance()->hasRequest(entradaBodegaTableClass::ID)) {
+             if (request::getInstance()->hasRequest(salidaBodegaTableClass::ID)) {
             $fieldsDoc = array(
                 tipoDocTableClass::ID,
                 tipoDocTableClass::DESC_TIPO_DOC
             );
             
             
-            $fieldsEntrada = array(
-                entradaBodegaTableClass::ID,
-                entradaBodegaTableClass::FECHA
+            $fieldsSalida = array(
+                salidaBodegaTableClass::ID,
+                salidaBodegaTableClass::FECHA
             );
             
             $where = array(
-                    entradaBodegaTableClass::ID => request::getInstance()->getRequest(entradaBodegaTableClass::ID)
+                    salidaBodegaTableClass::ID => request::getInstance()->getRequest(salidaBodegaTableClass::ID)
                 );
             
          
@@ -40,12 +40,12 @@ class insertActionClass extends controllerClass implements controllerActionInter
             );
 
             $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, $where);
+            $this->objSalidaBodega = salidaBodegaTableClass::getAll($fieldsSalida, $where);
             $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
-            $this->defineView('insert', 'detalleEntrada', session::getInstance()->getFormatOutput());
+            $this->defineView('insert', 'detalleSalida', session::getInstance()->getFormatOutput());
       
             } else {
-                routing::getInstance()->redirect('entradaBodega', 'index');
+                routing::getInstance()->redirect('SalidaBodega', 'index');
             }
             
             } catch (PDOException $exc) {
