@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * @author Cristian Ramirez <ccristianramirezc@gmail.com>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -20,26 +20,26 @@ class updateActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true));
-                $fecha = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true));
-                $proveedor_id = request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::PROVEEDOR_ID, true));
+                $id = request::getInstance()->getPost(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true));
+                $fecha = request::getInstance()->getPost(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true));
+                $proveedor_id = request::getInstance()->getPost(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, true));
                 
                 $ids = array(
-                    entradaBodegaTableClass::ID => $id
+                    salidaBodegaTableClass::ID => $id
                 );
                 
                 $this->Validate($fecha, $proveedor_id);
 
                 $data = array(
-                    entradaBodegaTableClass::FECHA => $fecha,
-                    entradaBodegaTableClass::PROVEEDOR_ID => $proveedor_id,
+                    salidaBodegaTableClass::FECHA => $fecha,
+                    salidaBodegaTableClass::PROVEEDOR_ID => $proveedor_id,
                     
                 );
 
-                entradaBodegaTableClass::update($ids, $data);
+                salidaBodegaTableClass::update($ids, $data);
             }
             session::getInstance()->setSuccess(i18n::__('successfulUpdate'));
-            routing::getInstance()->redirect('entradaBodega', 'index');
+            routing::getInstance()->redirect('salidaBodega', 'index');
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
@@ -53,17 +53,24 @@ class updateActionClass extends controllerClass implements controllerActionInter
         if ($fecha === '') {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
             $bandera = true;
-            session::getInstance()->setFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true), true);
+            session::getInstance()->setFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true), true);
         }
 
         if ($proveedor_id === '') {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
             $bandera = true;
-            session::getInstance()->setFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::PROVEEDOR_ID, true), true);
+            session::getInstance()->setFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, true), true);
         }
+        
+        if ($proveedor_id === '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            $bandera = true;
+            session::getInstance()->setFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::EMPLEADO_ID, true), true);
+        }
+        
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('entradaBodega', 'insert');
+            routing::getInstance()->forward('salidaBodega', 'insert');
         }
     }
 

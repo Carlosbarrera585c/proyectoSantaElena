@@ -1,51 +1,61 @@
 
-<?php use mvc\interfaces\controllerActionInterface;
- use mvc\controller\controllerClass;
- use mvc\config\configClass as config;
- use mvc\request\requestClass as request; 
- use mvc\routing\routingClass as routing;
- use mvc\session\sessionClass as session; 
- use mvc\i18n\i18nClass as i18n;
+<?php
+
+use mvc\interfaces\controllerActionInterface;
+use mvc\controller\controllerClass;
+use mvc\config\configClass as config;
+use mvc\request\requestClass as request;
+use mvc\routing\routingClass as routing;
+use mvc\session\sessionClass as session;
+use mvc\i18n\i18nClass as i18n;
+
 /**
  * Description of ejemploClass
  *
- * @author Cristian Ramirez <ccristianramirezc@gmail.com>
+ *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(salidaBodegaTableClass::ID)) {
+            if (request::getInstance()->hasRequest(detalleEntradaTableClass::ID)) {
                 $fields = array(
-                    salidaBodegaTableClass::ID,
-                    salidaBodegaTableClass::FECHA,
-                    salidaBodegaTableClass::PROVEEDOR_ID,
-                    salidaBodegaTableClass::EMPLEADO_ID
-                    
+                    detalleEntradaTableClass::ID,
+                    detalleEntradaTableClass::CANTIDAD,
+                    detalleEntradaTableClass::VALOR,
+                    detalleEntradaTableClass::FECHA_FABRICACION,
+                    detalleEntradaTableClass::FECHA_VENCIMIENTO,
+                    detalleEntradaTableClass::ID_DOC,
+                    detalleEntradaTableClass::ENTRADA_BODEGA_ID,
+                    detalleEntradaTableClass::INSUMO_ID,
                 );
                 $where = array(
-                    salidaBodegaTableClass::ID => request::getInstance()->getRequest(salidaBodegaTableClass::ID)
+                    detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
                 );
+                
+            $fieldsDoc = array(
+                tipoDocTableClass::ID,
+                tipoDocTableClass::DESC_TIPO_DOC
+            );
+            
+            $fieldsEntrada = array(
+                entradaBodegaTableClass::ID,
+                entradaBodegaTableClass::FECHA
+            );
+            
+            $fieldsInsumo = array(
+                insumoTableClass::ID,
+                insumoTableClass::DESC_INSUMO
+            );
 
-                
-                $fieldsP = array(
-                   proveedorTableClass::ID,
-                   proveedorTableClass::RAZON_SOCIAL
-                );
-                
-                $this->objProveedor = proveedorTableClass::getAll($fieldsP,false);
-                
-                $fieldsEm = array(
-                   empleadoTableClass::ID,
-                   empleadoTableClass::NOM_EMPLEADO
-                );
-                
-                $this->objEmpleado = empleadoTableClass::getAll($fieldsEm,false);
-                
-                $this->objSalidaBodega = salidaBodegaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'salidaBodega', session::getInstance()->getFormatOutput());
+            $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
+            $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
+
+                $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                $this->defineView('edit', 'detalleEntrada', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('salidaBodega', 'index');
+                routing::getInstance()->redirect('entradaBodega', 'index');
             }
 
 //            if (request::getInstance()->isMethod('POST')) {

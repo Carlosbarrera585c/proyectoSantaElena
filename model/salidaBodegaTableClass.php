@@ -63,6 +63,45 @@ class salidaBodegaTableClass extends salidaBodegaBaseTableClass {
     }
     
   }
+  
+  
+    public static function getNameProveedor($id) {
+    try {
+      $sql = 'SELECT ' . proveedorTableClass::RAZON_SOCIAL . ' As nombre  '
+              . ' FROM ' . proveedorTableClass::getNameTable() . '  '
+              . ' WHERE ' . proveedorTableClass::ID . ' = :id';
+      $params = array(
+              ':id' => $id
+              );
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute($params);
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return $answer[0]->nombre;
+      
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+   }
+   
+   
+     public static function getNameEmpleado($id) {
+    try {
+      $sql = 'SELECT ' . empleadoTableClass::NOM_EMPLEADO . ' As nombre  '
+              . ' FROM ' . empleadoTableClass::getNameTable() . '  '
+              . ' WHERE ' . empleadoTableClass::ID . ' = :id';
+      $params = array(
+              ':id' => $id
+              );
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute($params);
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return $answer[0]->nombre;
+      
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+   }
+  
 }
 
 ?>

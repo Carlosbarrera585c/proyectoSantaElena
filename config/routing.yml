@@ -880,8 +880,7 @@ detalleEntrada_index:
   url:    /detalleEntrada/index
   param:  { module: detalleEntrada, action: index, format: html }
   load:
-    - model/base/detalleEntradaBaseTableClass.php
-    - model/detalleEntradaTableClass.php
+
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
     - model/base/tipoDocBaseTableClass.php
@@ -971,6 +970,103 @@ detalleEntrada_reporte:
     - model/base/detalleEntradaBaseTableClass.php
     - model/detalleEntradaTableClass.php
 ##--------------------------DETALLE ENTRADA----------------------------##
+
+
+##--------------------------DETALLE SALIDA-----------------------------##
+
+detalleSalida_index:
+  url:    /detalleSalida/index
+  param:  { module: detalleSalida, action: index, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+detalleSalida_insert:
+  url:    /detalleSalida/insertar
+  param:  { module: detalleSalida, action: insert, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+ 
+    
+detalleSalida_view:
+  url:    /detalleSalida/ver
+  param:  { module: detalleSalida, action: view, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+detalleSalida_create:
+  url:    /detalleSalida/crear
+  param:  { module: detalleSalida, action: create, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+
+detalleSalida_edit:
+  url:    /detalleSalida/editar
+  param:  { module: detalleSalida, action: edit, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+    - model/base/tipoDocBaseTableClass.php
+    - model/tipoDocTableClass.php
+    - model/base/salidaBodegaBaseTableClass.php
+    - model/salidaBodegaTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+
+detalleSalida_update:
+  url:    /detalleSalida/actualizar
+  param:  { module: detalleSalida, action: update, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+
+detalleSalida_delete:
+  url:    /detalleSalida/eliminar
+  param:  { module: detalleSalida, action: delete, format: json }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+
+detalleSalida_deleteSelect:
+  url:    /detalleSalida/eliminarSeleccion
+  param:  { module: detalleSalida, action: deleteSelect, format: html }
+  load:
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+
+detalleSalida_deleteFilters:
+  url:    /detalleSalida/borrarFiltros
+  param:  { module: detalleSalida, action: deleteFilters, format: html }
+  
+detalleSalida_reporte:
+  url:    /detalleSalida/reporte
+  param:  { module: detalleSalida, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/detalleSalidaBaseTableClass.php
+    - model/detalleSalidaTableClass.php
+##--------------------------DETALLE SALIDA----------------------------##
 
 ##--------------------------EMPRESA-----------------------------##
 
