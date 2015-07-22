@@ -29,7 +29,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-                $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'ingresoCaña', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
                 routing::getInstance()->redirect('ingresoCaña', 'index');
@@ -40,7 +40,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'code' => 500,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-          $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
+          $this->defineView('delete', 'ingresoCaña', session::getInstance()->getFormatOutput());
                 
         }
     }

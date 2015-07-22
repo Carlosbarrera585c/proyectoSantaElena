@@ -215,6 +215,10 @@ dictionary:
     newDetailIncome:      Nuevo Detalle Ingreso Caña
     editDetailIncome:     Editar Detalle Ingreso Caña
     infoDetailIncome:     Informacion de Detalle Ingreso Caña
+    quantity:             Cantidad
+    caneOrigin:           Procedencia Caña
+    caneWeight:           Peso Caña
+    wagonNumber:          Numero Vagon
        
     ##---------------------- INGRESO CAÑA----------------------------## 
     ##---------------------- SOLICITUD INSUMO-------------------------##
