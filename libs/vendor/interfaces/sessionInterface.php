@@ -108,6 +108,8 @@ namespace mvc\interfaces {
     public function getCache($cache);
 
     public function hasCache($cache);
+    
+    public function deleteCache($cache = null);
   }
 
 }

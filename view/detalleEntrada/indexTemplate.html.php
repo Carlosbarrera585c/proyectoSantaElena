@@ -1,6 +1,10 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $id = detalleEntradaTableClass::ID ?>
 <?php $cant = detalleEntradaTableClass::CANTIDAD ?>
 <?php $valor = detalleEntradaTableClass::VALOR ?>
@@ -16,8 +20,6 @@
 
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">  
-       
-
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -54,7 +56,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('detailEntrance') ?></i></h1>
     </div>
@@ -66,7 +68,7 @@
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <?php view::includeHandlerMessage() ?>
+<?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
                 <tr class="columna tr_table">
@@ -81,10 +83,10 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objDetalleEntrada as $detalleEntrada): ?>
+<?php foreach ($objDetalleEntrada as $detalleEntrada): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $detalleEntrada->$id ?>"></td>
-                      
+
                         <td><?php echo $detalleEntrada->$id ?></td>
                         <td><?php echo $detalleEntrada->$cant ?></td>
                         <td><?php echo $detalleEntrada->$valor ?></td>
@@ -105,7 +107,7 @@
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete') ?> <?php echo $detalleEntrada->$fechaFB ?>?
+    <?php echo i18n::__('questionDelete') ?> <?php echo $detalleEntrada->$fechaFB ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -114,13 +116,13 @@
                         </div>
                     </div>
                 </div>
-            <?php endforeach ?>
+<?php endforeach ?>
             </tbody>
         </table>
     </form>
-        <div class="text-right">
+    <div class="text-right">
         Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>')">
-            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+<?php for ($x = 1; $x <= $cntPages; $x++): ?>
                 <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
 <?php endfor ?>
         </select> de <?php echo $cntPages ?>
@@ -137,7 +139,7 @@
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
             </div>
             <div class="modal-body">
-                <?php echo i18n::__('confirmDeleteMass') ?>
+<?php echo i18n::__('confirmDeleteMass') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

@@ -41,7 +41,7 @@ use mvc\session\sessionClass as session ?>
                 </div>
                 <div class="modal-body">
                     <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>">
-                        <?php view::includeHandlerMessage('errorNombre') ?>
+                        <?php view::getMessageError('errorNombre') ?>
                         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)) === TRUE) ? 'has-error has-feedback' : ''; ?> ">
                             <label for="filterNombre" class="col-sm-2 control-label"><?php echo i18n::__('employeeName') ?></label>
                             <div class="col-sm-10">
@@ -57,7 +57,7 @@ use mvc\session\sessionClass as session ?>
                             <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
-                        <?php view::includeHandlerMessage('errorNumeroIdentificacion') ?>
+                        <?php view::getMessageError('errorNumeroIdentificacion') ?>
                         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
                             <label for="filterNumIdentificacion" class="col-sm-2 control-label"><?php echo i18n::__('numberIdentification') ?></label>
                             <div class="col-sm-10">
@@ -81,7 +81,7 @@ use mvc\session\sessionClass as session ?>
                             <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
-                        <?php view::includeHandlerMessage('errorCorreo') ?>
+                        <?php view::getMessageError('errorCorreo') ?>
                         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
                             <label for="filterCorreo" class="col-sm-2 control-label"><?php echo i18n::__('mail') ?></label>
                             <div class="col-sm-10">
