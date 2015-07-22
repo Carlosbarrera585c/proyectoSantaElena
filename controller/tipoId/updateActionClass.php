@@ -62,6 +62,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
     }
     if ($bandera === true) {
       request::getInstance()->setMethod('GET');
+       request::getInstance()->addParamGet(array(tipoIdTableClass::ID => request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::ID, true))));
       routing::getInstance()->forward('tipoId', 'insert');
     }
   }

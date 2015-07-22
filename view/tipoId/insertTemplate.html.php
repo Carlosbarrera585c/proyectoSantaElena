@@ -10,5 +10,5 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="fa fa-plus"> <?php echo i18n::__('newIdentification') ?></i></h1>
     </div>
-<?php view::includePartial('tipoId/formTipo') ?>
+    <?php view::includePartial('tipoId/formTipo') ?>
 </div>

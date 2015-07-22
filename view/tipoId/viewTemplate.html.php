@@ -19,7 +19,7 @@ use mvc\view\viewClass as view ?>
     </div>
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
-        <tr class="active columna success">
+        <tr class="columna tr_table">
           <th><?php echo i18n::__('id') ?></th>
           <th><?php echo i18n::__('desc') ?></th>
         </tr>

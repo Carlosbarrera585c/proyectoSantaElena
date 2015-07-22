@@ -30,6 +30,14 @@ class editActionClass extends controllerClass implements controllerActionInterfa
       } else {
         routing::getInstance()->redirect('tipoId', 'index');
       }
+    } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
+    }
+  }
+
+}
+
 
 //            if (request::getInstance()->isMethod('POST')) {
 //
@@ -60,11 +68,3 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //            } else {
 //                routing::getInstance()->redirect('datoUsuario', 'index');
 //            }
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
-    }
-  }
-
-}

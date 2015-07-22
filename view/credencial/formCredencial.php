@@ -25,7 +25,7 @@ use mvc\request\requestClass as request ?>
                 <div class="col-lg-10">
                     <input id="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objCredencial) == true) ? $objCredencial[0]->$nombreCredencial : '') ?><?php echo (session::getInstance()->hasFlash(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) : '' ?>" name="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" placeholder="Introduce la Credencial">
                     <?php if (session::getInstance()->hasFlash(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) === true): ?>
-                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                     <?php endif ?>
                 </div>
             </div>

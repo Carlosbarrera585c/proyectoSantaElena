@@ -46,7 +46,7 @@ use mvc\view\viewClass as view ?>
     <?php view::includeHandlerMessage() ?>
     <table class="table table-bordered table-responsive table-hover tables">
       <thead>
-        <tr class="active columna success">
+        <tr class="columna tr_table">
           <th class="tamano"><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('identificationType') ?></th>
           <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>

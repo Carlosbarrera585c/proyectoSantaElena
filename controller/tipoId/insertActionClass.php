@@ -19,9 +19,8 @@ class insertActionClass extends controllerClass implements controllerActionInter
         try {
             $this->defineView('insert', 'tipoId', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
 

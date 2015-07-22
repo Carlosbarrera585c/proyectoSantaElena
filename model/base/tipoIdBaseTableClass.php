@@ -14,7 +14,7 @@ class tipoIdBaseTableClass extends tableBaseClass {
 
     const ID = 'id';
     const DESC_TIPO_ID = 'desc_tipo_id';
-    const DESC_TIPO_ID_LENGTH =  15 ;
+    const DESC_TIPO_ID_LENGTH =  30 ;
 
     function getId() {
         return $this->id;
