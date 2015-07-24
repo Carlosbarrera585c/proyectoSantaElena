@@ -17,53 +17,45 @@ class reportActionClass extends controllerClass implements controllerActionInter
         $report = request::getInstance()->getPost('report');
         // aqui validar datos de filtros
         if (isset($report['fechaCreacion1']) and $report['fechaCreacion1'] !== NULL and $report['fechaCreacion1'] !== '' and isset($report['fechaCreacion2']) and $report['fechaCreacion2'] !== NULL and $report['fechaCreacion2'] !== '') {
-          $where[controlCalidadTableClass::FECHA] = array(
+          $where[ingresoCañaTableClass::FECHA] = array(
               $report['fechaCreacion1'],
               $report['fechaCreacion2']
           );
         }
-        if (isset($report['Turno']) and $report['Turno'] !== NULL and $report['Turno'] !== '') {
-          $where[controlCalidadTableClass::TURNO] = $report['Turno'];
-        }
-        if (isset($report['Brix']) and $report['Brix'] !== NULL and $report['Brix'] !== '') {
-          $where[controlCalidadTableClass::BRIX] = $report['Brix'];
-        }
-        if (isset($report['Ph']) and $report['Ph'] !== NULL and $report['Ph'] !== '') {
-          $where[controlCalidadTableClass::PH] = $report['Ph'];
-        }
-        if (isset($report['Ar']) and $report['Ar'] !== NULL and $report['Ar'] !== '') {
-          $where[controlCalidadTableClass::AR] = $report['Ar'];
-        }
-        if (isset($report['Sacarosa']) and $report['Sacarosa'] !== NULL and $report['Sacarosa'] !== '') {
-          $where[controlCalidadTableClass::SACAROSA] = $report['Sacarosa'];
-        }
-        if (isset($report['Pureza']) and $report['Pureza'] !== NULL and $report['Pureza'] !== '') {
-          $where[controlCalidadTableClass::PUREZA] = $report['Pureza'];
-        }
         if (isset($report['Empleado']) and $report['Empleado'] !== NULL and $report['Empleado'] !== '') {
-          $where[controlCalidadTableClass::EMPLEADO_ID] = $report['Empleado'];
+          $where[ingresoCañaTableClass::EMPLEADO_ID] = $report['Empleado'];
         }
         if (isset($report['Proveedor']) and $report['Proveedor'] !== NULL and $report['Proveedor'] !== '') {
-          $where[controlCalidadTableClass::PROVEEDOR_ID] = $report['Proveedor'];
+          $where[ingresoCañaTableClass::PROVEEDOR_ID] = $report['Proveedor'];
+        }
+        if (isset($report['Cantidad']) and $report['Cantidad'] !== NULL and $report['Cantidad'] !== '') {
+          $where[ingresoCañaTableClass::CANTIDAD] = $report['Cantidad'];
+        }
+        if (isset($report['Procedencia']) and $report['Procedencia'] !== NULL and $report['Procedencia'] !== '') {
+          $where[ingresoCañaTableClass::PROCEDENCIA_CAÑA] = $report['Procedencia'];
+        }
+        if (isset($report['Peso']) and $report['Peso'] !== NULL and $report['Peso'] !== '') {
+          $where[ingresoCañaTableClass::PESO_CAÑA] = $report['Peso'];
+        }
+        if (isset($report['Vagon']) and $report['Vagon'] !== NULL and $report['Vagon'] !== '') {
+          $where[ingresoCañaTableClass::NUM_VAGON] = $report['Vagon'];
         }
         $fields = array(
-            controlCalidadTableClass::ID,
-            controlCalidadTableClass::FECHA,
-            controlCalidadTableClass::TURNO,
-            controlCalidadTableClass::BRIX,
-            controlCalidadTableClass::PH,
-            controlCalidadTableClass::AR,
-            controlCalidadTableClass::SACAROSA,
-            controlCalidadTableClass::PUREZA,
-            controlCalidadTableClass::EMPLEADO_ID,
-            controlCalidadTableClass::PROVEEDOR_ID
+            ingresoCañaTableClass::ID,
+            ingresoCañaTableClass::FECHA,
+            ingresoCañaTableClass::EMPLEADO_ID,
+            ingresoCañaTableClass::PROVEEDOR_ID,
+            ingresoCañaTableClass::CANTIDAD,
+            ingresoCañaTableClass::PROCEDENCIA_CAÑA,
+            ingresoCañaTableClass::PESO_CAÑA,
+            ingresoCañaTableClass::NUM_VAGON
         );
 
         $orderBy = array(
-            controlCalidadTableClass::ID
+            ingresoCañaTableClass::ID
         );
-        $this->objControlCalidad = controlCalidadTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);
-        $this->defineView('report', 'controlCalidad', session::getInstance()->getFormatOutput());
+        $this->objIngresoCaña = ingresoCañaTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);
+        $this->defineView('report', 'ingresoCaña', session::getInstance()->getFormatOutput());
       }
 //            $fields = array(
 //            controlCalidadTableClass::ID,

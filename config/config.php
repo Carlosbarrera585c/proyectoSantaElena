@@ -32,7 +32,7 @@ config::setPathAbsolute('/var/www/html/proyectoSantaHelena/');
 //config::setUrlBase('http://localhost/proyectoSantaHelena/web/');
 //Host Virtual
 config::setUrlBase('http://www.santahelena.com/');
-config::setScope('prod'); // dev
+config::setScope('dev'); // dev
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');
 } else {

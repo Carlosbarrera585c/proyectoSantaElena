@@ -30,6 +30,73 @@ use mvc\view\viewClass as view ?>
     </div>
   </div>
   <!-- Fin Ventana Modal Error al Eliminar Foraneas-->
+  <!-- Uso de ventana modal para reportes con filtro-->
+  <div class="modal fade" id="myModalFILTROSREPORTE" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('generate report') ?></h4>
+        </div>
+        <div class="modal-body">
+          <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'report') ?>">
+            <div class="form-group">
+              <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+              <div class="col-sm-10">
+                <input type="date" name="report[fechaCreacion1]" class="form-control" id="filterCreacion1" placeholder="<?php echo i18n::__('date') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+              <div class="col-sm-10">
+                <input type="date" name="report[fechaCreacion2]" class="form-control" id="filterCreacion2" placeholder="<?php echo i18n::__('date') ?>">
+              </div>
+            </div>
+               <div class="form-group">
+              <label for="reportEmpleado" class="col-sm-2 control-label"><?php echo i18n::__('idEmployed') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterPureza" name="report[Empleado]" placeholder="<?php echo i18n::__('idEmployed') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportProveedor" class="col-sm-2 control-label"><?php echo i18n::__('idProvider') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterPureza" name="report[Proveedor]" placeholder="<?php echo i18n::__('idProvider') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportCantidad" class="col-sm-2 control-label"><?php echo i18n::__('quantity') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterTurno" name="report[Cantidad]" placeholder="<?php echo i18n::__('quantity') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('caneOrigin') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterBrix" name="report[Procedencia]" placeholder="<?php echo i18n::__('caneOrigin') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportPeso" class="col-sm-2 control-label"><?php echo i18n::__('caneWeight') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterPh" name="report[Peso]" placeholder="<?php echo i18n::__('caneWeight') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportVagon" class="col-sm-2 control-label"><?php echo i18n::__('wagonNumber') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterAr" name="report[Vagon]" placeholder="<?php echo i18n::__('wagonNumber') ?>">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+          <button type="button" onclick="$('#reportFilterForm').submit()" class="btn btn-primary"><?php echo i18n::__('generate') ?></button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--Ventana modal para uso de filtros-->
   <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -103,6 +170,7 @@ use mvc\view\viewClass as view ?>
       <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
       <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+      <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
     </div>
     </div>
 <?php view::includeHandlerMessage() ?>
