@@ -39,15 +39,24 @@ namespace mvc\cache {
      */
     public function loadYaml($yaml, $index) {
       try {
-        if (session::getInstance()->hasCache($index) and config::getScope() === 'prod') {
+        if ((session::getInstance()->hasCache($index) and config::getScope() === 'prod') or ( session::getInstance()->hasCache($index) and config::getScope() === 'dev')) {
           $answer = session::getInstance()->getCache($index);
         } else {
           $answer = \sfYaml::load($yaml);
           session::getInstance()->setCache($index, $answer);
+          if (config::getScope() === 'dev') {
+            session::getInstance()->setFlash('mvcCacheFlag', true);
+          }
         }
         return $answer;
       } catch (\PDOException $exc) {
         throw $exc;
+      }
+    }
+
+    public function __destruct() {
+      if (session::getInstance()->hasFlash('mvcCacheFlag') === true and config::getScope() === 'dev') {
+        session::getInstance()->deleteCache();
       }
     }
 
