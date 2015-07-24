@@ -11,26 +11,26 @@ use mvc\i18n\i18nClass as i18n;
 
 /**
  * Description of ejemploClass
- *
- *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * 
+* @author Cristian Ramirez <ccritianramirezc@gmail.com>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(detalleEntradaTableClass::ID)) {
+            if (request::getInstance()->hasRequest(detalleSalidaTableClass::ID)) {
                 $fields = array(
-                    detalleEntradaTableClass::ID,
-                    detalleEntradaTableClass::CANTIDAD,
-                    detalleEntradaTableClass::VALOR,
-                    detalleEntradaTableClass::FECHA_FABRICACION,
-                    detalleEntradaTableClass::FECHA_VENCIMIENTO,
-                    detalleEntradaTableClass::ID_DOC,
-                    detalleEntradaTableClass::ENTRADA_BODEGA_ID,
-                    detalleEntradaTableClass::INSUMO_ID,
+                    detalleSalidaTableClass::ID,
+                    detalleSalidaTableClass::CANTIDAD,
+                    detalleSalidaTableClass::VALOR,
+                    detalleSalidaTableClass::FECHA_FABRICACION,
+                    detalleSalidaTableClass::FECHA_VENCIMIENTO,
+                    detalleSalidaTableClass::ID_DOC,
+                    detalleSalidaTableClass::SALIDA_BODEGA_ID,
+                    detalleSalidaTableClass::INSUMO_ID,
                 );
                 $where = array(
-                    detalleEntradaTableClass::ID => request::getInstance()->getRequest(detalleEntradaTableClass::ID)
+                    detalleSalidaTableClass::ID => request::getInstance()->getRequest(detalleSalidaTableClass::ID)
                 );
                 
             $fieldsDoc = array(
@@ -38,9 +38,9 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 tipoDocTableClass::DESC_TIPO_DOC
             );
             
-            $fieldsEntrada = array(
-                entradaBodegaTableClass::ID,
-                entradaBodegaTableClass::FECHA
+            $fieldsSalida = array(
+                salidaBodegaTableClass::ID,
+                salidaBodegaTableClass::FECHA
             );
             
             $fieldsInsumo = array(
@@ -49,13 +49,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             );
 
             $this->objTipoDoc = tipoDocTableClass::getAll($fieldsDoc,false);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada);
+            $this->objSalidaBodega = salidaBodegaTableClass::getAll($fieldsSalida);
             $this->objInsu = insumoTableClass::getAll($fieldsInsumo);
 
-                $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-                $this->defineView('edit', 'detalleEntrada', session::getInstance()->getFormatOutput());
+                $this->objDetalleSalida = detalleSalidaTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+                $this->defineView('edit', 'detalleSalida', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('entradaBodega', 'index');
+                routing::getInstance()->redirect('salidaBodega', 'index');
             }
 
 //            if (request::getInstance()->isMethod('POST')) {
