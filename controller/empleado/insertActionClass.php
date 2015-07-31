@@ -15,25 +15,25 @@ use mvc\i18n\i18nClass as i18n;
  */
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
+    public function execute() {
+        try {
 
-      $fieldsTipoId = array(
-          tipoIdTableClass::ID,
-          tipoIdTableClass::DESC_TIPO_ID
-      );
-      $fieldsCredencial = array(
-          credencialTableClass::ID,
-          credencialTableClass::NOMBRE
-      );
+            $fieldsTipoId = array(
+                tipoIdTableClass::ID,
+                tipoIdTableClass::DESC_TIPO_ID
+            );
+            $fieldsCredencial = array(
+                credencialTableClass::ID,
+                credencialTableClass::NOMBRE
+            );
 
-      $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
-      $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
-      $this->defineView('insert', 'empleado', session::getInstance()->getFormatOutput());
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+            $this->objCredencial = credencialTableClass::getAll($fieldsCredencial);
+            $this->objTipoId = tipoIdTableClass::getAll($fieldsTipoId);
+            $this->defineView('insert', 'empleado', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

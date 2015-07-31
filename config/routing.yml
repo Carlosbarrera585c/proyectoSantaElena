@@ -312,7 +312,6 @@ empleado_deleteFilters:
   url:    /empleado/borrarFiltros
   param:  { module: empleado, action: deleteFilters, format: html }
   
-  
 empleado_index:
   url:    /empleado/index
   param:  { module: empleado, action: index, format: html }
@@ -586,33 +585,43 @@ tipoInsumo_reporte:
 
 ##-------------------------- PAGO TRABAJADORES-----------------------------##
 
+pagoTrabajadores_deleteFilters:
+  url:    /pagoTrabajadores/borrarFiltros
+  param:  { module: pagoTrabajadores, action: deleteFilters, format: html }
+  
 pagoTrabajadores_index:
   url:    /pagoTrabajadores/index
   param:  { module: pagoTrabajadores, action: index, format: html }
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
-    - model/base/empresaBaseTableClass.php
-    - model/empresaTableClass.php
-
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+    
 pagoTrabajadores_insert:
   url:    /pagoTrabajadores/insertar
   param:  { module: pagoTrabajadores, action: insert, format: html }
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
-    - model/base/empresaBaseTableClass.php
-    - model/empresaTableClass.php
-    
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+        
 pagoTrabajadores_view:
   url:    /pagoTrabajadores/ver
   param:  { module: pagoTrabajadores, action: view, format: html }
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
-    - model/base/empresaBaseTableClass.php
-    - model/empresaTableClass.php
-
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+    
 pagoTrabajadores_create:
   url:    /pagoTrabajadores/crear
   param:  { module: pagoTrabajadores, action: create, format: html }
@@ -626,9 +635,11 @@ pagoTrabajadores_edit:
   load:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
-    - model/base/empresaBaseTableClass.php
-    - model/empresaTableClass.php
-
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
+    
 pagoTrabajadores_update:
   url:    /pagoTrabajadores/actualizar
   param:  { module: pagoTrabajadores, action: update, format: html }
@@ -650,6 +661,13 @@ pagoTrabajadores_deleteSelect:
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
 
+pagoTrabajadores_reporte:
+  url:    /pagoTrabajadores/reporte
+  param:  { module: pagoTrabajadores, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/pagoTrabajadoresBaseTableClass.php
+    - model/pagoTrabajadoresTableClass.php
 ##-------------------------- PAGO TRABAJADORES----------------------------##
 
 ##-------------------------- ENTRADA BODEGA-----------------------------##

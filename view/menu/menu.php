@@ -37,10 +37,6 @@ use mvc\session\sessionClass as session ?>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>"><?php echo i18n::__('payWorkers') ?></a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('empresa', 'index') ?>"><?php echo i18n::__('business') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoPago', 'index') ?>"><?php echo i18n::__('paymentType') ?></a></li>
-                        <li class="divider"></li>
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'index') ?>"><?php echo i18n::__('city') ?></a></li>           
                     </ul>
                 </li>

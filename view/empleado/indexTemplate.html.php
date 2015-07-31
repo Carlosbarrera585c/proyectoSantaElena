@@ -14,8 +14,8 @@ use mvc\session\sessionClass as session ?>
 <?php $id = empleadoTableClass::ID ?>
 <?php $nomEmpleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php view::includePartial('menu/menu') ?>
-<!-- ventana Modal Error al Eliminar Foraneas-->
 <div class="container container-fluid">
+    <!-- ventana Modal Error al Eliminar Foraneas-->
     <div class="modal fade" id="myModalErrorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -54,7 +54,7 @@ use mvc\session\sessionClass as session ?>
                             <label for="filterApellido" class="col-sm-2 control-label"><?php echo i18n::__('employeeLastName') ?></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="filterApellido" name="filter[Apellido]" placeholder="<?php echo i18n::__('employeeLastName') ?>">
-                            <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                                <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
                         <?php view::getMessageError('errorNumeroIdentificacion') ?>
@@ -62,7 +62,7 @@ use mvc\session\sessionClass as session ?>
                             <label for="filterNumIdentificacion" class="col-sm-2 control-label"><?php echo i18n::__('numberIdentification') ?></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="filterNumIdentificacion" name="filter[NumIdentificacion]" placeholder="<?php echo i18n::__('numberIdentification') ?>">
-                            <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                                <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
                         <?php view::getMessageError('errorTelefono') ?>
@@ -70,7 +70,7 @@ use mvc\session\sessionClass as session ?>
                             <label for="filterTelefono" class="col-sm-2 control-label"><?php echo i18n::__('phone') ?></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="filterTelefono" name="filter[Telefono]" placeholder="<?php echo i18n::__('phone') ?>">
-                            <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                                <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
                         <?php view::getMessageError('errorDireccion') ?>
@@ -78,7 +78,7 @@ use mvc\session\sessionClass as session ?>
                             <label for="filterDireccion" class="col-sm-2 control-label"><?php echo i18n::__('direction') ?></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="filterDireccion" name="filter[Direccion]" placeholder="<?php echo i18n::__('direction') ?>">
-                            <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                                <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
                         <?php view::getMessageError('errorCorreo') ?>
@@ -86,15 +86,15 @@ use mvc\session\sessionClass as session ?>
                             <label for="filterCorreo" class="col-sm-2 control-label"><?php echo i18n::__('mail') ?></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="filterCorreo" name="filter[Correo]" placeholder="<?php echo i18n::__('mail') ?>">
-                            <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                                <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                    <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
             </div>
         </div>
     </div>

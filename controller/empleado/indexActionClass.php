@@ -70,8 +70,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             session::getInstance()->setError(i18n::__('errorLengthEmployee', NULL, 'default', array('%nombre%' => $nomEmpleado, '%caracteres%' => empleadoTableClass::NOM_EMPLEADO_LENGTH)), 'errorNombre');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
-        }
-        else if (!preg_match('/^[a-zA-Z ]*$/', $nomEmpleado)) {
+        } elseif (!preg_match('/^[a-zA-Z ]*$/', $nomEmpleado)) {
             session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $nomEmpleado)), 'errorNombre');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true), true);
@@ -80,8 +79,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             session::getInstance()->setError(i18n::__('errorLengthLastEmployee', NULL, 'default', array('%apellido%' => $apellEmpleado, '%caracteres%' => empleadoTableClass::APELL_EMPLEADO_LENGTH)), 'errorApellido');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);
-        }
-        else if (!preg_match('/^[a-zA-Z ]*$/', $apellEmpleado)) {
+        } elseif (!preg_match('/^[a-zA-Z ]*$/', $apellEmpleado)) {
             session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $apellEmpleado)), 'errorApellido');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true), true);
@@ -90,8 +88,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             session::getInstance()->setError(i18n::__('errorLengthPhone', NULL, 'default', array('%telefono%' => $telefono, '%caracteres%' => empleadoTableClass::TELEFONO_LENGTH)), 'errorTelefono');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
-        }
-        else if (!is_numeric($telefono)) {
+        } elseif (!is_numeric($telefono)) {
             session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorTelefono');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
@@ -105,8 +102,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             session::getInstance()->setError(i18n::__('errorLengthNumIdentification', NULL, 'default', array('%numIdentification%' => $numeroIdentificacion, '%caracteres%' => empleadoTableClass::NUMERO_IDENTIFICACION_LENGTH)), 'errorNumeroIdentificacion');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
-        }
-        else if (!is_numeric($numeroIdentificacion)) {
+        } elseif (!is_numeric($numeroIdentificacion)) {
             session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorNumeroIdentificacion');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
@@ -116,7 +112,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
         }
-          
+
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
             session::getInstance()->setFlash('modalFilter', true);

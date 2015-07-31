@@ -1,43 +1,173 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
+<?php
+use mvc\config\configClass as config ?>
+<?php
+use mvc\request\requestClass as request ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = pagoTrabajadoresTableClass::ID ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
-<?php $periodo_inicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
-<?php $periodo_fin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
-<?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
-    <div class="container container-fluid">
-   <div class="container container-fluid">
+    <!--     ventana Modal Error al Eliminar Foraneas-->       
+    <div class="modal fade" id="myModalErrorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete') ?></h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                </div>
+            </div>
+        </div>
+    </div><!--
+     Fin Ventana Modal Error al Eliminar Foraneas-->
+    <!--     Inicio Ventana Modal Filtros.-->
+    <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filters') ?></h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>">
+                        //<?php view::getMessageError('date') ?>
+                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::FECHA, true)) === TRUE) ? 'has-error has-feedback' : ''; ?> ">
+                            <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterFecha" name="filter[Fecha]" placeholder="<?php echo i18n::__('date') ?>">
+                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::FECHA, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                            </div>
+                        </div>
+                        //<?php view::getMessageError('errorApellido') ?>
+                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_INICIO, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
+                            <label for="filterPeriodoIncio" class="col-sm-2 control-label"><?php echo i18n::__('periodBeginning') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterPeriodoIncio" name="filter[PeriodoIncio]" placeholder="<?php echo i18n::__('periodBeginning') ?>">
+                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                            </div>
+                        </div>
+                        //<?php view::getMessageError('errorNumeroIdentificacion') ?>
+                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
+                            <label for="filterPeriodoFin" class="col-sm-2 control-label"><?php echo i18n::__('orderPeriod') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterPeriodoFin" name="filter[PeriodoFin]" placeholder="<?php echo i18n::__('orderPeriod') ?>">
+                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                            </div>
+                        </div>
+                        //<?php view::getMessageError('errorTelefono') ?>
+                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
+                            <label for="filterValor" class="col-sm-2 control-label"><?php echo i18n::__('value') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterValor" name="filter[Valor]" placeholder="<?php echo i18n::__('value') ?>">
+                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+            </div>
+        </div>
+    </div>
+    <?php if (session::getInstance()->hasFlash('modalFilter')): ?>
+        <script>
+            $(document).ready(function () {
+                $('#myModalFilters').modal('toggle');
+            });
+        </script>
+    <?php endif; ?>
+    <!--Termina Ventana Modal de Filtros-->
+    <!--Ventana Modal Para Reportes Con Filtros--> 
+    <div class="modal fade" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('generate report') ?></h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'report') ?>">
+                        <div class="form-group">
+                            <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterFecha" name="report[Fecha]" placeholder="<?php echo i18n::__('date') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterPeriodoIncio" class="col-sm-2 control-label"><?php echo i18n::__('periodBeginning') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterPeriodoIncio" name="report[PeriodoIncio]" placeholder="<?php echo i18n::__('periodBeginning') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterPeriodoFin" class="col-sm-2 control-label"><?php echo i18n::__('orderPeriod') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterPeriodoFin" name="report[PeriodoFin]" placeholder="<?php echo i18n::__('orderPeriod') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterValor" class="col-sm-2 control-label"><?php echo i18n::__('phone') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterValor" name="report[Valor]" placeholder="<?php echo i18n::__('phone') ?>">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                    <button type="button" onclick="$('#reportFilterForm').submit()" class="btn btn-primary"><?php echo i18n::__('generate') ?></button>
+                </div>
+            </div>
+        </div>
+    </div><!--Fin De Los Filtros Para Reporte -->
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('payWorkers') ?></h1>
+    </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
-            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+            <?php if (session::getInstance()->hasCredential('admin')): ?>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+                <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+            <?php endif; ?>
+            <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+            <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalReport" ><?php echo i18n::__('printReport') ?></a>
         </div>
-        <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr>
-                    <th><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('date')?></th>
-                    <th><?php echo i18n::__('actions')?></th>
+                <tr class="columna tr_table">
+                    <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                    <th><?php echo i18n::__('date') ?></th>
+                    <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($objPagoTrabajadores as $pagoTrabajadores): ?>
                     <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $pagoTrabajadores->$id ?>"></td>
+                        <td class="tamano"><input type="checkbox" name="chk[]" value="<?php echo $pagoTrabajadores->$id ?>"></td>
                         <td><?php echo $pagoTrabajadores->$fecha ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'view', array(pagoTrabajadoresTableClass::ID => $pagoTrabajadores->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'edit', array(pagoTrabajadoresTableClass::ID => $pagoTrabajadores->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $pagoTrabajadores->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'view', array(pagoTrabajadoresTableClass::ID => $pagoTrabajadores->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
+                            <?php if (session::getInstance()->hasCredential('admin')): ?>
+                                <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'edit', array(pagoTrabajadoresTableClass::ID => $pagoTrabajadores->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $pagoTrabajadores->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <?php endif; ?>
                         </td>
                     </tr>
-                    <div class="modal fade" id="myModalDelete<?php echo $pagoTrabajadores->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade" id="myModalDelete<?php echo $pagoTrabajadores->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -45,7 +175,7 @@
                                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
                             </div>
                             <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $pagoTrabajadores->$fecha ?>?
+                                <?php echo i18n::__('questionDelete') ?> <?php echo $pagoTrabajadores->$fecha ?>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
@@ -54,10 +184,17 @@
                         </div>
                     </div>
                 </div>
-                <?php endforeach ?>
+            <?php endforeach ?>
             </tbody>
         </table>
     </form>
+    <div class="text-right">
+        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>')">
+            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+            <?php endfor ?>
+        </select> de <?php echo $cntPages ?>
+    </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::ID, true) ?>">
     </form>

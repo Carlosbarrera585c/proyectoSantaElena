@@ -1,10 +1,10 @@
-<?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
-<?php view::includePartial('menu/menu') ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
- <div class="page-header  text-center titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editPlayWorkers') ?></i></h1>
-         <?php echo $objPagoTrabajadores[0]->$fecha ?>
-    </div>
+<?php view::includePartial('menu/menu') ?>
+<div class="container container-fluid">
+<div class="page-header titulo">
+    <h1><i class="fa fa-pencil-square"> <?php echo i18n::__('editPlayWorkers') ?> <small><?php echo $objPagoTrabajadores[0]->$fecha ?></small></i></h1>
+  </div>
 <?php view::includePartial('pagoTrabajadores/formPagoTrabajadores', array('objPagoTrabajadores' => $objPagoTrabajadores, 'pagoTrabajadores' => $fecha)) ?>
+</div>

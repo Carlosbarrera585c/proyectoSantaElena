@@ -1,3 +1,4 @@
+
 <?php
 
 use mvc\interfaces\controllerActionInterface;
@@ -9,55 +10,50 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of ejemploClass
+ * Description of Pago Trabajadores
  *
- *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->hasRequest(PagoTrabajadoresTableClass::ID)) {
-        $fields = array(
-            pagoTrabajadoresTableClass::ID,
-            pagoTrabajadoresTableClass::FECHA,
-            pagoTrabajadoresTableClass::PERIODO_INICIO,
-            pagoTrabajadoresTableClass::PERIODO_FIN, 
-            pagoTrabajadoresTableClass::EMPRESA_ID 
-        );
-        $where = array(
-            pagoTrabajadoresTableClass::ID => request::getInstance()->getRequest(pagoTrabajadoresTableClass::ID)
-        );
-        $this->objPagoTrabajadores = pagoTrabajadoresTableClass::getAll($fields, false, null, null, null, null, $where);
-        $this->defineView('edit', 'pagoTrabajadores', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('pagoTrabajadores', 'index');
-      }
-//      if (request::getInstance()->isMethod('POST')) {
-//
-//        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
-//        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-//
-//        if (strlen($usuario) > usuarioTableClass::USUARIO_LENGTH) {
-//          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USUARIO_LENGTH)), 00001);
-//        }
-//
-//        $data = array(
-//            usuarioTableClass::USUARIO => $usuario,
-//            usuarioTableClass::PASSWORD => md5($password)
-//        );
-//        usuarioTableClass::insert($data);
-//        routing::getInstance()->redirect('default', 'index');
-//      } else {
-//        routing::getInstance()->redirect('default', 'index');
-//      }
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+    public function execute() {
+        try {
+            if (request::getInstance()->hasGet(PagoTrabajadoresTableClass::ID)) {
+                $fields = array(
+                    pagoTrabajadoresTableClass::ID,
+                    pagoTrabajadoresTableClass::FECHA,
+                    pagoTrabajadoresTableClass::PERIODO_INICIO,
+                    pagoTrabajadoresTableClass::PERIODO_FIN,
+                    pagoTrabajadoresTableClass::TIPO_PAGO_ID,
+                    pagoTrabajadoresTableClass::VALOR,
+                    pagoTrabajadoresTableClass::EMPLEADO_ID
+                );
+                $where = array(
+                    pagoTrabajadoresTableClass::ID => request::getInstance()->getGet(pagoTrabajadoresTableClass::ID)
+                );
+
+                $fieldsTipoPago = array(
+                    tipoPagoTableClass::ID,
+                    tipoPagoTableClass::DESC_TIPO_PAGO
+                );
+                $fieldsEmpleado = array(
+                    empleadoTableClass::ID,
+                    empleadoTableClass::NOM_EMPLEADO,
+                    empleadoTableClass::APELL_EMPLEADO,
+                    empleadoTableClass::NUMERO_IDENTIFICACION
+                );
+
+                $this->objTipoPago = tipoPagoTableClass::getAll($fieldsTipoPago);
+                $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
+                $this->objPagoTrabajadores = pagoTrabajadoresTableClass::getAll($fields, null, null, null, null, null, $where);
+                $this->defineView('edit', 'pagoTrabajadores', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('pagoTrabajadores', 'index');
+            }
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

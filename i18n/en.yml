@@ -59,6 +59,7 @@ dictionary:
     newTypePacking:       New Type of Packaging
     infoTypePacking:      Information Type of Packaging
     ##----------------------TIPO EMPAQUE-------------------------##
+
     ##----------------------TIPO INSUMO-------------------------##
     inputType:            Input Type
     newInputType:         New Type Input
@@ -79,7 +80,6 @@ dictionary:
     newCellarEntrance:    New Cellar Bodega
     editCellarEntrance:   Edit Cellar Bodeg
     infoCellarEntrance:   Information Cell Bodega
-    
     ##----------------------ENTRADA BODEGA-------------------------##
     
     ##----------------------SALIDA BODEGA-------------------------##
@@ -120,13 +120,11 @@ dictionary:
     ##-------------------------- PAGO TRABAJADORES--------------------##
     
     ##-------------------------- TIPO DOCUMENTO--------------------##
-    
     docType:              Document Type
     descDoc:              Document
     newDocType:           New Document Type
     editDocType:          Edit Document Type
     infoDocType:          Types Information Documents
-  
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     ##-------------------------- CREDENCIAL-----------------------##
@@ -136,7 +134,6 @@ dictionary:
     newCredential:        New Credential
     nameCredential:       Name Credential
     infoCredential:       Information Credentials
-    
     ##-------------------------- CREDENCIAL-----------------------##
     
     ##-------------------------- EMPLEADO-----------------------##
@@ -146,7 +143,7 @@ dictionary:
     employeeLastName:     Employee Last Name
     newEmployee:          New Employee
     editEmployee:         Edit Employee
-    mail:                 Correo
+    mail:                 Mail
     Enter your Name:      Enter Your Name
     Enter your Last Name: Enter your Last Name
     Enter your Phone:     Enter your Phone
@@ -165,15 +162,7 @@ dictionary:
     newIdentification:    New Identification
     infoIdentificationType: Types of Identification Information
     ##---------------------- TIPO IDENTIFICACION----------------##
-    
-     ##---------------------- EMPRESA---------------------------##
-    business:             Business
-    newBusiness:          New Business
-    editBusiness:         Edit Business
-    infoBusiness:         Business Information
-    nit:                  NIT
-    ##---------------------- EMPRESA----------------------------##
-    
+
     ##---------------------- INSUMO----------------------------##
     input:                Input
     descriptionInput:     Description Input
@@ -184,6 +173,7 @@ dictionary:
     price:                Price
     IdentificatiOfInpuType: Id Input Type
     ##---------------------- INSUMO----------------------------##
+
     ##---------------------- EMPAQUE----------------------------##
     packing:              Packing
     informationPacking:   Packaging Information
@@ -192,6 +182,7 @@ dictionary:
     newPacking:           Edit Package
     infoPacking:          Information of Packing
     ##---------------------- EMPAQUE----------------------------##
+
     ##---------------------- DETALLE ENTRADA----------------------------##
     detailEntrance:       Detail Entry Bodega
     newDetailEntrance:    New Detail Entry Bodega
@@ -204,10 +195,8 @@ dictionary:
     idDoc:                Id Document
     idEntrance:           Id Entry Bodega
     idInput:              Id Input
-    
-    
     ##---------------------- DETALLE ENTRADA----------------------------## 
-    
+
     ##---------------------- INGRESO CAÑA----------------------------##
     caneIncome:           Cane Income
     newCaneIncome:        New Cane Income
@@ -215,14 +204,12 @@ dictionary:
     infoCaneIncome:       Cane Income Information
     DetailIncome:         Income Cane Detail
     newDetailIncome:      New Income Detail Cane
-    editIncome:     Edit Income Detail Cane
+    editIncome:           Edit Income Detail Cane
     infoDetailIncome:     Income Cane Detail Information
     quantity:             Quantity
     caneOrigin:           cane origin
     caneWeight:           cane weight
     wagonNumber:          wagon number
-       
-    ##---------------------- INGRESO CAÑA----------------------------## 
     reedIncome:           Reed Income
     quantity:             Quantity
     caneOrigin:           cane origin
@@ -232,11 +219,14 @@ dictionary:
     enterTheCaneOrigin:   enter The Cane Origin
     enterTheCaneWeight:   enter The Cane Weight
     enterTheWagonNumber:  enter The Wagon Number
+    ##---------------------- INGRESO CAÑA----------------------------## 
+   
     ##---------------------- SOLICITUD INSUMO-------------------------##
     inputRequest:         Request Input
        
-    ##----------------------SOLICITUD INSUMO---------------------------## 
-    ##-----------------control calidad-------------------------##
+    ##----------------------SOLICITUD INSUMO---------------------------##
+ 
+    ##-----------------CONTROL CALIDAD-------------------------##
     date:                 Date
     turn:                 Turn
     brix:                 Brix
@@ -251,18 +241,15 @@ dictionary:
     editQualityControl:   Edit Quality Control
     qualityControlInformation: Quality Control Information
     newQualityControl:    New Quality Control
-    enterTheDate:        Enter the Date
-    enterTheTurn:        Enter the Turn
-    enterTheBrix:        Enter the Brix
-    enterThePh:          Enter the Ph
-    enterTheAr:          Enter the Ar
-    enterTheSaccharose:  Enter the Saccharose
-    enterThePurity:      Enter the Purity
-    ##-----------------control calidad---------------------------##
-     
-    ##---------------------- DETALLE EMPAQUE----------------------------##
-    detailPacking:          Detail Packing
-    ##---------------------- DETALLE EMPAQUE----------------------------##
+    enterTheDate:         Enter the Date
+    enterTheTurn:         Enter the Turn
+    enterTheBrix:         Enter the Brix
+    enterThePh:           Enter the Ph
+    enterTheAr:           Enter the Ar
+    enterTheSaccharose:   Enter the Saccharose
+    enterThePurity:       Enter the Purity
+    ##-----------------CONTROL CALIDAD---------------------------##
+
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
@@ -294,4 +281,3 @@ dictionary:
     10003:                The file% file% does not exist.
     10004:                The% path% directory could not be created.
     ##-------------------------- ERRORES--------------------##
-

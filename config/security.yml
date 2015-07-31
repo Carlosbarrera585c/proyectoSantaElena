@@ -132,3 +132,15 @@ empaque:
     security: true
   delete:
     security: true
+
+pagoTrabajadores:
+  index:
+    security: true
+    credencial:
+      -[admin, Consultor]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+    security: true

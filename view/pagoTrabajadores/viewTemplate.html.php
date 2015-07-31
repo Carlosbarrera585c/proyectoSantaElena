@@ -1,44 +1,54 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n?>
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = pagoTrabajadoresTableClass::ID ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
-<?php $periodo_inicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
-<?php $periodo_fin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
-<?php $id_empresa = pagoTrabajadoresTableClass::EMPRESA_ID ?>
+<?php $periodoInicio = pagoTrabajadoresTableClass::PERIODO_INICIO ?>
+<?php $periodoFin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
+<?php $idEmpleado = pagoTrabajadoresTableClass::EMPLEADO_ID ?>
+<?php $idTipoPago = pagoTrabajadoresTableClass::TIPO_PAGO_ID ?>
+<?php $valor = pagoTrabajadoresTableClass::VALOR ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
-    <div class="page-header  text-center titulo">
-       <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoPlayWokers') ?></i></h1>
+    <div class="page-header titulo">
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoPlayWokers') ?></i></h1>
     </div>
-  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
-      <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new')?></a>
-      <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
-     <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back')?></a>
+        <?php if (session::getInstance()->hasCredential('admin')): ?>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+        <?php endif; ?>
+        <a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
     </div>
-    <table class="table table-bordered table-responsive table-condensed">
-      <thead>
-        <tr>
-          <th><?php echo i18n::__('id')?></th>
-          <th><?php echo i18n::__('date')?></th>
-          <th><?php echo i18n::__('periodBeginning')?></th>
-          <th><?php echo i18n::__('orderPeriod')?></th>
-          <th><?php echo i18n::__('idBusiness')?></th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-          <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$id : '') ?></td>
-          <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$fecha : '') ?></td>
-          <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodo_inicio : '') ?></td>
-          <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodo_fin : '') ?></td>
-          <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$id_empresa : '') ?></td>
-          </tr>
-      </tbody>
+    <table class="table table-bordered table-responsive table-condensed tables">
+        <thead>
+            <tr>
+                <th><?php echo i18n::__('id') ?></th>
+                <th><?php echo i18n::__('date') ?></th>
+                <th><?php echo i18n::__('periodBeginning') ?></th>
+                <th><?php echo i18n::__('orderPeriod') ?></th>
+                <th><?php echo i18n::__('employee') ?></th>
+                <th><?php echo i18n::__('numberIdentification') ?></th>
+                <th><?php echo i18n::__('paymentType') ?></th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$id : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$fecha : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodoInicio : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodoFin : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameEmpleado($objEmpleado[0]->$idEmpleado) : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameNumeroIdEmpleado($objEmpleado[0]->$idEmpleado) : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameTipoPago($objEmpleado[0]->$idTipoPago) : '') ?></td>
+            </tr>
+        </tbody>
     </table>
-  </form>
-  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'delete') ?>" method="POST">
-    <input type="hidden" id="idDelete" name="<?php echo pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::ID, true) ?>">
-  </form>
 </div>

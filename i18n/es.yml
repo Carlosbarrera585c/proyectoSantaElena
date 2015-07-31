@@ -4,6 +4,7 @@ dictionary:
   default:
     ##----------------------SISTEMA-------------------------##
     SantaHelena:          SANTA HELENA
+    sesion:               Sesion
     logout:               Logout
     login:                Login
     register:             Registrar
@@ -56,6 +57,7 @@ dictionary:
     newTypePacking:       Nuevo Tipo de Empaque
     infoTypePacking:      Información del Tipo de Empaque
     ##----------------------TIPO EMPAQUE-------------------------##
+
     ##----------------------TIPO INSUMO-------------------------##
     inputType:            Tipo Insumo
     newInputType:         Nuevo Tipo Insumo
@@ -76,7 +78,6 @@ dictionary:
     newCellarEntrance:    Nueva Entrada Bodega
     editCellarEntrance:   Editar Entrada Bodega
     infoCellarEntrance:   Información Entrada Bodega
-    
     ##----------------------ENTRADA BODEGA-------------------------##
     
     ##----------------------SALIDA BODEGA-------------------------##
@@ -117,13 +118,11 @@ dictionary:
     ##-------------------------- PAGO TRABAJADORES--------------------##
     
     ##-------------------------- TIPO DOCUMENTO--------------------##
-    
     docType:              Tipo Documento
     descDoc:              Documento
     newDocType:           Nuevo Tipo Documento
     editDocType:          Editar Tipo Documento
     infoDocType:          Información de los Tipos de Documentos
-  
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     ##-------------------------- CREDENCIAL-----------------------##
@@ -133,7 +132,6 @@ dictionary:
     newCredential:        Nueva Credencial
     nameCredential:       Nombre Credencial
     infoCredential:       Informacion de Credenciales
-    
     ##-------------------------- CREDENCIAL-----------------------##
     
     ##-------------------------- EMPLEADO-----------------------##
@@ -162,16 +160,7 @@ dictionary:
     newIdentification:    Nueva Identificación
     infoIdentificationType: Informacion de Tipos de Identificacion
     ##---------------------- TIPO IDENTIFICACION----------------##
-    
-     ##---------------------- EMPRESA---------------------------##
-    business:             Empresa
-    newBusiness:          Nueva Empresa
-    editBusiness:         Editar Empresa
-    infoBusiness:         Informacion de Empresas
-    infoBusiness:         Información Sobre las Empresas
-    nit:                  NIT
-    ##---------------------- EMPRESA----------------------------##
-    
+
     ##---------------------- INSUMO----------------------------##
     input:                Insumo
     descriptionInput:     Descripción de Insumo
@@ -182,6 +171,7 @@ dictionary:
     price:                Precio
     IdentificatiOfInpuType: Id Tipo Insumo
     ##---------------------- INSUMO----------------------------##
+
     ##---------------------- EMPAQUE----------------------------##
     packing:              Empaque
     informationPacking:   Información de Empaque
@@ -190,6 +180,7 @@ dictionary:
     newPacking:           Nuevo Empaque
     infoPacking:          Informacion de empaque
     ##---------------------- EMPAQUE----------------------------##
+
     ##---------------------- DETALLE ENTRADA----------------------------##
     detailEntrance:       Detalle Entrada Bodega
     newDetailEntrance:    Nuevo Detalle Entrada Bodega
@@ -202,10 +193,8 @@ dictionary:
     idDoc:                ID Documento
     idEntrance:           ID Entrada Bodega
     idInput:              ID Insumo
-    
-    
     ##---------------------- DETALLE ENTRADA----------------------------## 
-    
+
     ##---------------------- INGRESO CAÑA----------------------------##
     caneIncome:           Ingreso Caña
     newCaneIncome:        Nuevo Ingreso Caña
@@ -219,13 +208,23 @@ dictionary:
     caneOrigin:           Procedencia Caña
     caneWeight:           Peso Caña
     wagonNumber:          Numero Vagon
-       
-    ##---------------------- INGRESO CAÑA----------------------------## 
+    reedIncome:           Ingreso Caña
+    quantity:             Cantidad
+    caneOrigin:           Procedencia Caña
+    caneWeight:           Peso Caña
+    wagonNumber:          Numero Vagon
+    enterTheQuantity:     Ingresa la Cantidad
+    enterTheCaneOrigin:   Ingresa la Procedencia
+    enterTheCaneWeight:   Ingresa el Peso Caña
+    enterTheWagonNumber:  Ingresa el NUmero De Vagon
+     ##----------------------INGRESO CAÑA----------------------------##
+
     ##---------------------- SOLICITUD INSUMO-------------------------##
     inputRequest:         Solicitud Insumo
        
     ##----------------------SOLICITUD INSUMO---------------------------## 
-    ##-----------------control calidad-------------------------##
+
+    ##-----------------CONTROL CALIDAD-------------------------##
     date:                 Fecha
     turn:                 Turno
     brix:                 Brix
@@ -247,29 +246,8 @@ dictionary:
     enterTheAr:           Introduce el Ar
     enterTheSaccharose:   Introduce la Sacarosa
     enterThePurity:       Introduce la Pureza
-    ##-----------------control calidad---------------------------##
-     
-   
-    ##---------------------- DETALLE EMPAQUE----------------------------##
-       
-    detailPacking:          Detalle Empaque
-    newDetailPacking:       Nuevo Detalle Empaque
-    editDetailPacking:      Editar Detalle Empaque
-    infoDetailPacking:      Informacion de Detalle Empaque
-    idPacking:              Id Empaque
-    ##---------------------- DETALLE EMPAQUE----------------------------##
-    ##---------------------- INGRESO CAÑA----------------------------##
-    reedIncome:             Ingreso Caña
-    quantity:               Cantidad
-    caneOrigin:             Procedencia Caña
-    caneWeight:             peso Caña
-    wagonNumber:            numero vagon
-    enterTheQuantity:       Ingresa la Cantidad
-    enterTheCaneOrigin:     Ingresa la Procedencia
-    enterTheCaneWeight:     Ingresa el Peso Caña
-    enterTheWagonNumber:    Ingresa el NUmero De Vagon
-     ##----------------------INGRESO CAÑA----------------------------##
-     
+    ##-----------------CONTROL CALIDAD---------------------------##
+
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
@@ -305,4 +283,3 @@ dictionary:
     10003:                El archivo %file% no existe
     10004:                El directorio %path% no pudo ser creado
     ##-------------------------- ERRORES--------------------##
-
