@@ -260,9 +260,14 @@ dictionary:
     enterThePurity:      Enter the Purity
     ##-----------------control calidad---------------------------##
      
-    ##---------------------- DETALLE EMPAQUE----------------------------##
-    detailPacking:          Detail Packing
-    ##---------------------- DETALLE EMPAQUE----------------------------##
+    ##---------------------- DETALLE SALIDA----------------------------##
+    outputDetail:       Detail output Bodega
+    newOutputDetail:    New Detail output Bodega
+    editOutputDetail:   Edit Detail output Bodega
+    infoOutputDetail:   Detail Information output Bodega
+    idOutput:           ID Output
+    
+    ##---------------------- DETALLE SALIDA----------------------------## 
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).

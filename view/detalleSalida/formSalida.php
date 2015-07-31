@@ -76,7 +76,7 @@ use mvc\request\requestClass as request ?>
 
       <?php $idBodega = request::getInstance()->getGet('id') ?>
       <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('idEntrance') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('idOutput') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, TRUE) ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::SALIDA_BODEGA_ID, TRUE) ?>">
                     <?php foreach ($objSalidaBodega as $salidaBodega): ?>

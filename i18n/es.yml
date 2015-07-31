@@ -270,6 +270,15 @@ dictionary:
     enterTheWagonNumber:    Ingresa el NUmero De Vagon
      ##----------------------INGRESO CAÑA----------------------------##
      
+    ##---------------------- DETALLE SALIDA----------------------------##
+    outputDetail:       Detalle Salida Bodega
+    newOutputDetail:    Nuevo Detalle Salida Bodega
+    editOutputDetail:   Editar Detalle Salida Bodega
+    infoOutputDetail:   Informacion detallada Salida Bodega  
+    idOutput:           ID Salida
+    
+    ##---------------------- DETALLE SALIDA----------------------------## 
+     
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
