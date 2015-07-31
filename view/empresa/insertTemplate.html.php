@@ -2,5 +2,7 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php view::includePartial('menu/menu') ?>
-<h1><?php echo i18n::__('newBusiness')?></h1>
+<div class="page-header  text-center titulo">
+        <h1><i class="glyphicon glyphicon-calendar"> <?php echo i18n::__('newBusiness') ?></i></h1>
+    </div>
 <?php view::includePartial('empresa/formEmpresa', array('objUsuarios' => $objUsuarios,)) ?>

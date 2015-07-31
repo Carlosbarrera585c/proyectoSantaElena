@@ -16,7 +16,7 @@ use mvc\view\viewClass as view ?>
 
 <div class="container container-fluid">
         <div class="page-header  text-center titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoEmployee') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-calendar"> <?php echo i18n::__('infoBusiness') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empresa', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
@@ -24,9 +24,9 @@ use mvc\view\viewClass as view ?>
             <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empresa', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr>
+                <tr class="columna success">
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('nit') ?></th>
                     <th><?php echo i18n::__('name') ?></th>   

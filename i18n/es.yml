@@ -170,6 +170,11 @@ dictionary:
     infoBusiness:         Informacion de Empresas
     infoBusiness:         Información Sobre las Empresas
     nit:                  NIT
+    EnterTheNitCompany:   Introduce el NIT de la Empresa
+    EnterTheCompanyName:  Introduce el Nombre de la Empresa
+    EnterTheTradeNameOfTheCompany: Introduce la Razon Social de la Empresa
+    EnterYourAddress:     Introduce Tu Direccion
+    EnterYourPhone:       Introduce Tu Telefono
     ##---------------------- EMPRESA----------------------------##
     
     ##---------------------- INSUMO----------------------------##

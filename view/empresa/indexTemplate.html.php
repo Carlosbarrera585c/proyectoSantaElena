@@ -10,7 +10,7 @@ use mvc\view\viewClass as view ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('business') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-calendar"> <?php echo i18n::__('business') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empresa', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
@@ -18,9 +18,9 @@ use mvc\view\viewClass as view ?>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="tablaUsuario table table-bordered table-responsive table-hover">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr>
+                <tr class="tr_table">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('name') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>

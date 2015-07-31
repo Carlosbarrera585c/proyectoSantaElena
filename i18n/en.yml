@@ -172,6 +172,11 @@ dictionary:
     editBusiness:         Edit Business
     infoBusiness:         Business Information
     nit:                  NIT
+    EnterTheNitCompany:   Enter the NIT Company
+    EnterTheCompanyName:  Enter the Company Name
+    EnterTheTradeNameOfTheCompany: Enter the trade name of the company
+    EnterYourAddress:     Enter Your Address
+    EnterYourPhone:       Enter Your Phone
     ##---------------------- EMPRESA----------------------------##
     
     ##---------------------- INSUMO----------------------------##
