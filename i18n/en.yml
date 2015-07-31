@@ -162,7 +162,20 @@ dictionary:
     newIdentification:    New Identification
     infoIdentificationType: Types of Identification Information
     ##---------------------- TIPO IDENTIFICACION----------------##
-
+    
+     ##---------------------- EMPRESA---------------------------##
+    business:             Business
+    newBusiness:          New Business
+    editBusiness:         Edit Business
+    infoBusiness:         Business Information
+    nit:                  NIT
+    EnterTheNitCompany:   Enter the NIT Company
+    EnterTheCompanyName:  Enter the Company Name
+    EnterTheTradeNameOfTheCompany: Enter the trade name of the company
+    EnterYourAddress:     Enter Your Address
+    EnterYourPhone:       Enter Your Phone
+    ##---------------------- EMPRESA----------------------------##
+    
     ##---------------------- INSUMO----------------------------##
     input:                Input
     descriptionInput:     Description Input
@@ -241,15 +254,23 @@ dictionary:
     editQualityControl:   Edit Quality Control
     qualityControlInformation: Quality Control Information
     newQualityControl:    New Quality Control
-    enterTheDate:         Enter the Date
-    enterTheTurn:         Enter the Turn
-    enterTheBrix:         Enter the Brix
-    enterThePh:           Enter the Ph
-    enterTheAr:           Enter the Ar
-    enterTheSaccharose:   Enter the Saccharose
-    enterThePurity:       Enter the Purity
-    ##-----------------CONTROL CALIDAD---------------------------##
-
+    enterTheDate:        Enter the Date
+    enterTheTurn:        Enter the Turn
+    enterTheBrix:        Enter the Brix
+    enterThePh:          Enter the Ph
+    enterTheAr:          Enter the Ar
+    enterTheSaccharose:  Enter the Saccharose
+    enterThePurity:      Enter the Purity
+    ##-----------------control calidad---------------------------##
+     
+    ##---------------------- DETALLE SALIDA----------------------------##
+    outputDetail:       Detail output Bodega
+    newOutputDetail:    New Detail output Bodega
+    editOutputDetail:   Edit Detail output Bodega
+    infoOutputDetail:   Detail Information output Bodega
+    idOutput:           ID Output
+    
+    ##---------------------- DETALLE SALIDA----------------------------## 
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
