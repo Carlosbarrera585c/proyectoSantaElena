@@ -160,7 +160,21 @@ dictionary:
     newIdentification:    Nueva Identificación
     infoIdentificationType: Informacion de Tipos de Identificacion
     ##---------------------- TIPO IDENTIFICACION----------------##
-
+    
+     ##---------------------- EMPRESA---------------------------##
+    business:             Empresa
+    newBusiness:          Nueva Empresa
+    editBusiness:         Editar Empresa
+    infoBusiness:         Informacion de Empresas
+    infoBusiness:         Información Sobre las Empresas
+    nit:                  NIT
+    EnterTheNitCompany:   Introduce el NIT de la Empresa
+    EnterTheCompanyName:  Introduce el Nombre de la Empresa
+    EnterTheTradeNameOfTheCompany: Introduce la Razon Social de la Empresa
+    EnterYourAddress:     Introduce Tu Direccion
+    EnterYourPhone:       Introduce Tu Telefono
+    ##---------------------- EMPRESA----------------------------##
+    
     ##---------------------- INSUMO----------------------------##
     input:                Insumo
     descriptionInput:     Descripción de Insumo
@@ -246,8 +260,38 @@ dictionary:
     enterTheAr:           Introduce el Ar
     enterTheSaccharose:   Introduce la Sacarosa
     enterThePurity:       Introduce la Pureza
-    ##-----------------CONTROL CALIDAD---------------------------##
-
+    ##-----------------control calidad---------------------------##
+     
+   
+    ##---------------------- DETALLE EMPAQUE----------------------------##
+       
+    detailPacking:          Detalle Empaque
+    newDetailPacking:       Nuevo Detalle Empaque
+    editDetailPacking:      Editar Detalle Empaque
+    infoDetailPacking:      Informacion de Detalle Empaque
+    idPacking:              Id Empaque
+    ##---------------------- DETALLE EMPAQUE----------------------------##
+    ##---------------------- INGRESO CAÑA----------------------------##
+    reedIncome:             Ingreso Caña
+    quantity:               Cantidad
+    caneOrigin:             Procedencia Caña
+    caneWeight:             peso Caña
+    wagonNumber:            numero vagon
+    enterTheQuantity:       Ingresa la Cantidad
+    enterTheCaneOrigin:     Ingresa la Procedencia
+    enterTheCaneWeight:     Ingresa el Peso Caña
+    enterTheWagonNumber:    Ingresa el NUmero De Vagon
+     ##----------------------INGRESO CAÑA----------------------------##
+     
+    ##---------------------- DETALLE SALIDA----------------------------##
+    outputDetail:       Detalle Salida Bodega
+    newOutputDetail:    Nuevo Detalle Salida Bodega
+    editOutputDetail:   Editar Detalle Salida Bodega
+    infoOutputDetail:   Informacion detallada Salida Bodega  
+    idOutput:           ID Salida
+    
+    ##---------------------- DETALLE SALIDA----------------------------## 
+     
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).

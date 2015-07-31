@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
-  *  @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ *  @author Cristian Ramirez <ccristianramirezc@gmail.com>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
@@ -22,14 +22,14 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
               $idsToDelete = request::getInstance()->getPost('chk');              
               foreach ($idsToDelete as $id){
                   $ids = array(
-                      detalleEntradaTableClass::ID => $id
+                      detalleSalidaTableClass::ID => $id
                 );
-                detalleEntradaTableClass::delete($ids, false);
+                detalleSalidaTableClass::delete($ids, false);
               }              
                session::getInstance()->setSuccess(i18n::__('successfulDelete'));
-               routing::getInstance()->redirect('entradaBodega', 'index');
+               routing::getInstance()->redirect('salidaBodega', 'index');
             } else {
-                routing::getInstance()->redirect('entradaBodega', 'index');
+                routing::getInstance()->redirect('salidaBodega', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

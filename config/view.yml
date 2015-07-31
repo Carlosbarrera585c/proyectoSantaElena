@@ -227,3 +227,9 @@ controlCalidad:
     
   view:
     title: Ver control calidad
+    
+ingresoCaña:
+  index:
+    title: Ingreso Caña
+    javascript:
+      - index.js

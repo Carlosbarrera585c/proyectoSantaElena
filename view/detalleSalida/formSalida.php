@@ -25,7 +25,7 @@ use mvc\request\requestClass as request ?>
 <?php $insuId = insumoTableClass::ID ?>
 <?php $descInsu = insumoTableClass::DESC_INSUMO ?>
 <?php view::includePartial('menu/menu') ?>
-<form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', ((isset($objDetalleEntrada)) ? 'update' : 'create')) ?>">
+<form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', ((isset($objDetalleSalida)) ? 'update' : 'create')) ?>">
     <?php if (isset($objDetalleSalida) == true): ?>
     <input name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, true) ?>" value="<?php echo $objDetalleSalida[0]->$id ?>" type="hidden">
     <?php endif ?>
@@ -34,7 +34,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('amount') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$cantidad : '') ?><?php echo (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true)) === true) ? request::getInstance()->getPost(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true)) : '' ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('amount') ?>">
+              <input id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objDetalleSalida) == true) ? $objDetalleSalida[0]->$cantidad : '') ?><?php echo (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true)) === true) ? request::getInstance()->getPost(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true)) : '' ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('amount') ?>">
                 <?php if (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true)) === true): ?>
                   <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -43,7 +43,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('value') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$valor : '') ?><?php echo (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true)) === true) ? request::getInstance()->getPost(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true)) : '' ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true) ?>" placeholder="<?php echo i18n::__('value') ?>">
+              <input id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objDetalleSalida) == true) ? $objDetalleSalida[0]->$valor : '') ?><?php echo (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true)) === true) ? request::getInstance()->getPost(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true)) : '' ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true) ?>" placeholder="<?php echo i18n::__('value') ?>">
                 <?php if (session::getInstance()->hasFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true)) === true): ?>
                   <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -52,13 +52,13 @@ use mvc\request\requestClass as request ?>
         <div class="form-group">
             <label class="col-lg-2 control-label" ><?php echo i18n::__('manuFacturingDate') ?>:</label>
             <div class="col-lg-10">
-                <input type="datetime-local" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaFB : '') ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::FECHA_FABRICACION, true) ?>" >
+                <input type="datetime-local" class="form-control" value="<?php echo ((isset($objDetalleSalida) == true) ? $objDetalleSalida[0]->$fechaFB : '') ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::FECHA_FABRICACION, true) ?>" >
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('expirationDate') ?>:</label>
             <div class="col-lg-10">
-                <input type="datetime-local" class="form-control" value="<?php echo ((isset($objDetalleEntrada) == true) ? $objDetalleEntrada[0]->$fechaVC : '') ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::FECHA_VENCIMIENTO, true) ?>" >
+                <input type="datetime-local" class="form-control" value="<?php echo ((isset($objDetalleSalida) == true) ? $objDetalleSalida[0]->$fechaVC : '') ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::FECHA_VENCIMIENTO, true) ?>" >
             </div>
         </div>
         <div class="form-group">
@@ -76,7 +76,7 @@ use mvc\request\requestClass as request ?>
 
       <?php $idBodega = request::getInstance()->getGet('id') ?>
       <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('idEntrance') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('idOutput') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, TRUE) ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::SALIDA_BODEGA_ID, TRUE) ?>">
                     <?php foreach ($objSalidaBodega as $salidaBodega): ?>
@@ -93,7 +93,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, TRUE) ?>" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::INSUMO_ID, TRUE) ?>">
                     <?php foreach ($objInsu as $insu): ?>
-                        <option <?php echo (isset($objSalidaBodega[0]->$insumoId) === true and $objDetalleEntrada[0]->$insumoId == $objInsu->$insuId) ? 'selected' : '' ?> value="<?php echo $insu->$insuId ?>">
+                        <option <?php echo (isset($objSalidaBodega[0]->$insumoId) === true and $objDetalleSalida[0]->$insumoId == $objInsu->$insuId) ? 'selected' : '' ?> value="<?php echo $insu->$insuId ?>">
                             <?php echo $insu->$descInsu ?>
                         </option>
                     <?php endforeach ?>
@@ -102,7 +102,7 @@ use mvc\request\requestClass as request ?>
         </div>
         <div class="form-group">
             <div class="col-lg-12 col-xs-offset-6">
-                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objDetalleEntrada)) ? 'update' : 'register')) ?>">
+                <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objDetalleSalida)) ? 'update' : 'register')) ?>">
                 <a href="<?=$_SERVER["HTTP_REFERER"]?>" class="btn btn-info btn-sm"><?php echo i18n::__('cancel') ?> </a> 
             </div>
         </div>
