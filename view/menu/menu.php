@@ -36,64 +36,62 @@ use mvc\session\sessionClass as session ?>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('payWorkers') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>"><?php echo i18n::__('payWorkers') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('ciudad', 'index') ?>"><?php echo i18n::__('city') ?></a></li>           
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('reedIncome') ?><span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'index') ?>"><?php echo i18n::__('reedIncome') ?></a></li></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('qualityControl') ?><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('inputRequest') ?><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                    </ul>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('employee') ?> <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?>"><?php echo i18n::__('identificationType') ?></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('packing') ?><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'index') ?>"><?php echo i18n::__('packing') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>"><?php echo i18n::__('typePacking') ?></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('input') ?> <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'index') ?>"><?php echo i18n::__('inputType') ?></a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('cellarEntrance') ?><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>"><?php echo i18n::__('cellarEntrance') ?></a></li>                        
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'index') ?>"><?php echo i18n::__('holdOut') ?></a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>   
-                        <li class="divider"></li>
-                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>"><?php echo i18n::__('docType') ?></a></li>
-                    </ul>
-                </li>
+            </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('qualityControl') ?><span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('inputRequest') ?><span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                </ul>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('employee') ?> <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>"><?php echo i18n::__('employee') ?></a></li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'index') ?>"><?php echo i18n::__('provider') ?></a></li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoId', 'index') ?>"><?php echo i18n::__('identificationType') ?></a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('packing') ?><span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'index') ?>"><?php echo i18n::__('packing') ?></a></li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>"><?php echo i18n::__('typePacking') ?></a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('input') ?> <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'index') ?>"><?php echo i18n::__('inputType') ?></a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('cellarEntrance') ?><span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>"><?php echo i18n::__('cellarEntrance') ?></a></li>                        
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'index') ?>"><?php echo i18n::__('holdOut') ?></a></li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>   
+                    <li class="divider"></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>"><?php echo i18n::__('docType') ?></a></li>
+                </ul>
+            </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
