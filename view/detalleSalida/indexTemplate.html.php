@@ -56,7 +56,7 @@
     </div>
     
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-new-window"> <?php echo i18n::__('detailEntrance') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-new-window"> <?php echo i18n::__('outputDetail') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">

@@ -23,7 +23,7 @@ use mvc\view\viewClass as view ?>
 
 <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-inbox"> <?php echo i18n::__('cellarEntrance') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-inbox"> <?php echo i18n::__('viewHoldOut') ?></i></h1>
     </div>
     <div class="divTamaño">
         
@@ -41,7 +41,7 @@ use mvc\view\viewClass as view ?>
         </table>
     </div>
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-list-alt"> <?php echo i18n::__('infoDetailEntrance') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-list-alt"> <?php echo i18n::__('infoOutputDetail') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">

@@ -5,7 +5,7 @@
 <?php $cantidad = detalleSalidaTableClass::CANTIDAD ?>
 <?php view::includePartial('menu/menu') ?>
  <div class="page-header  text-center titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editDetailEntrance') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editOutputDetail') ?></i></h1>
         <?php echo $objDetalleSalida[0]->$id ?>
     </div>
 <?php view::includePartial('detalleSalida/formSalida', array('objDetalleSalida' => $objDetalleSalida, 'detalleSalida' => $id, 'objTipoDoc' => $objTipoDoc, 'objSalidaBodega' => $objSalidaBodega, 'objInsu' => $objInsu)) ?>
