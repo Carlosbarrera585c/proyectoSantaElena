@@ -1,4 +1,5 @@
 all:
+  favicon: hola.ico
   title: titulo de la p‡gina general
   meta:
     - charset="UTF-8"
