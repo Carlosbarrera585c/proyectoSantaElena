@@ -174,9 +174,9 @@ use mvc\view\viewClass as view ?>
     </div>
     </div>
 <?php view::includeHandlerMessage() ?>
-    <table class="table table-bordered table-responsive tables">
+    <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
       <thead>
-        <tr class="tr_table">
+        <tr class="columna tr_table">
           <th class="tamano"><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('employee') ?></th>
           <th><?php echo i18n::__('provider') ?></th>
@@ -186,7 +186,7 @@ use mvc\view\viewClass as view ?>
       <tbody>
         <?php foreach ($objIngresoCaña as $ingreso): ?>
           <tr>
-            <td><input type="checkbox" name="chk[]" value="<?php echo $ingreso->$id ?>"></td>
+            <td class="tamano"><input type="checkbox" name="chk[]" value="<?php echo $ingreso->$id ?>"></td>
             <td><?php echo ingresoCañaTableClass::getNameEmpleado($ingreso->$empleado_id) ?></td>
             <td><?php echo ingresoCañaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>  
             <td>
