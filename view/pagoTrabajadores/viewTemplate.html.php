@@ -45,9 +45,9 @@ use mvc\session\sessionClass as session ?>
                 <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$fecha : '') ?></td>
                 <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodoInicio : '') ?></td>
                 <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodoFin : '') ?></td>
-                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameEmpleado($objEmpleado[0]->$idEmpleado) : '') ?></td>
-                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameNumeroIdEmpleado($objEmpleado[0]->$idEmpleado) : '') ?></td>
-                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameTipoPago($objEmpleado[0]->$idTipoPago) : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameEmpleado($objPagoTrabajadores[0]->$idEmpleado) : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameNumeroIdEmpleado($objPagoTrabajadores[0]->$idEmpleado) : '') ?></td>
+                <td><?php echo ((isset($objPagoTrabajadores) == true) ? pagoTrabajadoresTableClass::getNameTipoPago($objPagoTrabajadores[0]->$idTipoPago) : '') ?></td>
             </tr>
         </tbody>
     </table>

@@ -38,7 +38,7 @@ class pagoTrabajadoresTableClass extends pagoTrabajadoresBaseTableClass {
             $answer = model::getInstance()->prepare($sql);
             $answer->execute($params);
             $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-            return $answer[0]->desc_tipo_id;
+            return $answer[0]->nom_empleado;
         } catch (PDOException $exc) {
             throw $exc;
         }
@@ -54,7 +54,7 @@ class pagoTrabajadoresTableClass extends pagoTrabajadoresBaseTableClass {
             $answer = model::getInstance()->prepare($sql);
             $answer->execute($params);
             $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-            return $answer[0]->desc_tipo_id;
+            return $answer[0]->desc_tipo_pago;
         } catch (PDOException $exc) {
             throw $exc;
         }
@@ -70,7 +70,7 @@ class pagoTrabajadoresTableClass extends pagoTrabajadoresBaseTableClass {
             $answer = model::getInstance()->prepare($sql);
             $answer->execute($params);
             $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-            return $answer[0]->desc_tipo_id;
+            return $answer[0]->numero_identificacion;
         } catch (PDOException $exc) {
             throw $exc;
         }

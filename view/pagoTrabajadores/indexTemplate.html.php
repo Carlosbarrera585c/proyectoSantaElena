@@ -13,6 +13,8 @@ use mvc\request\requestClass as request ?>
 use mvc\session\sessionClass as session ?>
 <?php $id = pagoTrabajadoresTableClass::ID ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
+<?php $empleadoId = empleadoTableClass::ID ?>
+<?php $tipoPagoId = tipoPagoTableClass::ID ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <!--     ventana Modal Error al Eliminar Foraneas-->       
@@ -41,44 +43,23 @@ use mvc\session\sessionClass as session ?>
                 </div>
                 <div class="modal-body">
                     <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'index') ?>">
-                        //<?php view::getMessageError('date') ?>
-                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::FECHA, true)) === TRUE) ? 'has-error has-feedback' : ''; ?> ">
-                            <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('dateStart') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterFecha" name="filter[Fecha]" placeholder="<?php echo i18n::__('date') ?>">
-                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::FECHA, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                                <input type="date" class="form-control" id="filterFecha1" name="filter[fecha1]">
+                                <br>
                             </div>
-                        </div>
-                        //<?php view::getMessageError('errorApellido') ?>
-                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_INICIO, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
-                            <label for="filterPeriodoIncio" class="col-sm-2 control-label"><?php echo i18n::__('periodBeginning') ?></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterPeriodoIncio" name="filter[PeriodoIncio]" placeholder="<?php echo i18n::__('periodBeginning') ?>">
-                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
-                            </div>
-                        </div>
-                        //<?php view::getMessageError('errorNumeroIdentificacion') ?>
-                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
-                            <label for="filterPeriodoFin" class="col-sm-2 control-label"><?php echo i18n::__('orderPeriod') ?></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterPeriodoFin" name="filter[PeriodoFin]" placeholder="<?php echo i18n::__('orderPeriod') ?>">
-                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
-                            </div>
-                        </div>
-                        //<?php view::getMessageError('errorTelefono') ?>
-                        <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
-                            <label for="filterValor" class="col-sm-2 control-label"><?php echo i18n::__('value') ?></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterValor" name="filter[Valor]" placeholder="<?php echo i18n::__('value') ?>">
-                                <?php if (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
+                            <label class="col-sm-2 control-label"><?php echo i18n::__('dateEnd') ?></label>
+                            <div class="col-sm-10">    
+                                <input type="date" class="form-control" id="filterFecha2" name="filter[fecha2]">
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                    <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+                </div>
             </div>
         </div>
     </div>
