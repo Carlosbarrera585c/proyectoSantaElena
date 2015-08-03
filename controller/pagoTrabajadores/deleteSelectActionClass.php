@@ -36,7 +36,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
             switch ($exc->getCode()) {
                 case 23503:
                     session::getInstance()->setError(i18n::__('errorDeleteForeign'));
-                    routing::getInstance()->redirect('empleado', 'index');
+                    routing::getInstance()->redirect('pagoTrabajadores', 'index');
                     break;
                 case 00000:
                     break;

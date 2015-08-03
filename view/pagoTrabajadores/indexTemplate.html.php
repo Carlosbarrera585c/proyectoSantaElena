@@ -13,8 +13,8 @@ use mvc\request\requestClass as request ?>
 use mvc\session\sessionClass as session ?>
 <?php $id = pagoTrabajadoresTableClass::ID ?>
 <?php $fecha = pagoTrabajadoresTableClass::FECHA ?>
-<?php $empleadoId = empleadoTableClass::ID ?>
-<?php $tipoPagoId = tipoPagoTableClass::ID ?>
+<?php $pagoEmpleadoId = pagoTrabajadoresTableClass::EMPLEADO_ID ?>
+<?php $pagoTipoPagoId = pagoTrabajadoresTableClass::TIPO_PAGO_ID ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <!--     ventana Modal Error al Eliminar Foraneas-->       
@@ -80,7 +80,7 @@ use mvc\session\sessionClass as session ?>
                     <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('generate report') ?></h4>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'report') ?>">
+                    <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'report') ?>">
                         <div class="form-group">
                             <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
                             <div class="col-sm-10">

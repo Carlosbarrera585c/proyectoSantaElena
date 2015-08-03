@@ -26,7 +26,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $periodoFin = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true));
                 $idTipoPago = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, true));
                 $valor = request::getInstance()->getPost(pagoTrabajadoresTableClass::VALOR, true);
-                $idEmpleado = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, true));
+                $idEmpleado = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::EMPLEADO_ID, true));
 
                 $this->Validate($idPago, $fecha, $periodoInicio, $periodoFin, $idTipoPago, $idEmpleado);
 
@@ -36,8 +36,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
                 $data = array(
                     pagoTrabajadoresTableClass::FECHA => $fecha,
-                    pagoTrabajadoresTableClass::PERIODO_INICIO => $periodo_inicio,
-                    pagoTrabajadoresTableClass::PERIODO_FIN => $periodo_fin,
+                    pagoTrabajadoresTableClass::PERIODO_INICIO => $periodoInicio,
+                    pagoTrabajadoresTableClass::PERIODO_FIN => $periodoFin,
                     pagoTrabajadoresTableClass::TIPO_PAGO_ID => $idTipoPago,
                     pagoTrabajadoresTableClass::VALOR => $valor,
                     pagoTrabajadoresTableClass::EMPLEADO_ID => $idEmpleado
@@ -54,7 +54,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         }
     }
 
-    private function Validate($idPago, $fecha, $periodoInicio, $periodoFin, $idTipoPago, $idEmpleado) {
+    private function Validate($idTipoPago, $idEmpleado) {
         $bandera = false;
 
         if ($idEmpleado === '') {

@@ -28,65 +28,67 @@ class pagoTrabajadoresBaseTableClass extends tableBaseClass {
     const VALOR = 'valor';
     const VALOR_LENGTH = 7;
     const TIPO_PAGO_ID = 'tipo_pago_id';
+    const TIPO_PAGO_LENGHT = 7;
     const EMPLEADO_ID = 'empleado_id';
     const EMPLEADO_ID_LENGTH = 35;
 
     function getId() {
-        return $this->id;
+      return $this->id;
     }
 
     function getFecha() {
-        return $this->fecha;
+      return $this->fecha;
     }
 
     function getPeriodo_inicio() {
-        return $this->periodo_inicio;
+      return $this->periodo_inicio;
     }
 
     function getPeriodo_fin() {
-        return $this->periodo_fin;
+      return $this->periodo_fin;
     }
 
     function getValor() {
-        return $this->valor;
+      return $this->valor;
     }
 
     function getTipo_pago_id() {
-        return $this->tipo_pago_id;
+      return $this->tipo_pago_id;
     }
 
     function getEmpleado_id() {
-        return $this->empleado_id;
+      return $this->empleado_id;
     }
 
     function setId($id) {
-        $this->id = $id;
+      $this->id = $id;
     }
 
     function setFecha($fecha) {
-        $this->fecha = $fecha;
+      $this->fecha = $fecha;
     }
 
     function setPeriodo_inicio($periodo_inicio) {
-        $this->periodo_inicio = $periodo_inicio;
+      $this->periodo_inicio = $periodo_inicio;
     }
 
     function setPeriodo_fin($periodo_fin) {
-        $this->periodo_fin = $periodo_fin;
+      $this->periodo_fin = $periodo_fin;
     }
 
     function setValor($valor) {
-        $this->valor = $valor;
+      $this->valor = $valor;
     }
 
     function setTipo_pago_id($tipo_pago_id) {
-        $this->tipo_pago_id = $tipo_pago_id;
+      $this->tipo_pago_id = $tipo_pago_id;
     }
 
     function setEmpleado_id($empleado_id) {
-        $this->empleado_id = $empleado_id;
+      $this->empleado_id = $empleado_id;
     }
 
+    
            
     /**
      * Obtiene el nombre de la tabla

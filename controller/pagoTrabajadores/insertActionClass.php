@@ -25,8 +25,7 @@ class insertActionClass extends controllerClass implements controllerActionInter
             $fieldsEmpleado = array(
                 empleadoTableClass::ID,
                 empleadoTableClass::NOM_EMPLEADO,
-                empleadoTableClass::APELL_EMPLEADO,
-                empleadoTableClass::NUMERO_IDENTIFICACION
+                
             );
 
             $this->objTipoPago = tipoPagoTableClass::getAll($fieldsTipoPago);
