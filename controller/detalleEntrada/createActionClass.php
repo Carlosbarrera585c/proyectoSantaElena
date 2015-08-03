@@ -40,7 +40,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
                 detalleEntradaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('successfulRegister'));
-                routing::getInstance()->redirect('entradaBodega', 'index');
+                routing::getInstance()->redirect('detalleEntrada', 'view', array('id' => $enBodegaId ));
             } else {
                 routing::getInstance()->redirect('entradaBodega', 'index');
             }
