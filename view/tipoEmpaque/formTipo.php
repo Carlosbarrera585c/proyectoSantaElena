@@ -18,7 +18,7 @@ use mvc\view\viewClass as view ?>
             <div class="form-group">
                 <label class="col-lg-2 control-label"><?php echo i18n::__('desc') ?>:</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" value="<?php echo ((isset($objTipoEmpaque) == true) ? $objTipoEmpaque[0]->$desc_tipo_empaque : '') ?>"  name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" placeholder="Introduce La Descripción">
+                    <input type="text" class="form-control" value="<?php echo ((isset($objTipoEmpaque) == true) ? $objTipoEmpaque[0]->$desc_tipo_empaque : '') ?>"  name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" placeholder="<?php echo i18n::__('enterTheDescription') ?>">
                 </div>
             </div>
             <div class="form-group">

@@ -11,17 +11,16 @@ use mvc\view\viewClass as view ?>
 
 <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoTypePacking') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-folder-close"> <?php echo i18n::__('infoTypePacking') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr>
+                <tr class="columna tr_table">
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('desc') ?></th>
                 </tr>

@@ -58,6 +58,7 @@ dictionary:
     editTypePacking:      Editar el Tipo de Empaque
     newTypePacking:       Nuevo Tipo de Empaque
     infoTypePacking:      Información del Tipo de Empaque
+    enterTheDescription:  Introduce la Descripcion
     ##----------------------TIPO EMPAQUE-------------------------##
 
     ##----------------------TIPO INSUMO-------------------------##
@@ -65,6 +66,7 @@ dictionary:
     newInputType:         Nuevo Tipo Insumo
     editInputType:        Editar Tipo Insumo
     infoInput:            Información de los tipos de Insumos
+    enterTheDescriptionOfTheInput: Introduce la Descripcion del Insumo
     ##----------------------TIPO INSUMO-------------------------##
     
     ##----------------------TIPO PAGO---------------------------##
@@ -125,6 +127,7 @@ dictionary:
     newDocType:           Nuevo Tipo Documento
     editDocType:          Editar Tipo Documento
     infoDocType:          Información de los Tipos de Documentos
+    enterTheDescription:  Introduce La Descripcion
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     ##-------------------------- CREDENCIAL-----------------------##
@@ -161,6 +164,7 @@ dictionary:
     EditIdentification:   Editar Tipo de Identificación
     newIdentification:    Nueva Identificación
     infoIdentificationType: Informacion de Tipos de Identificacion
+    EnterTheIdentification: Introduce la Identificacion
     ##---------------------- TIPO IDENTIFICACION----------------##
     
      ##---------------------- EMPRESA---------------------------##
@@ -186,6 +190,8 @@ dictionary:
     infoInput:            Informacion de Insumos
     price:                Precio
     IdentificatiOfInpuType: Id Tipo Insumo
+    EnterTheDescriptionOfTheInput: Introduce la Descripcion del Insumo
+    EnterThePrice: Introduce el Precio
     ##---------------------- INSUMO----------------------------##
 
     ##---------------------- EMPAQUE----------------------------##

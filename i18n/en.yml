@@ -60,6 +60,7 @@ dictionary:
     editTypePacking:      Edit Type of Packaging
     newTypePacking:       New Type of Packaging
     infoTypePacking:      Information Type of Packaging
+    enterTheDescription:  Enter The Description
     ##----------------------TIPO EMPAQUE-------------------------##
 
     ##----------------------TIPO INSUMO-------------------------##
@@ -67,6 +68,7 @@ dictionary:
     newInputType:         New Type Input
     editInputType:        Edit Input Type
     infoInput:            Information on the Types of Inputs
+    enterTheDescriptionOfTheInput: enter The Description Of The Input
     ##----------------------TIPO INSUMO-------------------------##
     
     ##----------------------TIPO PAGO---------------------------##
@@ -127,6 +129,7 @@ dictionary:
     newDocType:           New Document Type
     editDocType:          Edit Document Type
     infoDocType:          Types Information Documents
+    enterTheDescription:  Enter The Description
     ##-------------------------- TIPO DOCUMENTO--------------------##
     
     ##-------------------------- CREDENCIAL-----------------------##
@@ -163,6 +166,7 @@ dictionary:
     EditIdentification:   Edit Type Identification
     newIdentification:    New Identification
     infoIdentificationType: Types of Identification Information
+    EnterTheIdentification: Enter The Identification
     ##---------------------- TIPO IDENTIFICACION----------------##
     
      ##---------------------- EMPRESA---------------------------##
@@ -187,6 +191,8 @@ dictionary:
     infoInput:            Information Input
     price:                Price
     IdentificatiOfInpuType: Id Input Type
+    EnterTheDescriptionOfTheInput: Enter the description of the input
+    EnterThePrice:        Enter The Price
     ##---------------------- INSUMO----------------------------##
 
     ##---------------------- EMPAQUE----------------------------##

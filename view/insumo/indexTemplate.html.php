@@ -27,13 +27,6 @@ use mvc\view\viewClass as view ?>
                                 <input type="text" class="form-control" id="filterDescripcion" name="filter[Descripcion]" placeholder="Description">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="filterPrecio" class="col-sm-2 control-label"><?php echo i18n::__('price') ?></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterPrecio" name="filter[Precio]" placeholder="Precio">
-                            </div>
-                        </div>
-
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -58,13 +51,6 @@ use mvc\view\viewClass as view ?>
                                 <input type="text" class="form-control" id="filterDescripcion" name="report[Descripcion]" placeholder="<?php echo i18n::__('description') ?>">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="filterPrecio" class="col-sm-2 control-label"><?php echo i18n::__('price') ?></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterPrecio" name="report[Precio]" placeholder="<?php echo i18n::__('price') ?>">
-                            </div>
-                        </div>
-
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -75,7 +61,7 @@ use mvc\view\viewClass as view ?>
         </div>
     </div>
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('input') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-baby-formula"> <?php echo i18n::__('input') ?></i></h1>
     </div>
     <h1><?php i18n::__('input') ?></h1>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteSelect') ?>" method="POST">
@@ -88,9 +74,9 @@ use mvc\view\viewClass as view ?>
 
         </div>
         <?php view::includeHandlerMessage() ?>
-        <table class="table table-bordered table-responsive table-hover tables">
+        <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr class="active columna success"">
+                <tr class="columna tr_table">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('descriptionInput') ?></th>
                     <th><?php echo i18n::__('price') ?></th>
@@ -104,7 +90,7 @@ use mvc\view\viewClass as view ?>
                       <td><?php echo $insu->$desc_insumo ?></td>
                       <td><?php echo $insu->$precio ?></td>
                       <td>
-                          <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'view', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'view', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
                           <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'edit', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
                           <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $insu->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                       </td>

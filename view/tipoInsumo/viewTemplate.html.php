@@ -6,17 +6,16 @@
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
          <div class="page-header  text-center titulo">
-       <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoInput') ?></i></h1>
+       <h1><i class="glyphicon glyphicon-object-align-bottom"> <?php echo i18n::__('infoInput') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr>
+                <tr class="tr_table">
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('desc') ?></th>
                 </tr>
