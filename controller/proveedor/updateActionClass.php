@@ -24,15 +24,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $direccion = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true));
         $telefono = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true));
         $ciudad_id = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::CIUDAD_ID, true));
-        if (strlen($fecha) > proveedorTableClass::RAZON_SOCIAL_LENGTH_LENGHT) {
-          throw new PDOException('La RAzon Social No Puede Ser Mayor A: ' . proveedorTableClass::RAZON_SOCIAL_LENGTH . ' Caracteres');
-        }
-        if (strlen($fecha) > proveedorTableClass::DIRECCION_LENGHT) {
-          throw new PDOException('La Direccion No Puede Ser Mayor A: ' . proveedorTableClass::DIRECCION_LENGHT . ' Caracteres');
-        }
-        if (strlen($turno) > proveedorTableClass::TELEFONO_LENGHT) {
-          throw new PDOException('El Numero De Telefono No Puede Ser Mayor A: ' . proveedorTableClass::TELEFONO_LENGHT . ' Caracteres');
-        }
+       
         $ids = array(
             proveedorTableClass::ID => $id
         );

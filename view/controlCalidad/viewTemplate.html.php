@@ -23,7 +23,7 @@
     </div>
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
-        <tr class="columna success">
+        <tr class="columna tr_table">
           <th><?php echo i18n::__('id')?></th>
           <th><?php echo i18n::__('date')?></th>
           <th><?php echo i18n::__('turn')?></th>

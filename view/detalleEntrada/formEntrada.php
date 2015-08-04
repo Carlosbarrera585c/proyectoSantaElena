@@ -66,7 +66,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, TRUE) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID_DOC, TRUE) ?>">
                     <?php foreach ($objTipoDoc as $tipoDoc): ?>
-                        <option <?php echo (isset($objTipoDoc[0]->$TipoDocId) === true and $objDetalleEntrada[0]->$TipoDocId == $objTipoDoc->$idDoc) ? 'selected' : '' ?> value="<?php echo $tipoDoc->$idDoc ?>">
+                        <option <?php echo (isset($objDetalleEntrada[0]->$TipoDocId) === true and $objDetalleEntrada[0]->$TipoDocId == $tipoDoc->$idDoc) ? 'selected' : '' ?> value="<?php echo $tipoDoc->$idDoc ?>">
                             <?php echo $tipoDoc->$desDoc ?>
                         </option>
                     <?php endforeach ?>
@@ -80,7 +80,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, TRUE) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ENTRADA_BODEGA_ID, TRUE) ?>">
                     <?php foreach ($objEntradaBodega as $entradaBodega): ?>
-                        <option <?php echo ($idBodega == $entradaBodega->$enBodegaId) ? 'selected' : '' ?> value="<?php echo $entradaBodega->$enBodegaId ?>">
+                        <option <?php echo (isset($objDetalleEntrada[0]->$entradaId) === true and $objDetalleEntrada[0]->$entradaId == $entradaBodega->$enBodegaId) ? 'selected' : '' ?> <?php echo ($idBodega == $entradaBodega->$enBodegaId) ? 'selected' : '' ?> value="<?php echo $entradaBodega->$enBodegaId ?>">
                             <?php echo $entradaBodega->$enBodegaId ?>
                         </option>
                     <?php endforeach ?>
@@ -93,7 +93,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, TRUE) ?>" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::INSUMO_ID, TRUE) ?>">
                     <?php foreach ($objInsu as $insu): ?>
-                        <option <?php echo (isset($objEntradaBodega[0]->$insumoId) === true and $objDetalleEntrada[0]->$insumoId == $objInsu->$insuId) ? 'selected' : '' ?> value="<?php echo $insu->$insuId ?>">
+                        <option <?php echo (isset($objDetalleEntrada[0]->$insumoId) === true and $objDetalleEntrada[0]->$insumoId == $insu->$insuId) ? 'selected' : '' ?> value="<?php echo $insu->$insuId ?>">
                             <?php echo $insu->$descInsu ?>
                         </option>
                     <?php endforeach ?>

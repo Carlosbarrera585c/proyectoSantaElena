@@ -68,8 +68,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = request::getInstance()->getGet('page') - 1;
         $page = $page * config::getRowGrid();
       }
-      $this->cntPages = ingresoCanaTableClass:: getTotalPages(config::getRowGrid(), $where);
-      $this->objingresoCana = ingresoCanaTableClass::getAll($fields, false, $orderBy, 'ASC');
+      $this->cntPages = ingresoCanaTableClass::getTotalPages(config::getRowGrid(), $where);
+      $this->objingresoCana = ingresoCanaTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       $this->defineView('index', 'ingresoCana', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

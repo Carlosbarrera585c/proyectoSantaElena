@@ -103,6 +103,51 @@ use mvc\session\sessionClass as session ?>
                 </div>
             </div>
         </div>
+        <div class="modal-body">
+          <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'report') ?>">
+            <div class="form-group">
+              <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+              <div class="col-sm-10">
+                <input type="date" name="report[fechaCreacion1]" class="form-control" id="filterCreacion1" placeholder="<?php echo i18n::__('date') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+              <div class="col-sm-10">
+                <input type="date" name="report[fechaCreacion2]" class="form-control" id="filterCreacion2" placeholder="<?php echo i18n::__('date') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportCantidad" class="col-sm-2 control-label"><?php echo i18n::__('quantity') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterTurno" name="report[Cantidad]" placeholder="<?php echo i18n::__('quantity') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('caneOrigin') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterBrix" name="report[Procedencia]" placeholder="<?php echo i18n::__('caneOrigin') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportPeso" class="col-sm-2 control-label"><?php echo i18n::__('caneWeight') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterPh" name="report[Peso]" placeholder="<?php echo i18n::__('caneWeight') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reportVagon" class="col-sm-2 control-label"><?php echo i18n::__('wagonNumber') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterAr" name="report[Vagon]" placeholder="<?php echo i18n::__('wagonNumber') ?>">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+          <button type="button" onclick="$('#reportFilterForm').submit()" class="btn btn-primary"><?php echo i18n::__('generate') ?></button>
+        </div>
+      </div>
     </div>
     <!--Ventana modal para uso de filtros-->
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -166,6 +211,47 @@ use mvc\session\sessionClass as session ?>
                 </div>
             </div>
         </div>
+        <div class="modal-body">
+          <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>">
+            <div class="form-group">
+              <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="filterFecha1" name="filter[fecha1]" placeholder="<?php echo i18n::__('date') ?>">
+                <br>
+                <input type="date" class="form-control" id="filterFecha2" name="filter[fecha2]" placeholder="<?php echo i18n::__('date') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="filterCantidad" class="col-sm-2 control-label"><?php echo i18n::__('quantity') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterApellido" name="filter[Cantidad]" placeholder="<?php echo i18n::__('quantity') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="filterProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('caneOrigin') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterAr" name="filter[Procedencia]" placeholder="<?php echo i18n::__('caneOrigin') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="filterPeso" class="col-sm-2 control-label"><?php echo i18n::__('caneWeight') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterSacrosa" name="filter[Peso]" placeholder="<?php echo i18n::__('caneWeight') ?>">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="filterVagon" class="col-sm-2 control-label"><?php echo i18n::__('wagonNumber') ?></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="filterPureza" name="filter[Vagon]" placeholder="<?php echo i18n::__('wagonNumber') ?>">
+              </div>
+            </div>
+          </form>
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+          <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
+        </div>
+      </div>
     </div>
 
     <div class="page-header titulo">
@@ -179,7 +265,15 @@ use mvc\session\sessionClass as session ?>
             <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
         </div>
-</div>
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteSelect') ?>" method="POST">
+    <div style="margin-bottom: 10px; margin-top: 30px">
+      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+      <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+      <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
+      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+      <a class="btn btn-warning btn-xs col-lg-offset-7"  data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
+    </div>
+    
 <?php view::includeHandlerMessage() ?>
 <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
     <thead>

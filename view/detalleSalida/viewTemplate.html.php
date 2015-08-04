@@ -50,7 +50,7 @@ use mvc\view\viewClass as view ?>
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
+            <a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
         <table class="table table-bordered table-responsive table-condensed tables">
