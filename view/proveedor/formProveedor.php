@@ -3,6 +3,8 @@
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $idProveedor = proveedorTableClass::ID ?>
 <?php $razonSoProv = proveedorTableClass::RAZON_SOCIAL ?>
 <?php $dirProveedor = proveedorTableClass::DIRECCION ?>
@@ -11,11 +13,10 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $ciudadNom = ciudadTableClass::NOM_CIUDAD ?>
 
 <div class="container container-fluid">    
-    <form class="form-signin" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', ((isset($objProveedor)) ? 'update' : 'create')) ?>">
+    <form class="form-horizontal" role="form" method="post" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', ((isset($objProveedor)) ? 'update' : 'create')) ?>">
         <?php if (isset($objProveedor) == true): ?>
             <input name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::ID, true) ?>" value="<?php echo $objProveedor[0]->$idProveedor ?>" type="hidden">
         <?php endif ?>
-
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('businessName') ?>:</label>
             <div class="col-lg-10">

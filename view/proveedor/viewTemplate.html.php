@@ -14,7 +14,7 @@ use mvc\view\viewClass as view ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header  text-center titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoProvider') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-shopping-cart"> <?php echo i18n::__('infoProvider') ?></i></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
@@ -22,14 +22,14 @@ use mvc\view\viewClass as view ?>
             <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <table class="table table-bordered table-responsive table-condensed">
+        <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
-                <tr>
+                <tr class="columna tr_table">
                     <th><?php echo i18n::__('id') ?></th>
                     <th><?php echo i18n::__('businessName') ?></th>
                     <th><?php echo i18n::__('direction') ?></th>
                     <th><?php echo i18n::__('phone') ?></th>
-                    <th><?php echo i18n::__('idCity') ?></th>
+                    <th><?php echo i18n::__('city') ?></th>
 
                 </tr>
             </thead>
