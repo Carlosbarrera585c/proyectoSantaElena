@@ -105,10 +105,5 @@ use mvc\session\sessionClass as session ?>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div style="margin-bottom: 10px; margin-top: 30px">
-    <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor') ?>" method="POST">
-        <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-    </form>
-</div>
-<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('Spain.png') ?>"></a>
-<a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('United States of America.png') ?>"></a>
+<a href="<?php echo routing::getInstance()->getUrlWeb('menu', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('Spain.png') ?>"></a>
+<a href="<?php echo routing::getInstance()->getUrlWeb('menu', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('United States of America.png') ?>"></a>

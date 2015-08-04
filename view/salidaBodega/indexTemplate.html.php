@@ -144,11 +144,11 @@ use mvc\view\viewClass as view ?>
         </table>
     </form>
     <div class="text-right">
-        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'index') ?>')">
+        <?php echo i18n::__('page')?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                 <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
             <?php endfor ?>
-        </select> de <?php echo $cntPages ?>
+        </select> <?php echo i18n::__('of')?> <?php echo $cntPages ?>
     </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, true) ?>">

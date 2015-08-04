@@ -1,6 +1,10 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $id = detalleSalidaTableClass::ID ?>
 <?php $cant = detalleSalidaTableClass::CANTIDAD ?>
 <?php $valor = detalleSalidaTableClass::VALOR ?>
@@ -16,7 +20,7 @@
 
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">  
-       
+
 
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -54,7 +58,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-new-window"> <?php echo i18n::__('outputDetail') ?></i></h1>
     </div>
@@ -66,7 +70,7 @@
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
-        <?php view::includeHandlerMessage() ?>
+<?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
                 <tr class="columna tr_table">
@@ -81,49 +85,49 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($objDetalleSalida as $detalleSalida): ?>
-                    <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $detalleSalida->$id ?>"></td>
-                      
-                        <td><?php echo $detalleSalida->$id ?></td>
-                        <td><?php echo $detalleSalida->$cant ?></td>
-                        <td><?php echo $detalleSalida->$valor ?></td>
-                        <td><?php echo $detalleSalida->$fechaFB ?></td>
-                        <td><?php echo $detalleSalida->$fechaVC ?></td>
-                        <td><?php echo $detalleSalida->$detalleSalidaId ?></td>
-                        <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'view', array(detalleSalidaTableClass::ID => $detalleSalida->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'edit', array(detalleSalidaTableClass::ID => $detalleSalida->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $detalleSalida->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
-                        </td>
-                    </tr>
-                <div class="modal fade" id="myModalDelete<?php echo $detalleSalida->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
-                            </div>
-                            <div class="modal-body">
-                                <?php echo i18n::__('questionDelete') ?> <?php echo $detalleSalida->$fechaFB ?>?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $detalleSalida->$id ?>, '<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach ?>
+<?php foreach ($objDetalleSalida as $detalleSalida): ?>
+                  <tr>
+                      <td><input type="checkbox" name="chk[]" value="<?php echo $detalleSalida->$id ?>"></td>
+
+                      <td><?php echo $detalleSalida->$id ?></td>
+                      <td><?php echo $detalleSalida->$cant ?></td>
+                      <td><?php echo $detalleSalida->$valor ?></td>
+                      <td><?php echo $detalleSalida->$fechaFB ?></td>
+                      <td><?php echo $detalleSalida->$fechaVC ?></td>
+                      <td><?php echo $detalleSalida->$detalleSalidaId ?></td>
+                      <td>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'view', array(detalleSalidaTableClass::ID => $detalleSalida->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'edit', array(detalleSalidaTableClass::ID => $detalleSalida->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                          <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $detalleSalida->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                      </td>
+                  </tr>
+              <div class="modal fade" id="myModalDelete<?php echo $detalleSalida->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
+                          </div>
+                          <div class="modal-body">
+  <?php echo i18n::__('questionDelete') ?> <?php echo $detalleSalida->$fechaFB ?>?
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                              <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $detalleSalida->$id ?>, '<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        <?php endforeach ?>
             </tbody>
         </table>
     </form>
-        <div class="text-right">
-        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'index') ?>')">
-            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+    <div class="text-right">
+<?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
+<?php for ($x = 1; $x <= $cntPages; $x++): ?>
+              <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
 <?php endfor ?>
-        </select> de <?php echo $cntPages ?>
+        </select> <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
     </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, true) ?>">
@@ -137,7 +141,7 @@
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDeleteMass') ?></h4>
             </div>
             <div class="modal-body">
-                <?php echo i18n::__('confirmDeleteMass') ?>
+<?php echo i18n::__('confirmDeleteMass') ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>

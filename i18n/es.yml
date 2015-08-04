@@ -38,6 +38,8 @@ dictionary:
     failureToDelete:      Algo Fallo Al Eliminar.
     dateStart:            Fecha Inicial.
     dateEnd:              Fecha Final.
+    page:                 Pàgina
+    of:                   de
     ##----------------------SISTEMA-------------------------##
     
     ##----------------------USUARIO-------------------------##

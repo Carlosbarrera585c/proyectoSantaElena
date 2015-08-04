@@ -40,6 +40,8 @@ dictionary:
     failureToDelete:      Failure Something To The Delete. 
     dateStart:            Date Start.
     dateEnd:              Date Ending.
+    page:                 Page
+    of:                   of
     ##----------------------SISTEMA-------------------------##
     
     ##----------------------USUARIO-------------------------##
