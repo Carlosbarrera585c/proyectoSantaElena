@@ -51,7 +51,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 detalleSalidaTableClass::update($ids, $data);
             }
             session::getInstance()->setSuccess(i18n::__('successfulUpdate'));
-            routing::getInstance()->redirect('salidaBodega', 'index');
+            routing::getInstance()->redirect('detalleSalida', 'view', array('id' => $salidaId ));
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
