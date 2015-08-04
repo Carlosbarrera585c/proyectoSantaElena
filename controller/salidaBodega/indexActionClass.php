@@ -40,6 +40,10 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 salidaBodegaTableClass::EMPLEADO_ID
             );
             
+            $orderBy = array(
+                salidaBodegaTableClass::ID
+            );
+            
       $page = 0;
       if (request::getInstance()->hasGet('page')) {
         $this->page = request::getInstance()->getGet('page');
@@ -47,7 +51,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = $page * config::getRowGrid();
       }
       $this->cntPages = salidaBodegaTableClass:: getTotalPages(config::getRowGrid(), $where);
-      $this->objSalidaBodega = salidaBodegaTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
+      $this->objSalidaBodega = salidaBodegaTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       session::getInstance()->deleteAttribute('salidaBodegaIndexFilters');      
             $this->defineView('index', 'salidaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

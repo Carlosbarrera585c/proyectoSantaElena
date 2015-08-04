@@ -70,6 +70,9 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             $whereDetalle = array(
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID => $idDetalle
             );
+            $orderBy = array(
+                detalleEntradaTableClass::ID
+            );
             
             $page = 0;
 
@@ -81,7 +84,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             $this->cntPages = detalleEntradaTableClass:: getTotalPages(config::getRowGrid(), $where);
 
             
-            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, null, null, config::getRowGrid(), $page, $whereDetalle);
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, $orderBy, 'ASC', config::getRowGrid(), $page, $whereDetalle);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

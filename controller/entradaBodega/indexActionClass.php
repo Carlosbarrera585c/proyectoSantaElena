@@ -17,37 +17,38 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
-        
-             $where = null;
-          if (request::getInstance()->hasPost('filter')) {
-        $filter = request::getInstance()->getPost('filter');
+
+            $where = null;
+            if (request::getInstance()->hasPost('filter')) {
+                $filter = request::getInstance()->getPost('filter');
 //aqui validar datos
-        if ((isset($filter['fecha1']) and $filter['fecha1'] !== null and $filter['fecha1'] !== "") and (isset($filter['fecha2']) and $filter['fecha2'] !== null and $filter['fecha2'] !== "")) {
-          $where[entradaBodegaTableClass::FECHA] = array(
-          date(config::getFormatTimestamp(), strtotime($filter['fecha1'] . '00:00:00')),
-          date(config::getFormatTimestamp(), strtotime($filter['fecha2'] . '23:59:59'))
-          );
-        }
-
-
-      } else if (session::getInstance()->hasAttribute('entradaBodegaIndexFilters')) {
-        $where = session::getInstance()->getAttribute('entradaBodegaIndexFilters');
-      }
+                if ((isset($filter['fecha1']) and $filter['fecha1'] !== null and $filter['fecha1'] !== "") and ( isset($filter['fecha2']) and $filter['fecha2'] !== null and $filter['fecha2'] !== "")) {
+                    $where[entradaBodegaTableClass::FECHA] = array(
+                        date(config::getFormatTimestamp(), strtotime($filter['fecha1'] . '00:00:00')),
+                        date(config::getFormatTimestamp(), strtotime($filter['fecha2'] . '23:59:59'))
+                    );
+                }
+            } else if (session::getInstance()->hasAttribute('entradaBodegaIndexFilters')) {
+                $where = session::getInstance()->getAttribute('entradaBodegaIndexFilters');
+            }
             $fields = array(
                 entradaBodegaTableClass::ID,
                 entradaBodegaTableClass::FECHA,
                 entradaBodegaTableClass::PROVEEDOR_ID
             );
-            
-      $page = 0;
-      if (request::getInstance()->hasGet('page')) {
-        $this->page = request::getInstance()->getGet('page');
-        $page = request::getInstance()->getGet('page') - 1;
-        $page = $page * config::getRowGrid();
-      }
-      $this->cntPages = entradaBodegaTableClass:: getTotalPages(config::getRowGrid(), $where);
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, null, null, config::getRowGrid(), $page, $where);
-            
+            $orderBy = array(
+                entradaBodegaTableClass::ID
+            );
+
+            $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+            $this->cntPages = entradaBodegaTableClass:: getTotalPages(config::getRowGrid(), $where);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+
             $this->defineView('index', 'entradaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

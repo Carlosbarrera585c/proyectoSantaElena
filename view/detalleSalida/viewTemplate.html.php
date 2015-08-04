@@ -15,7 +15,7 @@ use mvc\view\viewClass as view ?>
 <?php $desDoc = detalleSalidaTableClass::ID_DOC ?>
 <?php $salidaId = salidaBodegaTableClass::ID ?>
 <?php $fecha = salidaBodegaTableClass::ID ?>
-<?php $entradaId = detalleSalidaTableClass::SALIDA_BODEGA_ID ?>
+<?php $detalleSalidaId = detalleSalidaTableClass::SALIDA_BODEGA_ID ?>
 <?php $insuId = detalleSalidaTableClass::INSUMO_ID ?>
 <?php $descInsu = detalleSalidaTableClass::INSUMO_ID ?>
 
@@ -82,7 +82,7 @@ use mvc\view\viewClass as view ?>
                         <td><?php echo $detalleSalida->$valor ?></td>
                         <td><?php echo $detalleSalida->$fechaFB ?></td>
                         <td><?php echo $detalleSalida->$fechaVC ?></td>
-                        <td><?php echo $detalleSalida->$entradaId ?></td>
+                        <td><?php echo $detalleSalida->$detalleSalidaId ?></td>
                         <td><?php echo tipoDocTableClass::getNameTipoDes($detalleSalida->$desDoc) ?></td>
                         <td><?php echo insumoTableClass::getNameDInsumo($detalleSalida->$descInsu) ?></td>
                         <td>
@@ -102,7 +102,7 @@ use mvc\view\viewClass as view ?>
         <input type="hidden" id="idDelete" name="<?php echo detalleSalidaTableClass::getNameField(detalleSalidaTableClass::ID, true) ?>">
     </form>
      <div class="text-right">
-        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'index') ?>')">
+         Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'view', array(detalleSalidaTableClass::ID => $detalleSalida->$detalleSalidaId)) ?>')">
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                 <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
 <?php endfor ?>
@@ -119,7 +119,7 @@ use mvc\view\viewClass as view ?>
                     <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filters') ?></h4>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'index') ?>">
+                    <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'view', array(detalleSalidaTableClass::ID=> $detalleSalida-> $detalleSalidaId)) ?>">
                         <div class="form-group">
                             <label class="col-sm-2 control-label"><?php echo i18n::__('manuFacturingDate') ?></label>
                             <div class="col-sm-10">
