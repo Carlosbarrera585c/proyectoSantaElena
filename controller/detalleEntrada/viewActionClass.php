@@ -51,10 +51,10 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 entradaBodegaTableClass::ID,
                 entradaBodegaTableClass::FECHA
             );
-            $whereEntrada = array(
+            $where = array(
                 entradaBodegaTableClass::ID => $idEntrada
             );
-            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, false, null, null, null, null, $whereEntrada);
+            $this->objEntradaBodega = entradaBodegaTableClass::getAll($fieldsEntrada, false, null, null, null, null, $where);
 
             $idDetalle = request::getInstance()->getRequest(detalleEntradaTableClass::ID, true);
             $fieldsDetalle = array(
@@ -67,7 +67,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID,
                 detalleEntradaTableClass::INSUMO_ID
             );
-            $whereDetalle = array(
+            $where = array(
                 detalleEntradaTableClass::ENTRADA_BODEGA_ID => $idDetalle
             );
             $orderBy = array(
@@ -84,7 +84,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
             $this->cntPages = detalleEntradaTableClass:: getTotalPages(config::getRowGrid(), $where);
 
             
-            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, $orderBy, 'ASC', config::getRowGrid(), $page, $whereDetalle);
+            $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->defineView('view', 'detalleEntrada', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
