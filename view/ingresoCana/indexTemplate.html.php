@@ -1,17 +1,24 @@
 <?php
+
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-<?php $id = ingresoCañaTableClass::ID ?>
-<?php $fecha = ingresoCañaTableClass::FECHA ?>
-<?php $empleado_id = ingresoCañaTableClass::EMPLEADO_ID ?>
-<?php $proveedor_id = ingresoCañaTableClass::PROVEEDOR_ID ?>
-<?php $cantidad = ingresoCañaTableClass::CANTIDAD ?>
-<?php $procedencia_caña = ingresoCañaTableClass::PROCEDENCIA_CAÑA ?>
-<?php $peso_caña = ingresoCañaTableClass::PESO_CAÑA ?>
-<?php $num_vagon = ingresoCañaTableClass::NUM_VAGON ?>
+<?php
+use mvc\config\configClass as config ?>
+<?php
+use mvc\request\requestClass as request ?>
+<?php
+use mvc\session\sessionClass as session ?>
+<?php $id = ingresoCanaTableClass::ID ?>
+<?php $fecha = ingresoCanaTableClass::FECHA ?>
+<?php $empleado_id = ingresoCanaTableClass::EMPLEADO_ID ?>
+<?php $proveedor_id = ingresoCanaTableClass::PROVEEDOR_ID ?>
+<?php $cantidad = ingresoCanaTableClass::CANTIDAD ?>
+<?php $procedencia_caña = ingresoCanaTableClass::PROCEDENCIA_CAÑA ?>
+<?php $peso_caña = ingresoCanaTableClass::PESO_CAÑA ?>
+<?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
 <?php view::includePartial('menu/menu') ?>
 <!-- ventana Modal Error al Eliminar Foraneas-->
 <div class="container container-fluid">
@@ -39,7 +46,7 @@ use mvc\view\viewClass as view ?>
           <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('generate report') ?></h4>
         </div>
         <div class="modal-body">
-          <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'report') ?>">
+          <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'report') ?>">
             <div class="form-group">
               <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
               <div class="col-sm-10">
@@ -164,12 +171,12 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-road"> <?php echo i18n::__('reedIncome') ?></i></h1>
         </div>
-  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'deleteSelect') ?>" method="POST">
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
-      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
       <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
-      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+      <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
       <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
     </div>
     </div>
@@ -184,14 +191,14 @@ use mvc\view\viewClass as view ?>
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($objIngresoCaña as $ingreso): ?>
+        <?php foreach ($objingresoCana as $ingreso): ?>
           <tr>
             <td class="tamano"><input type="checkbox" name="chk[]" value="<?php echo $ingreso->$id ?>"></td>
-            <td><?php echo ingresoCañaTableClass::getNameEmpleado($ingreso->$empleado_id) ?></td>
-            <td><?php echo ingresoCañaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>  
+            <td><?php echo ingresoCanaTableClass::getNameEmpleado($ingreso->$empleado_id) ?></td>
+            <td><?php echo ingresoCanaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>  
             <td>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'view', array(ingresoCañaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'edit', array(ingresoCañaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'view', array(ingresoCanaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'edit', array(ingresoCanaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
               <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $ingreso->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
             </td>
           </tr>
@@ -207,7 +214,7 @@ use mvc\view\viewClass as view ?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $ingreso->$id ?>, '<?php echo ingresoCañaTableClass::getNameField(ingresoCañaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $ingreso->$id ?>, '<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
               </div>
             </div>
           </div>
@@ -217,14 +224,14 @@ use mvc\view\viewClass as view ?>
     </table>
  </form>
     <div class="text-right">
-    pagina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'index') ?>')">
+    pagina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'index') ?>')">
       <?php for ($x = 1; $x <= $cntPages; $x++): ?>
         <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
       <?php endfor ?>
     </select> de <?php echo $cntPages; ?>     
   </div>
-  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCaña', 'delete') ?>" method="POST">
-    <input type="hidden" id="idDelete" name="<?php echo ingresoCañaTableClass::getNameField(ingresoCañaTableClass::ID, true) ?>">
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::ID, true) ?>">
   </form>
 </div>
 <div class="modal fade" id="myModalDeleteMass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -3,11 +3,11 @@
 use mvc\model\table\tableBaseClass;
 
 /**
- * Description of ingresoCañaBaseTableClass
+ * Description of ingresoCanaBaseTableClass
  *
  * @author Bayron Henao <baironhenao82@gmail.com>
  */
-class ingresoCañaBaseTableClass extends tableBaseClass {
+class ingresoCanaBaseTableClass extends tableBaseClass {
 
   private $id;
   private $fecha;
@@ -17,22 +17,21 @@ class ingresoCañaBaseTableClass extends tableBaseClass {
   private $procedencia_caña;
   private $peso_caña;
   private $num_vagon;
-  
 
   const ID = 'id';
-  const FECHA= 'fecha';
+  const FECHA = 'fecha';
   const FECHA_LENGTH = 35;
   const EMPLEADO_ID = 'empleado_id';
-  const PROVEEDOR_ID= 'proveedor_id';
-  const CANTIDAD= 'cantidad';
-  const CANTIDAD_LENGTH= 30;
-  const PROCEDENCIA_CAÑA= 'procedencia_caña';
-  const PROCEDENCIA_CAÑA_LENGTH= 30;
-  const PESO_CAÑA= 'peso_caña';
-  const PESO_CAÑA_LENGTH= 30;
-  const NUM_VAGON= 'num_vagon';
-  const NUM_VAGON_LENGTH= 30;
-  
+  const PROVEEDOR_ID = 'proveedor_id';
+  const CANTIDAD = 'cantidad';
+  const CANTIDAD_LENGTH = 30;
+  const PROCEDENCIA_CAÑA = 'procedencia_caña';
+  const PROCEDENCIA_CAÑA_LENGTH = 30;
+  const PESO_CAÑA = 'peso_caña';
+  const PESO_CAÑA_LENGTH = 30;
+  const NUM_VAGON = 'num_vagon';
+  const NUM_VAGON_LENGTH = 30;
+
   function getId() {
     return $this->id;
   }
@@ -97,7 +96,13 @@ class ingresoCañaBaseTableClass extends tableBaseClass {
     $this->num_vagon = $num_vagon;
   }
 
-      
+  /**
+   * Obtiene el nombre de la tabla
+   * @return string
+   */
+  public static function getNameTable() {
+    return 'ingreso_caña';
+  }
 
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato
@@ -113,14 +118,6 @@ class ingresoCañaBaseTableClass extends tableBaseClass {
   }
 
   /**
-   * Obtiene el nombre de la tabla
-   * @return string
-   */
-  public static function getNameTable() {
-    return 'ingreso_caña';
-  }
-
-  /**
    * Método para borrar un registro de una tabla X en la base de datos
    *
    * @param array $ids Array con los campos por posiciones
@@ -130,7 +127,7 @@ class ingresoCañaBaseTableClass extends tableBaseClass {
    * borrado físico de un registro en una tabla de la base de datos
    * @return PDOException|boolean
    */
-  public static function delete($ids, $deletedLogical = true, $table = null) {
+  public static function delete($ids, $deletedLogical = false, $table = null) {
     return parent::delete($ids, $deletedLogical, self::getNameTable());
   }
 

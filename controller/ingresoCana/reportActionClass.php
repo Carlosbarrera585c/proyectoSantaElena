@@ -17,45 +17,45 @@ class reportActionClass extends controllerClass implements controllerActionInter
         $report = request::getInstance()->getPost('report');
         // aqui validar datos de filtros
         if (isset($report['fechaCreacion1']) and $report['fechaCreacion1'] !== NULL and $report['fechaCreacion1'] !== '' and isset($report['fechaCreacion2']) and $report['fechaCreacion2'] !== NULL and $report['fechaCreacion2'] !== '') {
-          $where[ingresoCañaTableClass::FECHA] = array(
+          $where[ingresoCanaTableClass::FECHA] = array(
               $report['fechaCreacion1'],
               $report['fechaCreacion2']
           );
         }
         if (isset($report['Empleado']) and $report['Empleado'] !== NULL and $report['Empleado'] !== '') {
-          $where[ingresoCañaTableClass::EMPLEADO_ID] = $report['Empleado'];
+          $where[ingresoCanaTableClass::EMPLEADO_ID] = $report['Empleado'];
         }
         if (isset($report['Proveedor']) and $report['Proveedor'] !== NULL and $report['Proveedor'] !== '') {
-          $where[ingresoCañaTableClass::PROVEEDOR_ID] = $report['Proveedor'];
+          $where[ingresoCanaTableClass::PROVEEDOR_ID] = $report['Proveedor'];
         }
         if (isset($report['Cantidad']) and $report['Cantidad'] !== NULL and $report['Cantidad'] !== '') {
-          $where[ingresoCañaTableClass::CANTIDAD] = $report['Cantidad'];
+          $where[ingresoCanaTableClass::CANTIDAD] = $report['Cantidad'];
         }
         if (isset($report['Procedencia']) and $report['Procedencia'] !== NULL and $report['Procedencia'] !== '') {
-          $where[ingresoCañaTableClass::PROCEDENCIA_CAÑA] = $report['Procedencia'];
+          $where[ingresoCanaTableClass::PROCEDENCIA_CAÑA] = $report['Procedencia'];
         }
         if (isset($report['Peso']) and $report['Peso'] !== NULL and $report['Peso'] !== '') {
-          $where[ingresoCañaTableClass::PESO_CAÑA] = $report['Peso'];
+          $where[ingresoCanaTableClass::PESO_CAÑA] = $report['Peso'];
         }
         if (isset($report['Vagon']) and $report['Vagon'] !== NULL and $report['Vagon'] !== '') {
-          $where[ingresoCañaTableClass::NUM_VAGON] = $report['Vagon'];
+          $where[ingresoCanaTableClass::NUM_VAGON] = $report['Vagon'];
         }
         $fields = array(
-            ingresoCañaTableClass::ID,
-            ingresoCañaTableClass::FECHA,
-            ingresoCañaTableClass::EMPLEADO_ID,
-            ingresoCañaTableClass::PROVEEDOR_ID,
-            ingresoCañaTableClass::CANTIDAD,
-            ingresoCañaTableClass::PROCEDENCIA_CAÑA,
-            ingresoCañaTableClass::PESO_CAÑA,
-            ingresoCañaTableClass::NUM_VAGON
+            ingresoCanaTableClass::ID,
+            ingresoCanaTableClass::FECHA,
+            ingresoCanaTableClass::EMPLEADO_ID,
+            ingresoCanaTableClass::PROVEEDOR_ID,
+            ingresoCanaTableClass::CANTIDAD,
+            ingresoCanaTableClass::PROCEDENCIA_CAÑA,
+            ingresoCanaTableClass::PESO_CAÑA,
+            ingresoCanaTableClass::NUM_VAGON
         );
 
         $orderBy = array(
-            ingresoCañaTableClass::ID
+            ingresoCanaTableClass::ID
         );
-        $this->objIngresoCaña = ingresoCañaTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);
-        $this->defineView('report', 'ingresoCaña', session::getInstance()->getFormatOutput());
+        $this->objingresoCana = ingresoCanaTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);
+        $this->defineView('report', 'ingresoCana', session::getInstance()->getFormatOutput());
       }
 //            $fields = array(
 //            controlCalidadTableClass::ID,

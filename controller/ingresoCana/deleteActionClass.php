@@ -19,20 +19,20 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(ingresoCañaTableClass::getNameField(ingresoCañaTableClass::ID, true));
+                $id = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::ID, true));
 
                 $ids = array(
-                    ingresoCañaTableClass::ID => $id
+                    ingresoCanaTableClass::ID => $id
                 );
-                ingresoCañaTableClass::delete($ids, false);
+                ingresoCanaTableClass::delete($ids, false);
                 $this->arrayAjax = array(
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-                $this->defineView('delete', 'ingresoCaña', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'ingresoCana', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
-                routing::getInstance()->redirect('ingresoCaña', 'index');
+                routing::getInstance()->redirect('ingresoCana', 'index');
             }
         } catch (PDOException $exc) {
           
@@ -40,7 +40,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'code' => 500,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-          $this->defineView('delete', 'ingresoCaña', session::getInstance()->getFormatOutput());
+          $this->defineView('delete', 'ingresoCana', session::getInstance()->getFormatOutput());
                 
         }
     }

@@ -144,3 +144,15 @@ pagoTrabajadores:
     security: true
   delete:
     security: true
+    
+ingresoCana:
+  index:
+    security: true
+    credencial:
+      -[admin, Consultor]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+    security: true

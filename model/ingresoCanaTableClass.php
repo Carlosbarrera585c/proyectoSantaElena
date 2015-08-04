@@ -4,19 +4,19 @@ use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
 
 /**
- * Description of ingresoCañaTableClass
+ * Description of ingresoCanaTableClass
  *
  * @author Bayron Henao <baironhenao82@gmail.com>
  */
-class ingresoCañaTableClass extends ingresoCañaBaseTableClass {
+class ingresoCanaTableClass extends ingresoCanaBaseTableClass {
  /**
      * Funcion para contar la cantidad de lineas 
      * en la implementacion de paginacion.
      */
     public static function getTotalPages($lines){
         try{
-            $sql = 'SELECT count('.  ingresoCañaTableClass::ID.')As cantidad '.'FROM '. 
-                    ingresoCañaTableClass::getNameTable();
+            $sql = 'SELECT count('.  ingresoCanaTableClass::ID.')As cantidad '.'FROM '. 
+                    ingresoCanaTableClass::getNameTable();
             $answer = model::getInstance()->prepare($sql);
             $answer->execute();
             $answer = $answer->fetchAll(PDO::FETCH_OBJ);

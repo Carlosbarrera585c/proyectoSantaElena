@@ -19,22 +19,22 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
     try {
 
       $fields = array(
-          ingresoCañaTableClass::ID ,
-          ingresoCañaTableClass::FECHA,
-          ingresoCañaTableClass::EMPLEADO_ID,
-          ingresoCañaTableClass::PROVEEDOR_ID,
-          ingresoCañaTableClass::CANTIDAD,
-          ingresoCañaTableClass::PROCEDENCIA_CAÑA,
-          ingresoCañaTableClass::PESO_CAÑA,
-          ingresoCañaTableClass::NUM_VAGON
+          ingresoCanaTableClass::ID ,
+          ingresoCanaTableClass::FECHA,
+          ingresoCanaTableClass::EMPLEADO_ID,
+          ingresoCanaTableClass::PROVEEDOR_ID,
+          ingresoCanaTableClass::CANTIDAD,
+          ingresoCanaTableClass::PROCEDENCIA_CAÑA,
+          ingresoCanaTableClass::PESO_CAÑA,
+          ingresoCanaTableClass::NUM_VAGON
 
       );
       
     $where = array (
-        ingresoCañaTableClass::ID => request::getInstance()->getRequest(ingresoCañaTableClass::ID)
+        ingresoCanaTableClass::ID => request::getInstance()->getRequest(ingresoCanaTableClass::ID)
     );
-      $this->objIngresoCaña = ingresoCañaTableClass::getAll($fields, false, null, null, null, null, $where);
-      $this->defineView('view', 'ingresoCaña', session::getInstance()->getFormatOutput());
+      $this->objingresoCana = ingresoCanaTableClass::getAll($fields, false, null, null, null, null, $where);
+      $this->defineView('view', 'ingresoCana', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

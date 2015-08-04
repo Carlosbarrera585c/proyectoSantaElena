@@ -23,8 +23,8 @@ use mvc\session\sessionClass as session ?>
     </div>
     <div style="margin-bottom: 10px; margin-top: 30px">
         <?php if (session::getInstance()->hasCredential('admin')): ?>
-            <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-<?php endif; ?>
+          <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+        <?php endif; ?>
         <a href="<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
     </div>
     <table class="table table-bordered table-responsive table-condensed tables">

@@ -182,6 +182,109 @@ credencial_deleteFilters:
   url:    /credencial/borrarFiltros
   param:  { module: credencial, action: deleteFilters, format: html }
 ##-------------------------- CREDENCIAL --------------------------##
+##-------------------------------------------------------------------------##
+ingresoCana_index:
+  url:    /ingresoCana/index
+  param:  { module: ingresoCana, action: index, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+  
+ingresoCana_ver:
+  url:    /ingresoCana/ver
+  param:  { module: ingresoCana, action: view, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+ 
+ingresoCana_insert:
+  url:    /ingresoCana/insertar
+  param:  { module: ingresoCana, action: insert, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+ingresoCana_create:
+  url:    /ingresoCana/crear
+  param:  { module: ingresoCana, action: create, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+    
+ingresoCana_edit:
+  url:    /ingresoCana/editar
+  param:  { module: ingresoCana, action: edit, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
+ 
+ingresoCana_update:
+  url:    /ingresoCana/actualizar
+  param:  { module: ingresoCana, action: update, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+    
+ingresoCana_delete:
+  url:    /ingresoCana/eliminar
+  param:  { module: ingresoCana, action: delete, format: json }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+   
+ingresoCana_deleteSelect:
+  url:    /ingresoCana/eliminarSeleccion
+  param:  { module: ingresoCana, action: deleteSelect, format: html }
+  load:
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    
+ingresoCana_reporte:
+  url:    /ingresoCana/reporte
+  param:  { module: ingresoCana, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+ 
+ingresoCana_deleteFilters:
+  url:    /ingresoCana/borrarFiltros
+  param:  { module: ingresoCana, action: deleteFilters, format: html }
 
 ##-------------------------- TIPO EMPAQUE --------------------------##
 
@@ -1489,110 +1592,6 @@ controlCalidad_deleteFilters:
   url:    /controlCalidad/borrarFiltros
   param:  { module: controlCalidad, action: deleteFilters, format: html }
 ##-------------------------------------------------------------------------##
-##-------------------------------------------------------------------------##
-ingresoCaña_index:
-  url:    /ingresoCaña/index
-  param:  { module: ingresoCaña, action: index, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-  
-ingresoCaña_ver:
-  url:    /ingresoCaña/ver
-  param:  { module: ingresoCaña, action: view, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
- 
-ingresoCaña_insert:
-  url:    /ingresoCaña/insertar
-  param:  { module: ingresoCaña, action: insert, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-    
-ingresoCaña_create:
-  url:    /ingresoCaña/crear
-  param:  { module: ingresoCaña, action: create, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
-    
-ingresoCaña_edit:
-  url:    /ingresoCaña/editar
-  param:  { module: ingresoCaña, action: edit, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    - model/base/insumoBaseTableClass.php
-    - model/insumoTableClass.php
- 
-ingresoCaña_update:
-  url:    /ingresoCaña/actualizar
-  param:  { module: ingresoCaña, action: update, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/proveedorBaseTableClass.php
-    - model/proveedorTableClass.php
-    
-    
-ingresoCaña_delete:
-  url:    /ingresoCaña/eliminar
-  param:  { module: ingresoCaña, action: delete, format: json }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-   
-ingresoCaña_deleteSelect:
-  url:    /ingresoCaña/eliminarSeleccion
-  param:  { module: ingresoCaña, action: deleteSelect, format: html }
-  load:
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
-    
-ingresoCaña_reporte:
-  url:    /ingresoCaña/reporte
-  param:  { module: ingresoCaña, action: report, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
-    - model/base/ingresoCañaBaseTableClass.php
-    - model/ingresoCañaTableClass.php
- 
-ingresoCaña_deleteFilters:
-  url:    /ingresoCaña/borrarFiltros
-  param:  { module: ingresoCaña, action: deleteFilters, format: html }
-
 
 ##-------------------------- SALIDA BODEGA-----------------------------##
 

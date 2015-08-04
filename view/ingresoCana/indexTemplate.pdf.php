@@ -1,14 +1,14 @@
 <?php
 use mvc\routing\routingClass as routing;
 
-$id = ingresoCañaTableClass::ID;
-$fecha = ingresoCañaTableClass::FECHA;
-$empleado_id = ingresoCañaTableClass::EMPLEADO_ID;
-$proveedor_id = ingresoCañaTableClass::PROVEEDOR_ID;
-$cantidad = ingresoCañaTableClass::CANTIDAD;
-$procedencia_caña = ingresoCañaTableClass::PROCEDENCIA_CAÑA;
-$peso_caña = ingresoCañaTableClass::PESO_CAÑA;
-$num_vagon = ingresoCañaTableClass::NUM_VAGON;
+$id = ingresoCanaTableClass::ID;
+$fecha = ingresoCanaTableClass::FECHA;
+$empleado_id = ingresoCanaTableClass::EMPLEADO_ID;
+$proveedor_id = ingresoCanaTableClass::PROVEEDOR_ID;
+$cantidad = ingresoCanaTableClass::CANTIDAD;
+$procedencia_caña = ingresoCanaTableClass::PROCEDENCIA_CAÑA;
+$peso_caña = ingresoCanaTableClass::PESO_CAÑA;
+$num_vagon = ingresoCanaTableClass::NUM_VAGON;
 $pdf = new FPDF('l', 'mm', 'letter');
 $pdf->AddPage();
 $pdf->Cell(80);
@@ -27,7 +27,7 @@ $pdf->Cell(255,10,'REPORTE INGRESO CAÑA',1,1,'C');
   $pdf->Cell(20,10,  utf8_decode("PESO"),1);
   $pdf->Cell(20,10,  utf8_decode("NUM_VAGON"),1);
   $pdf->Ln();
-foreach ($objIngresoCaña as $ingreso){
+foreach ($objingresoCana as $ingreso){
   $pdf->Cell(10,10,  utf8_decode($ingreso->$id),1);
   $pdf->Cell(45,10,  utf8_decode($ingreso->$fecha),1);
   $pdf->Cell(35,10,  utf8_decode($ingreso->$empleado_id),1);

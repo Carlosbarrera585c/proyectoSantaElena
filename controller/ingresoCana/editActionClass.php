@@ -21,22 +21,22 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasGet(ingresoCañaTableClass::ID)) {
+            if (request::getInstance()->hasGet(ingresoCanaTableClass::ID)) {
                 $fields = array(
-				 ingresoCañaTableClass::ID,
-                 ingresoCañaTableClass::FECHA,
-                 ingresoCañaTableClass::EMPLEADO_ID,
-                 ingresoCañaTableClass::PROVEEDOR_ID,
-                 ingresoCañaTableClass::CANTIDAD,
-                 ingresoCañaTableClass::PROCEDENCIA_CAÑA,
-                 ingresoCañaTableClass::PESO_CAÑA ,
-                 ingresoCañaTableClass::NUM_VAGON
+				 ingresoCanaTableClass::ID,
+                 ingresoCanaTableClass::FECHA,
+                 ingresoCanaTableClass::EMPLEADO_ID,
+                 ingresoCanaTableClass::PROVEEDOR_ID,
+                 ingresoCanaTableClass::CANTIDAD,
+                 ingresoCanaTableClass::PROCEDENCIA_CAÑA,
+                 ingresoCanaTableClass::PESO_CAÑA ,
+                 ingresoCanaTableClass::NUM_VAGON
                 
                 );
                 $where = array(
-                    ingresoCañaTableClass::ID => request::getInstance()->getGet(ingresoCañaTableClass::ID)
+                    ingresoCanaTableClass::ID => request::getInstance()->getGet(ingresoCanaTableClass::ID)
                 );
-                $this->objIngresoCaña = ingresoCañaTableClass::getAll($fields, false, null, null, null, null, $where);
+                $this->objingresoCana = ingresoCanaTableClass::getAll($fields, false, null, null, null, null, $where);
                 
                  $fields = array(
                      empleadoTableClass::ID,
@@ -53,9 +53,9 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $this->objProveedor = proveedorTableClass::getAll($fields, false);
                 
                  
-                $this->defineView('edit', 'ingresoCaña', session::getInstance()->getFormatOutput());
+                $this->defineView('edit', 'ingresoCana', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('ingresoCaña', 'index');
+                routing::getInstance()->redirect('ingresoCana', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

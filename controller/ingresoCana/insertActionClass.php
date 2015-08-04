@@ -30,7 +30,7 @@ class insertActionClass extends controllerClass implements controllerActionInter
 
               $this->objProveedor = proveedorTableClass::getAll($fields,false);
             
-        $this->defineView('insert', 'ingresoCaña', session::getInstance()->getFormatOutput());
+        $this->defineView('insert', 'ingresoCana', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();
             echo '<br>';
