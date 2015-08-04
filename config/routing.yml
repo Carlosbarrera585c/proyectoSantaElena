@@ -6,7 +6,7 @@ homepage:
     - model/usuarioTableClass.php
 traduccion:
   url:    /traduccion
-  param:  { module: empleado, action: traductor, format: html }
+  param:  { module: menu, action: traductor, format: html }
   
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:

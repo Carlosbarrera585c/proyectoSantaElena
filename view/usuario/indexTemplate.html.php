@@ -43,8 +43,8 @@ use mvc\session\sessionClass as session ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <?php if (session::getInstance()->hasCredential('admin')): ?>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-                <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+              <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
             <?php endif ?>
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
@@ -60,44 +60,44 @@ use mvc\session\sessionClass as session ?>
             </thead>
             <tbody>
                 <?php foreach ($objUsuarios as $usuario): ?>
-                    <tr class="">
-                        <td class=""><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
-                        <td><?php echo $usuario->$usu ?></td>
-                        <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'view', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
-                            <?php if (session::getInstance()->hasCredential('admin')): ?>
-                                <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
-                                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
-                            <?php endif ?>
-                        </td>
-                    </tr>
-                <div class="modal fade" id="myModalDelete<?php echo $usuario->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
-                            </div>
-                            <div class="modal-body">
-                                <?php echo i18n::__('questionDelete') ?> <?php echo $usuario->$usu ?>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $usuario->$id ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                  <tr class="">
+                      <td class=""><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
+                      <td><?php echo $usuario->$usu ?></td>
+                      <td>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'view', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
+                          <?php if (session::getInstance()->hasCredential('admin')): ?>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                          <?php endif ?>
+                      </td>
+                  </tr>
+              <div class="modal fade" id="myModalDelete<?php echo $usuario->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
+                          </div>
+                          <div class="modal-body">
+                              <?php echo i18n::__('questionDelete') ?> <?php echo $usuario->$usu ?>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                              <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $usuario->$id ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             <?php endforeach ?>
             </tbody>
         </table>
     </form>
     <div class="text-right">
-        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>')">
-            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+        <?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
+        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+              <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
             <?php endfor ?>
-        </select> de <?php echo $cntPages ?>
+        </select> <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
     </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">

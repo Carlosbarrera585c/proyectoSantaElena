@@ -1,11 +1,15 @@
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $id = tipoDocTableClass::ID ?>
-<?php $desc = tipoDocTableClass::DESC_TIPO_DOC?>
+<?php $desc = tipoDocTableClass::DESC_TIPO_DOC ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
-        
+
     <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -32,13 +36,13 @@
         </div>
     </div>
     <div class="page-header titulo">
-       <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('docType') ?></h1>
+        <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('docType') ?></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
-                        <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
+            <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
         </div>
         <?php view::includeHandlerMessage() ?>
@@ -46,48 +50,48 @@
             <thead>
                 <tr class="active columna success">
                     <th><input type="checkbox" id="chkAll"></th>
-                    <th><?php echo i18n::__('desc')?></th>
-                    <th><?php echo i18n::__('actions')?></th>
+                    <th><?php echo i18n::__('desc') ?></th>
+                    <th><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($objTipoDoc as $tipoDoc): ?>
-                    <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $tipoDoc->$id ?>"></td>
-                        <td><?php echo $tipoDoc->$desc ?></td>
-                        <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'view', array(tipoDocTableClass::ID => $tipoDoc->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'edit', array(tipoDocTableClass::ID => $tipoDoc->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipoDoc->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
-                        </td>
-                    </tr>
-                    <div class="modal fade" id="myModalDelete<?php echo $tipoDoc->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
-                            </div>
-                            <div class="modal-body">
-                                <?php echo i18n::__('questionDelete')?> <?php echo $tipoDoc->$desc ?>?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $tipoDoc->$id ?>, '<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php endforeach ?>
+                  <tr>
+                      <td><input type="checkbox" name="chk[]" value="<?php echo $tipoDoc->$id ?>"></td>
+                      <td><?php echo $tipoDoc->$desc ?></td>
+                      <td>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'view', array(tipoDocTableClass::ID => $tipoDoc->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'edit', array(tipoDocTableClass::ID => $tipoDoc->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                          <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipoDoc->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                      </td>
+                  </tr>
+              <div class="modal fade" id="myModalDelete<?php echo $tipoDoc->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
+                          </div>
+                          <div class="modal-body">
+                              <?php echo i18n::__('questionDelete') ?> <?php echo $tipoDoc->$desc ?>?
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                              <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $tipoDoc->$id ?>, '<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <?php endforeach ?>
             </tbody>
         </table>
     </form>
-            <div class="text-right">
-        Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>')">
-            <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-<?php endfor ?>
-        </select> de <?php echo $cntPages ?>
+    <div class="text-right">
+        <?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
+        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+              <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+            <?php endfor ?>
+        </select> <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
     </div>
     <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'delete') ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::ID, true) ?>">

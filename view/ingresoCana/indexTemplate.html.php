@@ -200,11 +200,11 @@ use mvc\session\sessionClass as session ?>
     </table>
  </form>
     <div class="text-right">
-    pagina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'index') ?>')">
+    <?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
       <?php for ($x = 1; $x <= $cntPages; $x++): ?>
         <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
       <?php endfor ?>
-    </select> de <?php echo $cntPages; ?>     
+    </select> <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
   </div>
   <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'delete') ?>" method="POST">
     <input type="hidden" id="idDelete" name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::ID, true) ?>">
