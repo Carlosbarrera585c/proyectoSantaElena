@@ -21,17 +21,17 @@ class updateActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST')) {
 
                 $id = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::ID, true));
-                $nomEmpleado = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true));
-                $apellEmpleado = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true));
-                $telefono = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true));
-                $direccion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true));
-                $tipoId = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, true));
-                $numeroIdentificacion = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true));
-                $credencialId = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true));
-                $correo = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
-                $correo2 = request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true));
-
-                $this->Validate($nomEmpleado, $apellEmpleado, $telefono, $direccion, $tipoId, $numeroIdentificacion, $credencialId, $correo, $correo2);
+                $nomEmpleado = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NOM_EMPLEADO, true)));
+                $apellEmpleado = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::APELL_EMPLEADO, true)));
+                $telefono = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)));
+                $direccion = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)));
+                $tipoId = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, true)));
+                $numeroIdentificacion = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true)));
+                $credencialId = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true)));
+                $correo = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true). '_1'));
+                $correo2 = trim(request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true). '_2'));
+                               
+                $this->ValidateUpdate($nomEmpleado, $apellEmpleado, $telefono, $direccion, $tipoId, $numeroIdentificacion, $credencialId, $correo, $correo2);
 
                 $ids = array(
                     empleadoTableClass::ID => $id
@@ -58,7 +58,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         }
     }
 
-    private function Validate($nomEmpleado, $apellEmpleado, $telefono, $direccion, $tipoId, $numeroIdentificacion, $credencialId, $correo, $correo2) {
+    private function ValidateUpdate($nomEmpleado, $apellEmpleado, $telefono, $direccion, $tipoId, $numeroIdentificacion, $credencialId, $correo, $correo2) {
         $bandera = FALSE;
         if (strlen($nomEmpleado) > empleadoTableClass::NOM_EMPLEADO_LENGTH) {
             session::getInstance()->setError(i18n::__('errorLengthEmployee', NULL, 'default', array('%nombre%' => $nomEmpleado, '%caracteres%' => empleadoTableClass::NOM_EMPLEADO_LENGTH)), 'errorNombre');
@@ -103,7 +103,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setError(i18n::__('errorLengthDirection', NULL, 'default', array('%direccion%' => $direccion, '%caracteres%' => empleadoTableClass::DIRECCION_LENGTH)), 'errorDireccion');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true), true);
-        } elseif ($direccion === NULL) {
+        } elseif (strlen($direccion) === NULL) {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorDireccion');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true), true);
@@ -125,16 +125,16 @@ class updateActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setError(i18n::__('errorMail', NULL, 'default'), 'errorCorreo');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
-        } elseif (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-            session::getInstance()->setError(i18n::__('errorMailCharacters', NULL, 'default'), 'errorCorreo2');
+        } else if (filter_var(strlen($correo), FILTER_VALIDATE_EMAIL)) {
+            session::getInstance()->setError(i18n::__('errorMailCharacters', NULL, 'default'), 'errorCorreo');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
-        } elseif ($correo === NULL) {
+        } elseif (strlen($correo) === NULL) {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorCorreo');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);
         }
-        if ($correo2 === NULL) {
+        if (strlen($correo2) === NULL) {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorCorreo');
             $bandera = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true), true);

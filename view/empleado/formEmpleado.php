@@ -59,10 +59,10 @@ use mvc\request\requestClass as request ?>
             </div>
         </div>
         <?php view::getMessageError('errorDireccion') ?>
-        <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === true) ? 'has-error has-feedback' : '' ?>">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('direction') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : ((session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === true) ? '' : (request::getInstance()->hasPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true))) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) : '' )) ?>" placeholder="<?php echo i18n::__('Enter your Direction') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : ((session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === true) ? '' : (request::getInstance()->hasPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true))) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) : '' )) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true) ?>" placeholder="<?php echo i18n::__('Enter your Direction') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::DIRECCION, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
