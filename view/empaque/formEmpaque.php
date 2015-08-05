@@ -27,7 +27,7 @@ use mvc\request\requestClass as request ?>
     <input name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, true) ?>" value="<?php echo $objEmpaque[0]->$id ?>" type="hidden">
     <?php endif ?>
     <div class="container container-fluid">
-        <?php view::includeHandlerMessage() ?>
+        <?php view::getMessageError('errorFecha') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
@@ -37,6 +37,7 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
             </div>
         </div>
+        <?php view::getMessageError('errorCantidad') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('amount') ?>:</label>
             <div class="col-lg-10">
