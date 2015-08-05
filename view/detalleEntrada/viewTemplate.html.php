@@ -102,7 +102,7 @@ use mvc\view\viewClass as view ?>
         <input type="hidden" id="idDelete" name="<?php echo detalleEntradaTableClass::getNameField(detalleEntradaTableClass::ID, true) ?>">
     </form>
      <div class="text-right">
-         Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $detalleEntrada->$entradaId)) ?>')">) ?>')">
+         Pàgina  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(entradaBodegaTableClass::ID => $key->$enBodegaId)) ?>')">) ?>')">
             <?php for ($x = 1; $x <= $cntPages; $x++): ?>
                 <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
 <?php endfor ?>
