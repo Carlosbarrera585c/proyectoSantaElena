@@ -27,87 +27,95 @@ use mvc\request\requestClass as request ?>
 <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', ((isset($objControlCalidad)) ? 'update' : 'create')) ?>">
     <?php if (isset($objControlCalidad) == true): ?>
         <input name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" value="<?php echo $objControlCalidad[0]->$id ?>" type="hidden">
-    <?php endif ?>
+    <?php endif ?>   
     <div class="container container-fluid">
-        <?php view::includeHandlerMessage() ?>
-        <div class="form-group">
+         <?php view::getMessageError('errorFecha') ?>
+         <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-              <input type="datetime-local" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
+                <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>" readonly="readonly" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
-      <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true)) === true) ? 'has-error has-feedback' : '' ?>">
-        <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('turn') ?>:</label>
+         <?php view::getMessageError('errorTurno') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true)) === true) ? 'has-error has-feedback' : '' ?>">
+            <label class="col-lg-2 control-label"><?php echo i18n::__('turn') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$turno : '') ?><?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true)) === true) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true)) : '' ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true) ?>" placeholder="<?php echo i18n::__('enterTheTurn') ?>">
-                <?php if (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
-            </div>
-        </div>
+                <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE) ?>">
+                        <option value="Dia" <?php echo(isset($objControlCalidad) and $objControlCalidad[0]->$turno === 'Dia') ? 'selected' : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE)) and request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE)) === 'Dia') ? 'selected' : '')?>>Dia</option>
+                        <option value="Noche" <?php echo(isset($objControlCalidad) and $objControlCalidad[0]->$turno === 'Noche') ? 'selected' : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE)) and request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, TRUE)) === 'Noche') ? 'selected' : '')?>>Noche</option>
+                </select>
+            </div> 
+        </div>        
+        <?php view::getMessageError('errorBrix') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true)) === true) ? 'has-error has-feedback' : '' ?>">
-        <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('brix') ?>:</label>
+            <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('brix') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$brix : '') ?><?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true)) === true) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true)) : '' ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true) ?>" placeholder="<?php echo i18n::__('enterTheBrix') ?>">
+                <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$brix : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true)) === true) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true))) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true)) : '' )) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true) ?>" placeholder="<?php echo i18n::__('enterTheBrix') ?>">
                 <?php if (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
+        <?php view::getMessageError('errorPh') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true)) === true) ? 'has-error has-feedback' : '' ?>">
-        <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('ph') ?>:</label>
+            <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('ph') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true) ?>" type="text" class="form-control"  value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ph : '') ?><?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true)) === true) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true)) : '' ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true) ?>" placeholder="<?php echo i18n::__('enterThePh') ?>">
+                <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true) ?>" type="text" class="form-control"  value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ph : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true)) === true) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true))) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true)) : '' )) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true) ?>" placeholder="<?php echo i18n::__('enterThePh') ?>">
                 <?php if (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
+        <?php view::getMessageError('errorAr') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true)) === true) ? 'has-error has-feedback' : '' ?>">
-        <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('ar') ?>:</label>
+            <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('ar') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true) ?>" type="text" class="form-control"   value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : '') ?><?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true)) === true) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true)) : '' ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true) ?>" placeholder="<?php echo i18n::__('enterTheAr') ?>">
+                <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true) ?>" type="text" class="form-control"   value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true)) === true) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true))) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true)) : '' )) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true) ?>" placeholder="<?php echo i18n::__('enterTheAr') ?>">
                 <?php if (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
+        <?php view::getMessageError('errorSacarosa') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-        <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('saccharose') ?>:</label>
+            <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('saccharose') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true) ?>" type="text" class="form-control"   value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$sacarosa : '') ?><?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true)) === true) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true)) : '' ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true) ?>" placeholder="<?php echo i18n::__('enterTheSaccharose') ?>">
+                <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true) ?>" type="text" class="form-control"   value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$sacarosa : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true)) === true) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true))) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true)) : '' )) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true) ?>" placeholder="<?php echo i18n::__('enterTheSaccharose') ?>">
                 <?php if (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
+        <?php view::getMessageError('errorPureza') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-        <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('purity') ?>:</label>
+            <label for="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('purity') ?>:</label>
             <div class="col-lg-10">
-              <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true) ?>" type="text"  class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$pureza : '') ?><?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true)) === true) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true)) : '' ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true) ?>" placeholder="<?php echo i18n::__('enterThePurity') ?>">
+                <input id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true) ?>" type="text"  class="form-control" value="<?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$pureza : ((session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true)) === true) ? '' : (request::getInstance()->hasPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true))) ? request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true)) : '' )) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true) ?>" placeholder="<?php echo i18n::__('enterThePurity') ?>">
                 <?php if (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
-        <div class="form-group">
+        <?php view::getMessageError('errorEmpleado') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idEmployed') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, TRUE) ?>">
                     <?php foreach ($objEmpleado as $empleado): ?>
-                  <option <?php echo (isset($objControlCalidad[0]->$empleado_id_c) === true and $objControlCalidad[0]->$empleado_id_c == $empleado->$empleado_id) ? 'selected' : ''  ?> value="<?php echo $empleado->$empleado_id ?>">
+                        <option <?php echo (isset($objControlCalidad[0]->$empleado_id_c) === true and $objControlCalidad[0]->$empleado_id_c == $empleado->$empleado_id) ? 'selected' : '' ?> value="<?php echo $empleado->$empleado_id ?>">
                             <?php echo $empleado->$empleado_nom ?>
                         </option>   
                     <?php endforeach ?>
                 </select>
             </div>
         </div>
-        <div class="form-group">
+        <?php view::getMessageError('errorProveedor') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-2 control-label"><?php echo i18n::__('idProvider') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
-                  <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) === true and $objControlCalidad[0]->$proveedor_id_c == $proveedor->$proveedor_id )? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
+                        <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) === true and $objControlCalidad[0]->$proveedor_id_c == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
                             <?php echo $proveedor->$proveedor_nom ?>
                         </option>   
                     <?php endforeach ?>
