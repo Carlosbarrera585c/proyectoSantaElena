@@ -52,7 +52,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('phone') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : ((session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) === true) ? '' : (request::getInstance()->hasPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true))) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) : '' )) ?>" placeholder="<?php echo i18n::__('Enter your Phone') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : ((session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) === true) ? '' : (request::getInstance()->hasPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true))) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) : '' )) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true) ?>" placeholder="<?php echo i18n::__('Enter your Phone') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -68,7 +68,8 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
             </div>
         </div>
-        <div class="form-group">
+        <?php view::getMessageError('errorTipoId') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-2 control-label"><?php echo i18n::__('identification') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::TIPO_ID_ID, TRUE) ?>">
@@ -90,7 +91,7 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-2 control-label"><?php echo i18n::__('credential') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CREDENCIAL_ID, TRUE) ?>">
@@ -106,17 +107,17 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_1' ?>" class="col-lg-2 control-label"><?php echo i18n::__('mail') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_1' ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_1' ?>" placeholder="<?php echo i18n::__('Enter your Mail') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_1' ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : ((session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === true) ? '' : (request::getInstance()->hasPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true))) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) : '' )) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_1' ?>" placeholder="<?php echo i18n::__('Enter your Mail') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
-        <?php view::getMessageError('errorCorreo2') ?>
+        <?php view::getMessageError('errorCorreo') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_2' ?>" class="col-lg-2 control-label"><?php echo i18n::__('Verify Mail') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_2' ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_2' ?>" placeholder="<?php echo i18n::__('Verify Mail') ?>">
+                <input id="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_2' ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : ((session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === true) ? '' : (request::getInstance()->hasPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true))) ? request::getInstance()->getPost(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) : '' )) ?>" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::CORREO, true) . '_2' ?>" placeholder="<?php echo i18n::__('Verify Mail') ?>">
                 <?php if (session::getInstance()->hasFlash(empleadoTableClass::getNameField(empleadoTableClass::CORREO, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
