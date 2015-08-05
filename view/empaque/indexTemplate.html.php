@@ -99,7 +99,7 @@ use mvc\request\requestClass as request ?>
         <?php view::includeHandlerMessage() ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
-                <tr class="active columna success">
+                <tr class="tr_table">
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>
                     <th><?php echo i18n::__('date') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
@@ -111,7 +111,7 @@ use mvc\request\requestClass as request ?>
                       <td><input type="checkbox" name="chk[]" value="<?php echo $empaque->$id ?>"></td>
                       <td><?php echo $empaque->$fecha ?></td>
                       <td>
-                          <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'view', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('view') ?></a></a>
+                          <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'view', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
                           <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'edit', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
                           <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $empaque->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                       </td>
