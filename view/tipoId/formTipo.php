@@ -17,9 +17,9 @@ use mvc\request\requestClass as request ?>
         <?php if (isset($objTipoId) == true): ?>
             <input name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::ID, true) ?>" value="<?php echo $objTipoId[0]->$idTipoId ?>" type="hidden">
         <?php endif ?>
-        <?php view::includeHandlerMessage() ?>
         <div class="container container-fluid">
-            <div class="form-group <?php echo (session::getInstance()->hasFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">  
+            <?php view::getMessageError('errorDescripcion') ?>
+            <div class="form-group <?php echo (session::getInstance()->hasFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
                 <label for="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('identification') ?>:</label>
                 <div class="col-lg-10">
                     <input id="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$desc_tipo_id : '') ?><?php echo (session::getInstance()->hasFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) === true) ? request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true)) : '' ?>" name="<?php echo tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true) ?>" placeholder="<?php echo i18n::__('EnterTheIdentification') ?>">

@@ -46,24 +46,24 @@ class updateActionClass extends controllerClass implements controllerActionInter
   private function Validate($descTipoId) {
     $bandera = FALSE;
     if (strlen($descTipoId) > tipoIdTableClass::DESC_TIPO_ID_LENGTH) {
-      session::getInstance()->setError(i18n::__('errorLengthTipoId', NULL, 'default', array('%descripcion%' => $descTipoId, '%caracteres%' => tipoIdTableClass::DESC_TIPO_ID_LENGTH)));
+      session::getInstance()->setError(i18n::__('errorLengthTipoId', NULL, 'default', array('%descripcion%' => $descTipoId, '%caracteres%' => tipoIdTableClass::DESC_TIPO_ID_LENGTH)),'errorDescripcion');
       $bandera = true;
       session::getInstance()->setFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true), true);
     }
     if ($descTipoId === '') {
-      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errrorDescripcion');
       $bandera = true;
       session::getInstance()->setFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true), true);
     }
     if (!ereg("^[A-Z a-z_]*$", $descTipoId)) {
-      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'));
+      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'),'errorDescripcion');
       $bandera = true;
       session::getInstance()->setFlash(tipoIdTableClass::getNameField(tipoIdTableClass::DESC_TIPO_ID, true), true);
     }
     if ($bandera === true) {
       request::getInstance()->setMethod('GET');
        request::getInstance()->addParamGet(array(tipoIdTableClass::ID => request::getInstance()->getPost(tipoIdTableClass::getNameField(tipoIdTableClass::ID, true))));
-      routing::getInstance()->forward('tipoId', 'insert');
+      routing::getInstance()->forward('tipoId', 'edit');
     }
   }
 

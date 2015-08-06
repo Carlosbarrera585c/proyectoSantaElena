@@ -14,6 +14,7 @@ class tipoEmpaqueBaseTableClass extends tableBaseClass {
 
     const ID = 'id';
     const DESC_TIPO_EMPAQUE = 'desc_tipo_empaque';
+    const DESC_TIPO_EMPAQUE_LENGHT = 30;
 
     function getId() {
         return $this->id;

@@ -20,7 +20,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST')) {
 
                 $desc_tipo_empaque = request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true));
-
+                $this->Validate($desc_tipo_empaque);
 
                 $data = array(
                     tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE => $desc_tipo_empaque,
@@ -36,6 +36,29 @@ class createActionClass extends controllerClass implements controllerActionInter
             echo '<br>';
             echo $exc->getTraceAsString();
             session::getInstance()->setError(i18n::__('failureToRegister'));
+        }
+    }
+
+    private function Validate($desc_tipo_empaque) {
+        $bandera = FALSE;
+        if (strlen($desc_tipo_empaque) > tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE_LENGHT) {
+            session::getInstance()->setError(i18n::__('errorLenghtDescription', NULL, 'default', array('%descripcion%' => $desc_tipo_empaque, '%caracteres%' => tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE_LENGHT)), 'errorDescripcion');
+            $bandera = true;
+            session::getInstance()->setFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true), true);
+        }
+        if (!preg_match('/^[a-zA-Z ]*$/', $desc_tipo_empaque)) {
+            session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $desc_tipo_empaque)), 'errorDescripcion');
+            $bandera = true;
+            session::getInstance()->setFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true), true);
+        }
+        if ($desc_tipo_empaque === '' or $desc_tipo_empaque === NULL) {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorDescripcion');
+            $bandera = true;
+            session::getInstance()->setFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true), true);
+        }
+        if ($bandera === true) {
+            request::getInstance()->setMethod('GET');
+            routing::getInstance()->forward('tipoEmpaque', 'insert');
         }
     }
 

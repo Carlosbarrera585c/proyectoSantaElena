@@ -9,6 +9,23 @@ use mvc\view\viewClass as view ?>
 <?php $desc = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
+    <!-- ventana Modal Error al Eliminar Foraneas-->
+<div class="container container-fluid">
+    <div class="modal fade" id="myModalErrorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete') ?></h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Ventana Modal Error al Eliminar Foraneas-->
     <div class="page-header titulo">
         <h1><i class="glyphicon glyphicon-folder-close"> <?php echo i18n::__('typePacking') ?></i></h1>
     </div>

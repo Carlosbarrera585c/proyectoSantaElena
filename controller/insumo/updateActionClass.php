@@ -64,7 +64,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         }
         //validar que el campo sea solo texto
         if (!ereg("^[A-Za-z]*$", $desc_insumo)) {
-            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorDescripcion');
+            session::getInstance()->setError(i18n::__('errorText', NULL, 'default'), 'errorDescripcion');
             $bandera = true;
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true), true);
         }

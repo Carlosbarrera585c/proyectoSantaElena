@@ -323,7 +323,7 @@ dictionary:
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
-    errorText:              Error el Campo solo debe Contener Texto (%texto%).
+    errorText:              Error el Campo solo debe Contener Texto.
     errorDeleteForeign:     El Registro no Puede ser Eliminado Porque Esta Siendo Utilizado Por Otra Tabla.
     errorDate:              El Campo solo debe contener fecha.
     ##---------------------- ERRORES----------------------------##
