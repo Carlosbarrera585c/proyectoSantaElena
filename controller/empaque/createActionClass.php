@@ -49,8 +49,8 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     private function Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id, $insumo_id) {
         $bandera = FALSE;
-
-        if ($fecha === '') {
+        $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
+        if ($fecha === '' or $fecha === NULL) {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorFecha');
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true), true);
@@ -61,21 +61,56 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
         }
-
-        
-
-        if ($cantidad === '') {
+        if ($cantidad === '' or $cantidad === NULL) {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorCantidad');
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
         }
+
+        if ($empleado_id === '' or $empleado_id === NULL) {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorEmpleado');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::EMPLEADO_ID, true), true);
+        }
+        
+        if ($tipo_empaque_id === '' or $tipo_empaque_id === NULL) {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorTipo');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::TIPO_EMPAQUE_ID, true), true);
+        }
+        
+        if ($insumo_id === '' or $insumo_id === NULL) {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorTipo');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::INSUMO_ID, true), true);
+        }
         
         if (!is_numeric($cantidad)) {
-             session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorCantidad');
-             $bandera = true;
-             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorCantidad');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
         }
-
+        if (!is_numeric($empleado_id)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorEmpleado');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::EMPLEADO_ID, true), true);
+        }
+         if (!is_numeric($tipo_empaque_id)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorTipo');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::TIPO_EMPAQUE_ID, true), true);
+        }
+         if (!is_numeric($insumo_id)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorInsumo');
+            $bandera = true;
+            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::INSUMO_ID, true), true);
+        }
+        //validar fecha
+        if (!preg_match($pattern, $fecha)) {
+            session::getInstance()->setError(i18n::__('errorDate', NULL, 'default'), 'errorFecha');
+            $bandera = true;
+            session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true), true);
+        }
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('empaque', 'insert');

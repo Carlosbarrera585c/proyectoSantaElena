@@ -35,9 +35,13 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         routing::getInstance()->redirect('empaque', 'index');
       }
     } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
-    }
+      $this->arrayAjax = array(
+                'code' => 500,
+                'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
+                'modal' => 'myModalDelete' . $id
+            );
+            $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
+        }
   }
 
 }
