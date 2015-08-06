@@ -38,11 +38,11 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                 routing::getInstance()->redirect('controlCalidad', 'index');
             }
         } catch (PDOException $exc) {
-            $this->arrayAjax = array(
-          'code' => 500,
-          'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
-          'modal' => 'myModalDelete' . $id
-      );
+             $this->arrayAjax = array(
+                'code' => 500,
+                'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
+                'modal' => 'myModalDelete' . $id
+            );
             $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
         }
     }

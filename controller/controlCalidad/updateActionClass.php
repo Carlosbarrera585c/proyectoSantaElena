@@ -65,8 +65,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setAttribute('form_'.controlCalidadTableClass::getNameTable(), null);
       routing::getInstance()->redirect('controlCalidad', 'index');
       }
-echo $id;
-exit();
+
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

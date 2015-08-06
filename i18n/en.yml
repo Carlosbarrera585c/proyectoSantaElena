@@ -291,6 +291,8 @@ dictionary:
     errorLengthAmount:      Error Your amount (%cantidad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthValue:       Error Your value (%valor%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthTipoId:      Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtDescription:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
+    erroLenghtPrice:        Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
