@@ -23,14 +23,10 @@ use mvc\request\requestClass as request ?>
         <?php view::includeHandlerMessage() ?>
 
         <div class="form-group <?php echo (session::getInstance()->hasFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" type="datetime-local"  class="form-control"  value="<?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fechaE : '') ?><?php echo (session::getInstance()->hasFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true)) === true) ? request::getInstance()->getPost(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true)) : '' ?>" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('date') ?>">
-                <?php if (session::getInstance()->hasFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true)) === true): ?>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
+                <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>" readonly="readonly" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
-
         </div>
             
             <div class="form-group <?php echo (session::getInstance()->hasFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::PROVEEDOR_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
