@@ -5,7 +5,8 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
-
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = detalleSalidaTableClass::ID ?>
 <?php $cant = detalleSalidaTableClass::CANTIDAD ?>
 <?php $valor = detalleSalidaTableClass::VALOR ?>
@@ -45,8 +46,10 @@ use mvc\view\viewClass as view ?>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
+            <?php if (session::getInstance()->hasCredential('admin')): ?>  
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'insert', array(salidaBodegaTableClass::ID => $key->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('new') ?></a>
-                        <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+            <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+            <?php endif; ?>
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'report') ?>" class="btn btn-warning btn-xs"><?php echo i18n::__('printReport') ?></a>
@@ -86,8 +89,10 @@ use mvc\view\viewClass as view ?>
                         <td><?php echo tipoDocTableClass::getNameTipoDes($detalleSalida->$desDoc) ?></td>
                         <td><?php echo insumoTableClass::getNameDInsumo($detalleSalida->$descInsu) ?></td>
                         <td>
+                        <?php if (session::getInstance()->hasCredential('admin')): ?>   
                             <a href="<?php echo routing::getInstance()->getUrlWeb('detalleSalida', 'edit', array(detalleSalidaTableClass::ID => $detalleSalida->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
                             <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $detalleSalida->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                        <?php endif; ?>
                         </td>
                     </tr>
             <?php endforeach ?>

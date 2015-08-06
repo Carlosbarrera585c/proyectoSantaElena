@@ -5,6 +5,8 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = tipoDocTableClass::ID ?>
 <?php $desc = tipoDocTableClass::DESC_TIPO_DOC ?>
 <?php view::includePartial('menu/menu') ?>
@@ -56,8 +58,10 @@ use mvc\view\viewClass as view ?>
         </div>
         <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'deleteSelect') ?>" method="POST">
             <div style="margin-bottom: 10px; margin-top: 30px">
+                <?php if (session::getInstance()->hasCredential('admin')): ?>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
                 <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+                 <?php endif; ?>
                 <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             </div>
@@ -77,8 +81,10 @@ use mvc\view\viewClass as view ?>
                             <td><?php echo $tipoDoc->$desc ?></td>
                             <td>
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'view', array(tipoDocTableClass::ID => $tipoDoc->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
+                                <?php if (session::getInstance()->hasCredential('admin')): ?>
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'edit', array(tipoDocTableClass::ID => $tipoDoc->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
                                 <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipoDoc->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <div class="modal fade" id="myModalDelete<?php echo $tipoDoc->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

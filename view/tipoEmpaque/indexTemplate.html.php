@@ -5,6 +5,8 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = tipoEmpaqueTableClass::ID ?>
 <?php $desc = tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE ?>
 <?php view::includePartial('menu/menu') ?>
@@ -51,11 +53,11 @@ use mvc\view\viewClass as view ?>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $tipo->$id ?>"></td>
                         <td><?php echo $tipo->$desc ?></td>
                         <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'view', array(tipoEmpaqueTableClass::ID => $tipo->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'view', array(tipoEmpaqueTableClass::ID => $tipo->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
                             <?php if (session::getInstance()->hasCredential('admin')): ?>           
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'edit', array(tipoEmpaqueTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                            <?php endif; ?>
+                            <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'edit', array(tipoEmpaqueTableClass::ID => $tipo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>                           
                             <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $tipo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <div class="modal fade" id="myModalDelete<?php echo $tipo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

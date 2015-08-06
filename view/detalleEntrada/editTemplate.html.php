@@ -4,7 +4,7 @@
 <?php $id = detalleEntradaTableClass::ID ?>
 <?php view::includePartial('menu/menu') ?>
  <div class="page-header  text-center titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('editDetailEntrance') ?></i></h1>
+        <h1><i class="fa fa-pencil-square"> <?php echo i18n::__('editDetailEntrance') ?></i></h1>
         <?php echo $objDetalleEntrada[0]->$id ?>
     </div>
 <?php view::includePartial('detalleEntrada/formEntrada', array('objDetalleEntrada' => $objDetalleEntrada, 'detalleEntrada' => $id, 'objTipoDoc' => $objTipoDoc, 'objEntradaBodega' => $objEntradaBodega, 'objInsu' => $objInsu)) ?>

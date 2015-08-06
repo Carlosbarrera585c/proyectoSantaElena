@@ -5,6 +5,8 @@ use mvc\routing\routingClass as routing ?>
 use mvc\i18n\i18nClass as i18n ?>
 <?php
 use mvc\view\viewClass as view ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = insumoTableClass::ID ?>
 <?php $desc_insumo = insumoTableClass::DESC_INSUMO ?>
 <?php $precio = insumoTableClass::PRECIO ?>
@@ -109,11 +111,11 @@ use mvc\view\viewClass as view ?>
                             <td><?php echo $insu->$desc_insumo ?></td>
                             <td><?php echo $insu->$precio ?></td>
                             <td>
-                                <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'view', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
+                                <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'view', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
                                 <?php if (session::getInstance()->hasCredential('admin')): ?>
-                                <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'edit', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
-                                <?php endif; ?>
+                                <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'edit', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>                               
                                 <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $insu->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <div class="modal fade" id="myModalDelete<?php echo $insu->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
