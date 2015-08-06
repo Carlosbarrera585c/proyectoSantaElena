@@ -27,22 +27,23 @@ use mvc\request\requestClass as request ?>
     <input name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::ID, true) ?>" value="<?php echo $objEmpaque[0]->$id ?>" type="hidden">
     <?php endif ?>
     <div class="container container-fluid">
-        <?php view::includeHandlerMessage() ?>
+        <?php view::getMessageError('errorFecha') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" type="datetime-local" class="form-control" value="<?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$fecha : '') ?><?php echo (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) === true) ? request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) : '' ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>">
+                <input id="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" type="datetime-local" class="form-control" value="<?php echo ((isset($objEmpaque)) ? $objEmpaque[0]->$fecha : ((session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) === true) ? '' : (request::getInstance()->hasPost(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true))) ? request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) : '' )) ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('date') ?>">
                 <?php if (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true)) === true): ?>
                   <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
+        <?php view::getMessageError('errorCantidad') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('amount') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true) ?>" type="number" class="form-control" value="<?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$cantidad : ((session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) === true) ? '' : (request::getInstance()->hasPost(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true))) ? request::getInstance()->getPost(credencialTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) : '' )) ?>" placeholder="<?php echo i18n::__('amount') ?>">
-                <?php if (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                <input id="<?php echo empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objEmpaque)) ? $objEmpaque[0]->$cantidad : ((session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) === true) ? '' : (request::getInstance()->hasPost(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true))) ? request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) : '' )) ?>" name="<?php echo empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('amount') ?>">
+                <?php if (session::getInstance()->hasFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)) === true): ?>  
+                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>

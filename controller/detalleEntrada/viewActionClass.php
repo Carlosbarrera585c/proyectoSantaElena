@@ -81,7 +81,7 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
             }
-            $this->cntPages = detalleEntradaTableClass:: getTotalPages(config::getRowGrid(), $where);
+            $this->cntPages = detalleEntradaTableClass::getTotalPages(config::getRowGrid(), $where);
 
             
             $this->objDetalleEntrada = detalleEntradaTableClass::getAll($fieldsDetalle, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);

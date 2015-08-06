@@ -10,6 +10,5 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="fa fa-plus"> <?php echo i18n::__('newPacking') ?></i></h1>
     </div>
-    <?php view::includeHandlerMessage() ?>
     <?php view::includePartial('empaque/formEmpaque', array('objTipoEmpaque' => $objTipoEmpaque, 'objEmpleado' => $objEmpleado, 'objInsumo' => $objInsumo)) ?>
 </div>

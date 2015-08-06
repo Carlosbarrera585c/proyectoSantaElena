@@ -51,13 +51,13 @@ class createActionClass extends controllerClass implements controllerActionInter
         $bandera = FALSE;
 
         if ($fecha === '') {
-            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorFecha');
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::FECHA, true), true);
         }
 
         if (strlen($cantidad) > empaqueTableClass::CANTIDAD_LEGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => empaqueTableClass::CANTIDAD_LEGTH)));
+            session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => empaqueTableClass::CANTIDAD_LEGTH)), 'errorCantidad');
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
         }
@@ -65,9 +65,15 @@ class createActionClass extends controllerClass implements controllerActionInter
         
 
         if ($cantidad === '') {
-            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorCantidad');
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
+        }
+        
+        if (!is_numeric($cantidad)) {
+             session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorCantidad');
+             $bandera = true;
+             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
         }
 
         if ($bandera === true) {
