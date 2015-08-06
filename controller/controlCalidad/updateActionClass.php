@@ -65,8 +65,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setAttribute('form_'.controlCalidadTableClass::getNameTable(), null);
       routing::getInstance()->redirect('controlCalidad', 'index');
       }
-echo $id;
-exit();
+
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';
@@ -110,7 +109,7 @@ exit();
     }
 //validar que el campo sea solo texto
     if (!ereg("^[A-Za-z]*$", $turno)){
-      session::getInstance()->setError(i18n::__('errorTexto', NULL, 'default'),'errorTurno');
+      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'),'errorTurno');
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
     }

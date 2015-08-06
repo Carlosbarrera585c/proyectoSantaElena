@@ -23,15 +23,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $precio = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::PRECIO, true));
                 $tipo_insumo_id = request::getInstance()->getPost(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO_ID, true));
 
-                if (strlen($desc_insumo) > insumoTableClass::DESC_INSUMO_LENGTH) {
-                    throw new PDOException('El Nombre No Puede Ser Mayor A: ' . insumoTableClass::DESC_INSUMO_LENGTH . ' Caracteres');
-                }
-                if (strlen($precio) > insumoTableClass::PRECIO_LENGTH) {
-                    throw new PDOException('El Nombre No Puede Ser Mayor A: ' . insumoTableClass::PRECIO_LENGTH . ' Caracteres');
-                }
-                if (strlen($tipo_insumo_id) > insumoTableClass::TIPO_INSUMO_ID_LENGTH) {
-                    throw new PDOException('El Nombre No Puede Ser Mayor A: ' . insumoTableClass::TIPO_INSUMO_ID_LENGTH . ' Caracteres');
-                }
+               $this->Validate($desc_insumo, $precio, $tipo_insumo_id);
                 $data = array(
                     insumoTableClass::DESC_INSUMO => $desc_insumo,
                     insumoTableClass::PRECIO => $precio,
@@ -46,6 +38,58 @@ class createActionClass extends controllerClass implements controllerActionInter
       } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc',$exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
+    }
+  }
+//funcion para validacion de campos en formulario 
+  private function Validate($desc_insumo, $precio, $tipo_insumo_id) {
+    $bandera = FALSE;
+    //validaciones para que no se superen el maximo de caracteres.
+    if (strlen($desc_insumo) > insumoTableClass::DESC_INSUMO_LENGTH) {
+      session::getInstance()->setError(i18n::__('errorLenghtDescription', NULL, 'default', array('%descripcion%' => $desc_insumo, '%caracteres%' => insumoTableClass::DESC_INSUMO_LENGTH)),'errorDescripcion');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true), true);
+    }
+     if (strlen($precio) > insumoTableClass::PRECIO_LENGTH) {
+      session::getInstance()->setError(i18n::__('erroLenghtPrice', NULL, 'default', array('%precio%' => $precio, '%caracteres%' => insumoTableClass::PRECIO_LENGTH)),'errorPrecio');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::PRECIO, true), true);
+    }
+    //validar que el campo sea solo texto
+    if (!ereg("^[A-Za-z]*$", $desc_insumo)){
+      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'),'errorDescripcion');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true), true);
+    }
+    //validar que el campo sea numerico.
+    if (!is_numeric($precio)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorPrecio');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::PRECIO, true), true);
+    }
+    if (!is_numeric($tipo_insumo_id)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorTipo');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO_ID, true), true);
+    }
+    //validar que no se envie el campo vacio o nulo
+     if($desc_insumo === '' or $desc_insumo === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorDescripcion');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true), true);
+    }
+     if($precio === '' or $precio === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorPrecio');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::PRECIO, true), true);
+    }
+    if($tipo_insumo_id === '' or $tipo_insumo_id === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorTipo');
+      $bandera = true;
+      session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::TIPO_INSUMO_ID, true), true);
+    }
+ if ($bandera === true) {
+      request::getInstance()->setMethod('GET');
+      routing::getInstance()->forward('insumo', 'insert');
     }
   }
 

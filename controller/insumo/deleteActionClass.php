@@ -29,15 +29,19 @@ class deleteActionClass extends controllerClass implements controllerActionInter
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
+
                 $this->defineView('delete', 'insumo', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
                 routing::getInstance()->redirect('insumo', 'index');
             }
         } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo $exc->getTraceAsString();
+                 $this->arrayAjax = array(
+                'code' => 500,
+                'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
+                'modal' => 'myModalDelete' . $id
+            );
+                 $this->defineView('delete', 'insumo', session::getInstance()->getFormatOutput());
         }
     }
 }

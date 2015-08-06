@@ -44,12 +44,18 @@ class createActionClass extends controllerClass implements controllerActionInter
   private function Validate($desc_tipo_doc) {
     $bandera = FALSE;
     if (strlen($desc_tipo_doc) > tipoDocTableClass::DESC_LENGTH) {
-      session::getInstance()->setError(i18n::__('errorLenghtDesc', NULL, 'default', array('%$desc_tipo_doc%' => $desc_tipo_doc, '%caracteres%' => tipoDocTableClass::DESC_LENGTH)));
+      session::getInstance()->setError(i18n::__('errorLenghtDescription', NULL, 'default', array('%descripcion%' => $desc_tipo_doc, '%caracteres%' => tipoDocTableClass::DESC_LENGTH)),'errorDescripcion');
       $bandera = true;
       session::getInstance()->setFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_LENGTH, true), true);
     }
-    if($desc_tipo_doc === '') {
-      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+    if($desc_tipo_doc === '' or $desc_tipo_doc === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorDescripcion');
+      $bandera = true;
+      session::getInstance()->setFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true), true);
+    }
+    //validar que el campo sea solo texto
+    if (!ereg("^[A-Za-z]*$", $desc_tipo_doc)){
+      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'),'errorDescripcion');
       $bandera = true;
       session::getInstance()->setFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true), true);
     }
