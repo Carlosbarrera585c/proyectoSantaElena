@@ -124,7 +124,7 @@ use mvc\session\sessionClass as session ?>
                     <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filters') ?></h4>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'index') ?>">
+                    <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('detalleEntrada', 'view', array(detalleEntradaTableClass::ID => $key->$enBodegaId)) ?>" method="POST">
                         <div class="form-group">
                             <label class="col-sm-2 control-label"><?php echo i18n::__('manuFacturingDate') ?></label>
                             <div class="col-sm-10">
