@@ -83,8 +83,10 @@ use mvc\view\viewClass as view ?>
         <h1><?php i18n::__('input') ?></h1>
         <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteSelect') ?>" method="POST">
             <div style="margin-bottom: 10px; margin-top: 30px">
+                <?php if (session::getInstance()->hasCredential('admin')): ?>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
                 <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+                <?php endif; ?>
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalFiltrar"><?php echo i18n::__('filters') ?></button>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
                 <a  class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
@@ -108,7 +110,9 @@ use mvc\view\viewClass as view ?>
                             <td><?php echo $insu->$precio ?></td>
                             <td>
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'view', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
+                                <?php if (session::getInstance()->hasCredential('admin')): ?>
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'edit', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
+                                <?php endif; ?>
                                 <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $insu->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
                             </td>
                         </tr>
