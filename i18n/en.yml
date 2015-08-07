@@ -293,6 +293,11 @@ dictionary:
     errorLengthTipoId:      Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
     errorLenghtDescription:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
     erroLenghtPrice:        Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
+    erroLenghtBusinessName: Error Your Bussiness Name (%social%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtNumberWagon: Error Your Number Wagon (%vagon%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtQuantity:    Error Your Quantity (%cantidad%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtProvenance:  Error Your Porvenance (%procedencia%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtWeight:      Error Your weight (%peso%) Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
