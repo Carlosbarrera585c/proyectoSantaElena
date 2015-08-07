@@ -26,14 +26,10 @@ use mvc\request\requestClass as request ?>
         <?php view::includeHandlerMessage() ?>
 
         <div class="form-group <?php echo (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true) ?>" type="datetime-local"  class="form-control"  value="<?php echo ((isset($objSalidaBodega) == true) ? $objSalidaBodega[0]->$fechaE : '') ?><?php echo (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true)) === true) ? request::getInstance()->getPost(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true)) : '' ?>" name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('date') ?>">
-                <?php if (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true)) === true): ?>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
+                <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>" readonly="readonly" name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
-
         </div>
             
             <div class="form-group <?php echo (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
