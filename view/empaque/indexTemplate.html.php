@@ -9,6 +9,8 @@ use mvc\view\viewClass as view ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <?php $id = empaqueTableClass::ID ?>
 <?php $fecha = empaqueTableClass::FECHA ?>
 <?php view::includePartial('menu/menu') ?>
