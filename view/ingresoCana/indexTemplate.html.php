@@ -149,8 +149,10 @@ use mvc\session\sessionClass as session ?>
         </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
+      <?php if (session::getInstance()->hasCredential('admin')): ?>
       <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
       <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+      <?php endif; ?>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
       <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
       <a class="btn btn-warning btn-xs col-lg-offset-7"  data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
@@ -174,8 +176,10 @@ use mvc\session\sessionClass as session ?>
             <td><?php echo ingresoCanaTableClass::getNameProveedor($ingreso->$proveedor_id) ?></td>  
             <td>
                 <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'view', array(ingresoCanaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
+                <?php if (session::getInstance()->hasCredential('admin')): ?>
               <a href="<?php echo routing::getInstance()->getUrlWeb('ingresoCana', 'edit', array(ingresoCanaTableClass::ID => $ingreso->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
               <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $ingreso->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+              <?php endif; ?>
             </td>
           </tr>
           <div class="modal fade" id="myModalDelete<?php echo $ingreso->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

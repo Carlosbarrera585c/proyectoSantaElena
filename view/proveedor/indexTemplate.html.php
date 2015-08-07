@@ -112,8 +112,10 @@ use mvc\view\viewClass as view ?>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
+        <?php if (session::getInstance()->hasCredential('admin')): ?>
       <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
       <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+      <?php endif; ?>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
       <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
        <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
@@ -134,8 +136,10 @@ use mvc\view\viewClass as view ?>
             <td><?php echo $proveed->$razonS ?></td>
             <td>
               <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'view', array(proveedorTableClass::ID => $proveed->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
+              <?php if (session::getInstance()->hasCredential('admin')): ?>
               <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'edit', array(proveedorTableClass::ID => $proveed->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
               <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $proveed->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+              <?php endif; ?>
             </td>
           </tr>
         <div class="modal fade" id="myModalDelete<?php echo $proveed->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

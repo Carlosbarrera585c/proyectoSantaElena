@@ -107,8 +107,10 @@ use mvc\request\requestClass as request ?>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('empaque', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
+            <?php if (session::getInstance()->hasCredential('admin')): ?>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
             <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
+             <?php endif; ?>
             <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
             <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
             <a class="btn btn-warning btn-xs col-lg-offset-7" data-toggle="modal" data-target="#myModalReport" ><?php echo i18n::__('printReport') ?></a>
@@ -129,8 +131,10 @@ use mvc\request\requestClass as request ?>
                       <td><?php echo $empaque->$fecha ?></td>
                       <td>
                           <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'view', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a></a>
+                          <?php if (session::getInstance()->hasCredential('admin')): ?>
                           <a href="<?php echo routing::getInstance()->getUrlWeb('empaque', 'edit', array(empaqueTableClass::ID => $empaque->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a></a>
                           <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $empaque->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a></a>
+                          <?php endif; ?>
                       </td>
                   </tr>
               <div class="modal fade" id="myModalDelete<?php echo $empaque->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
