@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
   </head>
   <body><br><br><br><br>
       <div class="container container-fluid">

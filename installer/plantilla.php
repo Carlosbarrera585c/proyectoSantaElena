@@ -70,7 +70,7 @@ config::setCookieDomain('http://localhost/');
 config::setCookieDomain('$UrlBase');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 
-config::setDefaultModule('default');
+config::setDefaultModule('usuario');
 config::setDefaultAction('index');
 
 config::setDefaultModuleSecurity('shfSecurity');

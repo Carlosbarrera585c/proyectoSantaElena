@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/main.css">
         <title></title>
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/main.css">
+        
     </head>
     <body><br><br><br>
       <div class="container container-fluid">
