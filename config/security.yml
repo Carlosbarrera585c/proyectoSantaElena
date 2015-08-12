@@ -28,6 +28,15 @@ controlCalidad:
   create:
     security: true
 
+jugo:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
 
 entradaBodega:
   index:

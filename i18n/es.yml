@@ -53,6 +53,16 @@ dictionary:
     Enter your Password:  Ingrese su Contraseña
     ##----------------------USUARIO-------------------------##
     
+        ##----------------------JUGO-------------------------##
+    juice:                Jugo
+    juiceProcess:         Jugo Proceso
+    newJuice:             Nuevo Jugo
+    editJuice:            Editar Juego
+    infoJuice:            Informacion Jugo
+    provenance:           Procedencia
+
+    ##----------------------JUGO-------------------------##
+    
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Tipo Empaque
     editTypePacking:      Editar el Tipo de Empaque

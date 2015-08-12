@@ -69,6 +69,17 @@ empleado:
     
   view:
     title: Ver Empleado
+    
+jugo:
+  index:
+    title: Jugo
+    javascript:
+      - index.js
+  edit:
+    title: Editar Jugo
+    
+  view:
+    title: Ver Jugo
        
 ciudad:
   index:

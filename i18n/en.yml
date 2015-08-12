@@ -55,6 +55,16 @@ dictionary:
     Enter your Password:  Enter Your Password
     ##----------------------USUARIO-------------------------##
     
+    ##----------------------JUGO-------------------------##
+    juice:                Juice
+    juiceProcess:         Juice Process
+    newJuice:             New Juice
+    editJuice:            Edit Juice
+    infoJuice:            Information Juice
+    provenance:           provenance
+
+    ##----------------------JUGO-------------------------##
+    
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Type Packing
     editTypePacking:      Edit Type of Packaging

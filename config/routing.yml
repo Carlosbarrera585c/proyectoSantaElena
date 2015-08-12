@@ -1683,3 +1683,99 @@ salidaBodega_history.back():
   url:    /salidaBodega/history.back()
   param:  { module: salidaBodega, action: regresar, format: html }
 ##-------------------------- SALIDA BODEGA----------------------------##
+##-------------------------- JUGO-------------------------------------##
+
+jugo_index:
+  url:    /jugo/index
+  param:  { module: jugo, action: index, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+  
+jugo_ver:
+  url:    /jugo/ver
+  param:  { module: jugo, action: view, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+jugo_insert:
+  url:    /jugo/insertar
+  param:  { module: jugo, action: insert, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+jugo_create:
+  url:    /jugo/crear
+  param:  { module: jugo, action: create, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+jugo_edit:
+  url:    /jugo/editar
+  param:  { module: jugo, action: edit, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+jugo_update:
+  url:    /jugo/actualizar
+  param:  { module: jugo, action: update, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+    
+jugo_delete:
+  url:    /jugo/eliminar
+  param:  { module: jugo, action: delete, format: json }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+   
+jugo_deleteSelect:
+  url:    /jugo/eliminarSeleccion
+  param:  { module: jugo, action: deleteSelect, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    
+jugo_reporte:
+  url:    /jugo/reporte
+  param:  { module: jugo, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+ 
+jugo_deleteFilters:
+  url:    /jugo/borrarFiltros
+  param:  { module: jugo, action: deleteFilters, format: html }
+
+##-------------------------- JUGO-------------------------------------##
