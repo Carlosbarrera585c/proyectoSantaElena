@@ -42,9 +42,14 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
                 if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== "") {
                     $where[detalleEntradaTableClass::VALOR] = $filter['valor'];
                 }
-            } else if (session::getInstance()->hasAttribute('detalleEntradaIndexFilters')) {
-                $where = session::getInstance()->getAttribute('detalleEntradaIndexFilters');
-            }
+            session::getInstance()->setAttribute('detalleEntradaViewFilters', $where);
+       } else if(session::getInstance()->hasAttribute('detalleEntradaViewFilters')){
+        $where = session::getInstance()->getAttribute('detalleEntradaViewFilters');
+      session::getInstance()->setAttribute('detalleEntradaViewFilters', $where);
+       }else if(session::getInstance()->hasAttribute('detalleEntradaViewFilters')){
+        $where = session::getInstance()->getAttribute('detalleEntradaViewFilters');
+     }
+       
           
           $idEntrada = request::getInstance()->getRequest(entradaBodegaTableClass::ID, true);
             $fieldsEntrada = array(

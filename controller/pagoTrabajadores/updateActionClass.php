@@ -28,7 +28,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $valor = request::getInstance()->getPost(pagoTrabajadoresTableClass::VALOR, true);
                 $idEmpleado = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::EMPLEADO_ID, true));
 
-                $this->Validate($idPago, $fecha, $periodoInicio, $periodoFin, $idTipoPago, $idEmpleado);
+                $this->Validate($idPago, $fecha, $periodoInicio, $periodoFin, $idTipoPago, $valor, $idEmpleado);
 
                 $ids = array(
                     pagoTrabajadoresTableClass::ID => $idPago
@@ -54,18 +54,51 @@ class updateActionClass extends controllerClass implements controllerActionInter
         }
     }
 
-    private function Validate($idTipoPago, $idEmpleado) {
+    private function Validate($idPago, $fecha, $periodoInicio, $periodoFin, $idTipoPago, $valor, $idEmpleado) {
         $bandera = false;
 
-        if ($idEmpleado === '') {
-            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'));
+     if ($fecha == '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorFecha');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::FECHA, true), true);
+        }
+        if ($periodoInicio == '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorPeriodoInicio');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_INICIO, true), true);
+        }
+        if ($periodoFin == '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorPeriodoFin');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true), true);
+        }
+        if ($valor == '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorValor');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true), true);
+        } elseif (!is_numeric($valor)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorValor');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true), true);
+        }
+        if ($idTipoPago == '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorTipoPago');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, true), true);
+        }else if (!is_numeric($idTipoPago)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorTipoPago');
+            $bandera = true;
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, true), true);
+        }
+        if ($idEmpleado == '') {
+            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorEmpleado');
             $bandera = true;
             session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::EMPLEADO_ID, true), true);
         }
-        if ($idTipoPago === '') {
-            session::getInstance()->setError(i18n::__('errorNull', Null, 'default'));
+        if (!is_numeric($idEmpleado)) {
+            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'ErrorEmpleado');
             $bandera = true;
-            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, true), true);
+            session::getInstance()->setFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::EMPLEADO_ID, true), true);
         }
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');

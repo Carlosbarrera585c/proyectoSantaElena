@@ -57,7 +57,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
     if ($bandera === true) {
       request::getInstance()->setMethod('GET');
-      routing::getInstance()->forward('empleado', 'insert');
+      routing::getInstance()->forward('usuario', 'insert');
     }
   }
 }
