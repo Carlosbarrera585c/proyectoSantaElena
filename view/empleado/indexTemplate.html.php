@@ -91,12 +91,12 @@ use mvc\session\sessionClass as session ?>
                         </div>
                     </form>
                 </div>
-            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
                 <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary"><?php echo i18n::__('filtrate') ?></button>
             </div>
         </div>
+    </div>
     </div>
     <?php if (session::getInstance()->hasFlash('modalFilter')): ?>
         <script>
