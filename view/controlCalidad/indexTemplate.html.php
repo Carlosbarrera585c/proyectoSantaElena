@@ -9,7 +9,8 @@ use mvc\view\viewClass as view ?>
 use mvc\session\sessionClass as session ?>
 <?php $id = controlCalidadTableClass::ID ?>
 <?php $fecha = controlCalidadTableClass::FECHA ?>
-<?php $turno = controlCalidadTableClass::TURNO ?>
+<?php $variedad = controlCalidadTableClass::VARIEDAD ?>
+<?php $edad = controlCalidadTableClass::EDAD ?>
 <?php $brix = controlCalidadTableClass::BRIX ?>
 <?php $ph = controlCalidadTableClass::PH ?>
 <?php $ar = controlCalidadTableClass::AR ?>
@@ -58,9 +59,15 @@ use mvc\session\sessionClass as session ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="reportTurno" class="col-sm-2 control-label"><?php echo i18n::__('turn') ?></label>
+                            <label for="reportVariedad" class="col-sm-2 control-label"><?php echo i18n::__('variety') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterTurno" name="report[Turno]" placeholder="<?php echo i18n::__('turn') ?>">
+                                <input type="text" class="form-control" id="filterVariedad" name="report[Variedad]" placeholder="<?php echo i18n::__('variety') ?>">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="reportEdad" class="col-sm-2 control-label"><?php echo i18n::__('age') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterEdad" name="report[Edad]" placeholder="<?php echo i18n::__('age') ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -133,9 +140,15 @@ use mvc\session\sessionClass as session ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="filterTurno" class="col-sm-2 control-label"><?php echo i18n::__('turn') ?></label>
+                            <label for="filterVariedad" class="col-sm-2 control-label"><?php echo i18n::__('variety') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterTurno" name="filter[Turno]" placeholder="<?php echo i18n::__('turn') ?>">
+                                <input type="text" class="form-control" id="filterVariedad" name="filter[Variedad]" placeholder="<?php echo i18n::__('variety') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterEdad" class="col-sm-2 control-label"><?php echo i18n::__('age') ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="filterVariedad" name="filter[Edad]" placeholder="<?php echo i18n::__('age') ?>">
                             </div>
                         </div>
                         <div class="form-group">

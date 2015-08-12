@@ -3,7 +3,8 @@
 <?php use mvc\view\viewClass as view ?>
 <?php $id = controlCalidadTableClass::ID ?>
 <?php $fecha = controlCalidadTableClass::FECHA ?>
-<?php $turno = controlCalidadTableClass::TURNO ?>
+<?php $variedad = controlCalidadTableClass::VARIEDAD ?>
+<?php $edad = controlCalidadTableClass::EDAD ?>
 <?php $brix = controlCalidadTableClass::BRIX ?>
 <?php $ph = controlCalidadTableClass::PH ?>
 <?php $ar = controlCalidadTableClass::AR ?>
@@ -26,7 +27,8 @@
         <tr class="columna tr_table">
           <th><?php echo i18n::__('id')?></th>
           <th><?php echo i18n::__('date')?></th>
-          <th><?php echo i18n::__('turn')?></th>
+          <th><?php echo i18n::__('variety')?></th>
+          <th><?php echo i18n::__('age')?></th>
           <th><?php echo i18n::__('brix')?></th>
           <th><?php echo i18n::__('ph')?></th>
           <th><?php echo i18n::__('ar')?></th>
@@ -40,7 +42,8 @@
           <tr>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$id : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$turno : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$variedad : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$edad : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$brix : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ph : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : '') ?></td>
