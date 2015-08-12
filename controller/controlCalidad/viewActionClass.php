@@ -21,7 +21,8 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
       $fields = array(
           controlCalidadTableClass::ID,
           controlCalidadTableClass::FECHA,
-          controlCalidadTableClass::TURNO,
+          controlCalidadTableClass::VARIEDAD,
+          controlCalidadTableClass::EDAD,
           controlCalidadTableClass::BRIX,
           controlCalidadTableClass::PH,
           controlCalidadTableClass::AR,

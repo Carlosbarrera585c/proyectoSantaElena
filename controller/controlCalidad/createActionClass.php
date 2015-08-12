@@ -23,7 +23,8 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
         $fecha = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA, true));
-        $turno = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true));
+        $variedad = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true));
+        $edad = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::EDAD, true));
         $brix = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX, true));
         $ph = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PH, true));
         $ar = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::AR, true));
@@ -31,14 +32,13 @@ class createActionClass extends controllerClass implements controllerActionInter
         $pureza = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true));
         $empleado_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true));
         $proveedor_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true));
-//        echo $empleado_id;
-//        echo $proveedor_id;
-//        exit();
-        $this->Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha);
+
+        $this->Validate($variedad, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha, $edad);
 
         $data = array(
             controlCalidadTableClass::FECHA => $fecha,
-            controlCalidadTableClass::TURNO => $turno,
+            controlCalidadTableClass::VARIEDAD => $variedad,
+            controlCalidadTableClass::EDAD => $edad,
             controlCalidadTableClass::BRIX => $brix,
             controlCalidadTableClass::PH => $ph,
             controlCalidadTableClass::AR => $ar,
@@ -47,7 +47,6 @@ class createActionClass extends controllerClass implements controllerActionInter
             controlCalidadTableClass::EMPLEADO_ID => $empleado_id,
             controlCalidadTableClass::PROVEEDOR_ID => $proveedor_id
         );
-
 
         controlCalidadTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('successfulRegister'));
@@ -62,14 +61,19 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 //funcion para validacion de campos en formulario 
-  private function Validate($turno, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha) {
+  private function Validate($variedad, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha,$edad) {
     $bandera = FALSE;
     $pattern="/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
 //validaciones para que no se superen el maximo de caracteres.
-    if (strlen($turno) > controlCalidadTableClass::TURNO_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtTurn', NULL, 'default', array('%turno%' => $turno, '%caracteres%' => controlCalidadTableClass::TURNO_LENGHT)),'errorTurno');
+    if (strlen($variedad) > controlCalidadTableClass::VARIEDAD_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtVariety', NULL, 'default', array('%variedad%' => $variedad, '%caracteres%' => controlCalidadTableClass::VARIEDAD)),'errorVariedad');
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true), true);
+    }
+     if (strlen($edad) > controlCalidadTableClass::EDAD_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLenghtAge', NULL, 'default', array('%edad%' => $edad, '%caracteres%' => controlCalidadTableClass::EDAD)),'errorEdad');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::EDAD, true), true);
     }
     if (strlen($brix) > controlCalidadTableClass::BRIX_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => controlCalidadTableClass::BRIX_LENGHT)),'errorBrix');
@@ -97,12 +101,17 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
     }
 //validar que el campo sea solo texto
-    if (!ereg("^[A-Za-z]*$", $turno)){
-      session::getInstance()->setError(i18n::__('errorText', NULL, 'default'),'errorTurno');
-      $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
-    }
+    if (!preg_match('/^[a-zA-Z ]*$/', $variedad)) {
+            session::getInstance()->setError(i18n::__('errorText', NULL, 'default'), 'errorVariedad');
+            $bandera = true;
+            session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true), true);
+        }
  //validar que el campo sea numerico.
+     if (!is_numeric($edad)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorEdad');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::EDAD, true), true);
+    }
     if (!is_numeric($brix)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorBrix');
       $bandera = true;
@@ -139,10 +148,15 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true), true);
     }
  //validar que no se envie el campo vacio o nulo
-    if($turno === '' or $turno === NULL) {
-      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default').'errorTurno');
+    if($variedad === '' or $variedad === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorVariedad');
       $bandera = true;
-      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TURNO, true), true);
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true), true);
+    }
+     if($edad === '' or $edad === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorEdad');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::EDAD, true), true);
     }
     if($brix === '' or $brix === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorBrix');

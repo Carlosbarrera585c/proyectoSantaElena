@@ -22,8 +22,11 @@ class reportActionClass extends controllerClass implements controllerActionInter
               $report['fechaCreacion2']
           );
         }
-        if (isset($report['Turno']) and $report['Turno'] !== NULL and $report['Turno'] !== '') {
-          $where[controlCalidadTableClass::TURNO] = $report['Turno'];
+        if (isset($report['Variedad']) and $report['Variedad'] !== NULL and $report['Variedad'] !== '') {
+          $where[controlCalidadTableClass::VARIEDAD] = $report['Variedad'];
+        }
+        if (isset($report['Edad']) and $report['Edad'] !== NULL and $report['Edad'] !== '') {
+          $where[controlCalidadTableClass::EDAD] = $report['Edad'];
         }
         if (isset($report['Brix']) and $report['Brix'] !== NULL and $report['Brix'] !== '') {
           $where[controlCalidadTableClass::BRIX] = $report['Brix'];
@@ -49,7 +52,8 @@ class reportActionClass extends controllerClass implements controllerActionInter
         $fields = array(
             controlCalidadTableClass::ID,
             controlCalidadTableClass::FECHA,
-            controlCalidadTableClass::TURNO,
+            controlCalidadTableClass::VARIEDAD,
+            controlCalidadTableClass::EDAD,
             controlCalidadTableClass::BRIX,
             controlCalidadTableClass::PH,
             controlCalidadTableClass::AR,
@@ -65,29 +69,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
         $this->objControlCalidad = controlCalidadTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);
         $this->defineView('report', 'controlCalidad', session::getInstance()->getFormatOutput());
       }
-//            $fields = array(
-//            controlCalidadTableClass::ID,
-//            controlCalidadTableClass::NOMBRE,
-//            controlCalidadTableClass::GENERO,
-//            controlCalidadTableClass::EDAD,
-//            controlCalidadTableClass::PESO,
-//            controlCalidadTableClass::FECHA_INGRESO,
-//            controlCalidadTableClass::NUMERO_PARTOS,
-//            controlCalidadTableClass::ID_RAZA,
-//            controlCalidadTableClass::ID_ESTADO
-//            );
-//            $orderBy = array(
-//            controlCalidadTableClass::ID
-//            );
-//            $page = 0;
-//            if(request::getInstance()->hasGet('page')){
-//                $this->page = request::getInstance()->getGet('page');
-//                $page = request::getInstance()->getGet('page') - 1;
-//                $page = $page * config::getRowGrid();
-//            }
-//            $this->cntPages = controlCalidadTableClass::getTotalPages(config::getRowGrid(),$where);
-//            $this->objAnimal = controlCalidadTableClass::getAll($fields, FALSE ,$orderBy,'ASC', config::getRowGrid(),$page,$where);
-//            $this->defineView('index', 'animal',  session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage() . "<BR>" . print_r($exc->getTraceAsString());
     }

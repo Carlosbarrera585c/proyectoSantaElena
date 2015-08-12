@@ -258,22 +258,25 @@ dictionary:
     ##----------------------SOLICITUD INSUMO---------------------------##
  
     ##-----------------CONTROL CALIDAD-------------------------##
-    date:                 Date
-    turn:                 Turn
-    brix:                 Brix
-    ph:                   Ph
-    ar:                   Ar
-    reducingSugars:       Reducing Sugars
-    saccharose:           Saccharose
-    purity:               Purity
-    idEmployed:           Employed
-    idProvider:           Provider
-    qualityControl:       Quality Control
-    editQualityControl:   Edit Quality Control
+    date:                Date
+    variety:             Variety
+    brix:                Brix
+    ph:                  Ph
+    ar:                  Ar
+    age:                 Age
+    reducingSugars:      Reducing Sugars
+    saccharose:          Saccharose
+    purity:              Purity
+    idEmployed:          Employed
+    idProvider:          Provider
+    qualityControl:      Quality Control
+    editQualityControl:  Edit Quality Control
     qualityControlInformation: Quality Control Information
-    newQualityControl:    New Quality Control
+    newQualityControl:   New Quality Control
     enterTheDate:        Enter the Date
     enterTheTurn:        Enter the Turn
+    enterTheVariety:     Enter the Variety
+    enterTheAge:         Enter the Age
     enterTheBrix:        Enter the Brix
     enterThePh:          Enter the Ph
     enterTheAr:          Enter the Ar
@@ -294,6 +297,8 @@ dictionary:
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthPhone:       Error Your Telephone (% telefono%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthDirection:   Error Your Direction (%direccion%) Maximum Exceeds Number of Characters (%caracteres%).
+    errorLenghtVariety:     Error Your Variety (%variedad%) Maximum Exceeds Number of Characters (%caracteres%).
+    errorLenghtAge:         Error the Age (%edad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthNumIdentification: Error Your identification number (%numIdentificacion%) Maximum Exceeds Number of Characters (%caracteres%).
     errorMail:              The Mail No Coincide.
     errorLenghtUser:        Error Your username (%usuario%) Exceeds the Maximum Number of Characters ( %caracteres%).

@@ -27,8 +27,11 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           date(config::getFormatTimestamp(), strtotime($filter['fecha2']))
           );
         }
-        if (isset($filter['Turno']) and $filter['Turno'] !== null and $filter['Turno'] !== "") {
-          $where[controlCalidadTableClass::TURNO] = $filter['Turno'];
+        if (isset($filter['Variedad']) and $filter['Variedad'] !== null and $filter['Variedad'] !== "") {
+          $where[controlCalidadTableClass::VARIEDAD] = $filter['Variedad'];
+        }
+        if (isset($filter['Edad']) and $filter['Edad'] !== null and $filter['Edad'] !== "") {
+          $where[controlCalidadTableClass::EDAD] = $filter['Edad'];
         }
         if (isset($filter['Brix']) and $filter['Brix'] !== null and $filter['Brix'] !== "") {
           $where[controlCalidadTableClass::BRIX] = $filter['Brix'];
@@ -58,7 +61,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $fields = array(
                 controlCalidadTableClass::ID,
                 controlCalidadTableClass::FECHA,
-                controlCalidadTableClass::TURNO,
+                controlCalidadTableClass::VARIEDAD,
+                controlCalidadTableClass::EDAD,
                 controlCalidadTableClass::BRIX,
                 controlCalidadTableClass::PH,
                 controlCalidadTableClass::AR,

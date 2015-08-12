@@ -1,3 +1,10 @@
+#mvcMain {
+  display: none;
+}
+
+#mvcIcon {
+  display: block;
+}
 
 .shfDevelopmentBar {
   background-color: rgb(61,35,0);
@@ -16,12 +23,8 @@ body{
     background-color: #F0F2F3;
     background-image: url('../img/pattern3.png');
 }
-.celda{
-    text-align: center;
-    width: 40px;
-}
-.table > head > tr > th, .table > tbody > tr > td{
-    text-align: center;
+.tables{
+    background-color: #ffffff; 
 }
 .mvcPointer {
   cursor: pointer;
@@ -33,11 +36,11 @@ body{
     margin: 0px 0 20px;
 }
 
-.table > thead > tr > th, .table > tbody > tr > td{
+.table > tr > th, tr > td{
     text-align: center;
 }
 .tamano{
-    width: 40px;
+    width: 3px;
 }
 .tamanoAccion{
     width: 220px;
