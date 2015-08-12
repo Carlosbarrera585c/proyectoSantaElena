@@ -248,10 +248,11 @@ dictionary:
 
     ##-----------------CONTROL CALIDAD-------------------------##
     date:                 Fecha
-    turn:                 Turno
+    variety:              Variedad
     brix:                 Brix
     ph:                   Ph
     ar:                   Ar
+    age:                  Edad
     reducingSugars:       Azucares Reductores
     saccharose:           Sacarosa
     purity:               Pureza
@@ -262,7 +263,8 @@ dictionary:
     qualityControlInformation: Informacion De Control Calidad
     newQualityControl:    Nuevo Control Calidad
     enterTheDate:         Introduce la Fecha
-    enterTheTurn:         Introduce el Turno
+    enterTheVariety:      Introduce la variedad
+    enterTheAge:          Introduce la edad
     enterTheBrix:         Introduce el Brix
     enterThePh:           Introduce el Ph
     enterTheAr:           Introduce el Ar
@@ -309,7 +311,8 @@ dictionary:
     errorMail:              Los Correos No Coinciden.
     errorLenghtUser:        Error Su Nombre de Usuario (%usuario%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthCredential:  Error Su Descripción (%descripcion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
-    errorLenghtTurn:        Error su Turno (%turno%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtVariety:     Error su Variedad (%variedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtAge:         Error La Edad (%edad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtBrix:        Error su Brix (%brix%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtPh:          Error su Ph (%ph%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtAr:          Error su Ar (%ar%) Excede La cantidad Maxima De caracteres (%caracteres%).

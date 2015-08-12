@@ -10,7 +10,8 @@ use mvc\model\table\tableBaseClass;
 class controlCalidadBaseTableClass extends tableBaseClass {
   private $id;
   private $fecha;
-  private $turno;
+  private $variedad;
+  private $edad;
   private $brix;
   private $ph;
   private $ar;
@@ -22,8 +23,10 @@ class controlCalidadBaseTableClass extends tableBaseClass {
   const ID = 'id';
   const FECHA= 'fecha';
   const FECHA_LENGTH = 35;
-  const TURNO= 'turno';
-  const TURNO_LENGHT= 20;
+  const VARIEDAD= 'variedad';
+  const VARIEDAD_LENGHT= 20;
+  const EDAD= 'edad';
+  const EDAD_LENGHT= 20;
   const BRIX= 'brix';
   const BRIX_LENGHT= 20;
   const PH = 'ph';
@@ -37,86 +40,95 @@ class controlCalidadBaseTableClass extends tableBaseClass {
   const EMPLEADO_ID = 'empleado_id';
   const PROVEEDOR_ID= 'proveedor_id';
   
-  public function getId() {
+  function getId() {
       return $this->id;
   }
 
-  public function getFecha() {
+  function getFecha() {
       return $this->fecha;
   }
 
-  public function getTurno() {
-      return $this->turno;
+  function getVariedad() {
+      return $this->variedad;
   }
 
-  public function getBrix() {
+  function getEdad() {
+      return $this->edad;
+  }
+
+  function getBrix() {
       return $this->brix;
   }
 
-  public function getPh() {
+  function getPh() {
       return $this->ph;
   }
 
-  public function getAr() {
+  function getAr() {
       return $this->ar;
   }
 
-  public function getSacarosa() {
+  function getSacarosa() {
       return $this->sacarosa;
   }
 
-  public function getPureza() {
+  function getPureza() {
       return $this->pureza;
   }
 
-  public function getEmpleado_id() {
+  function getEmpleado_id() {
       return $this->empleado_id;
   }
 
-  public function getProveedor_id() {
+  function getProveedor_id() {
       return $this->proveedor_id;
   }
 
-  public function setId($id) {
+  function setId($id) {
       $this->id = $id;
   }
 
-  public function setFecha($fecha) {
+  function setFecha($fecha) {
       $this->fecha = $fecha;
   }
 
-  public function setTurno($turno) {
-      $this->turno = $turno;
+  function setVariedad($variedad) {
+      $this->variedad = $variedad;
   }
 
-  public function setBrix($brix) {
+  function setEdad($edad) {
+      $this->edad = $edad;
+  }
+
+  function setBrix($brix) {
       $this->brix = $brix;
   }
 
-  public function setPh($ph) {
+  function setPh($ph) {
       $this->ph = $ph;
   }
 
-  public function setAr($ar) {
+  function setAr($ar) {
       $this->ar = $ar;
   }
 
-  public function setSacarosa($sacarosa) {
+  function setSacarosa($sacarosa) {
       $this->sacarosa = $sacarosa;
   }
 
-  public function setPureza($pureza) {
+  function setPureza($pureza) {
       $this->pureza = $pureza;
   }
 
-  public function setEmpleado_id($empleado_id) {
+  function setEmpleado_id($empleado_id) {
       $this->empleado_id = $empleado_id;
   }
 
-  public function setProveedor_id($proveedor_id) {
+  function setProveedor_id($proveedor_id) {
       $this->proveedor_id = $proveedor_id;
   }
 
+  
     
 
   /**
@@ -150,7 +162,7 @@ class controlCalidadBaseTableClass extends tableBaseClass {
    * borrado físico de un registro en una tabla de la base de datos
    * @return PDOException|boolean
    */
-  public static function delete($ids, $deletedLogical = true, $table = null) {
+  public static function delete($ids, $deletedLogical = null, $table = null) {
     return parent::delete($ids, $deletedLogical, self::getNameTable());
   }
 
