@@ -17,7 +17,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(proveedorTableClass::ID)) {
+      if (request::getInstance()->hasGet(proveedorTableClass::ID)) {
         $fields = array(
           proveedorTableClass::ID,
           proveedorTableClass::RAZON_SOCIAL,
@@ -26,7 +26,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
           proveedorTableClass::CIUDAD_ID
         );
         $where = array(
-            proveedorTableClass::ID => request::getInstance()->getRequest(proveedorTableClass::ID)
+            proveedorTableClass::ID => request::getInstance()->getGet(proveedorTableClass::ID)
         );
         $this->objProveedor = proveedorTableClass::getAll($fields, false, null, null, null, null, $where);
         

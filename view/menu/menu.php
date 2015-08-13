@@ -48,6 +48,7 @@ use mvc\session\sessionClass as session ?>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('qualityControl') ?><span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('jugo', 'index') ?>"><?php echo i18n::__('juiceProcess') ?></a></li>
                 </ul>
             </li>
             <li class="dropdown">
