@@ -25,8 +25,8 @@ if (config::getDbUnixSocket() !== null) {
           . ';dbname=' . config::getDbName()
   );
 }
-config::setPathAbsolute('$PathAbsolute');
-config::setUrlBase('$UrlBase');
+config::setPathAbsolute('$PathAbsolute/');
+config::setUrlBase('http://$UrlBase/');
 config::setScope('$Scope'); // dev
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('$idioma');
@@ -44,8 +44,8 @@ config::setHeaderExcel2003('Content-Type: application/vnd.ms-excel; charset=utf-
 config::setHeaderExcel2007('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8');
 config::setCookieNameRememberMe('mvcSiteRememberMe');
 config::setCookieNameSite('mvcSite');
-config::setCookiePath('$cookiePath' . config::getIndexFile());
-config::setCookieDomain('$UrlBase');
+config::setCookiePath('/$cookiePath/web/' . config::getIndexFile());
+config::setCookieDomain('http://$UrlBase/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
 config::setDefaultModule('usuario');
 config::setDefaultAction('index');
