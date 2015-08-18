@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 
 /**
  * Description of create editActionClass
- * @author  Bayron Henao <bairon_henao_1995@hotmail.com> 
+ * @author Cristian Ramirez <ccristianramirezc@gmail.com>
  * @method post  los datos de la tabla llegan por metodo post.
  * @param getNameField se especifica los nombres de los capos contenidos en la tabla.
  * $data los datos del recorrido de la tabla controlCalidad se guardan
@@ -21,20 +21,21 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasGet(jugoTableClass::ID)) {
+            if (request::getInstance()->hasGet(aguasTableClass::ID)) {
                 $fields = array(
-		 jugoTableClass::ID,
-                 jugoTableClass::PROCEDENCIA,
-                 jugoTableClass::BRIX,
-                 jugoTableClass::PH,
-                 jugoTableClass::CONTROL_ID
+		 aguasTableClass::ID,
+                 aguasTableClass::PROCEDENCIA,
+                 aguasTableClass::ARRASTRE_DULCE,
+                 aguasTableClass::PH,
+                 aguasTableClass::CLORO_RESIDUAL,
+                 aguasTableClass::CONTROL_ID
  
                 
                 );
                 $where = array(
-                    jugoTableClass::ID => request::getInstance()->getGet(jugoTableClass::ID)
+                    aguasTableClass::ID => request::getInstance()->getGet(aguasTableClass::ID)
                 );
-                $this->objJugo = jugoTableClass::getAll($fields, false, null, null, null, null, $where);
+                $this->objAguas = aguasTableClass::getAll($fields, false, null, null, null, null, $where);
                 
                  $fields = array(
                      controlCalidadTableClass::ID,
@@ -42,11 +43,12 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 );
                 
                 $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false);
-               
+                              
               
-                $this->defineView('edit', 'jugo', session::getInstance()->getFormatOutput());
+              
+                $this->defineView('edit', 'aguas', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('jugo', 'index');
+                routing::getInstance()->redirect('aguas', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

@@ -12,7 +12,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Bayron Henao <bairon_henao_1995@hotmail.com>
+ * @author Cristian Ramirez <ccristianramirezc@gmail.com>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -21,7 +21,6 @@ class updateActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST')) {
                 
                 $id = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::ID, true)));
-                $fecha = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::FECHA, true)));
                 $procedencia = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, true)));
                 $brix = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::BRIX, true)));
                 $ph = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::PH, true)));
@@ -31,10 +30,10 @@ class updateActionClass extends controllerClass implements controllerActionInter
                     jugoTableClass::ID => $id
                 );
 
-                $this->ValidateUpdate($fecha, $procedencia, $brix, $ph, $control_id);
+                $this->ValidateUpdate($procedencia, $brix, $ph, $control_id);
 
                 $data = array(
-                    jugoTableClass::FECHA => $fecha,
+
                     jugoTableClass::PROCEDENCIA => $procedencia,
                     jugoTableClass::BRIX => $brix,
                     jugoTableClass::PH => $ph,
@@ -92,12 +91,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::PH, true), true);
         }
-        //validar fecha
-        if (!preg_match($pattern, $fecha)) {
-            session::getInstance()->setError(i18n::__('errorDate', NULL, 'default'), 'errorFecha');
-            $bandera = true;
-            session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::FECHA, true), true);
-        }
+
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
             request::getInstance()->addParamGet(array(jugoTableClass::ID => request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::ID, TRUE))));

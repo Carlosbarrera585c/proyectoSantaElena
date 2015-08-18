@@ -11,7 +11,7 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Cristian Ramirez <ccristianramirezc@gmail.com>
+ * @author Bayron Henao <bairon_henao_1995@hotmail.com>
  */
 class viewActionClass extends controllerClass implements controllerActionInterface {
 
@@ -19,19 +19,20 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
     try {
 
       $fields = array(
-          jugoTableClass::ID ,
-          jugoTableClass::PROCEDENCIA,
-          jugoTableClass::BRIX,
-          jugoTableClass::PH,
-          jugoTableClass::CONTROL_ID
+          aguasTableClass::ID ,
+          aguasTableClass::PROCEDENCIA,
+          aguasTableClass::ARRASTRE_DULCE,
+          aguasTableClass::PH,
+          aguasTableClass::CLORO_RESIDUAL,
+          aguasTableClass::CONTROL_ID
 
       );
       
     $where = array (
-        jugoTableClass::ID => request::getInstance()->getRequest(jugoTableClass::ID)
+        aguasTableClass::ID => request::getInstance()->getRequest(aguasTableClass::ID)
     );
-      $this->objJugo = jugoTableClass::getAll($fields, false, null, null, null, null, $where);
-      $this->defineView('view', 'jugo', session::getInstance()->getFormatOutput());
+      $this->objAguas = aguasTableClass::getAll($fields, false, null, null, null, null, $where);
+      $this->defineView('view', 'aguas', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

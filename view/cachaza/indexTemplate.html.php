@@ -11,27 +11,26 @@ use mvc\config\configClass as config ?>
 use mvc\request\requestClass as request ?>
 <?php
 use mvc\session\sessionClass as session ?>
-<?php $id = jugoTableClass::ID ?>
-<?php $procedencia = jugoTableClass::PROCEDENCIA ?>
-<?php $brix = jugoTableClass::BRIX ?>
-<?php $ph = jugoTableClass::PH ?>
-<?php $control_id = jugoTableClass::CONTROL_ID ?>
+<?php $id = cachazaTableClass::ID ?>
+<?php $humedad = cachazaTableClass::HUMEDAD ?>
+<?php $sacaroza = cachazaTableClass::SACAROZA ?>
+<?php $control_id = cachazaTableClass::CONTROL_ID ?>
 
 <?php view::includePartial('menu/menu') ?>
 
 <div class="container container-fluid">
 
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-filter"> <?php echo i18n::__('juiceProcess') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-asterisk"> <?php echo i18n::__('cachaza') ?></i></h1>
         </div>
-  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('jugo', 'deleteSelect') ?>" method="POST">
+  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'deleteSelect') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">
       <?php if (session::getInstance()->hasCredential('admin')): ?>
-      <a href="<?php echo routing::getInstance()->getUrlWeb('jugo', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
+      <a href="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
       <a href="javascript:eliminarMasivo()" class="btn btn-danger btn-xs" id="btnDeleteMass" data-toggle="modal" data-target="#myModalDeleteMass"><?php echo i18n::__('deleteSelect') ?></a>
       <?php endif; ?>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
-      <a href="<?php echo routing::getInstance()->getUrlWeb('jugo', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
+      <a href="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
       <a class="btn btn-warning btn-xs col-lg-offset-7"  data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
     </div>
     
@@ -40,24 +39,24 @@ use mvc\session\sessionClass as session ?>
       <thead>
         <tr class="columna tr_table">
           <th class="tamano"><input type="checkbox" id="chkAll"></th>
-          <th><?php echo i18n::__('provenance') ?></th>
+          <th><?php echo i18n::__('qualityControl') ?></th>
           <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($objJugo as $jugo): ?>
+        <?php foreach ($objCachaza as $cachaza): ?>
           <tr>
-            <td class="tamano"><input type="checkbox" name="chk[]" value="<?php echo $jugo->$id ?>"></td>
-            <td><?php echo jugoTableClass::getNameProveedor($jugo->$procedencia) ?></td>  
+            <td class="tamano"><input type="checkbox" name="chk[]" value="<?php echo $cachaza->$id ?>"></td>
+            <td><?php echo cachazaTableClass::getNameControl($cachaza->$control_id) ?></td> 
             <td>
-                <a href="<?php echo routing::getInstance()->getUrlWeb('jugo', 'view', array(jugoTableClass::ID => $jugo->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'view', array(cachazaTableClass::ID => $cachaza->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
                 <?php if (session::getInstance()->hasCredential('admin')): ?>
-              <a href="<?php echo routing::getInstance()->getUrlWeb('jugo', 'edit', array(jugoTableClass::ID => $jugo->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
-              <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $jugo->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
+              <a href="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'edit', array(cachazaTableClass::ID => $cachaza->$id)) ?>" class="btn btn-primary btn-xs"><?php echo i18n::__('edit') ?></a>
+              <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $cachaza->$id ?>" class="btn btn-danger btn-xs"><?php echo i18n::__('delete') ?></a>
               <?php endif; ?>
             </td>
           </tr>
-          <div class="modal fade" id="myModalDelete<?php echo $jugo->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal fade" id="myModalDelete<?php echo $cachaza->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -65,11 +64,11 @@ use mvc\session\sessionClass as session ?>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirmDelete') ?></h4>
               </div>
               <div class="modal-body">
-                <?php echo i18n::__('questionDelete') ?> <?php echo $jugo->$id ?>?
+                <?php echo i18n::__('questionDelete') ?> <?php echo $cachaza->$id ?>?
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $jugo->$id ?>, '<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('jugo', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
+                <button type="button" class="btn btn-primary" onclick="eliminar(<?php echo $cachaza->$id ?>, '<?php echo cachazaTableClass::getNameField(cachazaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('cachaza', 'delete') ?>')"><?php echo i18n::__('confirmDelete') ?></button>
               </div>
             </div>
           </div>
@@ -79,14 +78,14 @@ use mvc\session\sessionClass as session ?>
     </table>
  </form>
     <div class="text-right">
-    <?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('jugo', 'index') ?>')">
+    <?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('cachaza', 'index') ?>')">
       <?php for ($x = 1; $x <= $cntPages; $x++): ?>
         <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
       <?php endfor ?>
     </select> <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
   </div>
-  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('jugo', 'delete') ?>" method="POST">
-    <input type="hidden" id="idDelete" name="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>">
+  <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'delete') ?>" method="POST">
+    <input type="hidden" id="idDelete" name="<?php echo cachazaTableClass::getNameField(cachazaTableClass::ID, true) ?>">
   </form>
 </div>
 <div class="modal fade" id="myModalDeleteMass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -132,25 +131,14 @@ use mvc\session\sessionClass as session ?>
           <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('generate report') ?></h4>
         </div>
         <div class="modal-body">
-          <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('jugo', 'report') ?>">
+          <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'report') ?>">
             <div class="form-group">
               <label for="reportProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('provenance') ?></label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="filterTurno" name="report[procedencia]" placeholder="<?php echo i18n::__('provenance') ?>">
               </div>
             </div>
-            <div class="form-group">
-              <label for="reportBrix" class="col-sm-2 control-label"><?php echo i18n::__('brix') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterBrix" name="report[brix]" placeholder="<?php echo i18n::__('brix') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="reportPh" class="col-sm-2 control-label"><?php echo i18n::__('ph') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterPh" name="report[ph]" placeholder="<?php echo i18n::__('ph') ?>">
-              </div>
-            </div>
+            
           </form>
         </div>
         <div class="modal-footer">
@@ -169,23 +157,12 @@ use mvc\session\sessionClass as session ?>
           <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filters') ?></h4>
         </div>
         <div class="modal-body">
-          <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('jugo', 'index') ?>">
+          <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'index') ?>">
+            
             <div class="form-group">
               <label for="filterProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('provenance') ?></label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="filterTurno" name="filter[procedencia]" placeholder="<?php echo i18n::__('provenance') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterBrix" class="col-sm-2 control-label"><?php echo i18n::__('brix') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterBrix" name="filter[brix]" placeholder="<?php echo i18n::__('brix') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterPh" class="col-sm-2 control-label"><?php echo i18n::__('ph') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterPh" name="filter[ph]" placeholder="<?php echo i18n::__('ph') ?>">
               </div>
             </div>
           </form>

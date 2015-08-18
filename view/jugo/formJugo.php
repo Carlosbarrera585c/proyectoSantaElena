@@ -10,7 +10,6 @@ use mvc\session\sessionClass as session ?>
 <?php
 use mvc\request\requestClass as request ?>
 <?php $id = jugoTableClass::ID ?>
-<?php $fecha = jugoTableClass::FECHA ?>
 <?php $procedencia = jugoTableClass::PROCEDENCIA ?>
 <?php $brix = jugoTableClass::BRIX ?>
 <?php $ph = jugoTableClass::PH ?>
@@ -26,13 +25,6 @@ use mvc\request\requestClass as request ?>
     <input name="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" value="<?php echo $objJugo[0]->$id ?>" type="hidden">
     <?php endif ?>
     <div class="container container-fluid">
-        <?php view::getMessageError('errorFecha') ?>
-        <div class="form-group <?php echo (session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
-            <div class="col-lg-10">
-                <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>" readonly="readonly" name="<?php echo jugoTableClass::getNameField(jugoTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
-            </div>
-        </div>
         <?php view::getMessageError('errorProcedencia') ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>

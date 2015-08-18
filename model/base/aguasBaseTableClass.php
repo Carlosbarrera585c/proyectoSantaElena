@@ -7,27 +7,27 @@ use mvc\model\table\tableBaseClass;
  *
 * @author Cristian Ramirez <ccristianramirezc@gmail.com>
  */
-class cachazaBaseTableClass extends tableBaseClass {
+class aguasBaseTableClass extends tableBaseClass {
 
   private $id;
-  private $hora;
   private $procedencia;
   private $arrastre_dulce;
+  private $ph;
+  private $cloro_residual;
   private $control_id;
 
   const ID = 'id';
-  const HORA = 'hora';
   const PROCEDENCIA = 'procedencia';
+  const PROCEDENCIA_LENGTH = 35;
   const ARRASTRE_DULCE = 'arrastre_dulce';
-  const ARRASTRE_DULCE_LENGTH = 35; 
+  const ARRASTRE_DULCE_LENGTH = 35;
+  const PH = 'ph';
+  const PH_LENGTH = 20;
+  const CLORO_RESIDUAL = 'cloro_residual'; 
   const CONTROL_ID = 'control_id';
 
   function getId() {
       return $this->id;
-  }
-
-  function getHora() {
-      return $this->hora;
   }
 
   function getProcedencia() {
@@ -38,16 +38,20 @@ class cachazaBaseTableClass extends tableBaseClass {
       return $this->arrastre_dulce;
   }
 
+  function getPh() {
+      return $this->ph;
+  }
+
+  function getCloro_residual() {
+      return $this->cloro_residual;
+  }
+
   function getControl_id() {
       return $this->control_id;
   }
 
   function setId($id) {
       $this->id = $id;
-  }
-
-  function setHora($hora) {
-      $this->hora = $hora;
   }
 
   function setProcedencia($procedencia) {
@@ -58,18 +62,25 @@ class cachazaBaseTableClass extends tableBaseClass {
       $this->arrastre_dulce = $arrastre_dulce;
   }
 
+  function setPh($ph) {
+      $this->ph = $ph;
+  }
+
+  function setCloro_residual($cloro_residual) {
+      $this->cloro_residual = $cloro_residual;
+  }
+
   function setControl_id($control_id) {
       $this->control_id = $control_id;
   }
 
-  
-    
+      
   /**
    * Obtiene el nombre de la tabla
    * @return string
    */
   public static function getNameTable() {
-    return 'cachaza';
+    return 'aguas';
   }
 
   /**

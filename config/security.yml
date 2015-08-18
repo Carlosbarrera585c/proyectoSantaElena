@@ -165,3 +165,23 @@ ingresoCana:
     security: true
   delete:
     security: true
+    
+aguas:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+    
+cachaza:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true

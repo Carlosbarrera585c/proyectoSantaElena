@@ -19,19 +19,18 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
     try {
 
       $fields = array(
-          jugoTableClass::ID ,
-          jugoTableClass::PROCEDENCIA,
-          jugoTableClass::BRIX,
-          jugoTableClass::PH,
-          jugoTableClass::CONTROL_ID
+          cachazaTableClass::ID ,
+          cachazaTableClass::HUMEDAD,
+          cachazaTableClass::SACAROZA,
+          cachazaTableClass::CONTROL_ID
 
       );
       
     $where = array (
-        jugoTableClass::ID => request::getInstance()->getRequest(jugoTableClass::ID)
+        cachazaTableClass::ID => request::getInstance()->getRequest(cachazaTableClass::ID)
     );
-      $this->objJugo = jugoTableClass::getAll($fields, false, null, null, null, null, $where);
-      $this->defineView('view', 'jugo', session::getInstance()->getFormatOutput());
+      $this->objCachaza = cachazaTableClass::getAll($fields, false, null, null, null, null, $where);
+      $this->defineView('view', 'cachaza', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';

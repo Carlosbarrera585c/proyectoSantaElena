@@ -10,15 +10,12 @@ use mvc\model\table\tableBaseClass;
 class jugoBaseTableClass extends tableBaseClass {
 
   private $id;
-  private $fecha;
   private $procedencia;
   private $brix;
   private $ph;
   private $control_id;
 
   const ID = 'id';
-  const FECHA = 'fecha';
-  const FECHA_LENGTH = 35;
   const PROCEDENCIA = 'procedencia';
   const BRIX = 'brix';
   const BRIX_LENGTH = 20;
@@ -28,10 +25,6 @@ class jugoBaseTableClass extends tableBaseClass {
 
   function getId() {
       return $this->id;
-  }
-
-  function getFecha() {
-      return $this->fecha;
   }
 
   function getProcedencia() {
@@ -52,10 +45,6 @@ class jugoBaseTableClass extends tableBaseClass {
 
   function setId($id) {
       $this->id = $id;
-  }
-
-  function setFecha($fecha) {
-      $this->fecha = $fecha;
   }
 
   function setProcedencia($procedencia) {

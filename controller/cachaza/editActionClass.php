@@ -21,20 +21,19 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasGet(jugoTableClass::ID)) {
+            if (request::getInstance()->hasGet(cachazaTableClass::ID)) {
                 $fields = array(
-		 jugoTableClass::ID,
-                 jugoTableClass::PROCEDENCIA,
-                 jugoTableClass::BRIX,
-                 jugoTableClass::PH,
-                 jugoTableClass::CONTROL_ID
+		 cachazaTableClass::ID,
+                 cachazaTableClass::HUMEDAD,
+                 cachazaTableClass::SACAROZA,
+                 cachazaTableClass::CONTROL_ID
  
                 
                 );
                 $where = array(
-                    jugoTableClass::ID => request::getInstance()->getGet(jugoTableClass::ID)
+                    cachazaTableClass::ID => request::getInstance()->getGet(cachazaTableClass::ID)
                 );
-                $this->objJugo = jugoTableClass::getAll($fields, false, null, null, null, null, $where);
+                $this->objCachaza = cachazaTableClass::getAll($fields, false, null, null, null, null, $where);
                 
                  $fields = array(
                      controlCalidadTableClass::ID,
@@ -42,11 +41,11 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 );
                 
                 $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false);
-               
+                           
               
-                $this->defineView('edit', 'jugo', session::getInstance()->getFormatOutput());
+                $this->defineView('edit', 'cachaza', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('jugo', 'index');
+                routing::getInstance()->redirect('cachaza', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

@@ -8,7 +8,6 @@ use mvc\view\viewClass as view ?>
 <?php
 use mvc\session\sessionClass as session ?>
 <?php $id = jugoTableClass::ID ?>
-<?php $fecha = jugoTableClass::FECHA ?>
 <?php $procedencia = jugoTableClass::PROCEDENCIA ?>
 <?php $brix = jugoTableClass::BRIX ?>
 <?php $ph = jugoTableClass::PH ?>
@@ -28,7 +27,6 @@ use mvc\session\sessionClass as session ?>
             <thead>
                 <tr class="columna tr_table">
                     <th><?php echo i18n::__('id') ?></th>
-                    <th><?php echo i18n::__('date') ?></th>
                     <th><?php echo i18n::__('provenance') ?></th>
                     <th><?php echo i18n::__('brix') ?></th>
                     <th><?php echo i18n::__('ph') ?></th>
@@ -39,7 +37,6 @@ use mvc\session\sessionClass as session ?>
             <tbody>
                 <tr>
                     <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$id : '') ?></td>
-                    <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$fecha : '') ?></td>
                     <td><?php echo ((isset($objJugo) == true) ? jugoTableClass::getNameProveedor($objJugo[0]->$procedencia) : '') ?></td>
                     <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$brix : '') ?></td>
                     <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$ph : '') ?></td>

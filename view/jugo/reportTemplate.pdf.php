@@ -2,7 +2,6 @@
 use mvc\routing\routingClass as routing;
 
 $id = jugoTableClass::ID;
-$fecha = jugoTableClass::FECHA;
 $procedencia = jugoTableClass::PROCEDENCIA; 
 $brix = jugoTableClass::BRIX;
 $ph = jugoTableClass::PH; 
@@ -16,9 +15,8 @@ $pdf->Image(routing::getInstance()->getUrlImg('jugoCaña.jpg'),70,20,50);
 
 $pdf ->Ln(50);
 
-$pdf->Cell(175,10,'REPORTE JUGO PROCESO',1,1,'C');
+$pdf->Cell(130,10,'REPORTE JUGO PROCESO',1,1,'C');
   $pdf->Cell(10,10,  utf8_decode("ID"),1);
-  $pdf->Cell(45,10,  utf8_decode("FECHA"),1);
   $pdf->Cell(35,10,  utf8_decode("PROCEDENCIA"),1);
   $pdf->Cell(35,10,  utf8_decode("BRIX"),1);
   $pdf->Cell(20,10,  utf8_decode("PH"),1);
@@ -27,7 +25,6 @@ $pdf->Cell(175,10,'REPORTE JUGO PROCESO',1,1,'C');
   $pdf->Ln();
 foreach ($objJugo as $jugo){
   $pdf->Cell(10,10,  utf8_decode($jugo->$id),1);
-  $pdf->Cell(45,10,  utf8_decode($jugo->$fecha),1);
   $pdf->Cell(35,10,  utf8_decode($jugo->$procedencia),1);
   $pdf->Cell(35,10,  utf8_decode($jugo->$brix),1);
   $pdf->Cell(20,10,  utf8_decode($jugo->$ph),1);

@@ -16,12 +16,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->hasPost('report')) {
         $report = request::getInstance()->getPost('report');
         // aqui validar datos de filtros
-        if (isset($report['fecha1']) and $report['fecha1'] !== NULL and $report['fecha1'] !== '' and isset($report['fecha2']) and $report['fecha2'] !== NULL and $report['fecha2'] !== '') {
-          $where[jugoTableClass::FECHA] = array(
-              $report['fecha1'],
-              $report['fecha2']
-          );
-        }
         if (isset($report['procedencia']) and $report['procedencia'] !== NULL and $report['procedencia'] !== '') {
           $where[jugoTableClass::PROCEDENCIA] = $report['procedencia'];
         }
@@ -39,7 +33,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
 
         $fields = array(
             jugoTableClass::ID,
-            jugoTableClass::FECHA,
             jugoTableClass::PROCEDENCIA,
             jugoTableClass::BRIX,
             jugoTableClass::PH,

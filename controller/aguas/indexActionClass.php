@@ -20,30 +20,25 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $where = null;
       if (request::getInstance()->hasPost('filter')) {
         $filter = request::getInstance()->getPost('filter');
-
+//aqui validar datos
         if (isset($filter['procedencia']) and $filter['procedencia'] !== null and $filter['procedencia'] !== "") {
-          $where[jugoTableClass::PROCEDENCIA] = $filter['procedencia'];
-        }
-        if (isset($filter['brix']) and $filter['brix'] !== null and $filter['brix'] !== "") {
-          $where[jugoTableClass::BRIX] = $filter['brix'];
-        }
-        if (isset($filter['ph']) and $filter['ph'] !== null and $filter['ph'] !== "") {
-          $where[jugoTableClass::PH] = $filter['ph'];
+          $where[aguasTableClass::PROCEDENCIA] = $filter['procedencia'];
         }
         
-        session::getInstance()->setAttribute('jugoIndexFilters', $where);
-      } else if (session::getInstance()->hasAttribute('jugoIndexFilters')) {
-        $where = session::getInstance()->getAttribute('jugoIndexFilters');
+        session::getInstance()->setAttribute('aguasIndexFilters', $where);
+      } else if (session::getInstance()->hasAttribute('aguasIndexFilters')) {
+        $where = session::getInstance()->getAttribute('aguasIndexFilters');
       }
       $fields = array(
-          jugoTableClass::ID,
-          jugoTableClass::PROCEDENCIA,
-          jugoTableClass::BRIX,
-          jugoTableClass::PH,
-          jugoTableClass::CONTROL_ID
+          aguasTableClass::ID,
+          aguasTableClass::PROCEDENCIA,
+          aguasTableClass::ARRASTRE_DULCE,
+          aguasTableClass::PH,
+          aguasTableClass::CLORO_RESIDUAL,
+          aguasTableClass::CONTROL_ID
       );
       $orderBy = array(
-          jugoTableClass::ID,
+          aguasTableClass::ID,
       );
       $page = 0;
       if (request::getInstance()->hasGet('page')) {
@@ -51,9 +46,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         $page = request::getInstance()->getGet('page') - 1;
         $page = $page * config::getRowGrid();
       }
-      $this->cntPages = jugoTableClass::getTotalPages(config::getRowGrid(), $where);
-      $this->objJugo = jugoTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
-      $this->defineView('index', 'jugo', session::getInstance()->getFormatOutput());
+      $this->cntPages = aguasTableClass::getTotalPages(config::getRowGrid(), $where);
+      $this->objAguas = aguasTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+      $this->defineView('index', 'aguas', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

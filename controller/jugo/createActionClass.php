@@ -22,16 +22,16 @@ class createActionClass extends controllerClass implements controllerActionInter
     public function execute() {
         try {
             if (request::getInstance()->isMethod('POST')) {
-                $fecha = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::FECHA, true)));
+
                 $procedencia = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, true)));
                 $brix = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::BRIX, true)));
                 $ph = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::PH, true)));
                 $control_id = trim(request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::CONTROL_ID, true)));
                 
-                $this->Validate($fecha, $brix, $ph, $control_id);
+                $this->Validate($brix, $ph, $control_id);
 
                 $data = array(
-                    jugoTableClass::FECHA => $fecha,
+
                     jugoTableClass::PROCEDENCIA => $procedencia,
                     jugoTableClass::BRIX => $brix,
                     jugoTableClass::PH => $ph,
@@ -64,7 +64,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true), true);
         }
         if (strlen($ph) > jugoTableClass::PH_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $peso, '%caracteres%' => jugoTableClass::PH_LENGTH)), 'errorPh');
+            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => jugoTableClass::PH_LENGTH)), 'errorPh');
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::PH, true), true);
         }
@@ -93,12 +93,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::PH, true), true);
         }
-        //validar fecha
-        if (!preg_match($pattern, $fecha)) {
-            session::getInstance()->setError(i18n::__('errorDate', NULL, 'default'), 'errorFecha');
-            $bandera = true;
-            session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::FECHA, true), true);
-        }
+
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
             routing::getInstance()->forward('jugo', 'insert');

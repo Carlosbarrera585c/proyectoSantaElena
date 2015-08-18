@@ -245,3 +245,31 @@ ingresoCana:
     title: Ingreso Caña
     javascript:
       - index.js
+      
+aguas:
+  index:
+    title: Aguas
+    javascript:
+      - index.js
+  insert:
+      title: Nueva Aguas
+      
+  edit:
+    title: Editar Aguas
+    
+  view:
+    title: Ver Aguas
+    
+cachaza:
+  index:
+    title: Cachaza
+    javascript:
+      - index.js
+  insert:
+      title: Nueva Cachaza
+      
+  edit:
+    title: Editar Cachaza
+    
+  view:
+    title: Ver Cachaza
