@@ -71,7 +71,7 @@ dictionary:
     brix:                 Brix
     humidity:             Humedad
     ##----------------------BAGAZO-------------------------##
-
+    
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Tipo Empaque
     editTypePacking:      Editar el Tipo de Empaque
