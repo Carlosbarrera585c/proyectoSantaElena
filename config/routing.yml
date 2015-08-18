@@ -1779,183 +1779,86 @@ jugo_deleteFilters:
   param:  { module: jugo, action: deleteFilters, format: html }
 
 ##-------------------------- JUGO-------------------------------------##
-
-##-------------------------- AGUAS-------------------------------------##
-
-aguas_index:
-  url:    /aguas/index
-  param:  { module: aguas, action: index, format: html }
+##-------------------------- BAGAZO-------------------------------------##
+bagazo_index:
+  url:    /bagazo/index
+  param:  { module: bagazo, action: index, format: html }
   load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-
-  
-aguas_ver:
-  url:    /aguas/ver
-  param:  { module: aguas, action: view, format: html }
-  load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
- 
-aguas_insert:
-  url:    /aguas/insertar
-  param:  { module: aguas, action: insert, format: html }
-  load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
     
-aguas_create:
-  url:    /aguas/crear
-  param:  { module: aguas, action: create, format: html }
+bagazo_view:
+  url:    /bagazo/ver
+  param:  { module: bagazo, action: view, format: html }
   load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-
     
-aguas_edit:
-  url:    /aguas/editar
-  param:  { module: aguas, action: edit, format: html }
+bagazo_insert:
+  url:    /bagazo/insertar
+  param:  { module: bagazo, action: insert, format: html }
   load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-
-aguas_update:
-  url:    /aguas/actualizar
-  param:  { module: aguas, action: update, format: html }
+    
+bagazo_create:
+  url:    /bagazo/crear
+  param:  { module: bagazo, action: create, format: html }
   load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-
     
-    
-aguas_delete:
-  url:    /aguas/eliminar
-  param:  { module: aguas, action: delete, format: json }
+bagazo_editar:
+  url:    /bagazo/editar
+  param:  { module: bagazo, action: edit, format: html }
   load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_update:
+  url:    /bagazo/actualizar
+  param:  { module: bagazo, action: update, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_delete:
+  url:    /bagazo/eliminar
+  param:  { module: bagazo, action: delete, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
    
-aguas_deleteSelect:
-  url:    /aguas/eliminarSeleccion
-  param:  { module: aguas, action: deleteSelect, format: html }
-  load:
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
     
-aguas_reporte:
-  url:    /aguas/reporte
-  param:  { module: aguas, action: report, format: pdf }
+bagazo_deleteSelect:
+  url:    /bagazo/eliminarSeleccion
+  param:  { module: bagazo, action: deleteSelect, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    
+bagazo_report:
+  url:    /bagazo/reporte
+  param:  { module: bagazo, action: report, format: pdf }
   load:
     - libs/fpdf/fpdf.php
-    - model/base/aguasBaseTableClass.php
-    - model/aguasTableClass.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
  
-aguas_deleteFilters:
-  url:    /aguas/borrarFiltros
-  param:  { module: aguas, action: deleteFilters, format: html }
-
-##-------------------------- AGUAS-------------------------------------##
-
-##-------------------------- CACHAZA -------------------------------------##
-
-cachaza_index:
-  url:    /cachaza/index
-  param:  { module: cachaza, action: index, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
-  
-cachaza_ver:
-  url:    /cachaza/ver
-  param:  { module: cachaza, action: view, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
- 
-cachaza_insert:
-  url:    /cachaza/insertar
-  param:  { module: cachaza, action: insert, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
-    
-cachaza_create:
-  url:    /cachaza/crear
-  param:  { module: cachaza, action: create, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
-    
-cachaza_edit:
-  url:    /cachaza/editar
-  param:  { module: cachaza, action: edit, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
-cachaza_update:
-  url:    /cachaza/actualizar
-  param:  { module: cachaza, action: update, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    - model/base/ControlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
-    
-    
-cachaza_delete:
-  url:    /cachaza/eliminar
-  param:  { module: cachaza, action: delete, format: json }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
+bagazo_deleteFilters:
+  url:    /bagazo/borrarFiltros
+  param:  { module: bagazo, action: deleteFilters, format: html }
    
-cachaza_deleteSelect:
-  url:    /cachaza/eliminarSeleccion
-  param:  { module: cachaza, action: deleteSelect, format: html }
-  load:
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
-    
-cachaza_reporte:
-  url:    /cachaza/reporte
-  param:  { module: cachaza, action: report, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
-    - model/base/cachazaBaseTableClass.php
-    - model/cachazaTableClass.php
- 
-cachaza_deleteFilters:
-  url:    /cachaza/borrarFiltros
-  param:  { module: cachaza, action: deleteFilters, format: html }
-
-##-------------------------- CACHAZA-------------------------------------##
+##-------------------------- BAGAZO-------------------------------------##

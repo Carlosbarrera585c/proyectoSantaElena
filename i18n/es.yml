@@ -52,7 +52,26 @@ dictionary:
     Enter your User:      Ingrese su Usuario
     Enter your Password:  Ingrese su Contraseña
     ##----------------------USUARIO-------------------------##
-       
+
+        ##----------------------JUGO-------------------------##
+    juice:                Jugo
+    juiceProcess:         Jugo Proceso
+    newJuice:             Nuevo Jugo
+    editJuice:            Editar Juego
+    infoJuice:            Informacion Jugo
+    provenance:           Procedencia
+
+    ##----------------------JUGO-------------------------##
+    ##----------------------BAGAZO-------------------------##
+    chaff:                Bagazo
+    newChaff:             Nuevo Bagazo
+    editChaff:            Editar Bagazo
+    infoChaff:            Informacion De Bagazo
+    saccharose:           sacarosa
+    brix:                 Brix
+    humidity:             Humedad
+    ##----------------------BAGAZO-------------------------##
+
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Tipo Empaque
     editTypePacking:      Editar el Tipo de Empaque
@@ -328,6 +347,7 @@ dictionary:
     errorLenghtQuantity:    Error su cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtProvenance:  Error su procedencia (%procedencia%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtWeight:      Error su Peso (%peso%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtHumidity:    Error su Humedad (%humedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).

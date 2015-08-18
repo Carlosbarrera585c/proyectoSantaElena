@@ -22,20 +22,20 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true));
+                $id = request::getInstance()->getPost(bagazoTableClass::getNameField(bagazoTableClass::ID, true));
 
                 $ids = array(
-                    controlCalidadTableClass::ID => $id
+                    bagazoTableClass::ID => $id
                 );
-                controlCalidadTableClass::delete($ids, false);
+                bagazoTableClass::delete($ids, false);
                 $this->arrayAjax = array(
                     'code' => 200,
                     'msg' => 'La Eliminación Fue Exitosa'
                 );
-                $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
+                $this->defineView('delete', 'bagazo', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess(i18n::__('successfulDelete'));
             } else {
-                routing::getInstance()->redirect('controlCalidad', 'index');
+                routing::getInstance()->redirect('bagazo', 'index');
             }
         } catch (PDOException $exc) {
              $this->arrayAjax = array(
@@ -43,7 +43,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
 		  'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
 		  'modal' => 'myModalDelete' . $id
 	  );
-	  $this->defineView('delete', 'controlCalidad', session::getInstance()->getFormatOutput());
+	  $this->defineView('delete', 'bagazo', session::getInstance()->getFormatOutput());
 	}
   }
 }
