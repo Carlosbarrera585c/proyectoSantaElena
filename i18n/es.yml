@@ -72,6 +72,40 @@ dictionary:
     humidity:             Humedad
     ##----------------------BAGAZO-------------------------##
     
+    
+
+    ##----------------------JUGO-------------------------##
+    juice:                Jugo
+    juiceProcess:         Jugo Proceso
+    newJuice:             Nuevo Jugo
+    editJuice:            Editar Juego
+    infoJuice:            Informacion Jugo
+    provenance:           Procedencia
+
+    ##----------------------JUGO-------------------------##
+    
+    ##----------------------AGUAS-------------------------##
+    waters:               Aguas
+    newWalters:           Nuevo Aguas
+    editWalters:          Editar Aguas
+    infoWalters:          Informacion Aguas
+    sweetDrag:            Arrastre Dulce
+    residualChlorine:     Cloro Residual
+    hour:                 Hora
+
+    ##----------------------AGUAS-------------------------##
+    
+    ##----------------------CACHAZA-------------------------##
+    cachaza:              Cachaza
+    newCachaza:           Nuevo Cachaza
+    editCachaza:          Editar Cachaza
+    infoCachaza:          Informacion Cachaza
+    humidity:             Humedad   
+    sacaroza:             Sacaroza
+
+    ##----------------------CACHAZA-------------------------##
+    
+    
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Tipo Empaque
     editTypePacking:      Editar el Tipo de Empaque
