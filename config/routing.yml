@@ -1779,3 +1779,86 @@ jugo_deleteFilters:
   param:  { module: jugo, action: deleteFilters, format: html }
 
 ##-------------------------- JUGO-------------------------------------##
+##-------------------------- BAGAZO-------------------------------------##
+bagazo_index:
+  url:    /bagazo/index
+  param:  { module: bagazo, action: index, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_view:
+  url:    /bagazo/ver
+  param:  { module: bagazo, action: view, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_insert:
+  url:    /bagazo/insertar
+  param:  { module: bagazo, action: insert, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_create:
+  url:    /bagazo/crear
+  param:  { module: bagazo, action: create, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_editar:
+  url:    /bagazo/editar
+  param:  { module: bagazo, action: edit, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_update:
+  url:    /bagazo/actualizar
+  param:  { module: bagazo, action: update, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+bagazo_delete:
+  url:    /bagazo/eliminar
+  param:  { module: bagazo, action: delete, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+   
+    
+bagazo_deleteSelect:
+  url:    /bagazo/eliminarSeleccion
+  param:  { module: bagazo, action: deleteSelect, format: html }
+  load:
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+    
+bagazo_report:
+  url:    /bagazo/reporte
+  param:  { module: bagazo, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/bagazoBaseTableClass.php
+    - model/bagazoTableClass.php
+ 
+bagazo_deleteFilters:
+  url:    /bagazo/borrarFiltros
+  param:  { module: bagazo, action: deleteFilters, format: html }
+   
+##-------------------------- BAGAZO-------------------------------------##

@@ -245,3 +245,20 @@ ingresoCana:
     title: Ingreso Caña
     javascript:
       - index.js
+      
+  edit:
+    title: Editar ingreso Caña
+    
+  view:
+    title: Ver Ingreso Caña
+
+bagazo:
+  index:
+    title: Bagazo
+    javascript:
+      - index.js
+  edit:
+    title: Editar Bagazo
+    
+  view:
+    title: Ver Bagazo

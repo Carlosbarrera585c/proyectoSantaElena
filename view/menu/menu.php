@@ -49,6 +49,7 @@ use mvc\session\sessionClass as session ?>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('jugo', 'index') ?>"><?php echo i18n::__('juiceProcess') ?></a></li>
+					<li><a href="<?php echo routing::getInstance()->getUrlWeb('bagazo', 'index') ?>"><?php echo i18n::__('chaff') ?></a></li>
                 </ul>
             </li>
             <li class="dropdown">
