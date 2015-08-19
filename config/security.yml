@@ -28,6 +28,15 @@ controlCalidad:
   create:
     security: true
 
+jugo:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
 
 entradaBodega:
   index:
@@ -167,4 +176,23 @@ mieles:
   create:
     security: true
   delete:
+
+aguas:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+    
+cachaza:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
     security: true

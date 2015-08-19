@@ -69,6 +69,17 @@ empleado:
     
   view:
     title: Ver Empleado
+    
+jugo:
+  index:
+    title: Jugo
+    javascript:
+      - index.js
+  edit:
+    title: Editar Jugo
+    
+  view:
+    title: Ver Jugo
        
 ciudad:
   index:
@@ -240,3 +251,48 @@ mieles:
     title: Registro de Mieles
     javascript:
       - index.js
+aguas:
+  index:
+    title: Aguas
+    javascript:
+      - index.js
+  insert:
+      title: Nueva Aguas
+      
+  edit:
+    title: Editar Aguas
+    
+  view:
+    title: Ver Aguas
+    
+cachaza:
+  index:
+    title: Cachaza
+    javascript:
+      - index.js
+  insert:
+      title: Nueva Cachaza
+      
+  edit:
+    title: Editar Cachaza
+    
+  view:
+    title: Ver Cachaza
+
+  edit:
+    title: Editar ingreso Caña
+    
+  view:
+    title: Ver Ingreso Caña
+
+bagazo:
+  index:
+    title: Bagazo
+    javascript:
+      - index.js
+  edit:
+    title: Editar Bagazo
+    
+  view:
+    title: Ver Bagazo
+
