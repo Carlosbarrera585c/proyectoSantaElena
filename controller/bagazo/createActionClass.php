@@ -69,7 +69,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true), true);
         } 
 		if (strlen($humedad) > bagazoTableClass::HUMEDAD_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtHumidity', NULL, 'default', array('%humedad%' => $humedad, '%caracteres%' => bagazoTableClass::HUMEDAD_LENGTH)), 'errorHumedad');
+            session::getInstance()->setError(i18n::__('errorLengthHumidity', NULL, 'default', array('%humedad%' => $humedad, '%caracteres%' => bagazoTableClass::HUMEDAD_LENGTH)), 'errorHumedad');
             $bandera = true;
             session::getInstance()->setFlash(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true), true);
         } else if (!is_numeric($humedad)) {

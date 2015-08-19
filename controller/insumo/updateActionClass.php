@@ -58,7 +58,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true), true);
         }
         if (strlen($precio) > insumoTableClass::PRECIO_LENGTH) {
-            session::getInstance()->setError(i18n::__('erroLenghtPrice', NULL, 'default', array('%precio%' => $precio, '%caracteres%' => insumoTableClass::PRECIO_LENGTH)), 'errorPrecio');
+            session::getInstance()->setError(i18n::__('errorLengthPrice', NULL, 'default', array('%precio%' => $precio, '%caracteres%' => insumoTableClass::PRECIO_LENGTH)), 'errorPrecio');
             $bandera = true;
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::PRECIO, true), true);
         }
