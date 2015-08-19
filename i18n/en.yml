@@ -319,6 +319,21 @@ dictionary:
     idOutput:           ID Output
     
     ##---------------------- DETALLE SALIDA----------------------------## 
+     ##---------------------- MIELES----------------------------## 
+    honeys:             Honeys
+    honeysInformation:  Honey Information
+    turn:               Turn
+    operator:           Operator
+    numberOfFattening:  Number of fattening
+    box:                Box
+    observations:       Observations
+    editHoneys:         Edit Honeys
+    newHoneys:          New Honeys
+    Enter your turn:    Enter your turn
+    Enter your numCeba:     Enter the number of Fattening
+    Enter your number box:  Enter the number of Box
+    Enter your observation: Enter your Observation
+    ##---------------------- MIELES----------------------------##
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
