@@ -302,6 +302,24 @@ dictionary:
     
     ##---------------------- DETALLE SALIDA----------------------------## 
      
+    ##---------------------------- MIELES  ----------------------------##
+    
+    honeys:                 Mieles
+    honeysInformation:      Información de Mieles
+    turn:                   Turno
+    operator:               Operario
+    numberOfFattening:      Numero de Ceba
+    box:                    Caja
+    observations:           Observaciones
+    editHoneys:             Editar Mieles
+    newHoneys:              Nuevas Mieles
+    Enter your turn:        Ingrese su Turno
+    Enter your numCeba:     Ingresa el número de Ceba
+    Enter your number box:  Ingrese el número de Caja
+    Enter your observation: Ingrese su Observación
+    
+    ##-----------------------------MIELES  ----------------------------##
+     
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
@@ -328,6 +346,10 @@ dictionary:
     errorLenghtQuantity:    Error su cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtProvenance:  Error su procedencia (%procedencia%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLenghtWeight:      Error su Peso (%peso%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthBox:         Error su Caja (%caja%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthTurn:        Error su Turno (%turno%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthFattening:   Error su Ceba (%ceba%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthObservation: Error su Observacion (%observacion%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).

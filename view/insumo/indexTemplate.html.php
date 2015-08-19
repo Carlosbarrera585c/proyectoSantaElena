@@ -98,7 +98,9 @@ use mvc\session\sessionClass as session ?>
             <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
                 <thead>
                     <tr class="columna tr_table">
+                        <?php if (session::getInstance()->hasCredential('admin')): ?>
                         <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                        <?php endif; ?>
                         <th><?php echo i18n::__('descriptionInput') ?></th>
                         <th><?php echo i18n::__('price') ?></th>
                         <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
@@ -107,7 +109,9 @@ use mvc\session\sessionClass as session ?>
                 <tbody>
                     <?php foreach ($objInsu as $insu): ?>
                         <tr>
+                            <?php if (session::getInstance()->hasCredential('admin')): ?>
                             <td><input type="checkbox" name="chk[]" value="<?php echo $insu->$id ?>"></td>
+                            <?php endif; ?>
                             <td><?php echo $insu->$desc_insumo ?></td>
                             <td><?php echo $insu->$precio ?></td>
                             <td>

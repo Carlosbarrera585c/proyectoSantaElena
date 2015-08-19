@@ -1683,3 +1683,81 @@ salidaBodega_history.back():
   url:    /salidaBodega/history.back()
   param:  { module: salidaBodega, action: regresar, format: html }
 ##-------------------------- SALIDA BODEGA----------------------------##
+##-------------------------------MIELES-------------------------------##
+
+mieles_deleteFilters:
+  url:    /mieles/borrarFiltros
+  param:  { module: mieles, action: deleteFilters, format: html }
+  
+mieles_index:
+  url:    /mieles/index
+  param:  { module: mieles, action: index, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_insert:
+  url:    /mieles/insertar
+  param:  { module: mieles, action: insert, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+        
+mieles_view:
+  url:    /mieles/ver
+  param:  { module: mieles, action: view, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+mieles_create:
+  url:    /mieles/crear
+  param:  { module: mieles, action: create, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_edit:
+  url:    /mieles/editar
+  param:  { module: mieles, action: edit, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php  
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+    
+mieles_update:
+  url:    /mieles/actualizar
+  param:  { module: mieles, action: update, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_delete:
+  url:    /mieles/eliminar
+  param:  { module: mieles, action: delete, format: json }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_deleteSelect:
+  url:    /mieles/eliminarSeleccion
+  param:  { module: mieles, action: deleteSelect, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+    
+mieles_reporte:
+  url:    /mieles/reporte
+  param:  { module: mieles, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+##-------------------------------MIELES-------------------------------##

@@ -234,3 +234,9 @@ ingresoCana:
     title: Ingreso Caña
     javascript:
       - index.js
+
+mieles:
+  index:
+    title: Registro de Mieles
+    javascript:
+      - index.js

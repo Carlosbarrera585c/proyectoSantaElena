@@ -210,7 +210,7 @@ dictionary:
     editDetailEntrance:   Edit Detail Entry Bodega
     infoDetailEntrance:   Detail Information Entry Bodega
     amount:               Amount
-    value:                Value
+    value:                Valor
     manuFacturingDate:    Manufacture Date
     expirationDate:       Expiration Date
     idDoc:                Id Document
@@ -281,7 +281,26 @@ dictionary:
     infoOutputDetail:   Detail Information output Bodega
     idOutput:           ID Output
     
-    ##---------------------- DETALLE SALIDA----------------------------## 
+    ##---------------------- DETALLE SALIDA----------------------------##
+    
+    ##---------------------------- MIELES  ----------------------------##
+    
+    honeys:                 Honeys
+    honeysInformation:      Honey Information
+    turn:                   Turn
+    operator:               Operator
+    numberOfFattening:      Number of Fattening
+    box:                    Box
+    observations:           Observations
+    editHoneys:             Edit Honeys
+    newHoneys:              New Honeys
+    Enter your turn:        Enter your turn
+    Enter your numCeba:     Enter your number of Ceba
+    Enter your number box:  Enter your number box
+    Enter your observation: Ingrese su Observacion
+    
+    ##-----------------------------MIELES  ----------------------------##
+    
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
@@ -303,6 +322,10 @@ dictionary:
     errorLenghtQuantity:    Error Your Quantity (%cantidad%) Exceeds Number of Characters (%caracteres%).
     errorLenghtProvenance:  Error Your Porvenance (%procedencia%) Exceeds Number of Characters (%caracteres%).
     errorLenghtWeight:      Error Your weight (%peso%) Exceeds Number of Characters (%caracteres%).
+    errorLengthBox:         Error Your Box(%caja%) Exceeds Number of Characters (%caracteres%).
+    errorLengthTurn:        Error Your Turn(%turno%) Exceeds Number of Characters (%caracteres%).
+    errorLengthFattening:   Error Your Fattening(%ceba%) Exceeds Number of Characters (%caracteres%).
+    errorLengthObservation: Error Your Observation(%observacion%) Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).

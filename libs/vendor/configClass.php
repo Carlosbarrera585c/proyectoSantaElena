@@ -44,7 +44,7 @@ namespace mvc\config {
     private static $default_action_permission;
     
     public static function getSohoFrameworkVersion() {
-      return '1.0.12';
+      return '1.0.13';
     }
 
     /**

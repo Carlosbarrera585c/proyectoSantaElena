@@ -25,7 +25,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $periodoInicio = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_INICIO, true));
                 $periodoFin = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::PERIODO_FIN, true));
                 $idTipoPago = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, true));
-                $valor = request::getInstance()->getPost(pagoTrabajadoresTableClass::VALOR, true);
+                $valor = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::VALOR, true));
                 $idEmpleado = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::EMPLEADO_ID, true));
 
                 $this->Validate($idPago, $fecha, $periodoInicio, $periodoFin, $idTipoPago, $valor, $idEmpleado);

@@ -156,3 +156,15 @@ ingresoCana:
     security: true
   delete:
     security: true
+    
+mieles:
+  index:
+    security: true
+    credencial:
+      -[admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+    security: true

@@ -22,9 +22,21 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       if (request::getInstance()->hasPost('filter') and request::getInstance()->isMethod('POST')) {
         $filter = request::getInstance()->getPost('filter');
         if ((isset($filter['fecha1']) and $filter['fecha1'] !== null and $filter['fecha1'] !== "") and ( isset($filter['fecha2']) and $filter['fecha2'] !== null and $filter['fecha2'] !== "")) {
-          $where[salidaBodegaTableClass::FECHA] = array(
+          $where[pagoTrabajadoresTableClass::FECHA] = array(
               date(config::getFormatTimestamp(), strtotime($filter['fecha1'] . '00:00:00')),
               date(config::getFormatTimestamp(), strtotime($filter['fecha2'] . '23:59:59'))
+          );
+        }
+        if ((isset($filter['fechaInicio1']) and $filter['fechaInicio1'] !== null and $filter['fechaInicio1'] !== "") and ( isset($filter['fechaInicio2']) and $filter['fechaInicio2'] !== null and $filter['fechaInicio2'] !== "")) {
+          $where[pagoTrabajadoresTableClass::PERIODO_INICIO] = array(
+              date(config::getFormatTimestamp(), strtotime($filter['fechaInicio1'] . '00:00:00')),
+              date(config::getFormatTimestamp(), strtotime($filter['fechaInicio2'] . '23:59:59'))
+          );
+        }
+        if ((isset($filter['fechaFin1']) and $filter['fechaFin1'] !== null and $filter['fechaFin1'] !== "") and ( isset($filter['fechaFin2']) and $filter['fechaFin2'] !== null and $filter['fechaFin2'] !== "")) {
+          $where[pagoTrabajadoresTableClass::PERIODO_FIN] = array(
+              date(config::getFormatTimestamp(), strtotime($filter['fechaFin1'] . '00:00:00')),
+              date(config::getFormatTimestamp(), strtotime($filter['fechaFin2'] . '23:59:59'))
           );
         }
 

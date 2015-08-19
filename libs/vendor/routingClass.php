@@ -131,14 +131,17 @@ namespace mvc\routing {
      * @param array $variables [optional]
      */
     public function redirect($module, $action = null, $variables = null) {
-      if (preg_match('/^@\w+/', $module) === 1 and $action === null) {
+      if (preg_match('/^@\w+/', $module) === 1) {
         $routing = $this->validateRouting($module);
         $module = $routing['param']['module'];
         $variables = $this->genVariables($action);
         $action = $routing['param']['action'];
         header('Location: ' . $this->getUrlWeb($module, $action, $variables));
+        exit();
       } else {
         header('Location: ' . $this->getUrlWeb($module, $action, $variables));
+        exit();
+        
       }
     }
 
