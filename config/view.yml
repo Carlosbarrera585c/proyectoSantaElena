@@ -251,6 +251,15 @@ mieles:
     title: Registro de Mieles
     javascript:
       - index.js
+  insert:
+      title: Nueva Miel
+      
+  edit:
+    title: Editar Miel
+    
+  view:
+    title: Ver Miel
+          
 aguas:
   index:
     title: Aguas
