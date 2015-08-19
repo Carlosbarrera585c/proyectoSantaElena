@@ -26,7 +26,7 @@ if (config::getDbUnixSocket() !== null) {
 }
 config::setPathAbsolute('/xampp/htdocs/proyectoSantaHelena/');
 config::setUrlBase('http://www.agropanelasantahelena.com/');
-config::setScope('dev'); // dev
+config::setScope('prod'); // dev
 if (session::getInstance()->hasDefaultCulture() === false) {
   config::setDefaultCulture('es');
 } else {
