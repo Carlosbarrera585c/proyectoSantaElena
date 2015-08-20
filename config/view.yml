@@ -299,9 +299,28 @@ bagazo:
     title: Bagazo
     javascript:
       - index.js
+      
+  insert:
+      title: Nuevo Bagazo
+      
   edit:
     title: Editar Bagazo
     
   view:
     title: Ver Bagazo
+
+panela:
+  index:
+    title: panela
+    javascript:
+      - index.js
+      
+  insert:
+      title: Nueva panela
+      
+  edit:
+    title: Editar Panela
+    
+  view:
+    title: Ver Panela
 

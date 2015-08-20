@@ -334,6 +334,15 @@ dictionary:
     Enter your number box:  Enter the number of Box
     Enter your observation: Enter your Observation
     ##---------------------- MIELES----------------------------##
+    ##----------------------panela-------------------------##
+    panela:                panela
+    newPanela:             New Panela
+    editPanela:            Edit Panela
+    infoPanela:            Information Panela
+    provenance:            Provenance
+    sediment:              Sediment
+    hour:                  hour
+    ##----------------------panela-------------------------##
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
@@ -356,6 +365,7 @@ dictionary:
     errorLengthProvenance:  Error Your Porvenance (%procedencia%) Exceeds Number of Characters (%caracteres%).
     errorLengthWeight:      Error Your weight (%peso%) Exceeds Number of Characters (%caracteres%).
     errorLengthHumidity:    Error Your Humidity (%humedad%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtSediment:    Error Your Sediment (%sedimento%) Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
@@ -363,7 +373,7 @@ dictionary:
     errorLengthDesc:        Error Your description (%desc_tipo_doc%) Maximum Exceeds Number of Characters (%caracteres%).
     errorDeleteForeign:     The record can not be deleted because it is being used by another table.
     errorDate:              The field should only contain date.
-   
+    errorHour:              The field Should only contain hour.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

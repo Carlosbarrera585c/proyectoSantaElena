@@ -354,6 +354,15 @@ dictionary:
     Enter your number box: Ingrese el numero de caja
     Enter your observation: Ingrese su Observacion
     ##---------------------- MIELES----------------------------## 
+    ##----------------------panela-------------------------##
+    panela:                panela
+    newPanela:             Nueva Panela
+    editPanela:            Editar Panela
+    infoPanela:            Informacion Panela
+    provenance:            Procedencia
+    sediment:              Sedimento
+    hour:                  hora
+    ##----------------------panela-------------------------##
    
    ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
@@ -382,12 +391,14 @@ dictionary:
     errorLengthProvenance:  Error su procedencia (%procedencia%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthWeight:      Error su Peso (%peso%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthHumidity:    Error su Humedad (%humedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtSediment:    Error su Sedimento (%sedimento%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
     errorText:              Error el Campo solo debe Contener Texto.
     errorDeleteForeign:     El Registro no Puede ser Eliminado Porque Esta Siendo Utilizado Por Otra Tabla.
     errorDate:              El Campo solo debe contener fecha.
+    errorHour:              El Campo Solo Debe Contener Horas.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

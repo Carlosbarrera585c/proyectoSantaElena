@@ -10,7 +10,7 @@ use mvc\model\table\tableBaseClass;
 class panelaBaseTableClass extends tableBaseClass {
   private $id;
   private $hora;
-  private $procedencia;
+  private $proveedor_id;
   private $sedimento;
   private $control_id;
   
@@ -18,53 +18,52 @@ class panelaBaseTableClass extends tableBaseClass {
   const ID = 'id';
   const HORA= 'hora';
   const HORA_LENGTH = 35;
-  const PROCEDENCIA= 'procedencia';
+  const PROVEEDOR_ID= 'proveedor_id';
   const SEDIMENTO= 'sedimento';
   const SEDIMENTO_LENGHT= 15;
   const CONTROL_ID= 'control_id';
   
   function getId() {
-      return $this->id;
+	return $this->id;
   }
 
   function getHora() {
-      return $this->hora;
+	return $this->hora;
   }
 
-  function getProcedencia() {
-      return $this->procedencia;
+  function getProveedor_id() {
+	return $this->proveedor_id;
   }
 
   function getSedimento() {
-      return $this->sedimento;
+	return $this->sedimento;
   }
 
   function getControl_id() {
-      return $this->control_id;
+	return $this->control_id;
   }
 
   function setId($id) {
-      $this->id = $id;
+	$this->id = $id;
   }
 
   function setHora($hora) {
-      $this->hora = $hora;
+	$this->hora = $hora;
   }
 
-  function setProcedencia($procedencia) {
-      $this->procedencia = $procedencia;
+  function setProveedor_id($proveedor_id) {
+	$this->proveedor_id = $proveedor_id;
   }
 
   function setSedimento($sedimento) {
-      $this->sedimento = $sedimento;
+	$this->sedimento = $sedimento;
   }
 
   function setControl_id($control_id) {
-      $this->control_id = $control_id;
+	$this->control_id = $control_id;
   }
 
     
-  
     
 
   /**
