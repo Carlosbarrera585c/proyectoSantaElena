@@ -35,6 +35,14 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       } else if (session::getInstance()->hasAttribute('jugoIndexFilters')) {
         $where = session::getInstance()->getAttribute('jugoIndexFilters');
       }
+	  
+	  $fields = array(
+                     proveedorTableClass::ID,
+                     proveedorTableClass::RAZON_SOCIAL
+                );
+                
+                $this->objProveedor = proveedorTableClass::getAll($fields, false);
+	  
       $fields = array(
           jugoTableClass::ID,
           jugoTableClass::PROCEDENCIA,

@@ -2112,3 +2112,99 @@ mieles_reporte:
     - model/mielesTableClass.php
 
 ##-------------------------------MIELES-------------------------------##
+##-------------------------- PANELA -------------------------------------##
+
+panela_index:
+  url:    /panela/index
+  param:  { module: panela, action: index, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+  
+panela_ver:
+  url:    /panela/ver
+  param:  { module: panela, action: view, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+panela_insert:
+  url:    /panela/insertar
+  param:  { module: panela, action: insert, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+panela_create:
+  url:    /panela/crear
+  param:  { module: panela, action: create, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+panela_edit:
+  url:    /panela/editar
+  param:  { module: panela, action: edit, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+panela_update:
+  url:    /panela/actualizar
+  param:  { module: panela, action: update, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+    
+panela_delete:
+  url:    /panela/eliminar
+  param:  { module: panela, action: delete, format: json }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+   
+panela_deleteSelect:
+  url:    /panela/eliminarSeleccion
+  param:  { module: panela, action: deleteSelect, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    
+panela_reporte:
+  url:    /panela/reporte
+  param:  { module: panela, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+ 
+jugo_deleteFilters:
+  url:    /panela/borrarFiltros
+  param:  { module: panela, action: deleteFilters, format: html }
+
+##-------------------------- PANELA -------------------------------------##

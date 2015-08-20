@@ -21,20 +21,20 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasGet(jugoTableClass::ID)) {
+            if (request::getInstance()->hasGet(panelaTableClass::ID)) {
                 $fields = array(
-		 jugoTableClass::ID,
-                 jugoTableClass::PROCEDENCIA,
-                 jugoTableClass::BRIX,
-                 jugoTableClass::PH,
-                 jugoTableClass::CONTROL_ID
+				 panelaTableClass::ID,
+                 panelaTableClass::HORA,
+                 panelaTableClass::PROVEEDOR_ID,
+                 panelaTableClass::SEDIMENTO,
+                 panelaTableClass::CONTROL_ID
  
                 
                 );
                 $where = array(
-                    jugoTableClass::ID => request::getInstance()->getGet(jugoTableClass::ID)
+                    panelaTableClass::ID => request::getInstance()->getGet(panelaTableClass::ID)
                 );
-                $this->objJugo = jugoTableClass::getAll($fields, false, null, null, null, null, $where);
+                $this->objPanela = panelaTableClass::getAll($fields, false, null, null, null, null, $where);
                 
                  $fields = array(
                      controlCalidadTableClass::ID,
@@ -43,17 +43,17 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 
                 $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false);
                
-              
 				 $fields = array(
                      proveedorTableClass::ID,
                      proveedorTableClass::RAZON_SOCIAL
                 );
                 
                 $this->objProveedor = proveedorTableClass::getAll($fields, false);
-				
-                $this->defineView('edit', 'jugo', session::getInstance()->getFormatOutput());
+               
+              
+                $this->defineView('edit', 'panela', session::getInstance()->getFormatOutput());
             } else {
-                routing::getInstance()->redirect('jugo', 'index');
+                routing::getInstance()->redirect('panela', 'index');
             }
         } catch (PDOException $exc) {
             echo $exc->getMessage();

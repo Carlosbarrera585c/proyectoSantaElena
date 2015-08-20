@@ -52,6 +52,7 @@ use mvc\session\sessionClass as session ?>
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('aguas', 'index') ?>"><?php echo i18n::__('waters') ?></a></li>
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('bagazo', 'index') ?>"><?php echo i18n::__('chaff') ?></a></li>
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'index') ?>"><?php echo i18n::__('cachaza') ?></a></li>
+					<li><a href="<?php echo routing::getInstance()->getUrlWeb('panela', 'index') ?>"><?php echo i18n::__('panela') ?></a></li>
                 </ul>
             </li>
             <li class="dropdown">

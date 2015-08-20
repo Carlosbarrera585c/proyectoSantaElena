@@ -196,3 +196,23 @@ cachaza:
     security: true
   create:
     security: true
+
+bagazo:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+    
+panela:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
