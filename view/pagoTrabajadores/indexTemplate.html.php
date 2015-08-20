@@ -106,19 +106,19 @@ use mvc\session\sessionClass as session ?>
                         <div class="form-group">
                             <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterFecha" name="report[Fecha]" placeholder="<?php echo i18n::__('date') ?>">
+                                <input type="date" class="form-control" id="filterFecha" name="report[Fecha]" placeholder="<?php echo i18n::__('date') ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="filterPeriodoIncio" class="col-sm-2 control-label"><?php echo i18n::__('periodBeginning') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterPeriodoIncio" name="report[PeriodoIncio]" placeholder="<?php echo i18n::__('periodBeginning') ?>">
+                                <input type="date" class="form-control" id="filterPeriodoIncio" name="report[PeriodoIncio]" placeholder="<?php echo i18n::__('periodBeginning') ?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="filterPeriodoFin" class="col-sm-2 control-label"><?php echo i18n::__('orderPeriod') ?></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="filterPeriodoFin" name="report[PeriodoFin]" placeholder="<?php echo i18n::__('orderPeriod') ?>">
+                                <input type="date" class="form-control" id="filterPeriodoFin" name="report[PeriodoFin]" placeholder="<?php echo i18n::__('orderPeriod') ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -137,7 +137,7 @@ use mvc\session\sessionClass as session ?>
         </div>
     </div><!--Fin De Los Filtros Para Reporte -->
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('payWorkers') ?></h1>
+        <h1><i class="fa fa-credit-card"></i> <?php echo i18n::__('payWorkers') ?></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pagoTrabajadores', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">

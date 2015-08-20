@@ -17,7 +17,7 @@ use mvc\session\sessionClass as session ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header titulo">
-        <h1><i class="glyphicon glyphicon-user"> <?php echo i18n::__('infoPlayWokers') ?></i></h1>
+        <h1><i class="fa fa-info-circle"> <?php echo i18n::__('infoPlayWokers') ?></i></h1>
     </div>
     <div style="margin-bottom: 10px; margin-top: 30px">
         <?php if (session::getInstance()->hasCredential('admin')): ?>
