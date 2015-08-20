@@ -1777,7 +1777,7 @@ jugo_reporte:
 jugo_deleteFilters:
   url:    /jugo/borrarFiltros
   param:  { module: jugo, action: deleteFilters, format: html }
-
+  
 ##-------------------------- JUGO-------------------------------------##
 
 ##-------------------------- AGUAS-------------------------------------##
@@ -2203,7 +2203,7 @@ panela_reporte:
     - model/base/panelaBaseTableClass.php
     - model/panelaTableClass.php
  
-jugo_deleteFilters:
+panela_deleteFilters:
   url:    /panela/borrarFiltros
   param:  { module: panela, action: deleteFilters, format: html }
 
