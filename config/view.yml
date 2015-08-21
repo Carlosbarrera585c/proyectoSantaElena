@@ -8,15 +8,20 @@ all:
     - jquery-1.11.1.min.js
     - bootstrap.js
     - main.js
+    - jquery.js
   stylesheet:
     - bootstrap.css
     - main.css
     - font-awesome.min.css
+    - full-width-pics
 shfSecurity:
   index:
     title: Identificación de Usuario
     stylesheet:
+      - bootstrap.css
+      - main.css
       - signin.css
+      - full-width-pics.css
   noPermission:
     stylesheet:
       - signin.css
