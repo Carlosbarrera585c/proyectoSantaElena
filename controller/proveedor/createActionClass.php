@@ -51,7 +51,7 @@ private function Validate($razon_social, $direccion, $telefono, $ciudad_id) {
     
     //validaciones para que no se superen el maximo de caracteres.
     if (strlen($razon_social) > proveedorTableClass::RAZON_SOCIAL_LENGTH) {
-      session::getInstance()->setError(i18n::__('erroLenghtBusinessName', NULL, 'default', array('%social%' => $razon_social, '%caracteres%' => proveedorTableClass::RAZON_SOCIAL_LENGTH)),'errorSocial');
+      session::getInstance()->setError(i18n::__('errorLengthBusinessName', NULL, 'default', array('%social%' => $razon_social, '%caracteres%' => proveedorTableClass::RAZON_SOCIAL_LENGTH)),'errorSocial');
       $bandera = true;
       session::getInstance()->setFlash(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true), true);
     }

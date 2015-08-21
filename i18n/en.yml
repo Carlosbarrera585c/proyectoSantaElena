@@ -74,16 +74,6 @@ dictionary:
     humidity:             Humidity
     ##----------------------BAGAZO-------------------------##
     
-        ##----------------------JUGO-------------------------##
-    juice:                Juice
-    juiceProcess:         Juice Process
-    newJuice:             New Juice
-    editJuice:            Edit Juice
-    infoJuice:            Information Juice
-    provenance:           provenance
-
-    ##----------------------JUGO-------------------------##
-
     ##----------------------AGUAS-------------------------##
     waters:               Waters
     newWalters:           New Walters
@@ -101,10 +91,7 @@ dictionary:
     infoCachaza:          Informacion Cachaza
     humidity:             Humidity   
     sacaroza:             Sacaroza
-
     ##----------------------CACHAZA-------------------------##
-
-    
     
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Type Packing
@@ -295,7 +282,6 @@ dictionary:
    
     ##---------------------- SOLICITUD INSUMO-------------------------##
     inputRequest:         Request Input
-       
     ##----------------------SOLICITUD INSUMO---------------------------##
  
     ##-----------------CONTROL CALIDAD-------------------------##
@@ -333,6 +319,30 @@ dictionary:
     idOutput:           ID Output
     
     ##---------------------- DETALLE SALIDA----------------------------## 
+     ##---------------------- MIELES----------------------------## 
+    honeys:             Honeys
+    honeysInformation:  Honey Information
+    turn:               Turn
+    operator:           Operator
+    numberOfFattening:  Number of fattening
+    box:                Box
+    observations:       Observations
+    editHoneys:         Edit Honeys
+    newHoneys:          New Honeys
+    Enter your turn:    Enter your turn
+    Enter your numCeba:     Enter the number of Fattening
+    Enter your number box:  Enter the number of Box
+    Enter your observation: Enter your Observation
+    ##---------------------- MIELES----------------------------##
+    ##----------------------panela-------------------------##
+    panela:                panela
+    newPanela:             New Panela
+    editPanela:            Edit Panela
+    infoPanela:            Information Panela
+    provenance:            Provenance
+    sediment:              Sediment
+    hour:                  hour
+    ##----------------------panela-------------------------##
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
@@ -348,13 +358,14 @@ dictionary:
     errorLengthValue:       Error Your value (%valor%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthTipoId:      Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
     errorLenghtDescription:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
-    erroLenghtPrice:        Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
-    erroLenghtBusinessName: Error Your Bussiness Name (%social%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtNumberWagon: Error Your Number Wagon (%vagon%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtQuantity:    Error Your Quantity (%cantidad%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtProvenance:  Error Your Porvenance (%procedencia%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtWeight:      Error Your weight (%peso%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtHumidity:    Error Your Humidity (%humedad%) Exceeds Number of Characters (%caracteres%).
+    errorLengthPrice:        Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
+    errorLengthBusinessName: Error Your Bussiness Name (%social%) Exceeds Number of Characters (%caracteres%).
+    errorLengthNumberWagon: Error Your Number Wagon (%vagon%) Exceeds Number of Characters (%caracteres%).
+    errorLengthQuantity:    Error Your Quantity (%cantidad%) Exceeds Number of Characters (%caracteres%).
+    errorLengthProvenance:  Error Your Porvenance (%procedencia%) Exceeds Number of Characters (%caracteres%).
+    errorLengthWeight:      Error Your weight (%peso%) Exceeds Number of Characters (%caracteres%).
+    errorLengthHumidity:    Error Your Humidity (%humedad%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtSediment:    Error Your Sediment (%sedimento%) Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
@@ -362,7 +373,7 @@ dictionary:
     errorLengthDesc:        Error Your description (%desc_tipo_doc%) Maximum Exceeds Number of Characters (%caracteres%).
     errorDeleteForeign:     The record can not be deleted because it is being used by another table.
     errorDate:              The field should only contain date.
-   
+    errorHour:              The field Should only contain hour.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

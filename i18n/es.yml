@@ -53,15 +53,15 @@ dictionary:
     Enter your Password:  Ingrese su Contraseña
     ##----------------------USUARIO-------------------------##
 
-        ##----------------------JUGO-------------------------##
+    ##----------------------JUGO-------------------------##
     juice:                Jugo
     juiceProcess:         Jugo Proceso
     newJuice:             Nuevo Jugo
     editJuice:            Editar Juego
     infoJuice:            Informacion Jugo
     provenance:           Procedencia
-
     ##----------------------JUGO-------------------------##
+
     ##----------------------BAGAZO-------------------------##
     chaff:                Bagazo
     newChaff:             Nuevo Bagazo
@@ -71,19 +71,7 @@ dictionary:
     brix:                 Brix
     humidity:             Humedad
     ##----------------------BAGAZO-------------------------##
-    
-    
-
-    ##----------------------JUGO-------------------------##
-    juice:                Jugo
-    juiceProcess:         Jugo Proceso
-    newJuice:             Nuevo Jugo
-    editJuice:            Editar Juego
-    infoJuice:            Informacion Jugo
-    provenance:           Procedencia
-
-    ##----------------------JUGO-------------------------##
-    
+   
     ##----------------------AGUAS-------------------------##
     waters:               Aguas
     newWalters:           Nuevo Aguas
@@ -92,7 +80,6 @@ dictionary:
     sweetDrag:            Arrastre Dulce
     residualChlorine:     Cloro Residual
     hour:                 Hora
-
     ##----------------------AGUAS-------------------------##
     
     ##----------------------CACHAZA-------------------------##
@@ -102,10 +89,8 @@ dictionary:
     infoCachaza:          Informacion Cachaza
     humidity:             Humedad   
     sacaroza:             Sacaroza
-
     ##----------------------CACHAZA-------------------------##
-    
-    
+        
     ##----------------------TIPO EMPAQUE-------------------------##
     typePacking:          Tipo Empaque
     editTypePacking:      Editar el Tipo de Empaque
@@ -324,8 +309,7 @@ dictionary:
     enterTheSaccharose:   Introduce la Sacarosa
     enterThePurity:       Introduce la Pureza
     ##-----------------control calidad---------------------------##
-     
-   
+        
     ##---------------------- DETALLE EMPAQUE----------------------------##
        
     detailPacking:          Detalle Empaque
@@ -353,9 +337,34 @@ dictionary:
     infoOutputDetail:   Informacion detallada Salida Bodega  
     idOutput:           ID Salida
     
-    ##---------------------- DETALLE SALIDA----------------------------## 
-     
-    ##---------------------- ERRORES----------------------------##
+    ##---------------------- DETALLE SALIDA----------------------------##
+    
+    ##---------------------- MIELES----------------------------## 
+    honeys:             Mieles
+    honeysInformation:  Información de Mieles
+    turn:               Turno
+    operator:           Operario
+    numberOfFattening:  Numero de ceba
+    box:                Caja
+    observations:       Observaciones
+    editHoneys:         Editar Mieles
+    newHoneys:          Nuevas Mieles
+    Enter your turn:    Ingrese su turno
+    Enter your numCeba: Ingresa el numero de Ceba
+    Enter your number box: Ingrese el numero de caja
+    Enter your observation: Ingrese su Observacion
+    ##---------------------- MIELES----------------------------## 
+    ##----------------------panela-------------------------##
+    panela:                panela
+    newPanela:             Nueva Panela
+    editPanela:            Editar Panela
+    infoPanela:            Informacion Panela
+    provenance:            Procedencia
+    sediment:              Sedimento
+    hour:                  hora
+    ##----------------------panela-------------------------##
+   
+   ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthPhone:       Error Su Telefono (%telefono%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
@@ -375,19 +384,21 @@ dictionary:
     errorLenghtValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthTipoId:      Error Su Descripción (%descripcion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLenghtDescription: Error su Descripcion (%descripcion%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    erroLenghtPrice:        Error su Precio (%precio%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    erroLenghtBusinessName: Error su Razon Social (%social%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtNumberWagon: Error su Numero de Vagon (%vagon%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtQuantity:    Error su cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtProvenance:  Error su procedencia (%procedencia%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtWeight:      Error su Peso (%peso%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtHumidity:    Error su Humedad (%humedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthPrice:        Error su Precio (%precio%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthBusinessName: Error su Razon Social (%social%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthNumberWagon: Error su Numero de Vagon (%vagon%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthQuantity:    Error su cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthProvenance:  Error su procedencia (%procedencia%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthWeight:      Error su Peso (%peso%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthHumidity:    Error su Humedad (%humedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLenghtSediment:    Error su Sedimento (%sedimento%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
     errorText:              Error el Campo solo debe Contener Texto.
     errorDeleteForeign:     El Registro no Puede ser Eliminado Porque Esta Siendo Utilizado Por Otra Tabla.
     errorDate:              El Campo solo debe contener fecha.
+    errorHour:              El Campo Solo Debe Contener Horas.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

@@ -6,5 +6,5 @@
 <div class="page-header titulo">
     <h1><i class="fa fa-pencil-square"> <?php echo i18n::__('editPlayWorkers') ?> <small><?php echo $objPagoTrabajadores[0]->$fecha ?></small></i></h1>
   </div>
-<?php view::includePartial('pagoTrabajadores/formPagoTrabajadores', array('objPagoTrabajadores' => $objPagoTrabajadores, 'pagoTrabajadores' => $fecha)) ?>
+<?php view::includePartial('pagoTrabajadores/formPagoTrabajadores', array('objPagoTrabajadores' => $objPagoTrabajadores, 'objTipoPago' => $objTipoPago, 'objEmpleado' => $objEmpleado)) ?>
 </div>

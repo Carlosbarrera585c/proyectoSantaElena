@@ -15,8 +15,8 @@ use mvc\request\requestClass as request ?>
 <?php $periodoFin = pagoTrabajadoresTableClass::PERIODO_FIN ?>
 <?php $valor = pagoTrabajadoresTableClass::VALOR ?>
 <?php $pagoEmpleadoId = pagoTrabajadoresTableClass::EMPLEADO_ID ?>
-<?php $empleadoId = pagoTrabajadoresTableClass::ID ?>
-<?php $nomEmpleado = pagoTrabajadoresTableClass::PERIODO_FIN ?>
+<?php $empleadoId = empleadoTableClass::ID ?>
+<?php $nomEmpleado = empleadoTableClass::NOM_EMPLEADO ?>
 <?php $pagoTipoPagoId = pagoTrabajadoresTableClass::TIPO_PAGO_ID ?>
 <?php $tipoPagoId = tipoPagoTableClass::ID ?>
 <?php $descTipoPago = tipoPagoTableClass::DESC_TIPO_PAGO ?>
@@ -71,14 +71,14 @@ use mvc\request\requestClass as request ?>
             <label class="col-lg-2 control-label"><?php echo i18n::__('paymentType') ?>:</label>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::ID, TRUE) ?>" name="<?php echo pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::TIPO_PAGO_ID, TRUE) ?>">
-                    <?php foreach ($objTipoPago as $tipoPago): ?>
-                        <option <?php echo (isset($objPagoTrabajadores[0]->$pagoTipoPagoId) === true and $objPagoTrabajadores[0]->$pagoTipoPagoId == $tipoPago->$tipoPagoId) ? 'selected' : '' ?> value="<?php echo $tipoPago->$tipoPagoId ?>">
-                            <?php echo $tipoPago->$descTipoPago ?>
-                        </option>     
+                    <?php foreach ($objTipoPago as $pago): ?>
+                        <option <?php echo (isset($objPagoTrabajadores[0]->$pagoTipoPagoId) === true and $pagoTipoPagoId == $pago->$tipoPagoId) ? 'selected' : '' ?> value="<?php echo $pago->$tipoPagoId ?>">
+                            <?php echo $pago->$descTipoPago ?>
+                        </option>   
                     <?php endforeach ?>
                 </select>
-            </div>
-        </div>
+            </div>  
+        </div> 
         <?php view::getMessageError('errorEmpleado') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::EMPLEADO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-2 control-label"><?php echo i18n::__('employee') ?>:</label>

@@ -26,7 +26,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 $telefono = $filter['Telefono'];
                 $direccion = $filter['Direccion'];
                 $numeroIdentificacion = $filter['NumIdentificacion'];
-                $correo = $filter['correo'];
+                $correo = $filter['Correo'];
 
                 //aqui validar datos
                 $this->Validate($nomEmpleado, $apellEmpleado, $telefono, $direccion, $numeroIdentificacion, $correo);

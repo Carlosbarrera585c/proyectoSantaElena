@@ -1777,7 +1777,7 @@ jugo_reporte:
 jugo_deleteFilters:
   url:    /jugo/borrarFiltros
   param:  { module: jugo, action: deleteFilters, format: html }
-
+  
 ##-------------------------- JUGO-------------------------------------##
 
 ##-------------------------- AGUAS-------------------------------------##
@@ -2034,3 +2034,177 @@ bagazo_deleteFilters:
   param:  { module: bagazo, action: deleteFilters, format: html }
    
 ##-------------------------- BAGAZO-------------------------------------##
+##-------------------------------MIELES-------------------------------##
+
+mieles_deleteFilters:
+  url:    /mieles/borrarFiltros
+  param:  { module: mieles, action: deleteFilters, format: html }
+  
+mieles_index:
+  url:    /mieles/index
+  param:  { module: mieles, action: index, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_insert:
+  url:    /mieles/insertar
+  param:  { module: mieles, action: insert, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+        
+mieles_view:
+  url:    /mieles/ver
+  param:  { module: mieles, action: view, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+mieles_create:
+  url:    /mieles/crear
+  param:  { module: mieles, action: create, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_edit:
+  url:    /mieles/editar
+  param:  { module: mieles, action: edit, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php  
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    
+    
+mieles_update:
+  url:    /mieles/actualizar
+  param:  { module: mieles, action: update, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_delete:
+  url:    /mieles/eliminar
+  param:  { module: mieles, action: delete, format: json }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+mieles_deleteSelect:
+  url:    /mieles/eliminarSeleccion
+  param:  { module: mieles, action: deleteSelect, format: html }
+  load:
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+    
+mieles_reporte:
+  url:    /mieles/reporte
+  param:  { module: mieles, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/mielesBaseTableClass.php
+    - model/mielesTableClass.php
+
+##-------------------------------MIELES-------------------------------##
+##-------------------------- PANELA -------------------------------------##
+
+panela_index:
+  url:    /panela/index
+  param:  { module: panela, action: index, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+  
+panela_ver:
+  url:    /panela/ver
+  param:  { module: panela, action: view, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+panela_insert:
+  url:    /panela/insertar
+  param:  { module: panela, action: insert, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+panela_create:
+  url:    /panela/crear
+  param:  { module: panela, action: create, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+panela_edit:
+  url:    /panela/editar
+  param:  { module: panela, action: edit, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+ 
+panela_update:
+  url:    /panela/actualizar
+  param:  { module: panela, action: update, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    - model/base/ControlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+    
+panela_delete:
+  url:    /panela/eliminar
+  param:  { module: panela, action: delete, format: json }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+   
+panela_deleteSelect:
+  url:    /panela/eliminarSeleccion
+  param:  { module: panela, action: deleteSelect, format: html }
+  load:
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+    
+panela_reporte:
+  url:    /panela/reporte
+  param:  { module: panela, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/panelaBaseTableClass.php
+    - model/panelaTableClass.php
+ 
+panela_deleteFilters:
+  url:    /panela/borrarFiltros
+  param:  { module: panela, action: deleteFilters, format: html }
+
+##-------------------------- PANELA -------------------------------------##

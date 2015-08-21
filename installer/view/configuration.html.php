@@ -18,11 +18,11 @@
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control"  required="" type="text" name="PathAbsolute" placeholder="Dirección en servidor de la carpeta raíz. Ej: /xampp/htdocs/proyectoSantaHelena/"><br>
+                    <input class="form-control"  required="" type="text" name="PathAbsolute" placeholder="Dirección en servidor de la carpeta raíz. Ej: /xampp/htdocs/proyectoSantaHelena o /var/www/html/proyectoSantaHelena"><br>
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control"  required="" type="text" name="UrlBase" placeholder="Dirección de la web. Ej: http://localhost/proyectoSantaHelena/web/"><br>
+                    <input class="form-control"  required="" type="text" name="UrlBase" placeholder="Dirección de la web. Ej: localhost/proyectoSantaHelena ó www.santahelena.com"><br>
                 </div>
 
                 <div class="form-group">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control"  required="" type="text" name="cookiePath" placeholder="Ruta de la cookie. Ej:/www.santahelena.com/web/"><br>
+                    <input class="form-control"  required="" type="text" name="cookiePath" placeholder="Ruta de la cookie. Ej: www.santahelena.com o proyectoSantaHelena"><br>
                 </div>
 
                 <div class="form-group">

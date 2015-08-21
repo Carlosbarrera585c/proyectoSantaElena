@@ -8,15 +8,20 @@ all:
     - jquery-1.11.1.min.js
     - bootstrap.js
     - main.js
+    - jquery.js
   stylesheet:
     - bootstrap.css
     - main.css
     - font-awesome.min.css
+    - full-width-pics
 shfSecurity:
   index:
     title: Identificación de Usuario
     stylesheet:
+      - bootstrap.css
+      - main.css
       - signin.css
+      - full-width-pics.css
   noPermission:
     stylesheet:
       - signin.css
@@ -246,6 +251,20 @@ ingresoCana:
     javascript:
       - index.js
 
+mieles:
+  index:
+    title: Registro de Mieles
+    javascript:
+      - index.js
+  insert:
+      title: Nueva Miel
+      
+  edit:
+    title: Editar Miel
+    
+  view:
+    title: Ver Miel
+          
 aguas:
   index:
     title: Aguas
@@ -285,9 +304,28 @@ bagazo:
     title: Bagazo
     javascript:
       - index.js
+      
+  insert:
+      title: Nuevo Bagazo
+      
   edit:
     title: Editar Bagazo
     
   view:
     title: Ver Bagazo
+
+panela:
+  index:
+    title: panela
+    javascript:
+      - index.js
+      
+  insert:
+      title: Nueva panela
+      
+  edit:
+    title: Editar Panela
+    
+  view:
+    title: Ver Panela
 

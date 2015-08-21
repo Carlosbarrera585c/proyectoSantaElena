@@ -44,6 +44,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false);
                
               
+				 $fields = array(
+                     proveedorTableClass::ID,
+                     proveedorTableClass::RAZON_SOCIAL
+                );
+                
+                $this->objProveedor = proveedorTableClass::getAll($fields, false);
+				
                 $this->defineView('edit', 'jugo', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('jugo', 'index');

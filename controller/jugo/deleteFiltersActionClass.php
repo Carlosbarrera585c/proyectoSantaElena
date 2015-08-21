@@ -9,9 +9,9 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of Control Calidad
+ * Description of Jugo
  *
- * @author  cristian ramirez <ccristianramirezc@gmail.com> 
+ * @author Cristian Ramirez <cristianramirezc@gmail.com>
  */
 class deleteFiltersActionClass extends controllerClass implements controllerActionInterface {
 
@@ -22,9 +22,8 @@ class deleteFiltersActionClass extends controllerClass implements controllerActi
       }
       routing::getInstance()->redirect('jugo', 'index');
     } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo $exc->getTraceAsString();
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
 

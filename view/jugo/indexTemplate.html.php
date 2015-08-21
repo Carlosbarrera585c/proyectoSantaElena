@@ -16,6 +16,8 @@ use mvc\session\sessionClass as session ?>
 <?php $brix = jugoTableClass::BRIX ?>
 <?php $ph = jugoTableClass::PH ?>
 <?php $control_id = jugoTableClass::CONTROL_ID ?>
+<?php $proveedor_id = proveedorTableClass::ID ?>
+<?php $razon_social = proveedorTableClass::RAZON_SOCIAL ?>
 
 <?php view::includePartial('menu/menu') ?>
 
@@ -134,23 +136,17 @@ use mvc\session\sessionClass as session ?>
         <div class="modal-body">
           <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('jugo', 'report') ?>">
             <div class="form-group">
-              <label for="reportProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('provenance') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterTurno" name="report[procedencia]" placeholder="<?php echo i18n::__('provenance') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="reportBrix" class="col-sm-2 control-label"><?php echo i18n::__('brix') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterBrix" name="report[brix]" placeholder="<?php echo i18n::__('brix') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="reportPh" class="col-sm-2 control-label"><?php echo i18n::__('ph') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterPh" name="report[ph]" placeholder="<?php echo i18n::__('ph') ?>">
-              </div>
-            </div>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="filterProcedencia" name="filter[procedencia]" id="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, TRUE) ?>">
+                    <?php foreach ($objProveedor as $proveedor): ?>
+                        <option <?php echo (isset($objJugo[0]->$procedencia) === true and $objJugo[0]->$procedencia == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
+                            <?php echo $proveedor->$razon_social ?>
+                        </option>   
+                    <?php endforeach ?>
+                </select>
+            </div> 
+		  </div>
           </form>
         </div>
         <div class="modal-footer">
@@ -171,23 +167,17 @@ use mvc\session\sessionClass as session ?>
         <div class="modal-body">
           <form method="POST" role="form" class="form-horizontal" id="filterForm" action="<?php echo routing::getInstance()->getUrlWeb('jugo', 'index') ?>">
             <div class="form-group">
-              <label for="filterProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('provenance') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterTurno" name="filter[procedencia]" placeholder="<?php echo i18n::__('provenance') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterBrix" class="col-sm-2 control-label"><?php echo i18n::__('brix') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterBrix" name="filter[brix]" placeholder="<?php echo i18n::__('brix') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterPh" class="col-sm-2 control-label"><?php echo i18n::__('ph') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterPh" name="filter[ph]" placeholder="<?php echo i18n::__('ph') ?>">
-              </div>
-            </div>
+            <label class="col-lg-2 control-label" for="filterProcedencia"><?php echo i18n::__('provenance') ?>:</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="filterProcedencia" name="filter[procedencia]" id="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, TRUE) ?>">
+                    <?php foreach ($objProveedor as $proveedor): ?>
+                        <option <?php echo (isset($objJugo[0]->$procedencia) === true and $objJugo[0]->$procedencia == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
+                            <?php echo $proveedor->$razon_social ?>
+                        </option>   
+                    <?php endforeach ?>
+                </select>
+            </div> 
+		  </div>
           </form>
             </div>
         <div class="modal-footer">

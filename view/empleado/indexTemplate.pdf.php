@@ -15,7 +15,7 @@ $pdf = new FPDF('l', 'mm', 'letter');
 $pdf->AddPage();
 $pdf->Cell(80);
 $pdf->SetFont('Arial', 'B', 12);
-$pdf->Image(routing::getInstance()->getUrlImg('fotos-gatos.jpg'), 90, 8, 70);
+$pdf->Image(routing::getInstance()->getUrlImg('empleado.jpg'), 90, 6, 50);
 
 $pdf->Ln(50);
 

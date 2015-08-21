@@ -53,15 +53,19 @@ use mvc\session\sessionClass as session ?>
         <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                    <?php if (session::getInstance()->hasCredential('admin')): ?>
+                      <th class="tamano"><input type="checkbox" id="chkAll"></th>
+                    <?php endif; ?>
                     <th><?php echo i18n::__('user') ?></th>
                     <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($objUsuarios as $usuario): ?>
-                  <tr class="">
-                      <td class=""><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
+                  <tr>
+                      <?php if (session::getInstance()->hasCredential('admin')): ?>
+                        <td class=""><input type="checkbox" name="chk[]" value="<?php echo $usuario->$id ?>"></td>
+                      <?php endif; ?>
                       <td><?php echo $usuario->$usu ?></td>
                       <td>
                           <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'view', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>

@@ -61,22 +61,22 @@ class createActionClass extends controllerClass implements controllerActionInter
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         //validaciones para que no se superen el maximo de caracteres.
         if (strlen($cantidad) > ingresoCanaTableClass::CANTIDAD_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtQuantity', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => ingresoCanaTableClass::CANTIDAD_LENGTH)), 'errorCantidad');
+            session::getInstance()->setError(i18n::__('errorLengthQuantity', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => ingresoCanaTableClass::CANTIDAD_LENGTH)), 'errorCantidad');
             $bandera = true;
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true), true);
         }
         if (strlen($procedencia_caña) > ingresoCanaTableClass::PROCEDENCIA_CAÑA_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtProvenance', NULL, 'default', array('%procedencia%' => $procedencia_caña, '%caracteres%' => ingresoCanaTableClass::PROCEDENCIA_CAÑA_LENGTH)), 'errorProcedencia');
+            session::getInstance()->setError(i18n::__('errorLengthProvenance', NULL, 'default', array('%procedencia%' => $procedencia_caña, '%caracteres%' => ingresoCanaTableClass::PROCEDENCIA_CAÑA_LENGTH)), 'errorProcedencia');
             $bandera = true;
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true), true);
         }
         if (strlen($peso_caña) > ingresoCanaTableClass::PESO_CAÑA_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtWeight', NULL, 'default', array('%peso%' => $peso_caña, '%caracteres%' => ingresoCanaTableClass::PESO_CAÑA_LENGTH)), 'errorPeso');
+            session::getInstance()->setError(i18n::__('errorLengthWeight', NULL, 'default', array('%peso%' => $peso_caña, '%caracteres%' => ingresoCanaTableClass::PESO_CAÑA_LENGTH)), 'errorPeso');
             $bandera = true;
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PESO_CAÑA, true), true);
         }
         if (strlen($num_vagon) > ingresoCanaTableClass::NUM_VAGON_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtNumberWagon', NULL, 'default', array('%vagon%' => $num_vagon, '%caracteres%' => ingresoCanaTableClass::NUM_VAGON_LENGTH)), 'errorVagon');
+            session::getInstance()->setError(i18n::__('errorLengthNumberWagon', NULL, 'default', array('%vagon%' => $num_vagon, '%caracteres%' => ingresoCanaTableClass::NUM_VAGON_LENGTH)), 'errorVagon');
             $bandera = true;
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::NUM_VAGON, true), true);
         }

@@ -166,6 +166,17 @@ ingresoCana:
   delete:
     security: true
     
+mieles:
+  index:
+    security: true
+    credencial:
+      -[admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+  delete:
+
 aguas:
   index:
     security: true
@@ -177,6 +188,26 @@ aguas:
     security: true
     
 cachaza:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+
+bagazo:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
+    
+panela:
   index:
     security: true
     credentials:
