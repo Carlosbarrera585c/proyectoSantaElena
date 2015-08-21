@@ -18,7 +18,7 @@ class loginActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') === TRUE) {
         $usuario = request::getInstance()->getPost('inputUser');
         $password = request::getInstance()->getPost('inputPassword');
 
