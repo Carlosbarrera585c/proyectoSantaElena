@@ -135,4 +135,12 @@ use mvc\session\sessionClass as session ?>
             </div>
         </div>
     </div>
+    <?php if (session::getInstance()->hasAttribute('modalInicioSesion')): ?>
+      <script>
+        $(document).ready(function () {
+            $('#modalInicioSesion').modal('toggle');
+        });
+      </script>
+      <?php session::getInstance()->deleteAttribute('modalInicioSesion') ?>
+    <?php endif; ?>
 </html>
