@@ -29,7 +29,7 @@ class pagoTrabajadoresTableClass extends pagoTrabajadoresBaseTableClass {
 
         public static function getNameEmpleado($id) {
         try {
-            $sql = 'SELECT ' . empleadoTableClass::NOM_EMPLEADO . ' As nom_empleado  '
+            $sql = 'SELECT ' . empleadoTableClass::NOM_EMPLEADO . ' AS nom_empleado  '
                     . ' FROM ' . empleadoTableClass::getNameTable() . '  '
                     . ' WHERE ' . empleadoTableClass::ID . ' = :id';
             $params = array(
@@ -76,5 +76,3 @@ class pagoTrabajadoresTableClass extends pagoTrabajadoresBaseTableClass {
         }
     }
 }
-
-?>
