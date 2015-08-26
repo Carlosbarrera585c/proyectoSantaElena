@@ -12,7 +12,6 @@ all:
     - bootstrap.css
     - main.css
     - font-awesome.min.css
-    - full-width-pics.css
 shfSecurity:
   index:
     title: Identificación de Usuario
@@ -84,7 +83,7 @@ jugo:
     
   view:
     title: Ver Jugo
-       
+
 ciudad:
   index:
     title: Ciudad
@@ -243,7 +242,7 @@ controlCalidad:
     
   view:
     title: Ver control calidad
-    
+
 ingresoCana:
   index:
     title: Ingreso Caña
@@ -256,7 +255,7 @@ mieles:
     javascript:
       - index.js
   insert:
-      title: Nueva Miel
+    title: Nueva Miel
       
   edit:
     title: Editar Miel
@@ -270,7 +269,7 @@ aguas:
     javascript:
       - index.js
   insert:
-      title: Nueva Aguas
+    title: Nueva Aguas
       
   edit:
     title: Editar Aguas
@@ -305,14 +304,13 @@ bagazo:
       - index.js
       
   insert:
-      title: Nuevo Bagazo
+    title: Nuevo Bagazo
       
   edit:
     title: Editar Bagazo
     
   view:
     title: Ver Bagazo
-
 panela:
   index:
     title: panela
@@ -320,11 +318,22 @@ panela:
       - index.js
       
   insert:
-      title: Nueva panela
+    title: Nueva panela
       
   edit:
     title: Editar Panela
     
   view:
     title: Ver Panela
-
+      
+grafica:
+   index:
+    title: Graficas Para todos
+    javascript:
+      - index.js
+      - jqPlot/jquery.jqplot.min.js
+      - jqPlot/plugins/jqplot.canvasTextRenderer.min.js
+      - jqPlot/plugins/jqplot.canvasAxisTickRenderer.min.js
+      - grafica.js
+    stylesheet:  
+      - jquery.jqplot.min.css
