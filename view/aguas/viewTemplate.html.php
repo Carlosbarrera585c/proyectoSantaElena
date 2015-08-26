@@ -12,6 +12,7 @@ use mvc\session\sessionClass as session ?>
 <?php $arrastre_dulce = aguasTableClass::ARRASTRE_DULCE ?>
 <?php $ph = aguasTableClass::PH ?>
 <?php $cloro_residual = aguasTableClass::CLORO_RESIDUAL ?>
+<?php $hora = aguasTableClass::HORA ?>
 <?php $control_id = aguasTableClass::CONTROL_ID ?>
 
 <?php view::includePartial('menu/menu') ?>
@@ -28,6 +29,7 @@ use mvc\session\sessionClass as session ?>
             <thead>
                 <tr class="columna tr_table">
                     <th><?php echo i18n::__('id') ?></th>
+                    <th><?php echo i18n::__('hour') ?></th>
                     <th><?php echo i18n::__('provenance') ?></th>
                     <th><?php echo i18n::__('sweetDrag') ?></th>
                     <th><?php echo i18n::__('ph') ?></th>
@@ -39,6 +41,7 @@ use mvc\session\sessionClass as session ?>
             <tbody>
                 <tr>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$id : '') ?></td>
+                    <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$hora : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$procedencia : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$arrastre_dulce : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$ph : '') ?></td>

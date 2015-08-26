@@ -27,8 +27,9 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $ph = trim(request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::PH, true)));
                 $cloro_residual = trim(request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::CLORO_RESIDUAL, true)));
                 $control_id = trim(request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::CONTROL_ID, true)));
+                $hora = trim(request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::HORA, true)));
                 
-                $this->Validate($procedencia, $arrastre_dulce, $ph, $cloro_residual, $control_id);
+                $this->Validate($procedencia, $arrastre_dulce, $ph, $cloro_residual, $control_id, $hora);
 
                 $data = array(
 
@@ -36,7 +37,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                     aguasTableClass::ARRASTRE_DULCE => $arrastre_dulce,
                     aguasTableClass::PH => $ph,
                     aguasTableClass::CLORO_RESIDUAL => $cloro_residual,
-                    aguasTableClass::CONTROL_ID => $control_id
+                    aguasTableClass::CONTROL_ID => $control_id,
+                    aguasTableClass::HORA => $hora
                 );
 
                 
@@ -54,7 +56,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
 
 //funcion para validacion de campos en formulario 
-    private function Validate($procedencia, $arrastre_dulce, $ph, $cloro_residual, $control_id) {
+    private function Validate($procedencia, $arrastre_dulce, $ph, $cloro_residual, $control_id, $hora) {
         $bandera = FALSE;
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         

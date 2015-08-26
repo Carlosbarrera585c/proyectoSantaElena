@@ -17,6 +17,7 @@ use mvc\session\sessionClass as session ?>
 <?php $ph = aguasTableClass::PH ?>
 <?php $cloro_residual = aguasTableClass::CLORO_RESIDUAL ?>
 <?php $control_id = aguasTableClass::CONTROL_ID ?>
+<?php $hora = aguasTableClass::HORA ?>
 
 <?php view::includePartial('menu/menu') ?>
 
@@ -33,7 +34,7 @@ use mvc\session\sessionClass as session ?>
       <?php endif; ?>
       <button type="button" data-toggle="modal" data-target="#myModalFilters" class="btn btn-primary  btn-xs"><?php echo i18n::__('filters') ?></button>
       <a href="<?php echo routing::getInstance()->getUrlWeb('aguas', 'deleteFilters') ?>" class="btn btn-default btn-xs"><?php echo i18n::__('deleteFilters') ?></a>
-      <a class="btn btn-warning btn-xs col-lg-offset-7"  data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php echo i18n::__('printReport') ?></a>
+<!--      <a class="btn btn-warning btn-xs col-lg-offset-7"  data-toggle="modal" data-target="#myModalFILTROSREPORTE" ><?php //echo i18n::__('printReport') ?></a>-->
     </div>
     
 <?php view::includeHandlerMessage() ?>
