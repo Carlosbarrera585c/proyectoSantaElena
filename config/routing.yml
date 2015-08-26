@@ -771,6 +771,10 @@ pagoTrabajadores_reporte:
     - libs/fpdf/fpdf.php
     - model/base/pagoTrabajadoresBaseTableClass.php
     - model/pagoTrabajadoresTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/tipoPagoBaseTableClass.php
+    - model/tipoPagoTableClass.php
 ##-------------------------- PAGO TRABAJADORES----------------------------##
 
 ##-------------------------- ENTRADA BODEGA-----------------------------##

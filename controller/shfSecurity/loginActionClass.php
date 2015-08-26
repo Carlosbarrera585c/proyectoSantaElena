@@ -18,7 +18,7 @@ class loginActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') === TRUE) {
         $usuario = request::getInstance()->getPost('inputUser');
         $password = request::getInstance()->getPost('inputPassword');
 
@@ -40,6 +40,7 @@ class loginActionClass extends controllerClass implements controllerActionInterf
           hook\security\securityHookClass::redirectUrl();
         } else {
           session::getInstance()->setError('Usuario y contraseña incorrectos');
+          session::getInstance()->setAttribute('modalInicioSesion', true);
           routing::getInstance()->redirect(config::getDefaultModuleSecurity(), config::getDefaultActionSecurity());
         }
       } else {

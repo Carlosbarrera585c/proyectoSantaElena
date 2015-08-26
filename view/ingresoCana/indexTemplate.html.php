@@ -59,30 +59,6 @@ use mvc\session\sessionClass as session ?>
                 <input type="date" name="report[fechaCreacion2]" class="form-control" id="filterCreacion2" placeholder="<?php echo i18n::__('date') ?>">
               </div>
             </div>
-            <div class="form-group">
-              <label for="reportCantidad" class="col-sm-2 control-label"><?php echo i18n::__('quantity') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterTurno" name="report[Cantidad]" placeholder="<?php echo i18n::__('quantity') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="reportProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('caneOrigin') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterBrix" name="report[Procedencia]" placeholder="<?php echo i18n::__('caneOrigin') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="reportPeso" class="col-sm-2 control-label"><?php echo i18n::__('caneWeight') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterPh" name="report[Peso]" placeholder="<?php echo i18n::__('caneWeight') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="reportVagon" class="col-sm-2 control-label"><?php echo i18n::__('wagonNumber') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterAr" name="report[Vagon]" placeholder="<?php echo i18n::__('wagonNumber') ?>">
-              </div>
-            </div>
           </form>
         </div>
         <div class="modal-footer">
@@ -108,30 +84,6 @@ use mvc\session\sessionClass as session ?>
                 <input type="date" class="form-control" id="filterFecha1" name="filter[fecha1]" placeholder="<?php echo i18n::__('date') ?>">
                 <br>
                 <input type="date" class="form-control" id="filterFecha2" name="filter[fecha2]" placeholder="<?php echo i18n::__('date') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterCantidad" class="col-sm-2 control-label"><?php echo i18n::__('quantity') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterApellido" name="filter[Cantidad]" placeholder="<?php echo i18n::__('quantity') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterProcedencia" class="col-sm-2 control-label"><?php echo i18n::__('caneOrigin') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterAr" name="filter[Procedencia]" placeholder="<?php echo i18n::__('caneOrigin') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterPeso" class="col-sm-2 control-label"><?php echo i18n::__('caneWeight') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterSacrosa" name="filter[Peso]" placeholder="<?php echo i18n::__('caneWeight') ?>">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="filterVagon" class="col-sm-2 control-label"><?php echo i18n::__('wagonNumber') ?></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="filterPureza" name="filter[Vagon]" placeholder="<?php echo i18n::__('wagonNumber') ?>">
               </div>
             </div>
           </form>
