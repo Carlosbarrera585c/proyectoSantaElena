@@ -40,6 +40,7 @@ dictionary:
     dateEnd:              Fecha Final.
     page:                 Pàgina
     of:                   de
+    languages:            Idiomas
     ##----------------------SISTEMA-------------------------##
     
     ##----------------------USUARIO-------------------------##
