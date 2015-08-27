@@ -2212,3 +2212,14 @@ panela_deleteFilters:
   param:  { module: panela, action: deleteFilters, format: html }
 
 ##-------------------------- PANELA -------------------------------------##
+##---------------------------GRAFICA-------------------------------------##
+grafica_index:
+  url:    /grafica/index
+  param:  { module: grafica, action: index, format: html }
+  load:
+    - model/base/jugoBaseTableClass.php
+    - model/jugoTableClass.php
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+
+##---------------------------GRAFICA-------------------------------------##
