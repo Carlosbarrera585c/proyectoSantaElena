@@ -16,7 +16,7 @@ $pdf = new FPDF('l', 'mm', 'letter');
 $pdf->AddPage();
 $pdf->Cell(80);
 $pdf->SetFont('Arial','B',12);
-$pdf->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'),100,20,70);
+$pdf->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'), 0, 0,280);
 
 $pdf ->Ln(50);
 
@@ -36,11 +36,11 @@ foreach ($objControlCalidad as $control){
   $pdf->Cell(45,10,  utf8_decode($control->$fecha),1);
   $pdf->Cell(20,10,  utf8_decode($control->$variedad),1);
   $pdf->Cell(20,10,  utf8_decode($control->$edad),1);
-  $pdf->Cell(20,10,  utf8_decode($control->$brix),1);
-  $pdf->Cell(20,10,  utf8_decode($control->$ph),1);
-  $pdf->Cell(20,10,  utf8_decode($control->$ar),1);
-  $pdf->Cell(25,10,  utf8_decode($control->$sacarosa),1);
-  $pdf->Cell(25,10,  utf8_decode($control->$pureza),1);
+  $pdf->Cell(20,10,  utf8_decode($control->$brix),1) . ' %';
+  $pdf->Cell(20,10,  utf8_decode($control->$ph),1) . ' %';
+  $pdf->Cell(20,10,  utf8_decode($control->$ar),1) . ' %';
+  $pdf->Cell(25,10,  utf8_decode($control->$sacarosa),1) . ' %';
+  $pdf->Cell(25,10,  utf8_decode($control->$pureza),1) . ' %';
   $pdf->Cell(35,10,  utf8_decode($control->$empleado_id),1);
   $pdf->Cell(35,10,  utf8_decode($control->$proveedor_id),1);
   $pdf ->Ln();

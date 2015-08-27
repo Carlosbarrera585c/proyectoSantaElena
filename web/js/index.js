@@ -21,7 +21,7 @@ function eliminar(id, variable, url) {
         $('#myModalErrorDelete').modal('toggle');
         $('#myModalErrorDelete .modal-body').html(data.msg);
         function closeModal() {
-          $('#myModalErrorDelete').modal('hide');
+          $('#myModalErrorDelete').modal('hidden');
         }
         setTimeout(closeModal, 5000);
       }

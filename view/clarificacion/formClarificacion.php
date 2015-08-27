@@ -32,12 +32,9 @@ use mvc\request\requestClass as request ?>
     <?php view::getMessageError('errorFecha') ?>
     <div class="container container-fluid">
         <div class="form-group <?php echo (session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
+            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true) ?>" class="form-control" value="<?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$fecha : ((session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true)) === true) ? '' : (request::getInstance()->hasPost(clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true))) ? request::getInstance()->getPost(clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true)) : '' )) ?>" type="date" class="frm-control" name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true) ?>" placeholder="Introduce la Fecha">
-                <?php if (session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true)) === true): ?>
-                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
+                <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>"  name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
         <?php view::getMessageError('errorBache') ?>
@@ -66,7 +63,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::ID, TRUE) ?>" name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::EMPLEADO_ID, TRUE) ?>">
                     <?php foreach ($objEmpleado as $empleado): ?>
-                      <option <?php echo (isset($objClarificacion[0]->$empleadoClarificacion) === true and $objClarificacion[0]->empleadoClarificacion == $empleado->$empleadoId) ? 'selected' : '' ?> value="<?php echo $empleado->$empleadoId ?>">
+                      <option <?php echo (isset($objClarificacion[0]->$empleadoClarificacion) === true and $objClarificacion[0]->$empleadoClarificacion == $empleado->$empleadoId) ? 'selected' : '' ?> value="<?php echo $empleado->$empleadoId ?>">
                           <?php echo $empleado->$nomEmpleado ?>
                       </option>     
                     <?php endforeach ?>
@@ -79,7 +76,7 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <select class="form-control" id="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::ID, TRUE) ?>" name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::PROVEEDOR_ID, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
-                      <option <?php echo (isset($objClarificacion[0]->$proveedorClarificacion) === true and $objClarificacion[0]->empleadoClarificacion == $proveedor->$proveedorId) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedorId ?>">
+                      <option <?php echo (isset($objClarificacion[0]->$proveedorClarificacion) === true and $objClarificacion[0]->$proveedorClarificacion == $proveedor->$proveedorId) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedorId ?>">
                           <?php echo $proveedor->$razonSocial ?>
                       </option>     
                     <?php endforeach ?>
@@ -118,7 +115,7 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorCalDosificado') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('phClarified') ?>:</label>
+            <label for="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('dosedLime') ?>:</label>
             <div class="col-lg-10">
                 <input id="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$calDosificada : ((session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true)) === true) ? '' : (request::getInstance()->hasPost(clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true))) ? request::getInstance()->getPost(clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true)) : '' )) ?>" name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true) ?>" placeholder="<?php echo i18n::__('Enter your Number Cal') ?>">
                 <?php if (session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::CAL_DOSIFICADA, true)) === true): ?>
@@ -128,9 +125,9 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorFloculante') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('phClarified') ?>:</label>
+            <label for="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('flocculant') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$floculante : ((session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true)) === true) ? '' : (request::getInstance()->hasPost(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true))) ? request::getInstance()->getPost(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true)) : '' )) ?>" name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true) ?>" placeholder="<?php echo i18n::__('Enter your Number Cal') ?>">
+                <input id="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$floculante : ((session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true)) === true) ? '' : (request::getInstance()->hasPost(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true))) ? request::getInstance()->getPost(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true)) : '' )) ?>" name="<?php echo clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true) ?>" placeholder="<?php echo i18n::__('Enter your Number flocculant') ?>">
                 <?php if (session::getInstance()->hasFlash(clarificacionTableClass::getNameField(clarificacionTableClass::FLOCULANTE, true)) === true): ?>
                   <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>

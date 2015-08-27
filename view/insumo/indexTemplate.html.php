@@ -113,7 +113,7 @@ use mvc\session\sessionClass as session ?>
                             <td><input type="checkbox" name="chk[]" value="<?php echo $insu->$id ?>"></td>
                             <?php endif; ?>
                             <td><?php echo $insu->$desc_insumo ?></td>
-                            <td><?php echo $insu->$precio ?></td>
+                            <td><?php echo '$' . number_format($objInsu[0]->$precio, 0, ',', '.'); ?></td>
                             <td>
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'view', array(insumoTableClass::ID => $insu->$id)) ?>" class="btn btn-info btn-xs"><?php echo i18n::__('view') ?></a>
                                 <?php if (session::getInstance()->hasCredential('admin')): ?>

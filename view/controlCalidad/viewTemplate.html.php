@@ -44,11 +44,11 @@
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$variedad : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$edad : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$brix : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ph : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$sacarosa : '') ?></td>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$pureza : '') ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$brix : '') . ' %' ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ph : '') . ' %' ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$ar : '') . ' %' ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$sacarosa : '') . ' %' ?></td>
+          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$pureza : '') . ' %' ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? controlCalidadTableClass::getNameEmpleado($objControlCalidad[0]->$empleado_id) : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? controlCalidadTableClass::getNameProveedor($objControlCalidad[0]->$proveedor_id) : '') ?></td>
           </tr>
