@@ -4,7 +4,7 @@ use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
 
 /**
- * Description of Empleado
+ * Description of Clarificacion
  *
  * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
@@ -31,7 +31,7 @@ class clarificacionTableClass extends clarificacionBaseTableClass {
         try {
             $sql = 'SELECT ' . empleadoTableClass::NOM_EMPLEADO . ' As nom_empleado  '
                     . ' FROM ' . empleadoTableClass::getNameTable() . '  '
-                    . ' WHERE ' . empleadoTableClass::ID . ' = :id';
+                    . ' WHERE ' .  empleadoTableClass::ID . ' = :id';
             $params = array(
                 ':id' => $id
             );

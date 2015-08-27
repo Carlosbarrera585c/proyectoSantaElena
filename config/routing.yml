@@ -2317,5 +2317,8 @@ clarificacion_reporte:
     - libs/fpdf/fpdf.php
     - model/base/clarificacionBaseTableClass.php
     - model/clarificacionTableClass.php
-
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
 ##-------------------------- EMPLEADO --------------------------##

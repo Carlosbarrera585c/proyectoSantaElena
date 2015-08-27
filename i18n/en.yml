@@ -343,7 +343,7 @@ dictionary:
     sediment:              Sediment
     hour:                  hour
     ##----------------------panela-------------------------##
-    ##----------------------Clarificacion------------------##
+    ##----------------------Clarificación------------------##
     infoClarification:     Information of Clarification
     newClarification:      New Clarification
     editClarification:     Edit Clarification
@@ -358,7 +358,7 @@ dictionary:
     Enter your Number Ph: Enter the Number of Ph
     Enter your Number Cal: Enter the Number of Cal
     Enter your Number flocculant: Enter the Number of flocculant
-    ##----------------------Clarificacion------------------##
+    ##----------------------Clarificación------------------##
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).

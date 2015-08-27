@@ -82,9 +82,15 @@ use mvc\session\sessionClass as session ?>
                 <div class="modal-body">
                     <form method="POST" class="form-horizontal" id="reportFilterForm" action="<?php echo routing::getInstance()->getUrlWeb('clarificacion', 'report') ?>">
                         <div class="form-group">
-                            <label for="filterFecha" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                            <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="filterFecha" name="report[Fecha]" placeholder="<?php echo i18n::__('date') ?>">
+                                <input type="date" name="report[fecha1]" class="form-control" id="filterCreacion1" placeholder="<?php echo i18n::__('date') ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportDate1" class="col-sm-2 control-label"><?php echo i18n::__('date') ?></label>
+                            <div class="col-sm-10">
+                                <input type="date" name="report[fecha2]" class="form-control" id="filterCreacion2" placeholder="<?php echo i18n::__('date') ?>">
                             </div>
                         </div>
                     </form>
@@ -98,7 +104,7 @@ use mvc\session\sessionClass as session ?>
     </div>
     <!-- Fin De Los Filtros Para Reporte -->
     <div class="page-header titulo">
-        <h1><i class="fa fa-male"></i> <?php echo i18n::__('clarification') ?></h1>
+        <h1><i class="fa fa-eyedropper"></i> <?php echo i18n::__('clarification') ?></h1>
     </div>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('clarificacion', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
