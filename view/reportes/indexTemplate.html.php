@@ -25,9 +25,9 @@
        <?php view::includeHandlerMessage()?>
     <br>
        <div class="rwd">
-      <table class="table table-bordered table-responsive rwd_auto">
+      <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
 
-          <tr>
+          <tr class="columna tr_table">
           <thead>
          
           <th>

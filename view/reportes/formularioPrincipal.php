@@ -72,7 +72,7 @@ use mvc\request\requestClass as request ?>
         <input class="btn btn-lg btn-success btn-xs" type="submit" value="<?php echo i18n::__(((isset($objReportes)) ? 'update' : 'register')) ?>">
 
 		<?php if (session::getInstance()->hasCredential('admin')): ?>
-  		<a class="btn btn-lg btn-default btn-xs" href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>" ><?php echo i18n::__('atras') ?></a>
+  		<a class="btn btn-lg btn-default btn-xs" href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>" ><?php echo i18n::__('back') ?></a>
 		<?php endif ?>
         <br><br><br><br><br><br><br><br><br><br><br>
       </form>
