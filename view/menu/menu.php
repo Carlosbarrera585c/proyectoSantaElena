@@ -106,6 +106,7 @@ use mvc\session\sessionClass as session ?>
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;<?php echo session::getInstance()->getUserName() ?><span class="caret"></span></a>
 		  <ul class="dropdown-menu" role="menu">
 			<li><a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out">&nbsp;<?php echo i18n::__('logout') ?></i></a></li>
+			 <li><a href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>"><?php echo i18n::__('printReport') ?></a></li>
 		  </ul>
 		</li>
 	  </ul>

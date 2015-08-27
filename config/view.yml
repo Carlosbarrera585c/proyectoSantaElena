@@ -325,18 +325,27 @@ panela:
     
   view:
     title: Ver Panela
-      
-grafica:
-   index:
-    title: Graficas Para todos
+    
+reportes: 
+  index:
     javascript:
-      - index.js
+      -index.js
+  grafica:
+    javascript:
       - jqPlot/jquery.jqplot.min.js
       - jqPlot/plugins/jqplot.canvasTextRenderer.min.js
-      - jqPlot/plugins/jqplot.canvasAxisTickRenderer.min.js
-      - grafica.js
-    stylesheet:  
-      - jquery.jqplot.min.css
+      - jqPlot/plugins/jqplot.canvasTextRenderer.js
+      - jqPlot/plugins/jqplot.canvasAxisLabelRenderer.min.js
+      - jqPlot/jquery.jqplot.js
+      - jqPlot/plugins/jqplot.categoryAxisRenderer.js
+      - jqPlot/plugins/jqplot.barRenderer.js
+      - jqPlot/plugins/jqplot.dateAxisRenderer.js 
+      - jqPlot/plugins/jqplot.logAxisRenderer.js
+      - jqPlotplugins/jqplot.canvasAxisTickRenderer.js
+      - graficas/grafica1.js
+    stylesheet:
+      - jquery.jqplot.min.css 
+      - jqPlot/jquery.jqplot.css
       
 clarificacion:
   index:
