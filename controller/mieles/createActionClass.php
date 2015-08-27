@@ -108,7 +108,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     //FIN VALIDAR CAJA
     //VALIDAR OBSERVACION
     if (strlen($observacion) > mielesTableClass::OBSERVACION_LENGTH) {
-      session::getInstance()->setError(i18n::__('errorLengthObservation', NULL, 'default', array('%observacion%' => $observacion, '%caracteres%' => mielesTableClass::OBSERVACION_LENGTH)), 'errorObservacion');
+      session::getInstance()->setError(i18n::__('errorLengthCredential', NULL, 'default', array('%descripcion%' => $observacion, '%caracteres%' => mielesTableClass::OBSERVACION_LENGTH)), 'errorObservacion');
       $bandera = true;
       session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true), true);
     } elseif ($observacion === NULL) {

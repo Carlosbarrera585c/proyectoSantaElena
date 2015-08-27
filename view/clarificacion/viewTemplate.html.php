@@ -53,9 +53,9 @@ use mvc\session\sessionClass as session ?>
                 <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$turno : '') ?></td>
                 <td><?php echo ((isset($objClarificacion) == true) ? clarificacionTableClass::getNameEmpleado($objClarificacion[0]->$empleadoId) : '') ?></td>
                 <td><?php echo ((isset($objClarificacion) == true) ? clarificacionTableClass::getNameProveedor($objClarificacion[0]->$proveedorId) : '') ?></td>
-                <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$brix : '') ?></td>
-                <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$phDiluido : '') ?></td>
-                <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$phClarificado : '') ?></td>
+                <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$brix : '') . ' %' ?></td>
+                <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$phDiluido : '') . ' %' ?></td>
+                <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$phClarificado : '') . ' %' ?></td>
                 <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$calDosificada : '') ?></td>
                 <td><?php echo ((isset($objClarificacion) == true) ? $objClarificacion[0]->$floculante : '') ?></td></tr>
         </tbody>
