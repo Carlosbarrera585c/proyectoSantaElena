@@ -32,6 +32,15 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
                routing::getInstance()->redirect('controlCalidad', 'index');
             }
         } catch (PDOException $exc) {
+		   session::getInstance()->setFlash('exc', $exc);
+            switch ($exc->getCode()) {
+                case 23503:
+                    session::getInstance()->setError(i18n::__('errorDeleteForeign'));
+                    routing::getInstance()->redirect('controlCalidad', 'index');
+                    break;
+                case 00000:
+                    break;
+            }
             echo $exc->getMessage();
             echo '<br>';
             echo $exc->getTraceAsString();

@@ -42,6 +42,7 @@ dictionary:
     dateEnd:              Date Ending.
     page:                 Page
     of:                   of
+    languages:            languages
     ##----------------------SISTEMA-------------------------##
     
     ##----------------------USUARIO-------------------------##
