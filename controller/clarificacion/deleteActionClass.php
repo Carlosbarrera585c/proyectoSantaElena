@@ -9,7 +9,7 @@ use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
 /**
- * Description of Pago Trabajadores
+ * Description of Clarificacion
  *
  * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
@@ -19,20 +19,20 @@ class deleteActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(pagoTrabajadoresTableClass::getNameField(pagoTrabajadoresTableClass::ID, true));
+        $id = request::getInstance()->getPost(clarificacionTableClass::getNameField(clarificacionTableClass::ID, true));
 
         $ids = array(
-            pagoTrabajadoresTableClass::ID => $id
+            clarificacionTableClass::ID => $id
         );
-        pagoTrabajadoresTableClass::delete($ids, false);
+        clarificacionTableClass::delete($ids, false);
         $this->arrayAjax = array(
             'code' => 200,
-            'msg' => 'La Eliminacion fue Exitosa'
+            'msg' => 'La Eliminación Fue Exitosa'
         );
-        $this->defineView('delete', 'pagoTrabajadores', session::getInstance()->getFormatOutput());
+        $this->defineView('delete', 'clarificacion', session::getInstance()->getFormatOutput());
         session::getInstance()->setSuccess(i18n::__('successfulDelete'));
       } else {
-        routing::getInstance()->redirect('pagoTrabajadores', 'index');
+        routing::getInstance()->redirect('clarificacion', 'index');
       }
     } catch (PDOException $exc) {
       $this->arrayAjax = array(
@@ -40,7 +40,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
           'msg' => 'El Dato Esta Siendo Usado por Otra Tabla',
           'modal' => 'myModalDelete' . $id
       );
-      $this->defineView('delete', 'pagoTrabajadores', session::getInstance()->getFormatOutput());
+      $this->defineView('delete', 'clarificacion', session::getInstance()->getFormatOutput());
     }
   }
 

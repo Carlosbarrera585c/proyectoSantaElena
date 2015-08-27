@@ -70,7 +70,6 @@ dictionary:
     editChaff:            Edit chaff
     infoChaff:            Info chaff
     saccharose:           saccharose
-    brix:                 Brix
     humidity:             Humidity
     ##----------------------BAGAZO-------------------------##
     
@@ -343,6 +342,22 @@ dictionary:
     sediment:              Sediment
     hour:                  hour
     ##----------------------panela-------------------------##
+    ##----------------------Clarificacion------------------##
+    infoClarification:     Information of Clarification
+    newClarification:      New Clarification
+    editClarification:     Edit Clarification
+    clarification:         Clarification
+    batchNumber:           Batch Number
+    phDiluted:             Ph Diluted
+    phClarified:           Ph Clarified
+    dosedLime:             Dosed Lime
+    flocculant:            Floculant
+    Enter your Number Batch: Enter the Number of Pothole
+    Enter your Number Brix: Enter the Number of Brix
+    Enter your Number Ph: Enter the Number of Ph
+    Enter your Number Cal: Enter the Number of Cal
+    Enter your Number flocculant: Enter the Number of flocculant
+    ##----------------------Clarificacion------------------##
     ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Your Name (%nombre%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).

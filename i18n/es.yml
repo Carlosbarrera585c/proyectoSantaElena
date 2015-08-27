@@ -363,8 +363,23 @@ dictionary:
     sediment:              Sedimento
     hour:                  hora
     ##----------------------panela-------------------------##
-   
-   ##---------------------- ERRORES----------------------------##
+    ##----------------------Clarificacion------------------##
+    infoClarification:     Informacion de Clarificacion
+    newClarification:      Nueva Clarificacion
+    editClarification:     Editar Clarificacion
+    clarification:         Clarificacion
+    batchNumber:           Numero de Bache
+    phDiluted:             Ph Diluido
+    phClarified:           Ph Clarificado
+    dosedLime:             Cal Dosificada
+    flocculant:            Floculante
+    Enter your Number Batch: Ingrese su Numero de Bache
+    Enter your Number Brix: Ingrese su Numero de Brix
+    Enter your Number Ph:  Ingrese su Ph
+    Enter your Number Cal: Ingrese su  Cal
+    Enter your Number flocculant: Ingrese la Cantidad de Flocculant
+    ##----------------------Clarificacion------------------##
+    ##---------------------- ERRORES----------------------------##
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthPhone:       Error Su Telefono (%telefono%) Excede La Cantidad Maxima de Caracteres (%caracteres%).

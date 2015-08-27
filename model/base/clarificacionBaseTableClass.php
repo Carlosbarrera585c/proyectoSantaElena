@@ -3,68 +3,142 @@
 use mvc\model\table\tableBaseClass;
 
 /**
- * Description of credencialBaseTableClass
+ * Description of Clarificacion
  *
- * @author Cristian Ramirez <cristianRamirezXD@outlook.es>
+ * @author Carlos Barrera <cabarrera22@misena.edu.co>
  */
-class proveedorBaseTableClass extends tableBaseClass {
+class clarificacionBaseTableClass extends tableBaseClass {
 
   private $id;
-  private $razon_social;
-  private $direccion;
-  private $telefono;
-  private $ciudad_id;
-  
+  private $fecha;
+  private $num_bache;
+  private $turno;
+  private $empleado_id;
+  private $proveedor_id;
+  private $brix;
+  private $ph_diluido;
+  private $ph_clarificado;
+  private $cal_dosificada;
+  private $floculante;
+
   const ID = 'id';
-  const RAZON_SOCIAL = 'razon_social';
-  const RAZON_SOCIAL_LENGTH = 30;
-  const DIRECCION = 'direccion';
-  const DIRECCION_LENGHT = 20;
-  const TELEFONO = 'telefono';
-  const TELEFONO_LENGHT = 13;
-  const CIUDAD_ID = 'ciudad_id';
-  
+  const FECHA = 'fecha';
+  const NUM_BACHE = 'num_bache';
+  const NUM_BACHE_LENGTH = 11;
+  const TURNO = 'turno';
+  const TURNO_LENGTH = 7;
+  const EMPLEADO_ID = 'empleado_id';
+  const EMPLEADO_ID_LENGTH = 11;
+  const PROVEEDOR_ID = 'proveedor_id';
+  const PROVEEDOR_ID_LENGTH = 11;
+  const BRIX = 'brix';
+  const BRIX_LENGTH = 11;
+  const PH_DILUIDO = 'ph_diluido';
+  const PH_DILUIDO_LENGTH = 11;
+  const PH_CLARIFICADO = 'ph_clarificado';
+  const PH_CLARIFICADO_LENGTH = 11;
+  const CAL_DOSIFICADA = 'cal_dosificada';
+  const CAL_DOSIFICADA_LENGTH = 11;
+  const FLOCULANTE = 'floculante';
+  const FLOCULANTE_LENGTH = 11;
+
   function getId() {
-      return $this->id;
+    return $this->id;
   }
 
-  function getRazon_social() {
-      return $this->razon_social;
+  function getFecha() {
+    return $this->fecha;
   }
 
-  function getDireccion() {
-      return $this->direccion;
+  function getNum_bache() {
+    return $this->num_bache;
   }
 
-  function getTelefono() {
-      return $this->telefono;
+  function getTurno() {
+    return $this->turno;
   }
 
-  function getCiudad_id() {
-      return $this->ciudad_id;
+  function getEmpleado_id() {
+    return $this->empleado_id;
+  }
+
+  function getProveedor_id() {
+    return $this->proveedor_id;
+  }
+
+  function getBrix() {
+    return $this->brix;
+  }
+
+  function getPh_diluido() {
+    return $this->ph_diluido;
+  }
+
+  function getPh_clarificado() {
+    return $this->ph_clarificado;
+  }
+
+  function getCal_dosificada() {
+    return $this->cal_dosificada;
+  }
+
+  function getFloculante() {
+    return $this->floculante;
   }
 
   function setId($id) {
-      $this->id = $id;
+    $this->id = $id;
   }
 
-  function setRazon_social($razon_social) {
-      $this->razon_social = $razon_social;
+  function setFecha($fecha) {
+    $this->fecha = $fecha;
   }
 
-  function setDireccion($direccion) {
-      $this->direccion = $direccion;
+  function setNum_bache($num_bache) {
+    $this->num_bache = $num_bache;
   }
 
-  function setTelefono($telefono) {
-      $this->telefono = $telefono;
+  function setTurno($turno) {
+    $this->turno = $turno;
   }
 
-  function setCiudad_id($ciudad_id) {
-      $this->ciudad_id = $ciudad_id;
+  function setEmpleado_id($empleado_id) {
+    $this->empleado_id = $empleado_id;
   }
 
-  
+  function setProveedor_id($proveedor_id) {
+    $this->proveedor_id = $proveedor_id;
+  }
+
+  function setBrix($brix) {
+    $this->brix = $brix;
+  }
+
+  function setPh_diluido($ph_diluido) {
+    $this->ph_diluido = $ph_diluido;
+  }
+
+  function setPh_clarificado($ph_clarificado) {
+    $this->ph_clarificado = $ph_clarificado;
+  }
+
+  function setCal_dosificada($cal_dosificada) {
+    $this->cal_dosificada = $cal_dosificada;
+  }
+
+  function setFloculante($floculante) {
+    $this->floculante = $floculante;
+  }
+
+    
+  /**
+   * Obtiene el nombre de la tabla
+   * @return string
+   */
+  static public function getNameTable() {
+    return 'clarificacion';
+  }
+
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato
    * DB (.) o en formato HTML (_)
@@ -76,14 +150,6 @@ class proveedorBaseTableClass extends tableBaseClass {
    */
   public static function getNameField($field, $html = false, $table = null) {
     return parent::getNameField($field, self::getNameTable(), $html);
-  }
-
-  /**
-   * Obtiene el nombre de la tabla
-   * @return string
-   */
-  public static function getNameTable() {
-    return 'proveedor';
   }
 
   /**

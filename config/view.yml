@@ -337,3 +337,15 @@ grafica:
       - grafica.js
     stylesheet:  
       - jquery.jqplot.min.css
+      
+clarificacion:
+  index:
+    title: Clarificacion
+    javascript:
+      - index.js
+  insert:
+    title: Nuevo
+  edit:
+    title: Edicion
+  view:
+    title: Ver Clarificacion    

@@ -2213,6 +2213,7 @@ panela_deleteFilters:
 
 ##-------------------------- PANELA -------------------------------------##
 ##---------------------------GRAFICA-------------------------------------##
+
 grafica_index:
   url:    /grafica/index
   param:  { module: grafica, action: index, format: html }
@@ -2223,3 +2224,86 @@ grafica_index:
     - model/controlCalidadTableClass.php
 
 ##---------------------------GRAFICA-------------------------------------##
+##-------------------------- CLARIFICACION --------------------------##
+
+clarificacion_deleteFilters:
+  url:    /clarificacion/borrarFiltros
+  param:  { module: clarificacion, action: deleteFilters, format: html }
+  
+clarificacion_index:
+  url:    /clarificacion/index
+  param:  { module: clarificacion, action: index, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+
+clarificacion_insert:
+  url:    /clarificacion/insertar
+  param:  { module: clarificacion, action: insert, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+        
+clarificacion_view:
+  url:    /clarificacion/ver
+  param:  { module: clarificacion, action: view, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+
+clarificacion_create:
+  url:    /clarificacion/crear
+  param:  { module: clarificacion, action: create, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+
+clarificacion_edit:
+  url:    /clarificacion/editar
+  param:  { module: clarificacion, action: edit, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+clarificacion_update:
+  url:    /clarificacion/actualizar
+  param:  { module: clarificacion, action: update, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+
+clarificacion_delete:
+  url:    /clarificacion/eliminar
+  param:  { module: clarificacion, action: delete, format: json }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+
+clarificacion_deleteSelect:
+  url:    /clarificacion/eliminarSeleccion
+  param:  { module: clarificacion, action: deleteSelect, format: html }
+  load:
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+    
+clarificacion_reporte:
+  url:    /clarificacion/reporte
+  param:  { module: clarificacion, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/clarificacionBaseTableClass.php
+    - model/clarificacionTableClass.php
+
+##-------------------------- EMPLEADO --------------------------##

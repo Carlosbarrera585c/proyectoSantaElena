@@ -216,3 +216,13 @@ panela:
     security: true
   create:
     security: true
+
+clarificacion:
+  index:
+    security: true
+    credentials:
+      - [admin, consultor]
+  insert:
+    security: true
+  create:
+    security: true
