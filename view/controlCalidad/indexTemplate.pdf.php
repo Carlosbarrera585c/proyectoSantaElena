@@ -16,12 +16,11 @@ $pdf = new FPDF('l', 'mm', 'letter');
 $pdf->AddPage();
 $pdf->Cell(80);
 $pdf->SetFont('Arial','B',12);
-$pdf->Image(routing::getInstance()->getUrlImg('controlDeCalidad.jpg'),100,20,70);
+$pdf->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'),100,20,70);
 
 $pdf ->Ln(50);
 
 $pdf->Cell(255,10,'REPORTE CONTROL CALIDAD',1,1,'C');
-  $pdf->Cell(10,10,  utf8_decode("ID"),1);
   $pdf->Cell(45,10,  utf8_decode("FECHA"),1);
   $pdf->Cell(20,10,  utf8_decode("VARIEDAD"),1);
   $pdf->Cell(20,10,  utf8_decode("EDAD"),1);
@@ -34,7 +33,6 @@ $pdf->Cell(255,10,'REPORTE CONTROL CALIDAD',1,1,'C');
   $pdf->Cell(35,10,  utf8_decode("PROVEEDOR_ID"),1);
   $pdf->Ln();
 foreach ($objControlCalidad as $control){
-  $pdf->Cell(10,10,  utf8_decode($control->$id),1);
   $pdf->Cell(45,10,  utf8_decode($control->$fecha),1);
   $pdf->Cell(20,10,  utf8_decode($control->$variedad),1);
   $pdf->Cell(20,10,  utf8_decode($control->$edad),1);

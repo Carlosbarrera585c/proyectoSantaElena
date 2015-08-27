@@ -15,6 +15,7 @@ class aguasBaseTableClass extends tableBaseClass {
   private $ph;
   private $cloro_residual;
   private $control_id;
+  private $hora;
 
   const ID = 'id';
   const PROCEDENCIA = 'procedencia';
@@ -25,6 +26,7 @@ class aguasBaseTableClass extends tableBaseClass {
   const PH_LENGTH = 20;
   const CLORO_RESIDUAL = 'cloro_residual'; 
   const CONTROL_ID = 'control_id';
+  const HORA = 'hora';
 
   function getId() {
       return $this->id;
@@ -48,6 +50,10 @@ class aguasBaseTableClass extends tableBaseClass {
 
   function getControl_id() {
       return $this->control_id;
+  }
+
+  function getHora() {
+      return $this->hora;
   }
 
   function setId($id) {
@@ -74,7 +80,11 @@ class aguasBaseTableClass extends tableBaseClass {
       $this->control_id = $control_id;
   }
 
-      
+  function setHora($hora) {
+      $this->hora = $hora;
+  }
+
+        
   /**
    * Obtiene el nombre de la tabla
    * @return string

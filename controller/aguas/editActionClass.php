@@ -28,7 +28,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                  aguasTableClass::ARRASTRE_DULCE,
                  aguasTableClass::PH,
                  aguasTableClass::CLORO_RESIDUAL,
-                 aguasTableClass::CONTROL_ID
+                 aguasTableClass::CONTROL_ID,
+                 aguasTableClass::HORA
  
                 
                 );

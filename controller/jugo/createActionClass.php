@@ -53,7 +53,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
 
 //funcion para validacion de campos en formulario 
-    private function Validate($fecha, $brix, $ph, $control_id) {
+    private function Validate($brix, $ph, $control_id) {
         $bandera = FALSE;
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         //validaciones para que no se superen el maximo de caracteres.

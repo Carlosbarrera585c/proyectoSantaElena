@@ -281,6 +281,10 @@ ingresoCana_reporte:
     - libs/fpdf/fpdf.php
     - model/base/ingresoCanaBaseTableClass.php
     - model/ingresoCanaTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
  
 ingresoCana_deleteFilters:
   url:    /ingresoCana/borrarFiltros
@@ -1591,6 +1595,10 @@ controlCalidad_reporte:
     - libs/fpdf/fpdf.php
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
  
 controlCalidad_deleteFilters:
   url:    /controlCalidad/borrarFiltros
@@ -1777,6 +1785,10 @@ jugo_reporte:
     - libs/fpdf/fpdf.php
     - model/base/jugoBaseTableClass.php
     - model/jugoTableClass.php
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
  
 jugo_deleteFilters:
   url:    /jugo/borrarFiltros

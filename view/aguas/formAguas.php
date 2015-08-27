@@ -17,7 +17,7 @@ use mvc\request\requestClass as request ?>
 <?php $cloro_residual = aguasTableClass::CLORO_RESIDUAL ?>
 <?php $control_id = aguasTableClass::CONTROL_ID ?>
 <?php $id_control = controlCalidadTableClass::ID ?>
-<?php $fecha = controlCalidadTableClass::FECHA ?>
+<?php $fecha = controlCalidadBaseTableClass::FECHA ?>
 
 
 <?php view::includePartial('menu/menu') ?>
@@ -25,17 +25,31 @@ use mvc\request\requestClass as request ?>
     <?php if (isset($objAguas) == true): ?>
         <input name="<?php echo aguasTableClass::getNameField(aguasTableClass::ID, true) ?>" value="<?php echo $objAguas[0]->$id ?>" type="hidden">
     <?php endif ?>
-    <div class="container container-fluid">
-        <?php view::getMessageError('errorProcedencia') ?>
-        <div class="form-group <?php echo (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>
+        
+        
+        <?php view::getMessageError('errorHora') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PH, true)) === true) ? 'has-error has-feedback' : '' ?>">
+            <label for="<?php echo aguasTableClass::getNameField(aguasTableClass::HORA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('hour') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objAguas) == true) ? $objAguas[0]->$procedencia : ((session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true)) === true) ? '' : (request::getInstance()->hasPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true))) ? request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true)) : '' )) ?>" name="<?php echo aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true) ?>" placeholder="<?php echo i18n::__('provenance') ?>">
-                <?php if (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true)) === true): ?>
+                <input id="<?php echo aguasTableClass::getNameField(aguasTableClass::HORA, true) ?>" type="time" class="form-control"  value="<?php echo ((isset($objAguas) == true) ? $objAguas[0]->$ph : ((session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::HORA, true)) === true) ? '' : (request::getInstance()->hasPost(aguasTableClass::getNameField(aguasTableClass::HORA, true))) ? request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::HORA, true)) : '' )) ?>" name="<?php echo aguasTableClass::getNameField(aguasTableClass::HORA, true) ?>" placeholder="<?php echo i18n::__('hour') ?>">
+                <?php if (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::HORA, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
+        
+        <?php view::getMessageError('errorProcedencia') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true)) === true) ? 'has-error has-feedback' : '' ?>">
+            <label class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="<?php echo aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true) ?>" name="<?php echo aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE) ?>">
+                        <option value="Caldera" <?php echo(isset($objAguas) and $objAguas[0]->$procedencia === 'Caldera') ? 'selected' : ((session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) and request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) === 'Caldera') ? 'selected' : '')?>>Caldera</option>
+                        <option value="Alimentacion" <?php echo(isset($objAguas) and $objAguas[0]->$procedencia === 'Alimentacion') ? 'selected' : ((session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) and request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) === 'Alimentacion') ? 'selected' : '')?>>Alimentacion</option>
+                        <option value="Condensados" <?php echo(isset($objAguas) and $objAguas[0]->$procedencia === 'Condensados') ? 'selected' : ((session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) and request::getInstance()->getPost(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, TRUE)) === 'Condensados') ? 'selected' : '')?>>Condensados</option>
+                </select>
+            </div> 
+        </div>
+        
         <?php view::getMessageError('errorArrastre') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::ARRASTRE_DULCE, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo aguasTableClass::getNameField(aguasTableClass::ARRASTRE_DULCE, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('sweetDrag') ?>:</label>

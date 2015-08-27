@@ -10,28 +10,31 @@ $control_id = jugoTableClass::CONTROL_ID;
 $pdf = new FPDF('l', 'mm', 'letter');
 $pdf->AddPage();
 $pdf->Cell(80);
-$pdf->SetFont('Arial','B',12);
-$pdf->Image(routing::getInstance()->getUrlImg('jugoCaña.jpg'),70,20,50);
+$pdf->SetFont('courier','B',12);
+$pdf->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'),0,0,280);
 
 $pdf ->Ln(50);
 
-$pdf->Cell(130,10,'REPORTE JUGO PROCESO',1,1,'C');
-  $pdf->Cell(10,10,  utf8_decode("ID"),1);
+$pdf->Cell(132,10,'REPORTE JUGO PROCESO',1,1,'C');
+
   $pdf->Cell(35,10,  utf8_decode("PROCEDENCIA"),1);
   $pdf->Cell(35,10,  utf8_decode("BRIX"),1);
   $pdf->Cell(20,10,  utf8_decode("PH"),1);
-  $pdf->Cell(30,10,  utf8_decode("CONTROL_ID"),1);
+  $pdf->Cell(42,10,  utf8_decode("CONTROL CALIDAD"),1);
 
   $pdf->Ln();
 foreach ($objJugo as $jugo){
-  $pdf->Cell(10,10,  utf8_decode($jugo->$id),1);
-  $pdf->Cell(35,10,  utf8_decode($jugo->$procedencia),1);
+
+  $pdf->Cell(35,10,  utf8_decode(jugoTableClass::getNameProveedor($objJugo[0]->$procedencia)),1);
   $pdf->Cell(35,10,  utf8_decode($jugo->$brix),1);
   $pdf->Cell(20,10,  utf8_decode($jugo->$ph),1);
-  $pdf->Cell(30,10,  utf8_decode($jugo->$control_id),1);
+  $pdf->Cell(42,10,  utf8_decode(jugoTableClass::getNameControl($objJugo[0]->$control_id)),1);
 
+  
   $pdf ->Ln();
 }
+
+
 
 $pdf->Output();
 
