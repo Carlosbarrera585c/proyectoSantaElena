@@ -1777,6 +1777,10 @@ jugo_reporte:
     - libs/fpdf/fpdf.php
     - model/base/jugoBaseTableClass.php
     - model/jugoTableClass.php
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
  
 jugo_deleteFilters:
   url:    /jugo/borrarFiltros

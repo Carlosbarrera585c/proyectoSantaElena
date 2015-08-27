@@ -19,17 +19,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
         if (isset($report['procedencia']) and $report['procedencia'] !== NULL and $report['procedencia'] !== '') {
           $where[jugoTableClass::PROCEDENCIA] = $report['procedencia'];
         }
-        if (isset($report['brix']) and $report['brix'] !== NULL and $report['brix'] !== '') {
-          $where[jugoTableClass::BRIX] = $report['brix'];
-        }
-        if (isset($report['ph']) and $report['ph'] !== NULL and $report['ph'] !== '') {
-          $where[jugoTableClass::PH] = $report['ph'];
-        }
-        
-        if (isset($report['ph']) and $report['ph'] !== NULL and $report['ph'] !== '') {
-          $where[jugoTableClass::CONTROL_ID] = $report['ph'];
-        }
-
 
         $fields = array(
             jugoTableClass::ID,
@@ -43,7 +32,7 @@ class reportActionClass extends controllerClass implements controllerActionInter
         $orderBy = array(
             jugoTableClass::ID
         );
-        $this->objJugo = jugoTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);
+        $this->objJugo = jugoTableClass::getAll($fields, FALSE, $orderBy, 'ASC', NULL, NULL, $where);     
         $this->defineView('report', 'jugo', session::getInstance()->getFormatOutput());
       }
 

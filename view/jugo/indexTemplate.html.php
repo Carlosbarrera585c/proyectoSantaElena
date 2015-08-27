@@ -138,7 +138,7 @@ use mvc\session\sessionClass as session ?>
             <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>
             <div class="col-lg-10">
-                <select class="form-control" id="filterProcedencia" name="filter[procedencia]" id="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, TRUE) ?>">
+                <select class="form-control" id="reportProcedencia" name="report[procedencia]" id="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
                         <option <?php echo (isset($objJugo[0]->$procedencia) === true and $objJugo[0]->$procedencia == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
                             <?php echo $proveedor->$razon_social ?>
