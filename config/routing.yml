@@ -2224,18 +2224,6 @@ panela_deleteFilters:
   param:  { module: panela, action: deleteFilters, format: html }
 
 ##-------------------------- PANELA -------------------------------------##
-##---------------------------GRAFICA-------------------------------------##
-
-grafica_index:
-  url:    /grafica/index
-  param:  { module: grafica, action: index, format: html }
-  load:
-    - model/base/jugoBaseTableClass.php
-    - model/jugoTableClass.php
-    - model/base/controlCalidadBaseTableClass.php
-    - model/controlCalidadTableClass.php
-
-##---------------------------GRAFICA-------------------------------------##
 ##-------------------------- CLARIFICACION --------------------------##
 
 clarificacion_deleteFilters:
@@ -2322,3 +2310,63 @@ clarificacion_reporte:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
 ##-------------------------- EMPLEADO --------------------------##
+#-------------------modulo -crear reportes----------------------------  
+
+reportes_index:
+  url:    /reportes/index
+  param:  { module: reportes, action: index, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    
+  
+reportes_insert:
+  url:    /reportes/insert
+  param:  { module: reportes, action: insert, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php  
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+   
+    
+reportes_create:
+  url:    /reportes/generar
+  param:  { module: reportes, action: create, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    
+
+reportes_genararGrafica:
+  url:    /reportes/grafica
+  param:  { module: reportes, action: grafica, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php   
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+   
+    
+reportes_reporte:
+  url:    /reportes/reporte
+  param:  { module: reportes, action: report, format: pdf } 
+  load:
+    - libs/fpdf/fpdf.php 
+    - model/base/controlCalidadBaseTableClass.php
+    - model/controlCalidadTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/ciudadBaseTableClass.php
+    - model/ciudadTableClass.php
+        
