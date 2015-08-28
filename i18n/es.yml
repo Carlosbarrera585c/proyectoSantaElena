@@ -415,6 +415,7 @@ dictionary:
     errorDeleteForeign:     El Registro no Puede ser Eliminado Porque Esta Siendo Utilizado Por Otra Tabla.
     errorDate:              El Campo solo debe contener fecha.
     errorHour:              El Campo Solo Debe Contener Horas.
+    errorRepeat:            El dato ya existe en la Base de Datos.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:

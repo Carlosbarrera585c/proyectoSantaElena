@@ -373,8 +373,8 @@ dictionary:
     errorLengthAmount:      Error Your amount (%cantidad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthValue:       Error Your value (%valor%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthTipoId:      Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtDescription:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
-    errorLengthPrice:        Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
+    errorLenghtDescription: Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
+    errorLengthPrice:       Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
     errorLengthBusinessName: Error Your Bussiness Name (%social%) Exceeds Number of Characters (%caracteres%).
     errorLengthNumberWagon: Error Your Number Wagon (%vagon%) Exceeds Number of Characters (%caracteres%).
     errorLengthQuantity:    Error Your Quantity (%cantidad%) Exceeds Number of Characters (%caracteres%).
@@ -390,6 +390,7 @@ dictionary:
     errorDeleteForeign:     The record can not be deleted because it is being used by another table.
     errorDate:              The field should only contain date.
     errorHour:              The field Should only contain hour.
+    errorRepeat:            The data already exists in the database.
     ##---------------------- ERRORES----------------------------##
     ##-------------------------- ERRORES --------------------##
   errors:
