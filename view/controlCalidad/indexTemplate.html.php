@@ -157,7 +157,7 @@ use mvc\session\sessionClass as session ?>
 	</table>
   </form>
   <div class="text-right">
-	<?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('empleado', 'index') ?>')">
+	<?php echo i18n::__('page') ?>  <select id="slqPaginador" onchange="paginador(this, '<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>')">
 	<?php for ($x = 1; $x <= $cntPages; $x++): ?>
   	  <option <?php echo(isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
 	  <?php endfor ?>
