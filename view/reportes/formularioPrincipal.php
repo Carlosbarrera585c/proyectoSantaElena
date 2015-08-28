@@ -60,7 +60,7 @@ use mvc\request\requestClass as request ?>
 		<div class="form-group">
 		  <label class="col-lg-2 control-label" for="filterProcedencia"><?php echo i18n::__('provenance') ?>:</label>
 		  <div class="col-lg-10">
-			<select class="form-control" id="filterProcedencia" name="filter[procedencia]" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
+			<select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
 			  <?php foreach ($objProveedor as $proveedor): ?>
   			  <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) === true and $objControlCalidad[0]->$proveedor_id_c == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
 				  <?php echo $proveedor->$razon_social ?>

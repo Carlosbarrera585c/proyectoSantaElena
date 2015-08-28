@@ -2340,6 +2340,8 @@ reportes_create:
   url:    /reportes/generar
   param:  { module: reportes, action: create, format: html }
   load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
     - model/base/reporteBaseTableClass.php
     - model/reporteTableClass.php
     - model/base/controlCalidadBaseTableClass.php
@@ -2350,6 +2352,8 @@ reportes_genararGrafica:
   url:    /reportes/grafica
   param:  { module: reportes, action: grafica, format: html }
   load:
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
     - model/base/reporteBaseTableClass.php
     - model/reporteTableClass.php   
     - model/base/controlCalidadBaseTableClass.php

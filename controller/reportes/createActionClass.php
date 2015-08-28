@@ -38,12 +38,12 @@ class createActionClass extends controllerClass implements controllerActionInter
 
 
             session::getInstance()->setAttribute('graficaUbicacion', $proveedor_id);
+			
             session::getInstance()->setAttribute('graficaRFecha1', $fechaInicial);
             session::getInstance()->setAttribute('graficaRFecha2', $fechaFin);
-
-            $where[] = '(' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' LIKE ' . '\'' . $proveedor_id . '%\'  '
-                    . 'OR ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' LIKE ' . '\'%' . $proveedor_id . '%\' '
-                    . 'OR ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' LIKE ' . '\'%' . $proveedor_id . '\') '
+//            echo $proveedor_id;
+//			exit();
+            $where[] = '(' . controlCalidadTableClass::PROVEEDOR_ID . ' = ' . $proveedor_id . ') '
                     . ' AND ' . '(' . controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA) . ' BETWEEN ' . "'" . date(config::getFormatTimestamp(), strtotime($fechaInicial . ' 00:00:00')) . "'" . ' AND ' . "'" . date(config::getFormatTimestamp(), strtotime($fechaFin . ' 23:59:59')) . "'" . ' ) ';
 //             $where[] = '(' . controlCalidadTableClass::getNameField(controlCalidadTableClass::CREATED_AT) . ' BETWEEN ' . "'" . date(config::getFormatTimestamp(), strtotime($fechaInicial . ' 00:00:00')) . "'" . ' AND ' . "'" . date(config::getFormatTimestamp(), strtotime($fechaFin . ' 23:59:59')) . "'" . ' ) ';
             session::getInstance()->setAttribute('graficaWhere', $where);
