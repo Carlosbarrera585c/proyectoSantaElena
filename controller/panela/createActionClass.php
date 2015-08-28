@@ -54,7 +54,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 //funcion para validacion de campos en formulario 
     private function Validate($hora, $proveedor_id, $sedimento, $control_id) {
         $bandera = FALSE;
-		$patternHora="/^([0-1][0-9]|[2][0-3])[\:]([0-5][0-9])[\:]([0-5][0-9])$/";
+//		$patternHora="/^([0-1][0-9]|[2][0-3])[\:]([0-5][0-9])[\:]([0-5][0-9])$/";
         //validaciones para que no se superen el maximo de caracteres.
 
         if (strlen($sedimento) > panelaTableClass::SEDIMENTO_LENGHT) {
@@ -89,11 +89,11 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(panelaTableClass::getNameField(panelaTableClass::CONTROL_ID, true), true);
         }
 		 //validar hora
-    if(!preg_match($patternHora, $hora)){
-      session::getInstance()->setError(i18n::__('errorHour', NULL, 'default'),'errorHora');
-      $bandera = true;
-      session::getInstance()->setFlash(panelaTableClass::getNameField(panelaTableClass::HORA, true), true);
-    } 
+//    if(!preg_match($patternHora, $hora)){
+//      session::getInstance()->setError(i18n::__('errorHour', NULL, 'default'),'errorHora');
+//      $bandera = true;
+//      session::getInstance()->setFlash(panelaTableClass::getNameField(panelaTableClass::HORA, true), true);
+//    } 
 		
         if ($bandera === true) {
             request::getInstance()->setMethod('GET');
