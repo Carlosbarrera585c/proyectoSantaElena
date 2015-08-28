@@ -58,19 +58,26 @@ class createActionClass extends controllerClass implements controllerActionInter
     $bandera = FALSE;
     $sql = 'SELECT ' . empleadoTableClass::NUMERO_IDENTIFICACION . ' As numero  '
             . '  FROM ' . empleadoTableClass::getNameTable() . '  '
-            . '  WHERE ' . empleadoTableClass::NUMERO_IDENTIFICACION . ' = :email';
+            . '  WHERE ' . empleadoTableClass::NUMERO_IDENTIFICACION . ' = :numIdentificacion';
     $params = array(
-        ':email' => $numeroIdentificacion
+        ':numIdentificacion' => $numeroIdentificacion
     );
 
     $answer = model::getInstance()->prepare($sql);
     $answer->execute($params);
     $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-    if (count($answer) > 0) {
-      session::getInstance()->setError(i18n::__('errorLengthLastEmployee', NULL, 'default', array('%apellido%' => $numeroIdentificacion, '%caracteres%' => empleadoTableClass::NUMERO_IDENTIFICACION)), 'errorNumeroIdentificacion');
-      $bandera = true;
-      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
-    }
+    
+    $sql2 = 'SELECT ' . empleadoTableClass::TELEFONO . ' As telefono  '
+            . '  FROM ' . empleadoTableClass::getNameTable() . '  '
+            . '  WHERE ' . empleadoTableClass::TELEFONO . ' = :telefono';
+    $params2 = array(
+        ':telefono' => $telefono
+    );
+
+    $answer2 = model::getInstance()->prepare($sql2);
+    $answer2->execute($params2);
+    $answer2 = $answer2->fetchAll(PDO::FETCH_OBJ);
+
     if (strlen($nomEmpleado) > empleadoTableClass::NOM_EMPLEADO_LENGTH) {
       session::getInstance()->setError(i18n::__('errorLengthEmployee', NULL, 'default', array('%nombre%' => $nomEmpleado, '%caracteres%' => empleadoTableClass::NOM_EMPLEADO_LENGTH)), 'errorNombre');
       $bandera = true;
@@ -109,6 +116,10 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorTelefono');
       $bandera = true;
       session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
+    }elseif (count($answer) > 0) {
+      session::getInstance()->setError(i18n::__('errorRepeat', NULL, 'default'), 'errorTelefono');
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::TELEFONO, true), true);
     }
     if (strlen($direccion) > empleadoTableClass::DIRECCION_LENGTH) {
       session::getInstance()->setError(i18n::__('errorLengthDirection', NULL, 'default', array('%direccion%' => $direccion, '%caracteres%' => empleadoTableClass::DIRECCION_LENGTH)), 'errorDireccion');
@@ -129,6 +140,10 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
     } elseif ($numeroIdentificacion === NULL) {
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorNumeroIdentificacion');
+      $bandera = true;
+      session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
+    } elseif (count($answer) > 0) {
+      session::getInstance()->setError(i18n::__('errorRepeat', NULL, 'default'), 'errorNumeroIdentificacion');
       $bandera = true;
       session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NUMERO_IDENTIFICACION, true), true);
     }
