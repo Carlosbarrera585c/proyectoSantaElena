@@ -24,7 +24,6 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
           ingresoCanaTableClass::EMPLEADO_ID,
           ingresoCanaTableClass::PROVEEDOR_ID,
           ingresoCanaTableClass::CANTIDAD,
-          ingresoCanaTableClass::PROCEDENCIA_CAÑA,
           ingresoCanaTableClass::PESO_CAÑA,
           ingresoCanaTableClass::NUM_VAGON
 

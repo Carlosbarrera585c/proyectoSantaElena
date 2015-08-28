@@ -36,9 +36,6 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         if (isset($filter['Cantidad']) and $filter['Cantidad'] !== null and $filter['Cantidad'] !== "") {
           $where[ingresoCanaTableClass::CANTIDAD] = $filter['Cantidad'];
         }
-        if (isset($filter['Procedencia']) and $filter['Procedencia'] !== null and $filter['Procedencia'] !== "") {
-          $where[ingresoCanaTableClass::PROCEDENCIA_CAÑA] = $filter['Procedencia'];
-        }
         if (isset($filter['Peso']) and $filter['Peso'] !== null and $filter['Peso'] !== "") {
           $where[ingresoCanaTableClass::PESO_CAÑA] = $filter ['Peso'];
         }
@@ -55,7 +52,6 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           ingresoCanaTableClass::EMPLEADO_ID,
           ingresoCanaTableClass::PROVEEDOR_ID,
           ingresoCanaTableClass::CANTIDAD,
-          ingresoCanaTableClass::PROCEDENCIA_CAÑA,
           ingresoCanaTableClass::PESO_CAÑA,
           ingresoCanaTableClass::NUM_VAGON,
       );

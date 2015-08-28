@@ -16,7 +16,6 @@ use mvc\request\requestClass as request ?>
 <?php $proveedor_id = proveedorTableClass::ID ?>
 <?php $proveedor_nom = proveedorTableClass::RAZON_SOCIAL ?>
 <?php $cantidad = ingresoCanaTableClass::CANTIDAD ?>
-<?php $procedencia_caña = ingresoCanaTableClass::PROCEDENCIA_CAÑA ?>
 <?php $peso_caña = ingresoCanaTableClass::PESO_CAÑA ?>
 <?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
 <?php $proveedor_id_c = ingresoCanaTableClass::PROVEEDOR_ID ?>
@@ -40,16 +39,6 @@ use mvc\request\requestClass as request ?>
             <div class="col-lg-10">
                 <input id="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : ((session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true) ? '' : (request::getInstance()->hasPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true))) ? request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) : '' )) ?>" name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('enterTheQuantity') ?>">
                 <?php if (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true): ?>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
-            </div>
-        </div>
-        <?php view::getMessageError('errorProcedencia') ?>
-        <div class="form-group <?php echo (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('caneOrigin') ?>:</label>
-            <div class="col-lg-10">
-                <input id="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$procedencia_caña : ((session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true)) === true) ? '' : (request::getInstance()->hasPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true))) ? request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true)) : '' )) ?>" name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true) ?>" placeholder="<?php echo i18n::__('enterTheCaneOrigin') ?>">
-                <?php if (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>

@@ -31,9 +31,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
         if (isset($report['Cantidad']) and $report['Cantidad'] !== NULL and $report['Cantidad'] !== '') {
           $where[ingresoCanaTableClass::CANTIDAD] = $report['Cantidad'];
         }
-        if (isset($report['Procedencia']) and $report['Procedencia'] !== NULL and $report['Procedencia'] !== '') {
-          $where[ingresoCanaTableClass::PROCEDENCIA_CAÑA] = $report['Procedencia'];
-        }
         if (isset($report['Peso']) and $report['Peso'] !== NULL and $report['Peso'] !== '') {
           $where[ingresoCanaTableClass::PESO_CAÑA] = $report['Peso'];
         }
@@ -46,7 +43,6 @@ class reportActionClass extends controllerClass implements controllerActionInter
             ingresoCanaTableClass::EMPLEADO_ID,
             ingresoCanaTableClass::PROVEEDOR_ID,
             ingresoCanaTableClass::CANTIDAD,
-            ingresoCanaTableClass::PROCEDENCIA_CAÑA,
             ingresoCanaTableClass::PESO_CAÑA,
             ingresoCanaTableClass::NUM_VAGON
         );

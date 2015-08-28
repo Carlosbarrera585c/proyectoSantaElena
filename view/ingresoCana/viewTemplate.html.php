@@ -12,7 +12,6 @@ use mvc\session\sessionClass as session ?>
 <?php $empleado_id = ingresoCanaTableClass::EMPLEADO_ID ?>
 <?php $proveedor_id = ingresoCanaTableClass::PROVEEDOR_ID ?>
 <?php $cantidad = ingresoCanaTableClass::CANTIDAD ?>
-<?php $procedencia_caña = ingresoCanaTableClass::PROCEDENCIA_CAÑA ?>
 <?php $peso_caña = ingresoCanaTableClass::PESO_CAÑA ?>
 <?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
 <?php view::includePartial('menu/menu') ?>
@@ -33,7 +32,6 @@ use mvc\session\sessionClass as session ?>
                     <th><?php echo i18n::__('idEmployed') ?></th>
                     <th><?php echo i18n::__('idProvider') ?></th>
                     <th><?php echo i18n::__('quantity') ?></th>
-                    <th><?php echo i18n::__('caneOrigin') ?></th>
                     <th><?php echo i18n::__('caneWeight') ?></th>
                     <th><?php echo i18n::__('wagonNumber') ?></th>
                 </tr>
@@ -45,7 +43,6 @@ use mvc\session\sessionClass as session ?>
                     <td><?php echo ((isset($objingresoCana) == true) ? ingresoCanaTableClass::getNameEmpleado($objingresoCana[0]->$empleado_id) : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? ingresoCanaTableClass::getNameProveedor($objingresoCana[0]->$proveedor_id) : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : '') ?></td>
-                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$procedencia_caña : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon : '') ?></td>
                 </tr>

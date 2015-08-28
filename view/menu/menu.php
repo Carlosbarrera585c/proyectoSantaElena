@@ -31,6 +31,12 @@ use mvc\session\sessionClass as session ?>
 	  </ul>
 	  </li>
 	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('honeys') ?><span class="caret"></span></a>
+		<ul class="dropdown-menu" role="menu">
+		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('mieles', 'index') ?>"><?php echo i18n::__('honeys') ?></a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('qualityControl') ?><span class="caret"></span></a>
 		<ul class="dropdown-menu" role="menu">
 		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'index') ?>"><?php echo i18n::__('qualityControl') ?></a></li>
@@ -39,6 +45,12 @@ use mvc\session\sessionClass as session ?>
 		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('bagazo', 'index') ?>"><?php echo i18n::__('chaff') ?></a></li>
 		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('cachaza', 'index') ?>"><?php echo i18n::__('cachaza') ?></a></li>
 		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('panela', 'index') ?>"><?php echo i18n::__('panela') ?></a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('clarification') ?><span class="caret"></span></a>
+		<ul class="dropdown-menu" role="menu">
+		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('clarificacion', 'index') ?>"><?php echo i18n::__('clarification') ?></a></li>
 		</ul>
 	  </li>
 	  <li class="dropdown">
@@ -79,34 +91,22 @@ use mvc\session\sessionClass as session ?>
 		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>"><?php echo i18n::__('docType') ?></a></li>
 		</ul>
 	  </li>
-	  <li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('honeys') ?><span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('mieles', 'index') ?>"><?php echo i18n::__('honeys') ?></a></li>
-		</ul>
-	  </li>
-      	  <li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('clarification') ?><span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('clarificacion', 'index') ?>"><?php echo i18n::__('clarification') ?></a></li>
-		</ul>
-	  </li>
 	  </ul>
 	  <ul class="nav navbar-nav navbar-right">
-	  <li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('languages') ?><span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('menu', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('Spain.png') ?>"></a></li>
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('menu', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('United States of America.png') ?>"></a></li>
-		</ul>
-	  </li>
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('languages') ?><span class="caret"></span></a>
+		  <ul class="dropdown-menu" role="menu">
+			<li><a href="<?php echo routing::getInstance()->getUrlWeb('menu', 'traductor', array('language' => 'es', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('Spain.png') ?>"></a></li>
+			<li><a href="<?php echo routing::getInstance()->getUrlWeb('menu', 'traductor', array('language' => 'en', 'PATH_INFO' => request::getInstance()->getServer('PATH_INFO'), 'QUERY_STRING' => htmlentities(request::getInstance()->getServer('QUERY_STRING')))) ?>"><img src="<?php echo routing::getInstance()->getUrlImg('United States of America.png') ?>"></a></li>
+		  </ul>
+		</li>
 	  </ul>
 	  <ul class="nav navbar-nav navbar-right">
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;<?php echo session::getInstance()->getUserName() ?><span class="caret"></span></a>
 		  <ul class="dropdown-menu" role="menu">
 			<li><a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out">&nbsp;<?php echo i18n::__('logout') ?></i></a></li>
-			 <li><a href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>"><?php echo i18n::__('printReport') ?></a></li>
+			<li><a href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>"><?php echo i18n::__('printReport') ?></a></li>
 		  </ul>
 		</li>
 	  </ul>

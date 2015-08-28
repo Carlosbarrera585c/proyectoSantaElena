@@ -14,7 +14,6 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
   private $empleado_id;
   private $proveedor_id;
   private $cantidad;
-  private $procedencia_caña;
   private $peso_caña;
   private $num_vagon;
 
@@ -25,8 +24,6 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
   const PROVEEDOR_ID = 'proveedor_id';
   const CANTIDAD = 'cantidad';
   const CANTIDAD_LENGTH = 30;
-  const PROCEDENCIA_CAÑA = 'procedencia_caña';
-  const PROCEDENCIA_CAÑA_LENGTH = 30;
   const PESO_CAÑA = 'peso_caña';
   const PESO_CAÑA_LENGTH = 30;
   const NUM_VAGON = 'num_vagon';
@@ -50,10 +47,6 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
 
   function getCantidad() {
     return $this->cantidad;
-  }
-
-  function getProcedencia_caña() {
-    return $this->procedencia_caña;
   }
 
   function getPeso_caña() {
@@ -84,9 +77,6 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
     $this->cantidad = $cantidad;
   }
 
-  function setProcedencia_caña($procedencia_caña) {
-    $this->procedencia_caña = $procedencia_caña;
-  }
 
   function setPeso_caña($peso_caña) {
     $this->peso_caña = $peso_caña;

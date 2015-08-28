@@ -26,17 +26,15 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $empleado_id = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::EMPLEADO_ID, true));
                 $proveedor_id = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROVEEDOR_ID, true));
                 $cantidad = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true));
-                $procedencia_caña = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true));
-                $peso_caña = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PESO_CAÑA, true));
+               $peso_caña = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PESO_CAÑA, true));
                 $num_vagon = request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::NUM_VAGON, true));
-                $this->Validate($fecha, $cantidad, $procedencia_caña, $peso_caña, $num_vagon, $empleado_id, $proveedor_id);
+                $this->Validate($fecha, $cantidad, $peso_caña, $num_vagon, $empleado_id, $proveedor_id);
 
                 $data = array(
                     ingresoCanaTableClass::FECHA => $fecha,
                     ingresoCanaTableClass::EMPLEADO_ID => $empleado_id,
                     ingresoCanaTableClass::PROVEEDOR_ID => $proveedor_id,
                     ingresoCanaTableClass::CANTIDAD => $cantidad,
-                    ingresoCanaTableClass::PROCEDENCIA_CAÑA => $procedencia_caña,
                     ingresoCanaTableClass::PESO_CAÑA => $peso_caña,
                     ingresoCanaTableClass::NUM_VAGON => $num_vagon
                 );
@@ -56,7 +54,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
 
 //funcion para validacion de campos en formulario 
-    private function Validate($fecha, $cantidad, $procedencia_caña, $peso_caña, $num_vagon, $empleado_id, $proveedor_id) {
+    private function Validate($fecha, $cantidad, $peso_caña, $num_vagon, $empleado_id, $proveedor_id) {
         $bandera = FALSE;
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         //validaciones para que no se superen el maximo de caracteres.
@@ -65,11 +63,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true), true);
         }
-        if (strlen($procedencia_caña) > ingresoCanaTableClass::PROCEDENCIA_CAÑA_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLengthProvenance', NULL, 'default', array('%procedencia%' => $procedencia_caña, '%caracteres%' => ingresoCanaTableClass::PROCEDENCIA_CAÑA_LENGTH)), 'errorProcedencia');
-            $bandera = true;
-            session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true), true);
-        }
+
         if (strlen($peso_caña) > ingresoCanaTableClass::PESO_CAÑA_LENGTH) {
             session::getInstance()->setError(i18n::__('errorLengthWeight', NULL, 'default', array('%peso%' => $peso_caña, '%caracteres%' => ingresoCanaTableClass::PESO_CAÑA_LENGTH)), 'errorPeso');
             $bandera = true;
@@ -81,11 +75,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::NUM_VAGON, true), true);
         }
         //validar que el campo sea solo texto
-        if (!ereg("^[A-Za-z]*$", $procedencia_caña)) {
-            session::getInstance()->setError(i18n::__('errorText', NULL, 'default'), 'errorProcedencia');
-            $bandera = true;
-            session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true), true);
-        }
+
         //validar que el campo sea numerico.
         if (!is_numeric($cantidad)) {
             session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorCantidad');
@@ -123,11 +113,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PESO_CAÑA, true), true);
         }
-        if ($procedencia_caña === '' or $procedencia_caña === NULL) {
-            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorProcedencia');
-            $bandera = true;
-            session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROCEDENCIA_CAÑA, true), true);
-        }
+
         if ($num_vagon === '' or $num_vagon === NULL) {
             session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorVagon');
             $bandera = true;

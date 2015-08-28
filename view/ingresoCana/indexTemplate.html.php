@@ -16,7 +16,6 @@ use mvc\session\sessionClass as session ?>
 <?php $empleado_id = ingresoCanaTableClass::EMPLEADO_ID ?>
 <?php $proveedor_id = ingresoCanaTableClass::PROVEEDOR_ID ?>
 <?php $cantidad = ingresoCanaTableClass::CANTIDAD ?>
-<?php $procedencia_caña = ingresoCanaTableClass::PROCEDENCIA_CAÑA ?>
 <?php $peso_caña = ingresoCanaTableClass::PESO_CAÑA ?>
 <?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
 <?php view::includePartial('menu/menu') ?>

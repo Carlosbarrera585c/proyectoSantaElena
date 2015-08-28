@@ -16,26 +16,11 @@ class reportActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->hasPost('report')) {
         $report = request::getInstance()->getPost('report');
         // aqui validar datos de filtros
-        if (isset($report['Fecha']) and $report['Fecha'] !== NULL and $report['Fecha'] !== '') {
-          $where[mielesTableClass::FECHA] = $report['Fecha'];
-        }
-        if (isset($report['Turno']) and $report['Turno'] !== NULL and $report['Turno'] !== '') {
-          $where[mielesTableClass::TURNO] = $report['Turno'];
-        }
-        if (isset($report['EmpleadoId']) and $report['EmpleadoId'] !== NULL and $report['EmpleadoId'] !== '') {
-          $where[mielesTableClass::EMPLEADO_ID] = $report['EmpleadoId'];
-        }
-        if (isset($report['NumCeba']) and $report['NumCeba'] !== NULL and $report['NumCeba'] !== '') {
-          $where[mielesTableClass::NUM_CEBA] = $report['NumCeba'];
-        }
-        if (isset($report['Caja']) and $report['Caja'] !== NULL and $report['Caja'] !== '') {
-          $where[mielesTableClass::CAJA] = $report['Caja'];
-        }
-        if (isset($report['Observacion']) and $report['Observacion'] !== NULL and $report['Observacion'] !== '') {
-          $where[mielesTableClass::OBSERVACION] = $report['Observacion'];
-        }
-        if (isset($report['Correo']) and $report['Correo'] !== NULL and $report['Correo'] !== '') {
-          $where[mielesTableClass::CORREO] = $report['Correo'];
+       if (isset($report['fechaCreacion1']) and $report['fechaCreacion1'] !== NULL and $report['fechaCreacion1'] !== '' and isset($report['fechaCreacion2']) and $report['fechaCreacion2'] !== NULL and $report['fechaCreacion2'] !== '') {
+          $where[mielesTableClass::FECHA] = array(
+              $report['fechaCreacion1'],
+              $report['fechaCreacion2']
+          );
         }
       }
       $orderBy = array(

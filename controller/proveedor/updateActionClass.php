@@ -20,7 +20,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST')) {
 
                 $id = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::ID, true));
-                $razon_social = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true));
+                $razon_social = trim(request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true)));
                 $direccion = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true));
                 $telefono = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true));
                 $ciudad_id = request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::CIUDAD_ID, true));
