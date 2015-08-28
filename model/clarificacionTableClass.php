@@ -43,6 +43,22 @@ class clarificacionTableClass extends clarificacionBaseTableClass {
             throw $exc;
         }
     }
+        public static function getApellEmpleado($id) {
+        try {
+            $sql = 'SELECT ' . empleadoTableClass::APELL_EMPLEADO . ' As apell_empleado  '
+                    . ' FROM ' . empleadoTableClass::getNameTable() . '  '
+                    . ' WHERE ' .  empleadoTableClass::ID . ' = :id';
+            $params = array(
+                ':id' => $id
+            );
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->apell_empleado;
+        } catch (PDOException $exc) {
+            throw $exc;
+        }
+    }
 
     public static function getNameProveedor($id) {
         try {
