@@ -60,7 +60,7 @@ use mvc\request\requestClass as request ?>
 		<div class="form-group">
 		  <label class="col-lg-2 control-label" for="filterProcedencia"><?php echo i18n::__('provenance') ?>:</label>
 		  <div class="col-lg-10">
-			<select class="form-control" id="filterProcedencia" name="filter[procedencia]" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
+			<select class="form-control" id="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::ID, true) ?>" name="<?php echo controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, TRUE) ?>">
 			  <?php foreach ($objProveedor as $proveedor): ?>
   			  <option <?php echo (isset($objControlCalidad[0]->$proveedor_id_c) === true and $objControlCalidad[0]->$proveedor_id_c == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
 				  <?php echo $proveedor->$razon_social ?>
@@ -72,7 +72,7 @@ use mvc\request\requestClass as request ?>
         <input class="btn btn-lg btn-success btn-xs" type="submit" value="<?php echo i18n::__(((isset($objReportes)) ? 'update' : 'register')) ?>">
 
 		<?php if (session::getInstance()->hasCredential('admin')): ?>
-  		<a class="btn btn-lg btn-default btn-xs" href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>" ><?php echo i18n::__('atras') ?></a>
+  		<a class="btn btn-lg btn-default btn-xs" href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'index') ?>" ><?php echo i18n::__('back') ?></a>
 		<?php endif ?>
         <br><br><br><br><br><br><br><br><br><br><br>
       </form>

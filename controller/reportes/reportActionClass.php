@@ -34,16 +34,16 @@ class reportActionClass extends controllerClass implements controllerActionInter
       $orderBy = array(
           controlCalidadTableClass::ID
       );
-      $this->objControlcalidad = controlCalidadTableClass::getAll($fields, false, $orderBy, 'ASC', null, null, $where);
+      $this->objControlCalidad = controlCalidadTableClass::getAll($fields, false, $orderBy, 'ASC', null, null, $where);
 
       $this->defineView('index', 'reportes', session::getInstance()->getFormatOutput());
     } //cierre del try
     catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+//      echo $exc->getMessage();
+//      echo '<br>';
+//      echo '<pre>';
+//      print_r($exc->getTrace());
+//      echo '</pre>';
     }//cierre del catch
   }
 
