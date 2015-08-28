@@ -53,7 +53,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $bandera = FALSE;
         //validaciones para que no se superen el maximo de caracteres.
         if (strlen($desc_insumo) > insumoTableClass::DESC_INSUMO_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtDescription', NULL, 'default', array('%descripcion%' => $desc_insumo, '%caracteres%' => insumoTableClass::DESC_INSUMO_LENGTH)), 'errorDescripcion');
+            session::getInstance()->setError(i18n::__('errorLengthDescription', NULL, 'default', array('%descripcion%' => $desc_insumo, '%caracteres%' => insumoTableClass::DESC_INSUMO_LENGTH)), 'errorDescripcion');
             $bandera = true;
             session::getInstance()->setFlash(insumoTableClass::getNameField(insumoTableClass::DESC_INSUMO, true), true);
         }

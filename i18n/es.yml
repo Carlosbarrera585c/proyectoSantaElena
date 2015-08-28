@@ -11,25 +11,26 @@ dictionary:
     created:              Creado
     actived:              Activado
     update:               Actualizar
+    updated:              Actualizado
     desc:                 Descripción
     actions:              Acciones
     filters:              Filtros
+    printReport:          Imprimir Reporte
     filtrate:             Filtrar
     deleteFilters:        Eliminar Filtros 
-    update:               Actualizar
-    updated:              Actualizado
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.
     questionDelete:       ¿Desea Eliminar El Registro
     cancel:               Cancelar
     new:                  Nuevo
     view:                 Ver
-    printReport:          Imprimir Reporte
     edit:                 Editar
     back:                 Atrás
     delete:               Eliminar
     detail:               Detalle
     enlist:               Enlistar
+    start:                Inicio
+    end:                  fin
     deleteSelect:         Eliminar Seleccionados
     successfulRegister:   El Registro Fue Exitoso.
     successfulUpdate:     La Actualización Fue Exitosa.
@@ -61,6 +62,7 @@ dictionary:
     editJuice:            Editar Juego
     infoJuice:            Informacion Jugo
     provenance:           Procedencia
+    
     ##----------------------JUGO-------------------------##
 
     ##----------------------BAGAZO-------------------------##
@@ -69,7 +71,6 @@ dictionary:
     editChaff:            Editar Bagazo
     infoChaff:            Informacion De Bagazo
     saccharose:           sacarosa
-    brix:                 Brix
     humidity:             Humedad
     ##----------------------BAGAZO-------------------------##
    
@@ -211,7 +212,6 @@ dictionary:
     newBusiness:          Nueva Empresa
     editBusiness:         Editar Empresa
     infoBusiness:         Informacion de Empresas
-    infoBusiness:         Información Sobre las Empresas
     nit:                  NIT
     EnterTheNitCompany:   Introduce el NIT de la Empresa
     EnterTheCompanyName:  Introduce el Nombre de la Empresa
@@ -302,6 +302,7 @@ dictionary:
     qualityControlInformation: Informacion De Control Calidad
     newQualityControl:    Nuevo Control Calidad
     enterTheDate:         Introduce la Fecha
+    enterTheTurn:         Introduce el turno
     enterTheVariety:      Introduce la variedad
     enterTheAge:          Introduce la edad
     enterTheBrix:         Introduce el Brix
@@ -319,18 +320,7 @@ dictionary:
     infoDetailPacking:      Informacion de Detalle Empaque
     idPacking:              Id Empaque
     ##---------------------- DETALLE EMPAQUE----------------------------##
-    ##---------------------- INGRESO CAÑA----------------------------##
-    reedIncome:             Ingreso Caña
-    quantity:               Cantidad
-    caneOrigin:             Procedencia Caña
-    caneWeight:             peso Caña
-    wagonNumber:            numero vagon
-    enterTheQuantity:       Ingresa la Cantidad
-    enterTheCaneOrigin:     Ingresa la Procedencia
-    enterTheCaneWeight:     Ingresa el Peso Caña
-    enterTheWagonNumber:    Ingresa el NUmero De Vagon
-     ##----------------------INGRESO CAÑA----------------------------##
-     
+         
     ##---------------------- DETALLE SALIDA----------------------------##
     outputDetail:       Detalle Salida Bodega
     newOutputDetail:    Nuevo Detalle Salida Bodega
@@ -385,21 +375,21 @@ dictionary:
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthPhone:       Error Su Telefono (%telefono%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthDirection:   Error Su Direction (%direccion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
+    errorLengthVariety:     Error su Variedad (%variedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthAge:         Error La Edad (%edad%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthNumIdentification: Error Su Numero de Identificaciòn (%numIdentificacion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorMail:              Los Correos No Coinciden.
-    errorLenghtUser:        Error Su Nombre de Usuario (%usuario%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
+    errorLengthUser:        Error Su Nombre de Usuario (%usuario%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthCredential:  Error Su Descripción (%descripcion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
-    errorLenghtVariety:     Error su Variedad (%variedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtAge:         Error La Edad (%edad%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtBrix:        Error su Brix (%brix%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtPh:          Error su Ph (%ph%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtAr:          Error su Ar (%ar%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtSaccharose:  Error su Sacarosa (%sacarosa%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtPurity:      Error su Pureza (%pureza%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtAmount:      Error su Cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthBrix:        Error su Brix (%brix%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthPh:          Error su Ph (%ph%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthAr:          Error su Ar (%ar%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthSaccharose:  Error su Sacarosa (%sacarosa%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthPurity:      Error su Pureza (%pureza%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthAmount:      Error su Cantidad (%cantidad%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthValue:       Error su valor (%valor%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthTipoId:      Error Su Descripción (%descripcion%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
-    errorLenghtDescription: Error su Descripcion (%descripcion%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthDescription: Error su Descripcion (%descripcion%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthPrice:        Error su Precio (%precio%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthBusinessName: Error su Razon Social (%social%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthNumberWagon: Error su Numero de Vagon (%vagon%) Excede La cantidad Maxima De caracteres (%caracteres%).
@@ -407,11 +397,12 @@ dictionary:
     errorLengthProvenance:  Error su procedencia (%procedencia%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthWeight:      Error su Peso (%peso%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorLengthHumidity:    Error su Humedad (%humedad%) Excede La cantidad Maxima De caracteres (%caracteres%).
-    errorLenghtSediment:    Error su Sedimento (%sedimento%) Excede La cantidad Maxima De caracteres (%caracteres%).
+    errorLengthSediment:    Error su Sedimento (%sedimento%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorNumeric:           Error El Campo debe Ser Solo Numerico.
     errorNull:              Error Los Campos deben Ser Diligenciados.
     errorMailCharacters:    El Correo debe ser (example@example.com).
     errorText:              Error el Campo solo debe Contener Texto.
+    errorLengthDesc:        Error su Descripcion (%desc_tipo_doc%) Excede La cantidad Maxima De caracteres (%caracteres%).
     errorDeleteForeign:     El Registro no Puede ser Eliminado Porque Esta Siendo Utilizado Por Otra Tabla.
     errorDate:              El Campo solo debe contener fecha.
     errorHour:              El Campo Solo Debe Contener Horas.

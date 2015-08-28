@@ -59,12 +59,12 @@ class createActionClass extends controllerClass implements controllerActionInter
         //validaciones para que no se superen el maximo de caracteres.
 
         if (strlen($brix) > jugoTableClass::BRIX_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => jugoTableClass::BRIX_LENGTH)), 'errorBrix');
+            session::getInstance()->setError(i18n::__('errorLengthBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => jugoTableClass::BRIX_LENGTH)), 'errorBrix');
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true), true);
         }
         if (strlen($ph) > jugoTableClass::PH_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => jugoTableClass::PH_LENGTH)), 'errorPh');
+            session::getInstance()->setError(i18n::__('errorLengthPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => jugoTableClass::PH_LENGTH)), 'errorPh');
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::PH, true), true);
         }

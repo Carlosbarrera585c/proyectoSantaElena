@@ -55,12 +55,12 @@ class createActionClass extends controllerClass implements controllerActionInter
     private function Validate($cantidad, $valor) {
     $bandera = FALSE;
     if (strlen($cantidad) > detalleEntradaTableClass::CANTIDAD_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => detalleEntradaTableClass::CANTIDAD_LENGHT)));
+      session::getInstance()->setError(i18n::__('errorLengthAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => detalleEntradaTableClass::CANTIDAD_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::CANTIDAD, true), true);
     }
     if (strlen($valor) > detalleEntradaTableClass::VALOR_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtValue', NULL, 'default', array('%valor%' => $valor, '%caracteres%' => detalleEntradaTableClass::VALOR_LENGHT)));
+      session::getInstance()->setError(i18n::__('errorLengthValue', NULL, 'default', array('%valor%' => $valor, '%caracteres%' => detalleEntradaTableClass::VALOR_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(detalleEntradaTableClass::getNameField(detalleEntradaTableClass::VALOR, true), true);
     }

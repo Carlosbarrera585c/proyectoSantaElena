@@ -57,7 +57,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         }
 
         if (strlen($cantidad) > empaqueTableClass::CANTIDAD_LEGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => empaqueTableClass::CANTIDAD_LEGTH)), 'errorCantidad');
+            session::getInstance()->setError(i18n::__('errorLengthAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => empaqueTableClass::CANTIDAD_LEGTH)), 'errorCantidad');
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true), true);
         }

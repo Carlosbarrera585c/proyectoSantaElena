@@ -44,7 +44,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
       private function Validate($desc_tipo_empaque) {
         $bandera = FALSE;
         if (strlen($desc_tipo_empaque) > tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE_LENGHT) {
-            session::getInstance()->setError(i18n::__('errorLenghtDescription', NULL, 'default', array('%descripcion%' => $desc_tipo_empaque, '%caracteres%' => tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE_LENGHT)), 'errorDescripcion');
+            session::getInstance()->setError(i18n::__('errorLengthDescription', NULL, 'default', array('%descripcion%' => $desc_tipo_empaque, '%caracteres%' => tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE_LENGHT)), 'errorDescripcion');
             $bandera = true;
             session::getInstance()->setFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true), true);
         }
