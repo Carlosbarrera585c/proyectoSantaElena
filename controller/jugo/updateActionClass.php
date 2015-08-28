@@ -58,12 +58,12 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         //validaciones para que no se superen el maximo de caracteres.
         if (strlen($brix) > jugoTableClass::BRIX_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $procedencia_caña, '%caracteres%' => jugoTableClass::BRIX_LENGTH)), 'errorBrix');
+            session::getInstance()->setError(i18n::__('errorLengthBrix', NULL, 'default', array('%brix%' => $procedencia_caña, '%caracteres%' => jugoTableClass::BRIX_LENGTH)), 'errorBrix');
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true), true);
         }
         if (strlen($ph) > jugoTableClass::PH_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $peso_caña, '%caracteres%' => jugoTableClass::PH_LENGTH)), 'errorPh');
+            session::getInstance()->setError(i18n::__('errorLengthPh', NULL, 'default', array('%ph%' => $peso_caña, '%caracteres%' => jugoTableClass::PH_LENGTH)), 'errorPh');
             $bandera = true;
             session::getInstance()->setFlash(jugoTableClass::getNameField(jugoTableClass::PH, true), true);
         }

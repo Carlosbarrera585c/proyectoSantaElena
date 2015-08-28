@@ -44,7 +44,7 @@ class createActionClass extends controllerClass implements controllerActionInter
   private function Validate($desc_tipo_doc) {
     $bandera = FALSE;
     if (strlen($desc_tipo_doc) > tipoDocTableClass::DESC_LENGTH) {
-      session::getInstance()->setError(i18n::__('errorLenghtDescription', NULL, 'default', array('%descripcion%' => $desc_tipo_doc, '%caracteres%' => tipoDocTableClass::DESC_LENGTH)),'errorDescripcion');
+      session::getInstance()->setError(i18n::__('errorLengthDescription', NULL, 'default', array('%descripcion%' => $desc_tipo_doc, '%caracteres%' => tipoDocTableClass::DESC_LENGTH)),'errorDescripcion');
       $bandera = true;
       session::getInstance()->setFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_LENGTH, true), true);
     }

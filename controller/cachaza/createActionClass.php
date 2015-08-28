@@ -57,12 +57,12 @@ class createActionClass extends controllerClass implements controllerActionInter
         //validaciones para que no se superen el maximo de caracteres.
 
         if (strlen($brix) > cachazaTableClass::HUMEDAD_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $humedad, '%caracteres%' => cachazaTableClass::HUMEDAD_LENGTH)), 'errorHumedad');
+            session::getInstance()->setError(i18n::__('errorLengthBrix', NULL, 'default', array('%brix%' => $humedad, '%caracteres%' => cachazaTableClass::HUMEDAD_LENGTH)), 'errorHumedad');
             $bandera = true;
             session::getInstance()->setFlash(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true), true);
         }
         if (strlen($ph) > cachazaTableClass::SACAROZA_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $sacaroza, '%caracteres%' => cachazaTableClass::SACAROZA_LENGTH)), 'errorSacaroza');
+            session::getInstance()->setError(i18n::__('errorLengthPh', NULL, 'default', array('%ph%' => $sacaroza, '%caracteres%' => cachazaTableClass::SACAROZA_LENGTH)), 'errorSacaroza');
             $bandera = true;
             session::getInstance()->setFlash(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true), true);
         }

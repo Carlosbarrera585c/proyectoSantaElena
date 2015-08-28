@@ -58,7 +58,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         //validaciones para que no se superen el maximo de caracteres.
 
         if (strlen($sedimento) > panelaTableClass::SEDIMENTO_LENGHT) {
-            session::getInstance()->setError(i18n::__('errorLenghtSediment', NULL, 'default', array('%sedimento%' => $sedimento, '%caracteres%' => panelaTableClass::SEDIMENTO_LENGHT)), 'errorSedimento');
+            session::getInstance()->setError(i18n::__('errorLengthSediment', NULL, 'default', array('%sedimento%' => $sedimento, '%caracteres%' => panelaTableClass::SEDIMENTO_LENGHT)), 'errorSedimento');
             $bandera = true;
             session::getInstance()->setFlash(panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true), true);
         } else  if (!is_numeric($sedimento)) {

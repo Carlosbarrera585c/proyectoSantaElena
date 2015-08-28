@@ -79,19 +79,19 @@ class createActionClass extends controllerClass implements controllerActionInter
 //validaciones para que no se superen el maximo de caracteres.
 
         if (strlen($procedencia) > aguasTableClass::PROCEDENCIA_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $procedencia, '%caracteres%' => aguasTableClass::PROCEDENCIA_LENGTH)), 'errorProcedencia');
+            session::getInstance()->setError(i18n::__('errorLengthPh', NULL, 'default', array('%ph%' => $procedencia, '%caracteres%' => aguasTableClass::PROCEDENCIA_LENGTH)), 'errorProcedencia');
             $bandera = true;
             session::getInstance()->setFlash(aguasTableClass::getNameField(aguasTableClass::PROCEDENCIA, true), true);
         }
         
         if (strlen($arrastre_dulce) > aguasTableClass::ARRASTRE_DULCE_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $arrastre_dulce, '%caracteres%' => aguasTableClass::ARRASTRE_DULCE_LENGTH)), 'errorArrastre');
+            session::getInstance()->setError(i18n::__('errorLengthPh', NULL, 'default', array('%ph%' => $arrastre_dulce, '%caracteres%' => aguasTableClass::ARRASTRE_DULCE_LENGTH)), 'errorArrastre');
             $bandera = true;
             session::getInstance()->setFlash(aguasTableClass::getNameField(aguasTableClass::ARRASTRE_DULCE, true), true);
         }
         
         if (strlen($ph) > aguasTableClass::PH_LENGTH) {
-            session::getInstance()->setError(i18n::__('errorLenghtPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => aguasTableClass::PH_LENGTH)), 'errorPh');
+            session::getInstance()->setError(i18n::__('errorLengthPh', NULL, 'default', array('%ph%' => $ph, '%caracteres%' => aguasTableClass::PH_LENGTH)), 'errorPh');
             $bandera = true;
             session::getInstance()->setFlash(aguasTableClass::getNameField(aguasTableClass::PH, true), true);
         }

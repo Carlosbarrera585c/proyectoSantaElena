@@ -56,7 +56,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         //validaciones para que no se superen el maximo de caracteres.
 
         if (strlen($brix) > bagazoTableClass::BRIX_LENGHT) {
-            session::getInstance()->setError(i18n::__('errorLenghtBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => bagazoTableClass::BRIX_LENGHT)), 'errorBrix');
+            session::getInstance()->setError(i18n::__('errorLengthBrix', NULL, 'default', array('%brix%' => $brix, '%caracteres%' => bagazoTableClass::BRIX_LENGHT)), 'errorBrix');
             $bandera = true;
             session::getInstance()->setFlash(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true), true);
         } else if (!is_numeric($brix)) {
@@ -82,7 +82,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true), true);
         } 
         if (strlen($sacarosa) > bagazoTableClass::SACAROSA_LENGHT) {
-            session::getInstance()->setError(i18n::__('errorLenghtSaccharose', NULL, 'default', array('%sacarosa%' => $sacarosa, '%caracteres%' => bagazoTableClass::SACAROSA_LENGHT)), 'errorSacarosa');
+            session::getInstance()->setError(i18n::__('errorLengthSaccharose', NULL, 'default', array('%sacarosa%' => $sacarosa, '%caracteres%' => bagazoTableClass::SACAROSA_LENGHT)), 'errorSacarosa');
             $bandera = true;
             session::getInstance()->setFlash(bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true), true);
         }if (!is_numeric($sacarosa)) {

@@ -62,12 +62,12 @@ class updateActionClass extends controllerClass implements controllerActionInter
      private function Validate($cantidad, $valor) {
     $bandera = FALSE;
     if (strlen($cantidad) > detalleSalidaTableClass::CANTIDAD_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => detalleSalidaTableClass::CANTIDAD_LENGHT)));
+      session::getInstance()->setError(i18n::__('errorLengthAmount', NULL, 'default', array('%cantidad%' => $cantidad, '%caracteres%' => detalleSalidaTableClass::CANTIDAD_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::CANTIDAD, true), true);
     }
     if (strlen($valor) > detalleSalidaTableClass::VALOR_LENGHT) {
-      session::getInstance()->setError(i18n::__('errorLenghtValue', NULL, 'default', array('%valor%' => $valor, '%caracteres%' => detalleSalidaTableClass::VALOR_LENGHT)));
+      session::getInstance()->setError(i18n::__('errorLengthValue', NULL, 'default', array('%valor%' => $valor, '%caracteres%' => detalleSalidaTableClass::VALOR_LENGHT)));
       $bandera = true;
       session::getInstance()->setFlash(detalleSalidaTableClass::getNameField(detalleSalidaTableClass::VALOR, true), true);
     }

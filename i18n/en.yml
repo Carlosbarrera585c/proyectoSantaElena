@@ -31,7 +31,6 @@ dictionary:
     enlist:               Enlist
     start:                Start
     end:                  End
-    enlist:               Enlist
     deleteSelect:         Remove Selected
     successfulRegister:   The Register Was Successful.
     successfulUpdate:     Update Was Successful.
@@ -86,9 +85,9 @@ dictionary:
     
     ##----------------------CACHAZA-------------------------##
     cachaza:              Cachaza
-    newCachaza:           Nuevo Cachaza
-    editCachaza:          Editar Cachaza
-    infoCachaza:          Informacion Cachaza
+    newCachaza:           New Cachaza
+    editCachaza:          Edit Cachaza
+    infoCachaza:          Information Cachaza
     humidity:             Humidity   
     sacaroza:             Sacaroza
     ##----------------------CACHAZA-------------------------##
@@ -263,7 +262,7 @@ dictionary:
     infoCaneIncome:       Cane Income Information
     DetailIncome:         Income Cane Detail
     newDetailIncome:      New Income Detail Cane
-    editIncome:           Edit Income Detail Cane
+    editDetailIncome:           Edit Income Detail Cane
     infoDetailIncome:     Income Cane Detail Information
     quantity:             Quantity
     caneOrigin:           cane origin
@@ -364,16 +363,21 @@ dictionary:
     errorLengthLastEmployee: Error Your last name (% name%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthPhone:       Error Your Telephone (% telefono%) Exceeds Maximum Number of Characters (%caracteres%).
     errorLengthDirection:   Error Your Direction (%direccion%) Maximum Exceeds Number of Characters (%caracteres%).
-    errorLenghtVariety:     Error Your Variety (%variedad%) Maximum Exceeds Number of Characters (%caracteres%).
-    errorLenghtAge:         Error the Age (%edad%) Maximum Exceeds Number of Characters (%caracteres%).
+    errorLengthVariety:     Error Your Variety (%variedad%) Maximum Exceeds Number of Characters (%caracteres%).
+    errorLengthAge:         Error the Age (%edad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthNumIdentification: Error Your identification number (%numIdentificacion%) Maximum Exceeds Number of Characters (%caracteres%).
     errorMail:              The Mail No Coincide.
-    errorLenghtUser:        Error Your username (%usuario%) Exceeds the Maximum Number of Characters ( %caracteres%).
+    errorLengthUser:        Error Your username (%usuario%) Exceeds the Maximum Number of Characters ( %caracteres%).
     errorLengthCredential:  Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
+    errorLengthBrix:        Error Your Brix (%brix%) Exceeds the Maximum Amount Character (%caracteres%).
+    errorLengthPh:          Error Your Ph (%ph%) Exceeds the Maximum Amount Character (%caracteres%).
+    errorLengthAr:          Error Your Ar (%ar%) Exceeds the Maximum Amount Character (%caracteres%).
+    errorLengthSaccharose:  Error Your Sacarosa (%sacarosa%) Exceeds the Maximum Amount Character (%caracteres%).
+    errorLengthPurity:      Error Your Pureza (%pureza%) Exceeds the Maximum Amount Character (%caracteres%).
     errorLengthAmount:      Error Your amount (%cantidad%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthValue:       Error Your value (%valor%) Maximum Exceeds Number of Characters (%caracteres%).
     errorLengthTipoId:      Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtDescription: Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
+    errorLengthDescription: Error Your Description (%descripcion%) Exceeds Number of Characters (%caracteres%).
     errorLengthPrice:       Error Your Price (%precio%) Exceeds Number of Characters (%caracteres%).
     errorLengthBusinessName: Error Your Bussiness Name (%social%) Exceeds Number of Characters (%caracteres%).
     errorLengthNumberWagon: Error Your Number Wagon (%vagon%) Exceeds Number of Characters (%caracteres%).
@@ -381,7 +385,7 @@ dictionary:
     errorLengthProvenance:  Error Your Porvenance (%procedencia%) Exceeds Number of Characters (%caracteres%).
     errorLengthWeight:      Error Your weight (%peso%) Exceeds Number of Characters (%caracteres%).
     errorLengthHumidity:    Error Your Humidity (%humedad%) Exceeds Number of Characters (%caracteres%).
-    errorLenghtSediment:    Error Your Sediment (%sedimento%) Exceeds Number of Characters (%caracteres%).
+    errorLengthSediment:    Error Your Sediment (%sedimento%) Exceeds Number of Characters (%caracteres%).
     errorNumeric:           Error The Field Must Be Only Numeric.
     errorNull:              Error The Fields Must Be Filled Out.
     errorMailCharacters:    The Mail Should Be (example@example.com).
