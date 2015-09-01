@@ -24,7 +24,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+
                     <th><?php echo i18n::__('date') ?></th>
                     <th><?php echo i18n::__('amount') ?></th> 
                     <th><?php echo i18n::__('employee') ?></th> 
@@ -35,7 +35,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$id : '') ?></td>
+
                     <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$fecha : '') ?></td>
                     <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$cantidad : '') ?></td>
                     <td><?php echo ((isset($objEmpaque) == true) ? empaqueTableClass::getNameEmpleado($objEmpaque[0]->$empleado) : '') ?></td>

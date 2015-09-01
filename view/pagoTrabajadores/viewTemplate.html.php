@@ -28,7 +28,7 @@ use mvc\session\sessionClass as session ?>
     <table class="table table-bordered table-responsive table-condensed tables">
         <thead>
             <tr class="columna tr_table">
-                <th><?php echo i18n::__('id') ?></th>
+  
                 <th><?php echo i18n::__('date') ?></th>
                 <th><?php echo i18n::__('periodBeginning') ?></th>
                 <th><?php echo i18n::__('orderPeriod') ?></th>
@@ -40,7 +40,7 @@ use mvc\session\sessionClass as session ?>
         </thead>
         <tbody>
             <tr>
-                <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$id : '') ?></td>
+       
                 <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$fecha : '') ?></td>
                 <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodoInicio : '') ?></td>
                 <td><?php echo ((isset($objPagoTrabajadores) == true) ? $objPagoTrabajadores[0]->$periodoFin : '') ?></td>

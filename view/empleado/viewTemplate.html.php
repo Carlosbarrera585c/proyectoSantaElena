@@ -30,7 +30,7 @@ use mvc\session\sessionClass as session ?>
     <table class="table table-bordered table-responsive table-condensed tables">
         <thead>
             <tr class="columna tr_table">
-                <th><?php echo i18n::__('id') ?></th>
+
                 <th><?php echo i18n::__('employeeName') ?></th>
                 <th><?php echo i18n::__('employeeLastName') ?></th>   
                 <th><?php echo i18n::__('phone') ?></th>  
@@ -43,7 +43,7 @@ use mvc\session\sessionClass as session ?>
         </thead>
         <tbody>
             <tr>
-                <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$id : '') ?></td>
+
                 <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$nomEmpleado : '') ?></td>
                 <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apellEmpleado : '') ?></td>
                 <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?></td>

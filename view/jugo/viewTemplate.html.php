@@ -26,7 +26,7 @@ use mvc\session\sessionClass as session ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+
                     <th><?php echo i18n::__('provenance') ?></th>
                     <th><?php echo i18n::__('brix') ?></th>
                     <th><?php echo i18n::__('ph') ?></th>
@@ -36,10 +36,10 @@ use mvc\session\sessionClass as session ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$id : '') ?></td>
+
                     <td><?php echo ((isset($objJugo) == true) ? jugoTableClass::getNameProveedor($objJugo[0]->$procedencia) : '') ?></td>
-                    <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$brix : '') ?></td>
-                    <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$ph : '') ?></td>
+                    <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$brix : ''). ' %' ?></td>
+                    <td><?php echo ((isset($objJugo) == true) ? $objJugo[0]->$ph : ''). ' %' ?></td>
                     <td><?php echo ((isset($objJugo) == true) ? jugoTableClass::getNameControl($objJugo[0]->$control_id) : '') ?></td>
                 </tr>
             </tbody>

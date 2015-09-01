@@ -31,11 +31,11 @@ use mvc\session\sessionClass as session ?>
         <table class="table table-bordered table-responsive table-condensed tables">
 <?php foreach ($objSalidaBodega as $key): ?>
                 <tr class="columna tr_table">
-                  <th><?php echo i18n::__('id') ?></th> 
+
                    <th><?php echo i18n::__('date') ?></th>   
                 </tr>
                 <tr>
-                    <td><?php echo salidaBodegaTableClass::getNameEntrada($key->$salidaId) ?></td>  
+
                     <td><?php echo salidaBodegaTableClass::getNameBodega($key->$fecha) ?></td>
                 </tr>
 <?php endforeach; ?> 
@@ -61,7 +61,7 @@ use mvc\session\sessionClass as session ?>
               <tr class="columna tr_table">
                     
                     <th class="tamano"><input type="checkbox" id="chkAll"></th>    
-                    <th><?php echo i18n::__('id') ?></th>
+
                     <th><?php echo i18n::__('amount') ?></th>
                     <th><?php echo i18n::__('value') ?></th>
                     <th><?php echo i18n::__('manuFacturingDate') ?></th>
@@ -80,7 +80,7 @@ use mvc\session\sessionClass as session ?>
                         <?php foreach ($objDetalleSalida as $detalleSalida): ?>
                     <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $detalleSalida->$id ?>"></td>
-                        <td><?php echo $detalleSalida->$id ?></td>
+
                         <td><?php echo $detalleSalida->$cant ?></td>
                         <td><?php echo $detalleSalida->$valor ?></td>
                         <td><?php echo $detalleSalida->$fechaFB ?></td>

@@ -20,13 +20,13 @@ use mvc\view\viewClass as view ?>
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
         <tr class="columna tr_table">
-          <th><?php echo i18n::__('id') ?></th>
+     
           <th><?php echo i18n::__('desc') ?></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$id : '') ?></td>
+         
           <td><?php echo ((isset($objTipoId) == true) ? $objTipoId[0]->$descTipoId : '') ?></td>
         </tr>
       </tbody>

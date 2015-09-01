@@ -18,7 +18,7 @@ class graficaActionClass extends controllerClass implements controllerActionInte
       $where = session::getInstance()->getAttribute('graficaWhere');
       $fields = array(
           controlCalidadTableClass::PROVEEDOR_ID,
-          controlCalidadTableClass::FECHA,
+          controlCalidadTableClass::FECHA,z
       );
       $orderBy = array(
           controlCalidadTableClass::PROVEEDOR_ID

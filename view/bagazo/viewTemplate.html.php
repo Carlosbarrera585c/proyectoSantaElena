@@ -26,7 +26,7 @@ use mvc\session\sessionClass as session ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+ 
                     <th><?php echo i18n::__('humidity') ?></th>
                     <th><?php echo i18n::__('brix') ?></th>
                     <th><?php echo i18n::__('saccharose') ?></th>
@@ -36,10 +36,10 @@ use mvc\session\sessionClass as session ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$id : '') ?></td>
+
                     <td><?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$humedad : '') ?></td>
-                    <td><?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$brix : '') ?></td>
-                    <td><?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$sacarosa : '') ?></td>
+                    <td><?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$brix : ''). ' %' ?></td>
+                    <td><?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$sacarosa : ''). ' %' ?></td>
                     <td><?php echo ((isset($objBagazo) == true) ? bagazoTableClass::getNameControl($objBagazo[0]->$control_id) : '') ?></td>
                 </tr>
             </tbody>

@@ -24,14 +24,14 @@ use mvc\view\viewClass as view ?>
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
         <tr class="columna tr_table">
-          <th><?php echo i18n::__('id') ?></th>
+
           <th><?php echo i18n::__('date') ?></th>
           <th><?php echo i18n::__('provider') ?></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$id : '') ?></td>
+
           <td><?php echo ((isset($objEntradaBodega) == true) ? $objEntradaBodega[0]->$fecha : '') ?></td>
           <td><?php echo ((isset($objEntradaBodega) == true) ? entradaBodegaTableClass::getNameProveedor($objEntradaBodega[0]->$proveedorId) : '') ?></td>
         </tr>

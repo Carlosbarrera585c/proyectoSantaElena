@@ -22,7 +22,7 @@ use mvc\view\viewClass as view ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+
                     <th><?php echo i18n::__('descriptionInput') ?></th>
                     <th><?php echo i18n::__('price') ?></th>
                     <th><?php echo i18n::__('IdentificatiOfInpuType') ?></th>
@@ -30,7 +30,7 @@ use mvc\view\viewClass as view ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objInsu) == true) ? $objInsu[0]->$id : '') ?></td>
+
                     <td><?php echo ((isset($objInsu) == true) ? $objInsu[0]->$desc_insumo : '') ?></td>
                     <td><?php echo '$' . number_format($objInsu[0]->$precio, 0, ',', '.'); ?></td>
                     <td><?php echo ((isset($objInsu) == true) ? insumoTableClass::getNameDInsumo($objInsu[0]->$tipo_insumo_id) : '') ?></td>

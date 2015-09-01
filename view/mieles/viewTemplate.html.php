@@ -28,7 +28,7 @@ use mvc\session\sessionClass as session ?>
     <table class="table table-bordered table-responsive table-condensed tables">
         <thead>
             <tr class="columna tr_table">
-                <th><?php echo i18n::__('id') ?></th>
+
                 <th><?php echo i18n::__('date') ?></th>
                 <th><?php echo i18n::__('turn') ?></th>   
                 <th><?php echo i18n::__('operator') ?></th>  
@@ -39,7 +39,7 @@ use mvc\session\sessionClass as session ?>
         </thead>
         <tbody>
             <tr>
-                <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$id : '') ?></td>
+ 
                 <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$fecha : '') ?></td>
                 <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$turno : '') ?></td>
                 <td><?php echo ((isset($objMieles) == true) ? mielesTableClass::getNameEmpleado($objMieles[0]->$empleadoId) : '') ?></td>

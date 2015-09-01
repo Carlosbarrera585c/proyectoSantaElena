@@ -28,7 +28,7 @@ use mvc\session\sessionClass as session ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+
                     <th><?php echo i18n::__('provenance') ?></th>
                     <th><?php echo i18n::__('sweetDrag') ?></th>
                     <th><?php echo i18n::__('qualityControl') ?></th>
@@ -37,9 +37,9 @@ use mvc\session\sessionClass as session ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$id : '') ?></td>
-                    <td><?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$humedad : '') ?></td>
-                    <td><?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$sacaroza : '') ?></td>
+ 
+                    <td><?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$humedad : ''). ' %' ?></td>
+                    <td><?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$sacaroza : ''). ' %' ?></td>
                     <td><?php echo ((isset($objCachaza) == true) ? cachazaTableClass::getNameControl($objCachaza[0]->$control_id) : '') ?></td>
                 </tr>
             </tbody>

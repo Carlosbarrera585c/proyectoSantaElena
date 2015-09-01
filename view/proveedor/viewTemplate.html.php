@@ -25,7 +25,7 @@ use mvc\view\viewClass as view ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+                 
                     <th><?php echo i18n::__('businessName') ?></th>
                     <th><?php echo i18n::__('direction') ?></th>
                     <th><?php echo i18n::__('phone') ?></th>
@@ -35,7 +35,7 @@ use mvc\view\viewClass as view ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$id : '') ?></td>
+        
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$razonS : '') ?></td>
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$direcc : '') ?></td>
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$telef : '') ?></td>

@@ -25,7 +25,7 @@ use mvc\session\sessionClass as session ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+       
                     <th><?php echo i18n::__('provenance') ?></th>
                     <th><?php echo i18n::__('sediment') ?></th>
                     <th><?php echo i18n::__('qualityControl') ?></th>
@@ -34,9 +34,9 @@ use mvc\session\sessionClass as session ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objPanela) == true) ? $objPanela[0]->$id : '') ?></td>
+            
                     <td><?php echo ((isset($objPanela) == true) ? panelaTableClass::getNameProveedor($objPanela[0]->$proveedor_id) : '') ?></td>
-                    <td><?php echo ((isset($objPanela) == true) ? $objPanela[0]->$sedimento : '') ?></td>
+                    <td><?php echo ((isset($objPanela) == true) ? $objPanela[0]->$sedimento : ''). ' %' ?></td>
                     <td><?php echo ((isset($objPanela) == true) ? panelaTableClass::getNameControl($objPanela[0]->$control_id) : '') ?></td>
                 </tr>
             </tbody>

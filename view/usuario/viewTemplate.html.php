@@ -23,14 +23,14 @@ use mvc\view\viewClass as view ?>
     <table class="table table-bordered table-responsive table-condensed tables">
         <thead>
             <tr class="columna tr_table">
-                <th><?php echo i18n::__('id') ?></th>
+      
                 <th><?php echo i18n::__('user') ?></th>
                 <th><?php echo i18n::__('created') ?></th>   
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$id : '') ?></td>
+               
                 <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$usuario : '') ?></td>
                 <td><?php echo ((isset($objUsuarios) == true) ? $objUsuarios[0]->$creado : '') ?></td>
         </tbody>

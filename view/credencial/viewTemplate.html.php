@@ -25,7 +25,7 @@ use mvc\view\viewClass as view ?>
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
         <tr class="active columna success">
-          <th><?php echo i18n::__('id') ?></th>
+
           <th><?php echo i18n::__('credential') ?></th>
           <th><?php echo i18n::__('created') ?></th>
           <th><?php echo i18n::__('updated') ?></th>
@@ -33,7 +33,7 @@ use mvc\view\viewClass as view ?>
       </thead>
       <tbody>
         <tr>
-          <td><?php echo ((isset($objCredencial) == true) ? $objCredencial[0]->$id : '') ?></td>
+
           <td><?php echo ((isset($objCredencial) == true) ? $objCredencial[0]->$nom : '') ?></td>
           <td><?php echo ((isset($objCredencial) == true) ? $objCredencial[0]->$created : '') ?></td>
           <td><?php echo ((isset($objCredencial) == true) ? $objCredencial[0]->$updated : '') ?></td>

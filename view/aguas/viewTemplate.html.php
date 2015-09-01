@@ -28,7 +28,7 @@ use mvc\session\sessionClass as session ?>
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="columna tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+
                     <th><?php echo i18n::__('hour') ?></th>
                     <th><?php echo i18n::__('provenance') ?></th>
                     <th><?php echo i18n::__('sweetDrag') ?></th>
@@ -40,12 +40,12 @@ use mvc\session\sessionClass as session ?>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$id : '') ?></td>
+
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$hora : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$procedencia : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$arrastre_dulce : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$ph : '') ?></td>
-                    <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$cloro_residual : '') ?></td>
+                    <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$cloro_residual : ''). ' %' ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? aguasTableClass::getNameControl($objAguas[0]->$control_id) : '') ?></td>
                 </tr>
             </tbody>

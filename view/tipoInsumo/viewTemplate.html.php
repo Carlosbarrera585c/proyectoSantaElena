@@ -16,13 +16,13 @@
         <table class="table table-bordered table-responsive table-condensed tables">
             <thead>
                 <tr class="tr_table">
-                    <th><?php echo i18n::__('id') ?></th>
+              
                     <th><?php echo i18n::__('desc') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo ((isset($objTipoInsumo) == true) ? $objTipoInsumo[0]->$id : '') ?></td>
+         
                     <td><?php echo ((isset($objTipoInsumo) == true) ? $objTipoInsumo[0]->$desc_tipo_insumo : '') ?></td>
                 </tr>
             </tbody>

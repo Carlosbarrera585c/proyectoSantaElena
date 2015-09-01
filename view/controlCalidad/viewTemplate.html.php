@@ -25,7 +25,7 @@
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
         <tr class="columna tr_table">
-          <th><?php echo i18n::__('id')?></th>
+
           <th><?php echo i18n::__('date')?></th>
           <th><?php echo i18n::__('variety')?></th>
           <th><?php echo i18n::__('age')?></th>
@@ -40,7 +40,7 @@
       </thead>
       <tbody>
           <tr>
-          <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$id : '') ?></td>
+
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$fecha : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$variedad : '') ?></td>
           <td><?php echo ((isset($objControlCalidad) == true) ? $objControlCalidad[0]->$edad : '') ?></td>

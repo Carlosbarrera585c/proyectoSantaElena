@@ -28,7 +28,7 @@ use mvc\view\viewClass as view ?>
     <table class="table table-bordered table-responsive table-condensed tables">
       <thead>
         <tr class="columna tr_table">
-          <th><?php echo i18n::__('id') ?></th>
+        
           <th><?php echo i18n::__('date') ?></th>
           <th><?php echo i18n::__('provider') ?></th>
           <th><?php echo i18n::__('employee') ?></th>
@@ -36,7 +36,7 @@ use mvc\view\viewClass as view ?>
       </thead>
       <tbody>
         <tr>
-          <td><?php echo ((isset($objSalidaBodega) == true) ? $objSalidaBodega[0]->$id : '') ?></td>
+          
           <td><?php echo ((isset($objSalidaBodega) == true) ? $objSalidaBodega[0]->$fecha : '') ?></td>
           <td><?php echo ((isset($objSalidaBodega) == true) ? salidaBodegaTableClass::getNameProveedor($objSalidaBodega[0]->$proveedorId) : '') ?></td>
           <td><?php echo ((isset($objSalidaBodega) == true) ? salidaBodegaTableClass::getNameEmpleado($objSalidaBodega[0]->$empleadoId) : '') ?></td>
