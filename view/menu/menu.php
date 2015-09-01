@@ -79,18 +79,6 @@ use mvc\session\sessionClass as session ?>
 		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoInsumo', 'index') ?>"><?php echo i18n::__('inputType') ?></a></li>
 		</ul>
 	  </li>
-	  <li class="dropdown">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo i18n::__('cellarEntrance') ?><span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('entradaBodega', 'index') ?>"><?php echo i18n::__('cellarEntrance') ?></a></li>                        
-		  <li class="divider"></li>
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('salidaBodega', 'index') ?>"><?php echo i18n::__('holdOut') ?></a></li>
-		  <li class="divider"></li>
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>"><?php echo i18n::__('input') ?></a></li>   
-		  <li class="divider"></li>
-		  <li><a href="<?php echo routing::getInstance()->getUrlWeb('tipoDoc', 'index') ?>"><?php echo i18n::__('docType') ?></a></li>
-		</ul>
-	  </li>
 	  </ul>
 	  <ul class="nav navbar-nav navbar-right">
 		<li class="dropdown">

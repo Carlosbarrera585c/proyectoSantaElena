@@ -28,7 +28,7 @@ usuario:
   index:
     javascript:
       - index.js
-      
+
 tipoEmpaque:
   index:
     title: Tipo Empaque
@@ -36,7 +36,7 @@ tipoEmpaque:
       - index.js
   edit:
     title: Editar Tipo Empaque
-    
+
   view:
     title: Ver Tipo Empaque
 
@@ -47,7 +47,7 @@ credencial:
       - index.js
   edit:
     title: Editar Credencial
-    
+
   view:
     title: Ver Credenciales
 
@@ -58,10 +58,10 @@ tipoId:
       - index.js
   edit:
     title: Editar Tipo Identificacion
-    
+
   view:
-    title: Ver Tipo Identificacion  
-    
+    title: Ver Tipo Identificacion
+
 empleado:
   index:
     title: Empleado
@@ -69,10 +69,10 @@ empleado:
       - index.js
   edit:
     title: Editar Empleado
-    
+
   view:
     title: Ver Empleado
-    
+
 jugo:
   index:
     title: Jugo
@@ -80,7 +80,7 @@ jugo:
       - index.js
   edit:
     title: Editar Jugo
-    
+
   view:
     title: Ver Jugo
 
@@ -91,10 +91,10 @@ ciudad:
       - index.js
   edit:
     title: Editar Ciudad
-    
+
   view:
     title: Ver Ciudad
-    
+
 tipoPago:
   index:
     title: Tipo Pago
@@ -102,10 +102,10 @@ tipoPago:
       - index.js
   edit:
     title: Editar Tipo Pago
-    
+
   view:
     title: Ver Tipo Pago
-    
+
 pagoTrabajadores:
   index:
     title: Pago de Trabajadores
@@ -113,7 +113,7 @@ pagoTrabajadores:
       - index.js
   edit:
     title: Editar Pago de Trabajadores
-    
+
   view:
     title: Ver Pago de Trabajadores
 
@@ -125,10 +125,10 @@ entradaBodega:
       - index.js
   edit:
     title: Editar Entrada de Bodega
-    
+
   view:
     title: Ver Entrada de Bodega
-    
+
 salidaBodega:
   index:
     title: Salida de Bodega
@@ -136,10 +136,10 @@ salidaBodega:
       - index.js
   edit:
     title: Editar Salida de Bodega
-    
+
   view:
-    title: Ver Salida de Bodega    
-    
+    title: Ver Salida de Bodega
+
 tipoInsumo:
   index:
     title: Tipo Insumo
@@ -147,10 +147,10 @@ tipoInsumo:
       - index.js
   edit:
     title: Editar Tipo Insumo
-    
+
   view:
     title: Ver Tipo Insumo
-    
+
 proveedor:
   index:
     title: Proveedor
@@ -158,10 +158,10 @@ proveedor:
       - index.js
   edit:
     title: Editar Proveedor
-    
+
   view:
     title: Ver Proveedor
-    
+
 tipoDoc:
   index:
     title: Tipo Documento
@@ -169,10 +169,10 @@ tipoDoc:
       - index.js
   edit:
     title: Editar Tipo Documento
-    
+
   view:
     title: Ver Tipo Documento
-    
+
 detalleEntrada:
   index:
     title: Detalle Entrada
@@ -180,12 +180,12 @@ detalleEntrada:
       - index.js
   edit:
     title: Editar Detalle Entrada
-    
+
   view:
     title: Ver Detalle Entrada
     javascript:
       - index.js
-    
+
 detalleSalida:
   index:
     title: Detalle Salida
@@ -193,12 +193,12 @@ detalleSalida:
       - index.js
   edit:
     title: Editar Detalle Salida
-    
+
   view:
     title: Ver Detalle Salida
     javascript:
       - index.js
-    
+
 empresa:
   index:
     title: Empresa
@@ -206,10 +206,10 @@ empresa:
       - index.js
   edit:
     title: Editar Empresa
-    
+
   view:
     title: Ver Empresa
-    
+
 insumo:
   index:
     title: insumo
@@ -217,7 +217,7 @@ insumo:
       - index.js
   edit:
     title: Editar insumo
-    
+
   view:
     title: Ver insumo
 
@@ -228,10 +228,9 @@ empaque:
       - index.js
   edit:
     title: Editar Empaque
-    
   view:
     title: Ver Empaque
-    
+
 controlCalidad:
   index:
     title: control Calidad
@@ -239,7 +238,6 @@ controlCalidad:
       - index.js
   edit:
     title: Editar control calidad
-    
   view:
     title: Ver control calidad
 
@@ -256,13 +254,13 @@ mieles:
       - index.js
   insert:
     title: Nueva Miel
-      
+
   edit:
     title: Editar Miel
-    
+
   view:
     title: Ver Miel
-          
+
 aguas:
   index:
     title: Aguas
@@ -270,13 +268,13 @@ aguas:
       - index.js
   insert:
     title: Nueva Aguas
-      
+
   edit:
     title: Editar Aguas
-    
+
   view:
     title: Ver Aguas
-    
+
 cachaza:
   index:
     title: Cachaza
@@ -284,16 +282,16 @@ cachaza:
       - index.js
   insert:
       title: Nueva Cachaza
-      
+
   edit:
     title: Editar Cachaza
-    
+
   view:
     title: Ver Cachaza
 
   edit:
     title: Editar ingreso Caña
-    
+
   view:
     title: Ver Ingreso Caña
 
@@ -302,13 +300,13 @@ bagazo:
     title: Bagazo
     javascript:
       - index.js
-      
+
   insert:
     title: Nuevo Bagazo
-      
+
   edit:
     title: Editar Bagazo
-    
+
   view:
     title: Ver Bagazo
 panela:
@@ -316,20 +314,20 @@ panela:
     title: panela
     javascript:
       - index.js
-      
+
   insert:
     title: Nueva panela
-      
+
   edit:
     title: Editar Panela
-    
+
   view:
     title: Ver Panela
-    
-reportes: 
+
+reportes:
   index:
     javascript:
-      -index.js
+      - index.js
   grafica:
     javascript:
       - jqPlot/jquery.jqplot.min.js
@@ -339,14 +337,14 @@ reportes:
       - jqPlot/jquery.jqplot.js
       - jqPlot/plugins/jqplot.categoryAxisRenderer.js
       - jqPlot/plugins/jqplot.barRenderer.js
-      - jqPlot/plugins/jqplot.dateAxisRenderer.js 
+      - jqPlot/plugins/jqplot.dateAxisRenderer.js
       - jqPlot/plugins/jqplot.logAxisRenderer.js
       - jqPlotplugins/jqplot.canvasAxisTickRenderer.js
       - graficas/grafica1.js
     stylesheet:
-      - jquery.jqplot.min.css 
+      - jquery.jqplot.min.css
       - jqPlot/jquery.jqplot.css
-      
+
 clarificacion:
   index:
     title: Clarificacion
@@ -357,4 +355,4 @@ clarificacion:
   edit:
     title: Edicion
   view:
-    title: Ver Clarificacion    
+    title: Ver Clarificacion

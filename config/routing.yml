@@ -7,7 +7,7 @@ homepage:
 traduccion:
   url:    /traduccion
   param:  { module: menu, action: traductor, format: html }
-  
+
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:
   url:    /signin
@@ -65,7 +65,7 @@ usuario_insert:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-    
+
 usuario_view:
   url:    /usuario/ver
   param:  { module: usuario, action: view, format: html }
@@ -127,7 +127,7 @@ credencial_insert:
   load:
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
-    
+
 credencial_view:
   url:    /credencial/ver
   param:  { module: credencial, action: view, format: html }
@@ -177,7 +177,7 @@ credencial_report:
     - libs/fpdf/fpdf.php
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
-  
+
 credencial_deleteFilters:
   url:    /credencial/borrarFiltros
   param:  { module: credencial, action: deleteFilters, format: html }
@@ -195,7 +195,7 @@ ingresoCana_index:
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
-  
+
 ingresoCana_ver:
   url:    /ingresoCana/ver
   param:  { module: ingresoCana, action: view, format: html }
@@ -208,7 +208,7 @@ ingresoCana_ver:
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
- 
+
 ingresoCana_insert:
   url:    /ingresoCana/insertar
   param:  { module: ingresoCana, action: insert, format: html }
@@ -221,7 +221,7 @@ ingresoCana_insert:
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
-    
+
 ingresoCana_create:
   url:    /ingresoCana/crear
   param:  { module: ingresoCana, action: create, format: html }
@@ -234,7 +234,7 @@ ingresoCana_create:
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
-    
+
 ingresoCana_edit:
   url:    /ingresoCana/editar
   param:  { module: ingresoCana, action: edit, format: html }
@@ -247,7 +247,7 @@ ingresoCana_edit:
     - model/proveedorTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
- 
+
 ingresoCana_update:
   url:    /ingresoCana/actualizar
   param:  { module: ingresoCana, action: update, format: html }
@@ -258,22 +258,22 @@ ingresoCana_update:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
-    
+
+
 ingresoCana_delete:
   url:    /ingresoCana/eliminar
   param:  { module: ingresoCana, action: delete, format: json }
   load:
     - model/base/ingresoCanaBaseTableClass.php
     - model/ingresoCanaTableClass.php
-   
+
 ingresoCana_deleteSelect:
   url:    /ingresoCana/eliminarSeleccion
   param:  { module: ingresoCana, action: deleteSelect, format: html }
   load:
     - model/base/ingresoCanaBaseTableClass.php
     - model/ingresoCanaTableClass.php
-    
+
 ingresoCana_reporte:
   url:    /ingresoCana/reporte
   param:  { module: ingresoCana, action: report, format: pdf }
@@ -285,7 +285,7 @@ ingresoCana_reporte:
     - model/proveedorTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
- 
+
 ingresoCana_deleteFilters:
   url:    /ingresoCana/borrarFiltros
   param:  { module: ingresoCana, action: deleteFilters, format: html }
@@ -305,7 +305,7 @@ tipoEmpaque_insert:
   load:
     - model/base/tipoEmpaqueBaseTableClass.php
     - model/tipoEmpaqueTableClass.php
-    
+
 tipoEmpaque_view:
   url:    /tipoEmpaque/ver
   param:  { module: tipoEmpaque, action: view, format: html }
@@ -369,7 +369,7 @@ tipoId_insert:
   load:
     - model/base/tipoIdBaseTableClass.php
     - model/tipoIdTableClass.php
-    
+
 tipoId_view:
   url:    /tipoId/ver
   param:  { module: tipoId, action: view, format: html }
@@ -418,7 +418,7 @@ tipoId_deleteSelect:
 empleado_deleteFilters:
   url:    /empleado/borrarFiltros
   param:  { module: empleado, action: deleteFilters, format: html }
-  
+
 empleado_index:
   url:    /empleado/index
   param:  { module: empleado, action: index, format: html }
@@ -436,7 +436,7 @@ empleado_insert:
     - model/tipoIdTableClass.php
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
-    
+
 empleado_view:
   url:    /empleado/ver
   param:  { module: empleado, action: view, format: html }
@@ -465,7 +465,7 @@ empleado_edit:
     - model/tipoIdTableClass.php
     - model/base/credencialBaseTableClass.php
     - model/credencialTableClass.php
-    
+
 empleado_update:
   url:    /empleado/actualizar
   param:  { module: empleado, action: update, format: html }
@@ -486,7 +486,7 @@ empleado_deleteSelect:
   load:
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    
+
 empleado_reporte:
   url:    /empleado/reporte
   param:  { module: empleado, action: report, format: pdf }
@@ -511,7 +511,7 @@ ciudad_insert:
   load:
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
-    
+
 ciudad_view:
   url:    /ciudad/ver
   param:  { module: ciudad, action: view, format: html }
@@ -571,7 +571,7 @@ tipoPago_insert:
   load:
     - model/base/tipoPagoBaseTableClass.php
     - model/tipoPagoTableClass.php
-    
+
 tipoPago_view:
   url:    /tipoPago/ver
   param:  { module: tipoPago, action: view, format: html }
@@ -631,7 +631,7 @@ tipoInsumo_insert:
   load:
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
-    
+
 tipoInsumo_view:
   url:    /tipoInsumo/ver
   param:  { module: tipoInsumo, action: view, format: html }
@@ -673,7 +673,7 @@ tipoInsumo_deleteSelect:
   load:
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
- 
+
 tipoInsumo_deleteFilters:
   url:    /tipoInsumo/borrar_filtros
   param:  { module: tipoInsumo, action: deleteFilters, format: html }
@@ -695,7 +695,7 @@ tipoInsumo_reporte:
 pagoTrabajadores_deleteFilters:
   url:    /pagoTrabajadores/borrarFiltros
   param:  { module: pagoTrabajadores, action: deleteFilters, format: html }
-  
+
 pagoTrabajadores_index:
   url:    /pagoTrabajadores/index
   param:  { module: pagoTrabajadores, action: index, format: html }
@@ -706,7 +706,7 @@ pagoTrabajadores_index:
     - model/empleadoTableClass.php
     - model/base/tipoPagoBaseTableClass.php
     - model/tipoPagoTableClass.php
-    
+
 pagoTrabajadores_insert:
   url:    /pagoTrabajadores/insertar
   param:  { module: pagoTrabajadores, action: insert, format: html }
@@ -717,7 +717,7 @@ pagoTrabajadores_insert:
     - model/empleadoTableClass.php
     - model/base/tipoPagoBaseTableClass.php
     - model/tipoPagoTableClass.php
-        
+
 pagoTrabajadores_view:
   url:    /pagoTrabajadores/ver
   param:  { module: pagoTrabajadores, action: view, format: html }
@@ -728,7 +728,7 @@ pagoTrabajadores_view:
     - model/empleadoTableClass.php
     - model/base/tipoPagoBaseTableClass.php
     - model/tipoPagoTableClass.php
-    
+
 pagoTrabajadores_create:
   url:    /pagoTrabajadores/crear
   param:  { module: pagoTrabajadores, action: create, format: html }
@@ -746,7 +746,7 @@ pagoTrabajadores_edit:
     - model/empleadoTableClass.php
     - model/base/tipoPagoBaseTableClass.php
     - model/tipoPagoTableClass.php
-    
+
 pagoTrabajadores_update:
   url:    /pagoTrabajadores/actualizar
   param:  { module: pagoTrabajadores, action: update, format: html }
@@ -800,7 +800,7 @@ entradaBodega_insert:
     - model/entradaBodegaTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 entradaBodega_view:
   url:    /entradaBodega/ver
   param:  { module: entradaBodega, action: view, format: html }
@@ -879,7 +879,7 @@ proveedor_insert:
     - model/proveedorTableClass.php
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
-    
+
 proveedor_view:
   url:    /proveedor/ver
   param:  { module: proveedor, action: view, format: html }
@@ -925,11 +925,11 @@ proveedor_deleteSelect:
   load:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 proveedor_deleteFilters:
   url:    /proveedor/borrarFiltros
   param:  { module: proveedor, action: deleteFilters, format: html }
-  
+
 proveedor_reporte:
   url:    /proveedor/reporte
   param:  { module: proveedor, action: report, format: pdf }
@@ -955,7 +955,7 @@ tipoDoc_insert:
   load:
     - model/base/tipoDocBaseTableClass.php
     - model/tipoDocTableClass.php
-    
+
 tipoDoc_view:
   url:    /tipoDoc/ver
   param:  { module: tipoDoc, action: view, format: html }
@@ -1031,8 +1031,8 @@ detalleEntrada_insert:
     - model/entradaBodegaTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
- 
-    
+
+
 detalleEntrada_view:
   url:    /detalleEntrada/ver
   param:  { module: detalleEntrada, action: view, format: html }
@@ -1090,7 +1090,7 @@ detalleEntrada_deleteSelect:
 detalleEntrada_deleteFilters:
   url:    /detalleEntrada/borrarFiltros
   param:  { module: detalleEntrada, action: deleteFilters, format: html }
-  
+
 detalleEntrada_reporte:
   url:    /detalleEntrada/reporte
   param:  { module: detalleEntrada, action: report, format: pdf }
@@ -1128,8 +1128,8 @@ detalleSalida_insert:
     - model/salidaBodegaTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
- 
-    
+
+
 detalleSalida_view:
   url:    /detalleSalida/ver
   param:  { module: detalleSalida, action: view, format: html }
@@ -1187,7 +1187,7 @@ detalleSalida_deleteSelect:
 detalleSalida_deleteFilters:
   url:    /detalleSalida/borrarFiltros
   param:  { module: detalleSalida, action: deleteFilters, format: html }
-  
+
 detalleSalida_reporte:
   url:    /detalleSalida/reporte
   param:  { module: detalleSalida, action: report, format: pdf }
@@ -1214,7 +1214,7 @@ empresa_insert:
     - model/empresaTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-    
+
 empresa_view:
   url:    /empresa/ver
   param:  { module: empresa, action: view, format: html }
@@ -1278,7 +1278,7 @@ insumo_insert:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
-    
+
 insumo_view:
   url:    /insumo/ver
   param:  { module: insumo, action: view, format: html }
@@ -1359,7 +1359,7 @@ empaque_insert:
     - model/tipoEmpaqueTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
-    
+
 empaque_view:
   url:    /empaque/ver
   param:  { module: empaque, action: view, format: html }
@@ -1392,7 +1392,7 @@ empaque_edit:
     - model/tipoEmpaqueTableClass.php
     - model/base/insumoBaseTableClass.php
     - model/insumoTableClass.php
-    
+
 empaque_update:
   url:    /empaque/actualizar
   param:  { module: empaque, action: update, format: html }
@@ -1421,7 +1421,7 @@ empaque_reporte:
     - libs/fpdf/fpdf.php
     - model/base/empaqueBaseTableClass.php
     - model/empaqueTableClass.php
- 
+
 empaque_deleteFilters:
   url:    /empaque/borrarFiltros
   param:  { module: empaque, action: deleteFilters, format: html }
@@ -1447,7 +1447,7 @@ detalleEmpaque_insert:
     - model/insumoTableClass.php
     - model/base/empaqueBaseTableClass.php
     - model/empaqueTableClass.php
-    
+
 detalleEmpaque_view:
   url:    /detalleEmpaque/ver
   param:  { module: detalleEmpaque, action: view, format: html }
@@ -1478,7 +1478,7 @@ detalleEmpaque_edit:
     - model/insumoTableClass.php
     - model/base/empaqueBaseTableClass.php
     - model/empaqueTableClass.php
-    
+
 
 detalleEmpaque_update:
   url:    /detalleEmpaque/actualizar
@@ -1514,7 +1514,7 @@ controlCalidad_index:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 controlCalidad_view:
   url:    /controlCalidad/ver
   param:  { module: controlCalidad, action: view, format: html }
@@ -1536,8 +1536,8 @@ controlCalidad_insert:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
- 
+
+
 controlCalidad_create:
   url:    /controlCalidad/crear
   param:  { module: controlCalidad, action: create, format: html }
@@ -1551,7 +1551,7 @@ controlCalidad_create:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
-    
+
 controlCalidad_edit:
   url:    /controlCalidad/editar
   param:  { module: controlCalidad, action: edit, format: html }
@@ -1562,7 +1562,7 @@ controlCalidad_edit:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 controlCalidad_update:
   url:    /controlCalidad/actualizar
   param:  { module: controlCalidad, action: update, format: html }
@@ -1573,7 +1573,7 @@ controlCalidad_update:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 controlCalidad_delete:
   url:    /controlCalidad/eliminar
   param:  { module: controlCalidad, action: delete, format: json }
@@ -1587,7 +1587,7 @@ controlCalidad_deleteSelect:
   load:
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 controlCalidad_reporte:
   url:    /controlCalidad/reporte
   param:  { module: controlCalidad, action: report, format: pdf }
@@ -1599,7 +1599,7 @@ controlCalidad_reporte:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 controlCalidad_deleteFilters:
   url:    /controlCalidad/borrarFiltros
   param:  { module: controlCalidad, action: deleteFilters, format: html }
@@ -1628,7 +1628,7 @@ salidaBodega_insert:
     - model/proveedorTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    
+
 salidaBodega_view:
   url:    /salidaBodega/ver
   param:  { module: salidaBodega, action: view, format: html }
@@ -1690,7 +1690,7 @@ salidaBodega_reporte:
 salidaBodega_deleteFilters:
   url:    /salidaBodega/borrarFiltros
   param:  { module: salidaBodega, action: deleteFilters, format: html }
-  
+
 salidaBodega_history.back():
   url:    /salidaBodega/history.back()
   param:  { module: salidaBodega, action: regresar, format: html }
@@ -1707,7 +1707,7 @@ jugo_index:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-  
+
 jugo_ver:
   url:    /jugo/ver
   param:  { module: jugo, action: view, format: html }
@@ -1718,7 +1718,7 @@ jugo_ver:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 jugo_insert:
   url:    /jugo/insertar
   param:  { module: jugo, action: insert, format: html }
@@ -1729,7 +1729,7 @@ jugo_insert:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 jugo_create:
   url:    /jugo/crear
   param:  { module: jugo, action: create, format: html }
@@ -1740,7 +1740,7 @@ jugo_create:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 jugo_edit:
   url:    /jugo/editar
   param:  { module: jugo, action: edit, format: html }
@@ -1751,7 +1751,7 @@ jugo_edit:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 jugo_update:
   url:    /jugo/actualizar
   param:  { module: jugo, action: update, format: html }
@@ -1762,22 +1762,22 @@ jugo_update:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
-    
+
+
 jugo_delete:
   url:    /jugo/eliminar
   param:  { module: jugo, action: delete, format: json }
   load:
     - model/base/jugoBaseTableClass.php
     - model/jugoTableClass.php
-   
+
 jugo_deleteSelect:
   url:    /jugo/eliminarSeleccion
   param:  { module: jugo, action: deleteSelect, format: html }
   load:
     - model/base/jugoBaseTableClass.php
     - model/jugoTableClass.php
-    
+
 jugo_reporte:
   url:    /jugo/reporte
   param:  { module: jugo, action: report, format: pdf }
@@ -1789,11 +1789,11 @@ jugo_reporte:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 jugo_deleteFilters:
   url:    /jugo/borrarFiltros
   param:  { module: jugo, action: deleteFilters, format: html }
-  
+
 ##-------------------------- JUGO-------------------------------------##
 
 ##-------------------------- AGUAS-------------------------------------##
@@ -1806,7 +1806,7 @@ aguas_index:
     - model/aguasTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-  
+
 aguas_ver:
   url:    /aguas/ver
   param:  { module: aguas, action: view, format: html }
@@ -1815,7 +1815,7 @@ aguas_ver:
     - model/aguasTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
- 
+
 aguas_insert:
   url:    /aguas/insertar
   param:  { module: aguas, action: insert, format: html }
@@ -1824,7 +1824,7 @@ aguas_insert:
     - model/aguasTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 aguas_create:
   url:    /aguas/crear
   param:  { module: aguas, action: create, format: html }
@@ -1833,7 +1833,7 @@ aguas_create:
     - model/aguasTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 aguas_edit:
   url:    /aguas/editar
   param:  { module: aguas, action: edit, format: html }
@@ -1842,7 +1842,7 @@ aguas_edit:
     - model/aguasTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
- 
+
 aguas_update:
   url:    /aguas/actualizar
   param:  { module: aguas, action: update, format: html }
@@ -1851,22 +1851,22 @@ aguas_update:
     - model/aguasTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
-    
+
+
 aguas_delete:
   url:    /aguas/eliminar
   param:  { module: aguas, action: delete, format: json }
   load:
     - model/base/aguasBaseTableClass.php
     - model/aguasTableClass.php
-   
+
 aguas_deleteSelect:
   url:    /aguas/eliminarSeleccion
   param:  { module: aguas, action: deleteSelect, format: html }
   load:
     - model/base/aguasBaseTableClass.php
     - model/aguasTableClass.php
-    
+
 aguas_reporte:
   url:    /aguas/reporte
   param:  { module: aguas, action: report, format: pdf }
@@ -1874,7 +1874,7 @@ aguas_reporte:
     - libs/fpdf/fpdf.php
     - model/base/aguasBaseTableClass.php
     - model/aguasTableClass.php
- 
+
 aguas_deleteFilters:
   url:    /aguas/borrarFiltros
   param:  { module: aguas, action: deleteFilters, format: html }
@@ -1892,7 +1892,7 @@ cachaza_index:
     - model/cachazaTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-  
+
 cachaza_ver:
   url:    /cachaza/ver
   param:  { module: cachaza, action: view, format: html }
@@ -1901,7 +1901,7 @@ cachaza_ver:
     - model/cachazaTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
- 
+
 cachaza_insert:
   url:    /cachaza/insertar
   param:  { module: cachaza, action: insert, format: html }
@@ -1910,7 +1910,7 @@ cachaza_insert:
     - model/cachazaTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 cachaza_create:
   url:    /cachaza/crear
   param:  { module: cachaza, action: create, format: html }
@@ -1919,7 +1919,7 @@ cachaza_create:
     - model/cachazaTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 cachaza_edit:
   url:    /cachaza/editar
   param:  { module: cachaza, action: edit, format: html }
@@ -1928,7 +1928,7 @@ cachaza_edit:
     - model/cachazaTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
- 
+
 cachaza_update:
   url:    /cachaza/actualizar
   param:  { module: cachaza, action: update, format: html }
@@ -1937,22 +1937,22 @@ cachaza_update:
     - model/cachazaTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
-    
+
+
 cachaza_delete:
   url:    /cachaza/eliminar
   param:  { module: cachaza, action: delete, format: json }
   load:
     - model/base/cachazaBaseTableClass.php
     - model/cachazaTableClass.php
-   
+
 cachaza_deleteSelect:
   url:    /cachaza/eliminarSeleccion
   param:  { module: cachaza, action: deleteSelect, format: html }
   load:
     - model/base/cachazaBaseTableClass.php
     - model/cachazaTableClass.php
-    
+
 cachaza_reporte:
   url:    /cachaza/reporte
   param:  { module: cachaza, action: report, format: pdf }
@@ -1960,7 +1960,7 @@ cachaza_reporte:
     - libs/fpdf/fpdf.php
     - model/base/cachazaBaseTableClass.php
     - model/cachazaTableClass.php
- 
+
 cachaza_deleteFilters:
   url:    /cachaza/borrarFiltros
   param:  { module: cachaza, action: deleteFilters, format: html }
@@ -1976,7 +1976,7 @@ bagazo_index:
     - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 bagazo_view:
   url:    /bagazo/ver
   param:  { module: bagazo, action: view, format: html }
@@ -1985,7 +1985,7 @@ bagazo_view:
     - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 bagazo_insert:
   url:    /bagazo/insertar
   param:  { module: bagazo, action: insert, format: html }
@@ -1994,7 +1994,7 @@ bagazo_insert:
     - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 bagazo_create:
   url:    /bagazo/crear
   param:  { module: bagazo, action: create, format: html }
@@ -2003,7 +2003,7 @@ bagazo_create:
     - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 bagazo_editar:
   url:    /bagazo/editar
   param:  { module: bagazo, action: edit, format: html }
@@ -2012,7 +2012,7 @@ bagazo_editar:
     - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 bagazo_update:
   url:    /bagazo/actualizar
   param:  { module: bagazo, action: update, format: html }
@@ -2021,22 +2021,22 @@ bagazo_update:
     - model/bagazoTableClass.php
     - model/base/ControlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
+
 bagazo_delete:
   url:    /bagazo/eliminar
   param:  { module: bagazo, action: delete, format: html }
   load:
     - model/base/bagazoBaseTableClass.php
     - model/bagazoTableClass.php
-   
-    
+
+
 bagazo_deleteSelect:
   url:    /bagazo/eliminarSeleccion
   param:  { module: bagazo, action: deleteSelect, format: html }
   load:
     - model/base/bagazoBaseTableClass.php
     - model/bagazoTableClass.php
-    
+
 bagazo_report:
   url:    /bagazo/reporte
   param:  { module: bagazo, action: report, format: pdf }
@@ -2044,18 +2044,18 @@ bagazo_report:
     - libs/fpdf/fpdf.php
     - model/base/bagazoBaseTableClass.php
     - model/bagazoTableClass.php
- 
+
 bagazo_deleteFilters:
   url:    /bagazo/borrarFiltros
   param:  { module: bagazo, action: deleteFilters, format: html }
-   
+
 ##-------------------------- BAGAZO-------------------------------------##
 ##-------------------------------MIELES-------------------------------##
 
 mieles_deleteFilters:
   url:    /mieles/borrarFiltros
   param:  { module: mieles, action: deleteFilters, format: html }
-  
+
 mieles_index:
   url:    /mieles/index
   param:  { module: mieles, action: index, format: html }
@@ -2071,7 +2071,7 @@ mieles_insert:
     - model/mielesTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-        
+
 mieles_view:
   url:    /mieles/ver
   param:  { module: mieles, action: view, format: html }
@@ -2080,7 +2080,7 @@ mieles_view:
     - model/mielesTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    
+
 mieles_create:
   url:    /mieles/crear
   param:  { module: mieles, action: create, format: html }
@@ -2093,11 +2093,11 @@ mieles_edit:
   param:  { module: mieles, action: edit, format: html }
   load:
     - model/base/mielesBaseTableClass.php
-    - model/mielesTableClass.php  
+    - model/mielesTableClass.php
     - model/base/empleadoBaseTableClass.php
     - model/empleadoTableClass.php
-    
-    
+
+
 mieles_update:
   url:    /mieles/actualizar
   param:  { module: mieles, action: update, format: html }
@@ -2118,7 +2118,7 @@ mieles_deleteSelect:
   load:
     - model/base/mielesBaseTableClass.php
     - model/mielesTableClass.php
-    
+
 mieles_reporte:
   url:    /mieles/reporte
   param:  { module: mieles, action: report, format: pdf }
@@ -2140,7 +2140,7 @@ panela_index:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-  
+
 panela_ver:
   url:    /panela/ver
   param:  { module: panela, action: view, format: html }
@@ -2151,7 +2151,7 @@ panela_ver:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 panela_insert:
   url:    /panela/insertar
   param:  { module: panela, action: insert, format: html }
@@ -2162,7 +2162,7 @@ panela_insert:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 panela_create:
   url:    /panela/crear
   param:  { module: panela, action: create, format: html }
@@ -2173,7 +2173,7 @@ panela_create:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 panela_edit:
   url:    /panela/editar
   param:  { module: panela, action: edit, format: html }
@@ -2184,7 +2184,7 @@ panela_edit:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
- 
+
 panela_update:
   url:    /panela/actualizar
   param:  { module: panela, action: update, format: html }
@@ -2195,22 +2195,22 @@ panela_update:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
-    
+
+
 panela_delete:
   url:    /panela/eliminar
   param:  { module: panela, action: delete, format: json }
   load:
     - model/base/panelaBaseTableClass.php
     - model/panelaTableClass.php
-   
+
 panela_deleteSelect:
   url:    /panela/eliminarSeleccion
   param:  { module: panela, action: deleteSelect, format: html }
   load:
     - model/base/panelaBaseTableClass.php
     - model/panelaTableClass.php
-    
+
 panela_reporte:
   url:    /panela/reporte
   param:  { module: panela, action: report, format: pdf }
@@ -2218,7 +2218,7 @@ panela_reporte:
     - libs/fpdf/fpdf.php
     - model/base/panelaBaseTableClass.php
     - model/panelaTableClass.php
- 
+
 panela_deleteFilters:
   url:    /panela/borrarFiltros
   param:  { module: panela, action: deleteFilters, format: html }
@@ -2229,7 +2229,7 @@ panela_deleteFilters:
 clarificacion_deleteFilters:
   url:    /clarificacion/borrarFiltros
   param:  { module: clarificacion, action: deleteFilters, format: html }
-  
+
 clarificacion_index:
   url:    /clarificacion/index
   param:  { module: clarificacion, action: index, format: html }
@@ -2247,7 +2247,7 @@ clarificacion_insert:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-        
+
 clarificacion_view:
   url:    /clarificacion/ver
   param:  { module: clarificacion, action: view, format: html }
@@ -2276,7 +2276,7 @@ clarificacion_edit:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
+
 clarificacion_update:
   url:    /clarificacion/actualizar
   param:  { module: clarificacion, action: update, format: html }
@@ -2297,7 +2297,7 @@ clarificacion_deleteSelect:
   load:
     - model/base/clarificacionBaseTableClass.php
     - model/clarificacionTableClass.php
-    
+
 clarificacion_reporte:
   url:    /clarificacion/reporte
   param:  { module: clarificacion, action: report, format: pdf }
@@ -2309,8 +2309,9 @@ clarificacion_reporte:
     - model/empleadoTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
+
 ##-------------------------- EMPLEADO --------------------------##
-#-------------------modulo -crear reportes----------------------------  
+#-------------------modulo -crear reportes----------------------------
 
 reportes_index:
   url:    /reportes/index
@@ -2322,20 +2323,18 @@ reportes_index:
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-    
-  
+
 reportes_insert:
   url:    /reportes/insert
   param:  { module: reportes, action: insert, format: html }
   load:
     - model/base/reporteBaseTableClass.php
-    - model/reporteTableClass.php  
+    - model/reporteTableClass.php
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
-   
-    
+
 reportes_create:
   url:    /reportes/generar
   param:  { module: reportes, action: create, format: html }
@@ -2346,7 +2345,6 @@ reportes_create:
     - model/reporteTableClass.php
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-    
 
 reportes_genararGrafica:
   url:    /reportes/grafica
@@ -2355,16 +2353,15 @@ reportes_genararGrafica:
     - model/base/proveedorBaseTableClass.php
     - model/proveedorTableClass.php
     - model/base/reporteBaseTableClass.php
-    - model/reporteTableClass.php   
+    - model/reporteTableClass.php
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
-   
-    
+
 reportes_reporte:
   url:    /reportes/reporte
-  param:  { module: reportes, action: report, format: pdf } 
+  param:  { module: reportes, action: report, format: pdf }
   load:
-    - libs/fpdf/fpdf.php 
+    - libs/fpdf/fpdf.php
     - model/base/controlCalidadBaseTableClass.php
     - model/controlCalidadTableClass.php
     - model/base/empleadoBaseTableClass.php
@@ -2373,4 +2370,3 @@ reportes_reporte:
     - model/proveedorTableClass.php
     - model/base/ciudadBaseTableClass.php
     - model/ciudadTableClass.php
-        
