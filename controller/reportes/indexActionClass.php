@@ -15,6 +15,7 @@ use mvc\i18n\i18nClass as i18n;
 class indexActionClass extends controllerClass implements controllerActionInterface {
   public function execute() {
     try {
+	  
       $where = null;
 
         
@@ -27,7 +28,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
          reporteTableClass::ID
       );
-      $this->objReportes = reporteTableClass::getAll($fields, false, $orderBy, 'ASC',null, null,$where);
+      $this->objReportes = reporteTableClass::getAll($fields, false, $orderBy, 'ASC', null, null, $where);
 
       $this->defineView('index', 'reportes', session::getInstance()->getFormatOutput());
     } //cierre del try
