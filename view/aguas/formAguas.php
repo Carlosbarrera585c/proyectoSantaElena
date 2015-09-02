@@ -18,8 +18,6 @@ use mvc\request\requestClass as request ?>
 <?php $control_id = aguasTableClass::CONTROL_ID ?>
 <?php $id_control = controlCalidadTableClass::ID ?>
 <?php $fecha = controlCalidadBaseTableClass::FECHA ?>
-
-
 <?php view::includePartial('menu/menu') ?>
 <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('aguas', ((isset($objAguas)) ? 'update' : 'create')) ?>">
     <?php if (isset($objAguas) == true): ?>
@@ -94,7 +92,7 @@ use mvc\request\requestClass as request ?>
             </div> 
         </div>
         <div class="form-group">
-            <div class="col-lg-12 col-xs-offset-6">
+            <div class="col-xs-offset-6">
                 <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objAguas)) ? 'update' : 'register')) ?>">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('aguas', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
             </div>

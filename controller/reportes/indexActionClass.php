@@ -8,7 +8,7 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 /**
- * @author Gonzalo Andres Bejarano, Elcy Milena Guerrero, Andres Eduardo Bahamon 
+ * @author Bayron, Cristian, Carlos.
  * @date: fecha de inicio del desarrollo.
  * @category: modulo de defautl.
  */

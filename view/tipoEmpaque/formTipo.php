@@ -14,24 +14,23 @@ use mvc\request\requestClass as request ?>
 <div class="container container-fluid">    
     <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', ((isset($objTipoEmpaque)) ? 'update' : 'create')) ?>">
         <?php if (isset($objTipoEmpaque) == true): ?>
-            <input name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true) ?>" value="<?php echo $objTipoEmpaque[0]->$idTipo ?>" type="hidden">
+          <input name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::ID, true) ?>" value="<?php echo $objTipoEmpaque[0]->$idTipo ?>" type="hidden">
         <?php endif ?>
         <?php view::getMessageError('errorDescripcion') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('desc') ?>:</label>
             <div class="col-lg-10">
-                <input id="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objTipoEmpaque)) ? $objTipoEmpaque[0]->$idTipo : ((session::getInstance()->hasFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true)) === true) ? '' : (request::getInstance()->hasPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true))) ? request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true)) : '' )) ?>" name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" placeholder="<?php echo i18n::__('enterTheDescription') ?>">
+                <input id="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objTipoEmpaque)) ? $objTipoEmpaque[0]->$desc_tipo_empaque : ((session::getInstance()->hasFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true)) === true) ? '' : (request::getInstance()->hasPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true))) ? request::getInstance()->getPost(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true)) : '' )) ?>" name="<?php echo tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true) ?>" placeholder="<?php echo i18n::__('enterTheDescription') ?>">
                 <?php if (session::getInstance()->hasFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true)) === true): ?>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
         </div>
         <div class="form-group">
-            <div class="col-lg-12 col-xs-offset-6">
+            <div class="col-xs-offset-6">
                 <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objTipoEmpaque)) ? 'update' : 'register')) ?>">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('tipoEmpaque', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
             </div>
         </div>
-</div>
-</form>
+    </form>
 </div>

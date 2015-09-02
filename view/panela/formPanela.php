@@ -73,7 +73,7 @@ use mvc\request\requestClass as request ?>
             </div> 
         </div>
         <div class="form-group">
-            <div class="col-lg-12 col-xs-offset-6">
+            <div class="col-xs-offset-6">
                 <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objPanela)) ? 'update' : 'register')) ?>">
                 <a href="<?php echo routing::getInstance()->getUrlWeb('panela', 'index') ?>" class="btn btn-info btn-sm"><?php echo i18n::__('back') ?></a>
             </div>

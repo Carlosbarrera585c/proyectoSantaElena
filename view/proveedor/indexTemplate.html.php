@@ -125,10 +125,10 @@ use mvc\session\sessionClass as session ?>
     <?php view::includeHandlerMessage() ?>
     <table class="tablaUsuario table table-bordered table-responsive table-hover tables">
       <thead>
-          <tr class="tr_table">
+          <tr class="columna tr_table">
           <th class="tamano"><input type="checkbox" id="chkAll"></th>
           <th><?php echo i18n::__('businessName') ?></th>
-          <th><?php echo i18n::__('actions') ?></th>
+          <th class="tamanoAccion"><?php echo i18n::__('actions') ?></th>
         </tr>
       </thead>
       <tbody>

@@ -130,7 +130,7 @@ use mvc\session\sessionClass as session ?>
   </div>
   <!-- Fin De Los Filtros Para Reporte -->
   <div class="page-header titulo">
-	<h1><i class="fa fa-male"></i> <?php echo i18n::__('honeys') ?></h1>
+	<h1><i class="fa fa-beer"></i> <?php echo i18n::__('honeys') ?></h1>
   </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('mieles', 'deleteSelect') ?>" method="POST">
 	<div style="margin-bottom: 10px; margin-top: 30px">
