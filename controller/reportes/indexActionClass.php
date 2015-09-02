@@ -7,18 +7,32 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+
 /**
  * @author Bayron, Cristian, Carlos.
  * @date: fecha de inicio del desarrollo.
  * @category: modulo de defautl.
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
+
   public function execute() {
     try {
-	  
+
       $where = null;
 
-        
+      $sql1 = 'SELECT ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA) . ' as fecha,
+	' . controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX) . ' as brix,
+	' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PH) . ' as ph,
+      ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::AR) . ' as ar,
+        ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA) . ' as pureza,
+          ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA) . ' as sacarosa,
+          ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' as proveedor
+    FROM ' . controlCalidadTableClass::getNameTable() .
+    ' WHERE ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' = 5
+    AND ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA) . ' BETWEEN ' . "'$fechaInicial'"  . 'AND' . "'$fechaFin'";
+    
+      echo $sql1;
+      exit();
       $fields = array(
           reporteTableClass::ID,
           reporteTableClass::NOMBRE,
@@ -26,18 +40,21 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           reporteTableClass::DIRECCION,
       );
       $orderBy = array(
-         reporteTableClass::ID
+          reporteTableClass::ID
       );
       $this->objReportes = reporteTableClass::getAll($fields, false, $orderBy, 'ASC', null, null, $where);
 
       $this->defineView('index', 'reportes', session::getInstance()->getFormatOutput());
     } //cierre del try
-     catch (PDOException $exc) {
-         routing::getInstance()->redirect('reportes', 'index');
+    catch (PDOException $exc) {
+      routing::getInstance()->redirect('reportes', 'index');
 //      echo $exc->getMessage();
 //      echo '<br>';
 //      echo $exc->getTraceAsString();
-     }//cierre del catch
-}//cierre de la funcion execute
+    }//cierre del catch
+  }
 
-}//cierre de la clase
+//cierre de la funcion execute
+}
+
+//cierre de la clase
