@@ -346,7 +346,7 @@ dictionary:
     Enter your observation: Ingrese su Observacion
     ##---------------------- MIELES----------------------------## 
     ##----------------------panela-------------------------##
-    panela:                panela
+    panela:                Panela
     newPanela:             Nueva Panela
     editPanela:            Editar Panela
     infoPanela:            Informacion Panela

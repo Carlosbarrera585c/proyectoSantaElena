@@ -28,7 +28,7 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorProcedencia') ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>
-            <div class="col-lg-10">
+            <div class="input-group col-xs-9">
                 <select class="form-control" id="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PROCEDENCIA, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
                         <option <?php echo (isset($objJugo[0]->$procedencia) === true and $objJugo[0]->$procedencia == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
@@ -41,8 +41,9 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorBrix') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo jugoTableClass::getNameField(jugoTableClass::BRIX, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('brix') ?>:</label>
-            <div class="col-lg-10">
-                <input id="<?php echo jugoTableClass::getNameField(jugoTableClass::BRIX, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objJugo) == true) ? $objJugo[0]->$brix : ((session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true)) === true) ? '' : (request::getInstance()->hasPost(jugoTableClass::getNameField(jugoTableClass::BRIX, true))) ? request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::BRIX, true)) : '' )) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::BRIX, true) ?>" placeholder="<?php echo i18n::__('brix') ?>">
+            <div class="input-group col-xs-9">
+			  <span class="input-group-addon" id="basic-addon3">%</span>
+                <input id="<?php echo jugoTableClass::getNameField(jugoTableClass::BRIX, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objJugo) == true) ? $objJugo[0]->$brix : ((session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true)) === true) ? '' : (request::getInstance()->hasPost(jugoTableClass::getNameField(jugoTableClass::BRIX, true))) ? request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::BRIX, true)) : '' )) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::BRIX, true) ?>" placeholder="<?php echo i18n::__('brix') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::BRIX, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -51,8 +52,9 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorPh') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::PH, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo jugoTableClass::getNameField(jugoTableClass::PH, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('ph') ?>:</label>
-            <div class="col-lg-10">
-                <input id="<?php echo jugoTableClass::getNameField(jugoTableClass::PH, true) ?>" type="text" class="form-control"  value="<?php echo ((isset($objJugo) == true) ? $objJugo[0]->$ph : ((session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::PH, true)) === true) ? '' : (request::getInstance()->hasPost(jugoTableClass::getNameField(jugoTableClass::PH, true))) ? request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::PH, true)) : '' )) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PH, true) ?>" placeholder="<?php echo i18n::__('ph') ?>">
+            <div class="input-group col-xs-9">
+			  <span class="input-group-addon" id="basic-addon3">%</span>
+                <input id="<?php echo jugoTableClass::getNameField(jugoTableClass::PH, true) ?>" type="text" class="form-control"  value="<?php echo ((isset($objJugo) == true) ? $objJugo[0]->$ph : ((session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::PH, true)) === true) ? '' : (request::getInstance()->hasPost(jugoTableClass::getNameField(jugoTableClass::PH, true))) ? request::getInstance()->getPost(jugoTableClass::getNameField(jugoTableClass::PH, true)) : '' )) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::PH, true) ?>" placeholder="<?php echo i18n::__('ph') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(jugoTableClass::getNameField(jugoTableClass::PH, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -61,7 +63,7 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorControl') ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('qualityControl') ?>:</label>
-            <div class="col-lg-10">
+            <div class="input-group col-xs-9">
                 <select class="form-control" id="<?php echo jugoTableClass::getNameField(jugoTableClass::ID, true) ?>" name="<?php echo jugoTableClass::getNameField(jugoTableClass::CONTROL_ID, TRUE) ?>">
                     <?php foreach ($objControlCalidad as $controlCalidad): ?>
                         <option <?php echo (isset($objJugo[0]->$control_id) === true and $objJugo[0]->$control_id == $controlCalidad->$id_control ) ? 'selected' : '' ?> value="<?php echo $controlCalidad->$id_control ?>">

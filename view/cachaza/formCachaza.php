@@ -27,8 +27,9 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorHumedad') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('humidity') ?>:</label>
-            <div class="col-lg-10">
-                <input id="<?php echo cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$humedad : ((session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true)) === true) ? '' : (request::getInstance()->hasPost(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true))) ? request::getInstance()->getPost(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true)) : '' )) ?>" name="<?php echo cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true) ?>" placeholder="<?php echo i18n::__('humidity') ?>">
+            <div class="input-group col-xs-9">
+			  <span class="input-group-addon" id="basic-addon3">%</span>
+                <input id="<?php echo cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$humedad : ((session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true)) === true) ? '' : (request::getInstance()->hasPost(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true))) ? request::getInstance()->getPost(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true)) : '' )) ?>" name="<?php echo cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true) ?>" placeholder="<?php echo i18n::__('humidity') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::HUMEDAD, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -37,8 +38,9 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorSacaroza') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label for="<?php echo cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('sacaroza') ?>:</label>
-            <div class="col-lg-10">
-                <input id="<?php echo cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$sacaroza : ((session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true)) === true) ? '' : (request::getInstance()->hasPost(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true))) ? request::getInstance()->getPost(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true)) : '' )) ?>" name="<?php echo cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true) ?>" placeholder="<?php echo i18n::__('sacaroza') ?>">
+            <div class="input-group col-xs-9">
+			  <span class="input-group-addon" id="basic-addon3">%</span>
+                <input id="<?php echo cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objCachaza) == true) ? $objCachaza[0]->$sacaroza : ((session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true)) === true) ? '' : (request::getInstance()->hasPost(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true))) ? request::getInstance()->getPost(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true)) : '' )) ?>" name="<?php echo cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true) ?>" placeholder="<?php echo i18n::__('sacaroza') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(cachazaTableClass::getNameField(cachazaTableClass::SACAROZA, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
@@ -47,7 +49,7 @@ use mvc\request\requestClass as request ?>
         <?php view::getMessageError('errorControl') ?>
         <div class="form-group">
             <label class="col-lg-2 control-label"><?php echo i18n::__('qualityControl') ?>:</label>
-            <div class="col-lg-10">
+            <div class="input-group col-xs-9">
                 <select class="form-control" id="<?php echo cachazaTableClass::getNameField(cachazaTableClass::ID, true) ?>" name="<?php echo cachazaTableClass::getNameField(cachazaTableClass::CONTROL_ID, TRUE) ?>">
                     <?php foreach ($objControlCalidad as $controlCalidad): ?>
                         <option <?php echo (isset($objCachaza[0]->$control_id) === true and $objCachaza[0]->$control_id == $controlCalidad->$id_control ) ? 'selected' : '' ?> value="<?php echo $controlCalidad->$id_control ?>">
