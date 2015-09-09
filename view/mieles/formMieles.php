@@ -26,15 +26,15 @@ use mvc\request\requestClass as request ?>
     <div class="container container-fluid">
         <?php view::getMessageError('errorFecha') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
-            <div class="col-lg-10">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('date') ?>:</label>
+            <div class="col-xs-6">
                 <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>"  name="<?php echo mielesTableClass::getNameField(mielesTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
         <?php view::getMessageError('errorTurno') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::TURNO, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('turn') ?>:</label>
-            <div class="col-lg-10">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('turn') ?>:</label>
+            <div class="col-xs-6">
                 <select class="form-control" id="<?php echo mielesTableClass::getNameField(mielesTableClass::TURNO, true) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE) ?>">
                         <option value="Dia" <?php echo(isset($objMieles) and $objMieles[0]->$turno === 'Dia') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE)) === 'Dia') ? 'selected' : '')?>>Dia</option>
                         <option value="Noche" <?php echo(isset($objMieles) and $objMieles[0]->$turno === 'Noche') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::TURNO, TRUE)) === 'Noche') ? 'selected' : '')?>>Noche</option>
@@ -43,8 +43,8 @@ use mvc\request\requestClass as request ?>
         </div> 
         <?php view::getMessageError('errorEmpleadoId') ?>
                 <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::EMPLEADO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('operator') ?>:</label>
-            <div class="col-lg-10">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('operator') ?>:</label>
+            <div class="col-xs-6">
                 <select class="form-control" id="<?php echo mielesTableClass::getNameField(mielesTableClass::ID, TRUE) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::EMPLEADO_ID, TRUE) ?>">
                     <?php foreach ($objEmpleado as $empleado): ?>
                         <option <?php echo (isset($objMieles[0]->$empleadoId) === true and $objMieles[0]->$empleadoId == $empleado->$idEmpleado) ? 'selected' : '' ?> value="<?php echo $empleado->$idEmpleado ?>">
@@ -56,8 +56,8 @@ use mvc\request\requestClass as request ?>
         </div> 
         <?php view::getMessageError('errorNumCeba') ?>
                 <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('numberOfFattening') ?>:</label>
-            <div class="col-lg-10">
+            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('numberOfFattening') ?>:</label>
+            <div class="col-xs-6">
                 <input id="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objMieles) == true) ? $objMieles[0]->$numCeba : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true))) ? request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) : '' )) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" placeholder="<?php echo i18n::__('Enter your numCeba') ?>">
                 <?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -66,8 +66,8 @@ use mvc\request\requestClass as request ?>
         </div>
          <?php view::getMessageError('errorCaja') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('box') ?>:</label>
-            <div class="col-lg-10">
+            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('box') ?>:</label>
+            <div class="col-xs-6">
                 <input id="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" type="" class="form-control" value="<?php echo ((isset($objMieles) == true) ? $objMieles[0]->$caja : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === true) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::CAJA, true))) ? request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) : '' )) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" placeholder="<?php echo i18n::__('Enter your number box') ?>">
                 <?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -76,8 +76,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorObservacion') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('observations') ?>:</label>
-            <div class="col-lg-10">
+            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('observations') ?>:</label>
+			  <div class="col-xs-6">
                 <input id="<?php echo mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true) ?>" type="" class="form-control" value="<?php echo ((isset($objMieles) == true) ? $objMieles[0]->$observacion : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true)) === true) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true))) ? request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true)) : '' )) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true) ?>" placeholder="<?php echo i18n::__('Enter your observation') ?>">
                 <?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>

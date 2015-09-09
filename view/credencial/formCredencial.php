@@ -21,8 +21,8 @@ use mvc\request\requestClass as request ?>
         <?php view::includeHandlerMessage() ?>
         <div class="container container-fluid">
             <div class="form-group <?php echo (session::getInstance()->hasFlash(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) === true) ? 'has-error has-feedback' : '' ?>">
-                <label for="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" class="col-lg-2 control-label" ><?php echo i18n::__('credential') ?>:</label>
-                <div class="col-lg-10">
+                <label for="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" class="col-lg-3 control-label" ><?php echo i18n::__('credential') ?>:</label>
+                <div class="col-xs-6">
                     <input id="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objCredencial) == true) ? $objCredencial[0]->$nombreCredencial : ((session::getInstance()->hasFlash(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) === true) ? '' : (request::getInstance()->hasPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true))) ? request::getInstance()->getPost(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) : '' )) ?>" name="<?php echo credencialTableClass::getNameField(credencialTableClass::NOMBRE, true) ?>" placeholder="Introduce la Credencial">
                     <?php if (session::getInstance()->hasFlash(credencialTableClass::getNameField(credencialTableClass::NOMBRE, true)) === true): ?>
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>

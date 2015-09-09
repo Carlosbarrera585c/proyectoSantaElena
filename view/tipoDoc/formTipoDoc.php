@@ -18,8 +18,8 @@ use mvc\request\requestClass as request ?>
         <?php endif ?>
         <?php view::getMessageError('errorDescripcion') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('desc') ?>:</label>
-            <div class="col-lg-10">
+            <label for="<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('desc') ?>:</label>
+            <div class="col-xs-6">
                 <input id="<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objTipoDoc) == true) ? $objTipoDoc[0]->$descTipoDoc : ((session::getInstance()->hasFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true)) === true) ? '' : (request::getInstance()->hasPost(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true))) ? request::getInstance()->getPost(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true)) : '' )) ?>" name="<?php echo tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true) ?>" placeholder="<?php echo i18n::__('enterTheDescription') ?>">
                 <?php if (session::getInstance()->hasFlash(tipoDocTableClass::getNameField(tipoDocTableClass::DESC_TIPO_DOC, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>

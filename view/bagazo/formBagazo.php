@@ -24,8 +24,8 @@ use mvc\request\requestClass as request ?>
     <div class="container container-fluid">
         <?php view::getMessageError('errorHumedad') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('humidity') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label for="<?php echo bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('humidity') ?>:</label>
+            <div class="input-group col-xs-6">
 			  <span class="input-group-addon" id="basic-addon3">%</span>
                 <input id="<?php echo bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$humedad : ((session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true)) === true) ? '' : (request::getInstance()->hasPost(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true))) ? request::getInstance()->getPost(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true)) : '' )) ?>" name="<?php echo bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true) ?>" placeholder="<?php echo i18n::__('humidity') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::HUMEDAD, true)) === true): ?>
@@ -35,8 +35,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorBrix') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo bagazoTableClass::getNameField(bagazoTableClass::BRIX, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('brix') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label for="<?php echo bagazoTableClass::getNameField(bagazoTableClass::BRIX, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('brix') ?>:</label>
+            <div class="input-group col-xs-6">
 			  <span class="input-group-addon" id="basic-addon3">%</span>
                 <input id="<?php echo bagazoTableClass::getNameField(bagazoTableClass::BRIX, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$brix : ((session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true)) === true) ? '' : (request::getInstance()->hasPost(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true))) ? request::getInstance()->getPost(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true)) : '' )) ?>" name="<?php echo bagazoTableClass::getNameField(bagazoTableClass::BRIX, true) ?>" placeholder="<?php echo i18n::__('brix') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::BRIX, true)) === true): ?>
@@ -46,8 +46,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorSacarosa') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('saccharose') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label for="<?php echo bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('saccharose') ?>:</label>
+            <div class="input-group col-xs-6">
 			  <span class="input-group-addon" id="basic-addon3">%</span>
                 <input id="<?php echo bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true) ?>" type="text" class="form-control"  value="<?php echo ((isset($objBagazo) == true) ? $objBagazo[0]->$sacarosa : ((session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true)) === true) ? '' : (request::getInstance()->hasPost(bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true))) ? request::getInstance()->getPost(bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true)) : '' )) ?>" name="<?php echo bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true) ?>" placeholder="<?php echo i18n::__('saccharose') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(bagazoTableClass::getNameField(bagazoTableClass::SACAROSA, true)) === true): ?>
@@ -57,8 +57,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorControl') ?>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('qualityControl') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('qualityControl') ?>:</label>
+            <div class="input-group col-xs-6">
                 <select class="form-control" id="<?php echo bagazoTableClass::getNameField(bagazoTableClass::ID, true) ?>" name="<?php echo bagazoTableClass::getNameField(bagazoTableClass::CONTROL_ID, TRUE) ?>">
                     <?php foreach ($objControlCalidad as $controlCalidad): ?>
                         <option <?php echo (isset($objBagazo[0]->$control_id) === true and $objBagazo[0]->$control_id == $controlCalidad->$id_control ) ? 'selected' : '' ?> value="<?php echo $controlCalidad->$id_control ?>">
