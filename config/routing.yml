@@ -1,17 +1,19 @@
 homepage:
   url:    /
-  param:  { module: usuario, action: index, format: html }
+  param:  { module: ingresoCana, action: index, format: html }
   load:
-    - model/base/usuarioBaseTableClass.php
-    - model/usuarioTableClass.php
+    - model/base/ingresoCanaBaseTableClass.php
+    - model/ingresoCanaTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/proveedorBaseTableClass.php
+    - model/proveedorTableClass.php
+    - model/base/insumoBaseTableClass.php
+    - model/insumoTableClass.php
 traduccion:
   url:    /traduccion
   param:  { module: menu, action: traductor, format: html }
   
-homeMenu:
-  url:    /menu/index
-  param:  { module: menu, action: index, format: html }
-
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:
   url:    /signin

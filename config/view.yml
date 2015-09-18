@@ -1,5 +1,4 @@
 all:
-  favicon: hola.ico
   title: titulo de la p‡gina general
   meta:
     - charset="UTF-8"
@@ -8,7 +7,7 @@ all:
     - jquery-1.11.1.min.js
     - bootstrap.min.js
     - main.js
-    - jqPlot/jquery.min.js
+    - jqPlot/jquery.js
     - jqPlot/jquery.jqplot.min.js
     - jqPlot/plugins/jqplot.canvasTextRenderer.min.js
     - jqPlot/plugins/jqplot.canvasTextRenderer.js

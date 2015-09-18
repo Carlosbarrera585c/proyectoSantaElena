@@ -2,7 +2,13 @@
 
 use mvc\routing\routingClass as routing ?>
 <?php
-use mvc\view\viewClass as view ?>
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\config\configClass as config ?>
+<?php
+use mvc\request\requestClass as request ?>
+<?php
+use mvc\session\sessionClass as session ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
