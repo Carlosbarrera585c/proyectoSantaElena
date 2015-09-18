@@ -23,8 +23,8 @@ use mvc\request\requestClass as request ?>
          <div class="container container-fluid"> 
         <?php view::getMessageError('errorSocial') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true)) === true) ? 'has-error has-feedback' : '' ?>">
-                <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('businessName') ?>:</label>
-            <div class="col-lg-10">
+                <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('businessName') ?>:</label>
+            <div class="col-xs-6">
                 <input id="<?php echo proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$razonSoProv : ((session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true)) === true) ? '' : (request::getInstance()->hasPost(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true))) ? request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true)) : '' )) ?>" name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true) ?>" placeholder="<?php echo i18n::__('businessName') ?>">
                 <?php if (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::RAZON_SOCIAL, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -33,8 +33,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorDireccion') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true)) === true) ? 'has-error has-feedback' : '' ?>">
-                <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('direction') ?>:</label>
-            <div class="col-lg-10">
+                <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('direction') ?>:</label>
+            <div class="col-xs-6">
                 <input id="<?php echo proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$dirProveedor : ((session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true)) === true) ? '' : (request::getInstance()->hasPost(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true))) ? request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true)) : '' )) ?>" name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true) ?>" placeholder="<?php echo i18n::__('direction') ?>">
                 <?php if (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -43,8 +43,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorTelefono') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true)) === true) ? 'has-error has-feedback' : '' ?>">
-                <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('phone') ?>:</label>
-            <div class="col-lg-10">
+                <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('phone') ?>:</label>
+            <div class="col-xs-6">
                 <input id="<?php echo proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$telProveedor : ((session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true)) === true) ? '' : (request::getInstance()->hasPost(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true))) ? request::getInstance()->getPost(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true)) : '' )) ?>" name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true) ?>" placeholder="<?php echo i18n::__('phone') ?>">
                 <?php if (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -53,8 +53,8 @@ use mvc\request\requestClass as request ?>
         </div>
          <?php view::getMessageError('errorCiudad') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::CIUDAD_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('city') ?>:</label>
-            <div class="col-lg-10">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('city') ?>:</label>
+            <div class="col-xs-6">
                 <select class="form-control" id="<?php echo proveedorTableClass::getNameField(proveedorTableClass::ID, TRUE) ?>" name="<?php echo proveedorTableClass::getNameField(proveedorTableClass::CIUDAD_ID, TRUE) ?>">
                     <?php foreach ($objCiudad as $ciudad): ?>
                         <option value="<?php echo $ciudad->$ciudadId ?>">

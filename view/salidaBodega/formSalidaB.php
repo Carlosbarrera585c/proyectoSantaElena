@@ -26,15 +26,15 @@ use mvc\request\requestClass as request ?>
         <?php view::includeHandlerMessage() ?>
 
         <div class="form-group <?php echo (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('date') ?>:</label>
-            <div class="col-lg-10">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('date') ?>:</label>
+            <div class="col-xs-6">
                 <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>" name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
             
             <div class="form-group <?php echo (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
-             <label for="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('provider') ?>:</label>
-                <div class="col-lg-10">
+             <label for="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('provider') ?>:</label>
+                <div class="col-xs-6">
                      <select class="form-control" id="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, TRUE) ?>" id="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, TRUE) ?>" name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::PROVEEDOR_ID, TRUE) ?>">
                          <?php foreach ($objProveedor as $proveedor): ?>
                              <option <?php echo (isset($objSalidaBodega[0]->$proveedorId) === true and $objSalidaBodega[0]->$proveedorId == $proveedor->$idProveedor) ? 'selected' : '' ?> value="<?php echo $proveedor->$idProveedor ?>">
@@ -46,8 +46,8 @@ use mvc\request\requestClass as request ?>
            </div>
      
         <div class="form-group <?php echo (session::getInstance()->hasFlash(salidaBodegaTableClass::getNameField(salidaBodegaTableClass::EMPLEADO_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
-             <label for="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::EMPLEADO_ID, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('employee') ?>:</label>
-                <div class="col-lg-10">
+             <label for="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::EMPLEADO_ID, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('employee') ?>:</label>
+                <div class="col-xs-6">
                      <select class="form-control" id="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::ID, TRUE) ?>" id="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::EMPLEADO_ID, TRUE) ?>" name="<?php echo salidaBodegaTableClass::getNameField(salidaBodegaTableClass::EMPLEADO_ID, TRUE) ?>">
                          <?php foreach ($objEmpleado as $empleado): ?>
                              <option <?php echo (isset($objSalidaBodega[0]->$empleadoId) === true and $objSalidaBodega[0]->$empleadoId == $empleado->$idEmpleado) ? 'selected' : '' ?> value="<?php echo $empleado->$idEmpleado ?>">

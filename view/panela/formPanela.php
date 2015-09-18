@@ -28,8 +28,8 @@ use mvc\request\requestClass as request ?>
 	  <?php view::getMessageError('errorHora') ?>
     <div class="container container-fluid">
         <div class="form-group <?php echo (session::getInstance()->hasFlash(panelaTableClass::getNameField(panelaTableClass::HORA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo panelaTableClass::getNameField(panelaTableClass::HORA, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('hour') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label for="<?php echo panelaTableClass::getNameField(panelaTableClass::HORA, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('hour') ?>:</label>
+            <div class="input-group col-xs-6">
                 <input id="<?php echo panelaTableClass::getNameField(panelaTableClass::HORA, true) ?>" class="form-control" value="<?php echo ((isset($objPanela) == true) ? $objPanela[0]->$hora : ((session::getInstance()->hasFlash(panelaTableClass::getNameField(panelaTableClass::HORA, true)) === true) ? '' : (request::getInstance()->hasPost(panelaTableClass::getNameField(panelaTableClass::HORA, true))) ? request::getInstance()->getPost(panelaTableClass::getNameField(panelaTableClass::HORA, true)) : '' )) ?>" type="time" class="frm-control" name="<?php echo panelaTableClass::getNameField(panelaTableClass::HORA, true) ?>" placeholder="<?php echo i18n::__('hour') ?>">
                 <?php if (session::getInstance()->hasFlash(panelaTableClass::getNameField(panelaTableClass::HORA, true)) === true): ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -38,8 +38,8 @@ use mvc\request\requestClass as request ?>
         </div>
         <?php view::getMessageError('errorProcedencia') ?>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('provenance') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('provenance') ?>:</label>
+            <div class="input-group col-xs-6">
                 <select class="form-control" id="<?php echo panelaTableClass::getNameField(panelaTableClass::ID, true) ?>" name="<?php echo panelaTableClass::getNameField(panelaTableClass::PROVEEDOR_ID, TRUE) ?>">
                     <?php foreach ($objProveedor as $proveedor): ?>
                         <option <?php echo (isset($objPanela[0]->$procedencia) === true and $objPanela[0]->$procedencia == $proveedor->$proveedor_id ) ? 'selected' : '' ?> value="<?php echo $proveedor->$proveedor_id ?>">
@@ -51,8 +51,8 @@ use mvc\request\requestClass as request ?>
         </div>
 	    <?php view::getMessageError('errorSedimento') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true) ?>" class="col-lg-2 control-label"><?php echo i18n::__('sediment') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label for="<?php echo panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('sediment') ?>:</label>
+            <div class="input-group col-xs-6">
 			  <span class="input-group-addon" id="basic-addon3">%</span>
                 <input id="<?php echo panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true) ?>" type="text"  class="form-control"  value="<?php echo ((isset($objPanela) == true) ? $objPanela[0]->$sedimento : ((session::getInstance()->hasFlash(panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true)) === true) ? '' : (request::getInstance()->hasPost(panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true))) ? request::getInstance()->getPost(panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true)) : '' )) ?>" name="<?php echo panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true) ?>" placeholder="<?php echo i18n::__('sediment') ?>" aria-describedby="basic-addon3">
                 <?php if (session::getInstance()->hasFlash(panelaTableClass::getNameField(panelaTableClass::SEDIMENTO, true)) === true): ?>
@@ -62,8 +62,8 @@ use mvc\request\requestClass as request ?>
         </div>
 	 <?php view::getMessageError('errorControl') ?>
         <div class="form-group">
-            <label class="col-lg-2 control-label"><?php echo i18n::__('qualityControl') ?>:</label>
-            <div class="input-group col-xs-9">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('qualityControl') ?>:</label>
+            <div class="input-group col-xs-6">
                 <select class="form-control" id="<?php echo panelaTableClass::getNameField(panelaTableClass::ID, true) ?>" name="<?php echo panelaTableClass::getNameField(panelaTableClass::CONTROL_ID, TRUE) ?>">
                     <?php foreach ($objControlCalidad as $controlCalidad): ?>
                         <option <?php echo (isset($objPanela[0]->$control_id) === true and $objPanela[0]->$control_id == $controlCalidad->$id_control ) ? 'selected' : '' ?> value="<?php echo $controlCalidad->$id_control ?>">
