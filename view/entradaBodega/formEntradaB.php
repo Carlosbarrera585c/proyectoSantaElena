@@ -25,7 +25,7 @@ use mvc\request\requestClass as request ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-3 control-label"><?php echo i18n::__('date') ?>:</label>
             <div class="col-xs-6">
-                <input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
+			  <input type="datetime" class="form-control" value="<?php echo date("Y-m-d") ?>" name="<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
             </div>
         </div>
             

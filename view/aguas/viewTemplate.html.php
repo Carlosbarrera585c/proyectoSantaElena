@@ -41,7 +41,7 @@ use mvc\session\sessionClass as session ?>
             <tbody>
                 <tr>
 
-                    <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$hora : '') ?></td>
+                    <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$hora = date ("h:i A") : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$procedencia : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$arrastre_dulce : '') ?></td>
                     <td><?php echo ((isset($objAguas) == true) ? $objAguas[0]->$ph : '') ?></td>

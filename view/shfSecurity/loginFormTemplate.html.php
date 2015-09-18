@@ -118,7 +118,7 @@ use mvc\session\sessionClass as session ?>
 					<span class="input-group-addon">
 					  <input type="checkbox" value="true" name="chkRememberMe">
 					</span>
-					<input type="" class="form-control" placeholder="Recordar me" disabled>
+					<input type="" class="form-control" placeholder="Recordarme" disabled>
 				  </div>
 				</div>
 			  </div>
@@ -144,21 +144,24 @@ use mvc\session\sessionClass as session ?>
 		  <div>
 			<form class="form-horizontal" role="form" action="">
 			  <div>
-				Carlos Alberto Barrera<br>
-				Tel: 321-747-0676<br>
-				Correo: carlosbarrera585@hotmail.com<br>
+				Contáctenos para hacer excelentes negocios con usted, 
+				nuestro producto esta posicionado en el mercado como el mejor, denos el gusto de atenderlo, 
+				comuníquese con nosotros al siguiente PBX: (2) 6677595<br>
 			  </div>
 			  <br>
 			  <div>
-				Bayron Esteban Henao<br>
-				Tel: 321-719-6808<br>
-				Correo: bairon_henao_1995@hotmail.com<br>
+				FAX: (2) 6677610
+			  </div>
+			  <div>
+			  <div>
+				Cel: 312-8660828 – 316-2260860
 			  </div>
 			  <br>
 			  <div>
-				Cristian Camilo Ramirez<br>
-				Tel: 301-639-2726<br>
-				Correo: ccristianramirezc@gmail.com<br>
+				Cali, Valle de Cauca,<br>
+				Colombia / Sur América<br>
+				E-mail: ventas@agropanelasantahelena.com<br>
+				info@agropanelasantahelena.com<br>
 			  </div>
 			  <br>
 			  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

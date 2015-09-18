@@ -54,25 +54,27 @@ use mvc\request\requestClass as request ?>
                 </select>
             </div>  
         </div> 
-        <?php view::getMessageError('errorNumCeba') ?>
-                <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('numberOfFattening') ?>:</label>
-            <div class="col-xs-6">
-                <input id="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objMieles) == true) ? $objMieles[0]->$numCeba : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true))) ? request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) : '' )) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" placeholder="<?php echo i18n::__('Enter your numCeba') ?>">
-                <?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true): ?>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
-            </div>
+	  <?php view::getMessageError('errorNumCeba') ?>
+        <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === true) ? 'has-error has-feedback' : '' ?>">
+            <label class="col-lg-3 control-label"><?php echo i18n::__('numberOfFattening') ?>:</label>
+            <div class="input-group col-xs-6">
+                <select class="form-control" id="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE) ?>">
+                    <option value="1" <?php echo(isset($objMieles) and $objMieles[0]->$numCeba === '1') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) === '1') ? 'selected' : '') ?>>1</option>
+                    <option value="2" <?php echo(isset($objMieles) and $objMieles[0]->$numCeba === '2') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) === '2') ? 'selected' : '') ?>>2</option>
+					<option value="3" <?php echo(isset($objMieles) and $objMieles[0]->$numCeba === '3') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, TRUE)) === '3') ? 'selected' : '') ?>>3</option>	
+                </select>
+            </div> 
         </div>
-         <?php view::getMessageError('errorCaja') ?>
+	   <?php view::getMessageError('errorCaja') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === true) ? 'has-error has-feedback' : '' ?>">
-            <label for="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('box') ?>:</label>
-            <div class="col-xs-6">
-                <input id="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" type="" class="form-control" value="<?php echo ((isset($objMieles) == true) ? $objMieles[0]->$caja : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === true) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::CAJA, true))) ? request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) : '' )) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" placeholder="<?php echo i18n::__('Enter your number box') ?>">
-                <?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === true): ?>
-                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-                <?php endif ?>
-            </div>
+            <label class="col-lg-3 control-label"><?php echo i18n::__('box') ?>:</label>
+            <div class="input-group col-xs-6">
+                <select class="form-control" id="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, true) ?>" name="<?php echo mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE) ?>">
+                    <option value="1" <?php echo(isset($objMieles) and $objMieles[0]->$caja === '1') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) === '1') ? 'selected' : '') ?>>1</option>
+                    <option value="2" <?php echo(isset($objMieles) and $objMieles[0]->$caja === '2') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) === '2') ? 'selected' : '') ?>>2</option>
+					<option value="3" <?php echo(isset($objMieles) and $objMieles[0]->$caja === '3') ? 'selected' : ((session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) === TRUE) ? '' : (request::getInstance()->hasPost(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) and request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::CAJA, TRUE)) === '3') ? 'selected' : '') ?>>3</option>	
+                </select>
+            </div> 
         </div>
         <?php view::getMessageError('errorObservacion') ?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true)) === true) ? 'has-error has-feedback' : '' ?>">

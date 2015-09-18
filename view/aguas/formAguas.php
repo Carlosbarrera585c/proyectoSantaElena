@@ -19,6 +19,7 @@ use mvc\request\requestClass as request ?>
 <?php $id_control = controlCalidadTableClass::ID ?>
 <?php $fecha = controlCalidadBaseTableClass::FECHA ?>
 <?php view::includePartial('menu/menu') ?>
+
 <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('aguas', ((isset($objAguas)) ? 'update' : 'create')) ?>">
   <?php if (isset($objAguas) == true): ?>
     <input name="<?php echo aguasTableClass::getNameField(aguasTableClass::ID, true) ?>" value="<?php echo $objAguas[0]->$id ?>" type="hidden">
@@ -27,7 +28,7 @@ use mvc\request\requestClass as request ?>
   <div class="form-group <?php echo (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::HORA, true)) === true) ? 'has-error has-feedback' : '' ?>">
 	<label class="col-xs-3 control-label"><?php echo i18n::__('hour') ?>:</label>
 	<div class="input-group col-xs-6">
-	  <input type="time" class="form-control" value="<?php echo time("h:i A") ?>"  name="<?php echo aguasTableClass::getNameField(aguasTableClass::HORA, true) ?>" placeholder="<?php echo i18n::__('hour') ?>">
+	  <input type="datetime" class="form-control" value=" <?php echo date("h:i A") ?> "  name="<?php echo aguasTableClass::getNameField(aguasTableClass::HORA, true) ?>" placeholder="<?php echo i18n::__('hour') ?>">
 	</div>
   </div>
   <?php view::getMessageError('errorProcedencia') ?>

@@ -7,6 +7,10 @@ homepage:
 traduccion:
   url:    /traduccion
   param:  { module: menu, action: traductor, format: html }
+  
+homeMenu:
+  url:    /menu/index
+  param:  { module: menu, action: index, format: html }
 
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:
