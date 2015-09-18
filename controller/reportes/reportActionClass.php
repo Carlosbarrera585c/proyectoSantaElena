@@ -12,6 +12,9 @@ class reportActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
 
+      $img = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', request::getInstance()->getPost('imgData')));
+      file_put_contents(config::getPathAbsolute() . 'web/img/report.png', $img);
+
       //$this->mensaje = 'Hola a todos';
       $where = null;
       $where = session::getInstance()->getAttribute('graficaWhere');
