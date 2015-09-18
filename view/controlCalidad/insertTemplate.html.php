@@ -13,6 +13,6 @@ use mvc\view\viewClass as view ?>
                 <h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('newQualityControl') ?></i></h1>
             </div>
         </div>
-<?php view::includePartial('controlCalidad/formControl', array('objEmpleado' => $objEmpleado, 'objProveedor' => $objProveedor)) ?>
+        <?php view::includePartial('controlCalidad/formControl', array('objEmpleado' => $objEmpleado, 'objProveedor' => $objProveedor)) ?>
     </div>
 </div>
