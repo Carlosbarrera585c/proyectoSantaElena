@@ -24,6 +24,7 @@ use mvc\request\requestClass as request ?>
   <?php if (isset($objAguas) == true): ?>
     <input name="<?php echo aguasTableClass::getNameField(aguasTableClass::ID, true) ?>" value="<?php echo $objAguas[0]->$id ?>" type="hidden">
   <?php endif ?>
+	<?php date_default_timezone_set('America/Bogota')?>
   <?php view::getMessageError('errorHora') ?>
   <div class="form-group <?php echo (session::getInstance()->hasFlash(aguasTableClass::getNameField(aguasTableClass::HORA, true)) === true) ? 'has-error has-feedback' : '' ?>">
 	<label class="col-xs-3 control-label"><?php echo i18n::__('hour') ?>:</label>
