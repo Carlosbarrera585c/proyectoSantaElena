@@ -8,10 +8,24 @@ all:
     - jquery-1.11.1.min.js
     - bootstrap.min.js
     - main.js
+    - jqPlot/jquery.min.js
+    - jqPlot/jquery.jqplot.min.js
+    - jqPlot/plugins/jqplot.canvasTextRenderer.min.js
+    - jqPlot/plugins/jqplot.canvasTextRenderer.js
+    - jqPlot/plugins/jqplot.canvasAxisLabelRenderer.min.js
+    - jqPlot/plugins/jqplot.dateAxisRenderer.js
+    - jqPlot/plugins/jqplot.barRenderer.min.js
+    - jqPlot/plugins/jqplot.pieRenderer.js
+    - jqPlot/plugins/jqplot.categoryAxisRenderer.js
+    - jqPlot/plugins/jqplot.pointLabels.js
+    - jqPlot/plugins/jqplot.logAxisRenderer.min.js
+    - jqPlot/plugins/jqplot.canvasAxisTickRenderer.min.js
+
   stylesheet:
     - bootstrap.css
     - main.css
     - font-awesome.min.css
+    - jquery.jqplot.min.css
 shfSecurity:
   index:
     title: Identificación de Usuario
@@ -323,28 +337,7 @@ panela:
 
   view:
     title: Ver Panela
-
-reportes:
-  index:
-    javascript:
-      - index.js
-  grafica:
-    javascript:
-      - jqPlot/jquery.jqplot.min.js
-      - jqPlot/plugins/jqplot.canvasTextRenderer.min.js
-      - jqPlot/plugins/jqplot.canvasTextRenderer.js
-      - jqPlot/plugins/jqplot.canvasAxisLabelRenderer.min.js
-      - jqPlot/jquery.jqplot.js
-      - jqPlot/plugins/jqplot.categoryAxisRenderer.js
-      - jqPlot/plugins/jqplot.barRenderer.js
-      - jqPlot/plugins/jqplot.dateAxisRenderer.js
-      - jqPlot/plugins/jqplot.logAxisRenderer.js
-      - jqPlotplugins/jqplot.canvasAxisTickRenderer.js
-      - graficas/grafica1.js
-    stylesheet:
-      - jquery.jqplot.min.css
-      - jqPlot/jquery.jqplot.css
-
+    
 clarificacion:
   index:
     title: Clarificacion

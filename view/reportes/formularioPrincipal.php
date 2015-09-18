@@ -21,6 +21,7 @@ use mvc\request\requestClass as request ?>
   <div class="center-block" id="cuerpo5">
     <div class="center-block" id="cuerpo2">
 
+      
       <form class="form-horizontal" id="filterForm" role="form" action="<?php echo routing::getInstance()->getUrlWeb('reportes', 'create') ?>" method="POST">
 		<?php if (isset($objReportes) == true): ?>
   		<input  name="<?php echo reporteTableClass::getNameField(reporteTableClass::ID, true) ?>" value="<?php echo $objReportes[0]->$idReporte ?>" type="hidden">

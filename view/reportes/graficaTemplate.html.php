@@ -1,58 +1,69 @@
+<?php
 
-<?php use mvc\routing\routingClass as routing ?>
-<?php use mvc\i18n\i18nClass as i18n ?>
-<?php use mvc\view\viewClass as view ?>
-<?php use mvc\session\sessionClass as session ?>
-<?php use mvc\request\requestClass as request ?>
-
- <?php $value = session::getInstance()->getAttribute('idGrafica'); ?>
- 
+use mvc\routing\routingClass as routing ?>
+<?php
+use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
+<?php
+use mvc\session\sessionClass as session ?>
+<?php
+use mvc\request\requestClass as request ?>
+<?php view::includePartial('menu/menu') ?>
+<a href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'insert') ?>" class="btn btn-info btn-xs col-lg-offset-1"><?php echo i18n::__('back') ?></a>
+<a class="btn btn-xs btn-success col-lg-offset-O" href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'report') ?>" ><?php echo i18n::__('printReport') ?></a>
+<br>
+<br>
 <div class="container container-fluid" id="cuerpo">
-  <div class="center-block" id="cuerpo4">
-    <div class="center-block" id="cuerpo2"> 
-  
-  <h2 class="form-signin-heading">
-<!--<script>
-//  $(document).ready(function () {
-//    crearGrafica(<?php echo json_encode($cosPoints) ?>);  
-//  });
-//  $(document).ready(function () {
-//    CrearGrafica2(<?php echo json_encode($cosPoints) ?>);  
-//  });
-</script>
-<div id="chart3" style="width: 600px; height: 400px"></div>-->
-      <script>
-$(document).ready(function(){
-  CrearGrafica2(<?php echo json_encode($cosPoints) ?>);
-  var texto = ['%Brix','%Ph','%Ar', '%Sacaroza', '%Pureza'];
-  var line2=[['2008-08-12 4:00PM',5], ['2008-09-12 4:00PM',6.5], ['2008-10-12 4:00PM',5.7], ['2008-11-12 4:00PM',9], ['2008-12-12 4:00PM',8.2]];
-  var line3=[['2008-08-14 4:00PM',6], ['2008-09-12 4:00PM',7], ['2008-10-12 4:00PM',6], ['2008-11-12 4:00PM',10], ['2008-12-12 4:00PM',8.5]];
-  var line4=[['2008-08-14 4:00PM',7], ['2008-09-12 4:00PM',1], ['2008-10-12 4:00PM',4], ['2008-11-12 4:00PM',5], ['2008-12-12 4:00PM',3.5]];
-  var line5=[['2008-08-14 4:00PM',8], ['2008-09-12 4:00PM',3], ['2008-10-12 4:00PM',8], ['2008-11-12 4:00PM',8], ['2008-12-12 4:00PM',3]];
-  var plot1 = $.jqplot('chart1', [line2,line3,line4,line5], {
-    title:'Hola Mundo',
-    axes:{
-        xaxis:{
-            renderer:$.jqplot.DateAxisRenderer
-        }
-    },
-    series:[{lineWidth:6, markerOptions:{style:'square'}}],
-    legend:{
-        show:true,
-        labels: texto
-    }
-    
-  });
-});
-</script>
-<div id="chart1" style="width:1200px;height:500px ;"></div>
-</h2>
+    <div class="center-block" id="cuerpo4">
+        <div class="center-block" id="cuerpo2">
+            <div id="chart2b"></div>
+            <div id="info2c"></div>
+            <script>
+              $(document).ready(function () {
+                  var texto = ['Brix', 'Ph', 'Ar', 'Sacaroza', 'Pureza'];
+                  plot2b = $.jqplot('chart2b', <?php echo json_encode($datos) ?> /*[
+                   
+                   [[1,2, { proveedor: 'castilla', fecha: '02/10/2015' } ], [2,4], [3,6], [4,3]],
+                   [[1,5], [2,1], [3,3], [4,4]],
+                   [[1,4], [2 ,7], [3,1], [4,2]]
+                   ]*/, {
+                      seriesDefaults: {
+                          renderer: $.jqplot.BarRenderer,
+                          pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+                          shadowAngle: 135,
+                          rendererOptions: {
+                              barDirection: 'vertical'
+                          },
+                          pointLabels: {show: false}
+                      },
+                      axes: {
+                          xaxis: {
+                              renderer: $.jqplot.DateAxisRenderer,
+                              min: '<?php echo json_encode($fechaInicial) ?>',
+                              max: '<?php echo json_encode($fechaFin) ?>',
+                              tickInterval: "0.5 days",
+                              tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                              tickOptions: {
+                                  angle: -60
+                              }
+                          },
+                          yaxis: {
+                              max: 60
+                          }
+                      },
+                      legend: {show: true, labels: texto, location: 'nw'}
 
-           
-      
-      <br>
- <a class="btn btn-lg btn-success btn-xs" href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'report') ?>" ><?php echo i18n::__('printReport') ?></a>
-      <br><br><br><br><br><br><br><br><br><br><br><br>
-       </div>    
-  </div>    
+                  });
+                  $('#chart2b').bind('jqplotDataClick',
+                          function (ev, seriesIndex, pointIndex, data) {
+                              $('#info2c').append('___________________' + '<div>Control de calidad: ' + data[2].control + '<br>' + 'Proveedor: ' + data[2].proveedor + '<br>' + 'Porcentaje: ' + data[2].porcentaje + '<br>' + 'Fecha: ' + data[2].fecha + '</div>');
+                          }
+                  );
+              });
+            </script>
+            <br>
+            <div><button id="borrar" class="btn btn-xs btn-primary" onclick="$('#info2c').html('')">Limpiar registros.</button></div>
+        </div>    
+    </div>    
 </div>

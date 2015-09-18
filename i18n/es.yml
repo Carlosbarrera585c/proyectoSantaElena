@@ -17,6 +17,7 @@ dictionary:
     filters:              Filtros
     printReport:          Imprimir Reporte
     filtrate:             Filtrar
+    noDatos:              NO EXISTEN DATOS PARA MOSTRAR
     deleteFilters:        Eliminar Filtros 
     confirmDelete:        Confirmar Eliminar
     confirmDeleteMass:    Confirmar La Eliminación de Elementos Seleccionados.

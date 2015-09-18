@@ -61,6 +61,25 @@ class controlCalidadTableClass extends controlCalidadBaseTableClass {
       throw $exc;
     }
    }
+   
+   
+   public static function getNameFecha($id) {
+    try {
+      $sql = 'SELECT ' . controlCalidadTableClass::FECHA . ' As fecha  '
+              . ' FROM ' . controlCalidadTableClass::getNameTable() . '  '
+              . ' WHERE ' . controlCalidadTableClass::ID . ' = :id';
+      $params = array(
+              ':id' => $id
+              );
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute($params);
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return $answer[0]->fecha;
+      
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+   }
 
 }
 

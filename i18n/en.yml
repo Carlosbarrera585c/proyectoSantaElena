@@ -17,6 +17,7 @@ dictionary:
     filters:              Filters
     printReport:          Print Report
     filtrate:             Filtrate
+    noDatos:              NO DATA TO SHOW
     deleteFilters:        Delete Filters
     confirmDelete:        Confirm Delete
     confirmDeleteMass:    Confirm the removal of Selected Items.

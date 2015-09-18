@@ -20,20 +20,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
       $where = null;
 
-      $sql1 = 'SELECT ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA) . ' as fecha,
-	' . controlCalidadTableClass::getNameField(controlCalidadTableClass::BRIX) . ' as brix,
-	' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PH) . ' as ph,
-      ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::AR) . ' as ar,
-        ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA) . ' as pureza,
-          ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::SACAROSA) . ' as sacarosa,
-          ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' as proveedor
-    FROM ' . controlCalidadTableClass::getNameTable() .
-    ' WHERE ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID) . ' = 5
-    AND ' . controlCalidadTableClass::getNameField(controlCalidadTableClass::FECHA) . ' BETWEEN ' . "'$fechaInicial'"  . 'AND' . "'$fechaFin'";
-    
-      echo $sql1;
-      exit();
-      $fields = array(
+     $fields = array(
           reporteTableClass::ID,
           reporteTableClass::NOMBRE,
           reporteTableClass::DESCRIPCION,
