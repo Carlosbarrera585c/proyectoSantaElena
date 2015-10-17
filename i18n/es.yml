@@ -269,7 +269,13 @@ dictionary:
     quantity:             Cantidad
     caneOrigin:           Procedencia Caña
     caneWeight:           Peso Caña
+    train:                Tren
     wagonNumber:          Numero Vagon
+    wagonNumber2:         Numero Vagon2
+    wagonNumber3:         Numero Vagon3
+    wagonNumber4:         Numero Vagon4
+    wagonNumber5:         Numero Vagon5
+    total:				  Total
     reedIncome:           Ingreso Caña
     quantity:             Cantidad
     caneOrigin:           Procedencia Caña
@@ -279,6 +285,8 @@ dictionary:
     enterTheCaneOrigin:   Ingresa la Procedencia
     enterTheCaneWeight:   Ingresa el Peso Caña
     enterTheWagonNumber:  Ingresa el NUmero De Vagon
+    variety:              Variedad
+    enterTheVariety:      Introduce la variedad
      ##----------------------INGRESO CAÑA----------------------------##
 
     ##---------------------- SOLICITUD INSUMO-------------------------##
@@ -286,7 +294,7 @@ dictionary:
        
     ##----------------------SOLICITUD INSUMO---------------------------## 
 
-    ##-----------------CONTROL CALIDAD-------------------------##
+    ##-----------------PRECOSECHA-------------------------##
     date:                 Fecha
     variety:              Variedad
     brix:                 Brix
@@ -297,11 +305,12 @@ dictionary:
     saccharose:           Sacarosa
     purity:               Pureza
     idEmployed:           Empleado
+    laboratoryAnalyst:    Analista Laboratorio
     idProvider:           Proveedor
-    qualityControl:       Control Calidad
-    editQualityControl:   Editar Control Calidad
-    qualityControlInformation: Informacion De Control Calidad
-    newQualityControl:    Nuevo Control Calidad
+    preharvest:           Precosecha
+    editPreharvest:       Editar Precosecha
+    preharvestInformation: Informacion De Precosecha
+    newPreharvest:    Nueva precosecha
     enterTheDate:         Introduce la Fecha
     enterTheTurn:         Introduce el turno
     enterTheVariety:      Introduce la variedad
@@ -311,7 +320,13 @@ dictionary:
     enterTheAr:           Introduce el Ar
     enterTheSaccharose:   Introduce la Sacarosa
     enterThePurity:       Introduce la Pureza
-    ##-----------------control calidad---------------------------##
+    colour:               Color
+    texture:              Textura
+    sediment:             Sedimento
+    enterTheColour:       Introduce el Color
+    enterTheTexture:      Introduce la Textura
+    enterTheSediment:     Introduce el Sedimento
+    ##-----------------PRECOSECHA---------------------------##
         
     ##---------------------- DETALLE EMPAQUE----------------------------##
        
@@ -354,6 +369,7 @@ dictionary:
     provenance:            Procedencia
     sediment:              Sedimento
     hour:                  hora
+    plantManager:          Jefe De Planta
     ##----------------------panela-------------------------##
     ##----------------------Clarificación------------------##
     infoClarification:     Informacion de Clarificación
@@ -372,6 +388,7 @@ dictionary:
     Enter your Number flocculant: Ingrese la Cantidad de Flocculant
     ##----------------------Clarificación------------------##
     ##---------------------- ERRORES----------------------------##
+    errorLength:            Error el campo Excede la Maxima Cantidad De Caracteres.
     errorLengthEmployee:    Error Su Nombre (%nombre%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthLastEmployee: Error Su Apellido (%apellido%) Excede La Cantidad Maxima de Caracteres (%caracteres%).
     errorLengthPhone:       Error Su Telefono (%telefono%) Excede La Cantidad Maxima de Caracteres (%caracteres%).

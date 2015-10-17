@@ -24,20 +24,20 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $cantidad = trim(request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::CANTIDAD, true)));
                 $empleado_id = trim(request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::EMPLEADO_ID, true)));
                 $tipo_empaque_id = trim(request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::TIPO_EMPAQUE_ID, true)));
-                $insumo_id = request::getInstance()->getPost(empaqueTableClass::getNameField(empaqueTableClass::INSUMO_ID, true));
-                $this->Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id, $insumo_id);
+               
+                $this->Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id);
                 $ids = array(
                     empaqueTableClass::ID => $id
                 );
                 
-                $this->Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id, $insumo_id);
+                $this->Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id);
                 
                 $data = array(
                     empaqueTableClass::FECHA => $fecha,
                     empaqueTableClass::CANTIDAD => $cantidad,
                     empaqueTableClass::EMPLEADO_ID => $empleado_id,
                     empaqueTableClass::TIPO_EMPAQUE_ID => $tipo_empaque_id,
-                    empaqueTableClass::INSUMO_ID => $insumo_id,
+                    
                 );
                 empaqueTableClass::update($ids, $data);
             }
@@ -49,7 +49,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         }
     }
     
-    private function Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id, $insumo_id) {
+    private function Validate($fecha, $cantidad, $empleado_id, $tipo_empaque_id) {
         $bandera = FALSE;
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         if ($fecha === '' or $fecha === NULL) {
@@ -81,12 +81,6 @@ class updateActionClass extends controllerClass implements controllerActionInter
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::TIPO_EMPAQUE_ID, true), true);
         }
         
-        if ($insumo_id === '' or $insumo_id === NULL) {
-            session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorTipo');
-            $bandera = true;
-            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::INSUMO_ID, true), true);
-        }
-        
         if (!is_numeric($cantidad)) {
             session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorCantidad');
             $bandera = true;
@@ -102,11 +96,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::TIPO_EMPAQUE_ID, true), true);
         }
-         if (!is_numeric($insumo_id)) {
-            session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorInsumo');
-            $bandera = true;
-            session::getInstance()->setFlash(empaqueTableClass::getNameField(empaqueTableClass::INSUMO_ID, true), true);
-        }
+       
         //validar fecha
         if (!preg_match($pattern, $fecha)) {
             session::getInstance()->setError(i18n::__('errorDate', NULL, 'default'), 'errorFecha');

@@ -33,7 +33,10 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                   controlCalidadTableClass::SACAROSA,
                   controlCalidadTableClass::PUREZA,
                   controlCalidadTableClass::EMPLEADO_ID,
-                  controlCalidadTableClass::PROVEEDOR_ID 
+                  controlCalidadTableClass::PROVEEDOR_ID,
+				  controlCalidadTableClass::COLOR,
+				  controlCalidadTableClass::TEXTURA,
+				  controlCalidadTableClass::SEDIMENTO
                 );
                 $where = array(
                     controlCalidadTableClass::ID => request::getInstance()->getGet(controlCalidadTableClass::ID)

@@ -60,14 +60,6 @@ use mvc\session\sessionClass as session ?>
 				<?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::TURNO, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
 			  </div>
 			</div>
-			<?php view::getMessageError('errorNumCeba') ?>
-			<div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
-			  <label for="filterNumCeba" class="col-sm-2 control-label"><?php echo i18n::__('numberOfFattening') ?></label>
-			  <div class="col-sm-10">
-				<input type="text" class="form-control" id="filterNumCeba" name="filter[NumCeba]" placeholder="<?php echo i18n::__('numberOfFattening') ?>">
-				<?php if (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)) === TRUE) : ?><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><?php endif; ?>
-			  </div>
-			</div>
 			<?php view::getMessageError('errorCaja') ?>
 			<div class="form-group <?php echo (session::getInstance()->hasFlash(mielesTableClass::getNameField(mielesTableClass::CAJA, true)) === TRUE) ? 'has-error has-feedback' : ''; ?>">
 			  <label for="filterCaja" class="col-sm-2 control-label"><?php echo i18n::__('box') ?></label>

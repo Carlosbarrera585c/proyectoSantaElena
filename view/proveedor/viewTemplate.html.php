@@ -19,7 +19,6 @@ use mvc\view\viewClass as view ?>
     <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'deleteSelect') ?>" method="POST">
         <div style="margin-bottom: 10px; margin-top: 30px">
             <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'insert') ?>" class="btn btn-success btn-xs"><?php echo i18n::__('new') ?></a>
-            <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()"><?php echo i18n::__('delete') ?></a>
             <a href="<?php echo routing::getInstance()->getUrlWeb('proveedor', 'index') ?>" class="btn btn-info btn-xs"><?php echo i18n::__('back') ?></a>
         </div>
         <table class="table table-bordered table-responsive table-condensed tables">
@@ -27,19 +26,15 @@ use mvc\view\viewClass as view ?>
                 <tr class="columna tr_table">
                  
                     <th><?php echo i18n::__('businessName') ?></th>
-                    <th><?php echo i18n::__('direction') ?></th>
                     <th><?php echo i18n::__('phone') ?></th>
-                    <th><?php echo i18n::__('city') ?></th>
-
                 </tr>
             </thead>
             <tbody>
                 <tr>
         
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$razonS : '') ?></td>
-                    <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$direcc : '') ?></td>
                     <td><?php echo ((isset($objProveedor) == true) ? $objProveedor[0]->$telef : '') ?></td>
-                    <td><?php echo ((isset($objProveedor) == true) ? proveedorTableClass::getNameCiudad($objProveedor[0]->$idC) : '') ?></td>
+                  
                 </tr>
             </tbody>
         </table>

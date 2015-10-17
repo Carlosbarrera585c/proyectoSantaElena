@@ -19,6 +19,10 @@ class controlCalidadBaseTableClass extends tableBaseClass {
   private $pureza;
   private $empleado_id;
   private $proveedor_id;
+  private $color;
+  private $textura;
+  private $sedimento;
+  
 
   const ID = 'id';
   const FECHA= 'fecha';
@@ -39,96 +43,126 @@ class controlCalidadBaseTableClass extends tableBaseClass {
   const PUREZA_LENGHT= 20;
   const EMPLEADO_ID = 'empleado_id';
   const PROVEEDOR_ID= 'proveedor_id';
+  const COLOR= 'color';
+  const COLOR_LENGHT= 20;
+  const TEXTURA= 'textura';
+  const TEXTURA_LENGHT= 20;
+  const SEDIMENTO= 'pureza';
+  const SEDIMENTO_LENGHT= 20;
   
   function getId() {
-      return $this->id;
+	return $this->id;
   }
 
   function getFecha() {
-      return $this->fecha;
+	return $this->fecha;
   }
 
   function getVariedad() {
-      return $this->variedad;
+	return $this->variedad;
   }
 
   function getEdad() {
-      return $this->edad;
+	return $this->edad;
   }
 
   function getBrix() {
-      return $this->brix;
+	return $this->brix;
   }
 
   function getPh() {
-      return $this->ph;
+	return $this->ph;
   }
 
   function getAr() {
-      return $this->ar;
+	return $this->ar;
   }
 
   function getSacarosa() {
-      return $this->sacarosa;
+	return $this->sacarosa;
   }
 
   function getPureza() {
-      return $this->pureza;
+	return $this->pureza;
   }
 
   function getEmpleado_id() {
-      return $this->empleado_id;
+	return $this->empleado_id;
   }
 
   function getProveedor_id() {
-      return $this->proveedor_id;
+	return $this->proveedor_id;
+  }
+
+  function getColor() {
+	return $this->color;
+  }
+
+  function getTextura() {
+	return $this->textura;
+  }
+
+  function getSedimento() {
+	return $this->sedimento;
   }
 
   function setId($id) {
-      $this->id = $id;
+	$this->id = $id;
   }
 
   function setFecha($fecha) {
-      $this->fecha = $fecha;
+	$this->fecha = $fecha;
   }
 
   function setVariedad($variedad) {
-      $this->variedad = $variedad;
+	$this->variedad = $variedad;
   }
 
   function setEdad($edad) {
-      $this->edad = $edad;
+	$this->edad = $edad;
   }
 
   function setBrix($brix) {
-      $this->brix = $brix;
+	$this->brix = $brix;
   }
 
   function setPh($ph) {
-      $this->ph = $ph;
+	$this->ph = $ph;
   }
 
   function setAr($ar) {
-      $this->ar = $ar;
+	$this->ar = $ar;
   }
 
   function setSacarosa($sacarosa) {
-      $this->sacarosa = $sacarosa;
+	$this->sacarosa = $sacarosa;
   }
 
   function setPureza($pureza) {
-      $this->pureza = $pureza;
+	$this->pureza = $pureza;
   }
 
   function setEmpleado_id($empleado_id) {
-      $this->empleado_id = $empleado_id;
+	$this->empleado_id = $empleado_id;
   }
 
   function setProveedor_id($proveedor_id) {
-      $this->proveedor_id = $proveedor_id;
+	$this->proveedor_id = $proveedor_id;
   }
 
-  
+  function setColor($color) {
+	$this->color = $color;
+  }
+
+  function setTextura($textura) {
+	$this->textura = $textura;
+  }
+
+  function setSedimento($sedimento) {
+	$this->sedimento = $sedimento;
+  }
+
+    
     
 
   /**

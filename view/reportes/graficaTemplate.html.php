@@ -11,10 +11,10 @@ use mvc\session\sessionClass as session ?>
 use mvc\request\requestClass as request ?>
 <?php view::includePartial('menu/menu') ?>
 <a href="<?php echo routing::getInstance()->getUrlWeb('reportes', 'insert') ?>" class="btn btn-info btn-xs col-lg-offset-1"><?php echo i18n::__('back') ?></a>
+<a href="javascript:gestionar()" class="btn btn-xs btn-success col-lg-offset-O"><?php echo i18n::__('printReport') ?></a>
 <form action="<?php echo routing::getInstance()->getUrlWeb('reportes', 'report') ?>" method="post" id="formImgData">
     <input type="hidden" id="imgData" name="imgData">
 </form>
-<a href="javascript:gestionar()" class="btn btn-xs btn-success col-lg-offset-O"><?php echo i18n::__('printReport') ?></a>
 <script>
   function gestionar() {
       var imgData2 = $('#chart2b').jqplotToImageStr({});

@@ -43,7 +43,6 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           mielesTableClass::FECHA,
           mielesTableClass::TURNO,
           mielesTableClass::EMPLEADO_ID,
-          mielesTableClass::NUM_CEBA,
           mielesTableClass::CAJA,
           mielesTableClass::OBSERVACION,
       );

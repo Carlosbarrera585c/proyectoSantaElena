@@ -15,7 +15,7 @@
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
      <div class="page-header text-center titulo">
-        <h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('qualityControlInformation') ?></i></h1>
+        <h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('preharvestInformation') ?></i></h1>
     </div>
   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('controlCalidad', 'delete') ?>" method="POST">
     <div style="margin-bottom: 10px; margin-top: 30px">

@@ -20,7 +20,7 @@ $pdf->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'), 0, 0,280);
 
 $pdf ->Ln(50);
 
-$pdf->Cell(255,10,'REPORTE CONTROL CALIDAD',1,1,'C');
+$pdf->Cell(255,10,'REPORTE PRECOSECHA',1,1,'C');
   $pdf->Cell(45,10,  utf8_decode("FECHA"),1);
   $pdf->Cell(20,10,  utf8_decode("VARIEDAD"),1);
   $pdf->Cell(20,10,  utf8_decode("EDAD"),1);

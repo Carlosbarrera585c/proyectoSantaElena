@@ -29,7 +29,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     <th><?php echo i18n::__('amount') ?></th> 
                     <th><?php echo i18n::__('employee') ?></th> 
                     <th><?php echo i18n::__('typePacking') ?></th>                 
-                    <th><?php echo i18n::__('input') ?></th> 
+                    
   
                 </tr>
             </thead>
@@ -40,7 +40,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     <td><?php echo ((isset($objEmpaque) == true) ? $objEmpaque[0]->$cantidad : '') ?></td>
                     <td><?php echo ((isset($objEmpaque) == true) ? empaqueTableClass::getNameEmpleado($objEmpaque[0]->$empleado) : '') ?></td>
                     <td><?php echo ((isset($objEmpaque) == true) ? empaqueTableClass::getNameTipoEmpaque($objEmpaque[0]->$empaque) : '') ?></td>
-                    <td><?php echo ((isset($objEmpaque) == true) ? empaqueTableClass::getNameInsumo($objEmpaque[0]->$insumo) : '') ?></td>
+                 
 
             </tbody>
         </table>

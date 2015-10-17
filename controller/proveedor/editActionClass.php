@@ -21,21 +21,16 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $fields = array(
           proveedorTableClass::ID,
           proveedorTableClass::RAZON_SOCIAL,
-          proveedorTableClass::DIRECCION,
           proveedorTableClass::TELEFONO,
-          proveedorTableClass::CIUDAD_ID
         );
-        $where = array(
-            proveedorTableClass::ID => request::getInstance()->getGet(proveedorTableClass::ID)
-        );
-        $this->objProveedor = proveedorTableClass::getAll($fields, false, null, null, null, null, $where);
+        $this->objProveedor = proveedorTableClass::getAll($fields, false, null, null, null, null);
         
-        $fields = array(
-                ciudadTableClass::ID,
-                ciudadTableClass::NOM_CIUDAD
-            );
-            
-       $this->objCiudad = ciudadTableClass::getAll($fields, false);
+//        $fields = array(
+//                ciudadTableClass::ID,
+//                ciudadTableClass::NOM_CIUDAD
+//            );
+//            
+//       $this->objCiudad = ciudadTableClass::getAll($fields, false);
         
         $this->defineView('edit', 'proveedor', session::getInstance()->getFormatOutput());
       } else {

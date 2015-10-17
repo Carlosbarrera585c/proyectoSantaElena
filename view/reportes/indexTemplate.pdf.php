@@ -14,35 +14,39 @@ $pureza = controlCalidadTableClass::PUREZA;
 $fecha = controlCalidadTableClass::FECHA;
 $edad = controlCalidadTableClass::EDAD;
 
+class PDF extends FPDF {
 
-  class PDF extends FPDF {
-
-	function Header() {
-
+  function Header() {
 
 
-	  $this->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'), 0, 0, 210);
-	  
-      $this->Image(routing::getInstance()->getUrlImg('report.png'), 5, 55, 202);
-      $this->SetFont('courier', 'B', '12');
-	  $this->Ln(10);
-	  # $this->Cell(80);
-	  # $this->Cell(30, 10, 'Cliente', 1, 0, 'C');
-	  $this->Ln(30);
-	}
 
-	function Footer() {
-      
-	  $this->SetY(-15);
-	  $this->SetFont('', 'I', 8);
-	  $this->Cell(0, 10, 'page' . $this->PageNo() . '/{Reportes}', 0, 0, 'C');
-	}
+	$this->Image(routing::getInstance()->getUrlImg('logoProyecto.jpg'), 0, 0, 210);
 
+	$this->Image(routing::getInstance()->getUrlImg('report.png'), 5, 59, 202);
+	$this->SetFont('courier', 'B', '12');
+	$this->Ln(10);
+	# $this->Cell(80);
+	# $this->Cell(30, 10, 'Cliente', 1, 0, 'C');
+	$this->Ln(30);
   }
 
-  $pdf = new PDF();
-  $pdf->AddPage();
-  $pdf->SetFont('Arial', 'B', 8);
-  $pdf->Output();
+  function Footer() {
 
+	$this->SetY(-15);
+	$this->SetFont('', 'I', 8);
+	$this->Cell(0, 10, 'page' . $this->PageNo() . '/{Reportes}', 0, 0, 'C');
+  }
+
+}
+
+$pdf = new PDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial', 'B', 8);
+$pdf->Cell(200, 5, 'REPORTE CONTROL CALIDAD', 5, 0, 'C');
+$pdf->Ln();
+$pdf->Cell(0, 8, "PROVEEDOR", 19, 0, 'L');
+$pdf->Cell(0, 8, utf8_decode(controlCalidadTableClass::getNameProveedor($objControlCalidad[0]->$proveedor_id)), 30, 0, 'C');
+
+
+$pdf->Output();
 ?>

@@ -23,9 +23,11 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
           mielesTableClass::FECHA,
           mielesTableClass::TURNO,
           mielesTableClass::EMPLEADO_ID,
-          mielesTableClass::NUM_CEBA,
           mielesTableClass::CAJA,
-          mielesTableClass::OBSERVACION
+          mielesTableClass::OBSERVACION,
+		  mielesTableClass::BRIX,
+		  mielesTableClass::PH,
+		  mielesTableClass::PROVEEDOR_ID,
       );
       $where = array(
           mielesTableClass::ID => $id

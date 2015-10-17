@@ -15,7 +15,17 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
   private $proveedor_id;
   private $cantidad;
   private $peso_caña;
+  private $peso_caña2;
+  private $peso_caña3;
+  private $peso_caña4;
+  private $peso_caña5;
   private $num_vagon;
+  private $num_vagon2;
+  private $num_vagon3;
+  private $num_vagon4;
+  private $num_vagon6;
+  private $variedad;
+  private $total;
 
   const ID = 'id';
   const FECHA = 'fecha';
@@ -26,72 +36,174 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
   const CANTIDAD_LENGTH = 30;
   const PESO_CAÑA = 'peso_caña';
   const PESO_CAÑA_LENGTH = 30;
+  const PESO_CAÑA2 = 'peso_caña2';
+  const PESO_CAÑA2_LENGTH = 30;
+  const PESO_CAÑA3 = 'peso_caña3';
+  const PESO_CAÑA3_LENGTH = 30;
+  const PESO_CAÑA4 = 'peso_caña4';
+  const PESO_CAÑA4_LENGTH = 30;
+  const PESO_CAÑA5 = 'peso_caña5';
+  const PESO_CAÑA5_LENGTH = 30;
   const NUM_VAGON = 'num_vagon';
   const NUM_VAGON_LENGTH = 30;
-
+  const NUM_VAGON2 = 'num_vagon2';
+  const NUM_VAGON2_LENGTH = 30;
+  const NUM_VAGON3 = 'num_vagon3';
+  const NUM_VAGON3_LENGTH = 30;
+  const NUM_VAGON4 = 'num_vagon4';
+  const NUM_VAGON4_LENGTH = 30;
+  const NUM_VAGON5 = 'num_vagon5';
+  const NUM_VAGON5_LENGTH = 30;
+  const VARIEDAD = 'variedad';
+  const VARIEDAD_LENGTH = 30;
+  const TOTAL = 'total';
+  const TOTAL_LENGHT = 10;
+  
   function getId() {
-    return $this->id;
+	return $this->id;
   }
 
   function getFecha() {
-    return $this->fecha;
+	return $this->fecha;
   }
 
   function getEmpleado_id() {
-    return $this->empleado_id;
+	return $this->empleado_id;
   }
 
   function getProveedor_id() {
-    return $this->proveedor_id;
+	return $this->proveedor_id;
   }
 
   function getCantidad() {
-    return $this->cantidad;
+	return $this->cantidad;
   }
 
   function getPeso_caña() {
-    return $this->peso_caña;
+	return $this->peso_caña;
+  }
+
+  function getPeso_caña2() {
+	return $this->peso_caña2;
+  }
+
+  function getPeso_caña3() {
+	return $this->peso_caña3;
+  }
+
+  function getPeso_caña4() {
+	return $this->peso_caña4;
+  }
+
+  function getPeso_caña5() {
+	return $this->peso_caña5;
   }
 
   function getNum_vagon() {
-    return $this->num_vagon;
+	return $this->num_vagon;
+  }
+
+  function getNum_vagon2() {
+	return $this->num_vagon2;
+  }
+
+  function getNum_vagon3() {
+	return $this->num_vagon3;
+  }
+
+  function getNum_vagon4() {
+	return $this->num_vagon4;
+  }
+
+  function getNum_vagon6() {
+	return $this->num_vagon6;
+  }
+
+  function getVariedad() {
+	return $this->variedad;
+  }
+
+  function getTotal() {
+	return $this->total;
   }
 
   function setId($id) {
-    $this->id = $id;
+	$this->id = $id;
   }
 
   function setFecha($fecha) {
-    $this->fecha = $fecha;
+	$this->fecha = $fecha;
   }
 
   function setEmpleado_id($empleado_id) {
-    $this->empleado_id = $empleado_id;
+	$this->empleado_id = $empleado_id;
   }
 
   function setProveedor_id($proveedor_id) {
-    $this->proveedor_id = $proveedor_id;
+	$this->proveedor_id = $proveedor_id;
   }
 
   function setCantidad($cantidad) {
-    $this->cantidad = $cantidad;
+	$this->cantidad = $cantidad;
   }
 
-
   function setPeso_caña($peso_caña) {
-    $this->peso_caña = $peso_caña;
+	$this->peso_caña = $peso_caña;
+  }
+
+  function setPeso_caña2($peso_caña2) {
+	$this->peso_caña2 = $peso_caña2;
+  }
+
+  function setPeso_caña3($peso_caña3) {
+	$this->peso_caña3 = $peso_caña3;
+  }
+
+  function setPeso_caña4($peso_caña4) {
+	$this->peso_caña4 = $peso_caña4;
+  }
+
+  function setPeso_caña5($peso_caña5) {
+	$this->peso_caña5 = $peso_caña5;
   }
 
   function setNum_vagon($num_vagon) {
-    $this->num_vagon = $num_vagon;
+	$this->num_vagon = $num_vagon;
   }
 
+  function setNum_vagon2($num_vagon2) {
+	$this->num_vagon2 = $num_vagon2;
+  }
+
+  function setNum_vagon3($num_vagon3) {
+	$this->num_vagon3 = $num_vagon3;
+  }
+
+  function setNum_vagon4($num_vagon4) {
+	$this->num_vagon4 = $num_vagon4;
+  }
+
+  function setNum_vagon6($num_vagon6) {
+	$this->num_vagon6 = $num_vagon6;
+  }
+
+  function setVariedad($variedad) {
+	$this->variedad = $variedad;
+  }
+
+  function setTotal($total) {
+	$this->total = $total;
+  }
+
+  
+  
+  
   /**
    * Obtiene el nombre de la tabla
    * @return string
    */
   public static function getNameTable() {
-    return 'ingreso_caña';
+	return 'ingreso_caña';
   }
 
   /**
@@ -104,7 +216,7 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
    * @return string
    */
   public static function getNameField($field, $html = false, $table = null) {
-    return parent::getNameField($field, self::getNameTable(), $html);
+	return parent::getNameField($field, self::getNameTable(), $html);
   }
 
   /**
@@ -118,7 +230,7 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
    * @return PDOException|boolean
    */
   public static function delete($ids, $deletedLogical = false, $table = null) {
-    return parent::delete($ids, $deletedLogical, self::getNameTable());
+	return parent::delete($ids, $deletedLogical, self::getNameTable());
   }
 
   /**
@@ -130,7 +242,7 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
    * @return PDOException|boolean
    */
   public static function insert($data, $table = null) {
-    return parent::insert(self::getNameTable(), $data);
+	return parent::insert(self::getNameTable(), $data);
   }
 
   /**
@@ -151,7 +263,7 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
    * instancia de \PDOException en caso de fracaso.
    */
   public static function getAll($fields, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
-    return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+	return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
   }
 
   /**
@@ -165,7 +277,7 @@ class ingresoCanaBaseTableClass extends tableBaseClass {
    * @return PDOException|boolean
    */
   public static function update($ids, $data, $table = null) {
-    return parent::update($ids, $data, self::getNameTable());
+	return parent::update($ids, $data, self::getNameTable());
   }
 
 }

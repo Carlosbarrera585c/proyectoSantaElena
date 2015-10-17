@@ -24,8 +24,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             empaqueTableClass::FECHA,
             empaqueTableClass::CANTIDAD,
             empaqueTableClass::EMPLEADO_ID,
-            empaqueTableClass::TIPO_EMPAQUE_ID,
-            empaqueTableClass::INSUMO_ID
+            empaqueTableClass::TIPO_EMPAQUE_ID
+           
         );
         $where = array(
             empaqueTableClass::ID => request::getInstance()->getRequest(empaqueTableClass::ID)

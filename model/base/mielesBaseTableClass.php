@@ -13,79 +13,102 @@ class mielesBaseTableClass extends tableBaseClass {
   private $fecha;
   private $turno;
   private $empleado_id;
-  private $num_ceba;
   private $caja;
   private $observacion;
+  private $brix;
+  private $ph;
+  private $proveedor_id;
 
   const ID = 'id';
   const FECHA = 'fecha';
   const TURNO = 'turno';
   const TURNO_LENGTH = 11;
   const EMPLEADO_ID = 'empleado_id';
-  const EMPLEADO_ID_LENGTH = 11;
-  const NUM_CEBA = 'num_ceba';
-  const NUM_CEBA_LENGTH = 11;
+  const EMPLEADO_ID_LENGTH = 40;
   const CAJA = 'caja';
   const CAJA_LENGTH = '11';
   const OBSERVACION = 'observacion';
   const OBSERVACION_LENGTH = 80;
+  const BRIX = 'brix';
+  const BRIX_LENGTH = 11;
+  const PH = 'ph';
+  const PH_LENGTH = 11;
+  const PROVEEDOR_ID = 'proveedor';
+  const PROVEEDOR_ID_LENGTH = 40;
 
   function getId() {
-      return $this->id;
+	return $this->id;
   }
 
   function getFecha() {
-      return $this->fecha;
+	return $this->fecha;
   }
 
   function getTurno() {
-      return $this->turno;
+	return $this->turno;
   }
 
   function getEmpleado_id() {
-      return $this->empleado_id;
-  }
-
-  function getNum_ceba() {
-      return $this->num_ceba;
+	return $this->empleado_id;
   }
 
   function getCaja() {
-      return $this->caja;
+	return $this->caja;
   }
 
   function getObservacion() {
-      return $this->observacion;
+	return $this->observacion;
+  }
+
+  function getBrix() {
+	return $this->brix;
+  }
+
+  function getPh() {
+	return $this->ph;
+  }
+
+  function getProveedor_id() {
+	return $this->proveedor_id;
   }
 
   function setId($id) {
-      $this->id = $id;
+	$this->id = $id;
   }
 
   function setFecha($fecha) {
-      $this->fecha = $fecha;
+	$this->fecha = $fecha;
   }
 
   function setTurno($turno) {
-      $this->turno = $turno;
+	$this->turno = $turno;
   }
 
   function setEmpleado_id($empleado_id) {
-      $this->empleado_id = $empleado_id;
-  }
-
-  function setNum_ceba($num_ceba) {
-      $this->num_ceba = $num_ceba;
+	$this->empleado_id = $empleado_id;
   }
 
   function setCaja($caja) {
-      $this->caja = $caja;
+	$this->caja = $caja;
   }
 
   function setObservacion($observacion) {
-      $this->observacion = $observacion;
+	$this->observacion = $observacion;
   }
 
+  function setBrix($brix) {
+	$this->brix = $brix;
+  }
+
+  function setPh($ph) {
+	$this->ph = $ph;
+  }
+
+  function setProveedor_id($proveedor_id) {
+	$this->proveedor_id = $proveedor_id;
+  }
+
+  
     
   /**
    * Obtiene el nombre de la tabla

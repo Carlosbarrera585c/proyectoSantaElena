@@ -22,9 +22,14 @@ class insertActionClass extends controllerClass implements controllerActionInter
           empleadoTableClass::ID,
           empleadoTableClass::NOM_EMPLEADO
       );
-
-
       $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
+//	 $fields = array(
+//                  proveedorTableClass::ID,
+//                  proveedorTableClass::RAZON_SOCIAL
+//            );
+//         
+//
+//              $this->objProveedor = proveedorTableClass::getAll($fields,false);
       $this->defineView('insert', 'mieles', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

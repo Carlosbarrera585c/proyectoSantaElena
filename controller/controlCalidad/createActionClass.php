@@ -32,8 +32,11 @@ class createActionClass extends controllerClass implements controllerActionInter
         $pureza = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true));
         $empleado_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::EMPLEADO_ID, true));
         $proveedor_id = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true));
+		$color = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::COLOR, true));
+		$textura = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::TEXTURA, true));
+		$sedimento = request::getInstance()->getPost(controlCalidadTableClass::getNameField(controlCalidadTableClass::SEDIMENTO, true));
 
-        $this->Validate($variedad, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha, $edad);
+        $this->Validate($variedad, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha, $edad, $color, $textura, $sedimento);
 
         $data = array(
             controlCalidadTableClass::FECHA => $fecha,
@@ -45,7 +48,10 @@ class createActionClass extends controllerClass implements controllerActionInter
             controlCalidadTableClass::SACAROSA => $sacarosa,
             controlCalidadTableClass::PUREZA => $pureza,
             controlCalidadTableClass::EMPLEADO_ID => $empleado_id,
-            controlCalidadTableClass::PROVEEDOR_ID => $proveedor_id
+            controlCalidadTableClass::PROVEEDOR_ID => $proveedor_id,
+			controlCalidadTableClass::COLOR => $color,
+			controlCalidadTableClass::TEXTURA => $textura,
+			controlCalidadTableClass::SEDIMENTO => $sedimento
         );
 
         controlCalidadTableClass::insert($data);
@@ -61,7 +67,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 //funcion para validacion de campos en formulario 
-  private function Validate($variedad, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha,$edad) {
+  private function Validate($variedad, $brix, $ph, $ar, $sacarosa, $pureza, $empleado_id, $proveedor_id, $fecha,$edad, $color, $textura, $sedimento) {
     $bandera = FALSE;
     $pattern="/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
 //validaciones para que no se superen el maximo de caracteres.
@@ -97,6 +103,21 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
     if (strlen($pureza) > controlCalidadTableClass::PUREZA_LENGHT) {
       session::getInstance()->setError(i18n::__('errorLengthPurity', NULL, 'default', array('%pureza%' => $pureza, '%caracteres%' => controlCalidadTableClass::PUREZA_LENGHT)),'errorPureza');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+	  if (strlen($color) > controlCalidadTableClass::COLOR_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLength', NULL, 'default'),'errorPureza');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+	if (strlen($textura) > controlCalidadTableClass::TEXTURA_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLength', NULL, 'default'),'errorTextura');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
+    }
+	if (strlen($sedimento) > controlCalidadTableClass::SEDIMENTO_LENGHT) {
+      session::getInstance()->setError(i18n::__('errorLength', NULL, 'default'),'errorSedimento');
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
     }
@@ -192,6 +213,21 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorProveedor');
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PROVEEDOR_ID, true), true);
+    }
+	 if($color === '' or $color === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorColor');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::COLOR, true), true);
+    }
+	 if($textura === '' or $textura === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorTextura');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::TEXTURA, true), true);
+    }
+	 if($sedimento === '' or $sedimento === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'),'errorSedimento');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::SEDIMENTO, true), true);
     }
     //validar fecha
     if(!preg_match($pattern, $fecha)){

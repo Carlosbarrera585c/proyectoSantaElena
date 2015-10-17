@@ -95,7 +95,7 @@ use mvc\session\sessionClass as session ?>
 	</div>
   </div>
   <div class="page-header titulo">
-	<h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('qualityControl') ?></i></h1>
+	<h1><i class="glyphicon glyphicon-th-list"> <?php echo i18n::__('preharvest') ?></i></h1>
   </div>
 
 

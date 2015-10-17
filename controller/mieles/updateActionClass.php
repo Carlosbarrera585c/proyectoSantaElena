@@ -24,11 +24,13 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $fecha = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::FECHA, true)));
         $turno = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::TURNO, true)));
         $empleadoId = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::EMPLEADO_ID, true)));
-        $numCeba = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true)));
         $caja = request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::CAJA, true));
         $observacion = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::OBSERVACION, true)));
+        $brix = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::BRIX, true)));
+		$ph = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::PH, true)));
+		$proveedor_id = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::PROVEEDOR_ID, true)));
 
-        $this->ValidateUpdate($fecha, $turno, $empleadoId, $numCeba, $caja, $observacion);
+        $this->ValidateUpdate($fecha, $turno, $empleadoId, $numCeba, $caja, $observacion, $brix,$ph,$proveedor_id);
 
         $ids = array(
             mielesTableClass::ID => $id
@@ -37,9 +39,11 @@ class updateActionClass extends controllerClass implements controllerActionInter
             mielesTableClass::FECHA => $fecha,
             mielesTableClass::TURNO => $turno,
             mielesTableClass::EMPLEADO_ID => $empleadoId,
-            mielesTableClass::NUM_CEBA => $numCeba,
             mielesTableClass::CAJA => $caja,
-            mielesTableClass::OBSERVACION => $observacion
+            mielesTableClass::OBSERVACION => $observacion,
+			mielesTableClass::BRIX => $brix,
+			mielesTableClass::PH => $ph,
+			mielesTableClass::PROVEEDOR_ID => $proveedor_id
         );
         mielesTableClass::update($ids, $data);
       }
@@ -52,7 +56,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function ValidateUpdate($fecha, $turno, $empleadoId, $numCeba, $caja, $observacion) {
+  private function ValidateUpdate($fecha, $turno, $empleadoId, $numCeba, $caja, $observacion, $brix,$ph,$proveedor_id) {
 
     $bandera = FALSE;
     //VALIDAR TURNO
@@ -80,21 +84,30 @@ class updateActionClass extends controllerClass implements controllerActionInter
       $bandera = true;
       session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::EMPLEADO_ID, true), true);
     }
+	if (strlen($proveedor_id) > mielesTableClass::PROVEEDOR_ID_LENGTH) {
+      session::getInstance()->setError(i18n::__('errorLength', NULL, 'default'), 'errorProcedencia');
+      $bandera = true;
+      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::PROVEEDOR_ID, true), true);
+    } elseif ($proveedor_id === NULL) {
+      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorProcedencia');
+      $bandera = true;
+      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::PROVEEDOR_ID, true), true);
+    }
     //FIN VALIDAR EMPLEADO
     //VALIDAR CEBA
-    if (strlen($numCeba) > mielesTableClass::NUM_CEBA_LENGTH) {
-      session::getInstance()->setError(i18n::__('errorLengthPhone', NULL, 'default', array('%telefono%' => $numCeba, '%caracteres%' => mielesTableClass::NUM_CEBA_LENGTH)), 'errorNumCeba');
-      $bandera = true;
-      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true), true);
-    } elseif (!is_numeric($numCeba)) {
-      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorNumCeba');
-      $bandera = true;
-      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true), true);
-    } elseif ($numCeba === NULL) {
-      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorNumCeba');
-      $bandera = true;
-      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true), true);
-    }
+//    if (strlen($numCeba) > mielesTableClass::NUM_CEBA_LENGTH) {
+//      session::getInstance()->setError(i18n::__('errorLengthPhone', NULL, 'default', array('%telefono%' => $numCeba, '%caracteres%' => mielesTableClass::NUM_CEBA_LENGTH)), 'errorNumCeba');
+//      $bandera = true;
+//      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true), true);
+//    } elseif (!is_numeric($numCeba)) {
+//      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorNumCeba');
+//      $bandera = true;
+//      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true), true);
+//    } elseif ($numCeba === NULL) {
+//      session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorNumCeba');
+//      $bandera = true;
+//      session::getInstance()->setFlash(mielesTableClass::getNameField(mielesTableClass::NUM_CEBA, true), true);
+//    }
     //FIN VALIDAR CEBA
     //VALIDAR CAJA
     if (strlen($caja) > mielesTableClass::CAJA_LENGTH) {

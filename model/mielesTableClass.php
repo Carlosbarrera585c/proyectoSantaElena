@@ -43,6 +43,22 @@ class mielesTableClass extends mielesBaseTableClass {
             throw $exc;
         }
     }
+	 public static function getNameProveedor($id) {
+        try {
+            $sql = 'SELECT ' . proveedorTableClass::RAZON_SOCIAL . ' As razon_social  '
+                    . ' FROM ' . proveedorTableClass::getNameTable() . '  '
+                    . ' WHERE ' . proveedorTableClass::ID . ' = :id';
+            $params = array(
+                ':id' => $id
+            );
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->razon_social;
+        } catch (PDOException $exc) {
+            throw $exc;
+        }
+    }
 
 }
 

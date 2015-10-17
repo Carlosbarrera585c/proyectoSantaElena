@@ -25,7 +25,6 @@ class viewActionClass extends controllerClass implements controllerActionInterfa
           empaqueTableClass::EMPLEADO_ID,
           empaqueTableClass::CANTIDAD,
           empaqueTableClass::TIPO_EMPAQUE_ID,
-          empaqueTableClass::INSUMO_ID
               
       );
       $where = array(

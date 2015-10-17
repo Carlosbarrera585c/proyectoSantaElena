@@ -28,8 +28,18 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                  ingresoCanaTableClass::EMPLEADO_ID,
                  ingresoCanaTableClass::PROVEEDOR_ID,
                  ingresoCanaTableClass::CANTIDAD,
-                 ingresoCanaTableClass::PESO_CAÑA ,
-                 ingresoCanaTableClass::NUM_VAGON
+                 ingresoCanaTableClass::PESO_CAÑA,
+				 ingresoCanaTableClass::PESO_CAÑA2,
+				 ingresoCanaTableClass::PESO_CAÑA3,
+				 ingresoCanaTableClass::PESO_CAÑA4,
+				 ingresoCanaTableClass::PESO_CAÑA5,
+                 ingresoCanaTableClass::NUM_VAGON,
+				 ingresoCanaTableClass::NUM_VAGON2,
+				 ingresoCanaTableClass::NUM_VAGON3,
+				 ingresoCanaTableClass::NUM_VAGON4,
+				 ingresoCanaTableClass::NUM_VAGON5,
+				 ingresoCanaTableClass::VARIEDAD,
+					
                 
                 );
                 $where = array(

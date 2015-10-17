@@ -14,6 +14,11 @@ use mvc\session\sessionClass as session ?>
 <?php $cantidad = ingresoCanaTableClass::CANTIDAD ?>
 <?php $peso_caña = ingresoCanaTableClass::PESO_CAÑA ?>
 <?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
+<?php $num_vagon2 = ingresoCanaTableClass::NUM_VAGON2 ?>
+<?php $num_vagon3 = ingresoCanaTableClass::NUM_VAGON3 ?>
+<?php $num_vagon4 = ingresoCanaTableClass::NUM_VAGON4 ?>
+<?php $num_vagon5 = ingresoCanaTableClass::NUM_VAGON5 ?>
+<?php $variedad = ingresoCanaTableClass::VARIEDAD ?>
 <?php view::includePartial('menu/menu') ?>
 <div class="container container-fluid">
     <div class="page-header text-center titulo">
@@ -34,6 +39,11 @@ use mvc\session\sessionClass as session ?>
                     <th><?php echo i18n::__('quantity') ?></th>
                     <th><?php echo i18n::__('caneWeight') ?></th>
                     <th><?php echo i18n::__('wagonNumber') ?></th>
+					<th><?php echo i18n::__('wagonNumber2') ?></th>
+					<th><?php echo i18n::__('wagonNumber3') ?></th>
+					<th><?php echo i18n::__('wagonNumber4') ?></th>
+					<th><?php echo i18n::__('wagonNumber5') ?></th>
+					<th><?php echo i18n::__('variety') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -45,6 +55,11 @@ use mvc\session\sessionClass as session ?>
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon : '') ?></td>
+					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon2 : '') ?></td>
+					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon3 : '') ?></td>
+					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon4 : '') ?></td>
+					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon5 : '') ?></td>
+					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$variedad : '') ?></td>
                 </tr>
             </tbody>
         </table>

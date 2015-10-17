@@ -31,7 +31,7 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
             </div>
         </div>
-        <?php view::getMessageError('errorDireccion') ?>
+<!--        <?php view::getMessageError('errorDireccion') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true)) === true) ? 'has-error has-feedback' : '' ?>">
                 <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::DIRECCION, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('direction') ?>:</label>
             <div class="col-xs-6">
@@ -40,7 +40,7 @@ use mvc\request\requestClass as request ?>
                     <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                 <?php endif ?>
             </div>
-        </div>
+        </div>-->
         <?php view::getMessageError('errorTelefono') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true)) === true) ? 'has-error has-feedback' : '' ?>">
                 <label for="<?php echo proveedorTableClass::getNameField(proveedorTableClass::TELEFONO, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('phone') ?>:</label>
@@ -51,7 +51,7 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
             </div>
         </div>
-         <?php view::getMessageError('errorCiudad') ?>
+<!--         <?php view::getMessageError('errorCiudad') ?>
             <div class="form-group <?php echo (session::getInstance()->hasFlash(proveedorTableClass::getNameField(proveedorTableClass::CIUDAD_ID, true)) === true) ? 'has-error has-feedback' : '' ?>">
             <label class="col-lg-3 control-label"><?php echo i18n::__('city') ?>:</label>
             <div class="col-xs-6">
@@ -63,7 +63,7 @@ use mvc\request\requestClass as request ?>
                     <?php endforeach ?>
                 </select>
             </div>
-        </div>
+        </div>-->
              <div class="form-group">
             <div class="col-xs-offset-6">
                 <input class="btn btn-success btn-sm" type="submit" value="<?php echo i18n::__(((isset($objProveedor)) ? 'update' : 'register')) ?>">

@@ -263,28 +263,36 @@ dictionary:
     infoCaneIncome:       Cane Income Information
     DetailIncome:         Income Cane Detail
     newDetailIncome:      New Income Detail Cane
-    editDetailIncome:           Edit Income Detail Cane
+    editDetailIncome:     Edit Income Detail Cane
     infoDetailIncome:     Income Cane Detail Information
     quantity:             Quantity
-    caneOrigin:           cane origin
-    caneWeight:           cane weight
-    wagonNumber:          wagon number
+    caneOrigin:           Cane Origin
+    caneWeight:           Cane Weight
+    wagonNumber:          Wagon Number
     reedIncome:           Reed Income
     quantity:             Quantity
-    caneOrigin:           cane origin
-    caneWeight:           cane Weight
-    wagonNumber:          wagon number
-    enterTheQuantity:     enter The Quantity 
-    enterTheCaneOrigin:   enter The Cane Origin
-    enterTheCaneWeight:   enter The Cane Weight
-    enterTheWagonNumber:  enter The Wagon Number
+    caneOrigin:           Cane Origin
+    caneWeight:           Cane Weight
+    train:                Train
+    wagonNumber:          Wagon Number
+    wagonNumber2:         Wagon Number2
+    wagonNumber3:         Wagon Number3
+    wagonNumber4:         Wagon Number4
+    wagonNumber5:         Wagon Number5
+    total:				  Total
+    enterTheQuantity:     Enter The Quantity 
+    enterTheCaneOrigin:   Enter The Cane Origin
+    enterTheCaneWeight:   Enter The Cane Weight
+    enterTheWagonNumber:  Enter The Wagon Number
+    variety:              Variety
+    enterTheVariety:      Enter The Variety
     ##---------------------- INGRESO CAÑA----------------------------## 
    
     ##---------------------- SOLICITUD INSUMO-------------------------##
     inputRequest:         Request Input
     ##----------------------SOLICITUD INSUMO---------------------------##
  
-    ##-----------------CONTROL CALIDAD-------------------------##
+    ##-----------------PRECOSECHA-------------------------##
     date:                Date
     variety:             Variety
     brix:                Brix
@@ -295,11 +303,12 @@ dictionary:
     saccharose:          Saccharose
     purity:              Purity
     idEmployed:          Employed
+    laboratoryAnalyst:   Laboratory Analyst
     idProvider:          Provider
-    qualityControl:      Quality Control
-    editQualityControl:  Edit Quality Control
-    qualityControlInformation: Quality Control Information
-    newQualityControl:   New Quality Control
+    preharvest:          Preharvest
+    editPreharvest:      Edit Preharvest
+    preharvestInformation: Preharvest Information
+    newPreharvest:       New Preharvest
     enterTheDate:        Enter the Date
     enterTheTurn:        Enter the Turn
     enterTheVariety:     Enter the Variety
@@ -309,7 +318,13 @@ dictionary:
     enterTheAr:          Enter the Ar
     enterTheSaccharose:  Enter the Saccharose
     enterThePurity:      Enter the Purity
-    ##-----------------control calidad---------------------------##
+    colour:              Colour
+    texture:             Texture
+    sediment:            Sediment
+    enterTheColour:      Enter The Colour
+    enterTheTexture:     Enter The Texture
+    enterTheSediment:    Enter The Sediment
+    ##-----------------PRECOSECHA---------------------------##
      
     ##---------------------- DETALLE SALIDA----------------------------##
     outputDetail:       Detail output Bodega
@@ -342,6 +357,7 @@ dictionary:
     provenance:            Provenance
     sediment:              Sediment
     hour:                  hour
+    plantManager:          Plant Manager
     ##----------------------panela-------------------------##
     ##----------------------Clarificación------------------##
     infoClarification:     Information of Clarification
