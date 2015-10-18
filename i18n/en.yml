@@ -273,6 +273,10 @@ dictionary:
     quantity:             Quantity
     caneOrigin:           Cane Origin
     caneWeight:           Cane Weight
+    caneWeight2:          Cane Weight 2
+    caneWeight3:          Cane Weight 3
+    caneWeight4:          Cane Weight 4
+    caneWeight5:          Cane Weight 5
     train:                Train
     wagonNumber:          Wagon Number
     wagonNumber2:         Wagon Number2
@@ -283,6 +287,10 @@ dictionary:
     enterTheQuantity:     Enter The Quantity 
     enterTheCaneOrigin:   Enter The Cane Origin
     enterTheCaneWeight:   Enter The Cane Weight
+    enterTheCaneWeight2:   Enter The Cane Weight 2
+    enterTheCaneWeight3:   Enter The Cane Weight 3
+    enterTheCaneWeight4:   Enter The Cane Weight 4
+    enterTheCaneWeight5:   Enter The Cane Weight 5
     enterTheWagonNumber:  Enter The Wagon Number
     variety:              Variety
     enterTheVariety:      Enter The Variety

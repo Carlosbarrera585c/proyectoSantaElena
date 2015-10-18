@@ -17,39 +17,47 @@ use mvc\i18n\i18nClass as i18n;
 class editActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
-    try {
-      if (request::getInstance()->hasGet(mielesTableClass::ID)) {
-        $fields = array(
-            mielesTableClass::ID,
-            mielesTableClass::FECHA,
-            mielesTableClass::TURNO,
-            mielesTableClass::EMPLEADO_ID,
-            mielesTableClass::CAJA,
+	try {
+	  if (request::getInstance()->hasGet(mielesTableClass::ID)) {
+		$fields = array(
+			mielesTableClass::ID,
+			mielesTableClass::FECHA,
+			mielesTableClass::TURNO,
+			mielesTableClass::EMPLEADO_ID,
+			mielesTableClass::CAJA,
 			mielesTableClass::BRIX,
 			mielesTableClass::PH,
 			mielesTableClass::PROVEEDOR_ID,
-            mielesTableClass::OBSERVACION
-        );
-        $where = array(
-            mielesTableClass::ID => request::getInstance()->getGet(mielesTableClass::ID)
-        );
+			mielesTableClass::OBSERVACION
+		);
+		$where = array(
+			mielesTableClass::ID => request::getInstance()->getGet(mielesTableClass::ID)
+		);
+		$this->objMieles = mielesTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
+		$fieldsEmpleado = array(
+			empleadoTableClass::ID,
+			empleadoTableClass::NOM_EMPLEADO
+		);
 
-        $fieldsEmpleado = array(
-            empleadoTableClass::ID,
-            empleadoTableClass::NOM_EMPLEADO
-        );
+
+		$this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
+
+		$fieldsProveedor = array(
+			proveedorTableClass::ID,
+			proveedorTableClass::RAZON_SOCIAL
+		);
 
 
-        $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado);
-        $this->objMieles = mielesTableClass::getAll($fields, NULL, NULL, NULL, NULL, NULL, $where);
-        $this->defineView('edit', 'mieles', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('mieles', 'index');
-      }
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
-    }
+		$this->objProveedor = proveedorTableClass::getAll($fieldsProveedor);
+
+		$this->defineView('edit', 'mieles', session::getInstance()->getFormatOutput());
+	  } else {
+		routing::getInstance()->redirect('mieles', 'index');
+	  }
+	} catch (PDOException $exc) {
+	  session::getInstance()->setFlash('exc', $exc);
+	  routing::getInstance()->forward('shfSecurity', 'exception');
+	}
   }
 
 }

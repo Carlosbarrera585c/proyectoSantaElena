@@ -269,6 +269,10 @@ dictionary:
     quantity:             Cantidad
     caneOrigin:           Procedencia Caña
     caneWeight:           Peso Caña
+    caneWeight2:           Peso Caña 2
+    caneWeight3:           Peso Caña 3
+    caneWeight4:           Peso Caña 4
+    caneWeight5:           Peso Caña 5
     train:                Tren
     wagonNumber:          Numero Vagon
     wagonNumber2:         Numero Vagon2
@@ -284,6 +288,10 @@ dictionary:
     enterTheQuantity:     Ingresa la Cantidad
     enterTheCaneOrigin:   Ingresa la Procedencia
     enterTheCaneWeight:   Ingresa el Peso Caña
+    enterTheCaneWeight2:   Ingresa el Peso Caña 2
+    enterTheCaneWeight3:   Ingresa el Peso Caña 3
+    enterTheCaneWeight4:   Ingresa el Peso Caña 4 
+    enterTheCaneWeight5:   Ingresa el Peso Caña 5
     enterTheWagonNumber:  Ingresa el NUmero De Vagon
     variety:              Variedad
     enterTheVariety:      Introduce la variedad

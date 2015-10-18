@@ -23,12 +23,12 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                     empleadoTableClass::ID,
                     empleadoTableClass::NOM_EMPLEADO,
                     empleadoTableClass::APELL_EMPLEADO,
-                    empleadoTableClass::TELEFONO,
-                    empleadoTableClass::DIRECCION,
-                    empleadoTableClass::TIPO_ID_ID,
-                    empleadoTableClass::NUMERO_IDENTIFICACION,
-                    empleadoTableClass::CREDENCIAL_ID,
-                    empleadoTableClass::CORREO
+//                    empleadoTableClass::TELEFONO,
+//                    empleadoTableClass::DIRECCION,
+//                    empleadoTableClass::TIPO_ID_ID,
+//                    empleadoTableClass::NUMERO_IDENTIFICACION,
+//                    empleadoTableClass::CREDENCIAL_ID,
+//                    empleadoTableClass::CORREO
                 );
                 $where = array(
                     empleadoTableClass::ID => request::getInstance()->getGet(empleadoTableClass::ID)

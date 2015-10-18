@@ -33,7 +33,7 @@ use mvc\session\sessionClass as session ?>
 
                 <th><?php echo i18n::__('date') ?></th>
                 <th><?php echo i18n::__('turn') ?></th>   
-                <th><?php echo i18n::__('operator') ?></th>   
+                <th><?php echo i18n::__('plantManager') ?></th>   
                 <th><?php echo i18n::__('box') ?></th>
 				<th><?php echo i18n::__('brix') ?></th>
 				<th><?php echo i18n::__('ph') ?></th>
@@ -47,11 +47,11 @@ use mvc\session\sessionClass as session ?>
  
                 <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$fecha : '') ?></td>
                 <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$turno : '') ?></td>
-                <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$empleadoId : '') ?></td>
+                <td><?php echo ((isset($objMieles) == true) ? mielesTableClass::getNameEmpleado($objMieles[0]->$empleadoId) : '') ?></td>
                 <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$caja : '') ?></td>
 				<td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$brix : '') ?></td>
 				<td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$ph : '') ?></td>
-				<td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$proveedor_id : '') ?></td>
+				<td><?php echo ((isset($objMieles) == true) ? mielesTableClass::getNameProveedor($objMieles[0]->$proveedor_id) : '') ?></td>
                 <td><?php echo ((isset($objMieles) == true) ? $objMieles[0]->$observacion : '') ?></td></tr>
         </tbody>
     </table>

@@ -28,7 +28,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 		$ph = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::PH, true)));
 		$proveedor_id = trim(request::getInstance()->getPost(mielesTableClass::getNameField(mielesTableClass::PROVEEDOR_ID, true)));
 
-        $this->ValidateMieles($fecha, $turno, $empleadoId, $numCeba, $caja, $observacion, $brix,$ph,$proveedor_id);
+        $this->ValidateMieles($fecha, $turno, $empleadoId, $caja, $observacion, $brix,$ph,$proveedor_id);
 
         $data = array(
             mielesTableClass::FECHA => $fecha,
@@ -52,7 +52,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 
-  private function ValidateMieles($fecha, $turno, $empleadoId, $numCeba, $caja, $observacion, $brix,$ph,$proveedor_id) {
+  private function ValidateMieles($fecha, $turno, $empleadoId, $caja, $observacion, $brix,$ph,$proveedor_id) {
     $bandera = FALSE;
     //VALIDAR TURNO
     if (strlen($turno) > mielesTableClass::TURNO_LENGTH) {

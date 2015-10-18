@@ -9,5 +9,5 @@ use mvc\view\viewClass as view ?>
     <div class="page-header titulo">
         <h1><i class="fa fa-pencil-square"> <?php echo i18n::__('editHoneys') ?> <small><?php echo $objMieles[0]->$fecha ?></small></i></h1>
     </div>
-<?php view::includePartial('mieles/formMieles', array('objMieles' => $objMieles, 'fecha' => $fecha, 'objEmpleado' => $objEmpleado)) ?>
+<?php view::includePartial('mieles/formMieles', array('objMieles' => $objMieles, 'fecha' => $fecha, 'objEmpleado' => $objEmpleado, 'objProveedor' => $objProveedor)) ?>
 </div>

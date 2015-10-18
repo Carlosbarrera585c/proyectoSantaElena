@@ -33,12 +33,6 @@ use mvc\session\sessionClass as session ?>
 
                 <th><?php echo i18n::__('employeeName') ?></th>
                 <th><?php echo i18n::__('employeeLastName') ?></th>   
-                <th><?php echo i18n::__('phone') ?></th>  
-                <th><?php echo i18n::__('direction') ?></th>   
-                <th><?php echo i18n::__('identification') ?></th>
-                <th><?php echo i18n::__('numberIdentification') ?></th>                    
-                <th><?php echo i18n::__('credential') ?></th>   
-                <th><?php echo i18n::__('mail') ?></th>   
             </tr>
         </thead>
         <tbody>
@@ -46,12 +40,6 @@ use mvc\session\sessionClass as session ?>
 
                 <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$nomEmpleado : '') ?></td>
                 <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$apellEmpleado : '') ?></td>
-                <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$telefono : '') ?></td>
-                <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$direccion : '') ?></td>
-                <td><?php echo ((isset($objEmpleado) == true) ? empleadoTableClass::getNameTipoId($objEmpleado[0]->$tipoId) : '') ?></td>
-                <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$numeroIdentificacion : '') ?></td>
-                <td><?php echo ((isset($objEmpleado) == true) ? empleadoTableClass::getNameCredencial($objEmpleado[0]->$credencialId) : '') ?></td>
-                <td><?php echo ((isset($objEmpleado) == true) ? $objEmpleado[0]->$correo : '') ?></td></tr>
         </tbody>
     </table>
 </div>
