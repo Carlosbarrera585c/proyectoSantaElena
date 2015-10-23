@@ -122,16 +122,21 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::PUREZA, true), true);
     }
 //validar que el campo sea solo texto
-    if (!preg_match('/^[a-zA-Z ]*$/', $variedad)) {
-            session::getInstance()->setError(i18n::__('errorText', NULL, 'default'), 'errorVariedad');
-            $bandera = true;
-            session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true), true);
-        }
+//    if (!preg_match('/^[a-zA-Z ]*$/', $variedad)) {
+//            session::getInstance()->setError(i18n::__('errorText', NULL, 'default'), 'errorVariedad');
+//            $bandera = true;
+//            session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true), true);
+//        }
  //validar que el campo sea numerico.
      if (!is_numeric($edad)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorEdad');
       $bandera = true;
       session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::EDAD, true), true);
+    }
+     if (!is_numeric($variedad)) {
+      session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorVariedad');
+      $bandera = true;
+      session::getInstance()->setFlash(controlCalidadTableClass::getNameField(controlCalidadTableClass::VARIEDAD, true), true);
     }
     if (!is_numeric($brix)) {
       session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'),'errorBrix');

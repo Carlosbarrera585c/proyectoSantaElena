@@ -23,45 +23,43 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         try {
             if (request::getInstance()->hasGet(ingresoCanaTableClass::ID)) {
                 $fields = array(
-				 ingresoCanaTableClass::ID,
-                 ingresoCanaTableClass::FECHA,
-                 ingresoCanaTableClass::EMPLEADO_ID,
-                 ingresoCanaTableClass::PROVEEDOR_ID,
-                 ingresoCanaTableClass::CANTIDAD,
-                 ingresoCanaTableClass::PESO_CAÑA,
-				 ingresoCanaTableClass::PESO_CAÑA2,
-				 ingresoCanaTableClass::PESO_CAÑA3,
-				 ingresoCanaTableClass::PESO_CAÑA4,
-				 ingresoCanaTableClass::PESO_CAÑA5,
-                 ingresoCanaTableClass::NUM_VAGON,
-				 ingresoCanaTableClass::NUM_VAGON2,
-				 ingresoCanaTableClass::NUM_VAGON3,
-				 ingresoCanaTableClass::NUM_VAGON4,
-				 ingresoCanaTableClass::NUM_VAGON5,
-				 ingresoCanaTableClass::VARIEDAD,
-					
-                
+                    ingresoCanaTableClass::ID,
+                    ingresoCanaTableClass::FECHA,
+                    ingresoCanaTableClass::EMPLEADO_ID,
+                    ingresoCanaTableClass::PROVEEDOR_ID,
+                    ingresoCanaTableClass::CANTIDAD,
+                    ingresoCanaTableClass::PESO_CAÑA,
+                    ingresoCanaTableClass::PESO_CAÑA2,
+                    ingresoCanaTableClass::PESO_CAÑA3,
+                    ingresoCanaTableClass::PESO_CAÑA4,
+                    ingresoCanaTableClass::PESO_CAÑA5,
+                    ingresoCanaTableClass::NUM_VAGON,
+                    ingresoCanaTableClass::NUM_VAGON2,
+                    ingresoCanaTableClass::NUM_VAGON3,
+                    ingresoCanaTableClass::NUM_VAGON4,
+                    ingresoCanaTableClass::NUM_VAGON5,
+                    ingresoCanaTableClass::VARIEDAD
                 );
                 $where = array(
                     ingresoCanaTableClass::ID => request::getInstance()->getGet(ingresoCanaTableClass::ID)
                 );
                 $this->objingresoCana = ingresoCanaTableClass::getAll($fields, false, null, null, null, null, $where);
-                
-                 $fields = array(
-                     empleadoTableClass::ID,
-                     empleadoTableClass::NOM_EMPLEADO,
+
+                $fields = array(
+                    empleadoTableClass::ID,
+                    empleadoTableClass::NOM_EMPLEADO,
                 );
-                
+
                 $this->objEmpleado = empleadoTableClass::getAll($fields, false);
-                
+
                 $fields = array(
                     proveedorTableClass::ID,
                     proveedorTableClass::RAZON_SOCIAL,
                 );
-                
+
                 $this->objProveedor = proveedorTableClass::getAll($fields, false);
-                
-                 
+
+
                 $this->defineView('edit', 'ingresoCana', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('ingresoCana', 'index');

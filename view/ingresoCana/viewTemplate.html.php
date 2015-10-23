@@ -13,6 +13,10 @@ use mvc\session\sessionClass as session ?>
 <?php $proveedor_id = ingresoCanaTableClass::PROVEEDOR_ID ?>
 <?php $cantidad = ingresoCanaTableClass::CANTIDAD ?>
 <?php $peso_caña = ingresoCanaTableClass::PESO_CAÑA ?>
+<?php $peso_caña2 = ingresoCanaTableClass::PESO_CAÑA2 ?>
+<?php $peso_caña3 = ingresoCanaTableClass::PESO_CAÑA3 ?>
+<?php $peso_caña4 = ingresoCanaTableClass::PESO_CAÑA4 ?>
+<?php $peso_caña5 = ingresoCanaTableClass::PESO_CAÑA5 ?>
 <?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
 <?php $num_vagon2 = ingresoCanaTableClass::NUM_VAGON2 ?>
 <?php $num_vagon3 = ingresoCanaTableClass::NUM_VAGON3 ?>
@@ -36,14 +40,18 @@ use mvc\session\sessionClass as session ?>
                     <th><?php echo i18n::__('date') ?></th>
                     <th><?php echo i18n::__('idEmployed') ?></th>
                     <th><?php echo i18n::__('idProvider') ?></th>
-                    <th><?php echo i18n::__('quantity') ?></th>
-                    <th><?php echo i18n::__('caneWeight') ?></th>
                     <th><?php echo i18n::__('wagonNumber') ?></th>
-					<th><?php echo i18n::__('wagonNumber2') ?></th>
-					<th><?php echo i18n::__('wagonNumber3') ?></th>
-					<th><?php echo i18n::__('wagonNumber4') ?></th>
-					<th><?php echo i18n::__('wagonNumber5') ?></th>
-					<th><?php echo i18n::__('variety') ?></th>
+                    <th><?php echo i18n::__('caneWeight') ?></th>
+                    <th><?php echo i18n::__('wagonNumber2') ?></th>
+                    <th><?php echo i18n::__('caneWeight') ?></th>
+                    <th><?php echo i18n::__('wagonNumber3') ?></th>
+                    <th><?php echo i18n::__('caneWeight') ?></th>
+                    <th><?php echo i18n::__('wagonNumber4') ?></th>
+                    <th><?php echo i18n::__('caneWeight') ?></th>
+                    <th><?php echo i18n::__('wagonNumber5') ?></th>
+                    <th><?php echo i18n::__('caneWeight') ?></th>
+                    <th><?php echo i18n::__('quantity') ?></th> 
+                    <th><?php echo i18n::__('variety') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -51,15 +59,19 @@ use mvc\session\sessionClass as session ?>
 
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$fecha : '') ?></td>
                     <td><?php echo ((isset($objingresoCana) == true) ? ingresoCanaTableClass::getNameEmpleado($objingresoCana[0]->$empleado_id) : '') ?></td>
-                    <td><?php echo ((isset($objingresoCana) == true) ? ingresoCanaTableClass::getNameProveedor($objingresoCana[0]->$proveedor_id) : '') ?></td>
-                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : '') ?></td>
-                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? ingresoCanaTableClass::getNameProveedor($objingresoCana[0]->$proveedor_id) : '') ?></td>      
                     <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon : '') ?></td>
-					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon2 : '') ?></td>
-					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon3 : '') ?></td>
-					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon4 : '') ?></td>
-					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon5 : '') ?></td>
-					<td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$variedad : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon2 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña2 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon3 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña3 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon4 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña4 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$num_vagon5 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$peso_caña5 : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : '') ?></td>
+                    <td><?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$variedad : '') ?></td>
                 </tr>
             </tbody>
         </table>

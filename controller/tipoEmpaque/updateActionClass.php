@@ -48,7 +48,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
             $bandera = true;
             session::getInstance()->setFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true), true);
         }
-        if (!preg_match('/^[a-zA-Z ]*$/', $desc_tipo_empaque)) {
+        if (!preg_match('/^[a-zA-Z0-9 ]*$/', $desc_tipo_empaque)) {
             session::getInstance()->setError(i18n::__('errorText', NULL, 'default', array('%texto%' => $desc_tipo_empaque)), 'errorDescripcion');
             $bandera = true;
             session::getInstance()->setFlash(tipoEmpaqueTableClass::getNameField(tipoEmpaqueTableClass::DESC_TIPO_EMPAQUE, true), true);

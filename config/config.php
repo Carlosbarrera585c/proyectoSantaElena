@@ -1,13 +1,13 @@
 <?php
 use mvc\config\configClass as config;
 use mvc\session\sessionClass as session;
-config::setRowGrid(5);
+config::setRowGrid(10);
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
 config::setDbName('santa_helena');
 config::setDbPort(5432); // 5432
 config::setDbUser('postgres');
-config::setDbPassword('sena');
+config::setDbPassword('santaHelena');
 // Esto solo es necesario en caso de necesitar un socket para la DB
 config::setDbUnixSocket(null);
 if (config::getDbUnixSocket() !== null) {
@@ -46,7 +46,7 @@ config::setCookieNameSite('mvcSite');
 config::setCookiePath('/www.santahelena.com/web/' . config::getIndexFile());
 config::setCookieDomain('http://www.agropanelasantahelena.com/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serÃ­an 8 horas
-config::setDefaultModule('usuario');
+config::setDefaultModule('ingresoCana');
 config::setDefaultAction('index');
 config::setDefaultModuleSecurity('shfSecurity');
 config::setDefaultActionSecurity('index');

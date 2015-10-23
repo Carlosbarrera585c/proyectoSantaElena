@@ -118,6 +118,11 @@ class updateActionClass extends controllerClass implements controllerActionInter
 	  $bandera = true;
 	  session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true), true);
 	}
+        if (!is_numeric($variedad)) {
+	  session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorVariedad');
+	  $bandera = true;
+	  session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::VARIEDAD, true), true);
+	}
 	if (!is_numeric($peso_caña)) {
 	  session::getInstance()->setError(i18n::__('errorNumeric', NULL, 'default'), 'errorPeso');
 	  $bandera = true;
@@ -185,11 +190,11 @@ class updateActionClass extends controllerClass implements controllerActionInter
 	  $bandera = true;
 	  session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::PROVEEDOR_ID, true), true);
 	}
-	if ($variedad === '' or $variedad === NULL) {
-	  session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorVariedad');
-	  $bandera = true;
-	  session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::VARIEDAD, true), true);
-	}
+//	if ($variedad === '' or $variedad === NULL) {
+//	  session::getInstance()->setError(i18n::__('errorNull', NULL, 'default'), 'errorVariedad');
+//	  $bandera = true;
+//	  session::getInstance()->setFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::VARIEDAD, true), true);
+//	}
 	//validar fecha
 	if (!preg_match($pattern, $fecha)) {
 	  session::getInstance()->setError(i18n::__('errorDate', NULL, 'default'), 'errorFecha');

@@ -21,6 +21,7 @@ use mvc\request\requestClass as request ?>
 <?php $peso_caña3 = ingresoCanaTableClass::PESO_CAÑA3 ?>
 <?php $peso_caña4 = ingresoCanaTableClass::PESO_CAÑA4 ?>
 <?php $peso_caña5 = ingresoCanaTableClass::PESO_CAÑA5 ?>
+<?php $variedad = ingresoCanaTableClass::VARIEDAD ?>
 <?php $num_vagon = ingresoCanaTableClass::NUM_VAGON ?>
 <?php $num_vagon2 = ingresoCanaTableClass::NUM_VAGON2 ?>
 <?php $num_vagon3 = ingresoCanaTableClass::NUM_VAGON3 ?>
@@ -41,18 +42,6 @@ use mvc\request\requestClass as request ?>
 		<input type="date" class="form-control" value="<?php echo date("Y-m-d") ?>"  name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::FECHA, true) ?>" placeholder="<?php echo i18n::__('enterTheDate') ?>">
 	  </div>
 	</div>
-	<?php view::getMessageError('errorCantidad') ?>
-	<div class="form-group <?php echo (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
-	  <label for="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('quantity') ?>:</label>
-	  <div class="input-group col-xs-6">
-		<span class="input-group-addon" id="basic-addon3">Tn</span>
-		<input id="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : ((session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true) ? '' : (request::getInstance()->hasPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true))) ? request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) : '' )) ?>" name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('enterTheQuantity') ?>" aria-describedby="basic-addon3">
-		<?php if (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true): ?>
-  		<span class="glyphicon glyphicon-remove form-control-feedback"></span>
-		<?php endif ?>
-	  </div>
-	</div>
-	
 	<div class="page-header text-center titulo">
 	  <h4><i class="glyphicon"> <?php echo i18n::__('train') ?></i></h4>
 	</div>
@@ -161,6 +150,18 @@ use mvc\request\requestClass as request ?>
 		<?php endif ?>
 	  </div>
 	</div>
+      <?php view::getMessageError('errorCantidad') ?>
+	<div class="form-group <?php echo (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
+	  <label for="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('quantity') ?>:</label>
+	  <div class="input-group col-xs-6">
+		<span class="input-group-addon" id="basic-addon3">Tn</span>
+		<input id="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" type="text" class="form-control" value="<?php echo ((isset($objingresoCana) == true) ? $objingresoCana[0]->$cantidad : ((session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true) ? '' : (request::getInstance()->hasPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true))) ? request::getInstance()->getPost(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) : '' )) ?>" name="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true) ?>" placeholder="<?php echo i18n::__('enterTheQuantity') ?>" aria-describedby="basic-addon3">
+		<?php if (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::CANTIDAD, true)) === true): ?>
+  		<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+		<?php endif ?>
+	  </div>
+	</div>
+	
 	<?php view::getMessageError('errorVariedad') ?>
 	<div class="form-group <?php echo (session::getInstance()->hasFlash(ingresoCanaTableClass::getNameField(ingresoCanaTableClass::VARIEDAD, true)) === true) ? 'has-error has-feedback' : '' ?>">
 	  <label for="<?php echo ingresoCanaTableClass::getNameField(ingresoCanaTableClass::VARIEDAD, true) ?>" class="col-lg-3 control-label"><?php echo i18n::__('variety') ?>:</label>
